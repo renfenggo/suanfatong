@@ -1,0 +1,52 @@
+[
+  {
+    "id": "bfs_what",
+    "title": "BFS 是什么",
+    "subtitle": "广度优先搜索，像水波一样向外扩散",
+    "order": 1,
+    "content": "BFS 的全称是 Breadth-First Search，翻译过来叫「广度优先搜索」。\n\n想象你往平静的湖面扔一颗石子，水波会从石子落下的地方，一圈一圈地向外扩散——先到最近的地方，再到稍远的地方，最后才到最远的地方。\n\nBFS 就是模拟这个过程：从一个起点出发，先访问所有距离为 1 的点，再访问所有距离为 2 的点，以此类推。\n\n它和 DFS（深度优先搜索）最大的区别是：DFS 是一条路走到底再回头，而 BFS 是同时向所有方向「铺开」走。",
+    "example": "比如在一个 5×5 的迷宫里，你站在左上角 (0,0)，想找到右下角 (4,4) 的最短路线。\n\nBFS 会这样做：\n第 1 步：站在 (0,0)\n第 2 步：尝试走到 (0,1) 和 (1,0)\n第 3 步：从 (0,1) 和 (1,0) 继续向外扩展\n……\n直到第一次到达 (4,4)，走过的步数就是最短路。",
+    "code": "// BFS 基本框架\nqueue.push(起点);       // 把起点放入队列\nvis[起点] = true;       // 标记起点已访问\n\nwhile (!queue.empty()) {\n  auto cur = queue.front();\n  queue.pop();           // 取出队首\n  \n  for (auto nxt : cur的所有邻居) {\n    if (!vis[nxt]) {     // 如果邻居没被访问过\n      vis[nxt] = true;   // 标记已访问\n      queue.push(nxt);   // 放入队列\n    }\n  }\n}",
+    "tip": "记住：BFS 的核心是「先到先得」。就像排队买奶茶，先到的人先买到，先被访问到的点距离更近。"
+  },
+  {
+    "id": "bfs_queue",
+    "title": "为什么 BFS 要用队列",
+    "subtitle": "队列的先进先出，保证了一层一层的顺序",
+    "order": 2,
+    "content": "BFS 必须用队列（Queue），不能用栈（Stack）。\n\n原因很简单：队列是「先进先出」（FIFO）的。先进入队列的点会先被取出来处理，这正好保证了 BFS 按距离从小到大的顺序访问。\n\n如果用栈（后进先出 LIFO），最后放进去的点反而最先被处理，那就变成了 DFS，就不是一层一层扩展了。\n\nC++ 中一般用 std::queue，它底层是用 deque 实现的。",
+    "example": "假设起点是 A，A 的邻居是 B 和 C，B 的邻居是 D。\n\n用队列的过程：\n1. 队列：[A]       → 取出 A，放入 B、C\n2. 队列：[B, C]    → 取出 B，放入 D\n3. 队列：[C, D]    → 取出 C\n4. 队列：[D]       → 取出 D\n\n访问顺序：A → B → C → D，正好是按距离排列的！",
+    "code": "#include <queue>\nusing namespace std;\n\nqueue<int> q;\nq.push(start);        // 入队\nvis[start] = true;\n\nwhile (!q.empty()) {\n  int cur = q.front(); // 看队首\n  q.pop();             // 出队\n  \n  for (int nxt : neighbors[cur]) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;\n      q.push(nxt);     // 入队\n    }\n  }\n}",
+    "tip": "面试常考：为什么不用 vector 当队列？因为 vector 从头部删除元素是 O(n) 的，而 queue 从头部删除是 O(1) 的，效率差别很大。"
+  },
+  {
+    "id": "bfs_layers",
+    "title": "什么是一层一层扩展",
+    "subtitle": "BFS 每一轮处理同一距离的所有点",
+    "order": 3,
+    "content": "「一层一层扩展」是理解 BFS 最关键的概念。\n\nBFS 可以按照距离把节点分成层：\n- 第 0 层：起点自己（距离为 0）\n- 第 1 层：起点直接能到达的所有点（距离为 1）\n- 第 2 层：距离起点恰好 2 步的所有点\n- ……\n\n每一层处理完，才会处理下一层。这就是「广度优先」的含义——先把同一层的所有点都走一遍，再往下一层走。\n\n在代码中，可以用一个变量记录当前队列的 size，一次性处理完这一层。",
+    "example": "比如一棵树：\n        A\n       / \\\n      B   C\n     / \\   \\\n    D   E   F\n\n第 0 层：A\n第 1 层：B, C\n第 2 层：D, E, F\n\nBFS 访问顺序就是 A → B → C → D → E → F",
+    "code": "// 按层遍历的写法\nqueue<int> q;\nq.push(start);\nvis[start] = true;\nint step = 0;\n\nwhile (!q.empty()) {\n  int sz = q.size();      // 当前层的节点数\n  for (int i = 0; i < sz; i++) {\n    int cur = q.front();\n    q.pop();\n    // 处理 cur ...\n    for (int nxt : neighbors[cur]) {\n      if (!vis[nxt]) {\n        vis[nxt] = true;\n        q.push(nxt);\n      }\n    }\n  }\n  step++;  // 一层结束了，步数 +1\n}",
+    "tip": "按层遍历的技巧非常重要！很多题目需要知道「到了第几层」，比如求最短距离、求最少步数等。"
+  },
+  {
+    "id": "bfs_shortest",
+    "title": "为什么第一次到达就是最短路",
+    "subtitle": "BFS 天然保证最先到达的路径最短",
+    "order": 4,
+    "content": "这是 BFS 最优美的性质：在无权图（所有边权重相同）中，BFS 第一次到达某个节点时，走过的路径就是最短路径。\n\n为什么呢？因为 BFS 是按距离从小到大一层一层扩展的：\n- 所有距离为 0 的点最先被访问\n- 然后是距离为 1 的点\n- 然后是距离为 2 的点\n- ……\n\n所以，当 BFS 第一次到达某个点时，它一定是通过最短路径到达的。如果存在更短的路径，那个点早就被访问过了。\n\n这就好像：你从家出发，先找 1 公里内的所有地方，再找 2 公里内的。当你第一次找到学校时，说明学校不可能比你找到的距离更近。",
+    "example": "从 (0,0) 出发，找 (2,2) 的最短路：\n\n第 1 步能到：(0,1), (1,0)\n第 2 步能到：(0,2), (1,1), (2,0)\n第 3 步能到：(1,2), (2,1)\n第 4 步能到：(2,2) ← 第一次到达！\n\n所以最短距离是 4。不可能比 4 更少，因为如果只有 3 步就能到，第 3 步时就到了。",
+    "code": "// 求最短距离\nqueue<pair<int,int>> q;\nq.push({sx, sy});\ndist[sx][sy] = 0;    // 起点距离为 0\n\nwhile (!q.empty()) {\n  auto [x, y] = q.front();\n  q.pop();\n  \n  if (x == tx && y == ty) {\n    // 第一次到达终点，这就是最短距离！\n    cout << dist[x][y] << endl;\n    break;\n  }\n  \n  for (auto [dx, dy] : 四个方向) {\n    int nx = x + dx, ny = y + dy;\n    if (合法 && dist[nx][ny] == -1) {\n      dist[nx][ny] = dist[x][y] + 1;\n      q.push({nx, ny});\n    }\n  }\n}",
+    "tip": "注意：BFS 只能保证「边权都相同」时的最短路。如果每条边权重不同，需要用 Dijkstra 算法。"
+  },
+  {
+    "id": "bfs_vis_timing",
+    "title": "vis 为什么要在入队时标记",
+    "subtitle": "出队时标记会导致重复入队，浪费时间和空间",
+    "order": 5,
+    "content": "在 BFS 中，visited 数组（或 dist 数组）应该在「入队时」就标记，而不是「出队时」才标记。\n\n这是一个非常容易犯错的地方！\n\n如果在出队时才标记，会有什么问题？\n- 同一个节点可能被多个邻居发现\n- 它会被重复放入队列多次\n- 导致队列里出现大量重复节点\n- 时间和空间都会浪费\n\n而在入队时标记，一个节点只会被放入队列一次，效率最高。\n\n打个比方：入队时标记就像「拿到号码牌」，拿到之后就不会再给了。出队时标记就像「叫到号才确认」，那在叫到之前，别人可能也拿了同一个号。",
+    "example": "假设 A 的邻居是 B 和 C，而 B 和 C 的邻居都有 D。\n\n错误做法（出队时标记）：\n1. A 入队 → 队列：[A]\n2. A 出队，标记 A，放入 B、C → 队列：[B, C]\n3. B 出队，标记 B，放入 D → 队列：[C, D]\n4. C 出队，标记 C，放入 D（D 还没标记！）→ 队列：[D, D]  ← D 被放入两次！\n\n正确做法（入队时标记）：\n4. C 出队，D 已标记，跳过 → 队列：[D]  ✓",
+    "code": "// 正确写法：入队时就标记\nwhile (!q.empty()) {\n  int cur = q.front();\n  q.pop();\n  for (int nxt : neighbors[cur]) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;   // 入队时标记！\n      q.push(nxt);\n    }\n  }\n}\n\n// 错误写法：出队时才标记（千万别这样！）\nwhile (!q.empty()) {\n  int cur = q.front();\n  q.pop();\n  vis[cur] = true;     // 太晚了！cur 可能已经在队列里多次\n  for (int nxt : neighbors[cur]) {\n    if (!vis[nxt]) {\n      q.push(nxt);      // nxt 可能被多次入队\n    }\n  }\n}",
+    "tip": "考试时如果 BFS 超时或者答案不对，第一个检查的就是 vis 的标记时机！这是最最常见的 BFS 错误之一。"
+  }
+]

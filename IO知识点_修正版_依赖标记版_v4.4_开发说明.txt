@@ -1,0 +1,379 @@
+IO知识点_修正版_依赖标记版_v4.4 开发说明（游戏接入版）
+
+一、文件用途
+1. v4.4.json 是程序主数据源，建议游戏端、编辑器端、后台任务端统一读取这份 JSON。
+2. v4.4.txt 是人工查看版，适合策划、老师、运营、题库整理人员阅读，不建议作为程序主输入。
+3. 推荐做法：
+   - 程序运行时读取 JSON
+   - 编辑器/后台显示时优先展示 JSON 中的字段
+   - TXT 仅作为人工核对与版本审阅材料
+
+二、当前版本特点
+1. 已形成“章节 section + 条目 item + 部分章节 learning_blocks + 条目级 block/pickup_group”的混合结构。
+2. v4.4 继续主线化了 2.12 数值与矩阵专题：
+   - 2.12.3 矩阵乘法已从 4.8.1 的硬前置中解耦
+   - 4.8.1 现在更适合作为相关/扩展知识，而不是主线门槛
+3. 当前校验口径（本版本导出时）：
+   - sections = 58
+   - items = 565
+   - missing_refs = 0
+   - cycle_free = True
+
+三、顶层结构
+JSON 顶层结构：
+{
+  "meta": {...},
+  "categories": [
+    {
+      "name": "C++语法",
+      "sections": [ ... ]
+    },
+    ...
+  ]
+}
+
+1. meta：版本信息、依赖规则说明、局部拆分说明
+2. categories：一级大类，例如 C++语法 / 算法 / 数据结构 / 数学 / 调试技巧
+3. sections：二级章节，是“课程导航”和“学习路径”的主要单位
+4. items：知识点叶子节点，是“实际解锁、拉题、拉动画、绑定模板”的主要单位
+
+四、meta 字段说明
+常用字段：
+- title：版本名
+- encoding：编码，当前为 UTF-8
+- line_ending：换行风格，当前为 LF
+- source_file：对应 TXT 文件名
+- fixes：内容规范修正记录
+- dependency_rule：依赖规则说明
+- revision_note：当前版本修订说明
+- dp_split / binary_search_split：部分章节拆分说明（用于文档和后台展示）
+
+五、section 结构说明
+每个 section 基本结构：
+{
+  "id": "2.8",
+  "name": "动态规划",
+  "level": "L2",
+  "pre": [...],
+  "rel": [...],
+  "items": [...],
+  "learning_blocks": [...],
+  "track": "...",
+  "track_note": "..."
+}
+
+字段含义：
+1. id
+   - 章节唯一编号
+   - 推荐作为课程导航、URL、后台索引主键
+
+2. name
+   - 章节名称
+   - 用于前端显示
+
+3. level
+   - 章节难度层级
+   - 当前常见为 L1 / L2 / L3 / L4
+   - 建议用途：章节筛选、年龄模式、课程包难度控制
+
+4. pre
+   - section 级硬前置
+   - 含义：进入本章节前，建议或要求先完成的章节
+   - 推荐用途：课程地图解锁
+   - 不建议直接拿来判断单个知识点是否可学，单点判断优先看 item.resolved_pre
+
+5. rel
+   - section 级相关章节
+   - 不是硬门槛
+   - 推荐用途：推荐阅读、支线任务、拓展页链接
+
+6. items
+   - 本章节下的知识点条目列表
+
+7. learning_blocks（不是所有章节都有）
+   - 章节内部的学习块说明
+   - 更适合做课程页结构、章节内小地图、策划查看
+
+8. track / track_note（只有部分章节有）
+   - 用于标记“主线进阶/扩展专题”等课程身份
+   - 当前 2.12 就已使用这类字段
+
+六、item 结构说明
+每个 item 基本结构：
+{
+  "id": "2.2.1",
+  "name": "冒泡排序",
+  "alias": [],
+  "parent": "2.2",
+  "direct_pre": [...],
+  "resolved_pre": [...],
+  "rel": [...],
+  "block_id": "2.2A",
+  "block_name": "基础比较排序入门",
+  "pickup_group": "basic_comparison_sort",
+  "pickup_group_name": "基础比较排序",
+  "pickup_order": 1,
+  "resource_block_id": "2.2A",
+  "resource_block_name": "基础比较排序入门"
+}
+
+字段含义：
+1. id
+   - 知识点唯一编号
+   - 推荐作为知识点主键
+   - 题库、动画、模板、关卡、错题、熟练度都建议绑定到 item.id
+
+2. name
+   - 知识点显示名
+
+3. alias
+   - 别名
+   - 用于搜索、同义匹配、AI问答归一化
+   - 推荐建立 name + alias 的全文检索索引
+
+4. parent
+   - 所属 section.id
+   - 用于反查知识点属于哪个章节
+
+5. direct_pre
+   - 直接前置依赖
+   - 粒度最细，表示该知识点的直接依赖项
+   - 默认会包含所属章节 ID
+   - 推荐用途：可视化依赖图、专家模式分析
+
+6. resolved_pre
+   - 展开后的实际调用前置
+   - = direct_pre + section.pre（按版本规则展开）
+   - 推荐用途：游戏解锁判断、推荐学习路径、课程编排、自动判定“现在能不能学”
+   - 如果只选一个依赖字段接入游戏，优先用 resolved_pre
+
+7. rel
+   - 相关知识，不是硬门槛
+   - 推荐用途：扩展推荐、支线关卡、补充阅读、相邻题型提示
+
+七、block / pickup_group / resource_block 的用途区分
+这是后续开发最关键的一层。
+
+1. block_id / block_name
+   - 用于“课程内部学习块”
+   - 更接近教学视角
+   - 适合章节页、知识树页、课程导航页
+
+2. pickup_group / pickup_group_name
+   - 用于“游戏资源调度”
+   - 是拉题、拉动画、拉讲解、拉错因关卡的核心分组
+   - 推荐作为游戏侧最重要的资源路由字段
+
+3. pickup_order
+   - 同一个 pickup_group 内的推荐顺序
+   - 推荐用途：
+     - 组内解锁顺序
+     - 练习关卡顺序
+     - 新手教程步骤顺序
+
+4. resource_block_id / resource_block_name
+   - 资源层兼容字段
+   - 主要作用：让“旧 block 命名”和“新章节体系”能共存
+   - 推荐用途：
+     - 资源表兼容
+     - 旧版本配置迁移
+     - 后台统计旧资源归属
+
+八、推荐的数据使用优先级
+1. 课程导航 / 学习地图
+   - 用 section.id / section.name / section.pre / section.level
+   - 辅助使用 learning_blocks
+
+2. 游戏关卡解锁
+   - 主用 item.id + item.resolved_pre
+   - 不要只用 section.pre
+
+3. 拉题 / 拉动画 / 拉讲解
+   - 主用 pickup_group
+   - 次用 pickup_order
+   - 不建议直接按整章 section 拉，因为整章往往太宽
+
+4. 旧资源兼容
+   - 用 resource_block_id
+
+5. 搜索
+   - 用 name + alias
+
+九、推荐的游戏端调用方式
+方式 A：按知识点调用（最稳）
+适用于：精准教学、智能推荐、熟练度系统
+
+推荐表设计：
+- knowledge_item
+  - item_id
+  - name
+  - parent_section_id
+  - level
+- knowledge_dependency
+  - item_id
+  - pre_id
+  - type(hard/related)
+- resource_binding
+  - item_id
+  - resource_type(question/animation/template/explanation/boss)
+  - resource_id
+
+方式 B：按 pickup_group 调用（最适合游戏）
+适用于：章节内训练、批量生成关卡、资源批量投放
+
+推荐表设计：
+- pickup_group_index
+  - pickup_group
+  - pickup_group_name
+  - block_id
+  - parent_section_id
+- pickup_group_items
+  - pickup_group
+  - item_id
+  - pickup_order
+- pickup_group_resources
+  - pickup_group
+  - resource_type
+  - resource_id
+
+十、推荐的解锁算法
+1. 章节解锁
+- 如果 section.pre 全部满足，则章节可见
+- 如果只满足一部分，可显示为“预览/未解锁”
+
+2. 知识点解锁
+- 以 item.resolved_pre 为准
+- 只要 resolved_pre 中所有“存在于知识图中的前置”都已掌握，即可解锁
+- 对 rel 不做硬限制
+
+3. 资源投放
+- 进入知识点页：优先拉 item.id 绑定资源
+- 进入训练页：优先按 pickup_group 拉资源
+- 进入章节页：按 block_id 聚合
+
+十一、推荐的掌握度设计
+建议不要只记录 section 进度，至少记录到 item 级别。
+
+推荐字段：
+- item_id
+- mastery_score (0~100)
+- last_learned_at
+- last_reviewed_at
+- error_count
+- unlocked
+- cleared
+
+建议聚合规则：
+- section mastery = section 内 item mastery 的加权平均
+- pickup_group mastery = 同组 item mastery 平均
+- block mastery = block 内 item mastery 平均
+
+十二、推荐的资源绑定层级
+优先级建议：
+1. item_id 绑定精确资源
+   - 精确题目
+   - 特定动画
+   - 特定模板
+2. pickup_group 绑定批量资源
+   - 一组练习
+   - 一组课件
+   - 一组小游戏
+3. block_id 绑定大块资源
+   - 章节封面
+   - 导学页
+   - 总结页
+
+十三、推荐的后端接口设计
+1. 获取章节列表
+GET /sections
+
+2. 获取章节详情
+GET /sections/{section_id}
+
+3. 获取知识点详情
+GET /items/{item_id}
+
+4. 获取某知识点可用资源
+GET /items/{item_id}/resources
+
+5. 获取某 pickup_group 资源包
+GET /pickup-groups/{pickup_group}/resources
+
+6. 获取当前用户可解锁知识点
+GET /users/{user_id}/unlockable-items
+
+7. 提交学习结果
+POST /users/{user_id}/progress
+
+十四、推荐的前端页面映射
+1. 课程地图页
+- 按 category -> section 展示
+- 用 section.pre 控制锁定状态
+
+2. 章节页
+- 显示 section 说明
+- 如果存在 learning_blocks，则按 learning_blocks 展开
+- 否则按 items 默认展示
+
+3. 知识点页
+- 显示 item 基础信息
+- 显示 resolved_pre
+- 显示相关知识 rel
+- 显示绑定资源
+
+4. 训练页
+- 按 pickup_group 拉题
+- 按 pickup_order 排序
+
+十五、开发中的注意事项
+1. 不要把 TXT 作为程序真源
+2. 不要把 section.pre 直接当作知识点解锁条件
+3. 不要只用 block_id 拉资源，优先用 pickup_group
+4. alias 可能为空数组，要兼容
+5. 不是所有 section 都有 learning_blocks
+6. 不是所有 item 都有 block/pickup_group 字段
+   - 目前这些字段主要存在于已拆分和已适配的章节
+7. resource_block_id 是兼容层，不等于章节 ID
+8. level 目前是分层标签，不建议直接当数值难度分使用
+
+十六、建议的开发接入顺序
+第一阶段：
+- 读取 JSON
+- 建立 section / item 索引
+- 按 resolved_pre 做基础解锁
+
+第二阶段：
+- 接 pickup_group
+- 实现资源批量拉取
+- 实现章节页 / 知识点页 / 训练页
+
+第三阶段：
+- 接入熟练度
+- 接入错题回流
+- 接入推荐学习路径
+- 接入每日任务 / 复习机制
+
+十七、当前最适合直接开发的字段组合
+如果你想先做一个最小可用版本，推荐只用这几个：
+- section.id
+- section.name
+- section.pre
+- item.id
+- item.name
+- item.parent
+- item.resolved_pre
+- item.pickup_group
+- item.pickup_order
+
+这组字段已经足够做出：
+- 课程地图
+- 章节页
+- 关卡解锁
+- 训练页
+- 基础资源调度
+
+十八、结论
+v4.4 已经非常适合作为游戏侧知识图谱主数据源。
+最推荐的接入原则只有两句：
+1. 课程导航看 section，实际解锁看 item.resolved_pre。
+2. 资源调度优先用 pickup_group，兼容旧资源用 resource_block_id。

@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "忘记 vis 数组",
+    "wrongCode": "queue.push(start);\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  for (auto nxt : neighbors(cur)) {\n    queue.push(nxt);\n  }\n}",
+    "why": "没有 vis 数组记录哪些格子已经访问过，同一个格子会被反复入队，导致死循环或超时！BFS 必须配合 vis 标记使用。",
+    "correct": "queue.push(start);\nvis[start] = true;       // 入队时立即标记！\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;    // 入队时标记\n      queue.push(nxt);\n    }\n  }\n}",
+    "tip": "vis 数组是 BFS 的「记忆」，没有它 BFS 就像走迷宫不记路，会一直绕圈圈。"
+  },
+  {
+    "id": 2,
+    "title": "出队才标记 vis 导致重复入队",
+    "wrongCode": "queue.push(start);\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  vis[cur] = true;      // 出队才标记，太晚了！\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      queue.push(nxt);   // 同一个点可能被多次入队\n    }\n  }\n}",
+    "why": "一个格子可能被多个邻居同时发现，在它出队之前就已经被多次入队了。应该在入队时就标记 vis，这样其他邻居就不会再重复入队。",
+    "correct": "queue.push(start);\nvis[start] = true;       // 入队时标记\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;   // 入队时标记，不是出队时\n      queue.push(nxt);\n    }\n  }\n}",
+    "tip": "记住口诀：「入队即标记，出队不标记」。这是 BFS 最容易犯的错！"
+  },
+  {
+    "id": 3,
+    "title": "越界判断漏写",
+    "wrongCode": "int dx[] = {0, 0, 1, -1};\nint dy[] = {1, -1, 0, 0};\nfor (int i = 0; i < 4; i++) {\n  int nx = x + dx[i];\n  int ny = y + dy[i];\n  // 直接访问 grid[nx][ny]  没检查越界！\n  if (grid[nx][ny] != '#') { ... }\n}",
+    "why": "没有检查 nx、ny 是否在合法范围内。当当前点在边界时，nx 或 ny 可能变成 -1 或超过数组大小，导致数组越界，程序崩溃。",
+    "correct": "int dx[] = {0, 0, 1, -1};\nint dy[] = {1, -1, 0, 0};\nfor (int i = 0; i < 4; i++) {\n  int nx = x + dx[i];\n  int ny = y + dy[i];\n  if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // 越界检查！\n  if (grid[nx][ny] != '#') { ... }\n}",
+    "tip": "每次扩展邻居时，第一步永远是检查越界！养成习惯：先检查边界，再检查 vis，再检查障碍物。"
+  },
+  {
+    "id": 4,
+    "title": "障碍物也入队",
+    "wrongCode": "for (int i = 0; i < 4; i++) {\n  int nx = x + dx[i];\n  int ny = y + dy[i];\n  if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;\n  if (!vis[nx][ny]) {\n    vis[nx][ny] = true;\n    queue.push({nx, ny});  // 没有判断是否是障碍物！\n  }\n}",
+    "why": "没有判断下一个格子是否是障碍物（墙壁），把墙壁也当作可走的路入队了，导致 BFS 走到不该走的地方。",
+    "correct": "for (int i = 0; i < 4; i++) {\n  int nx = x + dx[i];\n  int ny = y + dy[i];\n  if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;\n  if (grid[nx][ny] == '#') continue;  // 跳过障碍物！\n  if (!vis[nx][ny]) {\n    vis[nx][ny] = true;\n    queue.push({nx, ny});\n  }\n}",
+    "tip": "BFS 入队三道关卡：①越界检查 ②障碍物检查 ③vis 检查，一个都不能少！"
+  },
+  {
+    "id": 5,
+    "title": "队列没有初始化",
+    "wrongCode": "// 忘了把起点入队\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  // ...\n}\n// 队列一开始就是空的，循环根本不会执行！",
+    "why": "BFS 的队列需要先把起点放进去，否则 while 循环条件一开始就是 false，整个 BFS 什么都不会执行。",
+    "correct": "queue.push(start);        // 先把起点入队！\nvis[start] = true;\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  // ...\n}",
+    "tip": "BFS 的启动就像发动机点火，必须先「放入起点」这把钥匙，引擎才能转动起来。"
+  },
+  {
+    "id": 6,
+    "title": "起点没有标记 vis",
+    "wrongCode": "queue.push(start);\n// 忘了 vis[start] = true\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;\n      queue.push(nxt);\n    }\n  }\n}\n// 如果终点和起点相邻，可能又走回起点！",
+    "why": "起点入队后没有标记 vis[start] = true。如果其他格子可以走回起点，起点会被重复入队，导致错误。",
+    "correct": "queue.push(start);\nvis[start] = true;       // 起点也要标记！\nwhile (!queue.isEmpty()) {\n  auto cur = queue.front();\n  queue.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;\n      queue.push(nxt);\n    }\n  }\n}",
+    "tip": "起点和所有入队的格子一样，都需要标记 vis。入队和标记是「一对搭档」，不能拆散！"
+  },
+  {
+    "id": 7,
+    "title": "把 BFS 写成 DFS",
+    "wrongCode": "// 错误：用栈代替了队列\nstack<int> s;           // 用了 stack！\ns.push(start);\nvis[start] = true;\nwhile (!s.empty()) {\n  auto cur = s.top();\n  s.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;\n      s.push(nxt);      // 后进先出 = DFS\n    }\n  }\n}",
+    "why": "BFS 的关键是「先进先出」（队列），如果用「后进先出」（栈），就变成了 DFS，不再是层层扩展，而是沿一条路走到底。这样找到的路径不一定是最短的。",
+    "correct": "// 正确：使用队列\nqueue<int> q;           // 用 queue！\nq.push(start);\nvis[start] = true;\nwhile (!q.empty()) {\n  auto cur = q.front();\n  q.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt]) {\n      vis[nxt] = true;\n      q.push(nxt);      // 先进先出 = BFS\n    }\n  }\n}",
+    "tip": "BFS = queue（排队，先来先服务）= 最短路。DFS = stack（堆叠，后来先处理）= 遍历所有可能。千万别搞混！"
+  },
+  {
+    "id": 8,
+    "title": "步数统计错误",
+    "wrongCode": "// 常见错误：忘记初始化距离数组\nint d[MAXN][MAXN];  // 没有初始化！\nqueue.push(start);\nvis[start] = true;\nwhile (!q.empty()) {\n  auto cur = q.front(); q.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt] && grid[nxt] != '#') {\n      d[nxt] = d[cur] + 1;  // d[start] 没初始化，d[nxt] 可能是垃圾值\n      vis[nxt] = true;\n      queue.push(nxt);\n    }\n  }\n}\n// d[end] 的值不可靠！",
+    "why": "距离数组 d 没有正确初始化。应该先把所有 d 设为 -1（表示未到达），再把 d[start] 设为 0。如果不初始化，d[start] 可能是随机值，后续所有 d[nxt] = d[cur] + 1 的计算都是错的。另外，有些同学会把起点距离设成 1，导致最终结果多 1 步。",
+    "correct": "// 正确的距离初始化\nmemset(d, -1, sizeof(d));  // -1 表示未到达\nd[start] = 0;              // 起点到自己的距离为 0\nqueue.push(start);\nvis[start] = true;\nwhile (!q.empty()) {\n  auto cur = q.front(); q.pop();\n  for (auto nxt : neighbors(cur)) {\n    if (!vis[nxt] && grid[nxt] != '#') {\n      d[nxt] = d[cur] + 1;\n      vis[nxt] = true;\n      queue.push(nxt);\n    }\n  }\n}\n// d[end] 就是最短步数",
+    "tip": "记住：起点的距离是 0（到自己 0 步），终点的距离 d[end] 就是最少步数。建议用 -1 初始化，方便判断是否到达。"
+  }
+]

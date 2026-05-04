@@ -346,6 +346,16 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
   List<_BfsAction> _getBfsActions(KnowledgeItem item) {
     final actions = <_BfsAction>[];
     final group = item.pickupGroup;
+    const bfsGroups = {
+      'bfs_basic',
+      'bfs_maze',
+      'bfs_maze_steps',
+      'bfs_mistakes',
+    };
+
+    if (!bfsGroups.contains(group)) {
+      return actions;
+    }
 
     if (group == 'bfs_basic' || group == 'bfs_maze') {
       actions.add(

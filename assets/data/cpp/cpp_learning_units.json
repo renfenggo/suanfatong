@@ -6,13 +6,14 @@
       "itemId": "1.1.1",
       "title": "#include 指令",
       "learningGoal": "理解 #include 的作用，学会引入常用头文件",
-      "explanation": "#include 是 C++ 的预处理指令，用来把头文件的内容「复制粘贴」到你的代码里。\n\n头文件里包含了各种工具的声明。比如 #include <iostream> 就引入了输入输出功能，这样你才能用 cout 和 cin。\n\n尖括号 < > 表示从系统目录找头文件，双引号 \" \" 表示从当前目录找。\n\n每个 C++ 程序至少需要一个头文件，最常见的组合是 <iostream> + <cstdio> + <cmath>。",
-      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    cout << \"Hello!\" << endl;\n    return 0;\n}",
+      "explanation": "#include 是 C++ 的预处理指令，用来把头文件的内容「复制粘贴」到你的代码里。\n\n头文件里包含了各种工具的声明。比如 #include <iostream> 就引入了输入输出功能，这样你才能用 cout 和 cin。\n\n尖括号 < > 表示从系统目录找头文件，双引号 \" \" 表示从当前目录找。\n\n每个 C++ 程序至少需要一个头文件，最常见的组合是 <iostream> + <cstdio> + <cmath>。\n\n💡 万能头文件：在信奥竞赛中，可以使用 #include <bits/stdc++.h> 一次性引入所有标准库头文件，省去逐个写的麻烦。但注意它不是 C++ 标准，只在 GCC/MinGW 编译器下可用，考试环境中一般支持。",
+      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    cout << \"Hello!\" << endl;\n    return 0;\n}\n\n// 信奥竞赛常用万能头文件（一次性引入所有标准库）：\n// #include <bits/stdc++.h>\n// using namespace std;",
       "codeNotes": [
         "#include 写在最前面，程序运行前由预处理器处理",
         "<iostream> 提供了 cout、cin、endl",
         "<cstdio> 提供了 printf、scanf",
-        "一行一个 #include，末尾不加分号"
+        "一行一个 #include，末尾不加分号",
+        "<bits/stdc++.h> 是万能头文件，包含所有标准库，信奥竞赛常用"
       ],
       "commonMistakes": [
         {
@@ -24,6 +25,11 @@
           "title": "include 后面加分号",
           "description": "#include <iostream>; ← 多了分号，这是预处理指令不是语句。",
           "fix": "#include <iostream> ← 末尾不加分号。"
+        },
+        {
+          "title": "万能头文件编译报错",
+          "description": "使用了 #include <bits/stdc++.h>，但在 MSVC 或某些在线编译器上报错「找不到头文件」。",
+          "fix": "<bits/stdc++.h> 不是 C++ 标准头文件，只有 GCC/MinGW 编译器支持。如果不支持，需要手动逐个引入需要的头文件。"
         }
       ],
       "practice": {
@@ -53,6 +59,17 @@
           ],
           "answerIndex": 1,
           "explanation": "#include 是预处理指令，不是 C++ 语句，所以末尾不加分号。加了分号会编译报错。"
+        },
+        {
+          "question": "#include <bits/stdc++.h> 是什么？",
+          "options": [
+            "C++ 标准头文件之一",
+            "万能头文件，包含所有标准库，只在 GCC 编译器下可用",
+            "一个错误的头文件名",
+            "只有 C 语言才能用的头文件"
+          ],
+          "answerIndex": 1,
+          "explanation": "<bits/stdc++.h> 是 GCC 编译器提供的非标准扩展头文件，它一次性包含了所有 C++ 标准库头文件，在信奥竞赛中很常用，但不保证在所有编译器下都能使用。"
         }
       ]
     },

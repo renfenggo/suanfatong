@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "category": "C++语法",
+  "units": [
+    {
+      "itemId": "1.1.1",
+      "title": "#include 指令",
+      "learningGoal": "理解 #include 的作用，学会引入常用头文件",
+      "explanation": "#include 是 C++ 的预处理指令，用来把头文件的内容「复制粘贴」到你的代码里。\n\n头文件里包含了各种工具的声明。比如 #include <iostream> 就引入了输入输出功能，这样你才能用 cout 和 cin。\n\n尖括号 < > 表示从系统目录找头文件，双引号 \" \" 表示从当前目录找。\n\n每个 C++ 程序至少需要一个头文件，最常见的组合是 <iostream> + <cstdio> + <cmath>。",
+      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    cout << \"Hello!\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "#include 写在最前面，程序运行前由预处理器处理",
+        "<iostream> 提供了 cout、cin、endl",
+        "<cstdio> 提供了 printf、scanf",
+        "一行一个 #include，末尾不加分号"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记写 #include",
+          "description": "直接使用 cout 但没有 #include <iostream>，编译器报错「cout 未声明」。",
+          "fix": "在程序开头加上 #include <iostream>。"
+        },
+        {
+          "title": "include 后面加分号",
+          "description": "#include <iostream>; ← 多了分号，这是预处理指令不是语句。",
+          "fix": "#include <iostream> ← 末尾不加分号。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个最简单的 C++ 程序框架，只需要引入 iostream 头文件和一个空的 main 函数。",
+        "hint": "#include <???> 然后写 int main() { return 0; }",
+        "expectedIdea": "#include <iostream>\nint main() {\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "#include <iostream> 的作用是什么？",
+          "options": [
+            "定义一个新变量",
+            "把 iostream 头文件的内容引入程序",
+            "编译并运行程序",
+            "输出 Hello World"
+          ],
+          "answerIndex": 1,
+          "explanation": "#include 是预处理指令，把尖括号里的头文件内容复制到代码中，这样就能使用头文件里声明的功能（如 cout、cin）。"
+        },
+        {
+          "question": "#include <iostream> 后面需要加分号吗？",
+          "options": [
+            "需要，每行都要加分号",
+            "不需要，预处理指令不以分号结尾",
+            "加不加都行",
+            "取决于编译器"
+          ],
+          "answerIndex": 1,
+          "explanation": "#include 是预处理指令，不是 C++ 语句，所以末尾不加分号。加了分号会编译报错。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.2",
+      "title": "using namespace std",
+      "learningGoal": "理解命名空间的作用，知道为什么需要 using namespace std",
+      "explanation": "C++ 标准库里的所有东西都放在一个叫 std 的「命名空间」里。\n\n如果不写 using namespace std，你就得每次都写完整名字：std::cout、std::cin、std::endl。\n\n写了 using namespace std 之后，就可以直接写 cout、cin、endl，更简洁。\n\n在竞赛中几乎都会写这行。但在大型项目中，有时会避免 using namespace std，而是按需写 std::cout。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n// 写了 using namespace std 就能直接用 cout、endl\n// 否则需要写 std::cout、std::endl\n\nint main() {\n    cout << \"简洁写法\" << endl;\n    // 如果不写 using namespace std，要这样写：\n    // std::cout << \"完整写法\" << std::endl;\n    return 0;\n}",
+      "codeNotes": [
+        "using namespace std; 放在 #include 之后",
+        "有了它就不用每次写 std::",
+        "信奥竞赛中基本都会写这行",
+        "大型项目可能不用，改为按需 std::"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘了写 using namespace std",
+          "description": "直接写 cout 但没有 using namespace std 也没写 std::cout，编译报错。",
+          "fix": "加上 using namespace std; 或者改写 std::cout。"
+        }
+      ],
+      "practice": {
+        "prompt": "不使用 using namespace std，用完整写法输出 \"Hello\"。",
+        "hint": "std::cout << \"Hello\" << std::endl;",
+        "expectedIdea": "#include <iostream>\nint main() {\n    std::cout << \"Hello\" << std::endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "如果不写 using namespace std，怎么使用 cout？",
+          "options": [
+            "直接写 cout 就行",
+            "写 std::cout",
+            "写 using.cout",
+            "写 cout.std"
+          ],
+          "answerIndex": 1,
+          "explanation": "cout 属于 std 命名空间，不写 using namespace std 就必须用完整的 std::cout 来调用。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.3",
+      "title": "main 函数",
+      "learningGoal": "理解 main 函数是程序的入口，掌握基本格式",
+      "explanation": "main 函数是每个 C++ 程序的「入口点」——程序从这里开始执行。\n\n标准写法是 int main()，表示这个函数返回一个整数。正常结束时 return 0; 表示程序成功运行。\n\nmain 函数只能有一个，不能重名。花括号 { } 里是函数体，也就是程序实际执行的代码。\n\n在信奥竞赛中，main 函数的格式基本固定，不需要传参数。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"程序从这里开始执行\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int main() 是固定写法，表示返回整数",
+        "return 0; 表示程序正常结束",
+        "花括号 { } 包住函数体",
+        "每个程序只能有一个 main 函数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "main 写成 Main",
+          "description": "C++ 区分大小写，Main 和 main 是两个不同的名字。",
+          "fix": "必须全部小写：int main()。"
+        },
+        {
+          "title": "忘记写 return 0",
+          "description": "在某些编译器上可能不报错，但不符合规范。",
+          "fix": "养成习惯，main 函数最后写 return 0;。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个完整的 C++ 程序框架，包含 main 函数，在 main 里输出 \"I can code!\"。",
+        "hint": "#include + using namespace std + int main() + cout + return 0",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"I can code!\" << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "C++ 程序从哪个函数开始执行？",
+          "options": [
+            "start()",
+            "begin()",
+            "main()",
+            "run()"
+          ],
+          "answerIndex": 2,
+          "explanation": "main 函数是 C++ 程序的入口点，操作系统会调用 main 来启动程序。"
+        },
+        {
+          "question": "return 0; 在 main 函数中表示什么？",
+          "options": [
+            "程序出错了",
+            "返回值为 0 表示程序正常结束",
+            "什么也不做",
+            "关闭编译器"
+          ],
+          "answerIndex": 1,
+          "explanation": "return 0; 是 main 函数的返回值，0 表示程序正常结束。非 0 值通常表示出现了错误。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.4",
+      "title": "语句与分号",
+      "learningGoal": "理解每条 C++ 语句以分号结尾，掌握基本语句格式",
+      "explanation": "C++ 中几乎每条语句都要以分号 ; 结尾。\n\n分号就像句号一样，告诉编译器「这句话结束了」。没有分号，编译器不知道语句在哪里结束，会报错。\n\n例外：#include 等预处理指令、函数定义的花括号后面、控制结构的花括号后面都不加分号。\n\n新手最常犯的错误就是忘写分号，编译器报错时先检查上一行有没有漏分号。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;     // 变量声明，末尾有分号\n    cout << a;      // 输出语句，末尾有分号\n    a = a + 1;      // 赋值语句，末尾有分号\n    return 0;       // return 语句，末尾有分号\n}",
+      "codeNotes": [
+        "每条可执行语句末尾必须加分号",
+        "int a = 10; ← 有分号",
+        "cout << a; ← 有分号",
+        "if (...) { } ← 花括号后不加分号"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘写分号",
+          "description": "int a = 10 ← 少了分号，编译报错「expected ;」。",
+          "fix": "在每条语句末尾加上分号 ;"
+        },
+        {
+          "title": "多余的分号",
+          "description": "if (a > 0); { ... } ← if 后面多了分号，变成了空语句。",
+          "fix": "if 后面直接跟花括号，不加分号。"
+        }
+      ],
+      "practice": {
+        "prompt": "找出下面代码中的分号错误：int a = 5 cout << a; return 0",
+        "hint": "第一行末尾和最后一行末尾都缺少分号。",
+        "expectedIdea": "int a = 5; cout << a; return 0;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个语句末尾不需要加分号？",
+          "options": [
+            "int x = 5;",
+            "cout << x;",
+            "if (x > 0) {",
+            "return 0;"
+          ],
+          "answerIndex": 2,
+          "explanation": "if 语句的花括号后面不加分号。int x = 5、cout << x、return 0 都必须加分号。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.5",
+      "title": "代码块与大括号",
+      "learningGoal": "理解大括号 { } 的作用，学会用代码块组织代码",
+      "explanation": "大括号 { } 用来围住一段代码，形成一个「代码块」。\n\n代码块在 C++ 中无处不在：函数体用 { }、if/else 用 { }、for/while 用 { }。\n\n左大括号 { 表示开始，右大括号 } 表示结束。必须成对出现。\n\n良好的缩进习惯能让大括号配对一目了然。建议用 4 个空格缩进，不要用 Tab。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {                    // main 函数开始\n    int x = 10;\n    if (x > 5) {                // if 代码块开始\n        cout << \"x 大于 5\" << endl;\n    }                           // if 代码块结束\n    return 0;\n}                               // main 函数结束",
+      "codeNotes": [
+        "{ 表示代码块开始",
+        "} 表示代码块结束",
+        "必须成对出现",
+        "好的缩进让配对一目了然"
+      ],
+      "commonMistakes": [
+        {
+          "title": "大括号不配对",
+          "description": "多了一个 { 或少了一个 }，编译器报错「unexpected end of file」。",
+          "fix": "每次写 { 就立刻写 }，然后在中间填代码。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个 if 判断，如果变量 score >= 60，输出 \"及格\"。",
+        "hint": "if (score >= 60) { cout << \"及格\" << endl; }",
+        "expectedIdea": "if (score >= 60) {\n    cout << \"及格\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "大括号 { } 的作用是什么？",
+          "options": [
+            "注释代码",
+            "把多行代码组织成一个代码块",
+            "定义变量",
+            "引入头文件"
+          ],
+          "answerIndex": 1,
+          "explanation": "大括号把一段代码围起来，形成一个代码块。函数体、if、for、while 等都用大括号来界定范围。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.6",
+      "title": "注释",
+      "learningGoal": "掌握单行注释 // 和多行注释 /* */ 的用法",
+      "explanation": "注释是写给人看的说明文字，编译器会忽略注释内容。\n\n单行注释用 //，从 // 到行末都是注释。\n多行注释用 /* */，中间的内容全部是注释。\n\n好的注释能帮助自己和别人理解代码。但不要过度注释显而易见的代码。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 这是单行注释\n    cout << \"Hello\" << endl; // 行末注释\n\n    /*\n     * 这是多行注释\n     * 可以写很多行\n     */\n    cout << \"World\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "// 单行注释，到行末结束",
+        "/* ... */ 多行注释，可跨行",
+        "编译器会忽略注释内容",
+        "好习惯：用注释解释「为什么」，而不是「是什么」"
+      ],
+      "commonMistakes": [
+        {
+          "title": "多行注释嵌套",
+          "description": "/* 外层 /* 内层 */ 外层继续 */ ← 内层的 */ 会提前结束注释，后面的代码报错。",
+          "fix": "多行注释不能嵌套。需要嵌套时，把内层改用 //。"
+        }
+      ],
+      "practice": {
+        "prompt": "给下面代码加上注释，说明每行的作用：\nint a = 10;\ncout << a << endl;",
+        "hint": "在每行上方用 // 说明用途",
+        "expectedIdea": "// 声明变量 a 并赋值为 10\nint a = 10;\n// 输出 a 的值并换行\ncout << a << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种是 C++ 的单行注释写法？",
+          "options": [
+            "# 这是注释",
+            "// 这是注释",
+            "-- 这是注释",
+            "<!-- 这是注释 -->"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 用 // 表示单行注释，从 // 到行末的内容会被编译器忽略。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.7",
+      "title": "return 0",
+      "learningGoal": "理解 return 0 的含义，知道 main 函数返回值的意义",
+      "explanation": "return 0; 出现在 main 函数末尾，表示程序正常结束。\n\n0 是返回给操作系统的值，0 代表「一切正常」。如果返回非 0 值，通常表示程序出错了。\n\n在 C++ 中，main 函数末尾如果没有 return 语句，编译器会自动加上 return 0;。但显式写出来是好习惯，代码更清晰。\n\n其他函数的 return 作用类似——返回一个值并结束函数执行。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"程序运行中...\" << endl;\n    return 0;  // 正常结束，返回 0\n}",
+      "codeNotes": [
+        "return 0; 表示程序正常结束",
+        "0 是给操作系统的返回值",
+        "非 0 值通常表示错误",
+        "C++ 允许省略，但建议显式写"
+      ],
+      "commonMistakes": [
+        {
+          "title": "main 函数返回类型写错",
+          "description": "void main() { } ← 旧式写法，标准 C++ 要求 int main()。",
+          "fix": "使用 int main()，并在末尾 return 0;。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，输出 \"Done\"，然后正常返回。",
+        "hint": "int main() { cout << \"Done\" << endl; return 0; }",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"Done\" << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "main 函数中 return 0; 表示什么？",
+          "options": [
+            "程序崩溃了",
+            "什么也不做",
+            "程序正常结束",
+            "重新开始运行"
+          ],
+          "answerIndex": 2,
+          "explanation": "return 0; 表示程序正常结束，0 是给操作系统的退出状态码。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.8",
+      "title": "头文件基础",
+      "learningGoal": "认识常用头文件，理解头文件的作用和分类",
+      "explanation": "头文件（header file）包含了函数和类的声明，告诉编译器有哪些工具可以用。\n\n常用头文件：\n- <iostream> → cout、cin、endl\n- <cstdio> → printf、scanf\n- <cmath> → sqrt、pow、abs\n- <cstring> → strlen、strcmp\n- <algorithm> → sort、min、max\n- <string> → string 类型\n\n尖括号 < > 包的是系统头文件。每次 #include 一个头文件，就能使用它提供的功能。\n\n在信奥竞赛中，常用万能头文件 <bits/stdc++.h>，但部分编译器不支持。",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    cout << sqrt(2.0) << endl;\n    cout << pow(2, 10) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "<iostream> 提供输入输出",
+        "<cmath> 提供数学函数",
+        "<algorithm> 提供 sort 等",
+        "每个头文件提供不同功能"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用了函数但没引入头文件",
+          "description": "使用 sort() 但没有 #include <algorithm>，编译报错。",
+          "fix": "先确认函数属于哪个头文件，然后在开头 #include 它。"
+        },
+        {
+          "title": "头文件名字拼写错误",
+          "description": "#include <iostrem> ← 拼错了，编译器找不到。",
+          "fix": "仔细检查拼写：iostream、algorithm、cmath。"
+        }
+      ],
+      "practice": {
+        "prompt": "引入正确的头文件，使下面代码能编译：\n#include <???>\nint main() { printf(\"Hi\"); return 0; }",
+        "hint": "printf 来自 <cstdio>",
+        "expectedIdea": "#include <cstdio>\nint main() { printf(\"Hi\"); return 0; }"
+      },
+      "quiz": [
+        {
+          "question": "要使用 sort() 函数，需要引入哪个头文件？",
+          "options": [
+            "<iostream>",
+            "<cmath>",
+            "<algorithm>",
+            "<string>"
+          ],
+          "answerIndex": 2,
+          "explanation": "sort() 函数定义在 <algorithm> 头文件中，使用前需要 #include <algorithm>。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.1.9",
+      "title": "编译与运行基础",
+      "learningGoal": "了解从源代码到可执行程序的过程，认识编译器",
+      "explanation": "C++ 是编译型语言，代码需要经过「编译」才能运行。\n\n基本流程：\n1. 写源代码（.cpp 文件）\n2. 编译器把源代码翻译成机器码\n3. 链接器把多个文件连接成可执行程序\n4. 运行可执行程序\n\n常用编译命令：\n- g++ hello.cpp -o hello\n- ./hello\n\n常见编译器：GCC（g++）、Clang、MSVC。\n\n编译错误（compile error）是语法问题，运行错误（runtime error）是逻辑问题。",
+      "exampleCode": "// 源文件：hello.cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello, World!\" << endl;\n    return 0;\n}\n\n// 编译命令：g++ hello.cpp -o hello\n// 运行命令：./hello\n// 输出：Hello, World!",
+      "codeNotes": [
+        ".cpp 是 C++ 源文件扩展名",
+        "g++ 是常用的 C++ 编译器",
+        "-o 指定输出文件名",
+        "编译错误看行号，从第一个改起"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只改了代码忘了重新编译",
+          "description": "修改了 .cpp 文件但没重新编译，运行的还是旧版本。",
+          "fix": "每次改代码后都要重新编译：g++ hello.cpp -o hello。"
+        },
+        {
+          "title": "看到一堆编译错误就慌了",
+          "description": "100 行报错可能只是第 1 行少了分号。",
+          "fix": "从第一个错误开始修，修一个编译一次，不要一次改太多。"
+        }
+      ],
+      "practice": {
+        "prompt": "假设你的源文件叫 test.cpp，写出编译并运行的命令。",
+        "hint": "g++ test.cpp -o test && ./test",
+        "expectedIdea": "g++ test.cpp -o test\n./test"
+      },
+      "quiz": [
+        {
+          "question": "C++ 程序从源代码到运行，正确顺序是？",
+          "options": [
+            "运行 → 编译 → 写代码",
+            "写代码 → 运行 → 编译",
+            "写代码 → 编译 → 运行",
+            "编译 → 写代码 → 运行"
+          ],
+          "answerIndex": 2,
+          "explanation": "C++ 是编译型语言：先写源代码，再用编译器编译成可执行文件，最后运行。"
+        }
+      ]
+    }
+  ]
+}

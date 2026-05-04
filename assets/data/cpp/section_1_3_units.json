@@ -1,0 +1,790 @@
+{
+  "sectionId": "1.3",
+  "units": [
+    {
+      "itemId": "1.3.1",
+      "title": "int",
+      "learningGoal": "理解 int 类型，掌握整数的声明与使用",
+      "explanation": "int 是 C++ 中最常用的整数类型，用来存储没有小数部分的数。\n\nint 通常占用 4 个字节（32 位），能表示的范围大约是 -21 亿 到 +21 亿（准确说是 -2^31 到 2^31-1）。\n\n声明一个 int 变量只需要写 int 变量名;，比如 int age = 15;。\n\n当两个 int 做除法时，结果也是 int，小数部分会被直接截断。比如 7 / 2 的结果是 3，不是 3.5。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    int b = 3;\n    cout << \"a = \" << a << endl;\n    cout << \"a + b = \" << a + b << endl;\n    cout << \"a / b = \" << a / b << endl;\n    cout << \"int 最大值约 \" << 2147483647 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int 占 4 字节，范围约 -21 亿到 +21 亿",
+        "两个 int 相除会截断小数部分",
+        "超过范围会发生溢出（变成负数）",
+        "int 是竞赛中最常用的类型"
+      ],
+      "commonMistakes": [
+        {
+          "title": "整数溢出",
+          "description": "int a = 2147483647; a = a + 1; 结果变成了 -2147483648，因为超出了 int 的范围。",
+          "fix": "需要更大范围时使用 long long 类型。"
+        },
+        {
+          "title": "整数除法丢失精度",
+          "description": "int a = 7, b = 2; cout << a / b; 输出 3 而不是 3.5。",
+          "fix": "如果需要保留小数，至少把其中一个数转为 double：cout << (double)a / b;"
+        }
+      ],
+      "practice": {
+        "prompt": "声明两个 int 变量 x = 100, y = 7，输出它们的商和余数。",
+        "hint": "用 / 求商，用 % 求余数",
+        "expectedIdea": "int x = 100, y = 7;\ncout << \"商: \" << x / y << endl;\ncout << \"余数: \" << x % y << endl;"
+      },
+      "quiz": [
+        {
+          "question": "int 类型通常占用多少字节？",
+          "options": [
+            "1 字节",
+            "2 字节",
+            "4 字节",
+            "8 字节"
+          ],
+          "answerIndex": 2,
+          "explanation": "int 在绝大多数现代编译器和平台上占用 4 个字节（32 位），范围约 -21 亿到 +21 亿。"
+        },
+        {
+          "question": "表达式 7 / 2 的结果是什么类型？",
+          "options": [
+            "double",
+            "float",
+            "int",
+            "char"
+          ],
+          "answerIndex": 2,
+          "explanation": "两个 int 做除法，结果仍然是 int，小数部分被截断。7 / 2 = 3，不是 3.5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.2",
+      "title": "long long",
+      "learningGoal": "理解 long long 类型，掌握大整数的声明与使用",
+      "explanation": "long long 是 C++ 中范围更大的整数类型，占用 8 个字节（64 位）。\n\n它的范围大约是 -9.2 × 10^18 到 +9.2 × 10^18（准确说是 -2^63 到 2^63-1）。\n\n在信奥竞赛中，当 int 不够用时（比如两个 10^9 的数相乘），就必须用 long long。\n\n声明时建议在数字后面加 LL 后缀，比如 long long x = 10000000000LL;，避免被当作 int 处理。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long a = 1000000000LL;\n    long long b = 1000000000LL;\n    cout << \"a * b = \" << a * b << endl;\n    cout << \"long long 最大值约 9.2e18\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "long long 占 8 字节，范围约 -9.2e18 到 +9.2e18",
+        "大整数常量建议加 LL 后缀，如 10000000000LL",
+        "int 不够用时立即换 long long",
+        "输入输出用 %lld（scanf/printf）或直接用 cin/cout"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 int 做大数乘法溢出",
+          "description": "int a = 1000000, b = 1000000; a * b 会溢出，结果不对。",
+          "fix": "把 a 和 b 都声明为 long long，乘法结果才不会溢出。"
+        },
+        {
+          "title": "忘记加 LL 后缀",
+          "description": "long long x = 2147483648; ← 这个常量超过 int 范围，编译器可能警告或截断。",
+          "fix": "写成 long long x = 2147483648LL; 明确告诉编译器这是 long long 常量。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算两个 10^9 的数的乘积，用 long long 存储并输出。",
+        "hint": "long long a = 1000000000LL; long long b = 1000000000LL; cout << a * b;",
+        "expectedIdea": "long long a = 1000000000LL;\nlong long b = 1000000000LL;\ncout << a * b << endl;\n// 输出 1000000000000000000"
+      },
+      "quiz": [
+        {
+          "question": "long long 类型的范围大约是多少？",
+          "options": [
+            "约 -10^9 到 +10^9",
+            "约 -2 × 10^9 到 +2 × 10^9",
+            "约 -9.2 × 10^18 到 +9.2 × 10^18",
+            "无限大"
+          ],
+          "answerIndex": 2,
+          "explanation": "long long 占 64 位，范围是 -2^63 到 2^63-1，大约 -9.2 × 10^18 到 +9.2 × 10^18。"
+        },
+        {
+          "question": "为什么写 long long x = 2147483648LL 而不是 long long x = 2147483648?",
+          "options": [
+            "没有区别",
+            "LL 后缀让编译器把它当作 long long 常量处理",
+            "LL 表示循环",
+            "LL 是日志输出"
+          ],
+          "answerIndex": 1,
+          "explanation": "2147483648 超出了 int 范围，编译器可能先按 int 处理导致截断。加 LL 后缀明确告诉编译器这是 long long 类型的常量。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.3",
+      "title": "short",
+      "learningGoal": "理解 short 类型，知道它的范围和适用场景",
+      "explanation": "short（也叫 short int）是一种较小的整数类型，通常占用 2 个字节（16 位）。\n\n它的范围是 -32768 到 32767，比 int 小很多。\n\nshort 的优点是占用内存少，在需要节省内存的场景下有用。但在日常编程和竞赛中，直接用 int 就好，编译器优化后内存占用差别不大。\n\n现在 short 主要用于读取特定的二进制文件格式或与硬件交互的场景。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    short a = 1000;\n    short b = 20000;\n    cout << \"a = \" << a << endl;\n    cout << \"b = \" << b << endl;\n    cout << \"a + b = \" << a + b << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "short 占 2 字节，范围 -32768 到 32767",
+        "比 int 省内存，但范围小",
+        "日常编程和竞赛中很少用 short",
+        "超过范围会溢出"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 short 存大数溢出",
+          "description": "short s = 40000; 超出范围，结果不正确。",
+          "fix": "需要存超过 32767 的数时用 int。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 short 变量存储你的年龄，并输出。",
+        "hint": "short age = 你的年龄;",
+        "expectedIdea": "short age = 15;\ncout << \"我的年龄: \" << age << endl;"
+      },
+      "quiz": [
+        {
+          "question": "short 类型能存储的最大值是多少？",
+          "options": [
+            "255",
+            "32767",
+            "65535",
+            "2147483647"
+          ],
+          "answerIndex": 1,
+          "explanation": "short（有符号）占 2 字节（16 位），最大值是 2^15 - 1 = 32767。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.4",
+      "title": "char",
+      "learningGoal": "理解 char 类型，掌握字符的声明与使用",
+      "explanation": "char 类型用来存储单个字符，占用 1 个字节。\n\n字符用单引号括起来，比如 'A'、'0'、'\\n'。注意字符 '0' 和数字 0 是完全不同的东西。\n\nchar 本质上是一个小整数（范围 0~255 或 -128~127）。每个字符对应一个 ASCII 码，比如 'A' 的 ASCII 码是 65，'a' 是 97，'0' 是 48。\n\n因为 char 是整数，所以可以对它做加减运算。比如 'A' + 1 就是 'B'。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 'A';\n    cout << \"字符: \" << ch << endl;\n    cout << \"ASCII码: \" << (int)ch << endl;\n    ch = ch + 1;\n    cout << \"ch + 1 = \" << ch << endl;\n    char digit = '0';\n    cout << \"'0' 的 ASCII 码: \" << (int)digit << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "char 用单引号，如 'A'、'0'",
+        "char 占 1 字节，本质是小整数",
+        "(int)ch 可以查看字符的 ASCII 码",
+        "字符可以加减，'A'+1 = 'B'"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用双引号代替单引号",
+          "description": "char ch = \"A\"; ← 双引号是字符串，不是字符，编译报错。",
+          "fix": "字符用单引号：char ch = 'A';"
+        },
+        {
+          "title": "混淆字符 '0' 和数字 0",
+          "description": "char c = 0; 存的是空字符，char c = '0'; 存的是字符零（ASCII 码 48）。",
+          "fix": "字符 '0' 的 ASCII 码是 48，不是 0。需要数字时直接用 int。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 char 变量存储 'Z'，输出它的 ASCII 码。",
+        "hint": "char c = 'Z'; cout << (int)c;",
+        "expectedIdea": "char c = 'Z';\ncout << (int)c << endl;\n// 输出 90"
+      },
+      "quiz": [
+        {
+          "question": "字符 'A' 的 ASCII 码是多少？",
+          "options": [
+            "48",
+            "65",
+            "97",
+            "32"
+          ],
+          "answerIndex": 1,
+          "explanation": "大写字母 'A' 的 ASCII 码是 65。小写 'a' 是 97，数字字符 '0' 是 48。"
+        },
+        {
+          "question": "'A' + 2 的结果是什么？",
+          "options": [
+            "67",
+            "'C'",
+            "'c'",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "'A' 的 ASCII 码是 65，加 2 后是 67，对应字符 'C'。char 类型本质是整数，可以做加减运算。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.5",
+      "title": "bool",
+      "learningGoal": "理解 bool 类型，掌握布尔值的使用",
+      "explanation": "bool 类型用来存储真（true）或假（false），占用 1 个字节。\n\ntrue 的值是 1，false 的值是 0。bool 变量主要用于条件判断。\n\n任何非零值赋给 bool 都会变成 true，0 会变成 false。\n\nbool 在 if 判断、循环条件中非常常用。比如 bool flag = (a > b); 就会把比较结果存为 true 或 false。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    bool isStudent = true;\n    bool isRainy = false;\n    cout << \"isStudent = \" << isStudent << endl;\n    cout << \"isRainy = \" << isRainy << endl;\n    int score = 85;\n    bool passed = (score >= 60);\n    cout << \"passed = \" << passed << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "bool 只有 true 和 false 两个值",
+        "true 等于 1，false 等于 0",
+        "cout 输出 bool 时显示 1 或 0",
+        "非零值赋给 bool 变成 true，0 变成 false"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 true/false 写成大写",
+          "description": "bool b = True; ← C++ 中 true 是小写，大写 True 是未定义的。",
+          "fix": "使用小写 true 和 false。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明两个 int 变量 a = 10, b = 20，用一个 bool 变量存储 a > b 的结果并输出。",
+        "hint": "bool result = (a > b); cout << result;",
+        "expectedIdea": "int a = 10, b = 20;\nbool result = (a > b);\ncout << result << endl;\n// 输出 0（false）"
+      },
+      "quiz": [
+        {
+          "question": "bool 类型的变量占用多少字节？",
+          "options": [
+            "1 位",
+            "1 字节",
+            "4 字节",
+            "0 字节"
+          ],
+          "answerIndex": 1,
+          "explanation": "bool 类型占用 1 个字节，虽然它只需要 1 位来存储 true/false。"
+        },
+        {
+          "question": "cout << false; 输出什么？",
+          "options": [
+            "false",
+            "0",
+            "F",
+            "空"
+          ],
+          "answerIndex": 1,
+          "explanation": "默认情况下，cout 输出 bool 值时显示 1（true）或 0（false）。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.6",
+      "title": "double",
+      "learningGoal": "理解 double 类型，掌握浮点数的声明与使用",
+      "explanation": "double 是 C++ 中最常用的浮点数（小数）类型，占用 8 个字节。\n\n它能表示大约 15~17 位有效数字，范围非常大。比如 3.14、0.001、1.5e10 都可以用 double 存储。\n\n使用浮点数时要注意精度问题。0.1 + 0.2 在计算机中并不精确等于 0.3，而是一个接近 0.3 的数。这是因为计算机用二进制表示小数，有些十进制小数无法精确表示。\n\n比较两个 double 是否相等时，不要用 ==，而应该看它们的差是否足够小。",
+      "exampleCode": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    double pi = 3.14159265358979;\n    double a = 0.1 + 0.2;\n    cout << \"pi = \" << pi << endl;\n    cout << fixed << setprecision(15);\n    cout << \"0.1 + 0.2 = \" << a << endl;\n    cout << \"a == 0.3 ? \" << (a == 0.3) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "double 占 8 字节，约 15~17 位有效数字",
+        "浮点数有精度误差，0.1 + 0.2 != 0.3",
+        "比较浮点数用差值判断，不要用 ==",
+        "setprecision 可以控制输出精度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 == 比较浮点数",
+          "description": "double a = 0.1 + 0.2; if (a == 0.3) 结果为 false，因为精度误差。",
+          "fix": "用差值判断：if (abs(a - 0.3) < 1e-9)，差值足够小就认为相等。"
+        },
+        {
+          "title": "用 float 代替 double",
+          "description": "float 精度只有约 7 位有效数字，竞赛中推荐用 double。",
+          "fix": "统一使用 double，除非有特殊需求。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算圆的面积，半径 r = 5.0，输出面积（PI 用 3.14159）。",
+        "hint": "double area = 3.14159 * r * r;",
+        "expectedIdea": "double r = 5.0;\ndouble area = 3.14159 * r * r;\ncout << area << endl;\n// 输出 78.5397"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个说法是正确的？",
+          "options": [
+            "double 能精确存储所有小数",
+            "0.1 + 0.2 精确等于 0.3",
+            "double 有约 15~17 位有效数字的精度",
+            "double 和 float 精度相同"
+          ],
+          "answerIndex": 2,
+          "explanation": "double 有约 15~17 位有效数字的精度，但不能精确存储所有小数。0.1 + 0.2 由于二进制精度问题不等于 0.3。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.7",
+      "title": "long double",
+      "learningGoal": "了解 long double 类型，知道它与 double 的区别",
+      "explanation": "long double 是精度更高的浮点数类型，占用通常 10、12 或 16 个字节（取决于编译器和平台）。\n\n在大多数现代 x86 平台上，long double 占 12 或 16 字节，提供约 18~19 位有效数字，比 double 的 15~17 位更多。\n\n但 long double 的精度提升有限，而且不同平台行为不一致，因此在竞赛中很少使用。大多数情况下 double 已经足够。\n\n使用 long double 时要注意输入输出格式，用 Lf 或直接用 cout。",
+      "exampleCode": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    double d = 1.0 / 3.0;\n    long double ld = 1.0L / 3.0L;\n    cout << fixed << setprecision(20);\n    cout << \"double:      \" << d << endl;\n    cout << \"long double: \" << ld << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "long double 精度比 double 更高",
+        "常量后缀用 L，如 1.0L",
+        "不同平台占用的字节数可能不同",
+        "竞赛中很少用，double 通常足够"
+      ],
+      "commonMistakes": [
+        {
+          "title": "期望 long double 精度无限",
+          "description": "long double 也只是浮点数，同样有精度限制，只是比 double 高一些。",
+          "fix": "需要高精度时考虑用整数模拟或专门的库，不能指望浮点数完美精确。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 long double 声明一个变量存储 1.0L / 7.0L 的结果，并高精度输出。",
+        "hint": "long double x = 1.0L / 7.0L; cout << fixed << setprecision(20) << x;",
+        "expectedIdea": "long double x = 1.0L / 7.0L;\ncout << fixed << setprecision(20) << x << endl;"
+      },
+      "quiz": [
+        {
+          "question": "long double 相比 double 的主要优势是什么？",
+          "options": [
+            "运算速度更快",
+            "占用更少内存",
+            "有效数字更多，精度更高",
+            "能精确存储所有小数"
+          ],
+          "answerIndex": 2,
+          "explanation": "long double 比 double 提供更多的有效数字和更高的精度，但占用更多内存，且跨平台行为不一致。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.8",
+      "title": "unsigned",
+      "learningGoal": "理解 unsigned 修饰符，知道无符号类型的含义和用途",
+      "explanation": "unsigned 修饰符把整数类型变成「无符号」类型，即不能表示负数，但正数范围翻倍。\n\n比如 unsigned int（或直接写 unsigned）范围是 0 到 4,294,967,295（约 42 亿），是 int 的两倍。\n\nunsigned 适用于明确不会有负数的场景，比如数组下标、数量计数等。\n\n但要注意：unsigned 类型做减法如果结果为负，会「回绕」变成一个很大的正数。比如 unsigned int a = 3; a = a - 5; 结果不会是 -2，而是一个接近 42 亿的数。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    unsigned int a = 3000000000U;\n    cout << \"unsigned int a = \" << a << endl;\n    unsigned int b = 10;\n    cout << \"b = \" << b << endl;\n    unsigned int c = 3 - 5;\n    cout << \"3 - 5 (unsigned) = \" << c << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "unsigned 表示无符号，不能存负数",
+        "unsigned int 正数范围是 int 的两倍",
+        "常量后缀用 U，如 3000000000U",
+        "unsigned 做减法可能回绕成大正数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "unsigned 减法回绕",
+          "description": "unsigned int a = 0; a = a - 1; 结果变成 4294967295 而不是 -1。",
+          "fix": "混合有符号和无符号运算时要特别小心，必要时先转为有符号类型。"
+        },
+        {
+          "title": "unsigned 和负数比较",
+          "description": "unsigned int a = 5; if (a > -1) 结果为 false，因为 -1 被转成巨大的 unsigned 值。",
+          "fix": "避免有符号和无符号之间的比较，统一类型。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 unsigned int 变量存储 4000000000，并输出。",
+        "hint": "unsigned int x = 4000000000U;",
+        "expectedIdea": "unsigned int x = 4000000000U;\ncout << x << endl;\n// 输出 4000000000"
+      },
+      "quiz": [
+        {
+          "question": "unsigned int 的范围是？",
+          "options": [
+            "-21 亿到 +21 亿",
+            "0 到约 42 亿",
+            "0 到约 18 亿亿",
+            "-42 亿到 +42 亿"
+          ],
+          "answerIndex": 1,
+          "explanation": "unsigned int 不用一位来存符号，所以正数范围翻倍，从 0 到 2^32-1（约 42 亿）。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.9",
+      "title": "const",
+      "learningGoal": "理解 const 关键字，掌握常量的声明和使用",
+      "explanation": "const 关键字用来定义「常量」——一旦赋值就不能再修改的值。\n\n比如 const double PI = 3.14159; 之后如果尝试 PI = 3.14; 编译器会报错。\n\n使用常量的好处：一是防止不小心修改重要值，二是让代码意图更清晰。看到 const 就知道这个值不应该被改变。\n\n常量命名通常用全大写字母，如 MAX_N、PI、EPS，这是一种编码规范。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    const double PI = 3.14159;\n    const int MAX_N = 100;\n    double r = 5.0;\n    double area = PI * r * r;\n    cout << \"面积 = \" << area << endl;\n    // PI = 3.14;  // 编译错误！const 变量不能修改\n    int arr[MAX_N] = {0};\n    cout << \"数组大小: \" << MAX_N << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "const 定义的值不能再修改",
+        "常量命名习惯用全大写，如 PI、MAX_N",
+        "const 可以让代码意图更清晰",
+        "const 常量必须在声明时初始化"
+      ],
+      "commonMistakes": [
+        {
+          "title": "const 变量未初始化",
+          "description": "const int x; ← 没有赋初值，之后也无法赋值，编译报错。",
+          "fix": "const 变量必须在声明时就给初始值：const int x = 10;"
+        },
+        {
+          "title": "试图修改 const 变量",
+          "description": "const int N = 100; N = 200; ← 编译错误，const 不能被修改。",
+          "fix": "如果需要修改，就不要用 const。const 的目的就是保护值不被改。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 const 定义一个常量 TAX_RATE = 0.08，计算价格 100 元的税额并输出。",
+        "hint": "const double TAX_RATE = 0.08; double tax = 100 * TAX_RATE;",
+        "expectedIdea": "const double TAX_RATE = 0.08;\ndouble price = 100.0;\ndouble tax = price * TAX_RATE;\ncout << \"税额: \" << tax << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪行代码会编译报错？",
+          "options": [
+            "const int N = 10;",
+            "const double PI = 3.14;",
+            "const int x; x = 5;",
+            "cout << PI;"
+          ],
+          "answerIndex": 2,
+          "explanation": "const 变量必须在声明时就初始化。const int x; 没有赋值，之后 x = 5 又试图修改 const 变量，两处都错误。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.10",
+      "title": "变量定义",
+      "learningGoal": "掌握变量定义的语法，理解变量名规则",
+      "explanation": "变量就像一个「盒子」，用来存储数据。定义变量时要指定类型和名字。\n\n基本语法：类型名 变量名; 或 类型名 变量名 = 初始值;\n\n变量命名规则：\n- 只能用字母、数字和下划线\n- 不能以数字开头\n- 不能用 C++ 关键字（如 int、return、if）\n- 区分大小写（Age 和 age 是不同变量）\n\n好的变量名应该有意义，比如用 score 而不是 s，用 count 而不是 c。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 15;\n    double score = 95.5;\n    char grade = 'A';\n    bool passed = true;\n    cout << \"年龄: \" << age << endl;\n    cout << \"分数: \" << score << endl;\n    cout << \"等级: \" << grade << endl;\n    cout << \"通过: \" << passed << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "定义变量：类型名 变量名 = 值;",
+        "变量名只能用字母、数字、下划线",
+        "变量名不能以数字开头",
+        "变量名要有意义，见名知意"
+      ],
+      "commonMistakes": [
+        {
+          "title": "变量名以数字开头",
+          "description": "int 2num = 10; ← 编译错误，变量名不能以数字开头。",
+          "fix": "改成 int num2 = 10; 或 int twoNum = 10;"
+        },
+        {
+          "title": "使用关键字做变量名",
+          "description": "int return = 5; ← return 是 C++ 关键字，不能做变量名。",
+          "fix": "换一个名字，如 int result = 5;"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 4 个不同类型的变量来存储：姓名首字母（char）、年龄（int）、身高（double）、是否学生（bool），并全部输出。",
+        "hint": "char initial = 'L'; int age = 16; double height = 170.5; bool isStudent = true;",
+        "expectedIdea": "char initial = 'L';\nint age = 16;\ndouble height = 170.5;\nbool isStudent = true;\ncout << initial << \" \" << age << \" \" << height << \" \" << isStudent << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个是合法的变量名？",
+          "options": [
+            "2name",
+            "my-var",
+            "int",
+            "my_score"
+          ],
+          "answerIndex": 3,
+          "explanation": "2name 以数字开头不合法；my-var 含连字符不合法；int 是关键字不合法；my_score 只含字母和下划线，合法。"
+        },
+        {
+          "question": "变量名区分大小写吗？",
+          "options": [
+            "不区分，Score 和 score 是同一个变量",
+            "区分，Score 和 score 是不同的变量",
+            "只在 main 函数里区分",
+            "取决于编译器"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 区分大小写，Score 和 score 是两个完全不同的变量。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.11",
+      "title": "变量初始化",
+      "learningGoal": "掌握变量初始化的多种方式，理解未初始化的风险",
+      "explanation": "变量初始化就是在定义变量的同时给它一个初始值。\n\nC++ 中有三种常见的初始化方式：\n- 拷贝初始化：int a = 10;\n- 直接初始化：int a(10);\n- 列表初始化（C++11）：int a{10};\n\n如果定义变量但不初始化，局部变量的值是「未定义」的（随机垃圾值），全局变量会自动初始化为 0。\n\n使用未初始化的局部变量是常见的 bug 来源。建议养成定义时就初始化的好习惯。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    int b(20);\n    int c{30};\n    cout << \"a = \" << a << \", b = \" << b << \", c = \" << c << endl;\n    int d;\n    cout << \"未初始化的 d = \" << d << endl;\n    d = 100;\n    cout << \"赋值后 d = \" << d << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int a = 10; 是拷贝初始化，最常用",
+        "int a(10); 是直接初始化",
+        "int a{10}; 是列表初始化（C++11）",
+        "未初始化的局部变量值是随机的，很危险"
+      ],
+      "commonMistakes": [
+        {
+          "title": "使用未初始化的变量",
+          "description": "int x; cout << x; 输出一个随机值，程序行为不可预测。",
+          "fix": "养成习惯：定义变量时就赋初值，如 int x = 0;"
+        }
+      ],
+      "practice": {
+        "prompt": "用三种初始化方式分别定义三个 int 变量，值分别为 1、2、3，然后输出它们的和。",
+        "hint": "int a = 1; int b(2); int c{3}; cout << a + b + c;",
+        "expectedIdea": "int a = 1;\nint b(2);\nint c{3};\ncout << a + b + c << endl;\n// 输出 6"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种不是合法的变量初始化方式？",
+          "options": [
+            "int a = 5;",
+            "int a(5);",
+            "int a{5};",
+            "int a == 5;"
+          ],
+          "answerIndex": 3,
+          "explanation": "== 是比较运算符，不是赋值。int a == 5; 是语法错误。其他三种都是合法的初始化方式。"
+        },
+        {
+          "question": "定义但不初始化的局部变量，它的值是什么？",
+          "options": [
+            "0",
+            "1",
+            "未定义（随机值）",
+            "空"
+          ],
+          "answerIndex": 2,
+          "explanation": "局部变量如果不初始化，它的值是未定义的（内存中残留的随机数据），使用它会导致不可预测的结果。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.12",
+      "title": "变量作用域",
+      "learningGoal": "理解变量的作用域概念，知道变量在什么范围内可用",
+      "explanation": "作用域（scope）是指变量可以被访问的代码范围。\n\n在 C++ 中，变量从声明的地方开始生效，到所在代码块（花括号 { }）结束时失效。\n\n花括号 { } 划定了作用域。在 main 函数里定义的变量只在 main 里有效；在 if 或 for 的花括号里定义的变量，只在那对花括号内有效。\n\n不同作用域里可以有同名变量，内层作用域的变量会「遮蔽」外层同名变量。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int x = 10;\n    cout << \"外层 x = \" << x << endl;\n    {\n        int x = 20;\n        cout << \"内层 x = \" << x << endl;\n    }\n    cout << \"回到外层 x = \" << x << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "变量从声明处开始生效",
+        "到所在花括号 } 结束时失效",
+        "内层可以定义和外层同名的变量",
+        "内层变量会遮蔽外层同名变量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "在作用域外使用变量",
+          "description": "for (int i = 0; i < 5; i++) {} cout << i; ← i 在 for 的花括号外已失效，编译报错。",
+          "fix": "如果需要在 for 循环外使用 i，把 i 的声明提到外面：int i; for (i = 0; ...) {}"
+        }
+      ],
+      "practice": {
+        "prompt": "在 main 里定义 x = 100，然后在内部花括号里定义 y = 200，分别输出 x 和 y，然后在花括号外尝试输出 y。",
+        "hint": "花括号外输出 y 会编译报错，因为 y 的作用域已结束。",
+        "expectedIdea": "int x = 100;\n{\n    int y = 200;\n    cout << x << \" \" << y << endl;\n}\n// cout << y; // 编译错误：y 不在作用域内"
+      },
+      "quiz": [
+        {
+          "question": "以下代码输出什么？\nint x = 5;\n{ int x = 10; cout << x; }\ncout << x;",
+          "options": [
+            "10 10",
+            "5 5",
+            "10 5",
+            "编译错误"
+          ],
+          "answerIndex": 2,
+          "explanation": "内层花括号里的 x = 10 遮蔽了外层的 x，所以输出 10。花括号结束后，内层 x 失效，输出外层 x = 5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.13",
+      "title": "全局变量",
+      "learningGoal": "理解全局变量的定义和特点，知道何时使用",
+      "explanation": "全局变量是定义在所有函数外部的变量，它可以在程序的任何地方被访问。\n\n全局变量在程序启动时创建，在程序结束时销毁。如果不显式初始化，全局变量会自动初始化为 0。\n\n全局变量的好处是不需要传参就能在多个函数间共享数据。但缺点是容易导致代码难以理解和维护——任何函数都能修改它，出了 bug 很难追踪。\n\n建议尽量少用全局变量，通过函数参数来传递数据。但在竞赛中，全局变量常用于定义数组和常量，因为可以开更大的空间。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint g = 100;\n\nint main() {\n    cout << \"全局变量 g = \" << g << endl;\n    g = 200;\n    cout << \"修改后 g = \" << g << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "全局变量定义在所有函数外面",
+        "程序任何地方都能访问全局变量",
+        "全局变量自动初始化为 0",
+        "全局变量名建议用 g_ 前缀区分"
+      ],
+      "commonMistakes": [
+        {
+          "title": "全局变量和局部变量同名",
+          "description": "int g = 10;（全局）int main() { int g = 20; cout << g; } 输出 20，因为局部变量遮蔽了全局变量。",
+          "fix": "避免全局变量和局部变量同名。如果需要访问全局变量，可以用 ::g。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个全局 int 变量 count = 0，在 main 中输出它的值。",
+        "hint": "把 int count = 0; 写在 main 函数外面",
+        "expectedIdea": "int count = 0;\nint main() {\n    cout << \"count = \" << count << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "全局变量不初始化时，默认值是什么？",
+          "options": [
+            "随机值",
+            "0",
+            "1",
+            "-1"
+          ],
+          "answerIndex": 1,
+          "explanation": "全局变量如果不显式初始化，编译器会自动将其初始化为 0。这与局部变量不同，局部变量不初始化是随机值。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.14",
+      "title": "局部变量",
+      "learningGoal": "理解局部变量的特点，掌握其生命周期",
+      "explanation": "局部变量是定义在函数或代码块内部的变量，只在定义它的花括号范围内有效。\n\n局部变量在执行到声明语句时创建，在离开所在代码块时销毁。每次进入函数或代码块，局部变量都会重新创建。\n\n局部变量不会自动初始化，如果不赋初值，里面就是随机的「垃圾值」。\n\n同名局部变量在不同函数中互不影响，它们是独立的变量。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    {\n        int b = 20;\n        cout << \"a = \" << a << \", b = \" << b << endl;\n    }\n    cout << \"a = \" << a << endl;\n    int c;\n    cout << \"未初始化的 c = \" << c << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "局部变量只在定义它的花括号内有效",
+        "离开作用域后自动销毁",
+        "局部变量不会自动初始化为 0",
+        "不同作用域的同名局部变量互不影响"
+      ],
+      "commonMistakes": [
+        {
+          "title": "返回局部变量的地址",
+          "description": "函数返回局部变量的指针或引用，但局部变量已经销毁，使用它会导致未定义行为。",
+          "fix": "不要返回局部变量的地址。如果需要返回，用 static 局部变量或在调用者处创建变量。"
+        }
+      ],
+      "practice": {
+        "prompt": "在 main 中定义局部变量 sum = 0，在花括号内定义 temp = 50，把 temp 加到 sum 上，然后在花括号外输出 sum。",
+        "hint": "int sum = 0; { int temp = 50; sum = sum + temp; } cout << sum;",
+        "expectedIdea": "int sum = 0;\n{\n    int temp = 50;\n    sum = sum + temp;\n}\ncout << \"sum = \" << sum << endl;\n// 输出 50"
+      },
+      "quiz": [
+        {
+          "question": "局部变量的生命周期从什么时候开始？",
+          "options": [
+            "程序启动时",
+            "编译时",
+            "执行到变量声明语句时",
+            "函数调用之前"
+          ],
+          "answerIndex": 2,
+          "explanation": "局部变量在程序执行到声明语句的那一刻才被创建，离开作用域时销毁。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.15",
+      "title": "static",
+      "learningGoal": "理解 static 关键字对局部变量的影响，掌握 static 局部变量的特性",
+      "explanation": "static 修饰局部变量时，会改变变量的生命周期——它只在程序第一次执行到声明时初始化一次，之后即使离开作用域也不会销毁。\n\n普通局部变量每次进入函数都会重新创建和初始化，但 static 局部变量只初始化一次，下次进入函数时保留上次的值。\n\nstatic 局部变量仍然只在声明它的函数内可见，其他函数无法访问它，这一点和全局变量不同。\n\nstatic 全局变量会限制变量只在本文件内可见，但在竞赛中很少需要关心这个。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid counter() {\n    static int count = 0;\n    count++;\n    cout << \"调用次数: \" << count << endl;\n}\n\nint main() {\n    counter();\n    counter();\n    counter();\n    return 0;\n}",
+      "codeNotes": [
+        "static 局部变量只初始化一次",
+        "函数结束后值不丢失，下次调用保留",
+        "static 局部变量仍然只在函数内可见",
+        "未初始化的 static 变量自动初始化为 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "以为 static 局部变量每次都重新初始化",
+          "description": "void f() { static int x = 0; x++; } 调用 f() 三次，x 的值是 3，不是每次都从 0 开始。",
+          "fix": "static 变量只初始化一次，后续调用保留上次的值。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个函数，每次调用时把一个 static 变量加 5 并输出。在 main 中调用 3 次。",
+        "hint": "void addFive() { static int n = 0; n += 5; cout << n << endl; }",
+        "expectedIdea": "void addFive() {\n    static int n = 0;\n    n += 5;\n    cout << n << endl;\n}\nint main() {\n    addFive(); // 5\n    addFive(); // 10\n    addFive(); // 15\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "static 局部变量和普通局部变量最大的区别是什么？",
+          "options": [
+            "static 变量可以存更大的数",
+            "static 变量只初始化一次，值在函数调用间保留",
+            "static 变量只能在全局使用",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "static 局部变量只在第一次执行到声明时初始化一次，之后函数结束也不会销毁，下次调用保留上次的值。"
+        },
+        {
+          "question": "以下代码调用 f() 两次后输出什么？\nvoid f() { static int x = 0; x++; cout << x; }",
+          "options": [
+            "1 1",
+            "1 2",
+            "2 2",
+            "0 1"
+          ],
+          "answerIndex": 1,
+          "explanation": "第一次调用 f() 时 x 初始化为 0，然后 x++ 变为 1，输出 1。第二次调用时 x 不再初始化，直接 x++ 变为 2，输出 2。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.16",
+      "title": "sizeof",
+      "learningGoal": "理解 sizeof 运算符，掌握查看类型或变量占用的字节数",
+      "explanation": "sizeof 是一个运算符（不是函数），用来查看某个类型或变量在内存中占用的字节数。\n\n用法：sizeof(int)、sizeof(变量名)、sizeof 变量名 都可以。\n\n常见类型的大小：\n- char：1 字节\n- short：2 字节\n- int：4 字节\n- long long：8 字节\n- float：4 字节\n- double：8 字节\n- bool：1 字节\n\nsizeof 在编译时就能确定结果，不会真的去运行，所以它的结果是一个常量。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"char:      \" << sizeof(char) << \" 字节\" << endl;\n    cout << \"short:     \" << sizeof(short) << \" 字节\" << endl;\n    cout << \"int:       \" << sizeof(int) << \" 字节\" << endl;\n    cout << \"long long: \" << sizeof(long long) << \" 字节\" << endl;\n    cout << \"double:    \" << sizeof(double) << \" 字节\" << endl;\n    cout << \"bool:      \" << sizeof(bool) << \" 字节\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "sizeof 是运算符，不是函数",
+        "可以写 sizeof(int) 或 sizeof x",
+        "结果在编译时就确定了",
+        "不同平台结果可能略有不同"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 sizeof 当成函数调用",
+          "description": "sizeof 不是函数，它是一个运算符，不需要 #include 任何头文件就能用。",
+          "fix": "sizeof 是 C++ 内置运算符，直接使用即可。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 sizeof 输出 int 和 double 占用的字节数。",
+        "hint": "cout << sizeof(int) << \" \" << sizeof(double);",
+        "expectedIdea": "cout << \"int: \" << sizeof(int) << \" 字节\" << endl;\ncout << \"double: \" << sizeof(double) << \" 字节\" << endl;"
+      },
+      "quiz": [
+        {
+          "question": "sizeof(int) 的返回值类型是什么？",
+          "options": [
+            "int",
+            "double",
+            "size_t（无符号整数类型）",
+            "char"
+          ],
+          "answerIndex": 2,
+          "explanation": "sizeof 返回 size_t 类型，这是一种无符号整数类型，用来表示「大小」。在 cout 中可以直接输出。"
+        },
+        {
+          "question": "sizeof(char) 的值是多少？",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "取决于编译器"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 标准规定 sizeof(char) 恒等于 1，这是唯一由标准确定大小的类型。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.3.17",
+      "title": "类型转换",
+      "learningGoal": "理解隐式类型转换和显式类型转换，掌握常见用法",
+      "explanation": "C++ 中不同类型的数据在一起运算时，会自动进行类型转换，这叫隐式转换。\n\n隐式转换规则：把「小类型」提升为「大类型」。比如 int 和 double 运算，int 会被自动转成 double。\n\n常见转换路径：char → int → long long → double → long double。\n\n有时需要手动转换，这叫显式转换（强制转换）。C++ 风格的写法是 double(变量) 或 static_cast<double>(变量)。\n\n比如 int a = 7, b = 2; 想得到 3.5，就需要显式转换：double(a) / b 或 (double)a / b。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 7, b = 2;\n    cout << \"a / b = \" << a / b << endl;\n    cout << \"(double)a / b = \" << (double)a / b << endl;\n    double x = 3.9;\n    int y = (int)x;\n    cout << \"(int)3.9 = \" << y << endl;\n    char ch = 'A';\n    cout << \"(int)'A' = \" << (int)ch << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "隐式转换：小类型自动提升为大类型",
+        "int 和 double 运算，int 先变 double",
+        "(double)a 是 C 风格的显式转换",
+        "浮点数转整数会截断小数部分，不是四舍五入"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只转换了除数，没转换被除数",
+          "description": "int a = 7, b = 2; cout << a / (double)b; 结果是 3，不是 3.5。因为 a/b 先按 int 除法算完（得 3），再转 double。",
+          "fix": "确保至少除法运算的一个操作数在运算前就被转为 double：(double)a / b"
+        },
+        {
+          "title": "以为浮点数转整数会四舍五入",
+          "description": "int y = (int)3.9; 结果是 3，不是 4。截断小数部分，不是四舍五入。",
+          "fix": "需要四舍五入时用 (int)(x + 0.5) 或 round(x)。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 5 / 2 的整数除法结果，再计算 5.0 / 2 的浮点除法结果，分别输出。",
+        "hint": "int a = 5, b = 2; cout << a / b << \" \" << 5.0 / b;",
+        "expectedIdea": "int a = 5, b = 2;\ncout << \"整数除法: \" << a / b << endl;\ncout << \"浮点除法: \" << 5.0 / b << endl;\n// 输出 2 和 2.5"
+      },
+      "quiz": [
+        {
+          "question": "表达式 1 + 2.5 的结果类型是什么？",
+          "options": [
+            "int",
+            "float",
+            "double",
+            "char"
+          ],
+          "answerIndex": 2,
+          "explanation": "1 是 int，2.5 是 double。运算时 int 会被隐式提升为 double，结果类型是 double。"
+        },
+        {
+          "question": "(int)3.7 的结果是什么？",
+          "options": [
+            "4",
+            "3",
+            "3.7",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "浮点数转整数是截断小数部分，不是四舍五入。所以 (int)3.7 = 3，(int)3.9 = 3。"
+        }
+      ]
+    }
+  ]
+}

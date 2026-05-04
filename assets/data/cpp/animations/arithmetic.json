@@ -1,0 +1,96 @@
+{
+  "animationId": "cpp_arithmetic",
+  "itemId": "1.4.1",
+  "title": "算术运算",
+  "description": "演示加减乘除和取模运算的过程",
+  "initialState": {
+    "variables": [
+      {"name": "a", "value": "17", "note": ""},
+      {"name": "b", "value": "5", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化变量",
+      "description": "声明两个整数变量 a = 17, b = 5",
+      "codeLine": "int a = 17, b = 5;",
+      "highlights": ["a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "5", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "加法与减法",
+      "description": "a + b = 17 + 5 = 22，a - b = 17 - 5 = 12",
+      "codeLine": "cout << a + b << \" \" << a - b;",
+      "highlights": ["a + b", "a - b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "5", "note": ""},
+          {"name": "a+b", "value": "22", "note": "17+5"},
+          {"name": "a-b", "value": "12", "note": "17-5"}
+        ],
+        "containers": [],
+        "output": "22 12"
+      }
+    },
+    {
+      "step": 3,
+      "title": "乘法与除法",
+      "description": "a * b = 17 × 5 = 85，a / b = 17 / 5 = 3（整数除法截断）",
+      "codeLine": "cout << a * b << \" \" << a / b;",
+      "highlights": ["a * b", "a / b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "5", "note": ""},
+          {"name": "a*b", "value": "85", "note": "17×5"},
+          {"name": "a/b", "value": "3", "note": "17÷5=3（整数除法）"}
+        ],
+        "containers": [],
+        "output": "22 12 85 3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "取模运算",
+      "description": "a % b = 17 % 5 = 2（17 除以 5 余 2）",
+      "codeLine": "cout << a % b;",
+      "highlights": ["a % b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "5", "note": ""},
+          {"name": "a%b", "value": "2", "note": "17÷5=3余2"}
+        ],
+        "containers": [],
+        "output": "22 12 85 3 2"
+      }
+    },
+    {
+      "step": 5,
+      "title": "总结",
+      "description": "五种算术运算符：+（加）、-（减）、*（乘）、/（除）、%（取模）。整数除法会截断小数部分，取模得到余数。",
+      "codeLine": "// + - * / %",
+      "highlights": ["+", "-", "*", "/", "%"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "5", "note": ""}
+        ],
+        "containers": [],
+        "output": "22 12 85 3 2"
+      }
+    }
+  ]
+}

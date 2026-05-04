@@ -4,8 +4,9 @@ import '../models/answer_record.dart';
 import '../models/progress.dart';
 import '../models/quiz.dart';
 import '../state/progress_provider.dart';
-import '../state/quiz_provider.dart';
+import '../state/quiz_set_provider.dart';
 import '../state/history_provider.dart';
+import '../state/content_manifest_provider.dart';
 
 class ProgressPage extends ConsumerWidget {
   const ProgressPage({super.key});
@@ -99,9 +100,13 @@ class ProgressPage extends ConsumerWidget {
     Progress progress,
     WidgetRef ref,
   ) {
-    final quizzesAsync = ref.watch(
-      quizzesProvider('assets/data/quizzes/bfs_quiz.json'),
-    );
+    final quizzesAsync = ref
+        .watch(defaultContentIdsProvider)
+        .when(
+          data: (ids) => ref.watch(quizSetProvider(ids.quizSetId)),
+          loading: () => const AsyncValue<List<Quiz>>.data([]),
+          error: (_, __) => const AsyncValue<List<Quiz>>.data([]),
+        );
     return quizzesAsync.when(
       data: (quizzes) {
         final total = quizzes.length;
@@ -269,9 +274,13 @@ class ProgressPage extends ConsumerWidget {
     Progress progress,
     WidgetRef ref,
   ) {
-    final quizzesAsync = ref.watch(
-      quizzesProvider('assets/data/quizzes/bfs_quiz.json'),
-    );
+    final quizzesAsync = ref
+        .watch(defaultContentIdsProvider)
+        .when(
+          data: (ids) => ref.watch(quizSetProvider(ids.quizSetId)),
+          loading: () => const AsyncValue<List<Quiz>>.data([]),
+          error: (_, __) => const AsyncValue<List<Quiz>>.data([]),
+        );
     return quizzesAsync.when(
       data: (quizzes) {
         final records = progress.answerRecords;
@@ -396,8 +405,10 @@ class ProgressPage extends ConsumerWidget {
   }
 
   Widget _buildHistorySection(BuildContext context, WidgetRef ref) {
+    final topicId =
+        ref.read(defaultContentIdsProvider).valueOrNull?.topicId ?? 'bfs';
     return FutureBuilder<List<AnswerRecord>>(
-      future: ref.read(historyServiceProvider).loadHistory('bfs'),
+      future: ref.read(historyServiceProvider).loadHistory(topicId),
       builder: (context, snapshot) {
         if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const SizedBox.shrink();
@@ -413,9 +424,13 @@ class ProgressPage extends ConsumerWidget {
   }
 
   Widget _buildHistoryList(List<AnswerRecord> display, WidgetRef ref) {
-    final quizzesAsync = ref.watch(
-      quizzesProvider('assets/data/quizzes/bfs_quiz.json'),
-    );
+    final quizzesAsync = ref
+        .watch(defaultContentIdsProvider)
+        .when(
+          data: (ids) => ref.watch(quizSetProvider(ids.quizSetId)),
+          loading: () => const AsyncValue<List<Quiz>>.data([]),
+          error: (_, __) => const AsyncValue<List<Quiz>>.data([]),
+        );
     return quizzesAsync.when(
       data: (quizzes) {
         return Card(

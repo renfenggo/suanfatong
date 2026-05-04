@@ -1,0 +1,123 @@
+{
+  "animationId": "cpp_vector_push_back",
+  "itemId": "1.8.9",
+  "title": "vector push_back",
+  "description": "演示 vector 的动态扩容和 push_back 操作",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空 vector",
+      "description": "声明一个空的 int 类型 vector",
+      "codeLine": "vector<int> v;",
+      "highlights": ["v"],
+      "state": {
+        "variables": [
+          {"name": "v.size()", "value": "0", "note": "空 vector"}
+        ],
+        "containers": [
+          {
+            "name": "v",
+            "type": "vector",
+            "values": [],
+            "activeIndex": -1,
+            "note": "size=0, capacity=0"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "push_back(10)",
+      "description": "向 vector 末尾添加元素 10",
+      "codeLine": "v.push_back(10);",
+      "highlights": ["push_back"],
+      "state": {
+        "variables": [
+          {"name": "v.size()", "value": "1", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "v",
+            "type": "vector",
+            "values": ["10"],
+            "activeIndex": 0,
+            "note": "size=1, capacity=1"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "push_back(20)",
+      "description": "添加元素 20，vector 可能需要扩容",
+      "codeLine": "v.push_back(20);",
+      "highlights": ["push_back"],
+      "state": {
+        "variables": [
+          {"name": "v.size()", "value": "2", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "v",
+            "type": "vector",
+            "values": ["10", "20"],
+            "activeIndex": 1,
+            "note": "size=2, capacity=2"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "push_back(30)",
+      "description": "添加元素 30，容量不足时自动扩容到 4",
+      "codeLine": "v.push_back(30);",
+      "highlights": ["push_back"],
+      "state": {
+        "variables": [
+          {"name": "v.size()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "v",
+            "type": "vector",
+            "values": ["10", "20", "30"],
+            "activeIndex": 2,
+            "note": "size=3, capacity=4（扩容）"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "遍历输出",
+      "description": "使用范围 for 循环遍历 vector 并输出",
+      "codeLine": "for (int x : v) cout << x << \" \";",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "v.size()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "v",
+            "type": "vector",
+            "values": ["10", "20", "30"],
+            "activeIndex": -1,
+            "note": ""
+          }
+        ],
+        "output": "10 20 30 "
+      }
+    }
+  ]
+}

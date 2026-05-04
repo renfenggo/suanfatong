@@ -1,0 +1,95 @@
+{
+  "animationId": "cpp_function_call",
+  "itemId": "1.7.3",
+  "title": "函数调用",
+  "description": "演示函数调用的完整流程：传参、执行、返回值",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "准备调用参数",
+      "description": "在 main 中定义变量 a=3, b=5，准备作为实参传给 add 函数",
+      "codeLine": "int a = 3, b = 5;",
+      "highlights": ["a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": "实参"},
+          {"name": "b", "value": "5", "note": "实参"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "调用 add 函数",
+      "description": "调用 add(a, b)，程序跳转到 add 函数体。实参 3 和 5 分别复制给形参 x 和 y",
+      "codeLine": "int result = add(a, b);",
+      "highlights": ["add(a, b)"],
+      "state": {
+        "variables": [
+          {"name": "a (main)", "value": "3", "note": "实参，值不变"},
+          {"name": "b (main)", "value": "5", "note": "实参，值不变"},
+          {"name": "x (add)", "value": "3", "note": "形参，接收 a 的值"},
+          {"name": "y (add)", "value": "5", "note": "形参，接收 b 的值"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "函数体执行",
+      "description": "在 add 函数内部计算 x + y = 3 + 5 = 8，准备返回结果",
+      "codeLine": "return x + y;  // 3 + 5 = 8",
+      "highlights": ["x + y", "return"],
+      "state": {
+        "variables": [
+          {"name": "a (main)", "value": "3", "note": ""},
+          {"name": "b (main)", "value": "5", "note": ""},
+          {"name": "x (add)", "value": "3", "note": ""},
+          {"name": "y (add)", "value": "5", "note": ""},
+          {"name": "x + y", "value": "8", "note": "返回值"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "返回 main，接收返回值",
+      "description": "add 函数返回 8，程序回到 main。返回值赋给 result，形参 x 和 y 被销毁",
+      "codeLine": "int result = 8;  // add 返回了 8",
+      "highlights": ["result"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": "未改变"},
+          {"name": "b", "value": "5", "note": "未改变"},
+          {"name": "result", "value": "8", "note": "接收了返回值"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "输出结果",
+      "description": "输出 result 的值 8，函数调用完整流程结束",
+      "codeLine": "cout << result;  // 输出 8",
+      "highlights": ["result"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": ""},
+          {"name": "b", "value": "5", "note": ""},
+          {"name": "result", "value": "8", "note": ""}
+        ],
+        "containers": [],
+        "output": "8"
+      }
+    }
+  ]
+}

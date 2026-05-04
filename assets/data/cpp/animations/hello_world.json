@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_hello_world",
+  "itemId": "1.1.3",
+  "title": "main 函数",
+  "description": "演示一个完整 C++ 程序的基本结构：#include、namespace、main 函数和 return 0",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "引入头文件",
+      "description": "#include <iostream> 告诉编译器我们要使用输入输出功能。它把 iostream 头文件的内容复制到程序中，这样就能使用 cin 和 cout。",
+      "codeLine": "#include <iostream>",
+      "highlights": ["iostream"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "声明命名空间",
+      "description": "using namespace std; 让我们可以直接写 cout、cin，而不用写 std::cout、std::cin。std 是标准库的命名空间。",
+      "codeLine": "using namespace std;",
+      "highlights": ["namespace", "std"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "定义 main 函数",
+      "description": "main() 是程序的入口点。每个 C++ 程序都必须有一个 main 函数，程序从这里开始执行。花括号 { } 包围的部分是函数体。",
+      "codeLine": "int main() {",
+      "highlights": ["main"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "输出 Hello World",
+      "description": "cout << \"Hello World\" << endl; 把文字 \"Hello World\" 输出到屏幕上。endl 表示换行。<< 是输出运算符，把数据送往屏幕。",
+      "codeLine": "    cout << \"Hello World\" << endl;",
+      "highlights": ["cout", "Hello World", "endl"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": "Hello World"
+      }
+    },
+    {
+      "step": 5,
+      "title": "返回并结束程序",
+      "description": "return 0; 表示程序正常结束。0 是返回值，告诉操作系统「一切正常」。main 函数到这里就结束了，后面的 } 关闭函数体。",
+      "codeLine": "    return 0;\n}",
+      "highlights": ["return", "0"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": "Hello World"
+      }
+    }
+  ]
+}

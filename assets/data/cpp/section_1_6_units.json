@@ -1,0 +1,759 @@
+{
+  "sectionId": "1.6",
+  "sectionName": "数组与字符串",
+  "units": [
+    {
+      "itemId": "1.6.1",
+      "title": "一维数组",
+      "learningGoal": "理解一维数组的概念，学会声明、使用一维数组存储和访问数据",
+      "explanation": "一维数组是存储一组相同类型数据的容器，可以通过下标（索引）访问其中的每个元素。\n\n声明格式：类型 数组名[大小]。例如 int a[5] 声明了一个包含 5 个整数的数组。数组下标从 0 开始，所以 a[0] 到 a[4] 分别是第一个到第五个元素。\n\n数组在内存中是连续存放的，因此访问速度很快。在竞赛中，数组常用来存储大量同类型的数据，比如一组成绩、一列数字等。\n\n声明数组时，方括号中的大小必须是常量（如字面量或 const 变量），不能是运行时才确定的值。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5];\n    a[0] = 10;\n    a[1] = 20;\n    a[2] = 30;\n    a[3] = 40;\n    a[4] = 50;\n    for (int i = 0; i < 5; i++) {\n        cout << \"a[\" << i << \"] = \" << a[i] << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "int a[5] 声明了一个大小为 5 的整型数组",
+        "数组下标从 0 开始，最大下标是 4",
+        "通过 a[i] 可以访问第 i+1 个元素",
+        "for 循环常用于遍历数组",
+        "数组大小必须是编译时确定的常量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "下标从 1 开始",
+          "description": "以为 a[1] 是第一个元素，实际上 a[0] 才是第一个元素。",
+          "fix": "记住：数组下标从 0 开始，大小为 n 的数组下标范围是 0 到 n-1。"
+        },
+        {
+          "title": "用变量声明数组大小",
+          "description": "int n; cin >> n; int a[n]; ← 这种写法不标准，某些编译器不支持。",
+          "fix": "数组大小应使用常量，如 int a[1000]; 如果需要动态大小，后续会学 vector。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个大小为 6 的整型数组，依次存入 1, 2, 3, 4, 5, 6，然后用 for 循环输出所有元素。",
+        "hint": "用 for 循环配合下标 i 从 0 到 5 赋值和输出。",
+        "expectedIdea": "int a[6];\nfor (int i = 0; i < 6; i++) {\n    a[i] = i + 1;\n}\nfor (int i = 0; i < 6; i++) {\n    cout << a[i] << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "int a[5]; 这个数组的有效下标范围是？",
+          "options": [
+            "1 到 5",
+            "0 到 4",
+            "0 到 5",
+            "1 到 4"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 数组下标从 0 开始，大小为 5 的数组下标范围是 0 到 4。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.2",
+      "title": "二维数组",
+      "learningGoal": "理解二维数组的概念，学会用二维数组存储表格型数据",
+      "explanation": "二维数组可以看作「数组的数组」，常用来表示矩阵、表格等具有行列结构的数据。\n\n声明格式：类型 数组名[行数][列数]。例如 int a[3][4] 声明了一个 3 行 4 列的二维数组。\n\n访问元素时用两个下标：a[i][j] 表示第 i 行第 j 列的元素。注意两个下标都从 0 开始。\n\n二维数组常用于存储矩阵、棋盘、地图等数据。遍历二维数组通常使用双重 for 循环。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[2][3] = {\n        {1, 2, 3},\n        {4, 5, 6}\n    };\n    for (int i = 0; i < 2; i++) {\n        for (int j = 0; j < 3; j++) {\n            cout << a[i][j] << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "int a[2][3] 声明 2 行 3 列的二维数组",
+        "a[i][j] 访问第 i 行第 j 列的元素",
+        "两个下标都从 0 开始",
+        "双重 for 循环是遍历二维数组的标准方式",
+        "外层循环控制行，内层循环控制列"
+      ],
+      "commonMistakes": [
+        {
+          "title": "行列搞混",
+          "description": "声明 int a[3][4] 时，3 是行数，4 是列数，不要写反。",
+          "fix": "记住第一个方括号是行，第二个方括号是列。"
+        },
+        {
+          "title": "访问时只用一个下标",
+          "description": "a[i] 访问的不是单个元素，而是第 i 行（一个一维数组）。",
+          "fix": "访问具体元素必须用两个下标 a[i][j]。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 3x3 的二维数组，存入一个单位矩阵（对角线为 1，其余为 0），然后输出。",
+        "hint": "当 i == j 时赋值为 1，否则赋值为 0。",
+        "expectedIdea": "int a[3][3];\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        if (i == j) a[i][j] = 1;\n        else a[i][j] = 0;\n    }\n}"
+      },
+      "quiz": [
+        {
+          "question": "int a[3][4] 这个二维数组共有多少个元素？",
+          "options": [
+            "7 个",
+            "12 个",
+            "9 个",
+            "3 个"
+          ],
+          "answerIndex": 1,
+          "explanation": "二维数组元素总数 = 行数 × 列数 = 3 × 4 = 12 个。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.3",
+      "title": "多维数组",
+      "learningGoal": "理解三维及更高维数组的概念，了解其声明和访问方式",
+      "explanation": "在二维数组的基础上，可以继续增加维度，得到三维数组、四维数组等，统称为多维数组。\n\n三维数组声明：类型 数组名[层][行][列]。可以理解为「多个二维数组的堆叠」。\n\n例如 int a[2][3][4] 表示 2 层、每层 3 行 4 列的三维数组，共 2×3×4=24 个元素。访问用三个下标：a[k][i][j]。\n\n更高维数组（四维及以上）在竞赛中偶尔出现，但三维已经足够覆盖绝大多数场景。维度越多，代码越复杂，建议根据实际需求选择合适的维度。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[2][2][2] = {\n        {\n            {1, 2},\n            {3, 4}\n        },\n        {\n            {5, 6},\n            {7, 8}\n        }\n    };\n    for (int k = 0; k < 2; k++) {\n        cout << \"Layer \" << k << \":\" << endl;\n        for (int i = 0; i < 2; i++) {\n            for (int j = 0; j < 2; j++) {\n                cout << a[k][i][j] << \" \";\n            }\n            cout << endl;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "三维数组需要三重循环来遍历",
+        "int a[2][2][2] 共 8 个元素",
+        "可以理解为 2 层 2×2 的二维数组",
+        "每一维的下标都从 0 开始",
+        "实际使用中三维以上较少见"
+      ],
+      "commonMistakes": [
+        {
+          "title": "维度搞错",
+          "description": "声明 int a[2][3][4] 但访问时写成 a[i][j] 或 a[i][j][k][l]。",
+          "fix": "访问时的下标个数必须和声明时的维度个数一致。"
+        },
+        {
+          "title": "高维数组占用内存过大",
+          "description": "int a[100][100][100] 约占 4MB 栈空间，可能导致栈溢出。",
+          "fix": "大数组建议声明为全局变量（放在 main 函数外面），全局区空间更大。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 2×2×2 的三维数组，全部初始化为 0，然后把 a[0][0][1]、a[1][1][0] 设为 1，最后输出所有元素。",
+        "hint": "用三重 for 循环遍历，配合条件判断设置特定位置为 1。",
+        "expectedIdea": "int a[2][2][2] = {0};\na[0][0][1] = 1;\na[1][1][0] = 1;\nfor (int k = 0; k < 2; k++)\n    for (int i = 0; i < 2; i++)\n        for (int j = 0; j < 2; j++)\n            cout << a[k][i][j] << \" \";"
+      },
+      "quiz": [
+        {
+          "question": "int a[3][2][4] 这个三维数组共有多少个元素？",
+          "options": [
+            "9 个",
+            "24 个",
+            "14 个",
+            "18 个"
+          ],
+          "answerIndex": 1,
+          "explanation": "多维数组元素总数 = 各维大小之积 = 3 × 2 × 4 = 24 个。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.4",
+      "title": "数组初始化",
+      "learningGoal": "掌握数组的多种初始化方式，包括完全初始化、部分初始化和默认初始化",
+      "explanation": "数组在声明时可以直接赋初值，这种方式叫初始化。C++ 提供了多种初始化方式。\n\n完全初始化：int a[5] = {1, 2, 3, 4, 5}; 列出所有元素的值。部分初始化：int a[5] = {1, 2}; 未指定的元素自动初始化为 0。\n\n如果声明的同时初始化，可以省略数组大小，编译器会根据初始值的个数自动确定：int a[] = {1, 2, 3}; 等价于 int a[3] = {1, 2, 3};。\n\n对于全局数组（main 函数外声明的），即使不初始化，元素也会自动设为 0。但局部数组不初始化时，元素值是不确定的（随机值），这一点要特别注意。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint g[5];\n\nint main() {\n    int a[5] = {10, 20, 30, 40, 50};\n    int b[5] = {1, 2};\n    int c[] = {3, 4, 5};\n    cout << \"a: \";\n    for (int i = 0; i < 5; i++) cout << a[i] << \" \";\n    cout << endl;\n    cout << \"b: \";\n    for (int i = 0; i < 5; i++) cout << b[i] << \" \";\n    cout << endl;\n    cout << \"c size = \" << 3 << \": \";\n    for (int i = 0; i < 3; i++) cout << c[i] << \" \";\n    cout << endl;\n    cout << \"g: \";\n    for (int i = 0; i < 5; i++) cout << g[i] << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "完全初始化：列出所有元素的值",
+        "部分初始化：未指定的元素自动为 0",
+        "省略大小时，编译器根据初始值个数确定大小",
+        "全局数组未初始化时自动为 0",
+        "局部数组未初始化时值不确定"
+      ],
+      "commonMistakes": [
+        {
+          "title": "先声明后用花括号赋值",
+          "description": "int a[5]; a = {1,2,3,4,5}; ← 花括号初始化只能在声明时使用。",
+          "fix": "要么声明时初始化 int a[5] = {1,2,3,4,5};，要么逐个赋值。"
+        },
+        {
+          "title": "初始化列表超出数组大小",
+          "description": "int a[3] = {1, 2, 3, 4}; ← 初始值比数组大，编译错误。",
+          "fix": "确保初始值个数不超过数组声明的大小。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个大小为 10 的数组，全部初始化为 0，然后输出所有元素验证。",
+        "hint": "int a[10] = {0}; 这样部分初始化，其余元素也自动为 0。",
+        "expectedIdea": "int a[10] = {0};\nfor (int i = 0; i < 10; i++) {\n    cout << a[i] << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "int a[5] = {1, 2}; 中 a[3] 的值是什么？",
+          "options": [
+            "随机值",
+            "1",
+            "0",
+            "2"
+          ],
+          "answerIndex": 2,
+          "explanation": "部分初始化时，未指定的元素自动初始化为 0，所以 a[2]、a[3]、a[4] 都是 0。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.5",
+      "title": "数组下标",
+      "learningGoal": "深入理解数组下标的用法，学会用变量作下标灵活操作数组",
+      "explanation": "数组下标不仅可以是常量，也可以是变量或表达式，这使得我们可以用循环灵活地操作整个数组。\n\n例如 a[i] 中 i 是变量，通过改变 i 的值就能访问不同的元素。这就是为什么 for 循环和数组是天然搭档。\n\n下标还可以是表达式，比如 a[i+1]、a[n-1]、a[2*i] 等，这在处理相邻元素关系时非常有用。\n\n竞赛中常说的「逆序遍历」就是让下标从大到小变化：for (int i = n-1; i >= 0; i--)。掌握下标的灵活运用是后续学习排序、搜索等算法的基础。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5] = {10, 20, 30, 40, 50};\n    cout << \"正序: \";\n    for (int i = 0; i < 5; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    cout << \"逆序: \";\n    for (int i = 4; i >= 0; i--) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    cout << \"相邻元素和: \";\n    for (int i = 0; i < 4; i++) {\n        cout << a[i] + a[i + 1] << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "下标可以是变量 i，通过循环访问每个元素",
+        "逆序遍历：i 从 n-1 递减到 0",
+        "下标可以是表达式如 i+1",
+        "访问相邻元素时注意不要越界（如 a[i+1] 要求 i+1 < n）",
+        "灵活使用下标是数组操作的核心技巧"
+      ],
+      "commonMistakes": [
+        {
+          "title": "逆序遍历终止条件写错",
+          "description": "for (int i = n-1; i > 0; i--) 漏掉了 i=0 的情况。",
+          "fix": "逆序遍历应该写 i >= 0，确保访问到第一个元素 a[0]。"
+        },
+        {
+          "title": "表达式下标越界",
+          "description": "访问 a[i+1] 时 i 最大到 n-1，此时 a[n] 越界。",
+          "fix": "使用 a[i+1] 时，循环条件应改为 i < n-1。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定数组 int a[6] = {3, 1, 4, 1, 5, 9}; 用逆序遍历输出每个元素。",
+        "hint": "for (int i = 5; i >= 0; i--) cout << a[i] << \" \";",
+        "expectedIdea": "int a[6] = {3, 1, 4, 1, 5, 9};\nfor (int i = 5; i >= 0; i--) {\n    cout << a[i] << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "int a[5] = {1,2,3,4,5}; 输出 a[a[2]] 的值是什么？",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answerIndex": 1,
+          "explanation": "a[2] 的值是 3，所以 a[a[2]] 等价于 a[3]，值为 4。注意这里访问的是 a[3]，不是 3。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.6",
+      "title": "数组越界",
+      "learningGoal": "理解数组越界的概念和危害，学会避免越界访问",
+      "explanation": "数组越界是指访问了下标范围之外的元素，比如大小为 5 的数组访问 a[5] 或 a[-1]。\n\nC++ 不会在运行时自动检查数组越界。越界访问不会立即报错，但会读写到数组以外的内存区域，导致程序行为不可预测——可能输出错误数据，可能崩溃，也可能看起来「正常」但实际上隐藏了严重 bug。\n\n越界是竞赛中最常见的 bug 之一。很多「神秘」的错误最终排查下来都是数组越界。养成习惯：每次使用下标前，确认它在合法范围内。\n\n在调试时，可以故意用一些边界值测试程序，比如数组第一个和最后一个元素，看看是否正确。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5] = {10, 20, 30, 40, 50};\n    cout << \"合法访问:\" << endl;\n    for (int i = 0; i < 5; i++) {\n        cout << \"a[\" << i << \"] = \" << a[i] << endl;\n    }\n    cout << \"越界访问（危险）:\" << endl;\n    cout << \"a[5] = \" << a[5] << \" (未定义行为)\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "数组越界不会编译报错，是运行时的未定义行为",
+        "a[5] 访问了数组以外的内存，值不可预测",
+        "越界写入可能覆盖其他变量，导致更严重的问题",
+        "始终确保下标在 0 到 n-1 的范围内",
+        "竞赛中大量 bug 都源于数组越界"
+      ],
+      "commonMistakes": [
+        {
+          "title": "循环条件写成 i <= n",
+          "description": "for (int i = 0; i <= n; i++) 当 n 是数组大小时，a[n] 越界。",
+          "fix": "循环条件应该是 i < n，不是 i <= n。"
+        },
+        {
+          "title": "忽略空数组或大小为 0 的情况",
+          "description": "如果数组大小可能为 0，任何下标访问都会越界。",
+          "fix": "在访问前检查数组大小是否大于 0。"
+        },
+        {
+          "title": "认为越界会自动报错",
+          "description": "C++ 不会自动检测数组越界，越界访问可能「正常」运行但结果错误。",
+          "fix": "不要依赖编译器检测越界，要在编码时自行确保下标合法。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，声明 int a[3] = {1, 2, 3}; 用 for 循环正确遍历并输出所有元素，在循环外加一行注释说明为什么不能用 i <= 3。",
+        "hint": "正确循环是 for (int i = 0; i < 3; i++)，i<=3 会导致 a[3] 越界。",
+        "expectedIdea": "int a[3] = {1, 2, 3};\nfor (int i = 0; i < 3; i++) {\n    cout << a[i] << endl;\n}\n// 不能用 i <= 3，因为 a[3] 超出范围，是越界访问"
+      },
+      "quiz": [
+        {
+          "question": "int a[5]; 以下哪个访问会越界？",
+          "options": [
+            "a[0]",
+            "a[4]",
+            "a[5]",
+            "a[1]"
+          ],
+          "answerIndex": 2,
+          "explanation": "大小为 5 的数组，合法下标是 0 到 4。a[5] 越界。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.7",
+      "title": "字符数组",
+      "learningGoal": "理解字符数组的概念，学会用字符数组存储和处理字符串",
+      "explanation": "字符数组是元素类型为 char 的数组，用来存储字符序列。在 C++ 中，字符数组是 C 风格字符串的底层实现方式。\n\n字符数组的特殊之处在于末尾有一个隐藏的 '\\0'（空字符）作为结束标志。例如存储 \"Hello\" 需要至少 6 个 char：'H','e','l','l','o','\\0'。\n\n可以用字符串字面量初始化字符数组：char s[] = \"Hello\"; 编译器会自动添加 '\\0'。也可以逐个字符初始化：char s[] = {'H','e','l','l','o','\\0'};。\n\n字符数组可以用 cout 直接输出，也能用 cstring 头文件中的函数（如 strlen、strcmp）来操作。但相比 C++ 的 string 类型，字符数组使用起来不够方便，竞赛中更推荐使用 string。",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s1[] = \"Hello\";\n    char s2[] = {'W', 'o', 'r', 'l', 'd', '\\0'};\n    cout << \"s1 = \" << s1 << endl;\n    cout << \"s2 = \" << s2 << endl;\n    cout << \"s1 length = \" << strlen(s1) << endl;\n    cout << \"s1[0] = \" << s1[0] << endl;\n    s1[0] = 'h';\n    cout << \"after change: \" << s1 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "字符数组用字符串字面量初始化时，编译器自动加 '\\0'",
+        "'\\0' 是字符串结束标志，必须有",
+        "strlen 返回字符串长度，不包含 '\\0'",
+        "可以通过下标修改字符数组中的单个字符",
+        "cstring 头文件提供了字符数组的操作函数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 '\\0' 导致乱码",
+          "description": "char s[] = {'H','e','l','l','o'}; 没有手动加 '\\0'，输出可能乱码。",
+          "fix": "手动初始化时一定要加 '\\0'，或者直接用字符串字面量初始化。"
+        },
+        {
+          "title": "数组大小不够",
+          "description": "存储 \"Hello\" 需要至少 6 个 char（5 个字符 + 1 个 '\\0'）。",
+          "fix": "声明字符数组时记得多留一个位置给 '\\0'。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个字符数组存储 \"ABC\"，输出它的每个字符和字符串长度。",
+        "hint": "用 strlen 测长度，用 for 循环逐个输出字符。",
+        "expectedIdea": "char s[] = \"ABC\";\ncout << strlen(s) << endl;\nfor (int i = 0; i < strlen(s); i++) {\n    cout << s[i] << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "char s[] = \"Hi\"; 这个数组占多少个字节？",
+          "options": [
+            "2 个",
+            "3 个",
+            "1 个",
+            "4 个"
+          ],
+          "answerIndex": 1,
+          "explanation": "\"Hi\" 有 2 个字符，加上结尾的 '\\0'，共 3 个字节。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.8",
+      "title": "memset",
+      "learningGoal": "学会使用 memset 快速填充数组，理解其工作原理和适用场景",
+      "explanation": "memset 是 C 标准库中的一个函数，用于将一块内存按字节设置为指定值。头文件为 <cstring>。\n\n用法：memset(数组名, 值, 字节数)。常见的用法是 memset(a, 0, sizeof(a)) 将数组全部置为 0，或 memset(a, -1, sizeof(a)) 将数组全部置为 -1。\n\n特别注意：memset 是按字节填充的。对于 int 数组，memset(a, 1, sizeof(a)) 不会把每个元素设为 1，而是把每个字节设为 1，结果每个 int 元素会变成 0x01010101（即 16843009）。所以 memset 只适合设置 0 或 -1。\n\n在竞赛中，memset 常用于初始化大型数组，比手动写循环更简洁。但要注意它的局限性，不能用它来设置任意整数值。",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    int a[10];\n    memset(a, 0, sizeof(a));\n    cout << \"全0: \";\n    for (int i = 0; i < 10; i++) cout << a[i] << \" \";\n    cout << endl;\n    memset(a, -1, sizeof(a));\n    cout << \"全-1: \";\n    for (int i = 0; i < 10; i++) cout << a[i] << \" \";\n    cout << endl;\n    memset(a, 1, sizeof(a));\n    cout << \"memset 1: \" << a[0] << \" (不是1!)\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "memset 需要包含 <cstring> 头文件",
+        "sizeof(a) 返回数组占用的总字节数",
+        "memset(a, 0, sizeof(a)) 可以正确将数组全部置为 0",
+        "memset(a, -1, sizeof(a)) 可以正确将数组全部置为 -1",
+        "memset(a, 1, sizeof(a)) 不能将每个 int 设为 1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 memset 设任意值",
+          "description": "memset(a, 5, sizeof(a)) 以为每个元素变成 5，实际不是。",
+          "fix": "memset 只能可靠地设置 0 和 -1。其他值需要用 fill 或循环。"
+        },
+        {
+          "title": "忘记用 sizeof",
+          "description": "memset(a, 0, 10) 只设置了前 10 个字节，而不是整个数组。",
+          "fix": "用 sizeof(a) 来获取数组的准确字节数。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个大小为 20 的 int 数组，用 memset 全部置为 0，然后验证前 5 个元素。",
+        "hint": "memset(a, 0, sizeof(a)); 然后用 for 循环输出。",
+        "expectedIdea": "int a[20];\nmemset(a, 0, sizeof(a));\nfor (int i = 0; i < 5; i++) {\n    cout << a[i] << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "memset(a, 1, sizeof(a)) 对 int 数组 a 的效果是？",
+          "options": [
+            "每个元素变为 1",
+            "每个元素变为 16843009",
+            "编译错误",
+            "每个字节变为 1，效果不可预测"
+          ],
+          "answerIndex": 1,
+          "explanation": "memset 按字节填充，每个 int（4字节）的每个字节都变成 1，即 0x01010101 = 16843009。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.9",
+      "title": "string",
+      "learningGoal": "掌握 C++ string 类型的基础用法，理解其与字符数组的优势",
+      "explanation": "string 是 C++ 标准库提供的字符串类型，使用前需要包含 <string> 头文件。相比字符数组，string 更加安全、方便。\n\n创建 string：string s = \"Hello\"; 或 string s(\"Hello\");。string 会自动管理内存，不需要手动处理 '\\0'。\n\nstring 可以直接用 + 拼接字符串，用 == 比较字符串，用 .size() 或 .length() 获取长度。这些操作对字符数组来说都需要调用函数才能完成。\n\n在竞赛中，string 是处理文本数据的首选。它不会发生缓冲区溢出，可以动态调整大小，大大减少了出错的概率。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s1 = \"Hello\";\n    string s2 = \"World\";\n    cout << \"s1 = \" << s1 << endl;\n    cout << \"s1 length = \" << s1.length() << endl;\n    string s3 = s1 + \" \" + s2;\n    cout << \"s3 = \" << s3 << endl;\n    if (s1 == \"Hello\") {\n        cout << \"s1 equals Hello\" << endl;\n    }\n    cout << \"s3[0] = \" << s3[0] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "使用 string 需要包含 <string> 头文件",
+        "string 可以直接用 + 拼接",
+        "用 == 可以直接比较两个 string",
+        ".length() 返回字符串长度",
+        "string 可以用下标访问单个字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记包含头文件",
+          "description": "使用 string 但没有 #include <string>，某些编译环境下可能报错。",
+          "fix": "始终在文件开头写 #include <string>。"
+        },
+        {
+          "title": "用 char[] 的方式处理 string",
+          "description": "string 不需要手动加 '\\0'，也不需要用 strlen。",
+          "fix": "用 s.length() 获取长度，用 + 拼接，用 == 比较。"
+        }
+      ],
+      "practice": {
+        "prompt": "创建两个 string，分别存储你的姓和名，拼接后输出完整姓名和长度。",
+        "hint": "string firstName = \"...\"; string lastName = \"...\"; string fullName = firstName + lastName;",
+        "expectedIdea": "string s1 = \"Zhang\";\nstring s2 = \"San\";\nstring s3 = s1 + s2;\ncout << s3 << endl;\ncout << s3.length() << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个操作 string 可以直接使用？",
+          "options": [
+            "s1 + s2 拼接",
+            "s1 * 2 重复",
+            "s1 >> 2 截取",
+            "s1 ** 2 幂运算"
+          ],
+          "answerIndex": 0,
+          "explanation": "string 支持 + 运算符进行拼接。C++ 中 string 不支持 *、>>（此处含义）、** 等操作。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.10",
+      "title": "字符串读入",
+      "learningGoal": "掌握用 cin 和 getline 读取字符串的不同方式",
+      "explanation": "从键盘读取字符串有两种常见方式：cin >> s 和 getline(cin, s)，它们的行为有很大区别。\n\ncin >> s 读取到空格或回车就停止，所以输入 \"Hello World\" 只会读到 \"Hello\"。适合读取单个单词。\n\ngetline(cin, s) 读取一整行，直到遇到回车才停止。输入 \"Hello World\" 会读到完整的字符串。适合读取包含空格的文本。\n\n特别注意：如果在 cin >> 之后使用 getline，需要先用 cin.ignore() 清除输入缓冲区中残留的换行符，否则 getline 会直接读到空字符串。\n\n在竞赛中，如果题目要求读取一行文本（可能含空格），就必须用 getline。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s1, s2;\n    cout << \"cin>> input: \";\n    cin >> s1;\n    cin.ignore();\n    cout << \"getline input: \";\n    getline(cin, s2);\n    cout << \"cin>> read: [\" << s1 << \"]\" << endl;\n    cout << \"getline read: [\" << s2 << \"]\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cin >> s 遇到空格就停止读取",
+        "getline(cin, s) 读取整行直到回车",
+        "cin >> 后用 getline 前需要 cin.ignore() 清除换行符",
+        "cin.ignore() 会丢弃缓冲区中的一个字符（通常是换行符）",
+        "竞赛中根据输入是否含空格选择合适的读取方式"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cin 和 getline 混用时漏掉 ignore",
+          "description": "cin >> n; getline(cin, s); 此时 getline 读到的是空字符串。",
+          "fix": "在 cin 和 getline 之间加 cin.ignore(); 清除残留的换行符。"
+        },
+        {
+          "title": "用 cin 读含空格的字符串",
+          "description": "输入 \"Hello World\"，cin >> s 只得到 \"Hello\"。",
+          "fix": "需要读取含空格的整行时，使用 getline(cin, s)。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，先用 cin >> 读取一个整数 n，再用 getline 读取一行字符串并输出。",
+        "hint": "cin >> n 之后要 cin.ignore()，然后 getline(cin, s)。",
+        "expectedIdea": "int n;\ncin >> n;\ncin.ignore();\nstring s;\ngetline(cin, s);\ncout << n << \": \" << s << endl;"
+      },
+      "quiz": [
+        {
+          "question": "输入 \"Hello World\" 后，cin >> s 读取到的内容是？",
+          "options": [
+            "Hello World",
+            "Hello",
+            "World",
+            "空字符串"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin >> 以空格为分隔符，所以只读取到第一个空格前的 \"Hello\"。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.11",
+      "title": "字符串遍历",
+      "learningGoal": "学会用循环遍历字符串中的每个字符，进行逐字符处理",
+      "explanation": "字符串遍历是指依次访问字符串中的每一个字符。最常用的方式是 for 循环配合下标。\n\n经典写法：for (int i = 0; i < s.length(); i++) { char c = s[i]; }。这样就能对每个字符进行处理，比如统计字符个数、转换大小写等。\n\n也可以用范围 for 循环（C++11）：for (char c : s) { }，更加简洁，不需要关心下标。这种写法在竞赛中很常用。\n\n遍历时注意，字符串中每个字符都可以当作 char 类型来处理，可以进行算术运算（基于 ASCII 码）和比较操作。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s = \"Hello\";\n    cout << \"下标遍历: \";\n    for (int i = 0; i < s.length(); i++) {\n        cout << s[i] << \"-\";\n    }\n    cout << endl;\n    cout << \"范围遍历: \";\n    for (char c : s) {\n        cout << c << \" \";\n    }\n    cout << endl;\n    int cnt = 0;\n    for (char c : s) {\n        if (c == 'l') cnt++;\n    }\n    cout << \"'l' count = \" << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "s.length() 返回字符串长度，类型为 size_t",
+        "下标遍历：for (int i = 0; i < s.length(); i++)",
+        "范围遍历：for (char c : s) 直接获取每个字符",
+        "遍历常用于统计、查找、转换等操作",
+        "范围 for 更简洁，但不能修改下标"
+      ],
+      "commonMistakes": [
+        {
+          "title": "int 和 size_t 混用警告",
+          "description": "for (int i = 0; i < s.length(); i++) 可能产生编译警告，因为 length() 返回 size_t。",
+          "fix": "可以写成 for (size_t i = 0; ...) 或者在竞赛中忽略此警告。"
+        },
+        {
+          "title": "范围 for 修改字符需要引用",
+          "description": "for (char c : s) { c = toupper(c); } 不会修改原字符串。",
+          "fix": "要修改原字符串，用引用：for (char &c : s) { c = toupper(c); }。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定字符串 s = \"Programming\"，统计其中大写字母的个数。",
+        "hint": "遍历每个字符，判断是否在 'A' 到 'Z' 之间。",
+        "expectedIdea": "string s = \"Programming\";\nint cnt = 0;\nfor (char c : s) {\n    if (c >= 'A' && c <= 'Z') cnt++;\n}\ncout << cnt << endl;"
+      },
+      "quiz": [
+        {
+          "question": "遍历字符串 \"abc\" 时，s.length() 的返回值是？",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "1"
+          ],
+          "answerIndex": 1,
+          "explanation": "字符串 \"abc\" 有 3 个字符，所以 length() 返回 3。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.12",
+      "title": "字符串拼接",
+      "learningGoal": "掌握字符串拼接的多种方式，理解拼接的底层机制",
+      "explanation": "字符串拼接是将多个字符串合并成一个新字符串。C++ 中有多种拼接方式。\n\n最常用的是 + 运算符：string s = \"Hello\" + \" \" + \"World\";。注意，两个字符串字面量不能直接相加（\"Hello\" + \"World\" 会报错），至少有一方必须是 string 类型。\n\n+= 运算符可以在原字符串末尾追加内容：s += \"!\"。这在循环中逐个拼接字符时很有用。\n\nstring 还提供了 .append() 方法：s.append(\"World\")。效果和 += 类似，但在追加多个字符时 .append() 功能更丰富。\n\n拼接操作会创建新的字符串对象，频繁拼接大量字符串时效率较低。竞赛中如果需要频繁拼接，可以先计算总长度再一次性处理。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s1 = \"Hello\";\n    string s2 = \"World\";\n    string s3 = s1 + \" \" + s2;\n    cout << s3 << endl;\n    s3 += \"!\";\n    cout << s3 << endl;\n    string s4 = s1;\n    s4.append(\" \");\n    s4.append(s2);\n    cout << s4 << endl;\n    string result = \"\";\n    for (int i = 0; i < 5; i++) {\n        result += char('A' + i);\n    }\n    cout << result << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "+ 运算符拼接两个 string",
+        "+= 在原字符串末尾追加",
+        ".append() 方法和 += 效果类似",
+        "两个字符串字面量不能直接用 + 相加",
+        "循环中可以用 += 逐个拼接字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "字面量直接相加",
+          "description": "\"Hello\" + \"World\" 编译错误，因为字面量是 const char* 类型。",
+          "fix": "至少一方是 string：string(\"Hello\") + \"World\" 或先 string s = \"Hello\"; s + \"World\"。"
+        },
+        {
+          "title": "频繁拼接大量字符串",
+          "description": "在循环中反复 s += c 可能导致多次内存分配，效率低。",
+          "fix": "如果可以预知长度，可以先 string s(n, ' ') 预分配，或使用 +=（竞赛中通常够用）。"
+        }
+      ],
+      "practice": {
+        "prompt": "用循环将数字 0 到 9 转换成字符并拼接成一个字符串，输出结果。",
+        "hint": "char('0' + i) 可以把数字转成对应字符。",
+        "expectedIdea": "string s = \"\";\nfor (int i = 0; i <= 9; i++) {\n    s += char('0' + i);\n}\ncout << s << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个写法会编译错误？",
+          "options": [
+            "string s = \"Hi\" + string(\" World\")",
+            "\"Hi\" + \" World\"",
+            "string s = \"Hi\"; s + \" World\"",
+            "string s = \"Hi\"; s += \" World\""
+          ],
+          "answerIndex": 1,
+          "explanation": "两个字符串字面量（const char*）不能直接用 + 相加，至少一方必须是 string 类型。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.13",
+      "title": "字符串长度",
+      "learningGoal": "掌握获取字符串长度的多种方式，理解它们的区别",
+      "explanation": "获取字符串长度有几种方式，适用场景不同。\n\nstring 类型：s.length() 和 s.size() 都返回字符串中的字符数（不包括结尾的空字符），两者功能完全相同。推荐使用 .length()，语义更清晰。\n\n字符数组（C 风格字符串）：strlen(s) 返回字符数（不包括 '\\0'），需要包含 <cstring>。sizeof(s) 返回数组占用的总字节数（包括 '\\0' 和未使用的空间）。\n\n关键区别：strlen 遍历字符直到遇到 '\\0'，时间复杂度 O(n)。sizeof 在编译时确定，是常量时间。对 string 用 sizeof 返回的是 string 对象本身的大小（通常是一个指针加几个成员变量），不是字符串长度。\n\n在竞赛中，string 用 .length()，字符数组用 strlen()，sizeof 只在特殊场景（如计算数组总大小）下使用。",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    string s = \"Hello\";\n    cout << \"string length: \" << s.length() << endl;\n    cout << \"string size: \" << s.size() << endl;\n    char cs[] = \"Hello\";\n    cout << \"strlen: \" << strlen(cs) << endl;\n    cout << \"sizeof(cs): \" << sizeof(cs) << endl;\n    cout << \"sizeof(string): \" << sizeof(s) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "s.length() 和 s.size() 对 string 结果相同",
+        "strlen 返回字符数，不包含 '\\0'",
+        "sizeof 返回数组占用的总字节数",
+        "sizeof(char 数组) 包含 '\\0' 和未使用空间",
+        "sizeof(string) 返回对象本身大小，不是字符串长度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "对 string 用 sizeof 获取长度",
+          "description": "sizeof(s) 返回的是 string 对象的大小（通常 24 或 32 字节），不是字符串长度。",
+          "fix": "获取 string 长度用 s.length() 或 s.size()。"
+        },
+        {
+          "title": "混淆 strlen 和 sizeof",
+          "description": "char s[100] = \"Hi\"; strlen(s) 返回 2，sizeof(s) 返回 100。",
+          "fix": "strlen 返回实际字符串长度，sizeof 返回数组总大小。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明 string s = \"C++ Programming\"，分别用 length() 和 size() 输出长度，确认它们相等。",
+        "hint": "cout << s.length() << \" \" << s.size() << endl;",
+        "expectedIdea": "string s = \"C++ Programming\";\ncout << \"length: \" << s.length() << endl;\ncout << \"size: \" << s.size() << endl;"
+      },
+      "quiz": [
+        {
+          "question": "char s[100] = \"ABC\"; sizeof(s) 的值是？",
+          "options": [
+            "3",
+            "4",
+            "100",
+            "101"
+          ],
+          "answerIndex": 2,
+          "explanation": "sizeof 返回数组声明时的大小 100，而不是当前存储的字符串长度。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.14",
+      "title": "常见字符串操作",
+      "learningGoal": "掌握 string 的常用成员函数：find、substr、insert、erase 等",
+      "explanation": "C++ string 提供了许多实用的成员函数，可以方便地完成查找、截取、插入、删除等操作。\n\ns.find(子串) 返回子串第一次出现的位置（下标），找不到则返回 string::npos。s.substr(起点, 长度) 从指定位置截取子串。\n\ns.insert(位置, 字符串) 在指定位置插入内容。s.erase(位置, 长度) 删除指定位置开始的若干字符。s.replace(位置, 长度, 新内容) 替换指定范围的内容。\n\n这些函数在竞赛中非常常用，比如提取字符串的某一部分、删除特定字符、查找关键信息等。熟练使用这些函数可以大大简化代码。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s = \"Hello World\";\n    int pos = s.find(\"World\");\n    cout << \"find 'World': \" << pos << endl;\n    string sub = s.substr(0, 5);\n    cout << \"substr(0,5): \" << sub << endl;\n    s.insert(5, \" Beautiful\");\n    cout << \"after insert: \" << s << endl;\n    s.erase(5, 10);\n    cout << \"after erase: \" << s << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "find 返回子串第一次出现的下标位置",
+        "find 找不到时返回 string::npos",
+        "substr(起点, 长度) 截取子串",
+        "insert(位置, 内容) 在指定位置插入",
+        "erase(位置, 长度) 删除指定范围的字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "find 返回值不检查",
+          "description": "直接用 find 的返回值当下标，没检查是否为 npos，可能越界。",
+          "fix": "使用前检查：if (s.find(\"x\") != string::npos) { ... }。"
+        },
+        {
+          "title": "substr 参数越界",
+          "description": "s.substr(10, 5) 当字符串长度不够时会截取到末尾或报错。",
+          "fix": "确保起点和长度不超过字符串长度。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定字符串 s = \"I love C++\"，用 find 找到 \"C++\" 的位置，然后用 substr 截取并输出 \"C++\"。",
+        "hint": "int pos = s.find(\"C++\"); string sub = s.substr(pos, 3);",
+        "expectedIdea": "string s = \"I love C++\";\nint pos = s.find(\"C++\");\nstring sub = s.substr(pos, 3);\ncout << sub << endl;"
+      },
+      "quiz": [
+        {
+          "question": "s.find(\"abc\") 如果找不到子串，返回值是？",
+          "options": [
+            "-1",
+            "0",
+            "string::npos",
+            "抛出异常"
+          ],
+          "answerIndex": 2,
+          "explanation": "find 找不到时返回 string::npos（这是一个特殊常量，通常值为 -1 转为 size_t）。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.15",
+      "title": "ASCII 基础",
+      "learningGoal": "理解 ASCII 编码的概念，掌握字符与数字的转换关系",
+      "explanation": "计算机中每个字符都用一个整数来表示，这个编码标准就是 ASCII（美国信息交换标准代码）。\n\n常用 ASCII 值：'A' 到 'Z' 是 65 到 90，'a' 到 'z' 是 97 到 122，'0' 到 '9' 是 48 到 57。字符和整数可以互相转换：int n = 'A' 得到 65，char c = 65 得到 'A'。\n\n利用 ASCII 的规律可以实现很多操作：大写字母转小写只需加 32（'A'+32='a'），小写转大写减 32。数字字符转数值用 c - '0'。\n\n竞赛中，字符处理题目经常用到 ASCII 知识。比如判断一个字符是不是数字：c >= '0' && c <= '9'。判断是不是大写字母：c >= 'A' && c <= 'Z'。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"'A' = \" << (int)'A' << endl;\n    cout << \"'a' = \" << (int)'a' << endl;\n    cout << \"'0' = \" << (int)'0' << endl;\n    char upper = 'A';\n    char lower = upper + 32;\n    cout << upper << \" -> \" << lower << endl;\n    char digit = '7';\n    int num = digit - '0';\n    cout << digit << \" -> \" << num << endl;\n    char c = 'H';\n    if (c >= 'A' && c <= 'Z') {\n        cout << c << \" is uppercase\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "(int) 可以查看字符的 ASCII 码值",
+        "'A' 是 65，'a' 是 97，相差 32",
+        "大小写转换：大写 + 32 = 小写",
+        "数字字符转数值：c - '0'",
+        "判断字符类型用范围比较"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆字符和数字",
+          "description": "'5' 的 ASCII 值是 53，不是 5。'5' != 5。",
+          "fix": "字符 '5' 和整数 5 是不同的。字符转数值用 c - '0'。"
+        },
+        {
+          "title": "大小写转换用固定值 32",
+          "description": "虽然 'A'+32='a' 是对的，但建议用 tolower/toupper 函数更安全。",
+          "fix": "竞赛中直接加减 32 是可以的，但知道 tolower 和 toupper 更好。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个字符，判断它是大写字母、小写字母还是数字，输出对应类别。",
+        "hint": "用 if-else if 判断字符范围：'A'~'Z'、'a'~'z'、'0'~'9'。",
+        "expectedIdea": "char c;\ncin >> c;\nif (c >= 'A' && c <= 'Z') cout << \"uppercase\";\nelse if (c >= 'a' && c <= 'z') cout << \"lowercase\";\nelse if (c >= '0' && c <= '9') cout << \"digit\";\nelse cout << \"other\";"
+      },
+      "quiz": [
+        {
+          "question": "字符 '0' 的 ASCII 值是？",
+          "options": [
+            "0",
+            "48",
+            "32",
+            "1"
+          ],
+          "answerIndex": 1,
+          "explanation": "'0' 的 ASCII 值是 48，不是 0。数字字符 '0' 到 '9' 对应 ASCII 值 48 到 57。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.16",
+      "title": "string 与字符数组区别",
+      "learningGoal": "理解 string 和字符数组的区别，能在合适场景选择使用",
+      "explanation": "string 和字符数组（char[]）都能存储字符串，但在使用上有重要区别。\n\n内存管理：string 自动管理内存，大小可以动态变化；字符数组大小固定，声明后不能改变。\n\n安全性：string 会自动处理 '\\0'，不会缓冲区溢出；字符数组需要手动管理 '\\0'，容易越界。\n\n操作性：string 支持 +、==、< 等运算符，以及 find、substr 等方法；字符数组需要用 cstring 中的函数（strcmp、strcat 等）。\n\n在竞赛中，绝大多数情况下推荐使用 string。只有在特殊场景（如需要和 C 语言接口交互、或对性能有极致要求）时才考虑字符数组。",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    string s1 = \"Hello\";\n    char s2[] = \"Hello\";\n    cout << \"string: \" << s1 << \" len=\" << s1.length() << endl;\n    cout << \"char[]: \" << s2 << \" len=\" << strlen(s2) << endl;\n    s1 += \" World\";\n    cout << \"string拼接后: \" << s1 << endl;\n    strcat(s2, \" World\");\n    cout << \"char[]拼接后: \" << s2 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "string 用 .length()，字符数组用 strlen()",
+        "string 用 + 拼接，字符数组用 strcat()",
+        "string 大小动态可变，字符数组大小固定",
+        "string 自动管理 '\\0'，字符数组需手动处理",
+        "竞赛中推荐优先使用 string"
+      ],
+      "commonMistakes": [
+        {
+          "title": "对字符数组用 + 拼接",
+          "description": "char s[] = \"Hi\"; s + \" World\" 不会拼接，而是指针运算。",
+          "fix": "字符数组拼接用 strcat(s, \" World\")，或者改用 string。"
+        },
+        {
+          "title": "strcat 导致越界",
+          "description": "char s[6] = \"Hello\"; strcat(s, \" World\") 目标数组不够大，越界。",
+          "fix": "确保字符数组有足够空间存放拼接后的结果（包括 '\\0'）。"
+        }
+      ],
+      "practice": {
+        "prompt": "分别用 string 和 char[] 存储同一个字符串 \"ABC\"，输出各自的长度，然后分别拼接 \"DEF\" 并输出。",
+        "hint": "string 用 +，char[] 用 strcat。",
+        "expectedIdea": "string s1 = \"ABC\";\nchar s2[10] = \"ABC\";\ncout << s1.length() << \" \" << strlen(s2) << endl;\ns1 += \"DEF\";\nstrcat(s2, \"DEF\");\ncout << s1 << endl;\ncout << s2 << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个操作是 string 可以做但 char[] 不能直接做的？",
+          "options": [
+            "用下标访问单个字符",
+            "用 + 运算符拼接",
+            "用 cout 输出",
+            "用 for 循环遍历"
+          ],
+          "answerIndex": 1,
+          "explanation": "char[] 不能直接用 + 拼接，需要用 strcat 函数。其余操作两者都支持。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.6.17",
+      "title": "getline 与 cin 区别",
+      "learningGoal": "深入理解 getline 和 cin >> 读取字符串的区别，掌握混合使用的技巧",
+      "explanation": "cin >> 和 getline 是 C++ 中两种主要的输入方式，它们在处理字符串时有本质区别。\n\ncin >> 使用空白字符（空格、制表符、换行符）作为分隔符。读取一个字符串时，跳过前导空白，读到下一个空白字符就停止。如果输入 \"  Hello  World  \"，cin >> s 只得到 \"Hello\"。\n\ngetline(cin, s) 读取从当前位置到行尾的所有字符（包括空格），遇到换行符停止并丢弃换行符。如果输入 \"  Hello  World  \"，getline 得到 \"  Hello  World  \"。\n\n混用时的核心问题：cin >> 读取后，换行符会留在输入缓冲区。紧接着调用 getline 会读到这个空行。解决方法是在 cin >> 后加 cin.ignore()。\n\n竞赛中，如果一行只有一个数据用 cin >>，一行有多个数据或含空格的文本用 getline。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    string line;\n    cout << \"Enter number: \";\n    cin >> n;\n    cin.ignore();\n    cout << \"Enter sentence: \";\n    getline(cin, line);\n    cout << \"Number: \" << n << endl;\n    cout << \"Sentence: \" << line << endl;\n    cout << \"Sentence length: \" << line.length() << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cin >> 跳过前导空白，以空白为分隔符",
+        "getline 读取整行，包括前导空格",
+        "cin >> 后换行符留在缓冲区，需要 cin.ignore()",
+        "cin.ignore() 丢弃缓冲区中一个字符",
+        "根据输入格式选择合适的读取方式"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cin >> 后忘记 ignore",
+          "description": "cin >> n; getline(cin, s); 此时 getline 读到空字符串，因为换行符还在缓冲区。",
+          "fix": "在 cin >> 和 getline 之间始终加 cin.ignore()。"
+        },
+        {
+          "title": "多次 getline 不需要 ignore",
+          "description": "getline 和 getline 之间不需要 ignore，因为 getline 会消费掉换行符。",
+          "fix": "只有 cin >> 后面接 getline 时才需要 ignore。"
+        }
+      ],
+      "practice": {
+        "prompt": "先读一个整数表示学生数量，然后读 n 行，每行是一个学生姓名（可能含空格），输出所有姓名。",
+        "hint": "cin >> n; cin.ignore(); 然后循环 n 次 getline(cin, name)。",
+        "expectedIdea": "int n;\ncin >> n;\ncin.ignore();\nfor (int i = 0; i < n; i++) {\n    string name;\n    getline(cin, name);\n    cout << name << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "cin >> s 读入 \"  abc  def  \" 后 s 的值是？",
+          "options": [
+            "  abc  def  ",
+            "abc",
+            "  abc",
+            "abc  def"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin >> 跳过前导空白，以空白为分隔符，所以只读到第一个空格前的 \"abc\"。"
+        }
+      ]
+    }
+  ]
+}

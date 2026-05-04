@@ -24,7 +24,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/data/content_manifest.json
     - assets/data/lessons/
     - assets/data/quizzes/
     - assets/data/mistakes/
     - assets/data/bfs_steps.json
+    - assets/data/knowledge/
+    - assets/data/cpp/

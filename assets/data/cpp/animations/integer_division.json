@@ -1,0 +1,91 @@
+{
+  "animationId": "cpp_integer_division",
+  "itemId": "1.10.2",
+  "title": "整数除法陷阱",
+  "description": "演示 C++ 中整数除法截断小数部分的问题及修复方法",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "整数除法截断",
+      "description": "两个 int 相除，小数部分直接丢弃，7 / 2 = 3 而非 3.5",
+      "codeLine": "cout << 7 / 2;",
+      "highlights": ["7 / 2"],
+      "state": {
+        "variables": [
+          {"name": "7 / 2", "value": "3", "note": "0.5 被截断！"}
+        ],
+        "containers": [],
+        "output": "3"
+      }
+    },
+    {
+      "step": 2,
+      "title": "实际场景：计算平均分",
+      "description": "sum=85, cnt=3，用 int 除法 avg = sum / cnt 得到 28 而非 28.33",
+      "codeLine": "int sum = 85, cnt = 3; double avg = sum / cnt;",
+      "highlights": ["sum / cnt"],
+      "state": {
+        "variables": [
+          {"name": "sum", "value": "85", "note": ""},
+          {"name": "cnt", "value": "3", "note": ""},
+          {"name": "avg", "value": "28.0", "note": "85/3=28（先截断再转double）"}
+        ],
+        "containers": [],
+        "output": "3"
+      }
+    },
+    {
+      "step": 3,
+      "title": "修复方法 1：1.0 * 乘法提升",
+      "description": "在除法前乘以 1.0，把整个表达式提升为 double 运算",
+      "codeLine": "double avg2 = 1.0 * sum / cnt;",
+      "highlights": ["1.0 *"],
+      "state": {
+        "variables": [
+          {"name": "sum", "value": "85", "note": ""},
+          {"name": "cnt", "value": "3", "note": ""},
+          {"name": "avg2", "value": "28.33", "note": "1.0*85/3=28.33 ✓"}
+        ],
+        "containers": [],
+        "output": "3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "修复方法 2：强制类型转换",
+      "description": "用 (double)sum 把 sum 转为 double，除法变为浮点除法",
+      "codeLine": "double avg3 = (double)sum / cnt;",
+      "highlights": ["(double)"],
+      "state": {
+        "variables": [
+          {"name": "sum", "value": "85", "note": ""},
+          {"name": "cnt", "value": "3", "note": ""},
+          {"name": "avg3", "value": "28.33", "note": "(double)85/3=28.33 ✓"}
+        ],
+        "containers": [],
+        "output": "3"
+      }
+    },
+    {
+      "step": 5,
+      "title": "总结",
+      "description": "int / int = int（截断）。只要有一个操作数是 double，结果就是 double。必须在除法之前提升类型！",
+      "codeLine": "// int/int→截断  double/int→double",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "7/2", "value": "3", "note": "int/int 截断"},
+          {"name": "7.0/2", "value": "3.5", "note": "double/int 正确"},
+          {"name": "(double)7/2", "value": "3.5", "note": "强转后正确"}
+        ],
+        "containers": [],
+        "output": "3"
+      }
+    }
+  ]
+}

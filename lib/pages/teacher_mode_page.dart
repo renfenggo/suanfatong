@@ -1,24 +1,28 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/bfs_step.dart';
+import '../state/animation_provider.dart';
+import '../state/content_manifest_provider.dart';
 import '../widgets/bfs_grid.dart';
 
-class TeacherModePage extends StatefulWidget {
+class TeacherModePage extends ConsumerStatefulWidget {
   const TeacherModePage({super.key});
 
   @override
-  State<TeacherModePage> createState() => _TeacherModePageState();
+  ConsumerState<TeacherModePage> createState() => _TeacherModePageState();
 }
 
-class _TeacherModePageState extends State<TeacherModePage> {
+class _TeacherModePageState extends ConsumerState<TeacherModePage> {
   List<BfsStep> _steps = [];
   int _currentIndex = 0;
   bool _isPlaying = false;
   Timer? _timer;
   String? _error;
   bool _landscapeHintShown = false;
+  int _rows = 5;
+  int _cols = 5;
+  int _playIntervalMs = 1000;
 
   @override
   void initState() {
@@ -73,16 +77,34 @@ class _TeacherModePageState extends State<TeacherModePage> {
 
   Future<void> _loadSteps() async {
     try {
-      final jsonStr = await rootBundle.loadString('assets/data/bfs_steps.json');
-      final List<dynamic> jsonList = json.decode(jsonStr);
-      final steps =
-          jsonList
-              .map((e) => BfsStep.fromJson(e as Map<String, dynamic>))
-              .toList();
-      setState(() {
-        _steps = steps;
-        _currentIndex = 0;
-      });
+      final idsAsync = ref.read(defaultContentIdsProvider);
+      final scenarioId = idsAsync.valueOrNull?.animationScenarioId ?? '';
+      if (scenarioId.isEmpty) return;
+      final stepsAsync = ref.read(animationScenarioProvider(scenarioId));
+      final configAsync = ref.read(animationScenarioConfigProvider(scenarioId));
+      stepsAsync.when(
+        data: (steps) {
+          setState(() {
+            _steps = steps;
+            _currentIndex = 0;
+          });
+        },
+        loading: () {},
+        error: (e, _) => setState(() => _error = e.toString()),
+      );
+      configAsync.when(
+        data: (config) {
+          if (config != null) {
+            setState(() {
+              _rows = config.rows;
+              _cols = config.cols;
+              _playIntervalMs = config.playIntervalMs;
+            });
+          }
+        },
+        loading: () {},
+        error: (_, __) {},
+      );
     } catch (e) {
       setState(() => _error = e.toString());
     }
@@ -123,7 +145,7 @@ class _TeacherModePageState extends State<TeacherModePage> {
       setState(() => _currentIndex = 0);
     }
     setState(() => _isPlaying = true);
-    _timer = Timer.periodic(const Duration(milliseconds: 1500), (_) {
+    _timer = Timer.periodic(Duration(milliseconds: _playIntervalMs), (_) {
       if (_currentIndex < _steps.length - 1) {
         setState(() => _currentIndex++);
       } else {
@@ -193,8 +215,8 @@ class _TeacherModePageState extends State<TeacherModePage> {
                   padding: const EdgeInsets.all(16),
                   child: Center(
                     child: BfsGrid(
-                      rows: 5,
-                      cols: 5,
+                      rows: _rows,
+                      cols: _cols,
                       visited: step.visited,
                       queue: step.queue,
                       current: step.current,
@@ -241,8 +263,8 @@ class _TeacherModePageState extends State<TeacherModePage> {
           _buildTeacherInfoBar(step),
           const SizedBox(height: 12),
           BfsGrid(
-            rows: 5,
-            cols: 5,
+            rows: _rows,
+            cols: _cols,
             visited: step.visited,
             queue: step.queue,
             current: step.current,

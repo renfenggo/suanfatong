@@ -1,0 +1,95 @@
+{
+  "animationId": "cpp_logical_op",
+  "itemId": "1.4.4",
+  "title": "逻辑运算",
+  "description": "演示逻辑与 &&、逻辑或 ||、逻辑非 ! 的求值过程",
+  "initialState": {
+    "variables": [
+      {"name": "x", "value": "5", "note": ""},
+      {"name": "y", "value": "0", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化变量",
+      "description": "声明 x = 5（非零，即 true），y = 0（即 false）",
+      "codeLine": "int x = 5, y = 0;",
+      "highlights": ["x", "y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "非零 → true"},
+          {"name": "y", "value": "0", "note": "零 → false"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "逻辑与 &&",
+      "description": "x && y：x 为 true，y 为 false，所以 true && false = false",
+      "codeLine": "cout << (x && y);",
+      "highlights": ["x && y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "true"},
+          {"name": "y", "value": "0", "note": "false"},
+          {"name": "x&&y", "value": "0", "note": "true && false → false"}
+        ],
+        "containers": [],
+        "output": "0"
+      }
+    },
+    {
+      "step": 3,
+      "title": "逻辑或 ||",
+      "description": "x || y：x 为 true，y 为 false，所以 true || false = true",
+      "codeLine": "cout << (x || y);",
+      "highlights": ["x || y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "true"},
+          {"name": "y", "value": "0", "note": "false"},
+          {"name": "x||y", "value": "1", "note": "true || false → true"}
+        ],
+        "containers": [],
+        "output": "0 1"
+      }
+    },
+    {
+      "step": 4,
+      "title": "逻辑非 !",
+      "description": "!x：x 为 true，取反得 false。!y：y 为 false，取反得 true",
+      "codeLine": "cout << !x << \" \" << !y;",
+      "highlights": ["!x", "!y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "true"},
+          {"name": "y", "value": "0", "note": "false"},
+          {"name": "!x", "value": "0", "note": "!true → false"},
+          {"name": "!y", "value": "1", "note": "!false → true"}
+        ],
+        "containers": [],
+        "output": "0 1 0 1"
+      }
+    },
+    {
+      "step": 5,
+      "title": "短路求值",
+      "description": "&& 中如果左边为 false 则不再计算右边；|| 中如果左边为 true 则不再计算右边，这就是短路求值",
+      "codeLine": "// 短路: false && expr → 不计算 expr",
+      "highlights": ["短路求值"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "true"},
+          {"name": "y", "value": "0", "note": "false"}
+        ],
+        "containers": [],
+        "output": "0 1 0 1"
+      }
+    }
+  ]
+}

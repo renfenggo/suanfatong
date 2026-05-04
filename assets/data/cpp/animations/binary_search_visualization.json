@@ -1,0 +1,127 @@
+{
+  "animationId": "cpp_binary_search",
+  "itemId": "1.8.25",
+  "title": "binary_search 二分查找",
+  "description": "演示在有序数组上使用 binary_search 查找元素",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "准备有序数组",
+      "description": "binary_search 要求数组必须已排序",
+      "codeLine": "int a[] = {1, 3, 5, 7, 9, 11, 13};",
+      "highlights": ["a"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "7", "note": "元素个数"},
+          {"name": "target", "value": "7", "note": "查找目标"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "3", "5", "7", "9", "11", "13"],
+            "activeIndex": -1,
+            "note": "已排序"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "调用 binary_search",
+      "description": "在 [a, a+n) 区间查找 target=7 是否存在",
+      "codeLine": "bool found = binary_search(a, a + n, 7);",
+      "highlights": ["binary_search"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "7", "note": ""},
+          {"name": "found", "value": "true", "note": "7 存在于数组中"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "3", "5", "7", "9", "11", "13"],
+            "activeIndex": 3,
+            "note": "找到 7，位于 a[3]"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "查找不存在的元素",
+      "description": "查找 target=6，数组中不存在，返回 false",
+      "codeLine": "bool found2 = binary_search(a, a + n, 6);",
+      "highlights": ["binary_search"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "6", "note": ""},
+          {"name": "found2", "value": "false", "note": "6 不在数组中"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "3", "5", "7", "9", "11", "13"],
+            "activeIndex": -1,
+            "note": "6 不存在"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "输出查找结果",
+      "description": "binary_search 只返回 bool，不返回位置",
+      "codeLine": "cout << found << \" \" << found2;",
+      "highlights": ["cout"],
+      "state": {
+        "variables": [
+          {"name": "found", "value": "true", "note": "7 存在"},
+          {"name": "found2", "value": "false", "note": "6 不存在"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "3", "5", "7", "9", "11", "13"],
+            "activeIndex": -1,
+            "note": ""
+          }
+        ],
+        "output": "1 0"
+      }
+    },
+    {
+      "step": 5,
+      "title": "前提：数组必须有序",
+      "description": "如果数组未排序，binary_search 的结果是未定义的",
+      "codeLine": "// 前提：数组必须先排序！",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "注意", "value": "必须先 sort", "note": "否则结果不可靠"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "3", "5", "7", "9", "11", "13"],
+            "activeIndex": -1,
+            "note": "有序才能二分查找"
+          }
+        ],
+        "output": ""
+      }
+    }
+  ]
+}

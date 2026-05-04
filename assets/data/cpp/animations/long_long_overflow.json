@@ -1,0 +1,91 @@
+{
+  "animationId": "cpp_long_long_overflow",
+  "itemId": "1.10.5",
+  "title": "int 溢出与 long long",
+  "description": "演示 int 乘法溢出问题以及用 long long 和 1LL 修复",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "int 范围有限",
+      "description": "int 范围约 -21亿 到 21亿。两个 100万 相乘 = 10000亿，远超 int 上限",
+      "codeLine": "int a = 1000000, b = 1000000;",
+      "highlights": ["a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "1000000", "note": "100万"},
+          {"name": "b", "value": "1000000", "note": "100万"},
+          {"name": "int 上限", "value": "2147483647", "note": "约 21亿"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "int 乘法溢出",
+      "description": "a * b = 10^12，远超 int 范围，结果被截断为错误值",
+      "codeLine": "int c = a * b; cout << c;",
+      "highlights": ["a * b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "1000000", "note": ""},
+          {"name": "b", "value": "1000000", "note": ""},
+          {"name": "c = a*b", "value": "-727379968", "note": "溢出！结果错误"}
+        ],
+        "containers": [],
+        "output": "-727379968"
+      }
+    },
+    {
+      "step": 3,
+      "title": "修复：用 1LL 提升运算",
+      "description": "1LL * a * b 先把 a 提升为 long long，整个乘法在 64 位下运算",
+      "codeLine": "long long d = 1LL * a * b;",
+      "highlights": ["1LL"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "1000000", "note": ""},
+          {"name": "b", "value": "1000000", "note": ""},
+          {"name": "d = 1LL*a*b", "value": "1000000000000", "note": "10^12 ✓"}
+        ],
+        "containers": [],
+        "output": "-727379968"
+      }
+    },
+    {
+      "step": 4,
+      "title": "修复：强转 long long",
+      "description": "(long long)a * b 也能在乘法前提升类型",
+      "codeLine": "long long e = (long long)a * b; cout << e;",
+      "highlights": ["(long long)"],
+      "state": {
+        "variables": [
+          {"name": "e = (LL)a*b", "value": "1000000000000", "note": "10^12 ✓"}
+        ],
+        "containers": [],
+        "output": "1000000000000"
+      }
+    },
+    {
+      "step": 5,
+      "title": "总结",
+      "description": "int 乘法溢出不会报错，只会给出错误结果。关键：在乘法发生前提升为 long long，而不是乘完再转",
+      "codeLine": "// 1LL * a * b  或  (long long)a * b",
+      "highlights": ["1LL"],
+      "state": {
+        "variables": [
+          {"name": "int a*b", "value": "溢出", "note": "乘完已错"},
+          {"name": "1LL*a*b", "value": "正确", "note": "乘前提升"},
+          {"name": "long long 范围", "value": "±9.2×10^18", "note": "远大于 int"}
+        ],
+        "containers": [],
+        "output": "1000000000000"
+      }
+    }
+  ]
+}

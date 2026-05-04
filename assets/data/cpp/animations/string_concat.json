@@ -1,0 +1,136 @@
+{
+  "animationId": "cpp_string_concat",
+  "itemId": "1.6.12",
+  "title": "字符串拼接",
+  "description": "演示 C++ string 的 + 拼接操作，逐步展示拼接过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建两个字符串",
+      "description": "声明两个 string 变量，分别存储姓和名",
+      "codeLine": "string first = \"Zhang\";",
+      "highlights": ["first"],
+      "state": {
+        "variables": [
+          {"name": "first", "value": "\"Zhang\"", "note": "姓氏"},
+          {"name": "last", "value": "\"San\"", "note": "名字"}
+        ],
+        "containers": [
+          {
+            "name": "first",
+            "type": "string",
+            "values": ["Z", "h", "a", "n", "g"],
+            "activeIndex": -1,
+            "note": "长度 5"
+          },
+          {
+            "name": "last",
+            "type": "string",
+            "values": ["S", "a", "n"],
+            "activeIndex": -1,
+            "note": "长度 3"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "拼接姓和名",
+      "description": "用 + 运算符将 first 和 last 拼接成全名，生成新字符串",
+      "codeLine": "string full = first + last;",
+      "highlights": ["first + last"],
+      "state": {
+        "variables": [
+          {"name": "first", "value": "\"Zhang\"", "note": ""},
+          {"name": "last", "value": "\"San\"", "note": ""},
+          {"name": "full", "value": "\"ZhangSan\"", "note": "first + last 的结果"}
+        ],
+        "containers": [
+          {
+            "name": "full",
+            "type": "string",
+            "values": ["Z", "h", "a", "n", "g", "S", "a", "n"],
+            "activeIndex": -1,
+            "note": "长度 8 = 5 + 3"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "中间加空格拼接",
+      "description": "在两个字符串之间插入一个空格字符串 \" \"，使结果更美观",
+      "codeLine": "string spaced = first + \" \" + last;",
+      "highlights": ["\" \"", "first + \" \" + last"],
+      "state": {
+        "variables": [
+          {"name": "first", "value": "\"Zhang\"", "note": ""},
+          {"name": "last", "value": "\"San\"", "note": ""},
+          {"name": "spaced", "value": "\"Zhang San\"", "note": "中间有空格"}
+        ],
+        "containers": [
+          {
+            "name": "spaced",
+            "type": "string",
+            "values": ["Z", "h", "a", "n", "g", " ", "S", "a", "n"],
+            "activeIndex": 5,
+            "note": "下标 5 是插入的空格"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "追加拼接 +=",
+      "description": "使用 += 运算符在 spaced 末尾追加字符串，原地修改",
+      "codeLine": "spaced += \"!\";",
+      "highlights": ["+=", "\"!\""],
+      "state": {
+        "variables": [
+          {"name": "spaced", "value": "\"Zhang San!\"", "note": "末尾追加了 !"}
+        ],
+        "containers": [
+          {
+            "name": "spaced",
+            "type": "string",
+            "values": ["Z", "h", "a", "n", "g", " ", "S", "a", "n", "!"],
+            "activeIndex": 9,
+            "note": "新长度 10 = 9 + 1"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "输出结果",
+      "description": "输出拼接后的完整字符串及其长度",
+      "codeLine": "cout << spaced << spaced.length();",
+      "highlights": ["spaced", "length"],
+      "state": {
+        "variables": [
+          {"name": "spaced", "value": "\"Zhang San!\"", "note": ""},
+          {"name": "spaced.length()", "value": "10", "note": "字符个数"}
+        ],
+        "containers": [
+          {
+            "name": "spaced",
+            "type": "string",
+            "values": ["Z", "h", "a", "n", "g", " ", "S", "a", "n", "!"],
+            "activeIndex": -1,
+            "note": ""
+          }
+        ],
+        "output": "Zhang San! 10"
+      }
+    }
+  ]
+}

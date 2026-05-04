@@ -1,0 +1,576 @@
+{
+  "section": "1.4",
+  "sectionName": "运算符",
+  "units": [
+    {
+      "itemId": "1.4.1",
+      "title": "算术运算符",
+      "learningGoal": "掌握加减乘除和取余五种算术运算符的用法，理解整数除法与浮点除法的区别",
+      "explanation": "C++ 提供了五种基本算术运算符：\n\n+（加）、-（减）、*（乘）、/（除）、%（取余）\n\n其中前四个适用于所有数值类型，% 只能用于整数。\n\n特别注意除法：两个整数相除，结果仍然是整数，小数部分直接截断（不是四舍五入）。例如 7 / 2 的结果是 3，不是 3.5。如果想得到小数结果，至少有一个操作数要是浮点数，比如 7.0 / 2。\n\n取余运算 % 返回整数除法的余数，例如 7 % 2 结果是 1。取余在判断奇偶、循环计数等场景中非常常用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 17, b = 5;\n    cout << a << \" + \" << b << \" = \" << a + b << endl;\n    cout << a << \" - \" << b << \" = \" << a - b << endl;\n    cout << a << \" * \" << b << \" = \" << a * b << endl;\n    cout << a << \" / \" << b << \" = \" << a / b << endl;\n    cout << a << \" % \" << b << \" = \" << a % b << endl;\n    cout << \"7.0 / 2 = \" << 7.0 / 2 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "+、-、*、/ 对整数和浮点数都可用",
+        "% 取余只能用于整数类型，不能用于浮点数",
+        "整数除法会截断小数部分，17 / 5 = 3",
+        "要得到浮点结果，至少一个操作数写为浮点形式如 7.0",
+        "负数取余结果的符号与被除数相同"
+      ],
+      "commonMistakes": [
+        {
+          "title": "整数除法丢失小数",
+          "description": "写 1 / 2 期望得到 0.5，但实际结果是 0，因为两个 int 相除会截断小数。",
+          "fix": "写成 1.0 / 2 或将变量声明为 double 类型。"
+        },
+        {
+          "title": "对浮点数使用取余",
+          "description": "写 3.5 % 2 会编译报错，% 运算符不支持浮点类型。",
+          "fix": "如果需要对浮点数取余，可以先用 fmod 函数（需 #include <cmath>）。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义两个整数变量 a=23, b=7，分别输出它们的和、差、积、商、余数，每个结果占一行。",
+        "hint": "使用 cout 和 +、-、*、/、% 五种运算符。",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int a = 23, b = 7;\n    cout << a + b << endl;\n    cout << a - b << endl;\n    cout << a * b << endl;\n    cout << a / b << endl;\n    cout << a % b << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 9 / 4 的结果是什么？（两个操作数都是 int）",
+          "options": [
+            "2.25",
+            "2",
+            "3",
+            "2.0"
+          ],
+          "answerIndex": 1,
+          "explanation": "两个 int 相除执行整数除法，结果为 int，小数部分直接截断，所以 9/4=2。"
+        },
+        {
+          "question": "以下哪个表达式可以正确得到 0.5？",
+          "options": [
+            "1 / 2",
+            "1 % 2",
+            "1.0 / 2",
+            "int(1) / int(2)"
+          ],
+          "answerIndex": 2,
+          "explanation": "1.0 是 double 类型，double 除以 int 会自动提升为 double 运算，结果为 0.5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.2",
+      "title": "赋值运算符",
+      "learningGoal": "掌握基本赋值 = 和复合赋值运算符 +=、-=、*=、/=、%= 的用法",
+      "explanation": "赋值运算符 = 把右边的值存到左边的变量里。注意它不是数学上的「等于」，而是「赋值」。\n\n除了基本的 =，C++ 还有复合赋值运算符，把运算和赋值合并成一步：\n\na += 3;  等价于 a = a + 3;\na -= 2;  等价于 a = a - 2;\na *= 4;  等价于 a = a * 4;\na /= 2;  等价于 a = a / 2;\na %= 3;  等价于 a = a % 3;\n\n复合赋值让代码更简洁，也能减少写错变量名的可能。在循环中更新计数器时特别常用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 80;\n    cout << \"初始分数: \" << score << endl;\n\n    score += 10;\n    cout << \"加 10: \" << score << endl;\n\n    score -= 5;\n    cout << \"减 5: \" << score << endl;\n\n    score *= 2;\n    cout << \"乘 2: \" << score << endl;\n\n    score /= 3;\n    cout << \"除以 3: \" << score << endl;\n\n    score %= 7;\n    cout << \"对 7 取余: \" << score << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "= 是赋值，不是「等于」判断",
+        "复合赋值运算符 +=、-=、*=、/=、%= 是运算+赋值的简写",
+        "a += 3; 完全等价于 a = a + 3;",
+        "赋值号左边必须是变量（可修改的左值），不能是常量或表达式"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆 = 和 ==",
+          "description": "把判断相等的 == 写成了赋值 =，导致 if(a=5) 这样的错误。",
+          "fix": "判断相等用 ==，赋值用 =，两者含义完全不同。"
+        },
+        {
+          "title": "复合赋值方向写反",
+          "description": "把 a += 3 写成 3 += a，左边必须是变量。",
+          "fix": "复合赋值运算符左边始终是接受结果的变量。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int x = 100;，然后依次执行 x += 23; x -= 50; x *= 3; 最后输出 x 的值。",
+        "hint": "逐步计算：100+23=123, 123-50=73, 73*3=?",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int x = 100;\n    x += 23;\n    x -= 50;\n    x *= 3;\n    cout << x << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "a %= 5; 等价于下面哪条语句？",
+          "options": [
+            "a = a / 5;",
+            "a = a % 5;",
+            "a = 5 % a;",
+            "a = a + 5;"
+          ],
+          "answerIndex": 1,
+          "explanation": "%= 是取余赋值，a %= 5 等价于 a = a % 5，即把 a 除以 5 的余数存回 a。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.3",
+      "title": "比较运算符",
+      "learningGoal": "掌握六种比较运算符的用法，理解比较结果为 bool 值（true/false）",
+      "explanation": "比较运算符用于比较两个值的大小关系，返回 bool 类型的结果：true（成立）或 false（不成立）。\n\n六种比较运算符：\n==  等于\n!=  不等于\n<   小于\n>   大于\n<=  小于或等于\n>=  大于或等于\n\n在 C++ 中，bool 值 true 输出时显示为 1，false 显示为 0。如果想让 cout 显示 true/false 文字，可以用 boolalpha。\n\n最容易犯的错误是把 ==（判断相等）写成 =（赋值）。这两个符号含义完全不同。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 5, b = 8;\n    cout << \"a == b: \" << (a == b) << endl;\n    cout << \"a != b: \" << (a != b) << endl;\n    cout << \"a < b: \" << (a < b) << endl;\n    cout << \"a > b: \" << (a > b) << endl;\n    cout << \"a <= 5: \" << (a <= 5) << endl;\n    cout << \"b >= 10: \" << (b >= 10) << endl;\n    cout << boolalpha;\n    cout << \"a < b (boolalpha): \" << (a < b) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "比较运算符的结果是 bool 类型：true 或 false",
+        "默认输出时 true 显示为 1，false 显示为 0",
+        "用 cout << boolalpha 可以让 true/false 显示为文字",
+        "== 是判断相等，= 是赋值，两者完全不同",
+        "比较运算符常用于 if 条件和循环条件中"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 == 写成 =",
+          "description": "if (a = 5) 并不是判断 a 是否等于 5，而是把 5 赋值给 a，结果始终为 true。",
+          "fix": "判断相等必须写两个等号 if (a == 5)。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int x = 10, y = 20;，输出 x > y、x < y、x + y == 30、x != y 四个比较的结果。",
+        "hint": "用 cout << (x > y) 这样的格式输出比较结果。",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int x = 10, y = 20;\n    cout << (x > y) << endl;\n    cout << (x < y) << endl;\n    cout << (x + y == 30) << endl;\n    cout << (x != y) << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 (3 != 3) 的结果是什么？",
+          "options": [
+            "true",
+            "false",
+            "1",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "3 和 3 是相等的，!= 表示「不等于」，所以 3 != 3 为 false。"
+        },
+        {
+          "question": "以下哪个是正确的「判断 a 等于 10」的写法？",
+          "options": [
+            "a = 10",
+            "a == 10",
+            "a := 10",
+            "a === 10"
+          ],
+          "answerIndex": 1,
+          "explanation": "在 C++ 中，判断相等用 ==（两个等号），一个等号 = 是赋值操作。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.4",
+      "title": "逻辑运算符",
+      "learningGoal": "掌握 &&（与）、||（或）、!（非）三种逻辑运算符，能组合多个条件判断",
+      "explanation": "逻辑运算符用来组合或取反条件表达式，结果仍然是 bool 类型。\n\n&& （逻辑与）：两边都为 true 时结果才为 true\n|| （逻辑或）：两边至少一个为 true 结果就为 true\n!  （逻辑非）：取反，true 变 false，false 变 true\n\n真值表：\ntrue  && true  = true\ntrue  && false = false\nfalse || true  = true\nfalse || false = false\n!true  = false\n!false = true\n\n在 if 条件中经常组合使用，比如 if (x > 0 && x < 100) 表示 x 在 0 到 100 之间。\n\n注意：&& 和 || 有短路求值特性——如果左边已经能决定结果，右边就不再计算。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 15;\n    bool hasTicket = true;\n\n    cout << \"可以入场: \" << (age >= 12 && hasTicket) << endl;\n    cout << \"免票或VIP: \" << (age < 6 || age > 65) << endl;\n    cout << \"不是免票年龄: \" << !(age < 6) << endl;\n\n    int score = 85;\n    bool isExcellent = score >= 90;\n    bool isGood = score >= 80;\n    cout << \"优秀或良好: \" << (isExcellent || isGood) << endl;\n    cout << \"不优秀: \" << !isExcellent << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "&& 要求两边同时为 true 结果才为 true",
+        "|| 只要一边为 true 结果就为 true",
+        "! 对布尔值取反",
+        "&& 和 || 具有短路求值：左边能确定结果时右边不执行",
+        "逻辑运算符常与比较运算符组合使用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "连续写比较运算符",
+          "description": "写 if (0 < x < 100) 以为表示 x 在 0 到 100 之间，实际会被解析为 (0 < x) < 100，结果总是 true。",
+          "fix": "必须写 if (x > 0 && x < 100)，用 && 连接两个独立比较。"
+        },
+        {
+          "title": "把 && 写成 &",
+          "description": "& 是位运算符（按位与），&& 才是逻辑与。虽然有时候结果碰巧相同，但含义和行为不同。",
+          "fix": "判断条件时统一使用 && 和 ||，不要用 & 和 |。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int year = 2024; 判断它是否是闰年并输出结果。闰年规则：能被 4 整除且不能被 100 整除，或者能被 400 整除。用 boolalpha 输出 true/false。",
+        "hint": "闰年条件：(year%4==0 && year%100!=0) || year%400==0",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int year = 2024;\n    bool isLeap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;\n    cout << boolalpha << isLeap << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 (true && false) 的结果是什么？",
+          "options": [
+            "true",
+            "false",
+            "编译错误",
+            "不确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "&& 要求两边都为 true，只要有一个 false 结果就是 false。"
+        },
+        {
+          "question": "!false || false 的结果是什么？",
+          "options": [
+            "true",
+            "false",
+            "0",
+            "编译错误"
+          ],
+          "answerIndex": 0,
+          "explanation": "!false 为 true，然后 true || false 为 true。逻辑或只要有一边为 true 结果就是 true。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.5",
+      "title": "自增自减",
+      "learningGoal": "掌握 ++ 和 -- 的前置与后置用法，理解两者在表达式中的区别",
+      "explanation": "自增运算符 ++ 让变量的值加 1，自减运算符 -- 让变量的值减 1。\n\n它们各有两种形式：\n前置：++a（先加 1，再使用 a 的值）\n后置：a++（先使用 a 的值，再加 1）\n\n如果单独写一行 a++; 或 ++a;，两者效果完全一样。\n\n但如果用在更大的表达式中就有区别了：\nint a = 5;\nint b = a++;  // b 得到 5（先赋值再加），a 变成 6\nint c = ++a;  // c 得到 7（先加再赋值），a 变成 7\n\n在循环中用 i++ 来递增计数器是最常见的写法。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 5;\n    cout << \"a = \" << a << endl;\n\n    a++;\n    cout << \"a++ 后: \" << a << endl;\n\n    ++a;\n    cout << \"++a 后: \" << a << endl;\n\n    int b = 5;\n    int x = b++;\n    cout << \"x = b++ : x=\" << x << \", b=\" << b << endl;\n\n    int c = 5;\n    int y = ++c;\n    cout << \"y = ++c : y=\" << y << \", c=\" << c << endl;\n\n    int d = 10;\n    d--;\n    cout << \"d-- 后: \" << d << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "++ 让变量加 1，-- 让变量减 1",
+        "单独使用时 a++ 和 ++a 效果相同",
+        "后置 a++ 先返回原值再加 1，前置 ++a 先加 1 再返回新值",
+        "在表达式赋值时 b = a++ 和 b = ++a 结果不同",
+        "循环中常用 i++ 来递增循环变量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆前置和后置",
+          "description": "int b = a++; 期望 b 得到 a+1 的值，但实际 b 得到的是 a 的原值。",
+          "fix": "如果需要先加再用，写 int b = ++a; 如果只需要加 1 不关心返回值，写 a++ 即可。"
+        },
+        {
+          "title": "对同一个变量在同一表达式中多次自增",
+          "description": "写 a = a++ + ++a; 这种代码是未定义行为，不同编译器结果不同。",
+          "fix": "避免在一个表达式中对同一变量多次使用 ++ 或 --。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int n = 10; 用自增自减运算符让 n 先加 1 再减 2（用两次 --），最后输出 n 的值。",
+        "hint": "n++; n--; n--; 或者 n = n + 1 - 2;",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int n = 10;\n    n++;\n    n--;\n    n--;\n    cout << n << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "int a = 3; int b = a++; 执行后 a 和 b 分别是多少？",
+          "options": [
+            "a=3, b=3",
+            "a=4, b=3",
+            "a=3, b=4",
+            "a=4, b=4"
+          ],
+          "answerIndex": 1,
+          "explanation": "后置 a++ 先返回 a 的原值 3 赋给 b，然后 a 加 1 变成 4。所以 a=4, b=3。"
+        },
+        {
+          "question": "int a = 3; int b = ++a; 执行后 a 和 b 分别是多少？",
+          "options": [
+            "a=3, b=3",
+            "a=4, b=3",
+            "a=3, b=4",
+            "a=4, b=4"
+          ],
+          "answerIndex": 3,
+          "explanation": "前置 ++a 先把 a 加 1 变成 4，然后返回新值 4 赋给 b。所以 a=4, b=4。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.6",
+      "title": "位运算符",
+      "learningGoal": "掌握 &（按位与）、|（按位或）、^（按位异或）、~（按位取反）四种位运算符",
+      "explanation": "位运算符直接对整数的二进制位进行操作，在算法竞赛中非常常用。\n\n&（按位与）：两个位都为 1，结果才为 1\n|（按位或）：两个位至少一个为 1，结果就为 1\n^（按位异或）：两个位不同时结果为 1，相同时为 0\n~（按位取反）：0 变 1，1 变 0\n\n以 4 位二进制举例：\n  1100 & 1010 = 1000\n  1100 | 1010 = 1110\n  1100 ^ 1010 = 0110\n\n常用技巧：\n- n & 1 判断奇偶（结果为 1 是奇数）\n- n & (n-1) == 0 可以判断 n 是否为 2 的幂\n- a ^ a = 0，a ^ 0 = a（异或的自反性）",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    unsigned int a = 12;\n    unsigned int b = 10;\n\n    cout << \"a & b = \" << (a & b) << endl;\n    cout << \"a | b = \" << (a | b) << endl;\n    cout << \"a ^ b = \" << (a ^ b) << endl;\n    cout << \"~a = \" << (~a) << endl;\n\n    int n = 7;\n    cout << n << \" 是\" << ((n & 1) ? \"奇数\" : \"偶数\") << endl;\n\n    n = 8;\n    cout << n << \" 是\" << ((n & 1) ? \"奇数\" : \"偶数\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "& 按位与：对应位都为 1 结果才为 1",
+        "| 按位或：对应位有一个为 1 结果就为 1",
+        "^ 按位异或：对应位不同结果为 1，相同为 0",
+        "~ 按位取反：所有位 0 变 1、1 变 0",
+        "n & 1 可以快速判断奇偶：结果为 1 是奇数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆 & 和 &&",
+          "description": "& 是按位与，&& 是逻辑与。if (a & b) 和 if (a && b) 含义不同。",
+          "fix": "做位操作用 &，做条件判断用 &&。"
+        },
+        {
+          "title": "~ 取反结果不符合预期",
+          "description": "~5 的结果不是 -6 以外的东西，因为计算机用补码表示负数。",
+          "fix": "~n = -(n+1)，例如 ~5 = -6。理解补码后就不容易出错。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 int a = 15, b = 9; 分别输出 a & b、a | b、a ^ b 的值，并说明 15 的二进制是 1111，9 的二进制是 1001。",
+        "hint": "1111 & 1001 = 1001(9), 1111 | 1001 = 1111(15), 1111 ^ 1001 = 0110(6)",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int a = 15, b = 9;\n    cout << (a & b) << endl;\n    cout << (a | b) << endl;\n    cout << (a ^ b) << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 5 & 3 的结果是什么？（5=101, 3=011）",
+          "options": [
+            "7",
+            "1",
+            "6",
+            "0"
+          ],
+          "answerIndex": 1,
+          "explanation": "5 的二进制 101，3 的二进制 011，按位与：101 & 011 = 001 = 1。"
+        },
+        {
+          "question": "a ^ a 的结果是什么？",
+          "options": [
+            "a",
+            "1",
+            "0",
+            "-a"
+          ],
+          "answerIndex": 2,
+          "explanation": "任何数和自己异或，每个位都相同，结果为全 0，所以 a ^ a = 0。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.7",
+      "title": "位移运算符",
+      "learningGoal": "掌握左移 << 和右移 >> 运算符，理解位移与乘除 2 的幂的关系",
+      "explanation": "位移运算符把整数的二进制位整体向左或向右移动指定的位数。\n\n<< （左移）：所有位向左移动 n 位，右边补 0\n>> （右移）：所有位向右移动 n 位，左边补符号位（对无符号数补 0）\n\n左移 n 位相当于乘以 2 的 n 次方：\n  3 << 1 = 6  （3 × 2）\n  3 << 2 = 12 （3 × 4）\n\n右移 n 位相当于除以 2 的 n 次方（向下取整）：\n  13 >> 1 = 6  （13 ÷ 2 = 6.5 → 6）\n  13 >> 2 = 3  （13 ÷ 4 = 3.25 → 3）\n\n在算法中，1 << n 常用来生成第 n 位为 1 的掩码。比如 1 << 3 = 8（二进制 1000）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3;\n    cout << a << \" << 1 = \" << (a << 1) << endl;\n    cout << a << \" << 2 = \" << (a << 2) << endl;\n    cout << a << \" << 3 = \" << (a << 3) << endl;\n\n    int b = 100;\n    cout << b << \" >> 1 = \" << (b >> 1) << endl;\n    cout << b << \" >> 2 = \" << (b >> 2) << endl;\n    cout << b << \" >> 3 = \" << (b >> 3) << endl;\n\n    cout << \"1 << 0 = \" << (1 << 0) << endl;\n    cout << \"1 << 4 = \" << (1 << 4) << endl;\n    cout << \"1 << 10 = \" << (1 << 10) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "<< 左移 n 位相当于乘以 2^n",
+        ">> 右移 n 位相当于除以 2^n（向下取整）",
+        "1 << n 生成只有第 n 位为 1 的数（掩码）",
+        "位移运算比乘除法快，但现代编译器会自动优化",
+        "注意不要移位超过数据类型的位数，否则是未定义行为"
+      ],
+      "commonMistakes": [
+        {
+          "title": "移位超出范围",
+          "description": "对 32 位 int 执行 << 35，移位数量超过了类型的位宽，属于未定义行为。",
+          "fix": "确保移位数量在 0 到 sizeof(type)*8-1 的范围内。"
+        },
+        {
+          "title": "对负数右移结果不确定",
+          "description": "有符号负数右移时，左边补 0 还是补 1 取决于编译器实现。",
+          "fix": "如果需要可预测的右移行为，使用 unsigned 类型。"
+        }
+      ],
+      "practice": {
+        "prompt": "用位移运算计算 1 到 2^10 的值（即 1<<0 到 1<<10），每行输出一个结果。",
+        "hint": "for (int i = 0; i <= 10; i++) cout << (1 << i) << endl;",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    for (int i = 0; i <= 10; i++) {\n        cout << (1 << i) << endl;\n    }\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 1 << 5 的结果是什么？",
+          "options": [
+            "5",
+            "16",
+            "32",
+            "64"
+          ],
+          "answerIndex": 2,
+          "explanation": "1 左移 5 位等于 1 × 2^5 = 32。二进制 1 变成 100000。"
+        },
+        {
+          "question": "表达式 64 >> 3 的结果是什么？",
+          "options": [
+            "21",
+            "8",
+            "16",
+            "4"
+          ],
+          "answerIndex": 1,
+          "explanation": "64 右移 3 位等于 64 ÷ 2^3 = 64 ÷ 8 = 8。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.8",
+      "title": "条件运算符 ?:",
+      "learningGoal": "掌握三目条件运算符 ? : 的语法和用法，能用它简化简单的 if-else",
+      "explanation": "条件运算符 ? : 是 C++ 中唯一的三目运算符（需要三个操作数），格式为：\n\n条件 ? 表达式1 : 表达式2\n\n如果条件为 true，整个表达式的值为「表达式1」；否则为「表达式2」。\n\n它等价于一个简化的 if-else：\nif (条件) x = 表达式1; else x = 表达式2;\n可以简写为：x = 条件 ? 表达式1 : 表达式2;\n\n例如：\nint max = (a > b) ? a : b;  // 取较大值\n\n使用场景：简单的二选一赋值，让代码更简洁。但不要嵌套使用，否则代码可读性会很差。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10, b = 20;\n    int maxVal = (a > b) ? a : b;\n    cout << \"较大值: \" << maxVal << endl;\n\n    int score = 75;\n    string result = (score >= 60) ? \"及格\" : \"不及格\";\n    cout << score << \" 分: \" << result << endl;\n\n    int x = -5;\n    cout << x << \" 的绝对值: \" << ((x >= 0) ? x : -x) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "? : 是三目运算符，格式为 条件 ? 值1 : 值2",
+        "条件为 true 返回值1，false 返回值2",
+        "适合简单的二选一场景，替代简短的 if-else",
+        "不要嵌套使用多个 ? : ，可读性很差"
+      ],
+      "commonMistakes": [
+        {
+          "title": "嵌套过多三目运算符",
+          "description": "写 a ? b ? c : d : e 这种嵌套，很难读懂。",
+          "fix": "复杂逻辑用 if-else 写，只有简单的二选一才用 ? :。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int a = 15, b = 8; 用条件运算符输出两个数中的较小值。",
+        "hint": "(a < b) ? a : b",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int a = 15, b = 8;\n    int minVal = (a < b) ? a : b;\n    cout << minVal << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 (5 > 3) ? 10 : 20 的结果是什么？",
+          "options": [
+            "5",
+            "3",
+            "10",
+            "20"
+          ],
+          "answerIndex": 2,
+          "explanation": "5 > 3 为 true，所以返回 ? 后面的 10。"
+        },
+        {
+          "question": "int x = (2 > 5) ? 100 : 200; 执行后 x 的值是？",
+          "options": [
+            "100",
+            "200",
+            "2",
+            "5"
+          ],
+          "answerIndex": 1,
+          "explanation": "2 > 5 为 false，所以返回 : 后面的 200，x = 200。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.9",
+      "title": "逗号运算符基础",
+      "learningGoal": "了解逗号运算符的求值规则：从左到右依次计算，整个表达式的值是最右边的值",
+      "explanation": "逗号运算符 , 用来将多个表达式组合成一个表达式。它的求值规则是：从左到右依次计算每个表达式，整个逗号表达式的值是最后一个（最右边）表达式的值。\n\n例如：\nint a = (1, 2, 3);  // a 的值是 3\n\n看起来不太有用，但在 for 循环中很常见：\nfor (int i = 0, j = 10; i < j; i++, j--)\n\n这里初始化部分和更新部分都用了逗号来组合多个操作。\n\n注意：函数参数中的逗号不是逗号运算符，而是参数分隔符。比如 func(a, b) 中的逗号是分隔参数，不是逗号运算符。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = (1, 2, 3);\n    cout << \"a = \" << a << endl;\n\n    int b, c;\n    b = (c = 5, c + 3);\n    cout << \"b = \" << b << \", c = \" << c << endl;\n\n    int x = 0, y = 10;\n    for (int i = 0, j = 10; i < 5; i++, j--) {\n        cout << \"i=\" << i << \", j=\" << j << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "逗号运算符从左到右依次计算，整个表达式取最右边的值",
+        "int a = (1, 2, 3); 中 a 的值为 3",
+        "for 循环的初始化和更新部分常用逗号组合多个操作",
+        "函数调用 func(a, b) 中的逗号是参数分隔符，不是逗号运算符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆逗号运算符和参数分隔符",
+          "description": "以为 printf(\"%d\", 1, 2) 会输出 1 然后 2，但这里的逗号是参数分隔符。",
+          "fix": "函数调用中的逗号是分隔参数用的，不是逗号运算符。"
+        },
+        {
+          "title": "期望逗号表达式返回第一个值",
+          "description": "int a = (5, 10); 以为 a = 5，实际 a = 10。",
+          "fix": "逗号表达式返回最右边的值，不是最左边的。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int a = (10, 20, 30); 输出 a 的值。再用 for 循环，同时维护两个变量 i 和 j，i 从 0 开始每次加 1，j 从 5 开始每次减 1，循环 5 次，每行输出 i 和 j。",
+        "hint": "for (int i = 0, j = 5; i < 5; i++, j--)",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int a = (10, 20, 30);\n    cout << a << endl;\n    for (int i = 0, j = 5; i < 5; i++, j--) {\n        cout << i << \" \" << j << endl;\n    }\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "int x = (3 + 2, 4 * 5, 6 - 1); 执行后 x 的值是？",
+          "options": [
+            "5（取第一个表达式 3+2）",
+            "20（取第二个表达式 4*5）",
+            "5（取最后一个表达式 6-1）",
+            "15（三个表达式之和）"
+          ],
+          "answerIndex": 2,
+          "explanation": "逗号表达式从左到右依次计算，整个表达式的值取最右边（最后一个）。最右边是 6-1=5，所以 x=5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.10",
+      "title": "运算优先级",
+      "learningGoal": "了解 C++ 常见运算符的优先级顺序，能正确判断表达式的计算顺序",
+      "explanation": "当表达式中出现多种运算符时，C++ 按照优先级决定先算哪个、后算哪个。\n\n从高到低的大致顺序（只列常用）：\n1. !（逻辑非）、~（按位取反）、++、--（单目运算符）\n2. *、/、%（乘除取余）\n3. +、-（加减）\n4. <<、>>（位移）\n5. <、<=、>、>=（比较大小）\n6. ==、!=（判断相等）\n7. &（按位与）\n8. ^（按位异或）\n9. |（按位或）\n10. &&（逻辑与）\n11. ||（逻辑或）\n12. ?:（条件运算符）\n13. =、+=、-= 等（赋值运算符）\n\n简单记：算术 > 比较 > 逻辑 > 赋值\n\n同优先级的运算符按结合性决定计算方向（大部分从左到右，赋值和单目从右到左）。\n\n最安全的做法：拿不准的时候加括号。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 2, b = 3, c = 4;\n    cout << \"a + b * c = \" << a + b * c << endl;\n    cout << \"(a + b) * c = \" << (a + b) * c << endl;\n\n    int x = 5, y = 3;\n    cout << \"x > y && x < 10: \" << (x > y && x < 10) << endl;\n\n    bool flag = true;\n    int val = 0;\n    cout << \"!flag || val: \" << (!flag || val) << endl;\n\n    int result = a + b > c ? a : b;\n    cout << \"a + b > c ? a : b = \" << result << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "优先级大致：算术 > 比较 > 逻辑 > 赋值",
+        "*、/、% 优先级高于 +、-",
+        "比较运算符优先级高于逻辑运算符",
+        "&& 优先级高于 ||",
+        "拿不准优先级时，加括号最安全"
+      ],
+      "commonMistakes": [
+        {
+          "title": "想当然地认为从左到右计算",
+          "description": "写 2 + 3 * 4 以为结果是 20，但实际是 14，因为 * 优先级高于 +。",
+          "fix": "记住基本优先级规则，或者用括号明确意图：(2+3)*4。"
+        },
+        {
+          "title": "位运算优先级低于比较运算符",
+          "description": "写 a & b == 0 以为先做 &，但实际先做 b==0，再做 &。",
+          "fix": "位运算优先级很低，要加括号：写 (a & b) == 0。"
+        }
+      ],
+      "practice": {
+        "prompt": "不运行程序，先判断以下表达式的值：2 + 3 * 4 - 1。然后写程序验证你的答案。",
+        "hint": "先算乘法 3*4=12，再算加法 2+12=14，最后减法 14-1=13。",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << 2 + 3 * 4 - 1 << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 2 + 3 * 4 的计算顺序是？",
+          "options": [
+            "先算 2+3=5，再算 5*4=20",
+            "先算 3*4=12，再算 2+12=14",
+            "从左到右依次计算",
+            "编译器自行决定"
+          ],
+          "answerIndex": 1,
+          "explanation": "* 的优先级高于 +，所以先算 3*4=12，再算 2+12=14。"
+        },
+        {
+          "question": "表达式 a & b == 0 的实际计算顺序是？（a=3, b=0）",
+          "options": [
+            "先 (a & b) 再 == 0",
+            "先 (b == 0) 再 & a",
+            "从左到右依次计算",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "== 的优先级高于 &，所以先计算 b==0（结果为 true=1），然后计算 a & 1。如果想要先做位与，需要写 (a & b) == 0。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.4.11",
+      "title": "括号改变顺序",
+      "learningGoal": "掌握使用括号显式控制运算顺序，养成用括号提高代码可读性的习惯",
+      "explanation": "括号 () 可以改变运算的默认优先级，括号内的表达式会最先计算。\n\n无论你多么熟悉优先级规则，都建议在复杂表达式中多用括号：\n1. 避免优先级记错导致的 bug\n2. 让代码意图一目了然\n3. 减少阅读者思考的时间\n\n对比：\n  a + b * c      // 需要想一下 * 优先级更高\n  a + (b * c)    // 一看就知道先算 b*c\n\n两者结果完全一样，但加了括号更容易阅读。\n\n嵌套括号时，从最内层的括号开始计算，逐层向外。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 2, b = 3, c = 4, d = 5;\n\n    cout << \"a + b * c = \" << a + b * c << endl;\n    cout << \"(a + b) * c = \" << (a + b) * c << endl;\n\n    int avg = (a + b + c + d) / 4;\n    cout << \"平均值: \" << avg << endl;\n\n    bool inRange = (a > 0) && (a < 10);\n    cout << \"a 在 (0,10) 范围内: \" << inRange << endl;\n\n    int mixed = (a + b) * (c - d) + (a % b);\n    cout << \"综合运算: \" << mixed << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "括号内的表达式最先计算，无视默认优先级",
+        "嵌套括号从最内层开始，逐层向外",
+        "即使不加括号结果相同，加上括号也能提高可读性",
+        "复杂表达式中多用括号是好习惯",
+        "位运算和条件运算中尤其需要括号，因为优先级不直观"
+      ],
+      "commonMistakes": [
+        {
+          "title": "括号不匹配",
+          "description": "写了 (a + (b * c) 少了一个右括号，导致编译错误。",
+          "fix": "写代码时注意左右括号配对，IDE 通常会提示括号匹配情况。"
+        },
+        {
+          "title": "该加括号的地方没加",
+          "description": "写 a & b == 0 期望先做位与再比较，但 == 优先级更高，实际先做了比较。",
+          "fix": "写成 (a & b) == 0，明确表达意图。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 (3 + 5) * 2 - 10 / (1 + 1) 的值，用程序验证。要求所有运算都用括号明确顺序。",
+        "hint": "先算 3+5=8, 8*2=16, 1+1=2, 10/2=5, 16-5=11",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int result = ((3 + 5) * 2) - (10 / (1 + 1));\n    cout << result << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "表达式 (2 + 3) * (4 - 1) 的结果是什么？",
+          "options": [
+            "5",
+            "15",
+            "11",
+            "9"
+          ],
+          "answerIndex": 1,
+          "explanation": "先算括号内：2+3=5, 4-1=3，然后 5*3=15。"
+        },
+        {
+          "question": "以下哪种写法更推荐？",
+          "options": [
+            "a + b * c",
+            "(a + b) * c",
+            "a + (b * c)",
+            "三种完全等价，推荐哪种都行"
+          ],
+          "answerIndex": 2,
+          "explanation": "虽然 a+b*c 和 a+(b*c) 结果相同，但后者加了括号让意图更明确，是更好的编码习惯。而 (a+b)*c 改变了运算顺序，结果不同。"
+        }
+      ]
+    }
+  ]
+}

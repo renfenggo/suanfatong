@@ -25,21 +25,40 @@
 
 ```
 lib/
-├── app/           # MaterialApp、路由、主题
-├── models/        # 数据模型（Lesson, Quiz, BfsStep, Mistake, Progress）
-├── pages/         # 8 个页面
-├── services/      # 数据加载和持久化服务
-├── state/         # Riverpod Provider
-└── widgets/       # 可复用组件（BfsGrid, CodeBlock, StepController 等）
+├── app/            # MaterialApp、路由、主题
+├── models/         # 数据模型（ContentManifest, Lesson, Quiz, BfsStep, Mistake 等）
+├── pages/          # 页面（首页、课程、动画、答题、错题、进度、设置、教师模式）
+├── repositories/   # 数据仓库层（JSON 加载、内容 manifest 解析）
+├── services/       # 业务逻辑（答题历史、进度持久化）
+├── state/          # Riverpod Provider（含 defaultContentIdsProvider 统一内容 ID）
+└── widgets/        # 可复用组件（BfsGrid, CodeBlock, StepController 等）
 
 assets/data/
-├── lessons/       # 课程 JSON（bfs_basic.json, bfs_maze.json）
-├── quizzes/       # 题库 JSON（bfs_quiz.json）
-├── mistakes/      # 常见错误 JSON（bfs_mistakes.json）
-└── bfs_steps.json # 动画步骤数据
+├── content_manifest.json  # 内容清单（定义 topic、lessonSet、quizSet、动画场景等）
+├── lessons/               # 课程 JSON（bfs_basic.json, bfs_maze.json）
+├── quizzes/               # 题库 JSON（bfs_quiz.json）
+├── mistakes/              # 常见错误 JSON（bfs_mistakes.json）
+└── bfs_steps.json         # 动画步骤数据
 
-test/              # 单元测试和 Widget 测试
+test/               # 单元测试和 Widget 测试
 ```
+
+## 内容系统架构
+
+应用通过 `content_manifest.json` 驱动内容加载，实现内容与 UI 解耦：
+
+```
+content_manifest.json
+  └── topics[]                # 学习专题（如 BFS）
+        ├── lessonSets[]      # 课程集
+        ├── quizSets[]        # 题库集
+        ├── mistakeSets[]     # 常见错误集
+        └── animationScenarios[]  # 动画场景
+  └── modules[]               # 首页功能模块（标题、图标、路由、排序）
+```
+
+- `defaultContentIdsProvider`：从 manifest 的默认 topic 中提取第一个 lessonSet / quizSet / mistakeSet / animationScenario 的 ID，供各页面使用，无需硬编码
+- 新增专题时只需在 manifest 中添加 topic 和对应的 JSON 数据文件，无需修改 Dart 代码
 
 ## 运行方式
 
@@ -70,6 +89,7 @@ APK 输出路径：`build/app/outputs/flutter-apk/app-release.apk`
 
 | 文件 | 内容 |
 |------|------|
+| `assets/data/content_manifest.json` | 内容清单（topic 定义、模块路由、默认 ID） |
 | `assets/data/lessons/bfs_basic.json` | 5 课 BFS 基础知识 |
 | `assets/data/lessons/bfs_maze.json` | 5 课迷宫 BFS 应用 |
 | `assets/data/quizzes/bfs_quiz.json` | 20 道 BFS 选择题 |

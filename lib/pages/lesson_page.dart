@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../state/lesson_provider.dart';
+import '../models/lesson.dart';
+import '../state/lesson_set_provider.dart';
+import '../state/content_manifest_provider.dart';
 import '../widgets/code_block.dart';
 
 class LessonPage extends ConsumerWidget {
@@ -8,8 +10,11 @@ class LessonPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lessonsAsync = ref.watch(
-      lessonsProvider('assets/data/lessons/bfs_basic.json'),
+    final idsAsync = ref.watch(defaultContentIdsProvider);
+    final AsyncValue<List<Lesson>> lessonsAsync = idsAsync.when(
+      data: (ids) => ref.watch(lessonSetProvider(ids.lessonSetId)),
+      loading: () => const AsyncValue.data([]),
+      error: (_, __) => const AsyncValue.data([]),
     );
 
     return Scaffold(

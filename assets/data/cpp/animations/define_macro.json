@@ -1,0 +1,87 @@
+{
+  "animationId": "cpp_define_macro",
+  "itemId": "1.9.1",
+  "title": "#define 宏替换",
+  "description": "演示 #define 在编译前进行文本替换的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义宏常量",
+      "description": "用 #define PI 3.14 定义一个符号常量，预处理器会在编译前把代码中的 PI 替换为 3.14",
+      "codeLine": "#define PI 3.14",
+      "highlights": ["PI", "3.14"],
+      "state": {
+        "variables": [
+          {"name": "PI", "value": "3.14", "note": "文本替换，不是变量"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "使用宏常量计算",
+      "description": "代码写 r * r * PI，预处理器会替换为 r * r * 3.14",
+      "codeLine": "double r = 2.0, area = r * r * PI;",
+      "highlights": ["r", "PI"],
+      "state": {
+        "variables": [
+          {"name": "PI", "value": "3.14", "note": ""},
+          {"name": "r", "value": "2.0", "note": ""},
+          {"name": "area", "value": "12.56", "note": "2×2×3.14"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "定义带参数的宏",
+      "description": "宏函数 SQUARE(x) 会在编译前展开为 ((x) * (x))",
+      "codeLine": "#define SQUARE(x) ((x) * (x))",
+      "highlights": ["SQUARE"],
+      "state": {
+        "variables": [
+          {"name": "PI", "value": "3.14", "note": ""},
+          {"name": "SQUARE(5)", "value": "25", "note": "展开为 ((5)*(5))"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "调用宏函数",
+      "description": "cout << SQUARE(4) 被替换为 cout << ((4) * (4))，输出 16",
+      "codeLine": "cout << SQUARE(4);",
+      "highlights": ["SQUARE(4)"],
+      "state": {
+        "variables": [
+          {"name": "SQUARE(4)", "value": "16", "note": "((4)*(4)) = 16"}
+        ],
+        "containers": [],
+        "output": "16"
+      }
+    },
+    {
+      "step": 5,
+      "title": "注意：括号很重要",
+      "description": "如果写成 #define DOUBLE(x) x * x，则 DOUBLE(1+2) 会变成 1+2*1+2=5，而非 9。必须加括号！",
+      "codeLine": "// 正确: ((x) * (x))  错误: x * x",
+      "highlights": ["((x) * (x))"],
+      "state": {
+        "variables": [
+          {"name": "正确: ((1+2)*(1+2))", "value": "9", "note": "加括号"},
+          {"name": "错误: 1+2*1+2", "value": "5", "note": "不加括号"}
+        ],
+        "containers": [],
+        "output": "16"
+      }
+    }
+  ]
+}

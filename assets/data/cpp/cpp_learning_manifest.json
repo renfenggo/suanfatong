@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "category": "C++语法",
+  "baseFile": "assets/data/cpp/cpp_learning_units.json",
+  "sectionFiles": [
+    "assets/data/cpp/section_1_2_units.json",
+    "assets/data/cpp/section_1_3_units.json",
+    "assets/data/cpp/section_1_4_units.json",
+    "assets/data/cpp/section_1_5_units.json",
+    "assets/data/cpp/section_1_6_units.json",
+    "assets/data/cpp/section_1_7_units.json",
+    "assets/data/cpp/section_1_8_units.json",
+    "assets/data/cpp/section_1_9_units.json",
+    "assets/data/cpp/section_1_10_units.json"
+  ]
+}

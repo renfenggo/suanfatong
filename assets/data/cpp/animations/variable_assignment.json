@@ -1,0 +1,86 @@
+{
+  "animationId": "cpp_variable_assignment",
+  "itemId": "1.3.1",
+  "title": "变量赋值",
+  "description": "演示 C++ 中变量的声明、赋值和更新过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明变量 x",
+      "description": "使用 int 关键字声明一个整型变量 x，初始值为 0",
+      "codeLine": "int x = 0;",
+      "highlights": ["x"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "0", "note": "声明并初始化为 0"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "赋值 3 给 x",
+      "description": "使用赋值运算符 = 将 3 存入变量 x",
+      "codeLine": "x = 3;",
+      "highlights": ["x", "3"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "3", "note": "x 的值从 0 变为 3"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "声明变量 y 并赋值",
+      "description": "声明另一个整型变量 y，初始值为 x + 2",
+      "codeLine": "int y = x + 2;",
+      "highlights": ["y", "x + 2"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "3", "note": ""},
+          {"name": "y", "value": "5", "note": "y = 3 + 2 = 5"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "输出变量值",
+      "description": "使用 cout 输出 x 和 y 的值",
+      "codeLine": "cout << x << \" \" << y;",
+      "highlights": ["x", "y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "3", "note": ""},
+          {"name": "y", "value": "5", "note": ""}
+        ],
+        "containers": [],
+        "output": "3 5"
+      }
+    },
+    {
+      "step": 5,
+      "title": "更新 x 的值",
+      "description": "将 x 更新为 y 的值，观察变量如何被覆盖",
+      "codeLine": "x = y;",
+      "highlights": ["x", "y"],
+      "state": {
+        "variables": [
+          {"name": "x", "value": "5", "note": "x 被更新为 y 的值"},
+          {"name": "y", "value": "5", "note": "y 不变"}
+        ],
+        "containers": [],
+        "output": "3 5"
+      }
+    }
+  ]
+}

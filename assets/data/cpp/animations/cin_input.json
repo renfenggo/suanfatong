@@ -1,0 +1,88 @@
+{
+  "animationId": "cpp_cin_input",
+  "itemId": "1.2.1",
+  "title": "cin 输入",
+  "description": "演示 cin 从键盘读入数据到变量的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明变量",
+      "description": "先声明两个整型变量 a 和 b。此时它们还没有确定的值。",
+      "codeLine": "int a, b;",
+      "highlights": ["a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "?", "note": "未初始化"},
+          {"name": "b", "value": "?", "note": "未初始化"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "用 cin 读入 a",
+      "description": "cin >> a; 从键盘读取一个整数并存入变量 a。>> 是提取运算符，方向指向变量，表示数据流入变量。假设用户输入了 10。",
+      "codeLine": "cin >> a;",
+      "highlights": ["cin", ">>", "a"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "10", "note": "从键盘读入 10"},
+          {"name": "b", "value": "?", "note": "未初始化"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "用 cin 读入 b",
+      "description": "cin >> b; 再从键盘读取一个整数存入变量 b。假设用户输入了 20。",
+      "codeLine": "cin >> b;",
+      "highlights": ["cin", ">>", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "10", "note": ""},
+          {"name": "b", "value": "20", "note": "从键盘读入 20"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "连续读入多个变量",
+      "description": "也可以用一条语句连续读入：cin >> a >> b; 效果和分两行写一样。cin 会自动跳过输入中的空格和换行来分隔数据。",
+      "codeLine": "cin >> a >> b;",
+      "highlights": ["cin", ">>", "a", ">>", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "10", "note": "空格分隔，读入 10"},
+          {"name": "b", "value": "20", "note": "空格分隔，读入 20"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "输出读入的值",
+      "description": "用 cout 输出 a 和 b 的值，验证 cin 确实把数据读入了变量。",
+      "codeLine": "cout << \"a=\" << a << \", b=\" << b << endl;",
+      "highlights": ["cout", "a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "10", "note": ""},
+          {"name": "b", "value": "20", "note": ""}
+        ],
+        "containers": [],
+        "output": "a=10, b=20"
+      }
+    }
+  ]
+}

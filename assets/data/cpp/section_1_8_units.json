@@ -1,0 +1,1146 @@
+{
+  "sectionId": "1.8",
+  "sectionName": "结构体与 STL",
+  "units": [
+    {
+      "itemId": "1.8.1",
+      "title": "struct",
+      "learningGoal": "理解结构体的作用，学会把多个相关数据组合成一个类型",
+      "explanation": "struct 可以把多个相关变量打包成一个新的类型。比如一个学生有姓名、分数、年龄，如果每个字段都单独开数组，代码很容易乱。\n\n结构体适合描述一个完整对象。定义结构体后，可以像 int、double 一样声明变量。\n\n在算法题里，结构体常用于保存学生、边、区间、点、任务等带有多个属性的数据。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstruct Student {\n    string name;\n    int score;\n};\n\nint main() {\n    Student s;\n    s.name = \"Tom\";\n    s.score = 95;\n    cout << s.name << \" \" << s.score << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "struct 后面定义的是一种新类型",
+        "结构体内部的变量叫成员",
+        "定义结构体类型时末尾要写分号",
+        "结构体变量可以用点号访问成员"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记结构体末尾分号",
+          "description": "struct 定义结束后少写分号，编译器会报错。",
+          "fix": "在右大括号后写分号：};"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个 Book 结构体，包含 title 和 price，并输出一本书的信息。",
+        "hint": "struct Book { string title; int price; };",
+        "expectedIdea": "定义结构体后声明 Book b，用 b.title 和 b.price 赋值并输出。"
+      },
+      "quiz": [
+        {
+          "question": "struct 最主要的作用是什么？",
+          "options": [
+            "重复执行代码",
+            "把多个相关数据组合成一个类型",
+            "只能保存一个整数",
+            "结束程序"
+          ],
+          "answerIndex": 1,
+          "explanation": "struct 用来定义复合类型，把多个成员放在一起描述同一个对象。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.2",
+      "title": "成员访问",
+      "learningGoal": "掌握用点号访问结构体成员",
+      "explanation": "结构体变量中的每个成员都要通过点号访问。比如 s.score 表示变量 s 里的 score 成员。\n\n点号左边是结构体变量，右边是成员名。成员可以像普通变量一样赋值、计算和输出。\n\n如果写错成员名，编译器会提示结构体没有这个成员。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nstruct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    Point p;\n    p.x = 3;\n    p.y = 4;\n    cout << p.x + p.y << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用变量名.成员名访问成员",
+        "成员可以参与表达式计算",
+        "成员名必须和 struct 中定义的一致",
+        "不同结构体变量的成员互不影响"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接写成员名",
+          "description": "写 x = 3; 但 x 是结构体成员，不是普通变量。",
+          "fix": "写 p.x = 3; 指明访问哪个结构体变量的成员。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 Point，输入 x 和 y，输出这个点到原点的曼哈顿距离 x+y。",
+        "hint": "用 p.x 和 p.y 保存输入。",
+        "expectedIdea": "Point p; cin >> p.x >> p.y; cout << p.x + p.y;"
+      },
+      "quiz": [
+        {
+          "question": "访问结构体变量 s 的 score 成员，正确写法是？",
+          "options": [
+            "s-score",
+            "score.s",
+            "s.score",
+            "s::score"
+          ],
+          "answerIndex": 2,
+          "explanation": "普通结构体变量使用点号访问成员，写作 s.score。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.3",
+      "title": "结构体数组",
+      "learningGoal": "学会用数组保存多个结构体对象",
+      "explanation": "结构体数组可以保存一组同类对象。比如多个学生，每个学生都有 name 和 score。\n\n结构体数组的每个元素都是一个结构体变量，所以访问时常写成 a[i].score。\n\n这种写法比多个平行数组更清晰，也更不容易把不同对象的数据弄混。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstruct Student {\n    string name;\n    int score;\n};\n\nint main() {\n    Student a[3] = {{\"Ann\", 90}, {\"Bob\", 85}, {\"Cindy\", 98}};\n    for (int i = 0; i < 3; i++) {\n        cout << a[i].name << \":\" << a[i].score << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "Student a[3] 表示 3 个 Student",
+        "a[i] 是第 i 个结构体变量",
+        "a[i].name 访问第 i 个学生的姓名",
+        "数组下标仍然从 0 开始"
+      ],
+      "commonMistakes": [
+        {
+          "title": "点号位置写错",
+          "description": "写 a.score[i]，但 a 是数组，不是单个结构体。",
+          "fix": "先取元素再访问成员：a[i].score。"
+        }
+      ],
+      "practice": {
+        "prompt": "用结构体数组保存 3 个学生分数，输出最高分。",
+        "hint": "循环比较 a[i].score。",
+        "expectedIdea": "定义 Student a[3]，读入后用 maxScore 维护最大值。"
+      },
+      "quiz": [
+        {
+          "question": "访问结构体数组 a 中第 2 个元素的 score，应写？",
+          "options": [
+            "a.score[1]",
+            "a[1].score",
+            "score.a[1]",
+            "a[2].score 一定正确"
+          ],
+          "answerIndex": 1,
+          "explanation": "下标从 0 开始，第 2 个元素是 a[1]，成员访问写 a[1].score。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.4",
+      "title": "结构体排序",
+      "learningGoal": "学会按结构体成员排序",
+      "explanation": "结构体排序常用于按成绩、时间、编号等字段排序。sort 本身不知道结构体应该按哪个成员排，所以通常要写比较函数。\n\n比较函数返回 true，表示第一个对象应该排在第二个对象前面。\n\n如果有多个规则，可以先比主关键字，再比次关键字。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nstruct Student {\n    string name;\n    int score;\n};\n\nbool cmp(Student a, Student b) {\n    return a.score > b.score;\n}\n\nint main() {\n    Student a[3] = {{\"Ann\", 90}, {\"Bob\", 85}, {\"Cindy\", 98}};\n    sort(a, a + 3, cmp);\n    for (int i = 0; i < 3; i++) {\n        cout << a[i].name << \" \" << a[i].score << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "sort 需要包含 algorithm",
+        "比较函数返回 bool",
+        "a.score > b.score 表示分数从大到小",
+        "排序区间是左闭右开"
+      ],
+      "commonMistakes": [
+        {
+          "title": "比较函数返回条件反了",
+          "description": "想降序却写成 a.score < b.score。",
+          "fix": "明确 true 表示 a 排在 b 前面。"
+        }
+      ],
+      "practice": {
+        "prompt": "按学生分数从小到大排序并输出。",
+        "hint": "比较函数写 return a.score < b.score;",
+        "expectedIdea": "定义 cmp 后调用 sort(a, a+n, cmp)。"
+      },
+      "quiz": [
+        {
+          "question": "sort 结构体时比较函数返回 true 表示什么？",
+          "options": [
+            "两个对象相等",
+            "第一个对象应排在第二个前面",
+            "排序结束",
+            "第二个对象被删除"
+          ],
+          "answerIndex": 1,
+          "explanation": "比较函数决定顺序，返回 true 表示左边参数排在右边参数前。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.5",
+      "title": "typedef",
+      "learningGoal": "理解 typedef 的作用，学会给类型取别名",
+      "explanation": "typedef 可以给已有类型取一个新名字。它不会创造新的数据结构，只是让类型写起来更短或更清晰。\n\n例如 typedef long long ll; 之后 ll 就可以当作 long long 使用。\n\n在老代码和竞赛代码中，typedef 很常见，但现代 C++ 更常用 using 类型别名。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\nint main() {\n    ll a = 1000000000LL;\n    ll b = 3;\n    cout << a * b << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "typedef 后面是原类型和新名字",
+        "ll 只是 long long 的别名",
+        "别名能让代码更简洁",
+        "typedef 不会改变类型本身"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 typedef 当变量",
+          "description": "typedef long long ll; 不是声明变量 ll。",
+          "fix": "它声明的是类型别名，之后才能写 ll x;"
+        }
+      ],
+      "practice": {
+        "prompt": "用 typedef 给 unsigned long long 起别名 ull，并声明变量输出。",
+        "hint": "typedef unsigned long long ull;",
+        "expectedIdea": "typedef unsigned long long ull; ull x = 10; cout << x;"
+      },
+      "quiz": [
+        {
+          "question": "typedef long long ll; 的含义是？",
+          "options": [
+            "定义变量 ll",
+            "给 long long 起别名 ll",
+            "输出 long long",
+            "删除 long long"
+          ],
+          "answerIndex": 1,
+          "explanation": "typedef 用来定义类型别名，ll 可以作为 long long 使用。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.6",
+      "title": "using 类型别名",
+      "learningGoal": "掌握 using 创建类型别名的现代写法",
+      "explanation": "using 也可以给类型取别名，写法比 typedef 更直观。比如 using ll = long long;。\n\n这种写法读起来像“ll 等于 long long 类型”，现代 C++ 更推荐。\n\n对于模板类型或复杂 STL 类型，using 也更清晰。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nusing ll = long long;\nusing IntVector = vector<int>;\n\nint main() {\n    ll sum = 0;\n    IntVector a = {1, 2, 3};\n    for (int x : a) sum += x;\n    cout << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "using 新名字 = 原类型",
+        "using ll = long long 更直观",
+        "可以给 STL 类型取别名",
+        "别名不会改变底层类型"
+      ],
+      "commonMistakes": [
+        {
+          "title": "等号方向写错",
+          "description": "写 using long long = ll; 是错误的。",
+          "fix": "正确写法是 using ll = long long;"
+        }
+      ],
+      "practice": {
+        "prompt": "用 using 给 vector<int> 起别名 VI，并声明一个 VI。",
+        "hint": "using VI = vector<int>;",
+        "expectedIdea": "using VI = vector<int>; VI nums = {1, 2, 3};"
+      },
+      "quiz": [
+        {
+          "question": "using ll = long long; 中 ll 是什么？",
+          "options": [
+            "变量名",
+            "函数名",
+            "long long 的类型别名",
+            "数组名"
+          ],
+          "answerIndex": 2,
+          "explanation": "using 可以定义类型别名，ll 之后可当作 long long 使用。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.7",
+      "title": "enum",
+      "learningGoal": "理解枚举类型，学会表示一组有限状态",
+      "explanation": "enum 用来定义一组有名字的整数常量。它适合表示方向、颜色、状态等有限集合。\n\n枚举让代码比直接写 0、1、2 更清晰。看到 RED、GREEN、BLUE，就比看到数字更容易理解。\n\n普通 enum 的枚举值本质上可以当整数使用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nenum Color { RED, GREEN, BLUE };\n\nint main() {\n    Color c = GREEN;\n    if (c == GREEN) {\n        cout << \"go\" << endl;\n    }\n    cout << RED << \" \" << GREEN << \" \" << BLUE << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "enum 定义一组命名常量",
+        "默认从 0 开始编号",
+        "枚举适合表示状态",
+        "名字比魔法数字更清楚"
+      ],
+      "commonMistakes": [
+        {
+          "title": "滥用数字状态",
+          "description": "直接写 state == 2，过几天很难看懂 2 表示什么。",
+          "fix": "用 enum 给状态命名。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 Direction 枚举，包含 UP、DOWN、LEFT、RIGHT，并输出 UP 的值。",
+        "hint": "enum Direction { UP, DOWN, LEFT, RIGHT };",
+        "expectedIdea": "定义枚举后 cout << UP;"
+      },
+      "quiz": [
+        {
+          "question": "enum 最适合用来表示什么？",
+          "options": [
+            "无限长度字符串",
+            "一组有限状态或常量",
+            "文件读写",
+            "网络连接"
+          ],
+          "answerIndex": 1,
+          "explanation": "枚举适合表示颜色、方向、状态这类有限集合。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.8",
+      "title": "pair",
+      "learningGoal": "掌握 pair 的基本用法，学会保存两个相关值",
+      "explanation": "pair 是 STL 中的二元组，可以保存两个值。第一个值叫 first，第二个值叫 second。\n\n它适合临时保存一对数据，比如坐标、编号和分数、边的两个端点。\n\npair 可以直接比较，默认先比较 first，first 相同再比较 second。",
+      "exampleCode": "#include <iostream>\n#include <utility>\nusing namespace std;\n\nint main() {\n    pair<int, int> p = {3, 5};\n    cout << p.first << \" \" << p.second << endl;\n    p.second = 8;\n    cout << p.first + p.second << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "pair<T1,T2> 保存两个值",
+        "first 是第一个值",
+        "second 是第二个值",
+        "可以用大括号初始化"
+      ],
+      "commonMistakes": [
+        {
+          "title": "拼错 first 和 second",
+          "description": "写成 p.fisrt 或 p.second() 会报错。",
+          "fix": "成员名固定为 first 和 second。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 pair 保存一个点的 x、y 坐标，并输出 x+y。",
+        "hint": "pair<int,int> p = {x, y};",
+        "expectedIdea": "cout << p.first + p.second;"
+      },
+      "quiz": [
+        {
+          "question": "pair<int,int> p 中访问第二个值应写？",
+          "options": [
+            "p.second",
+            "p[1]",
+            "p.two",
+            "second.p"
+          ],
+          "answerIndex": 0,
+          "explanation": "pair 的两个成员固定叫 first 和 second。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.9",
+      "title": "vector",
+      "learningGoal": "掌握 vector 的基本增删查用法",
+      "explanation": "vector 是动态数组，可以根据需要变长。相比普通数组，它能方便地 push_back 新元素。\n\nvector 支持下标访问，也可以用 size() 获取当前元素数量。\n\n算法题中，当元素个数不固定或需要作为函数参数传递时，vector 很常用。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a;\n    a.push_back(10);\n    a.push_back(20);\n    a.push_back(30);\n    for (int i = 0; i < (int)a.size(); i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "vector<int> 表示整数动态数组",
+        "push_back 在末尾添加元素",
+        "size() 返回元素数量",
+        "下标仍从 0 开始"
+      ],
+      "commonMistakes": [
+        {
+          "title": "空 vector 直接下标赋值",
+          "description": "vector<int> a; a[0] = 1; 会越界。",
+          "fix": "先 resize 或 push_back。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入 n 个整数放入 vector，输出它们的和。",
+        "hint": "每次读入 x 后 a.push_back(x)。",
+        "expectedIdea": "循环 push_back，再遍历 vector 求和。"
+      },
+      "quiz": [
+        {
+          "question": "向 vector 末尾添加元素的常用函数是？",
+          "options": [
+            "push_back",
+            "pop_front",
+            "insert_end",
+            "append_back_only"
+          ],
+          "answerIndex": 0,
+          "explanation": "vector 使用 push_back 在末尾添加元素。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.10",
+      "title": "queue",
+      "learningGoal": "理解队列先进先出特性，掌握 queue 基本操作",
+      "explanation": "queue 是队列，特点是先进先出。先进入队列的元素会先被取出。\n\n常用操作有 push、front、pop、empty。front 查看队首，pop 删除队首。\n\nBFS 等算法中，queue 是非常重要的基础容器。",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n    queue<int> q;\n    q.push(1);\n    q.push(2);\n    q.push(3);\n    while (!q.empty()) {\n        cout << q.front() << \" \";\n        q.pop();\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "queue 需要包含 queue 头文件",
+        "push 从队尾入队",
+        "front 查看队首",
+        "pop 删除队首但不返回值"
+      ],
+      "commonMistakes": [
+        {
+          "title": "对空队列 front",
+          "description": "队列为空时调用 front 行为不安全。",
+          "fix": "先判断 !q.empty()。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 queue 模拟 3 个人排队，依次输出出队顺序。",
+        "hint": "push 三个编号，while 循环 front 和 pop。",
+        "expectedIdea": "queue<int> q; q.push(1); q.push(2); q.push(3);"
+      },
+      "quiz": [
+        {
+          "question": "queue 的主要特点是？",
+          "options": [
+            "后进先出",
+            "先进先出",
+            "自动排序",
+            "随机访问最快"
+          ],
+          "answerIndex": 1,
+          "explanation": "队列是 FIFO，先进入的元素先出来。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.11",
+      "title": "stack",
+      "learningGoal": "理解栈后进先出特性，掌握 stack 基本操作",
+      "explanation": "stack 是栈，特点是后进先出。最后放进去的元素最先被取出。\n\n常用操作有 push、top、pop、empty。top 查看栈顶，pop 删除栈顶。\n\n括号匹配、表达式处理、模拟递归过程时经常用 stack。",
+      "exampleCode": "#include <iostream>\n#include <stack>\nusing namespace std;\n\nint main() {\n    stack<int> st;\n    st.push(1);\n    st.push(2);\n    st.push(3);\n    while (!st.empty()) {\n        cout << st.top() << \" \";\n        st.pop();\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "stack 需要包含 stack 头文件",
+        "push 入栈",
+        "top 查看栈顶",
+        "pop 删除栈顶"
+      ],
+      "commonMistakes": [
+        {
+          "title": "以为 pop 会返回元素",
+          "description": "st.pop() 只删除栈顶，不返回值。",
+          "fix": "先用 st.top() 取值，再 st.pop()。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 stack 输入 1、2、3，再输出它们的出栈顺序。",
+        "hint": "后进先出，所以输出 3 2 1。",
+        "expectedIdea": "循环输出 st.top() 后 st.pop()。"
+      },
+      "quiz": [
+        {
+          "question": "stack 的特点是？",
+          "options": [
+            "先进先出",
+            "后进先出",
+            "自动去重",
+            "自动升序"
+          ],
+          "answerIndex": 1,
+          "explanation": "栈是 LIFO，最后进入的元素最先出来。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.12",
+      "title": "deque",
+      "learningGoal": "掌握双端队列 deque 的基本用法",
+      "explanation": "deque 是双端队列，可以在头部和尾部都高效插入、删除。\n\n常用操作有 push_back、push_front、pop_back、pop_front、front、back。\n\n当题目需要从两端操作序列时，deque 比 vector 更合适。",
+      "exampleCode": "#include <deque>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    deque<int> d;\n    d.push_back(2);\n    d.push_front(1);\n    d.push_back(3);\n    cout << d.front() << \" \" << d.back() << endl;\n    d.pop_front();\n    cout << d.front() << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "deque 支持两端操作",
+        "push_front 从头部加入",
+        "push_back 从尾部加入",
+        "front 和 back 分别看两端"
+      ],
+      "commonMistakes": [
+        {
+          "title": "和 queue 混淆",
+          "description": "queue 只能按队列方式访问，deque 更灵活。",
+          "fix": "需要两端操作时使用 deque。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 deque 构造序列 1 2 3，然后删除头部元素并输出剩余头部。",
+        "hint": "push_front 和 push_back 配合使用。",
+        "expectedIdea": "deque<int> d; d.push_back(2); d.push_front(1); d.push_back(3);"
+      },
+      "quiz": [
+        {
+          "question": "deque 相比 queue 的一个特点是？",
+          "options": [
+            "只能从队尾删除",
+            "支持两端插入删除",
+            "不能保存整数",
+            "自动排序"
+          ],
+          "answerIndex": 1,
+          "explanation": "deque 是双端队列，头尾都可以操作。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.13",
+      "title": "priority_queue",
+      "learningGoal": "理解优先队列默认大根堆，掌握基本操作",
+      "explanation": "priority_queue 是优先队列，默认每次取出最大的元素。\n\n常用操作有 push、top、pop、empty。top 查看当前优先级最高的元素。\n\n它常用于维护最大值、Dijkstra、贪心选取当前最优元素等场景。",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n    priority_queue<int> pq;\n    pq.push(5);\n    pq.push(2);\n    pq.push(9);\n    while (!pq.empty()) {\n        cout << pq.top() << \" \";\n        pq.pop();\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "priority_queue 默认大根堆",
+        "top 是当前最大元素",
+        "pop 删除 top",
+        "需要包含 queue 头文件"
+      ],
+      "commonMistakes": [
+        {
+          "title": "以为默认是小根堆",
+          "description": "很多题需要最小值，但 priority_queue<int> 默认取最大值。",
+          "fix": "默认大根堆，小根堆需要额外写法。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 priority_queue 放入 4、1、7，观察输出顺序。",
+        "hint": "默认会从大到小输出。",
+        "expectedIdea": "push 后循环 top 和 pop，输出 7 4 1。"
+      },
+      "quiz": [
+        {
+          "question": "priority_queue<int> 默认 top 是？",
+          "options": [
+            "最小元素",
+            "最大元素",
+            "第一个插入的元素",
+            "最后插入的元素"
+          ],
+          "answerIndex": 1,
+          "explanation": "默认 priority_queue 是大根堆，top 为最大元素。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.14",
+      "title": "set",
+      "learningGoal": "掌握 set 的自动排序和去重特性",
+      "explanation": "set 是集合，会自动去重，并按从小到大维护元素顺序。\n\n插入重复元素不会产生两份。可以用 count 或 find 判断元素是否存在。\n\n需要维护有序且不重复的数据时，set 很方便。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    set<int> s;\n    s.insert(3);\n    s.insert(1);\n    s.insert(3);\n    s.insert(2);\n    for (int x : s) {\n        cout << x << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "set 会自动去重",
+        "set 默认升序",
+        "insert 插入元素",
+        "count 可判断是否存在"
+      ],
+      "commonMistakes": [
+        {
+          "title": "期待保留重复元素",
+          "description": "set 中重复插入同一个值只保留一份。",
+          "fix": "需要重复元素时用 multiset。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入若干整数，用 set 输出去重后的升序结果。",
+        "hint": "每个数 insert，最后遍历 set。",
+        "expectedIdea": "set<int> s; s.insert(x); for (int v : s) cout << v;"
+      },
+      "quiz": [
+        {
+          "question": "set 的两个常见特性是？",
+          "options": [
+            "保留插入顺序和重复元素",
+            "自动排序和去重",
+            "只能存字符串",
+            "只能从末尾删除"
+          ],
+          "answerIndex": 1,
+          "explanation": "set 默认有序，并且每个值只保留一份。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.15",
+      "title": "multiset",
+      "learningGoal": "理解 multiset 与 set 的区别",
+      "explanation": "multiset 和 set 类似，都会自动排序，但 multiset 允许重复元素。\n\n如果一个值插入多次，multiset 会保留多份。count 返回的是该值出现的次数。\n\n需要有序地维护可能重复的数据时，multiset 很合适。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    multiset<int> s;\n    s.insert(2);\n    s.insert(1);\n    s.insert(2);\n    s.insert(3);\n    for (int x : s) {\n        cout << x << \" \";\n    }\n    cout << \"\\ncount(2)=\" << s.count(2) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "multiset 允许重复",
+        "元素仍然默认升序",
+        "count 返回出现次数",
+        "头文件也是 set"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 set 保存重复值",
+          "description": "题目需要记录多个相同数，却使用 set 导致重复丢失。",
+          "fix": "需要保留重复时使用 multiset。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 multiset 保存 1 2 2 3，并输出 2 出现几次。",
+        "hint": "使用 s.count(2)。",
+        "expectedIdea": "multiset<int> s; 插入后 cout << s.count(2);"
+      },
+      "quiz": [
+        {
+          "question": "multiset 和 set 最大区别是？",
+          "options": [
+            "multiset 允许重复元素",
+            "multiset 不能排序",
+            "set 不能插入",
+            "set 只能存浮点数"
+          ],
+          "answerIndex": 0,
+          "explanation": "multiset 保留重复元素，set 会去重。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.16",
+      "title": "map",
+      "learningGoal": "掌握 map 的键值映射用法",
+      "explanation": "map 保存键到值的映射。比如姓名到分数、单词到出现次数。\n\nmap 的 key 是唯一的，默认按 key 升序排列。可以用 mp[key] 访问对应 value。\n\n计数、查表、编号映射时，map 很常用。",
+      "exampleCode": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, int> score;\n    score[\"Ann\"] = 90;\n    score[\"Bob\"] = 85;\n    cout << score[\"Ann\"] << endl;\n    score[\"Ann\"] += 5;\n    cout << score[\"Ann\"] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "map<Key,Value> 保存映射",
+        "key 唯一",
+        "mp[key] 可读写 value",
+        "map 默认按 key 排序"
+      ],
+      "commonMistakes": [
+        {
+          "title": "误触发默认插入",
+          "description": "访问 mp[key] 时，如果 key 不存在会自动创建默认值。",
+          "fix": "只判断是否存在时可用 count 或 find。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入若干单词，用 map 统计每个单词出现次数。",
+        "hint": "mp[word]++。",
+        "expectedIdea": "map<string,int> mp; 每读入 word 就 mp[word]++。"
+      },
+      "quiz": [
+        {
+          "question": "map<string,int> 常用于什么？",
+          "options": [
+            "保存键到值的映射",
+            "只保存一个整数",
+            "强制随机打乱",
+            "只能做队列"
+          ],
+          "answerIndex": 0,
+          "explanation": "map 是有序键值映射容器。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.17",
+      "title": "multimap",
+      "learningGoal": "理解 multimap 允许一个 key 对应多个 value",
+      "explanation": "multimap 和 map 类似，但允许多个相同 key。也就是说，一个 key 可以对应多条记录。\n\n它适合保存同一类别下的多个对象，比如同一分数对应多个学生。\n\n因为 key 可重复，不能直接用 mp[key] 访问值，通常用 insert 和遍历范围。",
+      "exampleCode": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    multimap<int, string> rankList;\n    rankList.insert({90, \"Ann\"});\n    rankList.insert({90, \"Bob\"});\n    rankList.insert({85, \"Cindy\"});\n    for (auto p : rankList) {\n        cout << p.first << \" \" << p.second << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "multimap 允许重复 key",
+        "使用 insert 插入键值对",
+        "不能像 map 一样直接用 []",
+        "遍历时仍按 key 排序"
+      ],
+      "commonMistakes": [
+        {
+          "title": "使用下标访问 multimap",
+          "description": "multimap 没有 operator[]，因为一个 key 可能有多个 value。",
+          "fix": "使用 insert 和迭代器遍历。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 multimap 保存多个同分学生，并输出所有记录。",
+        "hint": "multimap<int,string> m; m.insert({score, name});",
+        "expectedIdea": "插入后用 for (auto p : m) 输出。"
+      },
+      "quiz": [
+        {
+          "question": "multimap 相比 map 的特点是？",
+          "options": [
+            "允许重复 key",
+            "不能插入元素",
+            "只能保存 int",
+            "不会排序"
+          ],
+          "answerIndex": 0,
+          "explanation": "multimap 允许多个元素拥有相同 key。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.18",
+      "title": "unordered_set",
+      "learningGoal": "了解 unordered_set 的哈希去重特性",
+      "explanation": "unordered_set 也是集合，会去重，但不保证有序。它底层通常使用哈希表，平均查找速度很快。\n\n如果只关心某个元素是否出现过，不关心输出顺序，unordered_set 很合适。\n\n注意它的遍历顺序看起来可能比较随机，不要依赖这个顺序。",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nint main() {\n    unordered_set<string> s;\n    s.insert(\"apple\");\n    s.insert(\"banana\");\n    s.insert(\"apple\");\n    cout << s.count(\"apple\") << endl;\n    cout << s.size() << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "unordered_set 会去重",
+        "不保证元素有序",
+        "平均查找速度快",
+        "适合判断是否出现过"
+      ],
+      "commonMistakes": [
+        {
+          "title": "依赖遍历顺序",
+          "description": "unordered_set 的遍历顺序不是排序结果。",
+          "fix": "需要有序输出时使用 set。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入若干字符串，用 unordered_set 判断不同字符串个数。",
+        "hint": "插入后输出 s.size()。",
+        "expectedIdea": "unordered_set<string> s; while(cin>>x) s.insert(x);"
+      },
+      "quiz": [
+        {
+          "question": "unordered_set 和 set 的主要区别是？",
+          "options": [
+            "unordered_set 不保证有序",
+            "unordered_set 不能去重",
+            "set 查找一定更快",
+            "set 不能保存字符串"
+          ],
+          "answerIndex": 0,
+          "explanation": "unordered_set 基于哈希，不维护排序顺序。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.19",
+      "title": "unordered_map",
+      "learningGoal": "了解 unordered_map 的哈希映射用法",
+      "explanation": "unordered_map 是哈希表版 map，保存 key 到 value 的映射，但不按 key 排序。\n\n它平均查找、插入速度很快，常用于计数和快速查询。\n\n如果题目要求按 key 升序输出，就不要用 unordered_map，或者最后另外排序。",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <unordered_map>\nusing namespace std;\n\nint main() {\n    unordered_map<string, int> cnt;\n    cnt[\"cat\"]++;\n    cnt[\"dog\"]++;\n    cnt[\"cat\"]++;\n    cout << cnt[\"cat\"] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "unordered_map 保存键值映射",
+        "不保证 key 有序",
+        "平均查询速度快",
+        "常用于频次统计"
+      ],
+      "commonMistakes": [
+        {
+          "title": "要求有序却使用 unordered_map",
+          "description": "遍历 unordered_map 的顺序不稳定。",
+          "fix": "需要有序时使用 map。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 unordered_map 统计一串单词中每个单词出现次数。",
+        "hint": "cnt[word]++。",
+        "expectedIdea": "unordered_map<string,int> cnt; 读入 word 后 cnt[word]++。"
+      },
+      "quiz": [
+        {
+          "question": "unordered_map 不适合哪种需求？",
+          "options": [
+            "快速计数",
+            "按 key 升序遍历输出",
+            "判断 key 是否出现",
+            "保存字符串到整数的映射"
+          ],
+          "answerIndex": 1,
+          "explanation": "unordered_map 不维护 key 的有序性。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.20",
+      "title": "bitset",
+      "learningGoal": "掌握 bitset 表示固定长度二进制位集合",
+      "explanation": "bitset 可以保存固定长度的 0/1 位。它比 bool 数组更紧凑，并支持按位运算。\n\nbitset<N> 中 N 必须是编译期常量。可以用下标访问某一位，也可以 count 统计 1 的个数。\n\n它常用于状态压缩、集合表示、二进制处理等场景。",
+      "exampleCode": "#include <bitset>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    bitset<8> b;\n    b[1] = 1;\n    b[3] = 1;\n    cout << b << endl;\n    cout << b.count() << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "bitset<N> 长度固定",
+        "下标可访问某一位",
+        "count 统计 1 的个数",
+        "输出时会显示二进制位"
+      ],
+      "commonMistakes": [
+        {
+          "title": "长度用变量",
+          "description": "bitset<n> 中 n 如果是运行时变量会报错。",
+          "fix": "bitset 长度需要编译期常量。"
+        }
+      ],
+      "practice": {
+        "prompt": "创建 bitset<4>，设置第 0 位和第 2 位为 1，并输出。",
+        "hint": "b[0] = 1; b[2] = 1;",
+        "expectedIdea": "bitset<4> b; b[0]=1; b[2]=1; cout << b;"
+      },
+      "quiz": [
+        {
+          "question": "bitset<8> 的 8 表示什么？",
+          "options": [
+            "最多保存 8 个字符",
+            "固定有 8 个二进制位",
+            "初始值为 8",
+            "只能输出 8 次"
+          ],
+          "answerIndex": 1,
+          "explanation": "bitset<N> 表示固定长度为 N 的二进制位集合。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.21",
+      "title": "迭代器基础",
+      "learningGoal": "理解迭代器像容器中的位置指针",
+      "explanation": "迭代器可以理解为指向容器中某个元素的位置。很多 STL 算法和容器操作都使用迭代器表示范围。\n\nbegin() 指向第一个元素，end() 指向最后一个元素的后一个位置。\n\n常见范围是左闭右开：[begin, end)。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 2, 3};\n    for (vector<int>::iterator it = a.begin(); it != a.end(); ++it) {\n        cout << *it << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "begin 指向第一个元素",
+        "end 指向末尾后一个位置",
+        "*it 访问迭代器指向的值",
+        "STL 范围通常左闭右开"
+      ],
+      "commonMistakes": [
+        {
+          "title": "解引用 end",
+          "description": "end() 不是实际元素位置，不能 *end()。",
+          "fix": "循环条件写 it != a.end()。"
+        }
+      ],
+      "practice": {
+        "prompt": "用迭代器遍历 vector 并输出所有元素。",
+        "hint": "for (auto it = a.begin(); it != a.end(); ++it)",
+        "expectedIdea": "循环中输出 *it。"
+      },
+      "quiz": [
+        {
+          "question": "end() 指向哪里？",
+          "options": [
+            "第一个元素",
+            "最后一个元素",
+            "最后一个元素的后一个位置",
+            "随机位置"
+          ],
+          "answerIndex": 2,
+          "explanation": "end() 是尾后迭代器，不能直接解引用。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.22",
+      "title": "sort",
+      "learningGoal": "掌握 sort 对数组和 vector 排序",
+      "explanation": "sort 是 STL 中最常用的排序函数，需要包含 algorithm。\n\n排序范围是左闭右开。数组排序常写 sort(a, a+n)，vector 排序常写 sort(v.begin(), v.end())。\n\n默认从小到大排序，也可以传比较函数自定义顺序。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {3, 1, 4, 2};\n    sort(a.begin(), a.end());\n    for (int x : a) {\n        cout << x << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "sort 需要 algorithm",
+        "默认升序",
+        "范围是左闭右开",
+        "vector 常用 begin 和 end"
+      ],
+      "commonMistakes": [
+        {
+          "title": "排序区间少写一个元素",
+          "description": "数组有 n 个元素却写 sort(a, a+n-1)，最后一个没排序。",
+          "fix": "写 sort(a, a+n)。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入 n 个整数，用 sort 升序输出。",
+        "hint": "vector<int> a; sort(a.begin(), a.end());",
+        "expectedIdea": "读入后调用 sort，再遍历输出。"
+      },
+      "quiz": [
+        {
+          "question": "数组 a 有 n 个元素，完整排序应写？",
+          "options": [
+            "sort(a, a+n)",
+            "sort(a, a+n-1)",
+            "sort(a+1, a+n)",
+            "sort(n, a)"
+          ],
+          "answerIndex": 0,
+          "explanation": "STL 范围左闭右开，a 到 a+n 覆盖 n 个元素。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.23",
+      "title": "reverse",
+      "learningGoal": "掌握 reverse 翻转序列",
+      "explanation": "reverse 可以把一个范围内的元素反转。它不排序，只是把顺序倒过来。\n\n数组和 vector 都可以使用 reverse，范围同样是左闭右开。\n\n它常用于反转字符串、数组，或配合排序得到相反顺序。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 2, 3, 4};\n    reverse(a.begin(), a.end());\n    for (int x : a) {\n        cout << x << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "reverse 需要 algorithm",
+        "它只翻转，不排序",
+        "范围左闭右开",
+        "可用于 vector、数组、string"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 reverse 当排序",
+          "description": "reverse 只是倒序，不会自动从大到小排序。",
+          "fix": "需要排序时先 sort，再根据需要 reverse。"
+        }
+      ],
+      "practice": {
+        "prompt": "把字符串 hello 反转并输出。",
+        "hint": "reverse(s.begin(), s.end())。",
+        "expectedIdea": "string s = \"hello\"; reverse(s.begin(), s.end());"
+      },
+      "quiz": [
+        {
+          "question": "reverse 的作用是？",
+          "options": [
+            "升序排序",
+            "删除重复",
+            "翻转范围内元素顺序",
+            "二分查找"
+          ],
+          "answerIndex": 2,
+          "explanation": "reverse 会把指定范围的元素顺序倒过来。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.24",
+      "title": "unique",
+      "learningGoal": "理解 unique 去除相邻重复的用法",
+      "explanation": "unique 用来把相邻重复元素移动到后面，并返回新的逻辑结尾。\n\n它只处理相邻重复，所以常见写法是先 sort，再 unique。\n\nvector 真正删除多余元素时，通常配合 erase 使用。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {3, 1, 3, 2, 1};\n    sort(a.begin(), a.end());\n    a.erase(unique(a.begin(), a.end()), a.end());\n    for (int x : a) {\n        cout << x << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "unique 去除相邻重复",
+        "通常先 sort 再 unique",
+        "unique 返回新的逻辑结尾",
+        "vector 删除尾部多余元素用 erase"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只写 unique 不 erase",
+          "description": "unique 不会直接改变 vector 的实际长度。",
+          "fix": "写 a.erase(unique(a.begin(), a.end()), a.end())。"
+        }
+      ],
+      "practice": {
+        "prompt": "对 vector<int> 去重并升序输出。",
+        "hint": "sort + erase(unique(...), end)。",
+        "expectedIdea": "sort(a.begin(),a.end()); a.erase(unique(a.begin(),a.end()),a.end());"
+      },
+      "quiz": [
+        {
+          "question": "unique 主要去除哪类重复？",
+          "options": [
+            "任意位置重复且自动排序",
+            "相邻重复",
+            "所有奇数",
+            "所有最大值"
+          ],
+          "answerIndex": 1,
+          "explanation": "unique 只压缩相邻重复，所以常先排序。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.25",
+      "title": "binary_search",
+      "learningGoal": "掌握 binary_search 判断有序序列中是否存在元素",
+      "explanation": "binary_search 用于判断有序范围内是否存在某个值，返回 true 或 false。\n\n它要求序列已经按相同规则排序。如果没有排序，结果没有意义。\n\n它只回答“有没有”，如果需要位置，通常用 lower_bound。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 3, 5, 7, 9};\n    int x = 5;\n    if (binary_search(a.begin(), a.end(), x)) {\n        cout << \"found\" << endl;\n    } else {\n        cout << \"not found\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "binary_search 需要有序范围",
+        "返回 bool",
+        "只能判断是否存在",
+        "需要位置可用 lower_bound"
+      ],
+      "commonMistakes": [
+        {
+          "title": "未排序就二分",
+          "description": "序列无序时 binary_search 结果不可靠。",
+          "fix": "先 sort，或确保数据本来有序。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入一个有序数组和 x，判断 x 是否存在。",
+        "hint": "binary_search(a.begin(), a.end(), x)。",
+        "expectedIdea": "用 if 判断返回值，输出 found 或 not found。"
+      },
+      "quiz": [
+        {
+          "question": "binary_search 使用前通常要求序列怎样？",
+          "options": [
+            "必须有序",
+            "必须全为负数",
+            "必须为空",
+            "必须有重复元素"
+          ],
+          "answerIndex": 0,
+          "explanation": "二分查找依赖有序性。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.26",
+      "title": "lower_bound",
+      "learningGoal": "理解 lower_bound 找第一个大于等于目标的位置",
+      "explanation": "lower_bound 在有序范围中找第一个大于等于 x 的位置。\n\n返回值是迭代器。如果返回 end()，表示没有元素满足条件。\n\n它常用于查找插入位置、统计小于某值的数量、处理离散化等。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 3, 3, 5, 7};\n    int x = 3;\n    auto it = lower_bound(a.begin(), a.end(), x);\n    cout << (it - a.begin()) << endl;\n    cout << *it << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "lower_bound 要求有序",
+        "找第一个 >= x 的位置",
+        "返回迭代器",
+        "可用 it - begin 求下标"
+      ],
+      "commonMistakes": [
+        {
+          "title": "不判断 end 就解引用",
+          "description": "如果返回 end()，直接 *it 会出错。",
+          "fix": "先判断 it != a.end()。"
+        }
+      ],
+      "practice": {
+        "prompt": "在有序 vector 中找第一个不小于 x 的下标。",
+        "hint": "auto it = lower_bound(...); 下标是 it - a.begin()。",
+        "expectedIdea": "判断 it 是否等于 end，再输出下标。"
+      },
+      "quiz": [
+        {
+          "question": "lower_bound 找到的是？",
+          "options": [
+            "第一个 > x 的位置",
+            "第一个 >= x 的位置",
+            "最后一个 < x 的位置",
+            "随机位置"
+          ],
+          "answerIndex": 1,
+          "explanation": "lower_bound 返回第一个不小于目标值的位置。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.27",
+      "title": "upper_bound",
+      "learningGoal": "理解 upper_bound 找第一个大于目标的位置",
+      "explanation": "upper_bound 在有序范围中找第一个大于 x 的位置。\n\n它和 lower_bound 很像，但 lower_bound 是大于等于，upper_bound 是严格大于。\n\n两者配合可以统计某个值在有序数组中出现了多少次。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 3, 3, 3, 5};\n    int x = 3;\n    auto l = lower_bound(a.begin(), a.end(), x);\n    auto r = upper_bound(a.begin(), a.end(), x);\n    cout << \"count=\" << (r - l) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "upper_bound 找第一个 > x",
+        "要求范围有序",
+        "返回迭代器",
+        "upper-lower 可统计出现次数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "和 lower_bound 混淆",
+          "description": "upper_bound 不会返回等于 x 的位置，而是第一个大于 x。",
+          "fix": "记住 lower 是 >=，upper 是 >。"
+        }
+      ],
+      "practice": {
+        "prompt": "统计有序数组中 x 出现次数。",
+        "hint": "upper_bound - lower_bound。",
+        "expectedIdea": "auto l=lower_bound(...); auto r=upper_bound(...); cout << r-l;"
+      },
+      "quiz": [
+        {
+          "question": "upper_bound 找到的是？",
+          "options": [
+            "第一个 >= x",
+            "第一个 > x",
+            "最后一个 == x",
+            "第一个 < x"
+          ],
+          "answerIndex": 1,
+          "explanation": "upper_bound 返回第一个严格大于目标值的位置。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.28",
+      "title": "next_permutation",
+      "learningGoal": "掌握生成下一个字典序排列",
+      "explanation": "next_permutation 会把当前序列变成字典序的下一个排列，并返回是否成功。\n\n如果已经是最后一个排列，它会返回 false，并把序列变回最小排列。\n\n想枚举所有排列，通常先 sort 到最小字典序，再 do-while 调用 next_permutation。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {1, 2, 3};\n    do {\n        for (int x : a) cout << x;\n        cout << endl;\n    } while (next_permutation(a.begin(), a.end()));\n    return 0;\n}",
+      "codeNotes": [
+        "next_permutation 生成下一个排列",
+        "返回 bool",
+        "通常先排序到最小排列",
+        "适合小规模全排列枚举"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记先排序",
+          "description": "如果初始序列不是最小排列，枚举不到前面的排列。",
+          "fix": "先 sort(a.begin(), a.end())。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出 1、2、3 的所有排列。",
+        "hint": "sort 后 do-while next_permutation。",
+        "expectedIdea": "do { 输出 } while(next_permutation(...));"
+      },
+      "quiz": [
+        {
+          "question": "枚举所有排列前通常要先做什么？",
+          "options": [
+            "先排序到最小排列",
+            "先 reverse 到最大排列",
+            "先清空数组",
+            "先调用 pop"
+          ],
+          "answerIndex": 0,
+          "explanation": "从最小字典序开始，才能枚举到所有排列。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.29",
+      "title": "自定义比较函数",
+      "learningGoal": "掌握 sort 中自定义排序规则",
+      "explanation": "自定义比较函数可以告诉 sort 按什么规则排序。比如按成绩降序，成绩相同按姓名升序。\n\n比较函数返回 true，表示第一个参数应该排在第二个参数前面。\n\n多关键字排序时，先判断主关键字是否不同，再处理次关键字。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nstruct Student {\n    string name;\n    int score;\n};\n\nbool cmp(Student a, Student b) {\n    if (a.score != b.score) return a.score > b.score;\n    return a.name < b.name;\n}\n\nint main() {\n    vector<Student> a = {{\"Bob\", 90}, {\"Ann\", 90}, {\"Cindy\", 95}};\n    sort(a.begin(), a.end(), cmp);\n    for (auto s : a) cout << s.name << \" \" << s.score << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "比较函数返回 bool",
+        "true 表示 a 在 b 前",
+        "可实现多关键字排序",
+        "比较规则要稳定且自洽"
+      ],
+      "commonMistakes": [
+        {
+          "title": "比较函数写成 <= 或 >=",
+          "description": "这可能破坏排序规则，导致结果异常。",
+          "fix": "通常使用严格比较 < 或 >。"
+        }
+      ],
+      "practice": {
+        "prompt": "按分数降序，分数相同按编号升序排序学生。",
+        "hint": "if(score不同) return score大; else return id小;",
+        "expectedIdea": "写 cmp，主关键字降序，次关键字升序。"
+      },
+      "quiz": [
+        {
+          "question": "比较函数 cmp(a,b) 返回 true 表示？",
+          "options": [
+            "a 应排在 b 前面",
+            "b 应被删除",
+            "排序结束",
+            "a 和 b 一定相等"
+          ],
+          "answerIndex": 0,
+          "explanation": "sort 根据比较函数判断两个元素的先后顺序。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.8.30",
+      "title": "lambda 基础",
+      "learningGoal": "了解 lambda 表达式在排序等场景中的基础用法",
+      "explanation": "lambda 是一种可以直接写在代码里的匿名函数。它常用于 sort 的比较规则，避免单独写一个 cmp 函数。\n\n基础写法是 [](参数列表) { 函数体 }。方括号用于捕获外部变量，入门阶段可以先用空捕获 []。\n\nlambda 让局部、简单的比较逻辑写起来更紧凑。",
+      "exampleCode": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> a = {3, 1, 4, 2};\n    sort(a.begin(), a.end(), [](int x, int y) {\n        return x > y;\n    });\n    for (int x : a) cout << x << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "lambda 是匿名函数",
+        "[] 是捕获列表",
+        "参数写在小括号里",
+        "可直接传给 sort"
+      ],
+      "commonMistakes": [
+        {
+          "title": "漏写返回值",
+          "description": "sort 的比较 lambda 必须返回 bool。",
+          "fix": "在函数体里 return x > y 或 return x < y。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 lambda 把 vector<int> 按从大到小排序。",
+        "hint": "sort(a.begin(), a.end(), [](int x, int y){ return x > y; });",
+        "expectedIdea": "把 lambda 作为 sort 的第三个参数。"
+      },
+      "quiz": [
+        {
+          "question": "lambda 表达式常用于 sort 的什么位置？",
+          "options": [
+            "第一个参数，表示起点",
+            "第二个参数，表示终点",
+            "第三个参数，表示比较规则",
+            "不能用于 sort"
+          ],
+          "answerIndex": 2,
+          "explanation": "sort 的第三个参数可以传入比较函数或 lambda。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "animationId": "cpp_sort_visualization",
+  "itemId": "1.8.22",
+  "title": "sort 排序",
+  "description": "演示 sort 对数组进行升序排序的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "原始数组",
+      "description": "声明一个未排序的数组，准备用 sort 排序",
+      "codeLine": "int a[] = {5, 2, 8, 1, 9};",
+      "highlights": ["a"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": "元素个数"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["5", "2", "8", "1", "9"],
+            "activeIndex": -1,
+            "note": "未排序"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "调用 sort",
+      "description": "sort(a, a+n) 对 [a, a+n) 区间排序，左闭右开",
+      "codeLine": "sort(a, a + n);",
+      "highlights": ["sort"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "2", "5", "8", "9"],
+            "activeIndex": -1,
+            "note": "升序排序完成"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "遍历输出",
+      "description": "排序后遍历输出，元素从小到大",
+      "codeLine": "for (int i = 0; i < n; i++) cout << a[i] << \" \";",
+      "highlights": ["cout"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["1", "2", "5", "8", "9"],
+            "activeIndex": 0,
+            "note": "从 a[0] 开始遍历"
+          }
+        ],
+        "output": "1 2 5 8 9 "
+      }
+    },
+    {
+      "step": 4,
+      "title": "降序排序",
+      "description": "传入 greater<int>() 可实现降序排列",
+      "codeLine": "sort(a, a + n, greater<int>());",
+      "highlights": ["greater"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["9", "8", "5", "2", "1"],
+            "activeIndex": -1,
+            "note": "降序排序完成"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "输出降序结果",
+      "description": "降序排列后输出，从大到小",
+      "codeLine": "for (int x : a) cout << x << \" \";",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["9", "8", "5", "2", "1"],
+            "activeIndex": -1,
+            "note": "从大到小"
+          }
+        ],
+        "output": "9 8 5 2 1 "
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "animationId": "cpp_if_branch",
+  "itemId": "1.5.1",
+  "title": "if 分支",
+  "description": "演示 if-else 条件分支的执行流程",
+  "initialState": {
+    "variables": [
+      {"name": "score", "value": "85", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化变量",
+      "description": "声明并初始化一个分数变量 score = 85",
+      "codeLine": "int score = 85;",
+      "highlights": ["score"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "85", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "判断条件 score >= 90",
+      "description": "检查 score 是否 >= 90，85 >= 90 为 false，跳过 if 分支",
+      "codeLine": "if (score >= 90) {",
+      "highlights": ["score >= 90"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "85", "note": "85 >= 90 → false"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "判断 else if 条件",
+      "description": "检查 score >= 60，85 >= 60 为 true，进入此分支",
+      "codeLine": "} else if (score >= 60) {",
+      "highlights": ["score >= 60"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "85", "note": "85 >= 60 → true"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "执行及格分支",
+      "description": "输出 \"及格\"，因为 score 在 60~89 之间",
+      "codeLine": "cout << \"及格\";",
+      "highlights": ["及格"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "85", "note": ""}
+        ],
+        "containers": [],
+        "output": "及格"
+      }
+    },
+    {
+      "step": 5,
+      "title": "else 分支被跳过",
+      "description": "由于已匹配 else if，else 分支不会执行",
+      "codeLine": "} else { cout << \"不及格\"; }",
+      "highlights": ["不及格"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "85", "note": "else 被跳过"}
+        ],
+        "containers": [],
+        "output": "及格"
+      }
+    }
+  ]
+}

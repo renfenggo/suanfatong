@@ -1,0 +1,127 @@
+{
+  "animationId": "cpp_stack_operations",
+  "itemId": "1.8.11",
+  "title": "stack 操作",
+  "description": "演示栈的 push、top、pop 操作，后进先出（LIFO）",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空栈",
+      "description": "声明一个 int 类型的空栈",
+      "codeLine": "stack<int> s;",
+      "highlights": ["s"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "0", "note": "空栈"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "stack",
+            "values": [],
+            "activeIndex": -1,
+            "note": "后进先出 LIFO"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "push(1)",
+      "description": "将 1 压入栈顶",
+      "codeLine": "s.push(1);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "1", "note": ""},
+          {"name": "s.top()", "value": "1", "note": "栈顶"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "stack",
+            "values": ["1"],
+            "activeIndex": 0,
+            "note": ""
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "push(2), push(3)",
+      "description": "依次压入 2 和 3，3 在栈顶",
+      "codeLine": "s.push(2); s.push(3);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "3", "note": ""},
+          {"name": "s.top()", "value": "3", "note": "栈顶"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "stack",
+            "values": ["1", "2", "3"],
+            "activeIndex": 2,
+            "note": "栈顶 → 3"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "top() 查看栈顶",
+      "description": "top() 返回栈顶元素但不移除",
+      "codeLine": "cout << s.top();",
+      "highlights": ["top"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "3", "note": "size 不变"},
+          {"name": "s.top()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "stack",
+            "values": ["1", "2", "3"],
+            "activeIndex": 2,
+            "note": "只读不移除"
+          }
+        ],
+        "output": "3"
+      }
+    },
+    {
+      "step": 5,
+      "title": "pop() 弹出栈顶",
+      "description": "pop() 移除栈顶元素 3，新的栈顶变为 2",
+      "codeLine": "s.pop();",
+      "highlights": ["pop"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "2", "note": ""},
+          {"name": "s.top()", "value": "2", "note": "新栈顶"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "stack",
+            "values": ["1", "2"],
+            "activeIndex": 1,
+            "note": "3 被弹出"
+          }
+        ],
+        "output": "3"
+      }
+    }
+  ]
+}

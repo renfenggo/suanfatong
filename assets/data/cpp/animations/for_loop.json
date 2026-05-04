@@ -1,0 +1,83 @@
+{
+  "animationId": "cpp_for_loop",
+  "itemId": "1.5.6",
+  "title": "for 循环",
+  "description": "演示 for 循环的初始化、条件判断和更新过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "循环初始化",
+      "description": "for 循环开始，i 初始化为 0",
+      "codeLine": "for (int i = 0; i < 5; i++) {",
+      "highlights": ["i = 0"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "0", "note": "初始化"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "第 1 次迭代",
+      "description": "i=0，条件 0<5 为 true，输出 i 的值，然后 i++",
+      "codeLine": "cout << i << \" \";",
+      "highlights": ["i"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "1", "note": "0<5 → true，输出后 i++"}
+        ],
+        "containers": [],
+        "output": "0 "
+      }
+    },
+    {
+      "step": 3,
+      "title": "第 3 次迭代",
+      "description": "i=2，条件 2<5 为 true，输出 2",
+      "codeLine": "cout << i << \" \";",
+      "highlights": ["i"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "3", "note": "2<5 → true，输出后 i++"}
+        ],
+        "containers": [],
+        "output": "0 1 2 "
+      }
+    },
+    {
+      "step": 4,
+      "title": "第 5 次迭代",
+      "description": "i=4，条件 4<5 为 true，输出 4",
+      "codeLine": "cout << i << \" \";",
+      "highlights": ["i"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "5", "note": "4<5 → true，输出后 i++"}
+        ],
+        "containers": [],
+        "output": "0 1 2 3 4 "
+      }
+    },
+    {
+      "step": 5,
+      "title": "循环结束",
+      "description": "i=5，条件 5<5 为 false，循环退出",
+      "codeLine": "// i=5, 5<5 → false, exit",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "5", "note": "5<5 → false，退出循环"}
+        ],
+        "containers": [],
+        "output": "0 1 2 3 4 "
+      }
+    }
+  ]
+}

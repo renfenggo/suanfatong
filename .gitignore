@@ -48,3 +48,10 @@ app.*.map.json
 .pub_cache/
 .flutter_config/
 .flutter_appdata/
+
+# Heap dump files
+*.hprof
+
+# Original data files (already imported into assets/)
+io_v4_4.json
+IO知识点_修正版_依赖标记版_v4.2.json

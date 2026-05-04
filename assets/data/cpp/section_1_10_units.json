@@ -1,0 +1,516 @@
+{
+  "sectionId": "1.10",
+  "sectionName": "常见易错点",
+  "units": [
+    {
+      "itemId": "1.10.1",
+      "title": "= 与 ==",
+      "learningGoal": "区分赋值运算符 = 和相等比较运算符 ==，避免在条件判断中误用",
+      "explanation": "在 C++ 中，一个等号 = 是赋值运算符，两个等号 == 是相等比较运算符。它们的含义完全不同，但看起来非常相似，初学者极易混淆。\n\n赋值 = 会把右边的值存到左边的变量中，整个表达式的值等于赋的值。比较 == 会判断两边是否相等，结果为 true（1）或 false（0）。\n\n在 if 条件中误写 = 是最常见的 bug 之一。例如 if (a = 5) 不是判断 a 是否等于 5，而是把 5 赋给 a，然后判断 5 是否为真——结果永远为真。这类 bug 不会报编译警告（取决于编译器设置），很难发现。\n\n养成习惯：写条件判断时先写 ==，再在两边填操作数；或者在 if 中把常量写在左边，如 if (5 == a)，这样误写成 if (5 = a) 会直接编译报错。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3;\n\n    if (a == 5) {\n        cout << \"a equals 5\" << endl;\n    } else {\n        cout << \"a is not 5, a = \" << a << endl;\n    }\n\n    a = 10;\n    if (a == 10) {\n        cout << \"a equals 10\" << endl;\n    }\n\n    // int b = 0;\n    // if (b = 5) {  // BUG: this is assignment, not comparison!\n    //     cout << \"this always runs\" << endl;\n    // }\n    // cout << \"b = \" << b << endl;  // b becomes 5\n\n    // Correct way: if (b == 5)\n\n    // Tip: write constant on the left\n    int c = 5;\n    if (5 == c) {\n        cout << \"c equals 5, using yoda style\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "= 是赋值，把右边的值存入左边的变量",
+        "== 是比较，判断两边是否相等，返回 true 或 false",
+        "if (a = 5) 会把 5 赋给 a，且条件永远为真",
+        "把常量写在左边（如 5 == a）可以有效避免误写为 =",
+        "编译器可能给出警告，但不一定报错，要重视警告"
+      ],
+      "commonMistakes": [
+        {
+          "title": "if 中把 == 写成 =",
+          "description": "if (a = 5) { ... } 本意是判断 a 是否等于 5，实际是把 5 赋给 a，条件永远为真。",
+          "fix": "改为 if (a == 5) { ... }，或者使用 Yoda 风格 if (5 == a)。"
+        },
+        {
+          "title": "while 中误用 =",
+          "description": "while (n = 1) { ... } 会导致死循环，因为每次判断都是赋值为 1，永远为真。",
+          "fix": "改为 while (n == 1) { ... }。"
+        }
+      ],
+      "practice": {
+        "prompt": "下面代码输出什么？找出 bug 并修正：\nint x = 3;\nif (x = 10) {\n    cout << \"yes\" << endl;\n} else {\n    cout << \"no\" << endl;\n}\ncout << x << endl;",
+        "hint": "注意 if 里面用的是 = 还是 ==",
+        "expectedIdea": "原代码输出 yes 和 10，因为 x = 10 是赋值。修正为 if (x == 10) 后输出 no 和 3。"
+      },
+      "quiz": [
+        {
+          "question": "以下代码的输出是什么？\nint a = 0;\nif (a = 5) { cout << \"A\"; } else { cout << \"B\"; }",
+          "options": [
+            "A",
+            "B",
+            "编译错误",
+            "运行时错误"
+          ],
+          "answerIndex": 0,
+          "explanation": "a = 5 是赋值操作，a 变为 5，表达式的值为 5（非零即真），所以输出 A。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.2",
+      "title": "整数除法",
+      "learningGoal": "理解 C++ 中整数除法的截断行为，学会在需要小数结果时正确转换类型",
+      "explanation": "在 C++ 中，两个整数相除的结果仍然是整数，小数部分会被直接丢弃（向零截断），而不是四舍五入。例如 7 / 2 的结果是 3，而不是 3.5。\n\n这个规则经常让初学者意外。当你计算平均分、比例等需要小数结果的场景时，如果操作数都是 int，就会丢失精度。\n\n解决方法有两种：一是把其中一个操作数强制转换为 double，如 7.0 / 2 或 (double)7 / 2；二是使用浮点字面量。只要除法运算中有一个操作数是 double，结果就会自动提升为 double。\n\n特别注意运算顺序。int sum = 7; int cnt = 2; double avg = sum / cnt; 这样 avg 得到的还是 3.0，因为 sum / cnt 已经按整数除法算完了。必须写成 double avg = (double)sum / cnt;。",
+      "exampleCode": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    cout << \"7 / 2 = \" << 7 / 2 << endl;\n    cout << \"7.0 / 2 = \" << 7.0 / 2 << endl;\n    cout << \"7 / 2.0 = \" << 7 / 2.0 << endl;\n\n    int sum = 85;\n    int cnt = 3;\n    cout << fixed << setprecision(2);\n\n    // Wrong: integer division first, then convert to double\n    double avg1 = sum / cnt;\n    cout << \"sum/cnt = \" << avg1 << endl;\n\n    // Correct: convert first, then divide\n    double avg2 = (double)sum / cnt;\n    cout << \"(double)sum/cnt = \" << avg2 << endl;\n\n    // Also correct\n    double avg3 = 1.0 * sum / cnt;\n    cout << \"1.0*sum/cnt = \" << avg3 << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "int / int 结果仍为 int，小数部分直接截断",
+        "只要有一个操作数是 double，结果就是 double",
+        "先除后转 double 没用，必须在除法之前转换",
+        "1.0 * a / b 是一种简洁的写法，强制提升为 double",
+        "负数除法也是向零截断：-7 / 2 = -3，不是 -4"
+      ],
+      "commonMistakes": [
+        {
+          "title": "先做整数除法再转 double",
+          "description": "double avg = sum / cnt; 中 sum/cnt 已经截断为整数，avg 存的是整数值。",
+          "fix": "写成 double avg = (double)sum / cnt; 或 double avg = 1.0 * sum / cnt;。"
+        },
+        {
+          "title": "以为整数除法会四舍五入",
+          "description": "7 / 2 期望得到 4（四舍五入），实际得到 3（直接截断）。",
+          "fix": "整数除法永远是截断。如需四舍五入，用 (a + b/2) / b 或 (int)(1.0*a/b + 0.5)。"
+        }
+      ],
+      "practice": {
+        "prompt": "三个同学分数为 90、80、70，计算平均分并保留两位小数。要求结果为 80.00。",
+        "hint": "总分除以人数时，至少有一个操作数要是 double",
+        "expectedIdea": "int s = 90 + 80 + 70;\ndouble avg = 1.0 * s / 3;\ncout << fixed << setprecision(2) << avg << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下代码输出什么？\nint a = 5, b = 2;\ncout << a / b * 2 << endl;",
+          "options": [
+            "5",
+            "4",
+            "4.5",
+            "5.0"
+          ],
+          "answerIndex": 0,
+          "explanation": "a / b = 5 / 2 = 2（整数除法截断），然后 2 * 2 = 4。输出 4。注意从左到右运算，不是 5 / (2*2)。"
+        },
+        {
+          "question": "如何让 5 / 2 得到 2.5？",
+          "options": [
+            "(double)(5 / 2)",
+            "5 / 2.0",
+            "5 / (double)2",
+            "B 和 C 都可以"
+          ],
+          "answerIndex": 3,
+          "explanation": "5/2.0 和 5/(double)2 都能在除法前提升类型。但 (double)(5/2) 是先做整数除法得 2 再转 double，得到 2.0。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.3",
+      "title": "数组越界",
+      "learningGoal": "理解数组下标从 0 开始，掌握合法下标范围，避免越界访问",
+      "explanation": "C++ 数组的下标从 0 开始，大小为 n 的数组合法下标范围是 0 到 n-1。访问下标 n 或更大的位置就是数组越界。\n\n数组越界是 C++ 中最危险的错误之一。和 Python、Java 不同，C++ 不会在运行时自动检查数组边界。越界访问不会立即报错，而是静默地读写相邻内存，导致结果不可预测——可能得到垃圾值，可能覆盖其他变量，严重时程序崩溃。\n\n常见的越界场景：循环条件写成 i <= n（应该是 i < n）；下标从 1 开始计数但数组从 0 开始；处理前缀和或差分时偏移量算错。\n\n预防方法：始终牢记「大小为 n 的数组，下标最大是 n-1」；循环条件用 i < n 而不是 i <= n；如果需要 1-indexed，可以把数组大小多开 1。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5] = {10, 20, 30, 40, 50};\n\n    for (int i = 0; i < 5; i++) {\n        cout << \"a[\" << i << \"] = \" << a[i] << endl;\n    }\n\n    // Wrong: accessing a[5] is out of bounds!\n    // cout << a[5] << endl;  // undefined behavior\n\n    // Correct way if you want 1-indexed:\n    int b[6];  // size 6, use indices 1 to 5\n    for (int i = 1; i <= 5; i++) {\n        b[i] = i * 10;\n        cout << \"b[\" << i << \"] = \" << b[i] << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "大小为 n 的数组，合法下标是 0 到 n-1",
+        "C++ 不检查数组越界，越界是未定义行为",
+        "循环条件用 i < n，不要写 i <= n",
+        "需要 1-indexed 时，数组大小多开 1",
+        "越界读可能得到垃圾值，越界写可能破坏其他数据"
+      ],
+      "commonMistakes": [
+        {
+          "title": "循环条件写成 <= n",
+          "description": "for (int i = 0; i <= n; i++) 会访问 a[n]，越界一个位置。",
+          "fix": "改为 for (int i = 0; i < n; i++)。"
+        },
+        {
+          "title": "混淆元素个数和最大下标",
+          "description": "int a[5] 最大下标是 4，不是 5。把 a[5] 当最后一个元素是错的。",
+          "fix": "记住：大小为 n 的数组，最大下标是 n-1。"
+        },
+        {
+          "title": "从 1 开始但数组从 0 开始",
+          "description": "想存 5 个数，用 for (int i = 1; i <= 5; i++) a[i] = ... 但数组只有 a[5]，a[5] 越界。",
+          "fix": "数组声明为 a[6]，或者下标从 0 开始用 for (int i = 0; i < 5; i++)。"
+        }
+      ],
+      "practice": {
+        "prompt": "下面的代码有什么问题？请找出并修正：\nint arr[3];\nfor (int i = 1; i <= 3; i++) {\n    arr[i] = i * i;\n    cout << arr[i] << endl;\n}",
+        "hint": "大小为 3 的数组，合法下标是什么范围？",
+        "expectedIdea": "arr[3] 越界。修正为 int arr[4]（从 1 开始用）或者把循环改为 for (int i = 0; i < 3; i++)。"
+      },
+      "quiz": [
+        {
+          "question": "int a[10]; 合法的最大下标是多少？",
+          "options": [
+            "10",
+            "9",
+            "11",
+            "0"
+          ],
+          "answerIndex": 1,
+          "explanation": "大小为 10 的数组，下标从 0 到 9，最大合法下标是 9。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.4",
+      "title": "未初始化",
+      "learningGoal": "理解局部变量未初始化时的不确定行为，养成声明时赋初值的习惯",
+      "explanation": "在 C++ 中，局部变量声明后如果没有赋值，它的值是不确定的（垃圾值）。全局变量会自动初始化为 0，但局部变量不会。\n\n未初始化的变量包含内存中残留的旧数据，每次运行可能不同。用这种变量参与计算会导致结果完全不可预测，而且这种 bug 很难定位——有时程序看起来正常，有时又出错。\n\n最危险的是未初始化的变量恰好碰巧是一个「合理」的值，让你以为程序没问题，换台电脑或换个时间运行就崩了。\n\n预防很简单：声明变量时就给初值。int sum = 0; int maxVal = -1e9; bool found = false; 这样不仅安全，代码也更清晰，读者一眼就知道变量的初始状态。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a;\n    // cout << a << endl;  // DANGEROUS: a is uninitialized!\n\n    int sum = 0;\n    int maxVal = -1000000000;\n    bool found = false;\n    int cnt = 0;\n\n    int nums[] = {3, 7, 2, 9, 1};\n    for (int i = 0; i < 5; i++) {\n        sum += nums[i];\n        if (nums[i] > maxVal) maxVal = nums[i];\n        if (nums[i] > 5) found = true;\n        cnt++;\n    }\n\n    cout << \"sum = \" << sum << endl;\n    cout << \"max = \" << maxVal << endl;\n    cout << \"found = \" << found << endl;\n    cout << \"cnt = \" << cnt << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "局部变量不会自动初始化，值是随机的垃圾值",
+        "全局变量会自动初始化为 0",
+        "使用未初始化的变量是未定义行为，结果不可预测",
+        "声明时直接赋初值是最安全的做法",
+        "累加器 sum 要初始化为 0，求最大值要初始化为一个很小的数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "累加器忘记初始化为 0",
+          "description": "int sum; for (...) sum += a[i]; 最终 sum 是垃圾值加上所有元素。",
+          "fix": "写成 int sum = 0; 确保从 0 开始累加。"
+        },
+        {
+          "title": "求最大值忘记初始化",
+          "description": "int mx; for (...) if (a[i] > mx) mx = a[i]; mx 可能永远不被更新。",
+          "fix": "初始化为一个很小的值，如 int mx = -2e9; 或直接 mx = a[0] 从第一个元素开始。"
+        }
+      ],
+      "practice": {
+        "prompt": "下面代码的输出可能不正确，找出问题并修正：\nint cnt;\nint arr[] = {1, 2, 3, 4, 5};\nfor (int i = 0; i < 5; i++) {\n    if (arr[i] % 2 == 0) cnt++;\n}\ncout << cnt << endl;",
+        "hint": "cnt 变量声明时赋初值了吗？",
+        "expectedIdea": "cnt 没有初始化，值不确定。修正为 int cnt = 0; 这样输出才能正确得到 2。"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种变量声明方式是安全的？",
+          "options": [
+            "int x;",
+            "int x = 0;",
+            "int x; cin >> x;",
+            "B 和 C 都安全"
+          ],
+          "answerIndex": 3,
+          "explanation": "int x = 0 直接赋初值，安全。int x; cin >> x; 虽然先声明但紧接着就通过输入赋值了，在使用前有了确定的值，也是安全的。只有声明后直接使用未赋值的 x 才危险。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.5",
+      "title": "long long 漏掉",
+      "learningGoal": "认识 int 溢出问题，学会在需要大数时使用 long long 和 1LL",
+      "explanation": "C++ 中 int 一般是 32 位，能表示的范围大约是 -21 亿到 21 亿。如果计算结果超过这个范围，就会发生溢出——多余的高位被丢弃，结果变成一个完全错误的值。\n\n信奥题目中数据范围经常到 10^9 甚至 10^18，两个 10^9 相乘就超过 int 范围了。用 int 存结果、用 int 做中间计算都可能导致溢出。\n\nlong long 是 64 位整数，范围约 -9.2×10^18 到 9.2×10^18，足以应对绝大多数信奥题目。使用时注意：变量声明为 long long；常量后面加 LL（如 1LL、1000000000LL）；输入输出用 %lld 或 cin/cout。\n\n一个隐蔽的陷阱：即使结果变量是 long long，如果中间运算全是 int，溢出已经发生了。例如 long long ans = a * b; 如果 a 和 b 都是 int，a * b 先按 int 计算就溢出了。必须写成 long long ans = (long long)a * b; 或 long long ans = 1LL * a * b;。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 1000000;\n    int b = 1000000;\n    int c = a * b;\n    cout << \"int: \" << c << endl;\n\n    long long d = 1000000;\n    long long e = 1000000;\n    long long f = d * e;\n    cout << \"long long: \" << f << endl;\n\n    int x = 1000000;\n    int y = 1000000;\n    long long g = (long long)x * y;\n    cout << \"cast: \" << g << endl;\n\n    long long h = 1LL * x * y;\n    cout << \"1LL: \" << h << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "int 范围约 -2.1×10^9 到 2.1×10^9，乘法极易溢出",
+        "long long 范围约 -9.2×10^18 到 9.2×10^18",
+        "结果用 long long 不够，中间运算也必须用 long long",
+        "1LL * a * b 可以把整个表达式提升为 long long",
+        "scanf 读取 long long 用 %lld，cout 直接输出即可"
+      ],
+      "commonMistakes": [
+        {
+          "title": "结果变量用 long long 但中间运算用 int",
+          "description": "long long ans = a * b; 中 a*b 是 int 乘法，溢出后再转 long long 已经晚了。",
+          "fix": "写成 long long ans = 1LL * a * b; 确保乘法在 long long 下进行。"
+        },
+        {
+          "title": "循环变量溢出",
+          "description": "for (int i = 1; i <= n; i++) 当 n 接近 2×10^9 时 i 可能溢出。",
+          "fix": "循环变量也用 long long：for (long long i = 1; i <= n; i++)。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 n*(n+1)/2，其中 n = 2000000000（20亿）。用 int 会溢出，请用 long long 正确实现。",
+        "hint": "n 和 n+1 都是 20 亿级别的，相乘前要用 long long",
+        "expectedIdea": "long long n = 2000000000LL;\nlong long ans = n * (n + 1) / 2;\ncout << ans << endl;"
+      },
+      "quiz": [
+        {
+          "question": "long long ans = 100000 * 100000; ans 的值是多少？",
+          "options": [
+            "10000000000",
+            "1410065408",
+            "-1",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "100000 是 int，100000*100000 在 int 范围内（10^10 > 2^31）会溢出，得到 1410065408（溢出后的截断值）。应写为 100000LL * 100000。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.6",
+      "title": "字符与字符串混淆",
+      "learningGoal": "区分 char 和 string 类型，掌握单引号和双引号的正确用法",
+      "explanation": "C++ 中字符用 char 类型表示，用单引号括起来，如 'A'、'0'、'\\n'。字符串用 string（或 const char*）表示，用双引号括起来，如 \"Hello\"。\n\n单引号和双引号在 C++ 中是完全不同的东西。'A' 是一个字符，占 1 个字节，值是 65（ASCII 码）。\"A\" 是一个字符串，包含字符 'A' 和结尾的空字符 '\\0'，占 2 个字节。\n\n初学者常见错误包括：用双引号给 char 变量赋值（char c = \"A\" 会报错或警告）；用单引号给 string 赋值（string s = 'A' 虽然能编译但语义不对）；把 '0' 当成数值 0（'0' 的 ASCII 码是 48，不是 0）。\n\n特别注意：数字字符和数字值的区别。'0' 到 '9' 的 ASCII 码是 48 到 57。字符 '5' 不等于数字 5。要把字符数字转为数值，可以用 c - '0'。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    char ch = 'A';\n    string s = \"Hello\";\n    cout << \"ch = \" << ch << \", ASCII = \" << (int)ch << endl;\n    cout << \"s = \" << s << \", length = \" << s.length() << endl;\n\n    char digit = '5';\n    int val = digit - '0';\n    cout << \"digit = '\" << digit << \"', value = \" << val << endl;\n\n    char zero = '0';\n    cout << \"'0' ASCII = \" << (int)zero << endl;\n    cout << \"('0' == 0) = \" << ('0' == 0) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "char 用单引号：'A'、'0'、'\\n'，只表示一个字符",
+        "string 用双引号：\"Hello\"，可以包含多个字符",
+        "'A' 的值是 ASCII 码 65，\"A\" 是包含 'A' 和 '\\0' 的字符串",
+        "'0' 不等于数值 0，'0' 的 ASCII 码是 48",
+        "字符数字转数值用 c - '0'，如 '5' - '0' = 5"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用双引号给 char 赋值",
+          "description": "char c = \"A\"; \"A\" 是字符串（const char*），不能直接赋给 char。",
+          "fix": "改为 char c = 'A'; 使用单引号。"
+        },
+        {
+          "title": "把 '0' 当成数值 0",
+          "description": "if (c == 0) 期望匹配字符 '0'，但 '0' 的值是 48，永远不等于 0。",
+          "fix": "判断字符零用 if (c == '0')。"
+        },
+        {
+          "title": "字符串比较用 ==",
+          "description": "string a = \"abc\", b = \"abc\"; 用 == 比较在 C++ 中可以工作，但 char 数组不能直接用 ==。",
+          "fix": "string 类型可以用 == 比较。char 数组要用 strcmp() 函数。建议统一使用 string。"
+        }
+      ],
+      "practice": {
+        "prompt": "把字符串 \"123\" 中每个字符转为数字并求和。提示：遍历 string 的每个字符，用 c - '0' 转换。",
+        "hint": "for (int i = 0; i < s.length(); i++) sum += s[i] - '0';",
+        "expectedIdea": "string s = \"123\";\nint sum = 0;\nfor (int i = 0; i < s.length(); i++) {\n    sum += s[i] - '0';\n}\ncout << sum << endl;  // 输出 6"
+      },
+      "quiz": [
+        {
+          "question": "cout << ('5' - '0') << endl; 输出什么？",
+          "options": [
+            "53",
+            "5",
+            "48",
+            "0"
+          ],
+          "answerIndex": 1,
+          "explanation": "'5' 的 ASCII 码是 53，'0' 的 ASCII 码是 48，53 - 48 = 5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.7",
+      "title": "sort 区间写错",
+      "learningGoal": "掌握 sort 函数的正确区间写法，避免少排序或多排序",
+      "explanation": "C++ STL 的 sort 函数使用左闭右开区间 [first, last)，即对从 first 开始到 last 之前（不包含 last）的元素排序。\n\n对于普通数组 a[n]，正确写法是 sort(a, a + n)，表示排序 a[0] 到 a[n-1]。常见错误是写成 sort(a, a + n - 1)，这样 a[n-1] 就不会被排序，最后一个元素漏掉了。\n\n对于 vector，正确写法是 sort(v.begin(), v.end())。如果只想排序一部分，比如前 k 个元素，写 sort(v.begin(), v.begin() + k)。\n\n排序区间错误的 bug 很隐蔽，因为大部分元素看起来是排好的，只有最后（或开头）的元素不对。检查方法：排序后输出整个数组，看是否有元素没被排到。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int a[] = {5, 3, 1, 4, 2};\n    int n = 5;\n\n    sort(a, a + n);\n    cout << \"Correct sort(a, a+n): \";\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    cout << endl;\n\n    int b[] = {9, 7, 3, 8, 2};\n    sort(b, b + n);\n    cout << \"Correct sort(b, b+n): \";\n    for (int i = 0; i < n; i++) cout << b[i] << \" \";\n    cout << endl;\n\n    // Wrong: sort(b, b + n - 1) would miss the last element\n    // sort(b, b + n - 1);\n    // cout << \"Wrong sort(b, b+n-1): \";\n    // for (int i = 0; i < n; i++) cout << b[i] << \" \";\n    // cout << endl;  // output: 2 3 7 8 9  wait, no: 2 7 3 8 9\n\n    vector<int> v = {10, 40, 20, 50, 30};\n    sort(v.begin(), v.end());\n    cout << \"Vector sort: \";\n    for (int i = 0; i < v.size(); i++) cout << v[i] << \" \";\n    cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "sort 使用左闭右开区间 [first, last)",
+        "数组排序：sort(a, a + n)，不要写成 sort(a, a + n - 1)",
+        "vector 排序：sort(v.begin(), v.end())",
+        "排前 k 个：sort(v.begin(), v.begin() + k)",
+        "需要 #include <algorithm> 头文件"
+      ],
+      "commonMistakes": [
+        {
+          "title": "写成 sort(a, a + n - 1)",
+          "description": "最后一个元素 a[n-1] 不在排序范围内，排序后它可能还在原来的位置。",
+          "fix": "改为 sort(a, a + n)。记住是左闭右开，n 个元素就是 a + n。"
+        },
+        {
+          "title": "对空数组排序",
+          "description": "当 n = 0 时 sort(a, a + 0) 不会出错，但如果用 sort(a, a + n - 1)，n-1 = -1 会导致未定义行为。",
+          "fix": "始终用 sort(a, a + n)，它对 n = 0 也是安全的。"
+        }
+      ],
+      "practice": {
+        "prompt": "对数组 int a[] = {8, 3, 5, 1, 9, 2}; 排序后输出。再尝试只排序前 4 个元素并输出整个数组。",
+        "hint": "全部排序用 sort(a, a+6)，前 4 个用 sort(a, a+4)",
+        "expectedIdea": "sort(a, a + 6); 输出 1 2 3 5 8 9\nsort(a, a + 4); 输出 1 3 5 8 9 2（只有前 4 个被排序）"
+      },
+      "quiz": [
+        {
+          "question": "int a[5] = {3,1,4,1,5}; sort(a, a+3); 排序后 a 数组是什么？",
+          "options": [
+            "{1,1,3,4,5}",
+            "{1,3,4,1,5}",
+            "{1,3,4,5,1}",
+            "{3,1,4,1,5}"
+          ],
+          "answerIndex": 1,
+          "explanation": "sort(a, a+3) 只排序前 3 个元素 a[0], a[1], a[2]，即 {3,1,4} 排序为 {1,3,4}，a[3] 和 a[4] 不变。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.8",
+      "title": "priority_queue 默认大根堆",
+      "learningGoal": "理解 priority_queue 默认是大根堆（最大值优先），学会创建小根堆",
+      "explanation": "C++ STL 的 priority_queue（优先队列）默认是大根堆，即每次取出的元素是当前最大的。这与很多同学直觉中的「最小值优先」相反。\n\n例如 priority_queue<int> pq; 往里面放入 3、1、4、1、5，每次 pq.top() 取出的是 5、4、3、1、1。\n\n如果需要小根堆（最小值优先），要写成 priority_queue<int, vector<int>, greater<int>> pq;。这种写法比较长，但这是标准做法。\n\n信奥题目中很多场景需要小根堆，比如 Dijkstra 最短路、合并 K 个有序链表等。如果忘记改成小根堆，程序逻辑就会完全错误。建议把小根堆的声明背下来。",
+      "exampleCode": "#include <iostream>\n#include <queue>\n#include <vector>\nusing namespace std;\n\nint main() {\n    priority_queue<int> maxPQ;\n    maxPQ.push(3);\n    maxPQ.push(1);\n    maxPQ.push(4);\n    maxPQ.push(1);\n    maxPQ.push(5);\n\n    cout << \"Max heap (default): \";\n    while (!maxPQ.empty()) {\n        cout << maxPQ.top() << \" \";\n        maxPQ.pop();\n    }\n    cout << endl;\n\n    priority_queue<int, vector<int>, greater<int>> minPQ;\n    minPQ.push(3);\n    minPQ.push(1);\n    minPQ.push(4);\n    minPQ.push(1);\n    minPQ.push(5);\n\n    cout << \"Min heap (greater): \";\n    while (!minPQ.empty()) {\n        cout << minPQ.top() << \" \";\n        minPQ.pop();\n    }\n    cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "priority_queue<int> 默认是大根堆，top() 返回最大值",
+        "小根堆声明：priority_queue<int, vector<int>, greater<int>>",
+        "top() 查看堆顶元素，pop() 弹出堆顶，push() 插入元素",
+        "empty() 判断是否为空，size() 返回元素个数",
+        "需要 #include <queue> 头文件"
+      ],
+      "commonMistakes": [
+        {
+          "title": "需要最小值却用了默认优先队列",
+          "description": "想每次取最小元素，但用了 priority_queue<int>，实际取出的是最大元素。",
+          "fix": "声明为 priority_queue<int, vector<int>, greater<int>>。"
+        },
+        {
+          "title": "忘记 empty() 检查就 top()/pop()",
+          "description": "对空优先队列调用 top() 或 pop() 会导致未定义行为。",
+          "fix": "每次操作前检查 !pq.empty()，或用 while (!pq.empty()) 遍历。"
+        }
+      ],
+      "practice": {
+        "prompt": "用小根堆实现：依次插入 10、30、20、50、40，然后依次取出并输出。",
+        "hint": "声明为 priority_queue<int, vector<int>, greater<int>> pq;",
+        "expectedIdea": "输出 10 20 30 40 50（从小到大）"
+      },
+      "quiz": [
+        {
+          "question": "priority_queue<int> pq; pq.push(2); pq.push(5); pq.push(1); pq.top() 的值是？",
+          "options": [
+            "1",
+            "2",
+            "5",
+            "不确定"
+          ],
+          "answerIndex": 2,
+          "explanation": "默认是大根堆，top() 返回最大元素 5。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.9",
+      "title": "getline 被前一个换行影响",
+      "learningGoal": "理解 cin 和 getline 混用时的换行符残留问题，学会正确处理",
+      "explanation": "cin >> 读取输入时会跳过空白字符（空格、换行、制表符），但不会消耗掉输入缓冲区中的换行符。如果你先用 cin >> 读了一个数或单词，再立刻用 getline 读一行，getline 会读到前面残留的换行符，直接返回一个空字符串。\n\n这是因为 cin >> 读完后，用户按的回车（换行符 '\\n'）还留在输入缓冲区中。getline 遇到换行符就认为行结束了，所以读到的是空行。\n\n解决方法是在 cin 和 getline 之间加一个 cin.ignore()，它会丢弃缓冲区中的一个字符（即那个换行符）。或者统一全部用 getline 读取，再用 sscanf 或 stoi 转换。\n\n这个 bug 的现象很奇怪：程序看起来跳过了一行输入。很多初学者会以为是 getline 本身有问题，其实是前面的 cin 留下的换行符在捣鬼。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cout << \"Enter n: \";\n    cin >> n;\n    cin.ignore();\n\n    string line;\n    for (int i = 0; i < n; i++) {\n        cout << \"Enter line \" << i + 1 << \": \";\n        getline(cin, line);\n        cout << \"Got: [\" << line << \"]\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "cin >> 不会消耗缓冲区中的换行符",
+        "getline 遇到换行符就结束，会读到残留的空行",
+        "cin.ignore() 可以丢弃缓冲区中的一个字符",
+        "每次 cin >> 后接 getline 前，都要加 cin.ignore()",
+        "cin.ignore() 的参数可以不写，默认忽略一个字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cin >> 后直接 getline",
+          "description": "int n; cin >> n; string s; getline(cin, s); 此时 s 读到的是空字符串。",
+          "fix": "在 cin >> n 后加 cin.ignore(); 再 getline(cin, s);。"
+        },
+        {
+          "title": "循环中反复出现这个问题",
+          "description": "在多组数据的循环中，每组都先 cin >> 再 getline，每组都会少读一行。",
+          "fix": "每次 cin >> 后都加 cin.ignore()，或者统一用 getline + stoi 的方式读取。"
+        }
+      ],
+      "practice": {
+        "prompt": "先读入一个整数 n，然后读 n 行字符串并输出每行的长度。注意处理换行符问题。",
+        "hint": "cin >> n 之后加 cin.ignore()，然后用 getline 读每行",
+        "expectedIdea": "int n; cin >> n; cin.ignore();\nfor (int i = 0; i < n; i++) {\n    string s;\n    getline(cin, s);\n    cout << s.length() << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "执行以下代码，输入 \"5\\nHello\"，getline 读到的内容是什么？\nint x; cin >> x; string s; getline(cin, s);",
+          "options": [
+            "Hello",
+            "空字符串",
+            "5",
+            "5\\nHello"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin >> x 读了 5，但换行符 \\n 留在缓冲区。getline 遇到 \\n 就结束，读到空字符串。需要加 cin.ignore() 才能正确读到 Hello。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.10",
+      "title": "浮点误差基础",
+      "learningGoal": "认识浮点数在计算机中的精度限制，学会用 eps 比较浮点数",
+      "explanation": "计算机用二进制存储浮点数，很多十进制小数（如 0.1）无法精确表示，只能存储一个近似值。多次运算后误差会累积，导致看似简单的等式实际上不成立。\n\n例如 0.1 + 0.2 在计算机中不等于 0.3，而是约等于 0.30000000000000004。直接用 == 比较两个浮点数几乎总是会失败。\n\n正确做法是引入一个很小的误差容限 eps（通常取 1e-9 或 1e-8），判断两个浮点数的差是否小于 eps：if (fabs(a - b) < eps) 来代替 if (a == b)。\n\n需要注意浮点数的精度限制。double 大约有 15-16 位有效数字。在做大量运算或比较敏感的判断时，要考虑误差的影响。",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    double a = 0.1 + 0.2;\n    double b = 0.3;\n\n    cout << \"a = \" << a << endl;\n    cout << \"b = \" << b << endl;\n    cout << \"(a == b) = \" << (a == b) << endl;\n\n    double eps = 1e-9;\n    cout << \"(fabs(a-b) < eps) = \" << (fabs(a - b) < eps) << endl;\n\n    double x = 1.0 / 3.0 * 3.0;\n    cout << \"1/3*3 = \" << x << endl;\n    cout << \"(x == 1.0) = \" << (x == 1.0) << endl;\n    cout << \"(fabs(x-1.0) < eps) = \" << (fabs(x - 1.0) < eps) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "0.1 + 0.2 不等于 0.3，因为浮点数存储有精度误差",
+        "不要用 == 直接比较两个浮点数",
+        "用 fabs(a - b) < eps 判断浮点数是否\"相等\"",
+        "eps 通常取 1e-9，根据题目精度要求调整",
+        "需要 #include <cmath> 来使用 fabs 函数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 == 比较浮点数",
+          "description": "if (a == 0.3) 可能永远不成立，即使 a 是 0.1 + 0.2 的结果。",
+          "fix": "用 if (fabs(a - 0.3) < 1e-9) 代替。"
+        },
+        {
+          "title": "浮点数作为循环计数器",
+          "description": "for (double i = 0; i != 1.0; i += 0.1) 可能永远不停或提前停止。",
+          "fix": "用整数计数：for (int i = 0; i < 10; i++) 然后 double val = i * 0.1;。"
+        }
+      ],
+      "practice": {
+        "prompt": "判断变量 double x = 0.7; 是否等于 7.0/10.0。不要用 ==，用 eps 方式判断并输出结果。",
+        "hint": "if (fabs(x - 7.0/10.0) < 1e-9) 来判断",
+        "expectedIdea": "double x = 0.7;\ndouble y = 7.0 / 10.0;\ndouble eps = 1e-9;\nif (fabs(x - y) < eps) {\n    cout << \"equal\" << endl;\n} else {\n    cout << \"not equal, diff = \" << fabs(x - y) << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种方式能正确判断两个 double 变量 a 和 b 是否相等？",
+          "options": [
+            "a == b",
+            "a - b == 0",
+            "fabs(a - b) < 1e-9",
+            "a * b == a * b"
+          ],
+          "answerIndex": 2,
+          "explanation": "浮点数不能直接用 == 比较。正确做法是判断差的绝对值是否小于一个很小的 eps 值。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.10.11",
+      "title": "多组数据未清空",
+      "learningGoal": "在处理多组测试数据时，学会在每组数据开始前正确清空所有变量和容器",
+      "explanation": "信奥题目经常要求处理多组测试数据（T 组）。很多同学在第一组数据中正确使用了数组、vector、计数器等，但到了第二组时忘记清空，导致前一组的残留数据影响了当前组的计算结果。\n\n需要清空的内容包括：数组（memset 或逐个赋值）、vector（.clear()）、计数器变量（重新赋值为 0）、标记数组、集合等。任何在上一组中被修改过的变量，在新一组开始前都必须恢复初始状态。\n\n特别容易遗漏的是标记数组和集合。比如用 bool vis[100] 记录访问状态，第一组标记了一些位置，第二组开始时如果不重置为 false，就会带着上一组的标记继续运行。\n\n养成习惯：在每组数据处理开始时，统一做一次清空。可以写一个 init() 函数，把所有需要重置的变量集中处理。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    int T;\n    cin >> T;\n    while (T--) {\n        int n;\n        cin >> n;\n\n        int cnt = 0;\n        int sum = 0;\n        int mx = -2000000000;\n        vector<int> v;\n\n        for (int i = 0; i < n; i++) {\n            int x;\n            cin >> x;\n            v.push_back(x);\n            sum += x;\n            if (x > mx) mx = x;\n            if (x % 2 == 0) cnt++;\n        }\n\n        cout << \"sum=\" << sum << \" max=\" << mx << \" even=\" << cnt << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "多组数据时，每组开始前要清空所有变量",
+        "计数器、累加器要在循环体内声明或重新赋值为 0",
+        "vector 每组重新声明或用 .clear() 清空",
+        "数组用 memset(a, 0, sizeof(a)) 或循环逐个重置",
+        "标记数组（bool vis[]）最容易被遗忘"
+      ],
+      "commonMistakes": [
+        {
+          "title": "计数器没有在每组开始时重置",
+          "description": "int cnt = 0; 写在 while(T--) 外面，导致 cnt 累加了所有组的数据。",
+          "fix": "把 int cnt = 0; 移到 while(T--) 循环体内部。"
+        },
+        {
+          "title": "vector 没有清空",
+          "description": "vector<int> v; 声明在外面，每组 push_back 后不清空，v 越来越大。",
+          "fix": "每组开始时 v.clear()，或在循环体内重新声明 vector<int> v;。"
+        },
+        {
+          "title": "标记数组没有重置",
+          "description": "bool vis[100]; memset(vis, false, sizeof(vis)); 写在循环外面，后面的组带着前面的标记。",
+          "fix": "把 memset 放在每组数据处理之前。"
+        }
+      ],
+      "practice": {
+        "prompt": "处理 T 组数据，每组读入 n 个数，统计其中正数的个数。注意每组要重新计数。",
+        "hint": "计数器声明在 while(T--) 循环体内部",
+        "expectedIdea": "int T; cin >> T;\nwhile (T--) {\n    int n, cnt = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int x; cin >> x;\n        if (x > 0) cnt++;\n    }\n    cout << cnt << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "处理多组数据时，以下哪种写法最安全？",
+          "options": [
+            "所有变量在 main 开头声明一次",
+            "每组开始时在循环体内重新声明或清空变量",
+            "用 memset 清空所有变量就行",
+            "只清空 vector，其他变量不用管"
+          ],
+          "answerIndex": 1,
+          "explanation": "最安全的做法是在每组数据处理的循环体内声明或重置变量。这样每组数据都从干净的初始状态开始，避免残留数据的影响。"
+        }
+      ]
+    }
+  ]
+}

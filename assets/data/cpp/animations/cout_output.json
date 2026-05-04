@@ -1,0 +1,67 @@
+{
+  "animationId": "cpp_cout_output",
+  "itemId": "1.2.2",
+  "title": "cout 输出",
+  "description": "演示 cout 输出文字、变量和表达式的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "输出文字",
+      "description": "cout << \"Hello\"; 把字符串 \"Hello\" 输出到屏幕。<< 是插入运算符，方向指向 cout，表示数据流向屏幕。",
+      "codeLine": "cout << \"Hello\";",
+      "highlights": ["cout", "<<", "Hello"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": "Hello"
+      }
+    },
+    {
+      "step": 2,
+      "title": "输出变量的值",
+      "description": "声明变量 score = 95，然后用 cout << score; 输出变量的值。注意变量名不加引号，输出的是变量的值而不是字母。",
+      "codeLine": "int score = 95;\ncout << score;",
+      "highlights": ["score", "cout"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "95", "note": ""}
+        ],
+        "containers": [],
+        "output": "Hello\n95"
+      }
+    },
+    {
+      "step": 3,
+      "title": "用 << 连续输出",
+      "description": "cout 可以用多个 << 拼接输出内容。这里把文字和变量拼在一起输出，让结果更易读。",
+      "codeLine": "cout << \"分数是\" << score << \"分\" << endl;",
+      "highlights": ["<<", "score", "endl"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "95", "note": ""}
+        ],
+        "containers": [],
+        "output": "Hello\n95\n分数是95分"
+      }
+    },
+    {
+      "step": 4,
+      "title": "输出表达式结果",
+      "description": "cout 也可以直接输出表达式的计算结果，不需要先存到变量里。这里输出 score + 5 的值。",
+      "codeLine": "cout << \"加 5 分后：\" << score + 5 << endl;",
+      "highlights": ["score + 5"],
+      "state": {
+        "variables": [
+          {"name": "score", "value": "95", "note": "score 不变"}
+        ],
+        "containers": [],
+        "output": "Hello\n95\n分数是95分\n加 5 分后：100"
+      }
+    }
+  ]
+}

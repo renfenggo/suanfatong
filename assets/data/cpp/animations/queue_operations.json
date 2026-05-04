@@ -1,0 +1,128 @@
+{
+  "animationId": "cpp_queue_operations",
+  "itemId": "1.8.10",
+  "title": "queue 操作",
+  "description": "演示队列的 push、front、pop 操作，先进先出（FIFO）",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空队列",
+      "description": "声明一个 int 类型的空队列",
+      "codeLine": "queue<int> q;",
+      "highlights": ["q"],
+      "state": {
+        "variables": [
+          {"name": "q.size()", "value": "0", "note": "空队列"}
+        ],
+        "containers": [
+          {
+            "name": "q",
+            "type": "queue",
+            "values": [],
+            "activeIndex": -1,
+            "note": "先进先出 FIFO"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "push(10)",
+      "description": "将 10 入队到队尾",
+      "codeLine": "q.push(10);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "q.size()", "value": "1", "note": ""},
+          {"name": "q.front()", "value": "10", "note": "队首"}
+        ],
+        "containers": [
+          {
+            "name": "q",
+            "type": "queue",
+            "values": ["10"],
+            "activeIndex": 0,
+            "note": "队首→10"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "push(20), push(30)",
+      "description": "依次入队 20 和 30，10 仍在队首",
+      "codeLine": "q.push(20); q.push(30);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "q.size()", "value": "3", "note": ""},
+          {"name": "q.front()", "value": "10", "note": "队首"},
+          {"name": "q.back()", "value": "30", "note": "队尾"}
+        ],
+        "containers": [
+          {
+            "name": "q",
+            "type": "queue",
+            "values": ["10", "20", "30"],
+            "activeIndex": 0,
+            "note": "队首→10  队尾→30"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "front() 查看队首",
+      "description": "front() 返回队首元素但不移除",
+      "codeLine": "cout << q.front();",
+      "highlights": ["front"],
+      "state": {
+        "variables": [
+          {"name": "q.size()", "value": "3", "note": "不变"},
+          {"name": "q.front()", "value": "10", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "q",
+            "type": "queue",
+            "values": ["10", "20", "30"],
+            "activeIndex": 0,
+            "note": "只读不移除"
+          }
+        ],
+        "output": "10"
+      }
+    },
+    {
+      "step": 5,
+      "title": "pop() 出队",
+      "description": "pop() 移除队首元素 10，新的队首变为 20",
+      "codeLine": "q.pop();",
+      "highlights": ["pop"],
+      "state": {
+        "variables": [
+          {"name": "q.size()", "value": "2", "note": ""},
+          {"name": "q.front()", "value": "20", "note": "新队首"}
+        ],
+        "containers": [
+          {
+            "name": "q",
+            "type": "queue",
+            "values": ["20", "30"],
+            "activeIndex": 0,
+            "note": "10 已出队"
+          }
+        ],
+        "output": "10"
+      }
+    }
+  ]
+}

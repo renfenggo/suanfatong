@@ -1,0 +1,99 @@
+{
+  "animationId": "cpp_array_index",
+  "itemId": "1.6.5",
+  "title": "数组下标访问",
+  "description": "演示一维数组的下标访问和越界风险",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明数组",
+      "description": "声明一个大小为 5 的整型数组并初始化",
+      "codeLine": "int a[5] = {10, 20, 30, 40, 50};",
+      "highlights": ["a"],
+      "state": {
+        "variables": [],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["10", "20", "30", "40", "50"],
+            "activeIndex": -1,
+            "note": "下标范围 0~4"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "访问 a[2]",
+      "description": "通过下标 2 访问第 3 个元素，值为 30",
+      "codeLine": "cout << a[2];",
+      "highlights": ["a[2]"],
+      "state": {
+        "variables": [
+          {"name": "a[2]", "value": "30", "note": "下标 2 → 第 3 个元素"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["10", "20", "30", "40", "50"],
+            "activeIndex": 2,
+            "note": ""
+          }
+        ],
+        "output": "30"
+      }
+    },
+    {
+      "step": 3,
+      "title": "修改 a[0]",
+      "description": "通过下标 0 修改第 1 个元素为 100",
+      "codeLine": "a[0] = 100;",
+      "highlights": ["a[0]"],
+      "state": {
+        "variables": [
+          {"name": "a[0]", "value": "100", "note": "原值 10 被覆盖为 100"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["100", "20", "30", "40", "50"],
+            "activeIndex": 0,
+            "note": ""
+          }
+        ],
+        "output": "30"
+      }
+    },
+    {
+      "step": 4,
+      "title": "越界访问 a[5]",
+      "description": "下标 5 超出范围 0~4，这是未定义行为！",
+      "codeLine": "cout << a[5];  // 越界！",
+      "highlights": ["a[5]", "越界"],
+      "state": {
+        "variables": [
+          {"name": "a[5]", "value": "???", "note": "越界！未定义行为"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["100", "20", "30", "40", "50"],
+            "activeIndex": 5,
+            "note": "下标 5 越界！"
+          }
+        ],
+        "output": "30 ???"
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "animationId": "cpp_set_operations",
+  "itemId": "1.8.14",
+  "title": "set 操作",
+  "description": "演示 set 的自动排序和去重特性",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空 set",
+      "description": "声明一个 int 类型的 set，元素自动排序且不允许重复",
+      "codeLine": "set<int> s;",
+      "highlights": ["set"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "0", "note": "空 set"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "set",
+            "values": [],
+            "activeIndex": -1,
+            "note": "自动排序 + 去重"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "insert 插入元素",
+      "description": "依次插入 5、3、8，set 自动按升序排列",
+      "codeLine": "s.insert(5); s.insert(3); s.insert(8);",
+      "highlights": ["insert"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "set",
+            "values": ["3", "5", "8"],
+            "activeIndex": -1,
+            "note": "自动升序排列"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "插入重复元素",
+      "description": "插入已存在的 5，set 会忽略重复值，size 不变",
+      "codeLine": "s.insert(5);",
+      "highlights": ["insert"],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "3", "note": "不变，重复被忽略"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "set",
+            "values": ["3", "5", "8"],
+            "activeIndex": 1,
+            "note": "5 已存在，不重复插入"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "查找元素",
+      "description": "用 count 检查元素是否存在，返回 0 或 1",
+      "codeLine": "cout << s.count(5) << \" \" << s.count(7);",
+      "highlights": ["count"],
+      "state": {
+        "variables": [
+          {"name": "s.count(5)", "value": "1", "note": "存在"},
+          {"name": "s.count(7)", "value": "0", "note": "不存在"}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "set",
+            "values": ["3", "5", "8"],
+            "activeIndex": 1,
+            "note": "查找 5 → 找到"
+          }
+        ],
+        "output": "1 0"
+      }
+    },
+    {
+      "step": 5,
+      "title": "遍历输出",
+      "description": "范围 for 遍历 set，输出一定是升序的",
+      "codeLine": "for (int x : s) cout << x << \" \";",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "s.size()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "s",
+            "type": "set",
+            "values": ["3", "5", "8"],
+            "activeIndex": -1,
+            "note": "遍历即升序"
+          }
+        ],
+        "output": "3 5 8 "
+      }
+    }
+  ]
+}

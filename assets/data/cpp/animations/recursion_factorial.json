@@ -1,0 +1,92 @@
+{
+  "animationId": "cpp_recursion_factorial",
+  "itemId": "1.7.10",
+  "title": "递归阶乘",
+  "description": "演示递归函数计算阶乘的过程：逐层调用与逐层返回",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "调用 factorial(4)",
+      "description": "从 main 中调用 factorial(4)。4 > 1，不满足终止条件，需要继续递归",
+      "codeLine": "factorial(4);",
+      "highlights": ["factorial(4)"],
+      "state": {
+        "variables": [
+          {"name": "factorial(4)", "value": "等待 4 * factorial(3)", "note": "n=4，进入递归"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "递归深入",
+      "description": "factorial(4) 调用 factorial(3)，factorial(3) 又调用 factorial(2)，层层嵌套",
+      "codeLine": "f(4) → f(3) → f(2) → f(1)",
+      "highlights": ["f(1)"],
+      "state": {
+        "variables": [
+          {"name": "factorial(4)", "value": "4 * ?", "note": "等待 factorial(3)"},
+          {"name": "factorial(3)", "value": "3 * ?", "note": "等待 factorial(2)"},
+          {"name": "factorial(2)", "value": "2 * ?", "note": "等待 factorial(1)"},
+          {"name": "factorial(1)", "value": "1", "note": "终止条件！n<=1，返回 1"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "触底返回",
+      "description": "factorial(1) 返回 1。factorial(2) 得到结果，计算 2*1=2 并返回",
+      "codeLine": "f(2) = 2 * f(1) = 2 * 1 = 2",
+      "highlights": ["2 * 1", "return 2"],
+      "state": {
+        "variables": [
+          {"name": "factorial(4)", "value": "4 * ?", "note": "等待中"},
+          {"name": "factorial(3)", "value": "3 * ?", "note": "等待中"},
+          {"name": "factorial(2)", "value": "2", "note": "2 * 1 = 2，已返回"},
+          {"name": "factorial(1)", "value": "1", "note": "已返回"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "逐层回溯",
+      "description": "factorial(3) = 3*2 = 6，factorial(4) = 4*6 = 24，递归结果层层传回",
+      "codeLine": "f(4) = 4 * f(3) = 4 * 6 = 24",
+      "highlights": ["4 * 6", "24"],
+      "state": {
+        "variables": [
+          {"name": "factorial(4)", "value": "24", "note": "4 * 6 = 24"},
+          {"name": "factorial(3)", "value": "6", "note": "3 * 2 = 6"},
+          {"name": "factorial(2)", "value": "2", "note": "2 * 1 = 2"},
+          {"name": "factorial(1)", "value": "1", "note": "终止返回 1"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "最终结果",
+      "description": "factorial(4) 返回 24，main 函数获得最终结果并输出",
+      "codeLine": "cout << factorial(4);  // 24",
+      "highlights": ["24"],
+      "state": {
+        "variables": [
+          {"name": "factorial(4)", "value": "24", "note": "4! = 4×3×2×1 = 24"}
+        ],
+        "containers": [],
+        "output": "24"
+      }
+    }
+  ]
+}

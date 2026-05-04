@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "animations": [
+    {
+      "animationId": "cpp_hello_world",
+      "itemId": "1.1.3",
+      "title": "main 函数",
+      "description": "演示一个完整 C++ 程序的基本结构：#include、namespace、main 函数和 return 0",
+      "assetPath": "assets/data/cpp/animations/hello_world.json",
+      "type": "state_steps",
+      "order": 1
+    },
+    {
+      "animationId": "cpp_cin_input",
+      "itemId": "1.2.1",
+      "title": "cin 输入",
+      "description": "演示 cin 从键盘读入数据到变量的过程",
+      "assetPath": "assets/data/cpp/animations/cin_input.json",
+      "type": "state_steps",
+      "order": 2
+    },
+    {
+      "animationId": "cpp_cout_output",
+      "itemId": "1.2.2",
+      "title": "cout 输出",
+      "description": "演示 cout 输出文字、变量和表达式的过程",
+      "assetPath": "assets/data/cpp/animations/cout_output.json",
+      "type": "state_steps",
+      "order": 3
+    },
+    {
+      "animationId": "cpp_variable_assignment",
+      "itemId": "1.3.1",
+      "title": "变量赋值",
+      "description": "演示 C++ 中变量的声明、赋值和更新过程",
+      "assetPath": "assets/data/cpp/animations/variable_assignment.json",
+      "type": "state_steps",
+      "order": 4
+    },
+    {
+      "animationId": "cpp_type_conversion",
+      "itemId": "1.3.17",
+      "title": "类型转换",
+      "description": "演示隐式类型转换和显式类型转换（强制转换），重点展示整数除法的问题",
+      "assetPath": "assets/data/cpp/animations/type_conversion.json",
+      "type": "state_steps",
+      "order": 5
+    },
+    {
+      "animationId": "cpp_if_branch",
+      "itemId": "1.5.1",
+      "title": "if 分支",
+      "description": "演示 if-else 条件分支的执行流程",
+      "assetPath": "assets/data/cpp/animations/if_branch.json",
+      "type": "state_steps",
+      "order": 6
+    },
+    {
+      "animationId": "cpp_for_loop",
+      "itemId": "1.5.6",
+      "title": "for 循环",
+      "description": "演示 for 循环的初始化、条件判断和更新过程",
+      "assetPath": "assets/data/cpp/animations/for_loop.json",
+      "type": "state_steps",
+      "order": 7
+    },
+    {
+      "animationId": "cpp_array_index",
+      "itemId": "1.6.5",
+      "title": "数组下标访问",
+      "description": "演示一维数组的下标访问和越界风险",
+      "assetPath": "assets/data/cpp/animations/array_index.json",
+      "type": "state_steps",
+      "order": 8
+    },
+    {
+      "animationId": "cpp_array_traverse",
+      "itemId": "1.6.1",
+      "title": "数组遍历",
+      "description": "演示用 for 循环逐步遍历一维数组的每个元素",
+      "assetPath": "assets/data/cpp/animations/array_traverse.json",
+      "type": "state_steps",
+      "order": 9
+    },
+    {
+      "animationId": "cpp_string_concat",
+      "itemId": "1.6.12",
+      "title": "字符串拼接",
+      "description": "演示 C++ string 的 + 拼接操作，逐步展示拼接过程",
+      "assetPath": "assets/data/cpp/animations/string_concat.json",
+      "type": "state_steps",
+      "order": 10
+    },
+    {
+      "animationId": "cpp_function_call",
+      "itemId": "1.7.3",
+      "title": "函数调用",
+      "description": "演示函数调用的完整流程：传参、执行、返回值",
+      "assetPath": "assets/data/cpp/animations/function_call.json",
+      "type": "state_steps",
+      "order": 11
+    },
+    {
+      "animationId": "cpp_recursion_factorial",
+      "itemId": "1.7.10",
+      "title": "递归阶乘",
+      "description": "演示递归函数计算阶乘的过程：逐层调用与逐层返回",
+      "assetPath": "assets/data/cpp/animations/recursion_factorial.json",
+      "type": "state_steps",
+      "order": 12
+    },
+    {
+      "animationId": "cpp_vector_push_back",
+      "itemId": "1.8.9",
+      "title": "vector push_back",
+      "description": "演示 vector 的动态扩容和 push_back 操作",
+      "assetPath": "assets/data/cpp/animations/vector_push_back.json",
+      "type": "state_steps",
+      "order": 13
+    },
+    {
+      "animationId": "cpp_queue_operations",
+      "itemId": "1.8.10",
+      "title": "queue 操作",
+      "description": "演示队列的 push、front、pop 操作",
+      "assetPath": "assets/data/cpp/animations/queue_operations.json",
+      "type": "state_steps",
+      "order": 14
+    },
+    {
+      "animationId": "cpp_stack_operations",
+      "itemId": "1.8.11",
+      "title": "stack 操作",
+      "description": "演示栈的 push、top、pop 操作",
+      "assetPath": "assets/data/cpp/animations/stack_operations.json",
+      "type": "state_steps",
+      "order": 15
+    },
+    {
+      "animationId": "cpp_priority_queue",
+      "itemId": "1.8.13",
+      "title": "priority_queue 操作",
+      "description": "演示优先队列（大根堆）的 push、top、pop 操作",
+      "assetPath": "assets/data/cpp/animations/priority_queue_operations.json",
+      "type": "state_steps",
+      "order": 16
+    },
+    {
+      "animationId": "cpp_set_operations",
+      "itemId": "1.8.14",
+      "title": "set 操作",
+      "description": "演示 set 的自动排序和去重特性",
+      "assetPath": "assets/data/cpp/animations/set_operations.json",
+      "type": "state_steps",
+      "order": 17
+    },
+    {
+      "animationId": "cpp_map_operations",
+      "itemId": "1.8.16",
+      "title": "map 操作",
+      "description": "演示 map 的键值映射、插入和查找操作",
+      "assetPath": "assets/data/cpp/animations/map_operations.json",
+      "type": "state_steps",
+      "order": 18
+    },
+    {
+      "animationId": "cpp_sort_visualization",
+      "itemId": "1.8.22",
+      "title": "sort 排序",
+      "description": "演示 sort 对数组进行升序和降序排序",
+      "assetPath": "assets/data/cpp/animations/sort_visualization.json",
+      "type": "state_steps",
+      "order": 19
+    },
+    {
+      "animationId": "cpp_binary_search",
+      "itemId": "1.8.25",
+      "title": "binary_search 二分查找",
+      "description": "演示在有序数组上使用 binary_search 查找元素",
+      "assetPath": "assets/data/cpp/animations/binary_search_visualization.json",
+      "type": "state_steps",
+      "order": 20
+    },
+    {
+      "animationId": "cpp_arithmetic",
+      "itemId": "1.4.1",
+      "title": "算术运算",
+      "description": "演示加减乘除和取模运算的过程",
+      "assetPath": "assets/data/cpp/animations/arithmetic.json",
+      "type": "state_steps",
+      "order": 21
+    },
+    {
+      "animationId": "cpp_logical_op",
+      "itemId": "1.4.4",
+      "title": "逻辑运算",
+      "description": "演示逻辑与 &&、逻辑或 ||、逻辑非 ! 的求值过程",
+      "assetPath": "assets/data/cpp/animations/logical_op.json",
+      "type": "state_steps",
+      "order": 22
+    },
+    {
+      "animationId": "cpp_while_loop",
+      "itemId": "1.5.7",
+      "title": "while 循环",
+      "description": "演示 while 循环的条件判断和变量变化过程",
+      "assetPath": "assets/data/cpp/animations/while_loop.json",
+      "type": "state_steps",
+      "order": 23
+    },
+    {
+      "animationId": "cpp_break_continue",
+      "itemId": "1.5.9",
+      "title": "break 与 continue",
+      "description": "演示 for 循环中 break 提前退出和 continue 跳过当前轮的区别",
+      "assetPath": "assets/data/cpp/animations/break_continue.json",
+      "type": "state_steps",
+      "order": 24
+    },
+    {
+      "animationId": "cpp_define_macro",
+      "itemId": "1.9.1",
+      "title": "#define 宏替换",
+      "description": "演示 #define 在编译前进行文本替换的过程",
+      "assetPath": "assets/data/cpp/animations/define_macro.json",
+      "type": "state_steps",
+      "order": 25
+    },
+    {
+      "animationId": "cpp_namespace",
+      "itemId": "1.9.5",
+      "title": "namespace 命名空间",
+      "description": "演示命名空间的定义、成员访问和 using 声明",
+      "assetPath": "assets/data/cpp/animations/namespace_demo.json",
+      "type": "state_steps",
+      "order": 26
+    },
+    {
+      "animationId": "cpp_integer_division",
+      "itemId": "1.10.2",
+      "title": "整数除法陷阱",
+      "description": "演示 C++ 中整数除法截断小数部分的问题及修复方法",
+      "assetPath": "assets/data/cpp/animations/integer_division.json",
+      "type": "state_steps",
+      "order": 27
+    },
+    {
+      "animationId": "cpp_long_long_overflow",
+      "itemId": "1.10.5",
+      "title": "int 溢出与 long long",
+      "description": "演示 int 乘法溢出问题以及用 long long 和 1LL 修复",
+      "assetPath": "assets/data/cpp/animations/long_long_overflow.json",
+      "type": "state_steps",
+      "order": 28
+    }
+  ]
+}

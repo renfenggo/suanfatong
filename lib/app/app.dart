@@ -25,7 +25,7 @@ class BfsApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       initialRoute: '/',
-      routes: AppRouter.routes,
+      onGenerateRoute: AppRouter.onGenerateRoute,
       debugShowCheckedModeBanner: false,
     );
   }

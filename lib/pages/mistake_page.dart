@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../state/mistake_provider.dart';
+import '../models/mistake.dart';
+import '../state/mistake_set_provider.dart';
+import '../state/content_manifest_provider.dart';
 import '../widgets/code_block.dart';
 
 class MistakePage extends ConsumerWidget {
@@ -8,9 +10,13 @@ class MistakePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mistakesAsync = ref.watch(
-      mistakesProvider('assets/data/mistakes/bfs_mistakes.json'),
-    );
+    final mistakesAsync = ref
+        .watch(defaultContentIdsProvider)
+        .when(
+          data: (ids) => ref.watch(mistakeSetProvider(ids.mistakeSetId)),
+          loading: () => const AsyncValue<List<Mistake>>.data([]),
+          error: (_, __) => const AsyncValue<List<Mistake>>.data([]),
+        );
 
     return Scaffold(
       appBar: AppBar(title: const Text('常见错误')),

@@ -3,9 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/answer_record.dart';
 import '../models/progress.dart';
 import '../models/quiz.dart';
-import '../state/quiz_provider.dart';
+import '../state/quiz_set_provider.dart';
 import '../state/progress_provider.dart';
 import '../state/history_provider.dart';
+import '../state/content_manifest_provider.dart';
 
 enum QuizFilter { all, untried, wrong }
 
@@ -30,9 +31,13 @@ class _QuizPageState extends ConsumerState<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    final quizzesAsync = ref.watch(
-      quizzesProvider('assets/data/quizzes/bfs_quiz.json'),
-    );
+    final quizzesAsync = ref
+        .watch(defaultContentIdsProvider)
+        .when(
+          data: (ids) => ref.watch(quizSetProvider(ids.quizSetId)),
+          loading: () => const AsyncValue<List<Quiz>>.data([]),
+          error: (_, __) => const AsyncValue<List<Quiz>>.data([]),
+        );
 
     return Scaffold(
       appBar: AppBar(title: const Text('选择题训练')),
@@ -653,14 +658,16 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       if (isCorrect) _sessionCorrect++;
     });
     _localRecords[quiz.id] = index;
+    final topicId =
+        ref.read(defaultContentIdsProvider).valueOrNull?.topicId ?? 'bfs';
     final record = AnswerRecord(
-      topic: 'bfs',
+      topic: topicId,
       quizId: quiz.id,
       selectedIndex: index,
       correct: isCorrect,
       date: dateStr,
     );
-    ref.read(historyServiceProvider).appendRecord('bfs', record);
+    ref.read(historyServiceProvider).appendRecord(topicId, record);
     _persistRecords();
   }
 

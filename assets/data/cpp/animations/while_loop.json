@@ -1,0 +1,106 @@
+{
+  "animationId": "cpp_while_loop",
+  "itemId": "1.5.7",
+  "title": "while 循环",
+  "description": "演示 while 循环的条件判断和变量变化过程",
+  "initialState": {
+    "variables": [
+      {"name": "n", "value": "4", "note": ""},
+      {"name": "sum", "value": "0", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "声明 n = 4（要累加到几），sum = 0（累加结果）",
+      "codeLine": "int n = 4, sum = 0;",
+      "highlights": ["n", "sum"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "4", "note": ""},
+          {"name": "sum", "value": "0", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "第 1 轮循环",
+      "description": "n=4 > 0 为 true，sum += n → sum = 0+4 = 4，然后 n-- → n=3",
+      "codeLine": "while (n > 0) { sum += n; n--; }",
+      "highlights": ["n > 0", "sum += n", "n--"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "3", "note": "4→3 (n--)"},
+          {"name": "sum", "value": "4", "note": "0+4=4"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "第 2 轮循环",
+      "description": "n=3 > 0 为 true，sum += n → sum = 4+3 = 7，然后 n-- → n=2",
+      "codeLine": "while (n > 0) { sum += n; n--; }",
+      "highlights": ["n > 0", "sum += n", "n--"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "2", "note": "3→2 (n--)"},
+          {"name": "sum", "value": "7", "note": "4+3=7"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "第 3 轮循环",
+      "description": "n=2 > 0 为 true，sum += n → sum = 7+2 = 9，然后 n-- → n=1",
+      "codeLine": "while (n > 0) { sum += n; n--; }",
+      "highlights": ["n > 0", "sum += n", "n--"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "1", "note": "2→1 (n--)"},
+          {"name": "sum", "value": "9", "note": "7+2=9"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "第 4 轮循环",
+      "description": "n=1 > 0 为 true，sum += n → sum = 9+1 = 10，然后 n-- → n=0",
+      "codeLine": "while (n > 0) { sum += n; n--; }",
+      "highlights": ["n > 0", "sum += n", "n--"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "0", "note": "1→0 (n--)"},
+          {"name": "sum", "value": "10", "note": "9+1=10"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 6,
+      "title": "循环结束",
+      "description": "n=0 > 0 为 false，循环退出。输出 sum = 10（即 4+3+2+1=10）",
+      "codeLine": "cout << sum;",
+      "highlights": ["sum"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "0", "note": "0>0 → false，退出"},
+          {"name": "sum", "value": "10", "note": "4+3+2+1"}
+        ],
+        "containers": [],
+        "output": "10"
+      }
+    }
+  ]
+}

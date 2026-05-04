@@ -1,0 +1,127 @@
+{
+  "animationId": "cpp_priority_queue",
+  "itemId": "1.8.13",
+  "title": "priority_queue 操作",
+  "description": "演示优先队列（大根堆）的 push、top、pop 操作",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空优先队列",
+      "description": "默认是大根堆，top() 始终返回当前最大值",
+      "codeLine": "priority_queue<int> pq;",
+      "highlights": ["priority_queue"],
+      "state": {
+        "variables": [
+          {"name": "pq.size()", "value": "0", "note": "空优先队列"}
+        ],
+        "containers": [
+          {
+            "name": "pq",
+            "type": "priority_queue",
+            "values": [],
+            "activeIndex": -1,
+            "note": "默认大根堆，最大值优先"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "push(30), push(10), push(50)",
+      "description": "插入 3 个元素，内部自动调整为堆结构，50 为最大值在堆顶",
+      "codeLine": "pq.push(30); pq.push(10); pq.push(50);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "pq.size()", "value": "3", "note": ""},
+          {"name": "pq.top()", "value": "50", "note": "堆顶最大值"}
+        ],
+        "containers": [
+          {
+            "name": "pq",
+            "type": "priority_queue",
+            "values": ["50", "30", "10"],
+            "activeIndex": 0,
+            "note": "堆顶 → 50"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "push(40)",
+      "description": "插入 40 后，堆自动调整，堆顶仍为最大值 50",
+      "codeLine": "pq.push(40);",
+      "highlights": ["push"],
+      "state": {
+        "variables": [
+          {"name": "pq.size()", "value": "4", "note": ""},
+          {"name": "pq.top()", "value": "50", "note": "堆顶不变"}
+        ],
+        "containers": [
+          {
+            "name": "pq",
+            "type": "priority_queue",
+            "values": ["50", "40", "30", "10"],
+            "activeIndex": 0,
+            "note": "堆顶仍为 50"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "top() 查看堆顶",
+      "description": "top() 返回最大值但不移除，和 stack 一样只读",
+      "codeLine": "cout << pq.top();",
+      "highlights": ["top"],
+      "state": {
+        "variables": [
+          {"name": "pq.size()", "value": "4", "note": "不变"},
+          {"name": "pq.top()", "value": "50", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "pq",
+            "type": "priority_queue",
+            "values": ["50", "40", "30", "10"],
+            "activeIndex": 0,
+            "note": "只读不移除"
+          }
+        ],
+        "output": "50"
+      }
+    },
+    {
+      "step": 5,
+      "title": "pop() 弹出堆顶",
+      "description": "pop() 移除最大值 50，堆自动调整，新堆顶变为 40",
+      "codeLine": "pq.pop();",
+      "highlights": ["pop"],
+      "state": {
+        "variables": [
+          {"name": "pq.size()", "value": "3", "note": ""},
+          {"name": "pq.top()", "value": "40", "note": "新堆顶"}
+        ],
+        "containers": [
+          {
+            "name": "pq",
+            "type": "priority_queue",
+            "values": ["40", "30", "10"],
+            "activeIndex": 0,
+            "note": "50 已弹出，新最大值为 40"
+          }
+        ],
+        "output": "50"
+      }
+    }
+  ]
+}

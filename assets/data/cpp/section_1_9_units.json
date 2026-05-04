@@ -1,0 +1,397 @@
+{
+  "sectionId": "1.9",
+  "sectionName": "预处理与代码组织",
+  "units": [
+    {
+      "itemId": "1.9.1",
+      "title": "#define",
+      "learningGoal": "理解 #define 预处理指令的基本用法，学会定义宏和符号常量",
+      "explanation": "#define 是 C/C++ 中的预处理指令，它在编译之前由预处理器进行文本替换。基本语法为 #define 名称 替换内容。\n\n#defdefine 不需要分号结尾，也不是真正的语句，它只是告诉预处理器：在后续代码中遇到这个名称时，用替换内容代替。替换过程发生在编译之前。\n\n常见的用途包括定义符号常量和简单的宏函数。例如 #define PI 3.14 会让预处理器把代码中出现的 PI 都替换成 3.14。\n\n#define 定义的名称通常用大写字母表示，这是一种约定俗成的命名习惯，帮助区分宏和普通变量。#define 的作用范围从定义位置开始，直到文件末尾或遇到 #undef。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define PI 3.14159\n#define WELCOME \"Hello, C++\"\n\nint main() {\n    cout << PI << endl;\n    cout << WELCOME << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "#define 不需要分号，写了分号会被一起替换进去",
+        "宏名称习惯用大写字母，与变量区分",
+        "#define 在编译前执行，不做类型检查",
+        "作用范围从定义处到文件末尾或 #undef",
+        "#define 只是纯文本替换，不分配内存"
+      ],
+      "commonMistakes": [
+        {
+          "title": "#define 末尾加分号",
+          "description": "#define PI 3.14; 末尾多了分号，替换后分号也会被带入代码，可能导致语法错误。",
+          "fix": "#define PI 3.14，不加任何分号。"
+        },
+        {
+          "title": "混淆 #define 和变量赋值",
+          "description": "以为 #define 定义的值可以修改，实际上它不是变量，只是文本替换。",
+          "fix": "需要可变的值请用 const 变量，而非 #define。"
+        }
+      ],
+      "practice": {
+        "prompt": "使用 #define 定义一个名为 MAX_SIZE 的常量，值为 100，然后在 main 函数中输出它的值。",
+        "hint": "#define MAX_SIZE 100，然后在 main 中 cout << MAX_SIZE;",
+        "expectedIdea": "#define MAX_SIZE 100\n\nint main() {\n    cout << MAX_SIZE << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "#define PI 3.14 定义后，以下哪个说法正确？",
+          "options": [
+            "PI 是一个变量，可以被重新赋值",
+            "PI 在编译前被替换为 3.14",
+            "PI 会占用内存空间",
+            "PI 只能在 main 函数中使用"
+          ],
+          "answerIndex": 1,
+          "explanation": "#define 是预处理指令，只在编译前做文本替换，PI 不是变量，不占内存，也不限于某个函数。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.2",
+      "title": "常量宏",
+      "learningGoal": "掌握带参数的宏定义，理解宏函数的写法和注意事项",
+      "explanation": "常量宏是不带参数的 #define，用于定义一个固定值。而带参数的宏可以像函数一样使用，称为宏函数。\n\n宏函数的语法为 #define 宏名(参数列表) 表达式。例如 #define SQUARE(x) ((x) * (x)) 定义了一个计算平方的宏。\n\n参数在替换时直接进行文本替换，不进行类型检查。因此宏函数的参数最好用括号括起来，防止运算符优先级引发意外结果。\n\n宏函数和普通函数的区别在于：宏函数没有函数调用的开销（因为是直接替换），但也缺乏类型安全。现代 C++ 推荐用 inline 函数或 constexpr 替代复杂宏。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define MAX(a, b) ((a) > (b) ? (a) : (b))\n#define SQUARE(x) ((x) * (x))\n\nint main() {\n    cout << \"较大的值: \" << MAX(3, 7) << endl;\n    cout << \"5 的平方: \" << SQUARE(5) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "宏函数参数要加括号，如 ((x) * (x))",
+        "整个宏表达式也建议用括号包裹",
+        "宏函数不做类型检查，参数可以是任何类型",
+        "宏函数调用没有函数栈开销",
+        "宏名和参数列表的左括号之间不能有空格"
+      ],
+      "commonMistakes": [
+        {
+          "title": "宏参数不加括号",
+          "description": "#define DOUBLE(x) x * x，调用 DOUBLE(1+2) 会变成 1+2 * 1+2 = 5，而非预期的 9。",
+          "fix": "写成 #define DOUBLE(x) ((x) * (x))，确保运算顺序正确。"
+        },
+        {
+          "title": "宏名与括号之间有空格",
+          "description": "#define SQUARE (x) ((x)*(x)) 会被视为无参宏 SQUARE 替换为 (x) ((x)*(x))。",
+          "fix": "宏名紧跟左括号：#define SQUARE(x) ((x)*(x))。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个宏 MIN(a, b)，返回两个数中较小的值，并在 main 中测试输出 MIN(10, 20)。",
+        "hint": "使用三目运算符：#define MIN(a, b) ((a) < (b) ? (a) : (b))",
+        "expectedIdea": "#define MIN(a, b) ((a) < (b) ? (a) : (b))\n\nint main() {\n    cout << MIN(10, 20) << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "#define ADD(a, b) a + b，表达式 ADD(1, 2) * 3 的结果是什么？",
+          "options": [
+            "9",
+            "7",
+            "6",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "替换后为 1 + 2 * 3 = 1 + 6 = 7，而非 (1 + 2) * 3 = 9。因为宏只是文本替换，没有自动加括号。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.3",
+      "title": "条件编译",
+      "learningGoal": "理解条件编译的概念，学会使用 #ifdef、#ifndef、#if 等指令",
+      "explanation": "条件编译允许程序根据某些条件选择性地编译部分代码。常用的指令包括 #ifdef、#ifndef、#if、#else、#elif 和 #endif。\n\n#ifdef 表示「如果定义了某个宏」则编译后续代码，#ifndef 表示「如果没定义」。它们常用于防止头文件重复包含和跨平台代码管理。\n\n#if 后面可以跟常量表达式，类似 if 语句，但在编译阶段判断。只有满足条件的代码才会被编译进最终程序。\n\n条件编译的一个经典用法是头文件保护（include guard）：用 #ifndef + #define + #endif 组合，确保头文件的内容只被编译一次。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define DEBUG\n\nint main() {\n    int score = 95;\n#ifdef DEBUG\n    cout << \"[调试] score = \" << score << endl;\n#endif\n    cout << \"成绩: \" << score << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "#ifdef 检查某个宏是否已定义",
+        "#ifndef 检查某个宏是否未定义",
+        "#endif 标记条件编译块的结束",
+        "#if 可以跟常量表达式",
+        "条件编译在编译阶段生效，不影响运行时性能"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 #endif",
+          "description": "写了 #ifdef 或 #ifndef 但忘了 #endif，会导致编译错误或意外的代码包含。",
+          "fix": "每个 #ifdef / #ifndef 都必须有对应的 #endif。"
+        },
+        {
+          "title": "#ifdef 判断宏的值而非是否定义",
+          "description": "#ifdef DEBUG 只检查 DEBUG 是否定义，不关心它的值是多少。",
+          "fix": "如果要判断值，用 #if DEBUG == 1 这种形式。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个宏 VERSION 为 2，用 #if 条件编译：当 VERSION >= 2 时输出「高级版本」，否则输出「基础版本」。",
+        "hint": "#define VERSION 2，然后 #if VERSION >= 2 ... #else ... #endif",
+        "expectedIdea": "#define VERSION 2\n\nint main() {\n#if VERSION >= 2\n    cout << \"高级版本\" << endl;\n#else\n    cout << \"基础版本\" << endl;\n#endif\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪组指令用于防止头文件重复包含？",
+          "options": [
+            "#if + #endif",
+            "#ifdef + #endif",
+            "#ifndef + #define + #endif",
+            "#define + #undef"
+          ],
+          "answerIndex": 2,
+          "explanation": "#ifndef + #define + #endif 组合是经典的 include guard 模式，确保头文件内容只被编译一次。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.4",
+      "title": "宏的风险",
+      "learningGoal": "认识宏的潜在风险和陷阱，了解何时应该避免使用宏",
+      "explanation": "宏虽然灵活，但也带来了不少风险。最核心的问题是宏只是纯文本替换，预处理器不理解 C++ 语法，因此不会做类型检查或作用域检查。\n\n宏函数参数可能被多次求值。例如 #define SQUARE(x) ((x) * (x))，如果传入 SQUARE(i++)，i 会被自增两次，导致难以预料的结果。\n\n宏在调试时也不友好。因为宏在编译前就被替换了，编译器报错时显示的是替换后的代码，而非原始宏名称，增加了排错难度。\n\n现代 C++ 推荐用 const 定义常量、用 inline 函数替代宏函数、用 constexpr 替代编译期计算。这些方式更安全、可调试、有类型检查。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define SQUARE(x) ((x) * (x))\n\ninline int square(int x) {\n    return x * x;\n}\n\nint main() {\n    int a = 5;\n    cout << \"宏版本: \" << SQUARE(a) << endl;\n    cout << \"inline版本: \" << square(a) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "宏参数可能被多次求值，产生副作用",
+        "宏没有类型检查，容易引发隐蔽错误",
+        "调试时宏已被替换，不易定位问题",
+        "inline 函数是宏函数的安全替代方案",
+        "const 变量是宏常量的安全替代方案"
+      ],
+      "commonMistakes": [
+        {
+          "title": "宏参数带自增运算",
+          "description": "SQUARE(i++) 展开为 ((i++) * (i++))，i 被自增两次，结果不可预期。",
+          "fix": "避免在宏参数中使用自增、自减等带副作用的表达式，或改用 inline 函数。"
+        },
+        {
+          "title": "宏作用域污染",
+          "description": "#define 定义的宏从定义处到文件末尾都有效，可能意外影响其他代码。",
+          "fix": "使用完毕后用 #undef 取消定义，或改用 const 变量（有作用域限制）。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个 inline 函数 doubleIt(int x) 返回 x 的两倍，用它替代宏 #define DOUBLE(x) ((x) * 2)，在 main 中测试。",
+        "hint": "inline int doubleIt(int x) { return x * 2; }",
+        "expectedIdea": "inline int doubleIt(int x) {\n    return x * 2;\n}\n\nint main() {\n    int n = 7;\n    cout << doubleIt(n) << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种情况适合使用宏？",
+          "options": [
+            "需要类型安全的常量",
+            "需要条件编译控制代码",
+            "需要带副作用的参数计算",
+            "需要调试断点"
+          ],
+          "answerIndex": 1,
+          "explanation": "条件编译（如 #ifdef）是宏的合理使用场景。类型安全用 const，带副作用参数用 inline 函数，调试用 assert。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.5",
+      "title": "namespace",
+      "learningGoal": "理解命名空间的概念和用途，学会定义和使用命名空间",
+      "explanation": "命名空间（namespace）是 C++ 提供的一种机制，用于组织代码和避免名称冲突。当项目变大时，不同模块可能定义同名函数或变量，命名空间可以解决这个问题。\n\n定义命名空间的语法：namespace 名称 { ... }。大括号内的所有声明都属于该命名空间。使用时可以用 命名空间::名称 的方式访问，也可以用 using 声明。\n\nstd 是 C++ 标准库的命名空间，我们常用的 cout、cin、vector 等都在 std 中。using namespace std; 就是把 std 中的名称引入当前作用域。\n\n命名空间可以嵌套，也可以跨文件多次定义（同名的命名空间会合并）。良好的命名空间使用能显著提升大型项目的代码可维护性。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nnamespace Math {\n    int add(int a, int b) {\n        return a + b;\n    }\n    double PI = 3.14159;\n}\n\nint main() {\n    cout << \"3 + 4 = \" << Math::add(3, 4) << endl;\n    cout << \"PI = \" << Math::PI << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "namespace 用花括号包裹，内部定义的名称属于该空间",
+        "用 命名空间::名称 的方式访问成员",
+        "using namespace 可以省略前缀，但大型项目不推荐",
+        "std 是标准库的命名空间",
+        "命名空间可以嵌套定义"
+      ],
+      "commonMistakes": [
+        {
+          "title": "在头文件中 using namespace",
+          "description": "在头文件中写 using namespace std; 会强制所有包含该头文件的代码都引入 std，可能导致名称冲突。",
+          "fix": "头文件中用 std:: 前缀，using namespace 只写在 .cpp 源文件中。"
+        }
+      ],
+      "practice": {
+        "prompt": "创建一个命名空间 Tools，其中包含一个函数 sayHi() 输出「你好」。在 main 中通过 Tools::sayHi() 调用它。",
+        "hint": "namespace Tools { void sayHi() { cout << \"你好\" << endl; } }",
+        "expectedIdea": "namespace Tools {\n    void sayHi() {\n        cout << \"你好\" << endl;\n    }\n}\n\nint main() {\n    Tools::sayHi();\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种写法可以避免命名空间中的名称冲突？",
+          "options": [
+            "用 #define 定义所有名称",
+            "用 全局限量 前缀区分",
+            "用不同的命名空间包裹同名函数",
+            "把所有函数都放在 main 里"
+          ],
+          "answerIndex": 2,
+          "explanation": "命名空间的核心用途就是避免名称冲突。不同命名空间中可以有同名函数，通过 命名空间::函数名 区分。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.6",
+      "title": "结构化分解",
+      "learningGoal": "理解如何将程序分解为多个模块，学会基本的代码组织方法",
+      "explanation": "当程序变大时，把所有代码写在一个文件里会变得难以维护。结构化分解的核心思想是将程序按功能拆分成多个部分。\n\n最基本的分解方式是把代码分成声明和实现。头文件（.h）放声明，源文件（.cpp）放实现。其他文件通过 #include 引入头文件来使用这些功能。\n\n对于小型项目，可以先从「按功能分组」开始：把相关的函数放在一起，用注释标明每个区域的用途。养成将大问题分解为小函数的习惯。\n\n良好的代码组织应该是：每个文件职责单一、函数功能明确、命名清晰。初学者不需要追求完美的架构，但要尽早建立模块化的意识。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid printWelcome() {\n    cout << \"=== 欢迎使用计算器 ===\" << endl;\n}\n\nint add(int a, int b) {\n    return a + b;\n}\n\nint subtract(int a, int b) {\n    return a - b;\n}\n\nvoid printResult(int result) {\n    cout << \"结果是: \" << result << endl;\n}\n\nint main() {\n    printWelcome();\n    int r1 = add(10, 3);\n    printResult(r1);\n    int r2 = subtract(10, 3);\n    printResult(r2);\n    return 0;\n}",
+      "codeNotes": [
+        "将不同功能拆分为独立函数",
+        "每个函数只负责一件事",
+        "函数命名要能清楚表达其用途",
+        "main 函数只负责流程控制，不处理具体细节",
+        "通过函数组合完成复杂任务"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把所有逻辑都写在 main 里",
+          "description": "几十行甚至上百行的 main 函数难以阅读和维护。",
+          "fix": "将不同功能提取为独立函数，让 main 只负责调用和流程控制。"
+        },
+        {
+          "title": "函数职责不清晰",
+          "description": "一个函数既做计算又做输出，职责混乱，难以复用。",
+          "fix": "遵循单一职责原则：计算函数只返回结果，输出由专门的函数或 main 负责。"
+        }
+      ],
+      "practice": {
+        "prompt": "将一个简单的成绩计算程序分解为三个函数：inputScore() 返回分数、calcGrade() 根据分数返回等级字符、showGrade() 输出等级。在 main 中依次调用。",
+        "hint": "每个函数只做一件事，main 串联调用流程。",
+        "expectedIdea": "int inputScore() {\n    return 85;\n}\n\nchar calcGrade(int score) {\n    if (score >= 90) return 'A';\n    if (score >= 80) return 'B';\n    if (score >= 60) return 'C';\n    return 'D';\n}\n\nvoid showGrade(char grade) {\n    cout << \"等级: \" << grade << endl;\n}\n\nint main() {\n    int score = inputScore();\n    char grade = calcGrade(score);\n    showGrade(grade);\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "结构化分解的核心思想是什么？",
+          "options": [
+            "把所有代码写在一个函数里",
+            "用宏代替所有函数",
+            "将程序按功能拆分为独立模块",
+            "尽量少写函数"
+          ],
+          "answerIndex": 2,
+          "explanation": "结构化分解的核心是将程序按功能拆分，每个部分职责单一，便于开发、测试和维护。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.7",
+      "title": "函数分块",
+      "learningGoal": "学会用函数分块组织代码，掌握函数声明与定义的分离",
+      "explanation": "函数分块是将一段完整的逻辑拆分成多个函数，每个函数处理一个子任务。这样做的好处是代码更清晰、更容易测试和复用。\n\n在 C++ 中，函数可以先声明后定义。声明（也叫原型）放在调用之前，告诉编译器函数的名称、参数和返回类型；定义放在其他位置，包含函数体。\n\n这种分离在多文件项目中特别重要。头文件放声明，源文件放定义。编译器在编译调用处只需要看到声明即可。\n\n良好的函数分块应该让每个函数控制在 20~30 行以内，函数名准确描述其行为，参数数量不宜过多（一般不超过 4 个）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint factorial(int n);\n\nint factorial(int n) {\n    int result = 1;\n    for (int i = 1; i <= n; i++) {\n        result *= i;\n    }\n    return result;\n}\n\nvoid printFactorials(int maxN) {\n    for (int i = 1; i <= maxN; i++) {\n        cout << i << \"! = \" << factorial(i) << endl;\n    }\n}\n\nint main() {\n    printFactorials(5);\n    return 0;\n}",
+      "codeNotes": [
+        "函数声明可以和定义分离，声明放在调用前",
+        "每个函数只做一件事，控制在合理行数内",
+        "函数名应准确描述其行为",
+        "参数不宜过多，过多时应考虑拆分或使用结构体",
+        "将输出逻辑和计算逻辑分开"
+      ],
+      "commonMistakes": [
+        {
+          "title": "调用函数前未声明",
+          "description": "函数定义在调用之后，编译器不知道函数的存在，报错「未定义的标识符」。",
+          "fix": "在调用前添加函数声明，或将函数定义移到调用之前。"
+        },
+        {
+          "title": "函数过长",
+          "description": "一个函数超过 50 行，做太多事情，难以理解和维护。",
+          "fix": "将大函数拆分成多个小函数，每个小函数只负责一个子任务。"
+        }
+      ],
+      "practice": {
+        "prompt": "写两个函数：isEven(int n) 判断是否偶数，返回 bool；printNumbers(int maxN) 输出 1 到 maxN 每个数及其奇偶性。在 main 中调用 printNumbers(6)。",
+        "hint": "bool isEven(int n) { return n % 2 == 0; }",
+        "expectedIdea": "bool isEven(int n) {\n    return n % 2 == 0;\n}\n\nvoid printNumbers(int maxN) {\n    for (int i = 1; i <= maxN; i++) {\n        cout << i << \": \" << (isEven(i) ? \"偶数\" : \"奇数\") << endl;\n    }\n}\n\nint main() {\n    printNumbers(6);\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "函数声明（原型）必须包含哪些信息？",
+          "options": [
+            "函数名和函数体",
+            "返回类型、函数名和参数列表",
+            "函数名和参数的默认值",
+            "返回类型和函数体"
+          ],
+          "answerIndex": 1,
+          "explanation": "函数声明需要告诉编译器：返回什么类型、函数叫什么名字、接收什么参数。函数体属于定义，不在声明中。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.8",
+      "title": "全局与局部设计",
+      "learningGoal": "理解全局变量和局部变量的区别，学会合理规划变量的作用域",
+      "explanation": "变量根据定义位置不同，分为全局变量和局部变量。全局变量定义在所有函数外部，整个文件都能访问；局部变量定义在函数或代码块内部，只在该范围内有效。\n\n全局变量在整个程序运行期间都存在，且默认初始化为 0。局部变量在函数调用时创建，函数结束后销毁，如果不初始化，值是未定义的。\n\n全局变量虽然方便，但过度使用会导致程序难以调试：任何函数都能修改它，追踪数据变化变得困难。一般原则是：能用局部变量就用局部变量，尽量减少全局变量的使用。\n\n当多个函数需要共享数据时，推荐通过函数参数传递，而不是使用全局变量。这样函数的依赖关系更清晰，代码更可预测。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint globalCount = 0;\n\nvoid increment() {\n    globalCount++;\n}\n\nvoid showCount() {\n    cout << \"当前计数: \" << globalCount << endl;\n}\n\nint main() {\n    int localVar = 10;\n    cout << \"局部变量: \" << localVar << endl;\n    increment();\n    increment();\n    showCount();\n    return 0;\n}",
+      "codeNotes": [
+        "全局变量定义在所有函数外部",
+        "局部变量定义在函数或代码块内部",
+        "全局变量默认初始化为 0",
+        "局部变量未初始化时值不确定",
+        "尽量用参数传递数据，减少全局变量使用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "局部变量和全局变量同名",
+          "description": "函数内定义了与全局变量同名的局部变量，局部变量会遮蔽全局变量，可能导致逻辑混乱。",
+          "fix": "避免同名，或通过作用域运算符 :: 访问全局变量。"
+        },
+        {
+          "title": "滥用全局变量",
+          "description": "大量使用全局变量导致程序状态难以追踪，任何函数都可能修改它。",
+          "fix": "优先使用局部变量和参数传递，只在确实需要全局共享时才使用全局变量。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个函数 addTax(double price, double rate) 返回含税价格。用局部变量存储计算结果，不使用全局变量。在 main 中调用并输出。",
+        "hint": "return price * (1 + rate);",
+        "expectedIdea": "double addTax(double price, double rate) {\n    double total = price * (1 + rate);\n    return total;\n}\n\nint main() {\n    double result = addTax(100.0, 0.08);\n    cout << \"含税价格: \" << result << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下关于全局变量和局部变量的说法，哪个正确？",
+          "options": [
+            "局部变量在程序运行期间一直存在",
+            "全局变量未初始化时值不确定",
+            "全局变量在整个文件中都可以访问",
+            "局部变量可以被任何函数直接访问"
+          ],
+          "answerIndex": 2,
+          "explanation": "全局变量定义在所有函数外部，整个文件中任何函数都能访问它。局部变量只在定义它的函数或代码块内有效。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.9.9",
+      "title": "常见代码组织方式",
+      "learningGoal": "了解 C++ 项目中常见的代码组织模式，建立良好的代码组织意识",
+      "explanation": "随着项目规模增长，合理的代码组织变得尤为重要。常见的组织方式包括：按功能分文件、按模块分目录、使用头文件保护等。\n\n在单文件项目中，建议按以下顺序组织代码：常量定义、全局变量、函数声明、函数定义、main 函数。用注释分隔不同区域，让代码一目了然。\n\n在多文件项目中，通常把相关功能的声明放在头文件（.h），实现放在源文件（.cpp）。每个头文件都应使用 include guard 防止重复包含。\n\n良好的代码组织还包括：统一的命名风格、适当的注释、合理的文件命名。初学者应从小项目开始练习这些习惯，为将来参与大型项目打好基础。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MAX_STUDENTS = 50;\n\ndouble calcAverage(int scores[], int count);\nvoid printResult(double avg);\n\ndouble calcAverage(int scores[], int count) {\n    int sum = 0;\n    for (int i = 0; i < count; i++) {\n        sum += scores[i];\n    }\n    return (double)sum / count;\n}\n\nvoid printResult(double avg) {\n    cout << \"平均分: \" << avg << endl;\n    if (avg >= 60) {\n        cout << \"整体及格\" << endl;\n    } else {\n        cout << \"整体不及格\" << endl;\n    }\n}\n\nint main() {\n    int scores[] = {85, 72, 90, 58, 66};\n    double avg = calcAverage(scores, 5);\n    printResult(avg);\n    return 0;\n}",
+      "codeNotes": [
+        "常量定义放在文件最前面",
+        "函数声明集中在调用之前",
+        "函数定义按逻辑分组排列",
+        "main 函数放在最后",
+        "用注释分隔不同功能区域"
+      ],
+      "commonMistakes": [
+        {
+          "title": "代码顺序混乱",
+          "description": "函数定义、变量声明、main 函数交错排列，阅读者难以找到所需内容。",
+          "fix": "按照 常量→声明→定义→main 的顺序组织代码，用注释标注每个区域。"
+        },
+        {
+          "title": "缺少头文件保护",
+          "description": "在多文件项目中，头文件被多次包含导致重复定义错误。",
+          "fix": "在头文件中使用 #ifndef/#define/#endif 进行保护。"
+        }
+      ],
+      "practice": {
+        "prompt": "按照标准顺序组织一个简单程序：定义常量 PASS_SCORE = 60，声明并实现函数 isPass(int score) 返回 bool，在 main 中判断 75 分是否及格并输出。",
+        "hint": "常量在前，函数声明在中间，main 在最后。",
+        "expectedIdea": "const int PASS_SCORE = 60;\n\nbool isPass(int score);\n\nbool isPass(int score) {\n    return score >= PASS_SCORE;\n}\n\nint main() {\n    int score = 75;\n    if (isPass(score)) {\n        cout << \"及格\" << endl;\n    } else {\n        cout << \"不及格\" << endl;\n    }\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "在单文件 C++ 程序中，推荐的代码组织顺序是？",
+          "options": [
+            "main → 函数定义 → 常量 → 声明",
+            "常量 → 函数声明 → 函数定义 → main",
+            "函数定义 → main → 常量 → 声明",
+            "任意顺序都可以"
+          ],
+          "answerIndex": 1,
+          "explanation": "推荐顺序为：常量/全局变量在前，函数声明集中放置，函数定义按逻辑排列，main 函数放在最后。这样结构清晰，便于阅读和维护。"
+        }
+      ]
+    }
+  ]
+}

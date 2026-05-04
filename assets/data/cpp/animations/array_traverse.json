@@ -1,0 +1,124 @@
+{
+  "animationId": "cpp_array_traverse",
+  "itemId": "1.6.1",
+  "title": "数组遍历",
+  "description": "演示用 for 循环逐步遍历一维数组的每个元素",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明并初始化数组",
+      "description": "创建一个包含 5 个元素的整型数组，每个元素依次赋值",
+      "codeLine": "int a[5] = {3, 7, 1, 9, 4};",
+      "highlights": ["a"],
+      "state": {
+        "variables": [],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["3", "7", "1", "9", "4"],
+            "activeIndex": -1,
+            "note": "5 个元素，下标 0~4"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "循环 i=0，访问 a[0]",
+      "description": "循环变量 i 从 0 开始，当前访问 a[0]，值为 3，将其输出",
+      "codeLine": "cout << a[0] << \" \";  // i=0",
+      "highlights": ["a[0]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "0", "note": "循环变量"},
+          {"name": "a[0]", "value": "3", "note": "第 1 个元素"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["3", "7", "1", "9", "4"],
+            "activeIndex": 0,
+            "note": ""
+          }
+        ],
+        "output": "3 "
+      }
+    },
+    {
+      "step": 3,
+      "title": "循环 i=2，访问 a[2]",
+      "description": "i 递增到 2，当前访问 a[2]，值为 1，已输出前 3 个元素",
+      "codeLine": "cout << a[2] << \" \";  // i=2",
+      "highlights": ["a[2]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "2", "note": "循环变量"},
+          {"name": "a[2]", "value": "1", "note": "第 3 个元素"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["3", "7", "1", "9", "4"],
+            "activeIndex": 2,
+            "note": ""
+          }
+        ],
+        "output": "3 7 1 "
+      }
+    },
+    {
+      "step": 4,
+      "title": "循环 i=4，访问 a[4]",
+      "description": "i 到达最后一个下标 4，访问 a[4]，值为 4，这是最后一次循环",
+      "codeLine": "cout << a[4] << \" \";  // i=4",
+      "highlights": ["a[4]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "4", "note": "最后一个下标"},
+          {"name": "a[4]", "value": "4", "note": "第 5 个元素"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["3", "7", "1", "9", "4"],
+            "activeIndex": 4,
+            "note": ""
+          }
+        ],
+        "output": "3 7 1 9 4 "
+      }
+    },
+    {
+      "step": 5,
+      "title": "循环结束",
+      "description": "i 变为 5，不满足 i < 5，循环终止。所有元素已输出完毕",
+      "codeLine": "// i=5, i < 5 为 false，循环结束",
+      "highlights": ["i < 5"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "5", "note": "i < 5 为 false，退出循环"}
+        ],
+        "containers": [
+          {
+            "name": "a",
+            "type": "array",
+            "values": ["3", "7", "1", "9", "4"],
+            "activeIndex": -1,
+            "note": "遍历完成"
+          }
+        ],
+        "output": "3 7 1 9 4 "
+      }
+    }
+  ]
+}

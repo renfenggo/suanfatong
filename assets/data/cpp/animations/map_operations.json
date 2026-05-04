@@ -1,0 +1,128 @@
+{
+  "animationId": "cpp_map_operations",
+  "itemId": "1.8.16",
+  "title": "map 操作",
+  "description": "演示 map 的键值映射、插入和查找操作",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "创建空 map",
+      "description": "声明一个 string 到 int 的 map，用于保存姓名→分数的映射",
+      "codeLine": "map<string, int> scores;",
+      "highlights": ["map"],
+      "state": {
+        "variables": [
+          {"name": "scores.size()", "value": "0", "note": "空 map"}
+        ],
+        "containers": [
+          {
+            "name": "scores",
+            "type": "map",
+            "values": [],
+            "activeIndex": -1,
+            "note": "键值对，按键自动排序"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "插入键值对",
+      "description": "用方括号插入 Alice→90，map 自动维护按键排序",
+      "codeLine": "scores[\"Alice\"] = 90;",
+      "highlights": ["scores"],
+      "state": {
+        "variables": [
+          {"name": "scores.size()", "value": "1", "note": ""},
+          {"name": "scores[\"Alice\"]", "value": "90", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "scores",
+            "type": "map",
+            "values": ["Alice→90"],
+            "activeIndex": 0,
+            "note": "按键排序"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "插入更多键值对",
+      "description": "插入 Bob→85 和 Carol→95，map 内部自动按 key 字典序排列",
+      "codeLine": "scores[\"Bob\"] = 85; scores[\"Carol\"] = 95;",
+      "highlights": ["scores"],
+      "state": {
+        "variables": [
+          {"name": "scores.size()", "value": "3", "note": ""},
+          {"name": "scores[\"Alice\"]", "value": "90", "note": ""},
+          {"name": "scores[\"Bob\"]", "value": "85", "note": ""},
+          {"name": "scores[\"Carol\"]", "value": "95", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "scores",
+            "type": "map",
+            "values": ["Alice→90", "Bob→85", "Carol→95"],
+            "activeIndex": -1,
+            "note": "已按 key 字典序排列"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "查找键",
+      "description": "用 count 检查 key 是否存在，存在返回 1，不存在返回 0",
+      "codeLine": "if (scores.count(\"Bob\")) cout << scores[\"Bob\"];",
+      "highlights": ["count"],
+      "state": {
+        "variables": [
+          {"name": "scores.count(\"Bob\")", "value": "1", "note": "存在"},
+          {"name": "scores[\"Bob\"]", "value": "85", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "scores",
+            "type": "map",
+            "values": ["Alice→90", "Bob→85", "Carol→95"],
+            "activeIndex": 1,
+            "note": "找到 Bob"
+          }
+        ],
+        "output": "85"
+      }
+    },
+    {
+      "step": 5,
+      "title": "遍历输出",
+      "description": "用范围 for 遍历 map，每个元素是 pair，first 是 key，second 是 value",
+      "codeLine": "for (auto& p : scores) cout << p.first << \":\" << p.second;",
+      "highlights": ["auto&"],
+      "state": {
+        "variables": [
+          {"name": "scores.size()", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {
+            "name": "scores",
+            "type": "map",
+            "values": ["Alice→90", "Bob→85", "Carol→95"],
+            "activeIndex": -1,
+            "note": "遍历顺序 = key 排序"
+          }
+        ],
+        "output": "Alice:90 Bob:85 Carol:95 "
+      }
+    }
+  ]
+}

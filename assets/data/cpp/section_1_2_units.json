@@ -1,0 +1,590 @@
+{
+  "section": "1.2",
+  "sectionName": "输入输出",
+  "units": [
+    {
+      "itemId": "1.2.1",
+      "title": "cin 输入",
+      "learningGoal": "掌握 cin 的基本用法，能从键盘读入整数、浮点数等数据",
+      "explanation": "cin 是 C++ 标准输入流对象，用来从键盘读取数据到变量中。\n\n用法：cin >> 变量名;，注意箭头方向 >> 指向变量，表示「数据流向变量」。\n\ncin 会自动跳过空格、换行等空白字符，然后读取匹配类型的数据。比如 int 变量会读一个整数，double 变量会读一个小数。\n\n使用 cin 需要引入 <iostream> 头文件，并且一般配合 using namespace std; 使用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age;\n    cout << \"请输入你的年龄：\";\n    cin >> age;\n    cout << \"你的年龄是 \" << age << \" 岁\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cin >> 变量名; 从键盘读入数据",
+        ">> 方向指向变量，表示数据流入",
+        "cin 会自动跳过空格和换行",
+        "读取的数据类型由变量类型决定"
+      ],
+      "commonMistakes": [
+        {
+          "title": "箭头方向写反",
+          "description": "cin << age; ← 方向错了，编译报错。",
+          "fix": "cin >> age; 箭头 >> 指向变量。"
+        },
+        {
+          "title": "输入类型不匹配",
+          "description": "变量是 int，但输入了字母，cin 进入错误状态，后续读取全部失败。",
+          "fix": "确保输入的数据类型和变量类型匹配。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，读入一个整数 n，然后输出 n 的值。",
+        "hint": "int n; cin >> n; cout << n;",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int n;\n    cin >> n;\n    cout << n << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "cin >> x; 中 >> 的含义是什么？",
+          "options": [
+            "把 x 的值输出到屏幕",
+            "把数据从输入流读入变量 x",
+            "比较 x 和输入值",
+            "定义变量 x"
+          ],
+          "answerIndex": 1,
+          "explanation": ">> 是提取运算符，把数据从输入流（键盘）读入到变量 x 中。方向指向变量。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.2",
+      "title": "cout 输出",
+      "learningGoal": "掌握 cout 的基本用法，能输出各种类型的数据",
+      "explanation": "cout 是 C++ 标准输出流对象，用来把数据显示到屏幕上。\n\n用法：cout << 数据;，箭头方向 << 指向左边（cout 方向），表示「数据流向屏幕」。\n\ncout 可以输出整数、小数、字符、字符串等多种类型。可以用多个 << 连续输出不同内容。\n\n和 cin 一样，使用 cout 需要 <iostream> 头文件和 using namespace std;。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 95;\n    cout << \"你的分数是：\";\n    cout << score;\n    cout << endl;\n    cout << \"分\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cout << 数据; 把数据输出到屏幕",
+        "<< 方向指向 cout，表示数据流出",
+        "可以连续使用 << 输出多个内容",
+        "endl 用于换行并刷新缓冲区"
+      ],
+      "commonMistakes": [
+        {
+          "title": "箭头方向写反",
+          "description": "cout >> \"Hello\"; ← 方向错了，编译报错。",
+          "fix": "cout << \"Hello\"; 箭头 << 指向 cout。"
+        },
+        {
+          "title": "输出变量加引号",
+          "description": "cout << \"score\"; ← 这会输出字母 score，不是变量的值。",
+          "fix": "cout << score; ← 不加引号才是输出变量的值。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 double 变量 pi = 3.14，然后用 cout 输出 \"pi = \" 和 pi 的值。",
+        "hint": "cout << \"pi = \" << pi << endl;",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    double pi = 3.14;\n    cout << \"pi = \" << pi << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "cout << x; 会输出什么？",
+          "options": [
+            "字母 x",
+            "变量 x 的值",
+            "变量 x 的地址",
+            "\"x\""
+          ],
+          "answerIndex": 1,
+          "explanation": "cout << x; 会输出变量 x 中存储的值。如果要输出字母 x，需要写 cout << 'x'; 或 cout << \"x\";。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.3",
+      "title": "endl 换行",
+      "learningGoal": "理解 endl 的作用，学会在输出中换行",
+      "explanation": "endl 是 \"end line\" 的缩写，作用是输出一个换行并刷新缓冲区。\n\n在 cout 中使用 endl 后，后面的输出会从新的一行开始。它和 \"\\n\" 效果类似，但 endl 会多一步「刷新缓冲区」的操作。\n\n对于初学者和信奥竞赛来说，用 endl 还是 \"\\n\" 区别不大。但在大量输出时，\"\\n\" 会更快。\n\nendl 只能用于 cout 等输出流，不能用于 printf。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"第一行\" << endl;\n    cout << \"第二行\" << endl;\n    cout << \"第三行\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "endl 输出换行并刷新缓冲区",
+        "效果类似 \"\\n\"，但多了刷新操作",
+        "只能用于 cout 等输出流",
+        "大量输出时用 \"\\n\" 更高效"
+      ],
+      "commonMistakes": [
+        {
+          "title": "endl 外面加引号",
+          "description": "cout << \"endl\"; ← 输出的是字母 endl，不是换行。",
+          "fix": "cout << endl; ← 不加引号。"
+        }
+      ],
+      "practice": {
+        "prompt": "用三行分别输出你的姓名、年龄、学校，每行一个 endl。",
+        "hint": "cout << \"张三\" << endl; cout << 14 << endl; cout << \"第一中学\" << endl;",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"张三\" << endl;\n    cout << 14 << endl;\n    cout << \"第一中学\" << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "endl 的作用是什么？",
+          "options": [
+            "结束程序",
+            "输出换行并刷新缓冲区",
+            "清空屏幕",
+            "暂停程序"
+          ],
+          "answerIndex": 1,
+          "explanation": "endl 输出一个换行符，并刷新输出缓冲区，让内容立即显示到屏幕上。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.4",
+      "title": "换行符 \"\\n\"",
+      "learningGoal": "理解 \\n 换行符的用法，了解与 endl 的区别",
+      "explanation": "\\n 是转义字符，表示一个换行。它写在字符串里面，输出时会换到下一行。\n\n\"\\n\" 和 endl 效果几乎一样，但有两个区别：\n1. \"\\n\" 是一个字符，写法更短\n2. \"\\n\" 不会刷新缓冲区，所以比 endl 快\n\n在信奥竞赛中，大量输出时推荐用 \"\\n\" 代替 endl，可以明显提升速度。\n\n\\n 可以放在字符串的任何位置，甚至一个字符串里放多个 \\n。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"第一行\\n\";\n    cout << \"第二行\\n第三行\\n\";\n    cout << \"A\\nB\\nC\\n\";\n    return 0;\n}",
+      "codeNotes": [
+        "\\n 是转义字符，表示换行",
+        "写在字符串引号里面",
+        "不会刷新缓冲区，比 endl 快",
+        "一个字符串可以包含多个 \\n"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 \\n 写成 /n",
+          "description": "cout << \"Hello/n\"; ← 输出的是 Hello/n，没有换行。",
+          "fix": "反斜杠：cout << \"Hello\\n\"; ← 用反斜杠 \\ 不是正斜杠 /。"
+        }
+      ],
+      "practice": {
+        "prompt": "用一条 cout 语句输出三行：第一行 \"AAA\"，第二行 \"BBB\"，第三行 \"CCC\"。",
+        "hint": "cout << \"AAA\\nBBB\\nCCC\\n\";",
+        "expectedIdea": "cout << \"AAA\\nBBB\\nCCC\\n\";"
+      },
+      "quiz": [
+        {
+          "question": "\"\\n\" 和 endl 的主要区别是什么？",
+          "options": [
+            "没有区别",
+            "\"\\n\" 不会刷新缓冲区，endl 会刷新",
+            "endl 不能换行",
+            "\"\\n\" 只能用在 printf 中"
+          ],
+          "answerIndex": 1,
+          "explanation": "两者都能换行，但 endl 会额外刷新输出缓冲区，而 \"\\n\" 不会，所以 \"\\n\" 更快。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.5",
+      "title": "多变量输入",
+      "learningGoal": "掌握用 cin 同时读入多个变量的方法",
+      "explanation": "cin 可以在一次输入中读取多个变量，用 >> 连续写。\n\n比如 cin >> a >> b >> c; 会依次读入三个值，分别存到 a、b、c 中。\n\n输入时，数据之间用空格或换行隔开，cin 会自动识别分隔。\n\n这在竞赛中非常常用——题目经常要求读入多个数据，用一行 cin 搞定比多行更简洁。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << \"a=\" << a << \", b=\" << b << \", c=\" << c << endl;\n    cout << \"总和=\" << a + b + c << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cin >> a >> b >> c; 连续读入多个变量",
+        "输入时用空格或换行分隔",
+        "变量类型可以不同",
+        "cin 会自动跳过空白字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用逗号分隔变量",
+          "description": "cin >> a, b, c; ← 逗号运算符导致只读了 a。",
+          "fix": "用 >> 连接：cin >> a >> b >> c;。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入两个整数 a 和 b，输出它们的和、差、积。",
+        "hint": "cin >> a >> b; 然后 cout << a+b << ...",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int a, b;\n    cin >> a >> b;\n    cout << a + b << \" \" << a - b << \" \" << a * b << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "cin >> a >> b; 输入 \"3 5\" 后，a 和 b 分别是？",
+          "options": [
+            "a=35, b=0",
+            "a=3, b=5",
+            "a=5, b=3",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin 用空格分隔输入，所以 3 存入 a，5 存入 b。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.6",
+      "title": "连续输出",
+      "learningGoal": "掌握用 cout 连续输出多个内容的技巧",
+      "explanation": "cout 可以用多个 << 把不同的内容拼在一起输出。\n\n比如 cout << \"答案是\" << 42 << \"。\" << endl; 会输出「答案是42。」\n\n<< 可以连接字符串、变量、表达式、endl 等，非常灵活。\n\n这在竞赛中很常用——一行输出多个数据，中间用空格分隔。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    string name = \"小明\";\n    int age = 12;\n    double height = 1.55;\n    cout << name << \" 今年 \" << age << \" 岁，身高 \" << height << \" 米。\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "<< 可以连续拼接多个输出项",
+        "字符串和变量可以交替输出",
+        "表达式也可以直接输出",
+        "不需要每个内容单独一条 cout"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘写 << 连接",
+          "description": "cout << \"年龄\" age; ← 两项之间缺少 <<，编译报错。",
+          "fix": "cout << \"年龄\" << age; 每项之间都要有 <<。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明 int a=3, b=4; 用一条 cout 输出 \"3+4=7\"（用变量计算，不要硬编码）。",
+        "hint": "cout << a << \"+\" << b << \"=\" << a+b;",
+        "expectedIdea": "cout << a << \"+\" << b << \"=\" << a + b << endl;"
+      },
+      "quiz": [
+        {
+          "question": "cout << \"x=\" << x; 中有几个 << ？",
+          "options": [
+            "1 个",
+            "2 个",
+            "3 个",
+            "0 个"
+          ],
+          "answerIndex": 1,
+          "explanation": "有两个 <<：第一个连接 cout 和 \"x=\"，第二个连接 \"x=\" 和变量 x。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.7",
+      "title": "格式控制",
+      "learningGoal": "学会控制输出的宽度、精度和对齐方式",
+      "explanation": "有时候我们需要控制输出格式，比如保留几位小数、设置输出宽度等。\n\n常用方法：\n- fixed + setprecision(n)：控制小数位数\n- setw(n)：设置下一个输出的宽度\n- left / right：左对齐 / 右对齐\n\n使用 setprecision 和 setw 需要引入 <iomanip> 头文件。\n\n在信奥竞赛中，最常用的是 fixed + setprecision 来控制浮点数输出位数。",
+      "exampleCode": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    double pi = 3.14159265;\n    cout << fixed << setprecision(2) << pi << endl;\n    cout << fixed << setprecision(4) << pi << endl;\n    cout << setw(10) << 42 << endl;\n    cout << setw(10) << left << 42 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "fixed 让浮点数用定点表示（非科学计数法）",
+        "setprecision(n) 设置小数点后 n 位",
+        "setw(n) 设置下一个输出项占 n 个字符宽度",
+        "需要 #include <iomanip>"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用了 setprecision 但忘了 fixed",
+          "description": "只用 setprecision(2) 没有 fixed，3.14159 可能输出 3.1（有效数字而非小数位数）。",
+          "fix": "同时使用 fixed 和 setprecision：cout << fixed << setprecision(2);。"
+        },
+        {
+          "title": "忘记引入 <iomanip>",
+          "description": "用了 setprecision 但没 #include <iomanip>，编译报错。",
+          "fix": "在开头加上 #include <iomanip>。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出 10.0 / 3.0 的结果，保留 3 位小数。",
+        "hint": "cout << fixed << setprecision(3) << 10.0/3.0;",
+        "expectedIdea": "#include <iostream>\n#include <iomanip>\nusing namespace std;\nint main() {\n    cout << fixed << setprecision(3) << 10.0 / 3.0 << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "要让浮点数保留 2 位小数，需要哪些控制符？",
+          "options": [
+            "只用 setprecision(2)",
+            "fixed 和 setprecision(2)",
+            "只用 setw(2)",
+            "fixed 和 setw(2)"
+          ],
+          "answerIndex": 1,
+          "explanation": "fixed 表示用定点表示法，setprecision(2) 设置小数点后 2 位。两者配合才能精确控制小数位数。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.8",
+      "title": "scanf / printf",
+      "learningGoal": "掌握 C 风格的 scanf 和 printf 的基本用法",
+      "explanation": "scanf 和 printf 是 C 语言风格的输入输出函数，在 C++ 中也可以使用。\n\n常用格式符：\n- %d → int\n- %lf → double（scanf 用 %lf，printf 用 %f）\n- %s → 字符串\n- %c → 字符\n- %lld → long long\n\nscanf 需要传变量的地址（用 &），容易出错。但 scanf/printf 比 cin/cout 更快，在数据量大的竞赛题中常用。\n\n使用 scanf/printf 需要 #include <cstdio>。",
+      "exampleCode": "#include <cstdio>\nusing namespace std;\n\nint main() {\n    int a;\n    double b;\n    scanf(\"%d %lf\", &a, &b);\n    printf(\"a = %d, b = %.2f\\n\", a, b);\n    return 0;\n}",
+      "codeNotes": [
+        "%d 读/写 int，%lf 读 double，%f 写 double",
+        "scanf 的变量前必须加 & 取地址",
+        "printf 中 %.2f 表示保留 2 位小数",
+        "需要 #include <cstdio>"
+      ],
+      "commonMistakes": [
+        {
+          "title": "scanf 忘记写 &",
+          "description": "scanf(\"%d\", a); ← 缺少 &，程序崩溃或读到错误地址。",
+          "fix": "scanf(\"%d\", &a); ← 普通变量要加 &。"
+        },
+        {
+          "title": "printf 用 %lf 输出 double",
+          "description": "printf(\"%lf\", b); ← printf 中 double 用 %f，不是 %lf。",
+          "fix": "printf(\"%f\", b); 或 printf(\"%.2f\", b);。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 scanf 读入一个 long long 变量 n，用 printf 输出 n 的值。",
+        "hint": "scanf(\"%lld\", &n); printf(\"%lld\\n\", n);",
+        "expectedIdea": "#include <cstdio>\nusing namespace std;\nint main() {\n    long long n;\n    scanf(\"%lld\", &n);\n    printf(\"%lld\\n\", n);\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "scanf(\"%d\", &a); 中 & 的作用是什么？",
+          "options": [
+            "取 a 的值",
+            "取 a 的地址，让 scanf 能修改 a",
+            "声明变量 a",
+            "没有实际作用"
+          ],
+          "answerIndex": 1,
+          "explanation": "& 是取地址运算符，scanf 需要知道变量在内存中的地址才能把读到的值存进去。"
+        },
+        {
+          "question": "printf 输出 double 类型应该用哪个格式符？",
+          "options": [
+            "%d",
+            "%lf",
+            "%f",
+            "%s"
+          ],
+          "answerIndex": 2,
+          "explanation": "printf 中 double 类型用 %f 输出。%lf 是 scanf 用来读取 double 的格式符。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.9",
+      "title": "getline 读取整行",
+      "learningGoal": "掌握 getline 的用法，能读取包含空格的整行字符串",
+      "explanation": "cin >> 只能读取一个「词」（到空格就停），如果一行里有空格，cin >> 就不够用了。\n\ngetline(cin, s) 可以读取一整行，包括空格，直到遇到换行符为止。\n\n常见陷阱：如果前面用了 cin >>，缓冲区里会剩一个换行符，getline 会读到空行。解决方法是在 getline 前加 cin.ignore() 吃掉多余的换行。\n\ngetline 需要 #include <string>。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string name;\n    cout << \"请输入你的全名：\";\n    getline(cin, name);\n    cout << \"你好，\" << name << \"！\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "getline(cin, s) 读取一整行到字符串 s",
+        "可以读取包含空格的字符串",
+        "遇到换行符停止，但不存入字符串",
+        "前面有 cin >> 时要用 cin.ignore() 清理"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cin >> 和 getline 混用导致读到空行",
+          "description": "cin >> n; getline(cin, s); ← getline 读到的是 cin 留下的换行符，s 是空的。",
+          "fix": "在 getline 前加 cin.ignore(); 吃掉多余的换行符。"
+        }
+      ],
+      "practice": {
+        "prompt": "先读入一个整数 n，然后读入一行包含空格的句子，输出句子长度。",
+        "hint": "cin >> n; cin.ignore(); getline(cin, s); cout << s.size();",
+        "expectedIdea": "#include <iostream>\n#include <string>\nusing namespace std;\nint main() {\n    int n;\n    string s;\n    cin >> n;\n    cin.ignore();\n    getline(cin, s);\n    cout << s.size() << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "getline(cin, s) 和 cin >> s 的区别是什么？",
+          "options": [
+            "没有区别",
+            "getline 读取一整行（含空格），cin >> 只读一个词",
+            "cin >> 读取更快",
+            "getline 只能读数字"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin >> 遇到空格就停止读取，而 getline 会读取一整行，包括中间的空格。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.10",
+      "title": "输入缓冲区",
+      "learningGoal": "理解输入缓冲区的概念，知道为什么有时会读到意外的数据",
+      "explanation": "当你从键盘输入数据时，数据先进入「输入缓冲区」，然后 cin 从缓冲区中读取。\n\n理解缓冲区很重要：cin 不会每次都等你输入，它会先看看缓冲区里有没有数据。如果有，就直接用。\n\n这就解释了为什么 cin >> n 后直接 getline 会出问题——缓冲区里还剩一个换行符，getline 直接读走了。\n\ncin.ignore() 可以清除缓冲区中的字符，cin.sync() 可以清空整个缓冲区。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    string s;\n    cin >> n;\n    cin.ignore();  // 清除缓冲区中残留的换行符\n    getline(cin, s);\n    cout << \"n=\" << n << \", s=\" << s << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "输入数据先进缓冲区，再被 cin 读取",
+        "cin >> 读完数据后，换行符留在缓冲区",
+        "cin.ignore() 清除一个字符（通常是换行符）",
+        "混用 cin >> 和 getline 时要特别注意"
+      ],
+      "commonMistakes": [
+        {
+          "title": "不知道缓冲区残留导致读入错误",
+          "description": "cin >> n; getline(cin, s); 结果 s 是空的——因为 getline 读到了残留的换行符。",
+          "fix": "在 getline 前用 cin.ignore(); 清除缓冲区残留的换行符。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入两个整数 a 和 b，再读入一个字符串 s（可能含空格），输出 a+b 和 s。",
+        "hint": "cin >> a >> b; cin.ignore(); getline(cin, s);",
+        "expectedIdea": "#include <iostream>\n#include <string>\nusing namespace std;\nint main() {\n    int a, b;\n    string s;\n    cin >> a >> b;\n    cin.ignore();\n    getline(cin, s);\n    cout << a + b << endl;\n    cout << s << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "执行 cin >> n; 后，缓冲区中通常还剩什么？",
+          "options": [
+            "什么都不剩",
+            "一个换行符",
+            "n 的值",
+            "一个空格"
+          ],
+          "answerIndex": 1,
+          "explanation": "cin >> 读取数字后，你按的回车键（换行符）还留在缓冲区中，需要用 cin.ignore() 清除。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.11",
+      "title": "读到 EOF",
+      "learningGoal": "掌握判断输入结束的方法，能处理不定数量输入",
+      "explanation": "在信奥竞赛中，很多题目不告诉你输入多少个数据，而是说「读到文件末尾为止」。\n\nEOF 是 End Of File 的缩写，表示输入结束。在键盘输入时，Windows 按 Ctrl+Z，Linux/Mac 按 Ctrl+D 可以模拟 EOF。\n\n判断方法：\n- while (cin >> n) { ... } — cin 在读到 EOF 时返回 false\n- while (scanf(\"%d\", &n) != EOF) { ... } — scanf 在读到 EOF 时返回 EOF\n\n这两种写法都能持续读取数据直到输入结束。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    int sum = 0;\n    while (cin >> n) {\n        sum += n;\n    }\n    cout << \"总和：\" << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "EOF 表示输入结束",
+        "while (cin >> n) 遇到 EOF 时循环结束",
+        "while (scanf(\"%d\", &n) != EOF) 是 C 风格写法",
+        "键盘输入时用 Ctrl+Z（Windows）模拟 EOF"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 cin 的返回值判断方法不对",
+          "description": "while (cin >> n != false) { ... } ← 优先级错误，编译报错。",
+          "fix": "直接写 while (cin >> n) { ... }，cin 会自动转换为 bool。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，不断读入整数并累加，直到输入结束，输出累加和。",
+        "hint": "while (cin >> n) { sum += n; }",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    int n, sum = 0;\n    while (cin >> n) {\n        sum += n;\n    }\n    cout << sum << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "while (cin >> n) 什么时候退出循环？",
+          "options": [
+            "当 n 等于 0",
+            "当输入了 -1",
+            "当读到 EOF（输入结束）",
+            "永远不会退出"
+          ],
+          "answerIndex": 2,
+          "explanation": "cin >> n 在成功读取时返回 true，读到 EOF 或输入失败时返回 false，从而退出循环。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.12",
+      "title": "快速输入输出",
+      "learningGoal": "掌握提升 cin/cout 速度的方法，了解关闭同步的原理",
+      "explanation": "cin/cout 默认和 scanf/printf 保持同步，这会拖慢速度。\n\n关闭同步的方法：\nios::sync_with_stdio(false);\ncin.tie(0);\n\n加上这两行后，cin/cout 的速度可以接近 scanf/printf。\n\n注意事项：\n1. 关闭同步后，不要混用 cin/cout 和 scanf/printf\n2. 用 \"\\n\" 代替 endl，endl 会刷新缓冲区影响速度\n\n在数据量大的竞赛题中，这三招组合能显著提速。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(0);\n\n    int n, sum = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        sum += x;\n    }\n    cout << sum << \"\\n\";\n    return 0;\n}",
+      "codeNotes": [
+        "ios::sync_with_stdio(false); 关闭 C/C++ IO 同步",
+        "cin.tie(0); 解除 cin 和 cout 的绑定",
+        "关闭后不要混用 cin 和 scanf",
+        "用 \"\\n\" 代替 endl 避免频繁刷新"
+      ],
+      "commonMistakes": [
+        {
+          "title": "关闭同步后混用 scanf 和 cin",
+          "description": "ios::sync_with_stdio(false); 后同时用 cin 和 scanf，输入顺序可能错乱。",
+          "fix": "关闭同步后只用 cin/cout 或只用 scanf/printf，不要混用。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个快速 IO 的程序框架：关闭同步，读入 n 个整数并求和，输出结果。",
+        "hint": "ios::sync_with_stdio(false); cin.tie(0);",
+        "expectedIdea": "#include <iostream>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(0);\n    int n, x, sum = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        cin >> x;\n        sum += x;\n    }\n    cout << sum << \"\\n\";\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "ios::sync_with_stdio(false); 的作用是什么？",
+          "options": [
+            "让程序自动编译",
+            "关闭 cin/cout 和 scanf/printf 的同步，提升速度",
+            "清空输入缓冲区",
+            "启用文件输入输出"
+          ],
+          "answerIndex": 1,
+          "explanation": "默认情况下 cin/cout 会和 C 标准 IO 同步以保证混用时顺序正确。关闭同步可以大幅提升速度。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.13",
+      "title": "freopen 重定向",
+      "learningGoal": "掌握 freopen 的用法，能把标准输入输出重定向到文件",
+      "explanation": "freopen 可以把 stdin（标准输入）或 stdout（标准输出）重定向到文件。\n\n常见用法：\nfreopen(\"input.txt\", \"r\", stdin); — 从文件读\nfreopen(\"output.txt\", \"w\", stdout); — 写到文件\n\n调用 freopen 后，cin/cout 和 scanf/printf 就自动对文件操作了，不用改代码中的输入输出语句。\n\n这在本地调试时很方便——把测试数据放在文件里，不用每次手动输入。竞赛中正式评测时一般不用 freopen。",
+      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    freopen(\"input.txt\", \"r\", stdin);\n    freopen(\"output.txt\", \"w\", stdout);\n\n    int a, b;\n    cin >> a >> b;\n    cout << a + b << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "freopen(\"文件名\", \"r\", stdin); 重定向输入",
+        "freopen(\"文件名\", \"w\", stdout); 重定向输出",
+        "之后 cin/cout 自动对文件操作",
+        "本地调试方便，竞赛评测时一般不用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "文件路径不对",
+          "description": "freopen(\"data.txt\", \"r\", stdin); 但 data.txt 不在程序运行目录下，读取失败。",
+          "fix": "确保文件和程序在同一个目录，或使用完整路径。"
+        },
+        {
+          "title": "忘记提交前删掉 freopen",
+          "description": "比赛提交时还带着 freopen，评测系统找不到文件导致 WA。",
+          "fix": "提交代码前注释掉或删掉 freopen 行。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，用 freopen 从 \"in.txt\" 读取两个整数，把它们的和写入 \"out.txt\"。",
+        "hint": "freopen(\"in.txt\", \"r\", stdin); freopen(\"out.txt\", \"w\", stdout);",
+        "expectedIdea": "#include <iostream>\n#include <cstdio>\nusing namespace std;\nint main() {\n    freopen(\"in.txt\", \"r\", stdin);\n    freopen(\"out.txt\", \"w\", stdout);\n    int a, b;\n    cin >> a >> b;\n    cout << a + b << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "freopen(\"input.txt\", \"r\", stdin); 的效果是什么？",
+          "options": [
+            "创建一个新文件 input.txt",
+            "把标准输入重定向到 input.txt，cin 从文件读取",
+            "把 input.txt 的内容打印到屏幕",
+            "删除 input.txt"
+          ],
+          "answerIndex": 1,
+          "explanation": "freopen 把 stdin 重定向到文件，之后所有从 stdin 读取的操作（cin、scanf）都从文件读取。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.2.14",
+      "title": "文件输入输出基础",
+      "learningGoal": "掌握用 ifstream/ofstream 进行文件读写的基本方法",
+      "explanation": "除了 freopen，C++ 还提供了 ifstream（输入文件流）和 ofstream（输出文件流）来读写文件。\n\n用法：\nofstream fout(\"output.txt\"); — 打开输出文件\nfout << \"Hello\" << endl; — 像用 cout 一样写文件\nifstream fin(\"input.txt\"); — 打开输入文件\nfin >> x; — 像用 cin 一样读文件\n\n文件使用完后会自动关闭，也可以手动调用 close()。\n\n需要 #include <fstream>。相比 freopen，这种方式更灵活，可以同时操作多个文件。",
+      "exampleCode": "#include <iostream>\n#include <fstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    ofstream fout(\"output.txt\");\n    fout << \"Hello, File!\" << endl;\n    fout << 42 << endl;\n    fout.close();\n\n    ifstream fin(\"output.txt\");\n    string line;\n    while (getline(fin, line)) {\n        cout << line << endl;\n    }\n    fin.close();\n    return 0;\n}",
+      "codeNotes": [
+        "ofstream 用来写文件，用法类似 cout",
+        "ifstream 用来读文件，用法类似 cin",
+        "用完调用 close() 关闭文件（也可以自动关闭）",
+        "需要 #include <fstream>"
+      ],
+      "commonMistakes": [
+        {
+          "title": "文件打开失败没检查",
+          "description": "ofstream fout(\"/no/such/path.txt\"); 但路径不存在，写入失败但程序不报错。",
+          "fix": "可以用 if (!fout) { cout << \"打开失败\"; return 1; } 检查。"
+        },
+        {
+          "title": "混淆 ifstream 和 ofstream",
+          "description": "ifstream 是输入（读），ofstream 是输出（写），用反了会编译错误或运行错误。",
+          "fix": "in = 输入 = 读 = ifstream，out = 输出 = 写 = ofstream。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 ofstream 写入 1~5 到 \"nums.txt\"（每行一个数字），再用 ifstream 读出并求和输出。",
+        "hint": "ofstream fout; fout.open(\"nums.txt\"); for (int i=1;i<=5;i++) fout << i << endl;",
+        "expectedIdea": "#include <iostream>\n#include <fstream>\nusing namespace std;\nint main() {\n    ofstream fout(\"nums.txt\");\n    for (int i = 1; i <= 5; i++) {\n        fout << i << endl;\n    }\n    fout.close();\n    ifstream fin(\"nums.txt\");\n    int x, sum = 0;\n    while (fin >> x) {\n        sum += x;\n    }\n    fin.close();\n    cout << sum << endl;\n    return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "ofstream 和 ifstream 分别用于什么？",
+          "options": [
+            "ofstream 读文件，ifstream 写文件",
+            "ofstream 写文件，ifstream 读文件",
+            "都用于读文件",
+            "都用于写文件"
+          ],
+          "answerIndex": 1,
+          "explanation": "ofstream = output file stream = 输出文件流 = 写文件；ifstream = input file stream = 输入文件流 = 读文件。"
+        },
+        {
+          "question": "使用 ifstream/ofstream 需要引入哪个头文件？",
+          "options": [
+            "<iostream>",
+            "<cstdio>",
+            "<fstream>",
+            "<string>"
+          ],
+          "answerIndex": 2,
+          "explanation": "ifstream 和 ofstream 声明在 <fstream> 头文件中，使用前需要 #include <fstream>。"
+        }
+      ]
+    }
+  ]
+}

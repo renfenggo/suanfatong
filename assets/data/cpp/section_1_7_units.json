@@ -1,0 +1,670 @@
+{
+  "sectionId": "1.7",
+  "sectionName": "函数、递归、引用与指针",
+  "units": [
+    {
+      "itemId": "1.7.1",
+      "title": "函数定义",
+      "learningGoal": "理解函数的定义方式，学会把一段逻辑封装成可复用的函数",
+      "explanation": "函数是一段有名字的代码块，用来完成特定任务。定义函数可以避免重复写相同的代码，让程序结构更清晰。\n\n定义函数需要指定三个要素：返回类型、函数名、参数列表。基本格式为：返回类型 函数名(参数列表) { 函数体 }。\n\n返回类型写在函数名前面，表示函数执行后返回什么类型的数据。如果不需要返回值，返回类型写 void。\n\n参数列表写在圆括号里，描述函数需要接收哪些数据。如果不需要参数，圆括号里可以留空。\n\n函数体用大括号括起来，包含具体的执行语句。函数定义必须放在调用之前，或者通过声明提前告知编译器。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint add(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    int result = add(3, 5);\n    cout << \"3 + 5 = \" << result << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int add(int a, int b) 是函数定义，返回类型为 int",
+        "return 语句将计算结果返回给调用者",
+        "函数定义通常放在 main 函数之前",
+        "参数列表中的 a 和 b 是函数的输入",
+        "函数名应能体现其功能，如 add 表示加法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记写返回类型",
+          "description": "add(int a, int b) { ... } ← 函数名前面没有返回类型。",
+          "fix": "必须写明返回类型，例如 int add(int a, int b)。"
+        },
+        {
+          "title": "函数定义放在调用之后",
+          "description": "main 里调用 add，但 add 定义在 main 后面，编译器找不到。",
+          "fix": "把函数定义放在 main 之前，或者先写函数声明。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个函数 multiply，接收两个 int 参数，返回它们的乘积。在 main 中调用并输出结果。",
+        "hint": "函数格式：int multiply(int a, int b)，返回 a * b",
+        "expectedIdea": "int multiply(int a, int b) {\n    return a * b;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个是正确的函数定义？",
+          "options": [
+            "add(int a, int b) { return a + b; }",
+            "int add(a, b) { return a + b; }",
+            "int add(int a, int b) { return a + b; }",
+            "void add(int a, int b) { return a + b; }"
+          ],
+          "answerIndex": 2,
+          "explanation": "正确的函数定义需要写明返回类型（int）、函数名（add）和参数的类型及名称（int a, int b）。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.2",
+      "title": "函数声明",
+      "learningGoal": "理解函数声明（原型）的作用，学会在调用前提前声明函数",
+      "explanation": "函数声明也叫函数原型，它告诉编译器：某个函数存在，长什么样，但具体实现稍后再定义。\n\n声明的格式和函数定义的第一行一样，只是末尾加分号代替函数体：返回类型 函数名(参数列表);\n\n函数声明的主要用途是让函数定义可以放在任意位置。只要在调用之前声明了，编译器就认可。\n\n声明中的参数名可以省略，只写类型也行。例如 int add(int, int); 和 int add(int a, int b); 效果相同。\n\n在大型项目中，函数声明通常写在头文件中，而定义写在源文件中。初学阶段只需知道声明的基本用法即可。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint add(int a, int b);\n\nint main() {\n    cout << add(3, 5) << endl;\n    return 0;\n}\n\nint add(int a, int b) {\n    return a + b;\n}",
+      "codeNotes": [
+        "第 4 行是函数声明，以分号结尾，没有函数体",
+        "声明让编译器知道 add 函数的存在",
+        "函数定义放在 main 后面也没问题",
+        "声明中的参数名可以省略，只保留类型"
+      ],
+      "commonMistakes": [
+        {
+          "title": "声明和定义的返回类型不一致",
+          "description": "声明写 int add(int, int)，定义写 double add(int a, int b)，类型冲突。",
+          "fix": "声明的返回类型、函数名、参数列表必须和定义完全一致。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，用函数声明的方式，把 square 函数（求平方）的定义放在 main 后面。在 main 中调用 square(4) 并输出结果。",
+        "hint": "先写 int square(int n); 声明，再在 main 后面写定义",
+        "expectedIdea": "int square(int n);\n\nint main() {\n    cout << square(4) << endl;\n    return 0;\n}\n\nint square(int n) {\n    return n * n;\n}"
+      },
+      "quiz": [
+        {
+          "question": "函数声明的末尾应该写什么？",
+          "options": [
+            "右大括号 }",
+            "分号 ;",
+            "冒号 :",
+            "什么都不写"
+          ],
+          "answerIndex": 1,
+          "explanation": "函数声明以分号结尾，不包含函数体。这是和函数定义最明显的区别。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.3",
+      "title": "函数调用",
+      "learningGoal": "学会正确调用已定义的函数，理解调用时程序执行流程",
+      "explanation": "函数调用就是使用已定义的函数来执行它里面的代码。调用时需要写函数名并在圆括号里传入对应的参数。\n\n程序执行到函数调用时，会跳转到函数定义处执行函数体，执行完毕后再回到调用处继续往下执行。\n\n如果函数有返回值，调用表达式的结果就是返回值，可以直接用在赋值、输出等操作中。\n\n调用时传入的参数数量和类型要和定义一致，否则会编译错误或产生隐式转换。\n\n函数可以被多次调用，这也是函数的主要价值：写一次，用很多次。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint square(int n) {\n    return n * n;\n}\n\nint main() {\n    cout << square(3) << endl;\n    cout << square(5) << endl;\n    int x = square(4);\n    cout << \"4 的平方是 \" << x << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "square(3) 是函数调用，3 是传入的参数",
+        "函数可以多次调用，每次传入不同的值",
+        "返回值可以直接用在表达式中，如赋值或输出",
+        "调用时参数数量和类型必须匹配"
+      ],
+      "commonMistakes": [
+        {
+          "title": "调用时参数数量不对",
+          "description": "square(3, 5) ← square 只需要一个参数，传了两个。",
+          "fix": "根据函数定义传入正确数量的参数：square(3)。"
+        },
+        {
+          "title": "调用无返回值函数却赋值",
+          "description": "int x = printHello(); ← printHello 是 void 函数，没有返回值。",
+          "fix": "void 函数直接调用即可，不要赋值：printHello();。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义函数 maxOf，接收两个 int 参数，返回较大的那个。在 main 中调用两次 maxOf，分别传入不同的参数并输出结果。",
+        "hint": "用 if-else 比较两个参数，返回较大的值",
+        "expectedIdea": "int maxOf(int a, int b) {\n    if (a > b) return a;\n    else return b;\n}"
+      },
+      "quiz": [
+        {
+          "question": "函数调用时，程序会怎样执行？",
+          "options": [
+            "跳过函数体，直接执行下一行",
+            "跳转到函数定义处执行，完毕后返回调用处继续",
+            "复制函数体代码到调用处",
+            "重新编译整个程序"
+          ],
+          "answerIndex": 1,
+          "explanation": "函数调用时，程序会暂停当前位置，跳转到函数体执行，执行完毕后再返回调用处的下一行继续执行。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.4",
+      "title": "参数",
+      "learningGoal": "理解函数参数的概念，学会定义带参数的函数",
+      "explanation": "参数是函数接收外部数据的途径。通过参数，函数可以处理不同的输入，产生不同的结果。\n\n定义函数时，参数列表写在圆括号里，每个参数都要指定类型和名称，多个参数用逗号隔开。\n\n参数让函数变得更通用。比如一个求和函数 add(int a, int b) 可以计算任意两个整数的和，而不只是固定的两个数。\n\n参数的类型决定了函数能接收什么数据。如果传入的类型不匹配，编译器会尝试隐式转换，可能导致精度丢失或意外结果。\n\n一个函数可以有零个、一个或多个参数。没有参数时圆括号留空即可。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid greet(string name, int age) {\n    cout << \"你好，\" << name << \"！你今年 \" << age << \" 岁。\" << endl;\n}\n\nint main() {\n    greet(\"小明\", 15);\n    greet(\"小红\", 16);\n    return 0;\n}",
+      "codeNotes": [
+        "函数 greet 有两个参数：string name 和 int age",
+        "每个参数都必须指定类型",
+        "多个参数之间用逗号隔开",
+        "调用时按顺序传入对应的值"
+      ],
+      "commonMistakes": [
+        {
+          "title": "参数类型不匹配",
+          "description": "greet(15, \"小明\") ← 参数顺序反了，int 和 string 不匹配。",
+          "fix": "按定义的顺序传入参数：greet(\"小明\", 15)。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义函数 printInfo，接收一个 string 参数 name 和一个 int 参数 score，输出「姓名：XX，成绩：XX」。",
+        "hint": "void printInfo(string name, int score)，用 cout 输出",
+        "expectedIdea": "void printInfo(string name, int score) {\n    cout << \"姓名：\" << name << \"，成绩：\" << score << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "定义函数时，多个参数之间用什么分隔？",
+          "options": [
+            "空格",
+            "分号",
+            "逗号",
+            "冒号"
+          ],
+          "answerIndex": 2,
+          "explanation": "多个参数之间用逗号分隔，例如 void f(int a, int b)。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.5",
+      "title": "返回值",
+      "learningGoal": "理解函数返回值的概念，学会使用 return 语句返回结果",
+      "explanation": "返回值是函数执行完毕后交给调用者的结果。通过 return 语句将一个值返回给调用处。\n\nreturn 语句会立即结束函数的执行，return 后面的代码不会被执行。一个函数中可以有多个 return，但每次调用只会执行其中一个。\n\n返回值的类型必须和函数定义时声明的返回类型一致，或者能自动转换。例如声明返回 int，就不能 return \"hello\"。\n\n调用者可以拿到返回值后继续使用，比如赋值给变量、参与运算或直接输出。\n\n如果函数声明了非 void 的返回类型，函数体中必须至少有一条可执行的 return 语句，否则可能导致未定义行为。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint absValue(int n) {\n    if (n < 0) {\n        return -n;\n    }\n    return n;\n}\n\nint main() {\n    cout << absValue(-7) << endl;\n    cout << absValue(3) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "return 语句将结果返回给调用者",
+        "return 会立即结束函数执行",
+        "返回值的类型要和函数声明一致",
+        "一个函数可以有多个 return 语句"
+      ],
+      "commonMistakes": [
+        {
+          "title": "返回类型不匹配",
+          "description": "函数声明返回 int，但 return \"abc\"; 返回了字符串。",
+          "fix": "返回值的类型必须和函数声明的返回类型一致或兼容。"
+        },
+        {
+          "title": "return 后还有代码",
+          "description": "return n; cout << n; ← return 后的 cout 永远不会执行。",
+          "fix": "return 应该放在函数体的最后，或者放在条件分支中。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义函数 isPositive，接收一个 int 参数，如果是正数返回 1，否则返回 0。在 main 中测试两个值。",
+        "hint": "用 if-else 判断，分别 return 1 和 return 0",
+        "expectedIdea": "int isPositive(int n) {\n    if (n > 0) return 1;\n    else return 0;\n}"
+      },
+      "quiz": [
+        {
+          "question": "函数执行到 return 语句后会怎样？",
+          "options": [
+            "继续执行 return 后面的代码",
+            "跳过 return，执行下一条语句",
+            "立即结束函数，返回调用处",
+            "暂停函数，等待用户输入"
+          ],
+          "answerIndex": 2,
+          "explanation": "return 语句会立即结束函数执行，将返回值交给调用者，程序回到调用处继续执行。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.6",
+      "title": "无返回值函数",
+      "learningGoal": "掌握 void 函数的用法，理解不需要返回值的函数场景",
+      "explanation": "如果一个函数不需要返回任何结果，就把返回类型写成 void。void 表示「空」，说明函数执行完不返回数据。\n\nvoid 函数通常用于执行某种操作，比如输出信息、修改全局变量等。它只做事情，不回答问题。\n\nvoid 函数中可以使用 return; 语句提前结束函数，但 return 后面不能跟任何值。\n\n调用 void 函数时不能把结果赋值给变量，因为它没有返回值。直接写函数调用语句即可。\n\nvoid 函数和有返回值的函数本质一样，只是不需要 return 一个数据。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid printLine(int n) {\n    for (int i = 0; i < n; i++) {\n        cout << \"-\";\n    }\n    cout << endl;\n}\n\nint main() {\n    printLine(10);\n    cout << \"标题\" << endl;\n    printLine(10);\n    return 0;\n}",
+      "codeNotes": [
+        "void 表示函数不返回任何值",
+        "void 函数中可以用 return; 提前退出",
+        "调用 void 函数不需要赋值",
+        "void 函数适合做输出、打印等操作"
+      ],
+      "commonMistakes": [
+        {
+          "title": "void 函数中 return 了值",
+          "description": "void f() { return 5; } ← void 函数不能返回值。",
+          "fix": "要么把返回类型改成 int，要么去掉 return 后面的值。"
+        },
+        {
+          "title": "把 void 函数当有返回值用",
+          "description": "int x = printLine(10); ← printLine 是 void，没有返回值。",
+          "fix": "void 函数直接调用：printLine(10);。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 void 函数 printTriangle(int n)，输出 n 行由星号组成的三角形。第一行 1 个 *，第二行 2 个 *，以此类推。",
+        "hint": "用嵌套循环，外层控制行数，内层控制每行星号数",
+        "expectedIdea": "void printTriangle(int n) {\n    for (int i = 1; i <= n; i++) {\n        for (int j = 0; j < i; j++) {\n            cout << \"*\";\n        }\n        cout << endl;\n    }\n}"
+      },
+      "quiz": [
+        {
+          "question": "void 函数中可以使用 return 语句吗？",
+          "options": [
+            "不可以，void 函数不能有 return",
+            "可以，但 return 后面不能跟任何值",
+            "可以，return 后面必须跟 0",
+            "可以，return 后面必须跟 null"
+          ],
+          "answerIndex": 1,
+          "explanation": "void 函数中可以用 return; 提前结束函数，但 return 后面不能跟任何值。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.7",
+      "title": "形参与实参",
+      "learningGoal": "区分形参和实参的概念，理解它们在函数调用中的角色",
+      "explanation": "形参（形式参数）是函数定义中声明的参数变量，它只是一个占位符，用来表示函数需要接收什么数据。\n\n实参（实际参数）是调用函数时实际传入的值，它是真正的数据，会赋值给对应的形参。\n\n比如定义 int add(int a, int b)，这里的 a 和 b 是形参。调用 add(3, 5) 时，3 和 5 是实参。调用发生时，a 得到 3，b 得到 5。\n\n形参和实参的名称可以不同。形参只在函数体内部有效，函数执行完毕后形参就不存在了。\n\n实参可以是常量、变量或表达式，只要类型匹配即可。形参在函数调用时被创建，函数结束时被销毁。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint doubleIt(int x) {\n    return x * 2;\n}\n\nint main() {\n    int num = 7;\n    cout << doubleIt(num) << endl;\n    cout << doubleIt(10) << endl;\n    cout << doubleIt(num + 3) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int x 是形参，定义时使用的占位变量",
+        "num、10、num+3 都是实参，调用时传入的实际数据",
+        "形参 x 只在 doubleIt 函数体内有效",
+        "实参可以是变量、常量或表达式"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆形参和实参",
+          "description": "认为函数定义中的参数就是实参。",
+          "fix": "定义中的参数是形参（占位符），调用时传入的值才是实参。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义函数 int power(int base, int exp)，返回 base 的 exp 次方（exp 为非负整数）。在 main 中用变量和常量分别作为实参调用。",
+        "hint": "用循环累乘：result *= base",
+        "expectedIdea": "int power(int base, int exp) {\n    int result = 1;\n    for (int i = 0; i < exp; i++) {\n        result *= base;\n    }\n    return result;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下代码中，哪个是实参？ int add(int a, int b) { return a+b; } int x = add(3, 5);",
+          "options": [
+            "a 和 b",
+            "3 和 5",
+            "x",
+            "add"
+          ],
+          "answerIndex": 1,
+          "explanation": "a 和 b 是形参（定义中的占位符），3 和 5 是实参（调用时传入的实际值）。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.8",
+      "title": "值传递",
+      "learningGoal": "理解值传递的机制，知道函数内修改形参不影响实参",
+      "explanation": "值传递是最基本的参数传递方式。调用函数时，实参的值被复制一份赋给形参，函数内部操作的是这个副本。\n\n因为形参是实参的拷贝，所以在函数内部修改形参的值，不会影响到外面的实参。\n\n值传递的好处是安全——函数不会意外修改调用者的数据。缺点是复制大数据时可能影响效率。\n\n理解值传递的关键是：形参和实参是两个独立的变量，它们只是初始值相同而已。\n\n对于基本类型（int、double、char 等），值传递是默认方式。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid tryChange(int x) {\n    x = 100;\n    cout << \"函数内 x = \" << x << endl;\n}\n\nint main() {\n    int num = 5;\n    tryChange(num);\n    cout << \"函数外 num = \" << num << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "tryChange 函数内修改了 x，但 x 只是 num 的副本",
+        "函数执行完毕后，num 的值仍然是 5",
+        "值传递时，形参是实参的拷贝，互不影响",
+        "基本类型默认使用值传递"
+      ],
+      "commonMistakes": [
+        {
+          "title": "以为函数内修改会影响外部",
+          "description": "在函数内修改了形参 x，以为外面的实参 num 也会变。",
+          "fix": "值传递只复制值，形参和实参是独立的。要想修改外部变量，需要使用引用传递。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个函数 doubleValue，接收一个 int 参数，将参数乘以 2 并输出。在 main 中定义变量 n = 10，调用 doubleValue(n) 后输出 n 的值，观察 n 是否改变。",
+        "hint": "值传递不会修改原始变量",
+        "expectedIdea": "void doubleValue(int x) {\n    x = x * 2;\n    cout << \"函数内：\" << x << endl;\n}\n// main 中调用后 n 仍然是 10"
+      },
+      "quiz": [
+        {
+          "question": "值传递时，函数内部修改形参会怎样？",
+          "options": [
+            "实参也会被修改",
+            "实参不会被修改",
+            "编译报错",
+            "运行时崩溃"
+          ],
+          "answerIndex": 1,
+          "explanation": "值传递时形参是实参的副本，修改形参不会影响实参的值。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.9",
+      "title": "引用传递",
+      "learningGoal": "理解引用传递的机制，学会通过引用在函数内修改外部变量",
+      "explanation": "引用传递是指在函数参数中使用引用（&），让形参成为实参的别名，而不是副本。\n\n使用引用传递时，形参和实参指向同一块内存。在函数内修改形参，就等于修改实参本身。\n\n引用传递的写法是在参数类型后加 &，例如 void swap(int &a, int &b)。\n\n引用传递常用于：需要在函数内修改外部变量的场景，或者传递大型数据以避免复制的开销。\n\n要注意区分：值传递是复制，引用传递是别名。形参加了 & 就是引用传递，不加就是值传递。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nvoid swap(int &a, int &b) {\n    int temp = a;\n    a = b;\n    b = temp;\n}\n\nint main() {\n    int x = 3, y = 7;\n    cout << \"交换前：x=\" << x << \" y=\" << y << endl;\n    swap(x, y);\n    cout << \"交换后：x=\" << x << \" y=\" << y << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int &a 表示 a 是引用，是实参的别名",
+        "修改 a 等同于修改实参 x",
+        "swap 函数通过引用成功交换了两个变量的值",
+        "引用传递避免了数据复制"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记加 &",
+          "description": "void swap(int a, int b) ← 值传递，函数内交换不会影响外部。",
+          "fix": "加上 &：void swap(int &a, int &b)，变为引用传递。"
+        },
+        {
+          "title": "对常量使用引用传递",
+          "description": "swap(3, 5) ← 3 和 5 是常量，不能作为引用的实参。",
+          "fix": "引用传递的实参必须是变量，不能是常量或表达式。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个函数 addTen，通过引用传递接收一个 int 参数，将它的值增加 10。在 main 中测试。",
+        "hint": "void addTen(int &n) { n += 10; }",
+        "expectedIdea": "void addTen(int &n) {\n    n += 10;\n}\n// main 中 int a = 5; addTen(a); 则 a 变为 15"
+      },
+      "quiz": [
+        {
+          "question": "void f(int &x) { x = 10; } int a = 5; f(a); 调用后 a 的值是？",
+          "options": [
+            "5",
+            "10",
+            "0",
+            "不确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "参数使用了引用传递（int &x），x 是 a 的别名，修改 x 等于修改 a，所以 a 变为 10。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.10",
+      "title": "递归函数",
+      "learningGoal": "理解递归的概念，学会编写简单的递归函数",
+      "explanation": "递归是指函数在自己的函数体内调用自身。递归可以把复杂问题分解成更小的同类问题。\n\n递归函数必须有两个要素：递归条件（什么时候继续调用自己）和终止条件（什么时候停止）。如果没有终止条件，递归会无限进行，导致栈溢出。\n\n经典的递归例子是阶乘：n! = n × (n-1)!，而 0! = 1。这里 n × (n-1)! 是递归条件，0! = 1 是终止条件。\n\n递归的执行过程像俄罗斯套娃：一层层调用进去，遇到终止条件后再一层层返回结果。\n\n初学者常犯的错误是忘记写终止条件，或者终止条件永远无法到达，导致无限递归。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint factorial(int n) {\n    if (n <= 1) {\n        return 1;\n    }\n    return n * factorial(n - 1);\n}\n\nint main() {\n    cout << \"5! = \" << factorial(5) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "factorial 函数在内部调用了自身，这就是递归",
+        "if (n <= 1) return 1; 是终止条件，防止无限递归",
+        "每次递归调用时 n 减 1，最终会到达终止条件",
+        "factorial(5) = 5 * 4 * 3 * 2 * 1 = 120"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记终止条件",
+          "description": "int f(int n) { return n * f(n-1); } ← 没有 if 判断，永远递归下去。",
+          "fix": "必须添加终止条件：if (n <= 1) return 1;。"
+        },
+        {
+          "title": "终止条件永远无法到达",
+          "description": "递减的 n 用了 n+1 而不是 n-1，导致越来越远离终止条件。",
+          "fix": "确保每次递归调用都在向终止条件靠近。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个递归函数 sumToN，计算 1+2+...+n 的和。终止条件是 n == 1 时返回 1。",
+        "hint": "sumToN(n) = n + sumToN(n-1)，终止条件 return 1",
+        "expectedIdea": "int sumToN(int n) {\n    if (n == 1) return 1;\n    return n + sumToN(n - 1);\n}"
+      },
+      "quiz": [
+        {
+          "question": "递归函数必须具备什么？",
+          "options": [
+            "至少两个参数",
+            "返回类型必须是 int",
+            "终止条件和递归条件",
+            "必须使用 for 循环"
+          ],
+          "answerIndex": 2,
+          "explanation": "递归函数必须有终止条件（何时停止递归）和递归条件（何时继续调用自身），否则会无限递归。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.11",
+      "title": "指针基础",
+      "learningGoal": "理解指针的概念，学会声明和使用指针变量",
+      "explanation": "指针是一种特殊的变量，它存储的不是普通数据，而是另一个变量的内存地址。\n\n可以把指针想象成一个指向某个变量的箭头。通过指针，我们可以间接地访问和修改那个变量的值。\n\n声明指针时，在类型后面加 * 号。例如 int *p; 声明了一个指向 int 类型变量的指针 p。\n\n指针本身也是一个变量，占用内存空间，里面存的是一个地址值。在 64 位系统上，指针通常占 8 个字节。\n\n指针是 C++ 的核心特性之一，理解指针对后续学习数组、动态内存管理等非常重要。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int num = 42;\n    int *p = &num;\n    cout << \"num 的值：\" << num << endl;\n    cout << \"num 的地址：\" << &num << endl;\n    cout << \"p 存储的地址：\" << p << endl;\n    cout << \"p 指向的值：\" << *p << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int *p 声明了一个指向 int 的指针变量",
+        "&num 取得 num 的地址，赋值给指针 p",
+        "p 存储的是地址，*p 可以访问该地址上的值",
+        "&num 和 p 的值相同，都指向 num"
+      ],
+      "commonMistakes": [
+        {
+          "title": "指针未初始化就使用",
+          "description": "int *p; cout << *p; ← p 没有指向任何变量，解引用是未定义行为。",
+          "fix": "声明指针时应该立即初始化：int *p = &num;。"
+        },
+        {
+          "title": "混淆指针类型",
+          "description": "double d = 3.14; int *p = &d; ← int 指针不能指向 double 变量。",
+          "fix": "指针类型必须和指向的变量类型一致：double *p = &d;。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个 double 变量 pi = 3.14，声明一个指向它的指针，通过指针输出 pi 的值和地址。",
+        "hint": "double *p = π 用 *p 访问值，p 输出地址",
+        "expectedIdea": "double pi = 3.14;\ndouble *p = &pi;\ncout << *p << endl;\ncout << p << endl;"
+      },
+      "quiz": [
+        {
+          "question": "指针变量存储的是什么？",
+          "options": [
+            "一个整数",
+            "一个字符",
+            "另一个变量的内存地址",
+            "另一个变量的值"
+          ],
+          "answerIndex": 2,
+          "explanation": "指针变量存储的是内存地址，通过这个地址可以间接访问对应的变量。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.12",
+      "title": "地址运算符",
+      "learningGoal": "掌握取地址运算符 & 的用法，理解如何获取变量的地址",
+      "explanation": "地址运算符 & 用于获取变量在内存中的地址。把它放在变量名前面，就可以得到该变量的地址值。\n\n例如 &num 表示变量 num 的内存地址。这个地址可以赋值给一个指针变量。\n\n注意这里的 & 和引用中的 & 虽然符号相同，但含义不同。在声明中 int &r = num; 是引用，在表达式中 &num 是取地址。\n\n地址值通常以十六进制形式显示，比如 0x7ffe1234。每次运行程序，地址可能不同。\n\n取地址操作只能用于有内存位置的对象，不能对常量或表达式取地址。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    int b = 20;\n    cout << \"a 的值：\" << a << endl;\n    cout << \"a 的地址：\" << &a << endl;\n    cout << \"b 的值：\" << b << endl;\n    cout << \"b 的地址：\" << &b << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "&a 获取变量 a 的内存地址",
+        "地址通常以十六进制显示",
+        "每个变量都有不同的内存地址",
+        "地址可以赋给指针变量存储"
+      ],
+      "commonMistakes": [
+        {
+          "title": "对常量取地址",
+          "description": "&10 或 &(a + b) ← 不能对常量或表达式取地址。",
+          "fix": "只能对有名字的变量取地址：&a、&b。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明三个不同类型的变量（int、double、char），分别输出它们的值和地址。",
+        "hint": "用 & 取地址，用 cout 输出",
+        "expectedIdea": "int a = 1;\ndouble b = 2.5;\nchar c = 'X';\ncout << &a << endl;\ncout << &b << endl;\ncout << (void*)&c << endl;"
+      },
+      "quiz": [
+        {
+          "question": "& 在以下哪种情况中表示取地址？",
+          "options": [
+            "int &r = num;",
+            "cout << &num;",
+            "int a & b;",
+            "return &;"
+          ],
+          "answerIndex": 1,
+          "explanation": "在表达式中 &num 表示取变量 num 的地址。在声明中 int &r 是引用，含义不同。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.13",
+      "title": "解引用",
+      "learningGoal": "掌握解引用运算符 * 的用法，学会通过指针读写变量的值",
+      "explanation": "解引用运算符 * 用于通过指针访问其指向的变量。在指针变量前加 *，就可以读写该地址上存储的数据。\n\n例如 int *p = &num;，那么 *p 就等于 num，读取 *p 就是读取 num 的值，修改 *p 就是修改 num 的值。\n\n注意 * 在不同位置含义不同：声明中 int *p 表示 p 是指针，表达式中 *p 表示解引用（访问 p 指向的值）。\n\n解引用一个未初始化的指针是危险的，因为它的地址是随机的，可能导致程序崩溃。\n\n通过解引用，指针提供了一种间接修改变量的方式，这在很多场景下非常有用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int num = 10;\n    int *p = &num;\n    cout << \"通过变量访问：\" << num << endl;\n    cout << \"通过指针访问：\" << *p << endl;\n    *p = 99;\n    cout << \"修改后 num = \" << num << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "*p 解引用，访问 p 指向的变量的值",
+        "*p = 99 通过指针修改了 num 的值",
+        "num 和 *p 访问的是同一块内存",
+        "声明中的 * 和解引用的 * 含义不同"
+      ],
+      "commonMistakes": [
+        {
+          "title": "解引用未初始化的指针",
+          "description": "int *p; cout << *p; ← p 没有指向任何有效地址。",
+          "fix": "先让指针指向有效变量：int *p = &num; 然后再解引用。"
+        },
+        {
+          "title": "混淆声明和解引用",
+          "description": "以为 int *p = &num; 中的 * 是解引用。",
+          "fix": "这里的 * 是声明语法，表示 p 是指针。使用时 *p 才是解引用。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明 int x = 5，声明指针 p 指向 x，通过解引用 *p 将 x 的值改为 50，然后输出 x。",
+        "hint": "*p = 50; 可以修改 x 的值",
+        "expectedIdea": "int x = 5;\nint *p = &x;\n*p = 50;\ncout << x << endl;"
+      },
+      "quiz": [
+        {
+          "question": "int x = 10; int *p = &x; *p = 20; 执行后 x 的值是？",
+          "options": [
+            "10",
+            "20",
+            "0",
+            "不确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "*p = 20 通过解引用修改了 p 指向的变量 x 的值，所以 x 变为 20。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.14",
+      "title": "指针与数组关系",
+      "learningGoal": "理解数组名与指针的关系，学会用指针遍历数组",
+      "explanation": "在 C++ 中，数组名本质上是一个指向数组第一个元素的指针。数组名保存的是数组首元素的地址。\n\n例如 int arr[5] = {1,2,3,4,5};，arr 就等于 &arr[0]，都指向第一个元素。\n\n可以通过指针运算来访问数组元素。p+1 指向下一个元素（按类型大小偏移），所以 *(p+1) 等于 arr[1]。\n\n这意味着 arr[i] 和 *(arr + i) 是完全等价的写法。下标运算 [] 其实是指针运算的语法糖。\n\n理解指针和数组的关系，有助于后续学习动态数组、字符串处理等高级主题。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int arr[5] = {10, 20, 30, 40, 50};\n    int *p = arr;\n    for (int i = 0; i < 5; i++) {\n        cout << \"arr[\" << i << \"] = \" << *(p + i) << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "数组名 arr 就是首元素的地址 &arr[0]",
+        "int *p = arr 让指针指向数组开头",
+        "*(p + i) 等价于 arr[i]",
+        "p + i 表示偏移 i 个元素的位置"
+      ],
+      "commonMistakes": [
+        {
+          "title": "指针越界",
+          "description": "*(p + 10) ← 数组只有 5 个元素，访问第 11 个是越界。",
+          "fix": "指针偏移不能超过数组的有效范围 [0, 数组长度-1]。"
+        },
+        {
+          "title": "误解数组名的本质",
+          "description": "以为 int *p = arr 是把整个数组复制给了 p。",
+          "fix": "arr 是首元素地址，p 只是保存了这个地址，并没有复制数组。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义 int arr[4] = {5, 10, 15, 20}，用指针 p 指向 arr，通过指针运算输出每个元素的值和地址。",
+        "hint": "*(p + i) 获取值，(p + i) 获取地址",
+        "expectedIdea": "int arr[4] = {5, 10, 15, 20};\nint *p = arr;\nfor (int i = 0; i < 4; i++) {\n    cout << *(p + i) << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "arr[i] 和以下哪个写法等价？",
+          "options": [
+            "arr + i",
+            "*arr + i",
+            "*(arr + i)",
+            "&arr[i]"
+          ],
+          "answerIndex": 2,
+          "explanation": "arr[i] 和 *(arr + i) 完全等价。下标运算本质上是指针偏移加解引用。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.15",
+      "title": "引用基础",
+      "learningGoal": "理解引用的概念，学会声明和使用引用变量",
+      "explanation": "引用是给已有变量起的别名。声明引用时用 & 符号，它和原变量共享同一块内存。\n\n例如 int a = 10; int &r = a; 这里 r 就是 a 的引用，对 r 的任何操作都等同于对 a 的操作。\n\n引用必须在声明时初始化，之后不能再引用其他变量。引用从生到死只绑定一个变量。\n\n引用和指针不同：引用不是独立的变量，它没有自己的地址，不能重新绑定。指针可以改变指向，引用不行。\n\n引用常用于函数参数传递（引用传递），可以让函数直接操作外部变量，而不用指针的复杂语法。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int num = 42;\n    int &ref = num;\n    cout << \"num = \" << num << endl;\n    cout << \"ref = \" << ref << endl;\n    ref = 100;\n    cout << \"修改后 num = \" << num << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "int &ref = num 声明 ref 为 num 的引用",
+        "ref 和 num 访问的是同一块内存",
+        "修改 ref 就是修改 num",
+        "引用必须在声明时初始化，之后不能更改"
+      ],
+      "commonMistakes": [
+        {
+          "title": "引用未初始化",
+          "description": "int &ref; ← 引用声明时必须初始化。",
+          "fix": "声明引用时必须绑定到一个变量：int &ref = num;。"
+        },
+        {
+          "title": "试图重新绑定引用",
+          "description": "int &ref = a; ref = b; ← 第二行不是让 ref 引用 b，而是把 b 的值赋给了 a。",
+          "fix": "引用一旦初始化就不能改变绑定。ref = b 实际修改的是 a 的值。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明 int x = 10, y = 20。创建 x 的引用 ref，通过 ref 将 x 的值改为 y 的值，然后输出 x 和 y。",
+        "hint": "int &ref = x; ref = y; 会把 y 的值赋给 x",
+        "expectedIdea": "int x = 10, y = 20;\nint &ref = x;\nref = y;\ncout << x << endl;  // 20\ncout << y << endl;  // 20"
+      },
+      "quiz": [
+        {
+          "question": "引用和指针的区别是什么？",
+          "options": [
+            "引用有自己的地址，指针没有",
+            "引用必须初始化，指针不必",
+            "引用可以重新绑定，指针不行",
+            "引用和指针完全一样"
+          ],
+          "answerIndex": 1,
+          "explanation": "引用必须在声明时初始化且不能重新绑定。指针可以不初始化，也可以改变指向。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.7.16",
+      "title": "空指针基础",
+      "learningGoal": "理解空指针的概念，学会使用 nullptr 表示指针不指向任何对象",
+      "explanation": "空指针是一个不指向任何有效内存地址的指针。在 C++ 中，用 nullptr 关键字表示空指针。\n\n声明一个指针但暂时不知道指向哪里时，应该初始化为 nullptr，表示「暂时不指向任何东西」。\n\n解引用空指针是严重错误，会导致程序崩溃。所以在使用指针前，应该先检查它是否为空。\n\n检查空指针的方法：if (p != nullptr) 或者简写 if (p)。如果 p 是空指针，条件为假。\n\n老代码中可能看到 NULL 或 0 表示空指针，但现代 C++ 推荐使用 nullptr，因为它的类型更安全。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int *p = nullptr;\n    cout << \"p 是否为空：\" << (p == nullptr) << endl;\n    int num = 42;\n    p = &num;\n    cout << \"赋值后 p 是否为空：\" << (p == nullptr) << endl;\n    cout << \"p 指向的值：\" << *p << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "nullptr 表示空指针，不指向任何地址",
+        "使用指针前应检查是否为空",
+        "p == nullptr 为 true 说明 p 是空指针",
+        "解引用空指针会导致程序崩溃"
+      ],
+      "commonMistakes": [
+        {
+          "title": "解引用空指针",
+          "description": "int *p = nullptr; cout << *p; ← 解引用空指针，程序崩溃。",
+          "fix": "使用前检查：if (p != nullptr) { cout << *p; }。"
+        },
+        {
+          "title": "指针未初始化也不赋 nullptr",
+          "description": "int *p; ← 野指针，包含随机地址，无法判断是否有效。",
+          "fix": "如果暂时不指向任何变量，应初始化为 nullptr：int *p = nullptr;。"
+        }
+      ],
+      "practice": {
+        "prompt": "声明一个指针 p 并初始化为 nullptr。检查 p 是否为空，输出「空指针」。然后将 p 赋值为一个 int 变量的地址，再次检查并输出其值。",
+        "hint": "if (p == nullptr) 判断是否为空",
+        "expectedIdea": "int *p = nullptr;\nif (p == nullptr) {\n    cout << \"空指针\" << endl;\n}\nint x = 100;\np = &x;\nif (p != nullptr) {\n    cout << *p << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个是现代 C++ 推荐的空指针写法？",
+          "options": [
+            "NULL",
+            "0",
+            "nullptr",
+            "void"
+          ],
+          "answerIndex": 2,
+          "explanation": "nullptr 是 C++11 引入的关键字，类型安全，是现代 C++ 推荐的空指针表示方式。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "defaultTopicId": "bfs",
+  "topics": [
+    {
+      "topicId": "bfs",
+      "title": "BFS 专题学习",
+      "subtitle": "一层一层扩展，理解队列和最短路",
+      "lessonSets": [
+        {
+          "lessonSetId": "bfs_basic",
+          "title": "BFS 基础概念",
+          "subtitle": "从零开始理解广度优先搜索",
+          "assetPath": "assets/data/lessons/bfs_basic.json",
+          "order": 1,
+          "pickupGroup": "bfs_basic"
+        },
+        {
+          "lessonSetId": "bfs_maze",
+          "title": "BFS 迷宫应用",
+          "subtitle": "用 BFS 解决迷宫最短路径",
+          "assetPath": "assets/data/lessons/bfs_maze.json",
+          "order": 2,
+          "pickupGroup": "bfs_maze"
+        }
+      ],
+      "quizSets": [
+        {
+          "quizSetId": "bfs_basic",
+          "title": "BFS 基础测试",
+          "assetPath": "assets/data/quizzes/bfs_quiz.json",
+          "totalQuestions": 20,
+          "pickupGroup": "bfs_basic"
+        }
+      ],
+      "mistakeSets": [
+        {
+          "mistakeSetId": "bfs_mistakes",
+          "title": "BFS 常见错误",
+          "assetPath": "assets/data/mistakes/bfs_mistakes.json",
+          "pickupGroup": "bfs_mistakes"
+        }
+      ],
+      "animationScenarios": [
+        {
+          "scenarioId": "bfs_maze_steps",
+          "title": "BFS 迷宫搜索动画",
+          "assetPath": "assets/data/bfs_steps.json",
+          "rows": 5,
+          "cols": 5,
+          "playIntervalMs": 1000,
+          "pickupGroup": "bfs_maze_steps"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "moduleId": "lesson",
+      "title": "BFS 知识讲解",
+      "subtitle": "从零开始理解广度优先搜索",
+      "iconKey": "menu_book",
+      "colorHex": "#4A90D9",
+      "route": "/lesson",
+      "order": 1
+    },
+    {
+      "moduleId": "knowledge",
+      "title": "知识地图",
+      "subtitle": "浏览算法与编程知识路径",
+      "iconKey": "account_tree",
+      "colorHex": "#3498DB",
+      "route": "/knowledge",
+      "order": 2
+    },
+    {
+      "moduleId": "cpp_basic",
+      "title": "C++基础",
+      "subtitle": "按知识图谱循序渐进学习语法",
+      "iconKey": "terminal",
+      "colorHex": "#00897B",
+      "route": "/cpp_basic",
+      "order": 3
+    },
+    {
+      "moduleId": "animation",
+      "title": "BFS 动画演示",
+      "subtitle": "一步步看 BFS 如何搜索",
+      "iconKey": "play_circle",
+      "colorHex": "#50C878",
+      "route": "/animation",
+      "order": 4
+    },
+    {
+      "moduleId": "quiz",
+      "title": "选择题训练",
+      "subtitle": "测试你的 BFS 知识",
+      "iconKey": "quiz",
+      "colorHex": "#FF8C42",
+      "route": "/quiz",
+      "order": 5
+    },
+    {
+      "moduleId": "mistake",
+      "title": "常见错误",
+      "subtitle": "学习别人踩过的坑",
+      "iconKey": "warning",
+      "colorHex": "#E74C3C",
+      "route": "/mistake",
+      "order": 6
+    },
+    {
+      "moduleId": "teacher",
+      "title": "老师演示模式",
+      "subtitle": "课堂投屏专用",
+      "iconKey": "school",
+      "colorHex": "#9B59B6",
+      "route": "/teacher_mode",
+      "order": 7
+    },
+    {
+      "moduleId": "progress",
+      "title": "学习进度",
+      "subtitle": "查看你的学习记录",
+      "iconKey": "bar_chart",
+      "colorHex": "#1ABC9C",
+      "route": "/progress",
+      "order": 8
+    },
+    {
+      "moduleId": "settings",
+      "title": "设置",
+      "subtitle": "字体大小、主题等",
+      "iconKey": "settings",
+      "colorHex": "#95A5A6",
+      "route": "/settings",
+      "order": 9
+    }
+  ]
+}

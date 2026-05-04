@@ -1,120 +1,102 @@
 import 'package:flutter/material.dart';
-import '../app/router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../state/content_manifest_provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
+  static IconData _resolveIcon(String key) {
+    return switch (key) {
+      'menu_book' => Icons.menu_book,
+      'play_circle' => Icons.play_circle_filled,
+      'quiz' => Icons.quiz,
+      'warning' => Icons.warning_amber,
+      'school' => Icons.school,
+      'bar_chart' => Icons.bar_chart,
+      'settings' => Icons.settings,
+      'account_tree' => Icons.account_tree,
+      'terminal' => Icons.terminal,
+      _ => Icons.circle,
+    };
+  }
+
+  static Color _resolveColor(String hex) {
+    final code = hex.replaceFirst('#', '');
+    return Color(int.parse('FF$code', radix: 16));
+  }
+
   @override
-  Widget build(BuildContext context) {
-    final items = [
-      _MenuItem(
-        title: 'BFS 知识讲解',
-        subtitle: '从零开始理解广度优先搜索',
-        icon: Icons.menu_book,
-        color: const Color(0xFF4A90D9),
-        route: AppRouter.lesson,
-      ),
-      _MenuItem(
-        title: 'BFS 动画演示',
-        subtitle: '一步步看 BFS 如何搜索',
-        icon: Icons.play_circle_filled,
-        color: const Color(0xFF50C878),
-        route: AppRouter.animation,
-      ),
-      _MenuItem(
-        title: '选择题训练',
-        subtitle: '测试你的 BFS 知识',
-        icon: Icons.quiz,
-        color: const Color(0xFFFF8C42),
-        route: AppRouter.quiz,
-      ),
-      _MenuItem(
-        title: '常见错误',
-        subtitle: '学习别人踩过的坑',
-        icon: Icons.warning_amber,
-        color: const Color(0xFFE74C3C),
-        route: AppRouter.mistake,
-      ),
-      _MenuItem(
-        title: '老师演示模式',
-        subtitle: '课堂投屏专用',
-        icon: Icons.school,
-        color: const Color(0xFF9B59B6),
-        route: AppRouter.teacherMode,
-      ),
-      _MenuItem(
-        title: '学习进度',
-        subtitle: '查看你的学习记录',
-        icon: Icons.bar_chart,
-        color: const Color(0xFF1ABC9C),
-        route: AppRouter.progress,
-      ),
-      _MenuItem(
-        title: '设置',
-        subtitle: '字体大小、主题等',
-        icon: Icons.settings,
-        color: const Color(0xFF95A5A6),
-        route: AppRouter.settings,
-      ),
-    ];
+  Widget build(BuildContext context, WidgetRef ref) {
+    final manifestAsync = ref.watch(contentManifestProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('BFS 专题学习')),
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
-              child: const Text(
-                '一层一层扩展，理解队列和最短路',
-                style: TextStyle(fontSize: 15, color: Color(0xFF666666)),
-              ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                padding: const EdgeInsets.only(bottom: 24),
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  final item = items[index];
-                  return _MenuCard(item: item);
-                },
-              ),
-            ),
-          ],
+        child: manifestAsync.when(
+          data: (manifest) {
+            final modules = List.of(manifest.modules)
+              ..sort((a, b) => a.order.compareTo(b.order));
+            return Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+                  child: Text(
+                    manifest.defaultTopic.subtitle,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: Color(0xFF666666),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.only(bottom: 24),
+                    itemCount: modules.length,
+                    itemBuilder: (context, index) {
+                      final m = modules[index];
+                      return _MenuCard(
+                        title: m.title,
+                        subtitle: m.subtitle,
+                        icon: _resolveIcon(m.iconKey),
+                        color: _resolveColor(m.colorHex),
+                        route: m.route,
+                      );
+                    },
+                  ),
+                ),
+              ],
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text('加载失败: $e')),
         ),
       ),
     );
   }
 }
 
-class _MenuItem {
+class _MenuCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData icon;
   final Color color;
   final String route;
 
-  const _MenuItem({
+  const _MenuCard({
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.color,
     required this.route,
   });
-}
-
-class _MenuCard extends StatelessWidget {
-  final _MenuItem item;
-
-  const _MenuCard({required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, item.route);
+          Navigator.pushNamed(context, route);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -125,10 +107,10 @@ class _MenuCard extends StatelessWidget {
                 width: 52,
                 height: 52,
                 decoration: BoxDecoration(
-                  color: item.color.withValues(alpha: 0.15),
+                  color: color.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: Icon(item.icon, color: item.color, size: 28),
+                child: Icon(icon, color: color, size: 28),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -136,7 +118,7 @@ class _MenuCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      item.title,
+                      title,
                       style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
@@ -144,7 +126,7 @@ class _MenuCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      item.subtitle,
+                      subtitle,
                       style: const TextStyle(
                         fontSize: 13,
                         color: Color(0xFF888888),

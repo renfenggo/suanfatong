@@ -1,7 +1,7 @@
 name: bfs_learn
 description: 信奥 BFS 专题离线学习 App
 publish_to: 'none'
-version: 5.4.2+542
+version: 5.4.333+54333
 
 environment:
   sdk: ^3.7.0

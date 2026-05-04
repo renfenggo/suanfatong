@@ -280,8 +280,7 @@ void main() {
               )
               .cast<File>()
               .toList();
-      final manifestPaths =
-          manifest.animations.map((m) => m.assetPath).toSet();
+      final manifestPaths = manifest.animations.map((m) => m.assetPath).toSet();
       for (final file in jsonFiles) {
         final path = file.path.replaceAll(r'\', '/');
         if (path.endsWith('cpp_animation_manifest.json')) continue;
@@ -332,34 +331,35 @@ void main() {
       }
     });
 
-    test('at least one step has state with variables or containers or output',
-        () async {
-      for (final meta in manifest.animations) {
-        final file = File(meta.assetPath);
-        final map =
-            jsonDecode(await file.readAsString()) as Map<String, dynamic>;
-        final animation = CppAnimation.fromJson(map);
-        final hasAnyState = animation.steps.any(
-          (s) =>
-              s.state.variables.isNotEmpty ||
-              s.state.containers.isNotEmpty ||
-              s.state.output.isNotEmpty,
-        );
-        expect(
-          hasAnyState,
-          isTrue,
-          reason:
-              '${meta.animationId} has no step with any state content at all',
-        );
-      }
-    });
+    test(
+      'at least one step has state with variables or containers or output',
+      () async {
+        for (final meta in manifest.animations) {
+          final file = File(meta.assetPath);
+          final map =
+              jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+          final animation = CppAnimation.fromJson(map);
+          final hasAnyState = animation.steps.any(
+            (s) =>
+                s.state.variables.isNotEmpty ||
+                s.state.containers.isNotEmpty ||
+                s.state.output.isNotEmpty,
+          );
+          expect(
+            hasAnyState,
+            isTrue,
+            reason:
+                '${meta.animationId} has no step with any state content at all',
+          );
+        }
+      },
+    );
 
     test('per-section animation count summary for C++ 1.1-1.10', () async {
       final sectionCounts = <String, int>{};
       for (final meta in manifest.animations) {
         final sectionId = meta.itemId.split('.').take(2).join('.');
-        sectionCounts[sectionId] =
-            (sectionCounts[sectionId] ?? 0) + 1;
+        sectionCounts[sectionId] = (sectionCounts[sectionId] ?? 0) + 1;
       }
 
       final cppSections = <String>{};

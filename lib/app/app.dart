@@ -13,7 +13,7 @@ class BfsApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeProvider);
     final locale = ref.watch(localeProvider);
     return MaterialApp(
-      title: 'BFS 专题学习',
+      title: '算法通',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,

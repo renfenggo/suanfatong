@@ -20,6 +20,7 @@ class CppSearchResult {
   final String sectionId;
   final String sectionName;
   final bool hasUnit;
+  final bool isCppItem;
   final String summary;
   final int score;
   final Set<CppSearchSource> sources;
@@ -30,6 +31,7 @@ class CppSearchResult {
     required this.sectionId,
     required this.sectionName,
     required this.hasUnit,
+    required this.isCppItem,
     required this.summary,
     required this.score,
     required this.sources,
@@ -138,10 +140,49 @@ List<CppSearchResult> searchCppUnits(
           sectionId: section.id,
           sectionName: section.name,
           hasUnit: unit != null,
+          isCppItem: true,
           summary: summary,
           score: score,
           sources: sources,
         );
+      }
+    }
+  }
+
+  for (final category in graph.categories) {
+    if (category.name == 'C++语法') continue;
+
+    for (final section in category.sections) {
+      for (final item in section.items) {
+        int score = 0;
+        final sources = <CppSearchSource>{};
+
+        if (item.name.toLowerCase().contains(q)) {
+          score += 10;
+          sources.add(CppSearchSource.name);
+        }
+
+        for (final a in item.alias) {
+          if (a.toLowerCase().contains(q)) {
+            score += 9;
+            sources.add(CppSearchSource.alias);
+            break;
+          }
+        }
+
+        if (score > 0 && !results.containsKey(item.id)) {
+          results[item.id] = CppSearchResult(
+            itemId: item.id,
+            itemName: item.name,
+            sectionId: section.id,
+            sectionName: '${category.name} / ${section.name}',
+            hasUnit: false,
+            isCppItem: false,
+            summary: '',
+            score: score,
+            sources: sources,
+          );
+        }
       }
     }
   }
@@ -159,4 +200,6 @@ const kCppSearchSuggestions = [
   '数组越界',
   'priority_queue',
   '= 与 ==',
+  'BFS',
+  '队列',
 ];

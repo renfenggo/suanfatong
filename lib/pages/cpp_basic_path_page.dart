@@ -126,7 +126,8 @@ class _CppBasicPathPageState extends ConsumerState<CppBasicPathPage> {
     final completedIds = ref.watch(cppProgressProvider);
     final quizProgress = ref.watch(cppQuizProgressProvider);
     final animManifestAsync = ref.watch(cppAnimationManifestProvider);
-    final animationItemIds = animManifestAsync.whenOrNull<Set<String>>(
+    final animationItemIds =
+        animManifestAsync.whenOrNull<Set<String>>(
           data: (m) => m.animations.map((a) => a.itemId).toSet(),
         ) ??
         <String>{};

@@ -27,7 +27,7 @@ class _CppSearchPageState extends ConsumerState<CppSearchPage> {
     final contentAsync = ref.watch(cppLearningContentProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('搜索 C++ 知识点')),
+      appBar: AppBar(title: const Text('搜索知识点')),
       body: SafeArea(
         child: Column(
           children: [
@@ -198,11 +198,19 @@ class _SearchResultCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/cpp_learning_unit',
-            arguments: result.itemId,
-          );
+          if (result.isCppItem) {
+            Navigator.pushNamed(
+              context,
+              '/cpp_learning_unit',
+              arguments: result.itemId,
+            );
+          } else {
+            Navigator.pushNamed(
+              context,
+              '/knowledge/item',
+              arguments: result.itemId,
+            );
+          }
         },
         borderRadius: BorderRadius.circular(12),
         child: Padding(

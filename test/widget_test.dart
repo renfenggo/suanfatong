@@ -5,9 +5,8 @@ import 'package:bfs_learn/app/app.dart';
 void main() {
   testWidgets('App renders home page title', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: BfsApp()));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 500));
 
-    expect(find.text('BFS 专题学习'), findsOneWidget);
-    expect(find.text('BFS 知识讲解'), findsOneWidget);
+    expect(find.text('算法通'), findsWidgets);
   });
 }

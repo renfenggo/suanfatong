@@ -652,4 +652,147 @@ void main() {
       expect(updated.totalQuizAttempts, 5);
     });
   });
+
+  group('Progress lastKnowledgeItemId field', () {
+    test('default value is empty string', () {
+      const progress = Progress();
+      expect(progress.lastKnowledgeItemId, '');
+    });
+
+    test('constructor accepts custom value', () {
+      final progress = Progress(lastKnowledgeItemId: 'bfs_basic_1');
+      expect(progress.lastKnowledgeItemId, 'bfs_basic_1');
+    });
+
+    test('toJson includes lastKnowledgeItemId', () {
+      final progress = Progress(
+        completedLessons: {'l1'},
+        lastKnowledgeItemId: 'cpp_1.1.1',
+      );
+      final json = progress.toJson();
+      expect(json['lastKnowledgeItemId'], 'cpp_1.1.1');
+      expect(json['completedLessons'], ['l1']);
+    });
+
+    test('fromJson restores lastKnowledgeItemId', () {
+      final json = {
+        'completedLessons': ['l1'],
+        'lastKnowledgeItemId': 'bfs_maze_2',
+      };
+      final progress = Progress.fromJson(json);
+      expect(progress.lastKnowledgeItemId, 'bfs_maze_2');
+      expect(progress.completedLessons, contains('l1'));
+    });
+
+    test('fromJson with missing lastKnowledgeItemId defaults to empty', () {
+      final json = {'completedLessons': ['l1']};
+      final progress = Progress.fromJson(json);
+      expect(progress.lastKnowledgeItemId, '');
+      expect(progress.completedLessons, contains('l1'));
+    });
+
+    test('fromJson with null lastKnowledgeItemId defaults to empty', () {
+      final json = {
+        'completedLessons': ['l1'],
+        'lastKnowledgeItemId': null,
+      };
+      final progress = Progress.fromJson(json);
+      expect(progress.lastKnowledgeItemId, '');
+    });
+
+    test('copyWith updates lastKnowledgeItemId', () {
+      const progress = Progress(lastKnowledgeItemId: 'old_id');
+      final updated = progress.copyWith(lastKnowledgeItemId: 'new_id');
+      expect(updated.lastKnowledgeItemId, 'new_id');
+      expect(progress.lastKnowledgeItemId, 'old_id');
+    });
+
+    test('copyWith without lastKnowledgeItemId preserves original', () {
+      const progress = Progress(lastKnowledgeItemId: 'original');
+      final updated = progress.copyWith(completedLessons: {'l1'});
+      expect(updated.lastKnowledgeItemId, 'original');
+      expect(updated.completedLessons, contains('l1'));
+    });
+
+    test('toJson/fromJson round-trip preserves all fields including lastKnowledgeItemId', () {
+      final original = Progress(
+        completedLessons: {'lesson1'},
+        completedQuizzes: {'quiz1'},
+        quizScores: {'topic': 90},
+        totalQuizAttempts: 5,
+        answerRecords: {'q1': 1},
+        answerHistory: [
+          AnswerRecord(
+            topic: 'bfs',
+            quizId: 'q1',
+            selectedIndex: 0,
+            correct: true,
+            date: '2026-05-04 10:00',
+          ),
+        ],
+        completedCppItems: {'cpp_var'},
+        cppQuizScores: {'1.1': 80},
+        cppQuizAttempts: {'1.1': 3},
+        cppWrongQuizIds: {'1.1|q1|0'},
+        lastKnowledgeItemId: 'knowledge_point_123',
+      );
+      
+      final json = original.toJson();
+      final restored = Progress.fromJson(json);
+      
+      expect(restored.completedLessons, contains('lesson1'));
+      expect(restored.completedQuizzes, contains('quiz1'));
+      expect(restored.quizScores['topic'], 90);
+      expect(restored.totalQuizAttempts, 5);
+      expect(restored.answerRecords['q1'], 1);
+      expect(restored.answerHistory.length, 1);
+      expect(restored.answerHistory[0].topic, 'bfs');
+      expect(restored.completedCppItems, contains('cpp_var'));
+      expect(restored.cppQuizScores['1.1'], 80);
+      expect(restored.cppQuizAttempts['1.1'], 3);
+      expect(restored.cppWrongQuizIds, contains('1.1|q1|0'));
+      expect(restored.lastKnowledgeItemId, 'knowledge_point_123');
+    });
+
+    test('old data compatibility - fromJson without lastKnowledgeItemId works', () {
+      final oldJsonStr = '''
+      {
+        "completedLessons": ["l1", "l2"],
+        "completedQuizzes": ["q1"],
+        "quizScores": {"bfs": 18},
+        "totalQuizAttempts": 3,
+        "answerRecords": {"q1": 0}
+      }
+      ''';
+      final oldJson = json.decode(oldJsonStr) as Map<String, dynamic>;
+      final progress = Progress.fromJson(oldJson);
+      
+      expect(progress.completedLessons, containsAll(['l1', 'l2']));
+      expect(progress.completedQuizzes, contains('q1'));
+      expect(progress.quizScores['bfs'], 18);
+      expect(progress.totalQuizAttempts, 3);
+      expect(progress.lastKnowledgeItemId, '');
+    });
+
+    test('lastKnowledgeItemId does not affect other fields', () {
+      final progress = Progress(
+        completedLessons: {'l1'},
+        lastKnowledgeItemId: 'test_id',
+      );
+      final json = progress.toJson();
+      final restored = Progress.fromJson(json);
+      
+      expect(restored.lastKnowledgeItemId, 'test_id');
+      expect(restored.completedLessons, contains('l1'));
+      expect(restored.completedQuizzes, isEmpty);
+      expect(restored.quizScores, isEmpty);
+    });
+
+    test('empty string lastKnowledgeItemId is valid and persists', () {
+      const progress = Progress(lastKnowledgeItemId: '');
+      final json = progress.toJson();
+      final restored = Progress.fromJson(json);
+      expect(restored.lastKnowledgeItemId, '');
+    });
+  });
 }

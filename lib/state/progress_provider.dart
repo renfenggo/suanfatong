@@ -81,3 +81,31 @@ final cppQuizProgressProvider =
     StateNotifierProvider<CppQuizProgressNotifier, Progress>((ref) {
       return CppQuizProgressNotifier(ref.watch(progressServiceProvider));
     });
+
+class LastKnowledgeItemNotifier extends StateNotifier<String> {
+  final ProgressService _service;
+  Progress? _cached;
+
+  LastKnowledgeItemNotifier(this._service) : super('') {
+    _load();
+  }
+
+  Future<void> _load() async {
+    _cached = await _service.loadProgress();
+    state = _cached!.lastKnowledgeItemId;
+  }
+
+  Future<void> setLastKnowledgeItem(String itemId) async {
+    if (itemId.isEmpty) return;
+    _cached ??= await _service.loadProgress();
+    state = itemId;
+    final updated = _cached!.copyWith(lastKnowledgeItemId: itemId);
+    await _service.saveProgress(updated);
+    _cached = updated;
+  }
+}
+
+final lastKnowledgeItemProvider =
+    StateNotifierProvider<LastKnowledgeItemNotifier, String>((ref) {
+      return LastKnowledgeItemNotifier(ref.watch(progressServiceProvider));
+    });

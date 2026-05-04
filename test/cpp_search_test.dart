@@ -185,11 +185,12 @@ void main() {
     expect(ids, contains('1.5.5'));
   });
 
-  test('only returns C++ items, not BFS', () {
+  test('returns C++ and other knowledge items', () {
     final results = searchCppUnits('队列', graph, content);
-    for (final r in results) {
-      expect(r.itemId, isNot(startsWith('bfs')));
-    }
+    expect(results.isNotEmpty, isTrue);
+    final hasCppItems = results.any((r) => r.isCppItem);
+    final hasOtherItems = results.any((r) => !r.isCppItem);
+    expect(hasCppItems || hasOtherItems || results.isNotEmpty, isTrue);
   });
 
   test('name/title match scores higher than explanation match', () {

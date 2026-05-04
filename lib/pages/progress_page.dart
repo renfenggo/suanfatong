@@ -284,6 +284,10 @@ class ProgressPage extends ConsumerWidget {
     return quizzesAsync.when(
       data: (quizzes) {
         final records = progress.answerRecords;
+        final lastDateMap = <String, String>{};
+        for (final h in progress.answerHistory.reversed) {
+          lastDateMap.putIfAbsent(h.quizId, () => h.date);
+        }
         final correctIds = <String>[];
         final wrongIds = <String>[];
         for (final quiz in quizzes) {
@@ -318,19 +322,21 @@ class ProgressPage extends ConsumerWidget {
                 ),
                 const SizedBox(height: 16),
                 if (wrongIds.isNotEmpty) ...[
-                  _buildDetailSection(
+                  _buildDetailSectionWithDate(
                     '做错的题目',
                     wrongIds,
                     quizzes,
+                    lastDateMap,
                     const Color(0xFFE74C3C),
                   ),
                   const SizedBox(height: 12),
                 ],
                 if (correctIds.isNotEmpty) ...[
-                  _buildDetailSection(
+                  _buildDetailSectionWithDate(
                     '做对的题目',
                     correctIds,
                     quizzes,
+                    lastDateMap,
                     const Color(0xFF4CAF50),
                   ),
                   const SizedBox(height: 12),
@@ -358,10 +364,11 @@ class ProgressPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildDetailSection(
+  Widget _buildDetailSectionWithDate(
     String title,
     List<String> ids,
     List<Quiz> quizzes,
+    Map<String, String> lastDateMap,
     Color color,
   ) {
     final items =
@@ -378,28 +385,45 @@ class ProgressPage extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Wrap(
-          spacing: 6,
-          runSpacing: 6,
-          children:
-              items.map((quiz) {
-                return Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: color.withValues(alpha: 0.3)),
-                  ),
+        ...items.map((quiz) {
+          final date = lastDateMap[quiz.id] ?? '';
+          final question =
+              quiz.question.length > 20
+                  ? '${quiz.question.substring(0, 20)}...'
+                  : quiz.question;
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  color == const Color(0xFFE74C3C)
+                      ? Icons.cancel
+                      : Icons.check_circle,
+                  size: 16,
+                  color: color,
+                ),
+                const SizedBox(width: 6),
+                Expanded(
                   child: Text(
-                    '${quiz.id}. ${quiz.question.length > 15 ? '${quiz.question.substring(0, 15)}...' : quiz.question}',
+                    '${quiz.id}. $question',
                     style: TextStyle(fontSize: 12, color: color),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                );
-              }).toList(),
-        ),
+                ),
+                if (date.isNotEmpty)
+                  Text(
+                    date,
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: color.withValues(alpha: 0.6),
+                    ),
+                  ),
+              ],
+            ),
+          );
+        }),
       ],
     );
   }

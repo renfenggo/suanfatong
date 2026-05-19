@@ -26,14 +26,6 @@ class HomePage extends ConsumerWidget {
                 _SectionLabel(label: '学习入口'),
                 const SizedBox(height: 8),
                 _HomeCard(
-                  title: 'C++ 基础',
-                  subtitle: '按知识图谱循序渐进学习语法',
-                  icon: Icons.terminal,
-                  color: const Color(0xFF00897B),
-                  onTap: () => Navigator.pushNamed(context, '/cpp_basic'),
-                ),
-                const SizedBox(height: 10),
-                _HomeCard(
                   title: '知识地图',
                   subtitle: '浏览所有算法与编程知识点',
                   icon: Icons.account_tree,
@@ -48,9 +40,7 @@ class HomePage extends ConsumerWidget {
                   color: const Color(0xFF8E44AD),
                   onTap: () => Navigator.pushNamed(context, '/cpp_search'),
                 ),
-                const SizedBox(height: 20),
-                _SectionLabel(label: '更多'),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 _HomeCard(
                   title: '学习进度',
                   subtitle: '查看你的学习记录',

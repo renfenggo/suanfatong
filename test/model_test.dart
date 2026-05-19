@@ -435,6 +435,7 @@ void main() {
       const progress = Progress();
       expect(progress.cppQuizScores, isEmpty);
       expect(progress.cppQuizAttempts, isEmpty);
+      expect(progress.cppQuizLastDates, isEmpty);
       expect(progress.cppWrongQuizIds, isEmpty);
     });
 
@@ -443,6 +444,7 @@ void main() {
       final p = Progress.fromJson(json.decode(jsonStr) as Map<String, dynamic>);
       expect(p.cppQuizScores, isEmpty);
       expect(p.cppQuizAttempts, isEmpty);
+      expect(p.cppQuizLastDates, isEmpty);
       expect(p.cppWrongQuizIds, isEmpty);
     });
 
@@ -450,6 +452,7 @@ void main() {
       final progress = Progress(
         cppQuizScores: {'1.1': 80, '1.2': 60},
         cppQuizAttempts: {'1.1': 3, '1.2': 1},
+        cppQuizLastDates: {'1.1': '2026-05-04 10:30'},
         cppWrongQuizIds: {'1.1|1.1.3|0', '1.2|1.2.1|1'},
       );
       final json = progress.toJson();
@@ -458,6 +461,7 @@ void main() {
       expect(restored.cppQuizScores['1.2'], 60);
       expect(restored.cppQuizAttempts['1.1'], 3);
       expect(restored.cppQuizAttempts['1.2'], 1);
+      expect(restored.cppQuizLastDates['1.1'], '2026-05-04 10:30');
       expect(restored.cppWrongQuizIds, contains('1.1|1.1.3|0'));
       expect(restored.cppWrongQuizIds, contains('1.2|1.2.1|1'));
       expect(restored.cppWrongQuizIds.length, 2);
@@ -468,10 +472,12 @@ void main() {
       final updated = progress.copyWith(
         cppQuizScores: {'1.1': 100},
         cppQuizAttempts: {'1.1': 2},
+        cppQuizLastDates: {'1.1': '2026-05-04 11:20'},
         cppWrongQuizIds: {'1.1|1.1.1|0'},
       );
       expect(updated.cppQuizScores['1.1'], 100);
       expect(updated.cppQuizAttempts['1.1'], 2);
+      expect(updated.cppQuizLastDates['1.1'], '2026-05-04 11:20');
       expect(updated.cppWrongQuizIds, contains('1.1|1.1.1|0'));
       expect(progress.cppQuizScores, isEmpty);
     });
@@ -481,12 +487,14 @@ void main() {
         completedLessons: {'l1'},
         completedCppItems: {'cpp_var'},
         cppQuizScores: {'1.1': 80},
+        cppQuizLastDates: {'1.1': '2026-05-04 12:00'},
       );
       final json = progress.toJson();
       final restored = Progress.fromJson(json);
       expect(restored.completedLessons, contains('l1'));
       expect(restored.completedCppItems, contains('cpp_var'));
       expect(restored.cppQuizScores['1.1'], 80);
+      expect(restored.cppQuizLastDates['1.1'], '2026-05-04 12:00');
     });
   });
 
@@ -550,12 +558,18 @@ void main() {
       required int score,
       required Set<String> newWrongIds,
       required Set<String> correctedIds,
+      String date = '2026-05-04 10:00',
     }) {
       final updatedScores = Map<String, int>.from(current.cppQuizScores);
       updatedScores[sectionId] = score;
 
       final updatedAttempts = Map<String, int>.from(current.cppQuizAttempts);
       updatedAttempts[sectionId] = (updatedAttempts[sectionId] ?? 0) + 1;
+
+      final updatedLastDates = Map<String, String>.from(
+        current.cppQuizLastDates,
+      );
+      updatedLastDates[sectionId] = date;
 
       final updatedWrong = Set<String>.from(current.cppWrongQuizIds);
       updatedWrong.addAll(newWrongIds);
@@ -564,6 +578,7 @@ void main() {
       return current.copyWith(
         cppQuizScores: updatedScores,
         cppQuizAttempts: updatedAttempts,
+        cppQuizLastDates: updatedLastDates,
         cppWrongQuizIds: updatedWrong,
       );
     }
@@ -579,6 +594,7 @@ void main() {
       );
       expect(updated.cppQuizScores['1.1'], 67);
       expect(updated.cppQuizAttempts['1.1'], 1);
+      expect(updated.cppQuizLastDates['1.1'], '2026-05-04 10:00');
       expect(updated.cppWrongQuizIds.length, 2);
       expect(updated.cppWrongQuizIds, contains('1.1|1.1.3|0'));
     });
@@ -598,9 +614,11 @@ void main() {
         score: 100,
         newWrongIds: {},
         correctedIds: {'1.1|1.1.3|0'},
+        date: '2026-05-04 11:00',
       );
       expect(current.cppQuizScores['1.1'], 100);
       expect(current.cppQuizAttempts['1.1'], 2);
+      expect(current.cppQuizLastDates['1.1'], '2026-05-04 11:00');
       expect(current.cppWrongQuizIds, isEmpty);
     });
 
@@ -685,7 +703,9 @@ void main() {
     });
 
     test('fromJson with missing lastKnowledgeItemId defaults to empty', () {
-      final json = {'completedLessons': ['l1']};
+      final json = {
+        'completedLessons': ['l1'],
+      };
       final progress = Progress.fromJson(json);
       expect(progress.lastKnowledgeItemId, '');
       expect(progress.completedLessons, contains('l1'));
@@ -714,48 +734,55 @@ void main() {
       expect(updated.completedLessons, contains('l1'));
     });
 
-    test('toJson/fromJson round-trip preserves all fields including lastKnowledgeItemId', () {
-      final original = Progress(
-        completedLessons: {'lesson1'},
-        completedQuizzes: {'quiz1'},
-        quizScores: {'topic': 90},
-        totalQuizAttempts: 5,
-        answerRecords: {'q1': 1},
-        answerHistory: [
-          AnswerRecord(
-            topic: 'bfs',
-            quizId: 'q1',
-            selectedIndex: 0,
-            correct: true,
-            date: '2026-05-04 10:00',
-          ),
-        ],
-        completedCppItems: {'cpp_var'},
-        cppQuizScores: {'1.1': 80},
-        cppQuizAttempts: {'1.1': 3},
-        cppWrongQuizIds: {'1.1|q1|0'},
-        lastKnowledgeItemId: 'knowledge_point_123',
-      );
-      
-      final json = original.toJson();
-      final restored = Progress.fromJson(json);
-      
-      expect(restored.completedLessons, contains('lesson1'));
-      expect(restored.completedQuizzes, contains('quiz1'));
-      expect(restored.quizScores['topic'], 90);
-      expect(restored.totalQuizAttempts, 5);
-      expect(restored.answerRecords['q1'], 1);
-      expect(restored.answerHistory.length, 1);
-      expect(restored.answerHistory[0].topic, 'bfs');
-      expect(restored.completedCppItems, contains('cpp_var'));
-      expect(restored.cppQuizScores['1.1'], 80);
-      expect(restored.cppQuizAttempts['1.1'], 3);
-      expect(restored.cppWrongQuizIds, contains('1.1|q1|0'));
-      expect(restored.lastKnowledgeItemId, 'knowledge_point_123');
-    });
+    test(
+      'toJson/fromJson round-trip preserves all fields including lastKnowledgeItemId',
+      () {
+        final original = Progress(
+          completedLessons: {'lesson1'},
+          completedQuizzes: {'quiz1'},
+          quizScores: {'topic': 90},
+          totalQuizAttempts: 5,
+          answerRecords: {'q1': 1},
+          answerHistory: [
+            AnswerRecord(
+              topic: 'bfs',
+              quizId: 'q1',
+              selectedIndex: 0,
+              correct: true,
+              date: '2026-05-04 10:00',
+            ),
+          ],
+          completedCppItems: {'cpp_var'},
+          cppQuizScores: {'1.1': 80},
+          cppQuizAttempts: {'1.1': 3},
+          cppQuizLastDates: {'1.1': '2026-05-04 10:30'},
+          cppWrongQuizIds: {'1.1|q1|0'},
+          lastKnowledgeItemId: 'knowledge_point_123',
+        );
 
-    test('old data compatibility - fromJson without lastKnowledgeItemId works', () {
-      final oldJsonStr = '''
+        final json = original.toJson();
+        final restored = Progress.fromJson(json);
+
+        expect(restored.completedLessons, contains('lesson1'));
+        expect(restored.completedQuizzes, contains('quiz1'));
+        expect(restored.quizScores['topic'], 90);
+        expect(restored.totalQuizAttempts, 5);
+        expect(restored.answerRecords['q1'], 1);
+        expect(restored.answerHistory.length, 1);
+        expect(restored.answerHistory[0].topic, 'bfs');
+        expect(restored.completedCppItems, contains('cpp_var'));
+        expect(restored.cppQuizScores['1.1'], 80);
+        expect(restored.cppQuizAttempts['1.1'], 3);
+        expect(restored.cppQuizLastDates['1.1'], '2026-05-04 10:30');
+        expect(restored.cppWrongQuizIds, contains('1.1|q1|0'));
+        expect(restored.lastKnowledgeItemId, 'knowledge_point_123');
+      },
+    );
+
+    test(
+      'old data compatibility - fromJson without lastKnowledgeItemId works',
+      () {
+        final oldJsonStr = '''
       {
         "completedLessons": ["l1", "l2"],
         "completedQuizzes": ["q1"],
@@ -764,15 +791,16 @@ void main() {
         "answerRecords": {"q1": 0}
       }
       ''';
-      final oldJson = json.decode(oldJsonStr) as Map<String, dynamic>;
-      final progress = Progress.fromJson(oldJson);
-      
-      expect(progress.completedLessons, containsAll(['l1', 'l2']));
-      expect(progress.completedQuizzes, contains('q1'));
-      expect(progress.quizScores['bfs'], 18);
-      expect(progress.totalQuizAttempts, 3);
-      expect(progress.lastKnowledgeItemId, '');
-    });
+        final oldJson = json.decode(oldJsonStr) as Map<String, dynamic>;
+        final progress = Progress.fromJson(oldJson);
+
+        expect(progress.completedLessons, containsAll(['l1', 'l2']));
+        expect(progress.completedQuizzes, contains('q1'));
+        expect(progress.quizScores['bfs'], 18);
+        expect(progress.totalQuizAttempts, 3);
+        expect(progress.lastKnowledgeItemId, '');
+      },
+    );
 
     test('lastKnowledgeItemId does not affect other fields', () {
       final progress = Progress(
@@ -781,7 +809,7 @@ void main() {
       );
       final json = progress.toJson();
       final restored = Progress.fromJson(json);
-      
+
       expect(restored.lastKnowledgeItemId, 'test_id');
       expect(restored.completedLessons, contains('l1'));
       expect(restored.completedQuizzes, isEmpty);

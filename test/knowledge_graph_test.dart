@@ -620,4 +620,68 @@ void main() {
       expect(module.route, '/cpp_basic');
     });
   });
+
+  group('KnowledgeGraph category sort order', () {
+    test('C++语法 sorted before 算法', () {
+      final graph = KnowledgeGraph.fromJson({
+        'categories': [
+          {
+            'name': '算法',
+            'sections': [
+              {
+                'id': '2.1',
+                'name': '基础算法',
+                'level': 'L1',
+                'pre': [],
+                'rel': [],
+                'items': [],
+              },
+            ],
+          },
+          {
+            'name': 'C++语法',
+            'sections': [
+              {
+                'id': '1.1',
+                'name': '程序基本结构',
+                'level': 'L1',
+                'pre': [],
+                'rel': [],
+                'items': [],
+              },
+            ],
+          },
+        ],
+      });
+      final names = graph.categories.map((c) => c.name).toList();
+      expect(names.indexOf('C++语法'), lessThan(names.indexOf('算法')));
+    });
+
+    test('full category order respects C++语法 → 算法 → 数据结构 → 数学 → 技巧', () {
+      final graph = KnowledgeGraph.fromJson({
+        'categories': [
+          {'name': 'C++编程/调试技巧', 'sections': []},
+          {'name': '数据结构', 'sections': []},
+          {'name': '算法', 'sections': []},
+          {'name': 'C++语法', 'sections': []},
+          {'name': '算法竞赛数学', 'sections': []},
+        ],
+      });
+      final names = graph.categories.map((c) => c.name).toList();
+      expect(names, ['C++语法', '算法', '数据结构', '算法竞赛数学', 'C++编程/调试技巧']);
+    });
+
+    test('unknown categories placed after known ones', () {
+      final graph = KnowledgeGraph.fromJson({
+        'categories': [
+          {'name': '未知分类', 'sections': []},
+          {'name': '算法', 'sections': []},
+          {'name': 'C++语法', 'sections': []},
+        ],
+      });
+      final names = graph.categories.map((c) => c.name).toList();
+      expect(names.indexOf('C++语法'), lessThan(names.indexOf('未知分类')));
+      expect(names.indexOf('算法'), lessThan(names.indexOf('未知分类')));
+    });
+  });
 }

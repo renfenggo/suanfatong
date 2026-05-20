@@ -1,0 +1,94 @@
+{
+  "sectionId": "5.6",
+  "sectionName": "DP 实现技巧",
+  "units": [
+    {
+      "itemId": "5.6.1",
+      "title": "先定状态再写转移",
+      "learningGoal": "养成先定义 DP 状态再写转移方程的习惯",
+      "explanation": "DP 的核心是状态设计。先明确 dp[i] 或 dp[i][j] 代表什么，再写转移方程，最后才编码。\n\n好的状态设计能让转移方程自然简洁。常见模式：dp[i] 表示以 i 结尾的最优解、dp[i][j] 表示前 i 个物品容量为 j 的最优解等。",
+      "exampleCode": "// dp[i] = 以 a[i] 结尾的最长上升子序列长度\nfor (int i = 0; i < n; i++) {\n    dp[i] = 1;\n    for (int j = 0; j < i; j++) {\n        if (a[j] < a[i]) dp[i] = max(dp[i], dp[j] + 1);\n    }\n}",
+      "codeNotes": ["先定义状态含义", "再推导转移方程", "最后编码实现", "状态设计决定题目难度"],
+      "commonMistakes": [{"title": "边写边想状态", "description": "没有明确状态含义就开始写代码，容易混乱。", "fix": "先在纸上写出状态定义和转移方程。"}],
+      "practice": {"prompt": "定义 dp[i] 表示前 i 个数的最大子段和，写出状态转移。", "hint": "dp[i] = max(dp[i-1] + a[i], a[i])", "expectedIdea": "dp[0] = a[0];\nfor (int i = 1; i < n; i++) {\n    dp[i] = max(dp[i-1] + a[i], a[i]);\n}"},
+      "quiz": [{"question": "DP 解题的第一步应该是什么？", "options": ["写代码", "定义状态", "初始化", "确定答案位置"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.6.2",
+      "title": "初值优先检查",
+      "learningGoal": "养成检查 DP 初值是否正确的习惯",
+      "explanation": "DP 初值是递推的起点，必须确保正确。常见的初值：dp[0] = 0（计数类）、dp[0] = a[0]（以 0 结尾）、dp[0][j] = j（编辑距离类）等。\n\n错误的初值会导致整个递推结果全错。每次写完 DP 后先手动验证前几项。",
+      "exampleCode": "memset(dp, 0x3f, sizeof(dp));\ndp[0] = 0;\nfor (int i = 1; i <= n; i++) {\n    for (int j = 0; j < i; j++) {\n        dp[i] = min(dp[i], dp[j] + cost(j, i));\n    }\n}",
+      "codeNotes": ["初始化为 INF 后设 dp[0] = 0", "最小值问题初值用 INF", "最大值问题初值用 -INF 或 0", "手动验证前几项"],
+      "commonMistakes": [{"title": "初值设错", "description": "求最小值但 dp 初始化为 0，导致所有结果都是 0。", "fix": "求最小值用 INF 初始化，求最大值用 -INF 或 0。"}],
+      "practice": {"prompt": "写一个 0-1 背包的 DP 初始化代码。", "hint": "dp[0] = 0, 其余为 -INF（求最大值）或 0", "expectedIdea": "memset(dp, 0, sizeof(dp));\nfor (int i = 0; i < n; i++) {\n    for (int j = W; j >= w[i]; j--) {\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    }\n}"},
+      "quiz": [{"question": "求最小值的 DP，dp 数组应该初始化为什么？", "options": ["0", "-1", "INF", "随意"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.6.3",
+      "title": "循环顺序检查",
+      "learningGoal": "理解 DP 中循环顺序的重要性",
+      "explanation": "DP 的循环顺序必须保证：计算 dp[i] 时，它依赖的所有状态已经计算完毕。\n\n0-1 背包内层逆序：保证每个物品只用一次。完全背包内层正序：物品可以使用多次。区间 DP 外层枚举长度，内层枚举起点。\n\n错误的循环顺序是最常见的 DP bug 之一。",
+      "exampleCode": "// 0-1 背包：内层逆序\nfor (int i = 0; i < n; i++)\n    for (int j = W; j >= w[i]; j--)\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n\n// 完全背包：内层正序\nfor (int i = 0; i < n; i++)\n    for (int j = w[i]; j <= W; j++)\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);",
+      "codeNotes": ["0-1 背包内层逆序", "完全背包内层正序", "区间 DP 外层枚举长度", "循环顺序决定依赖是否满足"],
+      "commonMistakes": [{"title": "0-1 背包内层正序", "description": "导致同一物品被重复选取。", "fix": "0-1 背包内层 j 从大到小遍历。"}],
+      "practice": {"prompt": "写一个完全背包的 DP，物品可以使用多次。", "hint": "内层正序", "expectedIdea": "for (int i = 0; i < n; i++) {\n    for (int j = w[i]; j <= W; j++) {\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    }\n}"},
+      "quiz": [{"question": "0-1 背包内层循环应从大到小还是从小到大？", "options": ["从小到大", "从大到小", "都可以", "取决于物品数"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.6.4",
+      "title": "非法状态处理",
+      "learningGoal": "学会在 DP 中标记和处理非法状态",
+      "explanation": "有些状态在问题中不可能出现，需要标记为非法。常见做法是设为 INF（求 min 时）或 -INF（求 max 时），这样转移时自然不会选到非法状态。\n\n也可以用额外的布尔数组标记合法状态。",
+      "exampleCode": "memset(dp, 0x3f, sizeof(dp));\ndp[0][0] = 0;\nfor (int i = 1; i <= n; i++) {\n    for (int j = 0; j <= m; j++) {\n        if (dp[i-1][j] < INF) {\n            dp[i][j] = min(dp[i][j], dp[i-1][j]);\n            if (j + a[i] <= m) dp[i][j + a[i]] = min(dp[i][j + a[i]], dp[i-1][j] + 1);\n        }\n    }\n}",
+      "codeNotes": ["INF 标记非法状态", "转移时检查是否合法", "只有合法状态才参与转移", "最终答案也是检查是否 < INF"],
+      "commonMistakes": [{"title": "非法状态参与转移", "description": "INF 值被加上了某个数，不再是 INF。", "fix": "转移前先检查 dp[i-1][j] < INF。"}],
+      "practice": {"prompt": "在 DP 中用 INF 标记非法状态，最终检查答案是否可行。", "hint": "if (dp[n][target] < INF) 可行", "expectedIdea": "if (dp[n][target] < INF) cout << dp[n][target];\nelse cout << \"无解\";"},
+      "quiz": [{"question": "非法状态通常用什么值标记？", "options": ["0", "-1", "INF", "1"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.6.5",
+      "title": "刷表法 / 填表法",
+      "learningGoal": "理解刷表法和填表法两种 DP 实现思路",
+      "explanation": "填表法：计算当前状态时，从已知的旧状态推过来。dp[i] = f(dp[i-1], dp[i-2], ...)。这是最常见的写法。\n\n刷表法：用当前已知状态去更新未来状态。计算到 dp[i] 时，用它去更新 dp[i+1]、dp[i+2] 等。\n\n两种方法等价，但某些题目刷表法更直观、更好写。",
+      "exampleCode": "// 填表法\ndp[i] = max(dp[i-1], dp[i-2] + a[i]);\n\n// 刷表法\ndp[i+1] = max(dp[i+1], dp[i]);\ndp[i+2] = max(dp[i+2], dp[i] + a[i]);",
+      "codeNotes": ["填表法：从旧状态推当前", "刷表法：从当前推未来", "两种等价", "某些题刷表法更自然"],
+      "commonMistakes": [{"title": "刷表法越界", "description": "更新 dp[i+k] 时 i+k 超出数组范围。", "fix": "刷表时检查边界 i+k < n。"}],
+      "practice": {"prompt": "用刷表法写一个「跳台阶」DP：每次可以跳 1 或 2 步。", "hint": "dp[i] 更新 dp[i+1] 和 dp[i+2]", "expectedIdea": "dp[0] = 1;\nfor (int i = 0; i < n; i++) {\n    dp[i+1] += dp[i];\n    dp[i+2] += dp[i];\n}"},
+      "quiz": [{"question": "刷表法的核心思想是？", "options": ["从未来推现在", "用当前状态更新未来状态", "从后往前填", "随机顺序计算"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.6.6",
+      "title": "先写朴素转移再优化",
+      "learningGoal": "养成先写朴素 DP 再考虑优化的习惯",
+      "explanation": "复杂 DP 题目建议先写朴素的 O(n²) 或 O(n³) 转移，确保正确后再优化。优化思路往往在朴素代码上更容易发现。\n\n常见优化方向：前缀和优化、单调队列优化、线段树优化、斜率优化等。",
+      "exampleCode": "// 朴素 O(n²)\nfor (int i = 0; i < n; i++) {\n    dp[i] = a[i];\n    for (int j = 0; j < i; j++) {\n        if (a[j] < a[i]) dp[i] = max(dp[i], dp[j] + a[i]);\n    }\n}\n// 确认正确后再考虑优化",
+      "codeNotes": ["先保证正确", "朴素代码更容易调试", "优化基于朴素转移", "不要一上来就写优化版"],
+      "commonMistakes": [{"title": "直接写优化版出错", "description": "跳过朴素版直接写优化代码，逻辑复杂容易错。", "fix": "先写朴素版验证正确性，再逐步优化。"}],
+      "practice": {"prompt": "先写一个 O(n²) 的 LIS DP，确认正确。", "hint": "双层循环，dp[i] = max(dp[j] + 1)", "expectedIdea": "for (int i = 0; i < n; i++) {\n    dp[i] = 1;\n    for (int j = 0; j < i; j++) {\n        if (a[j] < a[i]) dp[i] = max(dp[i], dp[j] + 1);\n    }\n}"},
+      "quiz": [{"question": "为什么建议先写朴素 DP？", "options": ["朴素版更快", "保证正确后再优化", "优化版不可能正确", "题目要求"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.6.7",
+      "title": "记忆化数组初始化",
+      "learningGoal": "掌握记忆化搜索中数组的正确初始化方法",
+      "explanation": "记忆化搜索用数组存储已计算的结果。初始化为一个特殊值表示「未计算」，每次递归前先检查是否已计算。\n\n常用 -1 表示未计算。memset(dp, -1, sizeof(dp)) 可以快速初始化。\n\n注意答案可能为 0 的情况，0 和「未计算」要能区分。",
+      "exampleCode": "#include <cstring>\nusing namespace std;\n\nlong long dp[25][25];\n\nlong long solve(int n, int m) {\n    if (n == 0) return m == 0 ? 1 : 0;\n    if (dp[n][m] != -1) return dp[n][m];\n    return dp[n][m] = solve(n-1, m) + solve(n-1, m-1);\n}",
+      "codeNotes": ["初始化为 -1 表示未计算", "递归前检查 dp 是否已有值", "答案可能为 0 时注意区分", "memset(dp, -1, ...) 快速初始化"],
+      "commonMistakes": [{"title": "答案为 0 和未计算混淆", "description": "用 0 表示未计算，但答案可能为 0，导致重复计算。", "fix": "用 -1 表示未计算，答案不会是 -1。"}],
+      "practice": {"prompt": "写一个记忆化搜索计算组合数 C(n, m)。", "hint": "dp 初始化为 -1，递归前检查", "expectedIdea": "memset(dp, -1, sizeof(dp));\nlong long C(int n, int m) {\n    if (m == 0 || m == n) return 1;\n    if (dp[n][m] != -1) return dp[n][m];\n    return dp[n][m] = C(n-1, m) + C(n-1, m-1);\n}"},
+      "quiz": [{"question": "记忆化数组通常初始化为什么值？", "options": ["0", "1", "-1", "INF"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.6.8",
+      "title": "滚动数组方向",
+      "learningGoal": "理解滚动数组内层循环方向对正确性的影响",
+      "explanation": "使用滚动数组时，内层循环的方向很关键。如果当前状态依赖前一层的左边值，内层应从左到右（使用当前层已更新的值）或从右到左（使用前一层的值）。\n\n0-1 背包一维优化：内层从右到左，保证每个物品只用一次。完全背包一维优化：内层从左到右，允许重复选取。",
+      "exampleCode": "// 0-1 背包：内层从右到左\nfor (int i = 0; i < n; i++)\n    for (int j = W; j >= w[i]; j--)\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n\n// 完全背包：内层从左到右\nfor (int i = 0; i < n; i++)\n    for (int j = w[i]; j <= W; j++)\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);",
+      "codeNotes": ["0-1 背包逆序避免重复选", "完全背包正序允许重复选", "方向错误是常见 bug", "理解原理比死记硬背重要"],
+      "commonMistakes": [{"title": "滚动数组方向搞反", "description": "0-1 背包写成内层正序，物品被重复选取。", "fix": "0-1 背包内层从大到小。"}],
+      "practice": {"prompt": "用一维 DP 写 0-1 背包，确保每个物品只用一次。", "hint": "内层 j 从 W 到 w[i]", "expectedIdea": "for (int i = 0; i < n; i++) {\n    for (int j = W; j >= w[i]; j--) {\n        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    }\n}"},
+      "quiz": [{"question": "0-1 背包一维优化时，内层循环方向是？", "options": ["j 从小到大", "j 从大到小", "都可以", "取决于数据"], "answerIndex": 1}]
+    }
+  ]
+}

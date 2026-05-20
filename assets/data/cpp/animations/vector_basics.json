@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_vector_basics",
+  "itemId": "4.7.2",
+  "title": "向量",
+  "description": "演示二维向量的基本运算：加法和数乘",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义向量",
+      "description": "向量 a = (3, 2)，向量 b = (1, 4)。向量有方向和大小",
+      "codeLine": "int ax=3, ay=2, bx=1, by=4;",
+      "highlights": ["ax,ay", "bx,by"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,2)", "note": ""},
+          {"name": "b", "value": "(1,4)", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "向量加法",
+      "description": "a + b = (3+1, 2+4) = (4, 6)。对应分量相加",
+      "codeLine": "int cx = ax + bx, cy = ay + by;",
+      "highlights": ["ax + bx", "ay + by"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,2)", "note": ""},
+          {"name": "b", "value": "(1,4)", "note": ""},
+          {"name": "a+b", "value": "(4,6)", "note": "3+1, 2+4"}
+        ],
+        "containers": [],
+        "output": "a+b = (4,6)"
+      }
+    },
+    {
+      "step": 3,
+      "title": "向量数乘",
+      "description": "3 × a = 3 × (3, 2) = (9, 6)。每个分量乘以标量",
+      "codeLine": "int k = 3; int dx = k*ax, dy = k*ay;",
+      "highlights": ["k*ax", "k*ay"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,2)", "note": ""},
+          {"name": "k", "value": "3", "note": "标量"},
+          {"name": "k×a", "value": "(9,6)", "note": "3×3, 3×2"}
+        ],
+        "containers": [],
+        "output": "a+b = (4,6)\n3×a = (9,6)"
+      }
+    },
+    {
+      "step": 4,
+      "title": "向量长度",
+      "description": "|a| = √(3²+2²) = √13 ≈ 3.606。数乘 k 后 |k×a| = k×|a| = 3×3.606 = 10.816",
+      "codeLine": "double len = sqrt(ax*ax + ay*ay);",
+      "highlights": ["sqrt"],
+      "state": {
+        "variables": [
+          {"name": "|a|", "value": "3.606", "note": "√13"},
+          {"name": "|3×a|", "value": "10.816", "note": "3×√13"}
+        ],
+        "containers": [],
+        "output": "a+b = (4,6)\n3×a = (9,6)"
+      }
+    }
+  ]
+}

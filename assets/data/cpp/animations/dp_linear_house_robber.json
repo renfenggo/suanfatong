@@ -1,0 +1,101 @@
+{
+  "animationId": "cpp_dp_house_robber",
+  "itemId": "2.5.2",
+  "title": "线性 DP：打家劫舍",
+  "description": "演示打家劫舍问题中 dp[i] 如何由前面状态转移：dp[i] = max(dp[i-1], dp[i-2]+a[i])",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "a", "type": "int[]", "values": ["2", "7", "9", "3", "1"], "activeIndex": -1, "note": "每家金额"},
+      {"name": "dp", "type": "int[]", "values": ["0", "2", "0", "0", "0", "0"], "activeIndex": -1, "note": "dp[0]=0, dp[1]=2"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "dp[0]=0（没有房子可偷），dp[1]=a[0]=2（只有第1家，偷它）。",
+      "codeLine": "dp[0] = 0; dp[1] = a[0];",
+      "highlights": ["dp[0]", "dp[1]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "1", "note": "基础情况"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["2", "7", "9", "3", "1"], "activeIndex": 0, "note": "a[0]=2"},
+          {"name": "dp", "type": "int[]", "values": ["0", "2", "0", "0", "0", "0"], "activeIndex": 1, "note": "dp[1]=2"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "考虑第 2 家（金额7）",
+      "description": "dp[2] = max(dp[1], dp[0]+a[1]) = max(2, 0+7) = 7。偷第 2 家更划算。",
+      "codeLine": "dp[i] = max(dp[i-1], dp[i-2] + a[i-1]);  // i=2",
+      "highlights": ["max(dp[i-1], dp[i-2]+a[i-1])"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "2", "note": "dp[2] = max(2, 0+7) = 7"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["2", "7", "9", "3", "1"], "activeIndex": 1, "note": "a[1]=7"},
+          {"name": "dp", "type": "int[]", "values": ["0", "2", "7", "0", "0", "0"], "activeIndex": 2, "note": "dp[2]=7（偷第2家）"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "考虑第 3 家（金额9）",
+      "description": "dp[3] = max(dp[2], dp[1]+a[2]) = max(7, 2+9) = 11。偷第1家+第3家 = 2+9=11。",
+      "codeLine": "dp[i] = max(dp[i-1], dp[i-2] + a[i-1]);  // i=3",
+      "highlights": ["max(dp[i-1], dp[i-2]+a[i-1])"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "3", "note": "dp[3] = max(7, 2+9) = 11"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["2", "7", "9", "3", "1"], "activeIndex": 2, "note": "a[2]=9"},
+          {"name": "dp", "type": "int[]", "values": ["0", "2", "7", "11", "0", "0"], "activeIndex": 3, "note": "dp[3]=11（偷1+3家）"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "考虑第 4、5 家",
+      "description": "dp[4] = max(11, 7+3) = 11。dp[5] = max(11, 11+1) = 12。",
+      "codeLine": "dp[i] = max(dp[i-1], dp[i-2] + a[i-1]);  // i=4,5",
+      "highlights": ["max"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "5", "note": "dp[5] = max(11, 11+1) = 12"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["2", "7", "9", "3", "1"], "activeIndex": 4, "note": "a[4]=1"},
+          {"name": "dp", "type": "int[]", "values": ["0", "2", "7", "11", "11", "12"], "activeIndex": 5, "note": "dp[5]=12"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "最终答案 dp[5] = 12",
+      "description": "打家劫舍核心：dp[i] = max(不偷第i家, 偷第i家)。相邻不能同时偷。答案 12 = 2+9+1（偷第1、3、5家）。",
+      "codeLine": "cout << dp[n];",
+      "highlights": ["dp[n]"],
+      "state": {
+        "variables": [
+          {"name": "答案", "value": "dp[5]=12", "note": "偷第1、3、5家：2+9+1=12"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["2✓", "7✗", "9✓", "3✗", "1✓"], "activeIndex": -1, "note": "偷第1、3、5家"},
+          {"name": "dp", "type": "int[]", "values": ["0", "2", "7", "11", "11", "12"], "activeIndex": -1, "note": "完整dp表"}
+        ],
+        "output": "最大金额 = 12"
+      }
+    }
+  ]
+}

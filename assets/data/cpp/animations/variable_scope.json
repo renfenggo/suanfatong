@@ -1,0 +1,70 @@
+{
+  "animationId": "cpp_variable_scope",
+  "itemId": "1.3.12",
+  "title": "变量作用域",
+  "description": "演示花括号 { } 划定的作用域和内层变量遮蔽外层变量的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "外层声明变量 x",
+      "description": "在 main 函数中声明变量 x = 10。从声明处开始，x 在整个 main 函数内可用。",
+      "codeLine": "int x = 10;",
+      "highlights": ["x", "10"],
+      "state": {
+        "variables": [
+          {"name": "x (外层)", "value": "10", "note": "main 函数作用域内有效"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "输出外层 x",
+      "description": "此时只有一个 x，输出它的值 10。",
+      "codeLine": "cout << \"外层 x = \" << x << endl;",
+      "highlights": ["x"],
+      "state": {
+        "variables": [
+          {"name": "x (外层)", "value": "10", "note": ""}
+        ],
+        "containers": [],
+        "output": "外层 x = 10"
+      }
+    },
+    {
+      "step": 3,
+      "title": "内层花括号中声明同名变量",
+      "description": "在新的花括号 { } 内声明 int x = 20。内层的 x 会「遮蔽」外层的 x，在这个花括号内，x 指的是 20。",
+      "codeLine": "{\n    int x = 20;\n    cout << \"内层 x = \" << x << endl;\n}",
+      "highlights": ["x", "20"],
+      "state": {
+        "variables": [
+          {"name": "x (外层)", "value": "10", "note": "被内层 x 遮蔽，暂时不可见"},
+          {"name": "x (内层)", "value": "20", "note": "遮蔽外层 x"}
+        ],
+        "containers": [],
+        "output": "外层 x = 10\n内层 x = 20"
+      }
+    },
+    {
+      "step": 4,
+      "title": "回到外层",
+      "description": "内层花括号结束后，内层的 x 被销毁。回到外层，x 恢复为外层的值 10。",
+      "codeLine": "cout << \"回到外层 x = \" << x << endl;",
+      "highlights": ["x"],
+      "state": {
+        "variables": [
+          {"name": "x (外层)", "value": "10", "note": "内层 x 已销毁，恢复可见"}
+        ],
+        "containers": [],
+        "output": "外层 x = 10\n内层 x = 20\n回到外层 x = 10"
+      }
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "sectionId": "3.12",
+  "sectionName": "高级数据结构进阶",
+  "units": [
+    {
+      "itemId": "3.12.1",
+      "title": "ST表（Sparse Table）",
+      "learningGoal": "掌握 ST 表的预处理和查询方法，理解其适用于静态 RMQ 问题的原理",
+      "explanation": "ST 表（Sparse Table）是一种用于静态区间查询（RMQ）的数据结构。\n\n所谓静态：数组建立后不修改，只做查询。\n\n核心思想：倍增 + 预处理\n- st[i][j] 表示从位置 i 开始，长度为 2^j 的区间的最值\n- 预处理：st[i][j] = min(st[i][j-1], st[i + 2^(j-1)][j-1])\n- 预处理时间：O(n log n)\n\n查询区间 [l, r] 的最值：\n- 令 k = floor(log2(r - l + 1))\n- ans = min(st[l][k], st[r - 2^k + 1][k])\n- 查询时间：O(1)\n\n注意：两个区间可能有重叠，但不影响最值查询。\n如果查询的是区间和，重叠会被重复计算，所以 ST 表不能用于区间求和（用前缀和或线段树）。\n\nST 表适合的操作满足：\n- 可重复贡献（重叠不影响结果）：min, max, gcd, lcm\n- 不满足可重复贡献的操作不能用 ST 表：sum, xor\n\n空间复杂度：O(n log n)",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint st[100001][20];\nint lg[100001];\nint n;\n\nvoid build(int a[]) {\n    for (int i = 1; i <= n; i++) st[i][0] = a[i];\n    for (int j = 1; (1 << j) <= n; j++)\n        for (int i = 1; i + (1 << j) - 1 <= n; i++)\n            st[i][j] = min(st[i][j-1], st[i + (1 << (j-1))][j-1]);\n    lg[1] = 0;\n    for (int i = 2; i <= n; i++) lg[i] = lg[i/2] + 1;\n}\n\nint query(int l, int r) {\n    int k = lg[r - l + 1];\n    return min(st[l][k], st[r - (1 << k) + 1][k]);\n}\n\nint main() {\n    cin >> n;\n    int a[100001];\n    for (int i = 1; i <= n; i++) cin >> a[i];\n    build(a);\n    int q;\n    cin >> q;\n    while (q--) {\n        int l, r;\n        cin >> l >> r;\n        cout << query(l, r) << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["st[i][j] 表示从 i 开始长度 2^j 的区间最值", "预处理用倍增递推：st[i][j] = min(两半)", "lg[i] 预计算 log2(i) 避免重复计算", "查询时两个区间可能重叠但不影响 min/max"],
+      "commonMistakes": [
+        {
+          "title": "ST 表用于不支持可重复贡献的操作",
+          "description": "ST 表查询时两个区间可能重叠，如果是求和操作，重叠部分会被计算两次。",
+          "fix": "ST 表只适用于 min、max、gcd 等可重复贡献操作。区间求和用前缀和或线段树。"
+        },
+        {
+          "title": "lg 数组没有预处理",
+          "description": "每次查询都用 log2() 函数计算，虽然时间复杂度不变但常数较大。",
+          "fix": "预处理 lg[i] = lg[i/2] + 1，查询时直接使用 lg[r-l+1]，效率更高。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个长度为 n 的静态数组和 q 次查询，每次查询区间 [l, r] 中的最小值。",
+        "hint": "预处理 ST 表，每次查询 O(1)。",
+        "expectedIdea": "build 预处理 st 数组和 lg 数组，query 用两个等长区间取 min。"
+      },
+      "quiz": [
+        {
+          "question": "ST 表的预处理时间复杂度是？",
+          "options": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+          "answerIndex": 1,
+          "explanation": "ST 表预处理需要计算 n * log n 个状态（st[i][j]），每个状态 O(1) 递推，总共 O(n log n)。"
+        },
+        {
+          "question": "以下哪个操作不适合用 ST 表？",
+          "options": ["区间最小值", "区间最大值", "区间 GCD", "区间求和"],
+          "answerIndex": 3,
+          "explanation": "区间求和不满足可重复贡献性质，ST 表查询时两个区间可能重叠导致重复计算。求和应使用前缀和。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.12.2",
+      "title": "分块",
+      "learningGoal": "掌握分块（平方分割）的原理，理解块大小为 sqrt(n) 的平衡思想，实现区间加法和区间求和",
+      "explanation": "分块（Square Root Decomposition）是一种将数组分成若干块的数据结构，每块大小约为 sqrt(n)。\n\n核心思想：\n- 将数组分成 ceil(n / sqrt(n)) 块，每块大小约 sqrt(n)\n- 对每个块维护整体信息（如块内元素和、懒标记）\n- 区间操作时：\n  - 完整块：直接在块级别操作（O(sqrt(n)) 个块）\n  - 不完整块：暴力修改（每边最多 sqrt(n) 个元素）\n- 总时间：O(sqrt(n))\n\n分块 vs 线段树：\n- 线段树：O(log n) 每次操作，但代码复杂\n- 分块：O(sqrt(n)) 每次操作，但代码简单，常数小，灵活\n\n分块适合：\n- 不太好写线段树的场景\n- 需要维护复杂信息的情况\n- 不满足结合律的操作（线段树要求结合律）\n\n块大小通常取 B = sqrt(n)，也可以根据操作比例调整。\n- 块数 = (n + B - 1) / B\n- 元素 i 属于第 i/B 块",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nconst int MAXN = 100001;\nint a[MAXN];\nlong long sum[400], tag[400];\nint B, bn;\n\nvoid init(int n) {\n    B = sqrt(n);\n    bn = (n + B - 1) / B;\n    for (int i = 1; i <= n; i++) sum[i / B] += a[i];\n}\n\nvoid rangeAdd(int l, int r, int v) {\n    int bl = l / B, br = r / B;\n    if (bl == br) {\n        for (int i = l; i <= r; i++) { a[i] += v; sum[bl] += v; }\n        return;\n    }\n    for (int i = l; i < (bl+1)*B; i++) { a[i] += v; sum[bl] += v; }\n    for (int i = bl+1; i < br; i++) tag[i] += v;\n    for (int i = br*B; i <= r; i++) { a[i] += v; sum[br] += v; }\n}\n\nlong long rangeSum(int l, int r) {\n    long long res = 0;\n    int bl = l / B, br = r / B;\n    if (bl == br) {\n        for (int i = l; i <= r; i++) res += a[i] + tag[bl];\n        return res;\n    }\n    for (int i = l; i < (bl+1)*B; i++) res += a[i] + tag[bl];\n    for (int i = bl+1; i < br; i++) res += sum[i] + tag[i] * B;\n    for (int i = br*B; i <= r; i++) res += a[i] + tag[br];\n    return res;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 1; i <= n; i++) cin >> a[i];\n    init(n);\n    int q;\n    cin >> q;\n    while (q--) {\n        int op, l, r, v;\n        cin >> op >> l >> r;\n        if (op == 1) {\n            cin >> v;\n            rangeAdd(l, r, v);\n        } else {\n            cout << rangeSum(l, r) << endl;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": ["B = sqrt(n) 为块大小", "sum[i] 维护第 i 块的元素和", "tag[i] 为第 i 块的懒标记（整体加）", "完整块直接加 tag，不完整块暴力修改"],
+      "commonMistakes": [
+        {
+          "title": "块边界计算错误",
+          "description": "分块时左右边界块的计算出错，导致漏处理或多处理元素。",
+          "fix": "第 i 块的范围是 [i*B, (i+1)*B-1]，注意处理最后一块可能不满的情况。"
+        },
+        {
+          "title": "忘记加上懒标记",
+          "description": "查询时只统计了 sum 和 a[i]，忘记加上对应块的 tag。",
+          "fix": "单点查询：a[i] + tag[i/B]；整块查询：sum[i] + tag[i] * B。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现分块，支持区间加法和区间求和，处理 n 个数和 q 次操作。",
+        "hint": "分块大小取 sqrt(n)，完整块加 tag，不完整块暴力。查询同理。",
+        "expectedIdea": "rangeAdd 分三种情况处理（左散块、完整块、右散块），rangeSum 同理加上 tag 贡献。"
+      },
+      "quiz": [
+        {
+          "question": "分块中块大小通常取多少？",
+          "options": ["n", "n/2", "sqrt(n)", "log(n)"],
+          "answerIndex": 2,
+          "explanation": "分块大小取 sqrt(n) 可以平衡完整块数量和散块元素数量，使操作复杂度为 O(sqrt(n))。"
+        },
+        {
+          "question": "分块相比线段树的优势是什么？",
+          "options": ["时间复杂度更低", "代码简单，适合维护复杂信息", "空间更小", "支持在线修改"],
+          "answerIndex": 1,
+          "explanation": "分块代码简单直观，且可以维护不满足结合律的复杂信息，这是线段树难以做到的。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.12.3",
+      "title": "莫队算法",
+      "learningGoal": "掌握莫队算法的原理，理解分块排序优化离线查询的思想，实现标准莫队算法",
+      "explanation": "莫队算法（Mo's Algorithm）是一种离线处理区间查询的算法，通过巧妙地排列查询顺序来降低总时间复杂度。\n\n核心思想：\n- 将所有查询离线读入\n- 将查询按左端点所在的块排序（块大小 sqrt(n)）\n- 同一块内的查询按右端点排序\n- 奇数块右端点升序，偶数块右端点降序（优化常数）\n- 维护两个指针 L 和 R，通过移动指针来扩展/收缩当前区间\n\n时间复杂度分析：\n- 左指针：同一块内移动不超过 sqrt(n)，跨块移动不超过 sqrt(n)，共 O(n * sqrt(n))\n- 右指针：块内单调，最多移动 n 次，共 O(n * sqrt(n))\n- 总复杂度：O(n * sqrt(n))\n\n适用条件：\n- 查询可以离线处理\n- 区间 [l, r] 的答案可以从 [l-1, r] 或 [l, r+1] 等 O(1) 转移\n- 典型问题：区间不同元素个数、区间众数等\n\n关键操作：\n- add(x)：将位置 x 的元素加入当前区间\n- del(x)：将位置 x 的元素移出当前区间\n- add/del 的时间决定了整体复杂度",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <cmath>\nusing namespace std;\n\nint a[100001], cnt[100001], ans[100001];\nint curAns;\nint B;\n\nstruct Query {\n    int l, r, id;\n    bool operator<(const Query &o) const {\n        int bl = l / B, br = o.l / B;\n        if (bl != br) return bl < br;\n        return (bl & 1) ? r < o.r : r > o.r;\n    }\n};\n\nvoid add(int x) {\n    if (cnt[a[x]] == 0) curAns++;\n    cnt[a[x]]++;\n}\n\nvoid del(int x) {\n    cnt[a[x]]--;\n    if (cnt[a[x]] == 0) curAns--;\n}\n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    B = sqrt(n);\n    for (int i = 1; i <= n; i++) cin >> a[i];\n    vector<Query> queries(q);\n    for (int i = 0; i < q; i++) {\n        cin >> queries[i].l >> queries[i].r;\n        queries[i].id = i;\n    }\n    sort(queries.begin(), queries.end());\n    int L = 1, R = 0;\n    for (auto &qr : queries) {\n        while (L > qr.l) add(--L);\n        while (R < qr.r) add(++R);\n        while (L < qr.l) del(L++);\n        while (R > qr.r) del(R--);\n        ans[qr.id] = curAns;\n    }\n    for (int i = 0; i < q; i++)\n        cout << ans[i] << endl;\n    return 0;\n}",
+      "codeNotes": ["查询按块排序，奇偶块优化右指针", "L 从 1 开始，R 从 0 开始（空区间）", "add/del 维护当前区间的答案", "先扩展再收缩，顺序不能错"],
+      "commonMistakes": [
+        {
+          "title": "指针移动顺序错误",
+          "description": "先收缩再扩展可能导致 L > R，区间状态不合法。",
+          "fix": "应该先扩展（L左移、R右移），再收缩（L右移、R左移），保证区间始终合法。"
+        },
+        {
+          "title": "忘记奇偶块优化",
+          "description": "所有块内查询都按右端点升序排列，导致右指针在块间反复从右到左移动。",
+          "fix": "奇数块升序、偶数块降序排列右端点，使右指针移动更平滑，降低常数。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个数组和 q 次查询，每次查询区间 [l, r] 中有多少种不同的元素。",
+        "hint": "用 cnt 数组记录每个值出现次数，add 时从 0 变 1 则答案+1，del 时从 1 变 0 则答案-1。",
+        "expectedIdea": "莫队 + cnt 计数，curAns 维护当前区间不同元素个数。"
+      },
+      "quiz": [
+        {
+          "question": "莫队算法的时间复杂度是？",
+          "options": ["O(n log n)", "O(n * sqrt(n))", "O(n^2)", "O(n)"],
+          "answerIndex": 1,
+          "explanation": "莫队算法通过分块排序优化，左指针和右指针的总移动次数都是 O(n * sqrt(n))。"
+        },
+        {
+          "question": "莫队算法适用于什么类型的查询？",
+          "options": ["在线查询", "可持久化查询", "离线区间查询", "树形查询"],
+          "answerIndex": 2,
+          "explanation": "莫队算法是离线算法，需要先读入所有查询并排序，然后按顺序处理。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.12.4",
+      "title": "字典树（Trie）",
+      "learningGoal": "掌握 Trie 树的结构和基本操作（插入、查找、前缀查找），理解其在字符串问题中的应用",
+      "explanation": "字典树（Trie / Prefix Tree）是一种用于高效存储和查询字符串集合的树形数据结构。\n\n核心思想：\n- 每条边代表一个字符\n- 从根到某节点的路径上的字符组成一个字符串\n- 标记哪些节点对应完整的单词\n\n结构：\n- ch[i][j]：节点 i 的第 j 个子节点的编号（j 对应字符）\n- endMark[i]：节点 i 是否是某个单词的结尾\n- 对于小写字母：j 范围 0~25，ch[i][j] 表示字符 'a'+j\n\n基本操作：\n1. insert(word)：从根开始，沿字符路径走，没有则创建节点，最后标记单词结尾\n2. search(word)：从根开始沿路径走，检查是否存在且结尾有标记\n3. startsWith(prefix)：从根开始沿路径走，只要路径存在就返回 true\n\n时间复杂度：\n- 插入和查找都是 O(L)，L 为字符串长度\n- 与集合大小无关！\n\n应用场景：\n- 字符串集合的查找和前缀匹配\n- 自动补全 / 搜索提示\n- 01 Trie：将数字的二进制表示插入 Trie，用于异或最值查询",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint ch[100001][26];\nbool endMark[100001];\nint tot;\n\nvoid insert(const string &s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) ch[u][v] = ++tot;\n        u = ch[u][v];\n    }\n    endMark[u] = true;\n}\n\nbool search(const string &s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) return false;\n        u = ch[u][v];\n    }\n    return endMark[u];\n}\n\nbool startsWith(const string &s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) return false;\n        u = ch[u][v];\n    }\n    return true;\n}\n\nint main() {\n    insert(\"apple\");\n    insert(\"app\");\n    insert(\"banana\");\n    insert(\"band\");\n    cout << \"search apple: \" << (search(\"apple\") ? \"是\" : \"否\") << endl;\n    cout << \"search app: \" << (search(\"app\") ? \"是\" : \"否\") << endl;\n    cout << \"search appl: \" << (search(\"appl\") ? \"是\" : \"否\") << endl;\n    cout << \"startsWith app: \" << (startsWith(\"app\") ? \"是\" : \"否\") << endl;\n    cout << \"startsWith ban: \" << (startsWith(\"ban\") ? \"是\" : \"否\") << endl;\n    return 0;\n}",
+      "codeNotes": ["ch[i][j] 存节点 i 的第 j 个子节点", "endMark 标记单词结尾", "insert 沿字符路径走，无节点则创建", "search 要求路径存在且结尾有标记"],
+      "commonMistakes": [
+        {
+          "title": "search 和 startsWith 混淆",
+          "description": "search 需要检查单词结尾标记，startsWith 只需要路径存在即可。两者逻辑不同。",
+          "fix": "search 最后返回 endMark[u]，startsWith 最后返回 true（只要走完路径）。"
+        },
+        {
+          "title": "Trie 节点数开太小",
+          "description": "节点总数 = 所有字符串长度之和，数组开太小会导致越界。",
+          "fix": "节点数组大小设为所有字符串总长度 + 1（根节点），如 MAXN = 10^6。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现一个 Trie，支持插入单词、查询单词是否存在、查询是否有以某个前缀开头的单词。",
+        "hint": "三个函数：insert、search、startsWith，用 ch 数组和 endMark 数组。",
+        "expectedIdea": "标准 Trie 模板，ch 数组模拟子节点，endMark 标记结尾。"
+      },
+      "quiz": [
+        {
+          "question": "Trie 中查找一个长度为 L 的字符串，时间复杂度是？",
+          "options": ["O(n)", "O(L)", "O(L log n)", "O(n * L)"],
+          "answerIndex": 1,
+          "explanation": "Trie 的查找只与字符串长度 L 有关，沿字符路径走 L 步即可，与集合中字符串数量无关。"
+        },
+        {
+          "question": "在 Trie 中，根节点代表什么？",
+          "options": ["第一个字符", "空字符串", "最长的字符串", "所有字符串的公共前缀"],
+          "answerIndex": 1,
+          "explanation": "根节点代表空字符串，从根节点出发沿路径走才能组成实际的字符串。根节点本身不包含任何字符。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.12.5",
+      "title": "KMP 算法",
+      "learningGoal": "掌握 KMP 算法的原理，理解 next 数组（失败函数）的构建方式，实现高效的字符串匹配",
+      "explanation": "KMP（Knuth-Morris-Pratt）算法是一种高效的字符串匹配算法，在 O(n+m) 时间内完成模式串在文本串中的查找。\n\n暴力匹配的问题：\n- 当匹配失败时，模式串回退到开头重新匹配，已经匹配的信息被浪费\n- 最坏情况 O(n*m)\n\nKMP 的核心思想：\n- 利用已经匹配的信息，避免不必要的回溯\n- 关键是 next 数组（失败函数/前缀函数）\n\nnext 数组：\n- next[i] 表示模式串 p[0..i] 的最长真前后缀长度\n- 即 p[0..next[i]-1] == p[i-next[i]+1..i]\n- 例如：模式串 \"ababaca\"，next = [0,0,1,2,3,0,1]\n\nnext 数组的构建：\n- 用两个指针 i 和 j\n- j 表示当前最长匹配长度\n- 如果 p[i] == p[j]，则 j++，next[i] = j\n- 如果不匹配，j = next[j-1] 回退\n\n匹配过程：\n- 文本串指针 i 不回退\n- 模式串指针 j 在失配时根据 next 数组跳转\n- 如果 j == m，说明匹配成功\n\nKMP 的时间复杂度为 O(n+m)，其中 n 为文本串长度，m 为模式串长度。",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvector<int> buildNext(const string &p) {\n    int m = p.size();\n    vector<int> nxt(m, 0);\n    int j = 0;\n    for (int i = 1; i < m; i++) {\n        while (j > 0 && p[i] != p[j]) j = nxt[j-1];\n        if (p[i] == p[j]) j++;\n        nxt[i] = j;\n    }\n    return nxt;\n}\n\nvector<int> kmpSearch(const string &s, const string &p) {\n    vector<int> nxt = buildNext(p);\n    vector<int> result;\n    int n = s.size(), m = p.size();\n    int j = 0;\n    for (int i = 0; i < n; i++) {\n        while (j > 0 && s[i] != p[j]) j = nxt[j-1];\n        if (s[i] == p[j]) j++;\n        if (j == m) {\n            result.push_back(i - m + 1);\n            j = nxt[j-1];\n        }\n    }\n    return result;\n}\n\nint main() {\n    string s = \"abababaababacaababaca\";\n    string p = \"ababaca\";\n    vector<int> pos = kmpSearch(s, p);\n    cout << \"模式串: \" << p << endl;\n    cout << \"文本串: \" << s << endl;\n    cout << \"匹配位置: \";\n    for (int x : pos) cout << x << \" \";\n    cout << endl;\n    cout << \"匹配次数: \" << pos.size() << endl;\n    return 0;\n}",
+      "codeNotes": ["next[i] 是 p[0..i] 的最长真前后缀长度", "构建 next 时 j 失配则回退到 next[j-1]", "匹配时文本串指针不回退，模式串指针按 next 跳转", "j == m 时找到一个匹配，继续用 next 寻找下一个"],
+      "commonMistakes": [
+        {
+          "title": "next 数组含义混淆",
+          "description": "next 数组有不同定义（有的定义表示失配后跳转位置），容易和前缀函数搞混。",
+          "fix": "本实现中 next[i] 表示 p[0..i] 的最长真前后缀长度，失配时 j = next[j-1]。"
+        },
+        {
+          "title": "匹配成功后忘记继续查找",
+          "description": "找到一个匹配后直接退出，没有继续查找后续可能的匹配。",
+          "fix": "匹配成功（j == m）后，令 j = next[j-1] 继续匹配，可以找到所有出现位置。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定文本串 s 和模式串 p，找出 p 在 s 中所有出现的位置（从 0 开始的下标）。",
+        "hint": "构建 next 数组，然后在文本串上用 KMP 匹配，记录所有 j == m 的位置。",
+        "expectedIdea": "buildNext 预处理模式串前缀函数，kmpSearch 扫描文本串，失配时跳转，匹配时记录位置。"
+      },
+      "quiz": [
+        {
+          "question": "KMP 算法的时间复杂度是？",
+          "options": ["O(n * m)", "O(n + m)", "O(n log m)", "O(m)"],
+          "answerIndex": 1,
+          "explanation": "KMP 算法中构建 next 数组 O(m)，匹配过程 O(n)，总共 O(n+m)，其中 n 为文本串长度，m 为模式串长度。"
+        },
+        {
+          "question": "next 数组中 next[i] 的含义是什么？",
+          "options": ["模式串第 i 个字符", "p[0..i] 的最长真前后缀长度", "失配后模式串的起始位置", "文本串的匹配位置"],
+          "answerIndex": 1,
+          "explanation": "next[i] 表示模式串 p[0..i] 中，既是前缀又是后缀的最长真子串（不等于自身）的长度。"
+        }
+      ]
+    }
+  ]
+}

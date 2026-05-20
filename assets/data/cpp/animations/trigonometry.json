@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_trigonometry",
+  "itemId": "4.7.17",
+  "title": "三角函数",
+  "description": "演示基本三角函数 sin、cos、tan 的计算和关系",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "直角三角形定义",
+      "description": "在直角三角形中，θ=30° 的对边=1, 斜边=2, 邻边=√3",
+      "codeLine": "// θ=30°, 对边=1, 邻边=√3, 斜边=2",
+      "highlights": ["θ=30°"],
+      "state": {
+        "variables": [
+          {"name": "对边", "value": "1", "note": "opposite"},
+          {"name": "邻边", "value": "√3≈1.732", "note": "adjacent"},
+          {"name": "斜边", "value": "2", "note": "hypotenuse"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "sin 和 cos",
+      "description": "sin(30°) = 对边/斜边 = 1/2 = 0.5, cos(30°) = 邻边/斜边 = √3/2 ≈ 0.866",
+      "codeLine": "double s = sin(30*PI/180); // = 0.5",
+      "highlights": ["sin", "cos"],
+      "state": {
+        "variables": [
+          {"name": "sin(30°)", "value": "0.5", "note": "1/2"},
+          {"name": "cos(30°)", "value": "0.866", "note": "√3/2"}
+        ],
+        "containers": [],
+        "output": "sin(30°) = 0.5\ncos(30°) ≈ 0.866"
+      }
+    },
+    {
+      "step": 3,
+      "title": "tan",
+      "description": "tan(30°) = sin/cos = 对边/邻边 = 1/√3 ≈ 0.577",
+      "codeLine": "double t = s / c; // ≈ 0.577",
+      "highlights": ["tan"],
+      "state": {
+        "variables": [
+          {"name": "sin(30°)", "value": "0.5", "note": ""},
+          {"name": "cos(30°)", "value": "0.866", "note": ""},
+          {"name": "tan(30°)", "value": "0.577", "note": "1/√3"}
+        ],
+        "containers": [],
+        "output": "sin(30°) = 0.5\ncos(30°) ≈ 0.866\ntan(30°) ≈ 0.577"
+      }
+    },
+    {
+      "step": 4,
+      "title": "恒等式",
+      "description": "sin²θ + cos²θ = 1（勾股定理的三角形式）。sin(0°)=0, cos(0°)=1, sin(90°)=1, cos(90°)=0",
+      "codeLine": "// sin²θ + cos²θ = 1",
+      "highlights": ["sin²θ + cos²θ = 1"],
+      "state": {
+        "variables": [
+          {"name": "sin²+cos²", "value": "1", "note": "0.25+0.75=1 ✓"},
+          {"name": "特殊值", "value": "sin0=0,cos0=1", "note": "sin90=1,cos90=0"}
+        ],
+        "containers": [],
+        "output": "sin(30°) = 0.5\ncos(30°) ≈ 0.866\ntan(30°) ≈ 0.577"
+      }
+    }
+  ]
+}

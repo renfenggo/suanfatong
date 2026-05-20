@@ -1,0 +1,240 @@
+{
+  "sectionId": "3.9",
+  "sectionName": "图的存储与遍历",
+  "units": [
+    {
+      "itemId": "3.9.1",
+      "title": "图的邻接表存储",
+      "learningGoal": "掌握用邻接表存储图的方法，包括无向图、有向图和带权图的邻接表表示，能够熟练使用 vector 实现邻接表的建图与遍历输出",
+      "explanation": "邻接表是图最常用的存储方式，适合存储稀疏图（边数远小于点数的平方）。\n\n基本思路：为每个顶点维护一个链表（或 vector），存储从该顶点出发的所有边所指向的邻居。\n\n无向图：每条边 (u, v) 需要在 u 的邻接表中加入 v，同时在 v 的邻接表中加入 u，即加两次。\n\n有向图：每条边 (u, v) 只在 u 的邻接表中加入 v，加一次即可。\n\n带权图：邻接表不再只存 int，而是存 pair<int,int>，其中 first 存边的终点，second 存边的权值。\n\nC++ 中用 vector<int> adj[N] 实现，N 为最大顶点数。空间复杂度 O(V+E)，遍历某个顶点的所有邻居时间为 O(该顶点的度)。\n\n优点：空间利用率高，遍历效率好，是竞赛中最常用的图存储方式。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100010;\nvector<int> adj[N];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    for (int u = 1; u <= n; u++) {\n        cout << u << \": \";\n        for (int v : adj[u]) {\n            cout << v << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["vector<int> adj[N] 为每个顶点维护邻居列表", "无向图每条边要 push_back 两次", "带权图用 vector<pair<int,int>> 存终点和权值", "空间复杂度 O(V+E)，适合稀疏图"],
+      "commonMistakes": [
+        {
+          "title": "无向图只加了一次边",
+          "description": "忘记在两个顶点的邻接表中都加入对方，导致图变成有向的。",
+          "fix": "无向图每条边 (u,v) 要同时执行 adj[u].push_back(v) 和 adj[v].push_back(u)。"
+        },
+        {
+          "title": "多组测试数据未清空邻接表",
+          "description": "多组测试时上一组的边残留在 vector 中，导致结果错误。",
+          "fix": "每组测试前调用 for(int i=1;i<=n;i++) adj[i].clear(); 清空所有邻接表。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入一个有 n 个顶点、m 条边的带权有向图，输出每个顶点的所有出边（包含终点和权值）。",
+        "hint": "用 vector<pair<int,int>> adj[N]，first 存终点，second 存权值。",
+        "expectedIdea": "定义 vector<pair<int,int>> adj[N]，读入 u,v,w 后执行 adj[u].push_back({v,w})，遍历时输出 adj[u][i].first 和 adj[u][i].second。"
+      },
+      "quiz": [
+        {
+          "question": "用邻接表存储有 n 个顶点、m 条边的无向图，总共需要多少个 vector 元素？",
+          "options": ["m", "2m", "n+m", "n*m"],
+          "answerIndex": 1,
+          "explanation": "无向图每条边在两个顶点的邻接表中各存一次，所以总共 2m 个元素。"
+        },
+        {
+          "question": "邻接表相比邻接矩阵的主要优势是什么？",
+          "options": ["支持更快的随机访问", "存储稀疏图时空间更省", "代码更短", "支持有向图"],
+          "answerIndex": 1,
+          "explanation": "邻接表空间 O(V+E)，邻接矩阵空间 O(V²)。当边数远小于 V² 时，邻接表节省大量空间。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.9.2",
+      "title": "图的邻接矩阵存储",
+      "learningGoal": "掌握邻接矩阵存储图的方法，理解其适用场景（稠密图），能够用二维数组建图并查询边的存在性",
+      "explanation": "邻接矩阵用二维数组 g[N][N] 存储图，其中 g[i][j] 表示顶点 i 到顶点 j 的边的信息。\n\n无向图：g[u][v] = g[v][u] = 1（或权值），矩阵是对称的。\n有向图：g[u][v] = 1（或权值），矩阵不一定对称。\n无权图：g[i][j] 为 0 或 1，表示边是否存在。\n带权图：g[i][j] 存权值，不存在时通常设为 INF（一个大数如 0x3f3f3f3f）。\n\n空间复杂度 O(V²)，因此适合顶点数较少的稠密图（边数接近 V²）。\n\n查询某条边是否存在：O(1)，这是邻接矩阵的最大优势。\n添加边：O(1)。\n遍历某个顶点的所有邻居：O(V)，即使邻居很少也要遍历整行。\n\n在 Floyd 最短路径算法中，邻接矩阵是天然的存储方式。",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nconst int N = 1010;\nconst int INF = 0x3f3f3f3f;\nint g[N][N];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    memset(g, 0x3f, sizeof(g));\n    for (int i = 1; i <= n; i++) g[i][i] = 0;\n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        g[u][v] = min(g[u][v], w);\n        g[v][u] = min(g[v][u], w);\n    }\n    int q;\n    cin >> q;\n    while (q--) {\n        int u, v;\n        cin >> u >> v;\n        if (g[u][v] == INF) cout << \"No edge\" << endl;\n        else cout << \"weight=\" << g[u][v] << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["memset(g, 0x3f, sizeof(g)) 初始化为 INF", "g[i][i] = 0 自己到自己的距离为 0", "min 处理重边，保留最短的边", "查询边的存在性只需 O(1)"],
+      "commonMistakes": [
+        {
+          "title": "忘记初始化对角线",
+          "description": "g[i][i] 没有设为 0，导致自己到自己的距离为 INF。",
+          "fix": "建图后遍历 i 从 1 到 n，设置 g[i][i] = 0。"
+        },
+        {
+          "title": "顶点数过大导致爆内存",
+          "description": "N 开到 100000 时 g[N][N] 需要 10^10 个 int，远超内存限制。",
+          "fix": "邻接矩阵仅适用于顶点数较小（一般 N ≤ 5000）的图，顶点数大时改用邻接表。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入一个 n 个顶点的有向带权图（可能有重边），存储到邻接矩阵中，然后回答 q 次查询：从 u 到 v 是否有边，有则输出最小权值。",
+        "hint": "用 min 处理重边，INF 表示无边。",
+        "expectedIdea": "memset 初始化为 INF，g[i][i]=0，读边时 g[u][v]=min(g[u][v],w)，查询时判断 g[u][v] 是否为 INF。"
+      },
+      "quiz": [
+        {
+          "question": "用邻接矩阵存储 100 个顶点的图，需要多少空间？",
+          "options": ["100 个 int", "200 个 int", "10000 个 int", "100+边数 个 int"],
+          "answerIndex": 2,
+          "explanation": "邻接矩阵空间为 O(V²)，100 个顶点需要 100×100=10000 个 int。"
+        },
+        {
+          "question": "邻接矩阵查询某条边 (u,v) 是否存在的时间复杂度是？",
+          "options": ["O(1)", "O(V)", "O(E)", "O(V+E)"],
+          "answerIndex": 0,
+          "explanation": "邻接矩阵直接访问 g[u][v] 即可判断边是否存在，时间 O(1)。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.9.3",
+      "title": "链式前向星",
+      "learningGoal": "掌握链式前向星（数组模拟链表存边）的原理和实现，理解 head、to、nxt、w 数组的作用，能够用 addEdge 函数完成建图",
+      "explanation": "链式前向星是一种用数组模拟链表来存储图中所有边的方法，在竞赛中非常常用。\n\n核心数组：\n- head[i]：以顶点 i 为起点的第一条边的编号（-1 表示没有边）\n- to[k]：第 k 条边的终点\n- nxt[k]：第 k 条边的下一条边编号（同起点）\n- w[k]：第 k 条边的权值\n- cnt：当前已添加的边数\n\naddEdge(u, v, w) 的过程：\n1. cnt++，分配一条新边\n2. to[cnt] = v，w[cnt] = w\n3. nxt[cnt] = head[u]，新边指向之前的第一条边\n4. head[u] = cnt，更新头指针\n\n本质上，每个顶点的所有出边构成一条链表，head 是链表头，nxt 是链表的 next 指针。\n\n遍历顶点 u 的所有出边：for (int i = head[u]; ~i; i = nxt[i])，其中 ~i 等价于 i != -1。\n\n空间 O(V+E)，常数比 vector 更小，适合卡常数的题目。",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nconst int N = 100010, M = 200010;\nint head[N], to[M], nxt[M], w[M], cnt;\n\nvoid addEdge(int u, int v, int weight) {\n    cnt++;\n    to[cnt] = v;\n    w[cnt] = weight;\n    nxt[cnt] = head[u];\n    head[u] = cnt;\n}\n\nint main() {\n    memset(head, -1, sizeof(head));\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v, weight;\n        cin >> u >> v >> weight;\n        addEdge(u, v, weight);\n        addEdge(v, u, weight);\n    }\n    for (int u = 1; u <= n; u++) {\n        cout << u << \": \";\n        for (int i = head[u]; ~i; i = nxt[i]) {\n            cout << \"(\" << to[i] << \",\" << w[i] << \") \";\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["memset(head, -1) 初始化所有顶点为无边", "cnt 从 0 开始，addEdge 中先 cnt++", "nxt[cnt] = head[u]; head[u] = cnt 是头插法", "~i 等价于 i != -1，用于遍历链表"],
+      "commonMistakes": [
+        {
+          "title": "忘记初始化 head 为 -1",
+          "description": "head 数组默认值为 0，遍历时会把第 0 条边当作有效边，导致错误。",
+          "fix": "建图前执行 memset(head, -1, sizeof(head))。"
+        },
+        {
+          "title": "边数组开太小",
+          "description": "无向图有 m 条边，实际需要 2m 条边的空间，但 M 只开了 m。",
+          "fix": "无向图时 M 至少开 2 倍边数，即 M = 2 * m_max。"
+        }
+      ],
+      "practice": {
+        "prompt": "用链式前向星存储一个有向带权图，实现 addEdge 函数，然后输出每个顶点的所有出边。",
+        "hint": "定义 head[N], to[M], nxt[M], w[M]，addEdge 用头插法。",
+        "expectedIdea": "cnt++ 后设置 to[cnt]=v, w[cnt]=weight, nxt[cnt]=head[u], head[u]=cnt，遍历用 for(int i=head[u];~i;i=nxt[i])。"
+      },
+      "quiz": [
+        {
+          "question": "链式前向星中 head[u] 存储的是什么？",
+          "options": ["顶点 u 的度数", "以 u 为起点的第一条边的编号", "顶点 u 的邻居数量", "以 u 为终点的第一条边的编号"],
+          "answerIndex": 1,
+          "explanation": "head[u] 存储的是以顶点 u 为起点的边链表的头节点（第一条边的编号）。"
+        },
+        {
+          "question": "链式前向星相比 vector 邻接表的优势是什么？",
+          "options": ["代码更短", "支持随机访问", "常数更小，速度更快", "支持自动排序"],
+          "answerIndex": 2,
+          "explanation": "链式前向星用纯数组实现，没有 vector 的动态扩容开销，常数更小，在卡常题中表现更好。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.9.4",
+      "title": "图的DFS遍历",
+      "learningGoal": "掌握图的深度优先搜索遍历方法，能够用 DFS 求连通分量个数，理解 visited 数组的作用和递归遍历的过程",
+      "explanation": "DFS（深度优先搜索）遍历图的过程：从某个顶点出发，沿一条路径尽可能深入，走到走不动时回溯，再探索其他分支。\n\n基本步骤：\n1. 标记当前顶点 u 为已访问（visited[u] = true）\n2. 遍历 u 的所有邻居 v\n3. 如果 v 未被访问，递归访问 v\n\n连通分量：图中极大连通子图的数量。对每个未访问的顶点执行一次 DFS，DFS 执行的次数就是连通分量的个数。\n\n时间复杂度：O(V+E)，每个顶点和每条边最多被访问一次。\n\nvisited 数组是必须的，否则在有环的图中会无限递归。\n\nDFS 也常用于：判环、拓扑排序（递归版）、二分图判定等。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100010;\nvector<int> adj[N];\nbool visited[N];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    cout << u << \" \";\n    for (int v : adj[u]) {\n        if (!visited[v]) {\n            dfs(v);\n        }\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    int components = 0;\n    for (int i = 1; i <= n; i++) {\n        if (!visited[i]) {\n            components++;\n            cout << \"Component \" << components << \": \";\n            dfs(i);\n            cout << endl;\n        }\n    }\n    cout << \"Total components: \" << components << endl;\n    return 0;\n}",
+      "codeNotes": ["visited 数组防止重复访问和死循环", "每从新起点出发一次 DFS 就是一个新连通分量", "DFS 递归深入，回溯时自动探索其他分支", "时间复杂度 O(V+E)"],
+      "commonMistakes": [
+        {
+          "title": "忘记标记 visited 导致死循环",
+          "description": "在图中存在环的情况下，不标记 visited 会无限递归直到栈溢出。",
+          "fix": "进入 dfs 函数后第一句就设置 visited[u] = true。"
+        },
+        {
+          "title": "visited 数组未初始化",
+          "description": "全局数组默认全 0（false）没问题，但如果用局部数组则值不确定。",
+          "fix": "使用全局 bool visited[N]，或在 main 中 memset(visited, false, sizeof(visited))。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个无向图，判断它是否连通（即是否只有一个连通分量）。",
+        "hint": "从顶点 1 开始 DFS，然后检查是否所有顶点都被访问。",
+        "expectedIdea": "从 1 出发 DFS，之后遍历 1 到 n 检查 visited[i]，如果全部为 true 则图连通。"
+      },
+      "quiz": [
+        {
+          "question": "DFS 遍历一个有 n 个顶点、m 条边的无向图，时间复杂度是？",
+          "options": ["O(n)", "O(m)", "O(n+m)", "O(n*m)"],
+          "answerIndex": 2,
+          "explanation": "DFS 中每个顶点访问一次 O(n)，每条边检查两次（无向图）共 O(m)，总时间 O(n+m)。"
+        },
+        {
+          "question": "一个无向图有 3 个连通分量，需要对多少个起点执行 DFS？",
+          "options": ["1", "2", "3", "取决于顶点数"],
+          "answerIndex": 2,
+          "explanation": "每个连通分量需要从其中一个顶点出发执行一次 DFS，3 个连通分量需要 3 次。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.9.5",
+      "title": "图的BFS遍历",
+      "learningGoal": "掌握图的广度优先搜索遍历方法，理解 BFS 逐层扩展的过程，能够用 BFS 求无权图的最短路径",
+      "explanation": "BFS（广度优先搜索）遍历图的过程：从起点出发，先访问所有距离为 1 的邻居，再访问所有距离为 2 的邻居，以此类推，逐层扩展。\n\n基本步骤：\n1. 将起点加入队列，标记已访问，距离设为 0\n2. 队列不空时，取出队首 u\n3. 遍历 u 的所有邻居 v\n4. 如果 v 未被访问，标记已访问，设置 dist[v] = dist[u] + 1，将 v 入队\n\n无权图最短路径：BFS 天然按距离递增的顺序访问顶点，因此第一次到达某顶点时的距离就是从起点到该顶点的最短路径长度。\n\ndist 数组：记录从起点到每个顶点的最短距离，初始化为 -1 表示未到达。\n\n时间复杂度：O(V+E)。\n\nBFS 常用于：无权图最短路、层序遍历、状态空间搜索等。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nconst int N = 100010;\nvector<int> adj[N];\nint dist[N];\n\nvoid bfs(int start, int n) {\n    queue<int> q;\n    memset(dist, -1, sizeof(dist));\n    dist[start] = 0;\n    q.push(start);\n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        for (int v : adj[u]) {\n            if (dist[v] == -1) {\n                dist[v] = dist[u] + 1;\n                q.push(v);\n            }\n        }\n    }\n}\n\nint main() {\n    int n, m, s;\n    cin >> n >> m >> s;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    bfs(s, n);\n    for (int i = 1; i <= n; i++) {\n        cout << \"dist[\" << i << \"]=\" << dist[i] << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["queue 实现先进先出的逐层扩展", "dist[v] = -1 表示尚未被访问到", "第一次到达某顶点时的 dist 就是最短距离", "时间复杂度 O(V+E)"],
+      "commonMistakes": [
+        {
+          "title": "入队前未标记导致重复入队",
+          "description": "在出队时才标记 visited，导致同一个顶点被多次加入队列。",
+          "fix": "在入队的同时就设置 dist[v] = dist[u]+1（相当于标记已访问），保证每个顶点只入队一次。"
+        },
+        {
+          "title": "dist 数组未初始化为 -1",
+          "description": "dist 默认为 0，无法区分未到达和距离为 0 的顶点。",
+          "fix": "BFS 前用 memset(dist, -1, sizeof(dist)) 初始化。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个无向无权图和起点 s，输出从 s 到每个顶点的最短距离。如果不可达输出 -1。",
+        "hint": "BFS 逐层扩展，dist 数组记录距离，初始化为 -1。",
+        "expectedIdea": "从 s 开始 BFS，dist[s]=0，每扩展一个邻居 v 设 dist[v]=dist[u]+1，最后输出 dist[1..n]。"
+      },
+      "quiz": [
+        {
+          "question": "BFS 求无权图最短路径的原理是什么？",
+          "options": ["BFS 按顶点编号顺序访问", "BFS 按距离递增顺序访问顶点", "BFS 使用优先队列保证最短", "BFS 会回溯找最短路径"],
+          "answerIndex": 1,
+          "explanation": "BFS 逐层扩展，先访问距离为 1 的所有顶点，再访问距离为 2 的，所以第一次到达某顶点时的距离就是最短路。"
+        },
+        {
+          "question": "BFS 使用什么数据结构来存储待访问的顶点？",
+          "options": ["栈 (stack)", "队列 (queue)", "优先队列 (priority_queue)", "集合 (set)"],
+          "answerIndex": 1,
+          "explanation": "BFS 使用队列 (queue) 实现先进先出，保证按层次顺序访问。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.9.6",
+      "title": "拓扑排序",
+      "learningGoal": "掌握拓扑排序的概念和 Kahn 算法（BFS 版）的实现，理解 DAG 的判定方法，能够用入度数组和队列完成拓扑排序",
+      "explanation": "拓扑排序是将有向无环图（DAG）的所有顶点排成一个线性序列，使得对于每条边 (u,v)，u 在序列中出现在 v 之前。\n\nKahn 算法（BFS 版）步骤：\n1. 计算所有顶点的入度 indegree[i]\n2. 将所有入度为 0 的顶点加入队列\n3. 队列不空时，取出队首 u，将 u 加入拓扑序列\n4. 遍历 u 的所有出边指向的顶点 v，将 indegree[v]--\n5. 如果 indegree[v] 变为 0，将 v 加入队列\n6. 重复直到队列为空\n\nDAG 判定：如果拓扑序列的长度等于顶点数 n，则图是 DAG；如果长度小于 n，说明图中有环，不是 DAG。\n\n入度：指向某个顶点的边的数量。入度为 0 意味着没有前驱约束，可以最先处理。\n\n时间复杂度：O(V+E)。\n\n应用场景：任务调度、编译依赖、课程安排等。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nconst int N = 100010;\nvector<int> adj[N];\nint indegree[N];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        indegree[v]++;\n    }\n    queue<int> q;\n    for (int i = 1; i <= n; i++) {\n        if (indegree[i] == 0) {\n            q.push(i);\n        }\n    }\n    vector<int> topo;\n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        topo.push_back(u);\n        for (int v : adj[u]) {\n            indegree[v]--;\n            if (indegree[v] == 0) {\n                q.push(v);\n            }\n        }\n    }\n    if ((int)topo.size() == n) {\n        cout << \"Topological order: \";\n        for (int x : topo) cout << x << \" \";\n        cout << endl;\n    } else {\n        cout << \"Graph has a cycle!\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["indegree[v]++ 在读入每条边时计算入度", "入度为 0 的顶点先入队，没有前驱约束", "取出 u 后，其所有后继 v 的入度减 1", "拓扑序列长度等于 n 才说明无环"],
+      "commonMistakes": [
+        {
+          "title": "忘记判断是否有环",
+          "description": "只输出拓扑序列，没有检查序列长度是否等于 n，可能遗漏了图中有环的情况。",
+          "fix": "排序完成后判断 topo.size() == n，不等则说明有环。"
+        },
+        {
+          "title": "入度计算遗漏",
+          "description": "读入边时忘记对 indegree[v]++，导致入度不正确。",
+          "fix": "每读入一条有向边 (u,v)，必须执行 indegree[v]++。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个任务和 m 个依赖关系（a b 表示任务 a 必须在 b 之前完成），输出一个合法的完成顺序。如果有环输出 -1。",
+        "hint": "对每个依赖关系建边 a->b，计算入度，Kahn 算法拓扑排序，检查是否有环。",
+        "expectedIdea": "建图后用 BFS 拓扑排序，indegree[v]++ 计算入度，入度为 0 入队，依次取出后减后继入度，最后判断 topo.size() 是否等于 n。"
+      },
+      "quiz": [
+        {
+          "question": "如果拓扑排序后序列长度小于顶点数 n，说明什么？",
+          "options": ["排序算法有误", "图中有环", "图不连通", "图中存在孤立点"],
+          "answerIndex": 1,
+          "explanation": "如果序列长度小于 n，说明有顶点入度始终不为 0，即存在环，这些顶点无法被加入拓扑序列。"
+        },
+        {
+          "question": "拓扑排序只能应用于什么类型的图？",
+          "options": ["无向图", "有向图", "有向无环图 (DAG)", "完全图"],
+          "answerIndex": 2,
+          "explanation": "拓扑排序要求图中没有环，且必须是有向图，所以只能应用于有向无环图 (DAG)。"
+        }
+      ]
+    }
+  ]
+}

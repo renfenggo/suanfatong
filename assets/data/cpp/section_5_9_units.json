@@ -1,0 +1,127 @@
+{
+  "sectionId": "5.9",
+  "sectionName": "写题工程化习惯",
+  "units": [
+    {
+      "itemId": "5.9.1",
+      "title": "小步修改",
+      "learningGoal": "养成每次只做一小步修改并立即验证的习惯",
+      "explanation": "调试时不要一次改多处，每次只改一个地方，然后立即测试。这样能准确定位每次修改的效果。\n\n如果一次改了 5 处，程序从错误变成另一个错误，你不知道是哪处修改导致的。",
+      "exampleCode": "// 调试流程：\n// 1. 改一处代码\n// 2. 编译运行\n// 3. 检查结果\n// 4. 如果正确，继续下一处\n// 5. 如果错误，回退这次修改",
+      "codeNotes": ["每次只改一处", "改完立即测试", "错误时回退", "逐步逼近正确答案"],
+      "commonMistakes": [{"title": "一次改多处", "description": "改了 5 处不知道哪处有效。", "fix": "一次只改一处，改完就测。"}],
+      "practice": {"prompt": "描述你遇到 WA 时的调试步骤。", "hint": "每次只改一处", "expectedIdea": "1. 分析可能原因\n2. 修改最可能的一处\n3. 重新测试\n4. 如果还是 WA，回退修改尝试下一个可能\n5. 重复直到通过"},
+      "quiz": [{"question": "调试时应该每次修改几处？", "options": ["越多越好", "一处", "三处", "随意"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.2",
+      "title": "保留最近正确版本",
+      "learningGoal": "养成在正确版本基础上修改的习惯",
+      "explanation": "在做出大的修改之前，先保存当前能正确运行的版本。如果修改后出问题，可以回退到上一个正确版本。\n\n可以用注释、复制文件或版本控制工具来保留。",
+      "exampleCode": "// 方法一：注释旧代码\n// dp[i] = dp[i-1] + a[i];  // 旧版本\n// dp[i] = max(dp[i-1] + a[i], a[i]);  // 新版本",
+      "codeNotes": ["修改前保存正确版本", "可以用注释保留", "出错时能快速回退", "版本控制更好"],
+      "commonMistakes": [{"title": "覆盖后无法回退", "description": "修改后程序更糟，但旧代码已丢失。", "fix": "大改动前先注释保留旧代码。"}],
+      "practice": {"prompt": "描述你在修改正确代码前的准备步骤。", "hint": "注释旧代码", "expectedIdea": "// 保存旧版本（注释或备份）\n// 添加新代码\n// 测试新版本\n// 如果不行，恢复旧版本"},
+      "quiz": [{"question": "为什么要保留最近正确版本？", "options": ["代码太长", "方便回退", "提交需要", "没有原因"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.3",
+      "title": "一次只改一类错误",
+      "learningGoal": "学会分类处理错误，每次只解决一类",
+      "explanation": "程序可能同时有多个问题。一次只处理一类错误（如先修 int 溢出，再修数组越界），避免混乱。\n\n处理完一类后测试，确认修复正确再处理下一类。",
+      "exampleCode": "// 错误分类：\n// 1. int 溢出 → 先改 long long\n// 2. 数组越界 → 再修循环边界\n// 3. 输出格式 → 最后检查格式",
+      "codeNotes": ["先分类再逐一修复", "修一类测一次", "避免同时修多处", "按优先级排序"],
+      "commonMistakes": [{"title": "同时修所有问题", "description": "多个修改互相影响，不知道哪个修好了。", "fix": "按优先级排序，每次只修一类。"}],
+      "practice": {"prompt": "你的程序同时有 int 溢出和输出格式错误，描述修复顺序。", "hint": "先修逻辑错误，再修格式", "expectedIdea": "1. 先修 int 溢出（逻辑错误）\n2. 测试\n3. 再修输出格式\n4. 再测试"},
+      "quiz": [{"question": "同时发现多个错误应该怎么处理？", "options": ["一起修", "一次修一类", "不修", "随机修"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.4",
+      "title": "模块化实现",
+      "learningGoal": "学会将复杂程序拆分为独立的函数模块",
+      "explanation": "将不同功能拆分为独立函数，每个函数只做一件事。好处：代码清晰、容易测试、出错容易定位。\n\n例如：将输入、处理、输出分成三个函数，main 只负责调用。",
+      "exampleCode": "void input() { /* 读取数据 */ }\nvoid solve() { /* 核心算法 */ }\nvoid output() { /* 输出结果 */ }\n\nint main() {\n    input();\n    solve();\n    output();\n    return 0;\n}",
+      "codeNotes": ["每个函数单一职责", "main 只负责调用", "便于单独测试", "出错容易定位"],
+      "commonMistakes": [{"title": "所有逻辑写在一个函数", "description": "几十上百行的函数难以调试。", "fix": "按功能拆分为小函数。"}],
+      "practice": {"prompt": "将排序程序拆分为 input、sort、output 三个函数。", "hint": "每个函数只做一件事", "expectedIdea": "int a[100], n;\nvoid input() { cin >> n; for (int i = 0; i < n; i++) cin >> a[i]; }\nvoid mySort() { sort(a, a + n); }\nvoid output() { for (int i = 0; i < n; i++) cout << a[i] << \" \"; cout << endl; }\nint main() { input(); mySort(); output(); return 0; }"},
+      "quiz": [{"question": "模块化的主要好处是？", "options": ["代码更长", "便于测试和调试", "运行更快", "占用更少内存"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.5",
+      "title": "样例过后再交",
+      "learningGoal": "养成样例全部通过后再提交的习惯",
+      "explanation": "提交前确保所有样例都通过。不仅要输出正确，还要检查输出格式（空格、换行、精度）。\n\n有些选手样例都没过就提交，浪费提交次数。",
+      "exampleCode": "// 提交前检查：\n// □ 样例 1 通过？\n// □ 样例 2 通过？\n// □ 输出格式完全一致？\n// □ 特殊情况考虑了？",
+      "codeNotes": ["所有样例都通过", "检查输出格式", "考虑边界情况", "不要急于提交"],
+      "commonMistakes": [{"title": "只过了一个样例就提交", "description": "第一个样例简单能过，第二个有边界情况。", "fix": "所有样例都通过再提交。"}],
+      "practice": {"prompt": "列出提交前的检查清单。", "hint": "样例、格式、边界、数据类型", "expectedIdea": "1. 所有样例通过\n2. 输出格式完全一致\n3. 考虑了 n=1, n=0 等边界\n4. 大数用了 long long\n5. 多组数据变量已重置"},
+      "quiz": [{"question": "提交前至少应该通过什么？", "options": ["所有样例", "一个样例就够了", "不需要过样例", "编译通过就行"], "answerIndex": 0}]
+    },
+    {
+      "itemId": "5.9.6",
+      "title": "提交前自查",
+      "learningGoal": "建立提交前的系统自查习惯",
+      "explanation": "提交前按清单逐项检查：数据类型、数组大小、循环边界、变量初始化、输出格式、多组数据重置、调试代码已删除。\n\n系统化的自查比凭感觉更可靠。",
+      "exampleCode": "// 自查清单：\n// □ long long 够了吗？\n// □ 数组大小够吗？\n// □ 循环条件正确吗？\n// □ 变量都初始化了吗？\n// □ 输出格式对吗？\n// □ 多组数据重置了吗？\n// □ freopen/LOCAL 关了吗？",
+      "codeNotes": ["数据类型检查", "数组大小检查", "循环边界检查", "调试代码关闭"],
+      "commonMistakes": [{"title": "忘记关调试代码", "description": "freopen 或 LOCAL 宏没关就提交。", "fix": "自查清单最后一项：检查调试代码已关闭。"}],
+      "practice": {"prompt": "写一份提交前的自查清单。", "hint": "包含数据类型、边界、格式、调试", "expectedIdea": "□ long long\n□ 数组大小\n□ 循环边界\n□ 变量初始化\n□ 输出格式\n□ 多组数据重置\n□ freopen 已注释\n□ LOCAL 已关闭"},
+      "quiz": [{"question": "提交前最常忘记检查的是什么？", "options": ["算法正确性", "调试代码是否关闭", "变量名", "代码风格"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.7",
+      "title": "复杂度预估",
+      "learningGoal": "学会在编码前预估算法复杂度",
+      "explanation": "写代码前先估算时间复杂度是否能在时限内完成。这能避免写完后才发现超时，浪费时间。\n\n1 秒约 10^8 次运算。根据数据范围选合适的算法。",
+      "exampleCode": "// 预估：\n// n = 10^5, 算法 O(n log n) = 10^5 × 17 ≈ 1.7 × 10^6 ✓\n// n = 10^5, 算法 O(n²) = 10^10 ✗ 超时",
+      "codeNotes": ["编码前先估算", "1 秒约 10^8 次", "选择合适复杂度", "避免写完才发现超时"],
+      "commonMistakes": [{"title": "写完后才发现超时", "description": "花了大量时间写 O(n²) 代码，提交 TLE。", "fix": "先估算再编码。"}],
+      "practice": {"prompt": "题目 n ≤ 10^6，时限 2 秒。以下算法哪些可用？ O(n), O(n log n), O(n√n), O(n²)", "hint": "2 秒约 2×10^8", "expectedIdea": "O(n) = 10^6 ✓\nO(n log n) = 2×10^7 ✓\nO(n√n) = 10^9 ✗\nO(n²) = 10^12 ✗"},
+      "quiz": [{"question": "编码前应该先做什么？", "options": ["直接写代码", "估算算法复杂度", "画界面", "写注释"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.8",
+      "title": "数据范围匹配",
+      "learningGoal": "学会根据数据范围选择合适的数据类型和算法",
+      "explanation": "数据范围决定：数据类型（int/long long）、算法复杂度、空间需求。做题前先看数据范围再决定方案。\n\n数据范围 ≤ 10^9 用 int，> 10^9 用 long long。数组大小要留余量。",
+      "exampleCode": "// 数据范围匹配：\n// 值 ≤ 10^9: int\n// 值 ≤ 10^18: long long\n// 数组大小: 题目给的 +5 余量\n// n ≤ 100: O(n³) 可以\n// n ≤ 5000: O(n²) 可以",
+      "codeNotes": ["值 > 10^9 用 long long", "数组多开几个", "n 大则需更优算法", "先看范围再写代码"],
+      "commonMistakes": [{"title": "数据范围不看就写", "description": "用了 int 但数据范围到 10^12。", "fix": "做题第一步：看数据范围。"}],
+      "practice": {"prompt": "题目说 a[i] ≤ 10^12，应该用什么数据类型？", "hint": "10^12 > 10^9", "expectedIdea": "用 long long，因为 10^12 超出 int 范围。"},
+      "quiz": [{"question": "数据范围 ≤ 10^12 应该用什么类型？", "options": ["int", "long long", "short", "char"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.9",
+      "title": "时间管理",
+      "learningGoal": "学会在竞赛中合理分配时间",
+      "explanation": "竞赛中时间有限，要合理分配。基本原则：先做有把握的题，不要在一道题上花太多时间。\n\n如果一道题想了 30 分钟没思路，先做下一题。最后再回来攻克难题。\n\n留出检查时间，避免低级错误丢分。",
+      "exampleCode": "// 时间管理策略：\n// 1. 快速浏览所有题目，标记难度\n// 2. 从简单到难做\n// 3. 每题设时间上限\n// 4. 留 15 分钟检查",
+      "codeNotes": ["先易后难", "每题设时限", "留检查时间", "不要死磕一道题"],
+      "commonMistakes": [{"title": "死磕难题不放", "description": "花 2 小时在一道难题上，简单题没做。", "fix": "设时间上限，超时就跳过。"}],
+      "practice": {"prompt": "比赛有 5 道题 3 小时，描述你的时间分配策略。", "hint": "先浏览，先易后难", "expectedIdea": "1. 前 10 分钟浏览所有题目\n2. 按难度排序\n3. 每题约 30 分钟上限\n4. 最后 20 分钟检查已提交的代码"},
+      "quiz": [{"question": "比赛中应该先做什么？", "options": ["做最难的题", "浏览所有题目评估难度", "从第一题开始做", "先写模板代码"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.10",
+      "title": "风险权衡",
+      "learningGoal": "学会在不确定时做出合理的风险决策",
+      "explanation": "竞赛中经常面临不确定性：算法可能对也可能错，数据范围可能需要 long long 也可能不需要。\n\n原则：不确定时选更安全的选项。例如不确定是否需要 long long，那就用 long long（只是常数稍大）。不确定数组够不够大，就多开一些。",
+      "exampleCode": "// 安全策略：\n// 不确定 long long？→ 用 long long\n// 不确定数组够大？→ 多开 10\n// 不确定精度？→ 用 double + eps\n// 不确定算法对？→ 写暴力验证",
+      "codeNotes": ["不确定时选安全选项", "long long 代价很小", "数组多开无妨", "写暴力验证"],
+      "commonMistakes": [{"title": "赌不需要 long long", "description": "不确定但用了 int，结果因为溢出 WA。", "fix": "只要有可能溢出就用 long long。"}],
+      "practice": {"prompt": "你的算法时间复杂度不确定是 O(n log n) 还是 O(n²)，怎么办？", "hint": "先假设最坏情况", "expectedIdea": "假设是 O(n²)，看 n 的范围是否允许。如果不行，换算法或先写 O(n log n) 版本。"},
+      "quiz": [{"question": "不确定是否需要 long long 时应该？", "options": ["用 int 试试", "直接用 long long", "不用管", "问别人"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.9.11",
+      "title": "版本管理",
+      "learningGoal": "学会用简单的方法管理代码版本",
+      "explanation": "竞赛中不需要复杂的版本管理工具，但要保留关键版本。方法：在代码中用注释标记版本，或复制文件备份。\n\n大改动前复制一份，确保能回退。提交通过后保存当前版本。",
+      "exampleCode": "// 简单版本管理：\n// v1: 暴力 O(n²) - 通过 70%\n// v2: 优化 O(n log n) - WA on test 5\n// v3: 修复边界 - AC\n\n// 代码中标记：\n// --- v3: 修复了 long long 问题 ---",
+      "codeNotes": ["用注释标记版本", "大改动前备份", "记录每个版本的变化", "通过后保存最终版"],
+      "commonMistakes": [{"title": "不保留旧版本", "description": "改坏了想回退但旧代码没了。", "fix": "注释旧代码或复制文件备份。"}],
+      "practice": {"prompt": "描述你的简单版本管理方法。", "hint": "注释标记 + 文件备份", "expectedIdea": "// 每次大改动前复制一份 sol_v1.cpp\n// 在代码开头注释版本号和改动内容\n// 通过后保存最终版"},
+      "quiz": [{"question": "竞赛中版本管理的最低要求是？", "options": ["用 Git", "能回退到上一个正确版本", "不需要版本管理", "每次都从头写"], "answerIndex": 1}]
+    }
+  ]
+}

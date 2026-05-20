@@ -1,0 +1,546 @@
+{
+  "sectionId": "4.4",
+  "sectionName": "逻辑与证明",
+  "units": [
+    {
+      "itemId": "4.4.1",
+      "title": "集合",
+      "learningGoal": "理解集合的基本概念，掌握子集、并集、交集、补集的含义，能用 C++ 的 set 和 bitset 实现集合操作",
+      "explanation": "【集合的定义】\n集合是由某些确定的、互不相同的对象组成的整体。\n例如 A = {1, 2, 3} 就是一个集合。\n\n【集合的表示方法】\n1. 列举法：A = {1, 2, 3}\n2. 描述法：A = {x | x 是偶数且 1 ≤ x ≤ 10}\n\n【基本概念】\n- 属于（∈）：a ∈ A 表示 a 是集合 A 中的元素\n- 不属于（∉）：a ∉ A 表示 a 不是集合 A 的元素\n- 空集（∅）：不包含任何元素的集合\n- 全集（U）：包含所有考虑对象的集合\n\n【子集】\n如果 A 中的每一个元素都在 B 中，则 A 是 B 的子集，记作 A ⊆ B。\n真子集：A ⊂ B 且 A ≠ B。\n\n【编程实现】\nC++ 中可以用 set<int> 存储集合（自动去重、排序），\n也可以用 bitset<N> 存储有限集合（第 i 位为 1 表示元素 i 在集合中）。\n\n集合的大小称为「基数」，记作 |A|。",
+      "exampleCode": "#include <iostream>\n#include <set>\n#include <bitset>\nusing namespace std;\n\nint main() {\n    set<int> A = {1, 2, 3, 4, 5};\n    set<int> B = {3, 4, 5, 6, 7};\n\n    cout << \"集合 A 的大小: \" << A.size() << endl;\n    cout << \"3 是否在 A 中: \" << (A.count(3) ? \"是\" : \"否\") << endl;\n    cout << \"8 是否在 A 中: \" << (A.count(8) ? \"是\" : \"否\") << endl;\n\n    set<int> C = {1, 2, 3};\n    bool isSubset = true;\n    for (int x : C) {\n        if (!A.count(x)) { isSubset = false; break; }\n    }\n    cout << \"{1,2,3} 是否是 A 的子集: \" << (isSubset ? \"是\" : \"否\") << endl;\n\n    bitset<8> bs1(0b00111110);\n    bitset<8> bs2(0b01111000);\n    cout << \"bs1: \" << bs1 << endl;\n    cout << \"bs2: \" << bs2 << endl;\n    cout << \"bs1 的第 1 位: \" << bs1[1] << endl;\n    cout << \"bs1 的第 2 位: \" << bs1[2] << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "set<int> 自动去重并按升序排列，count() 返回 0 或 1 表示元素是否存在",
+        "判断子集：遍历候选子集的每个元素，检查是否都在母集中",
+        "bitset<N> 用 N 位二进制表示集合，第 i 位为 1 表示元素 i 在集合中",
+        "bitset 适合元素范围小且固定的集合，操作效率高"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆子集和真子集",
+          "description": "忘记 A ⊆ A（每个集合是自身的子集），误以为子集必须比原集小",
+          "fix": "A ⊆ B 允许 A = B；只有 A ⊂ B（真子集）才要求 A ≠ B"
+        },
+        {
+          "title": "set 插入重复元素",
+          "description": "向 set 中插入已存在的元素不会报错，但也不会增加元素个数",
+          "fix": "set 自动去重是特性而非 bug，如需允许重复请用 multiset"
+        }
+      ],
+      "practice": {
+        "prompt": "给定两个集合 A 和 B（各包含若干整数），判断 A 是否是 B 的子集，输出 \"Yes\" 或 \"No\"。",
+        "hint": "遍历 A 中的每个元素，检查它是否都在 B 中。",
+        "expectedIdea": "遍历 A 的每个元素，用 B.count() 检查是否属于 B，全部存在则为子集"
+      },
+      "quiz": [
+        {
+          "question": "集合 A = {1, 2, 3}，集合 B = {1, 2, 3}，以下哪个说法正确？",
+          "options": [
+            "A 是 B 的真子集",
+            "A 是 B 的子集但不是真子集",
+            "A 和 B 没有子集关系",
+            "A 是 B 的子集"
+          ],
+          "answerIndex": 3,
+          "explanation": "A ⊆ B 成立（A 中每个元素都在 B 中），且 A = B，所以 A 是 B 的子集。但 A 不是 B 的真子集（因为 A = B）"
+        },
+        {
+          "question": "用 bitset<8> 表示集合 {1, 3, 5}，正确的二进制表示是？",
+          "options": [
+            "10101000",
+            "00101010",
+            "01010100",
+            "00010101"
+          ],
+          "answerIndex": 1,
+          "explanation": "bitset 第 i 位为 1 表示元素 i 在集合中。{1,3,5} 对应第 1、3、5 位为 1，即 00101010（从右往左第 1、3、5 位）"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.2",
+      "title": "集合运算",
+      "learningGoal": "掌握并、交、差、对称差等集合运算，理解容斥原理并能用于计数问题",
+      "explanation": "【基本集合运算】\n1. 并集 A∪B：属于 A 或属于 B 的所有元素\n2. 交集 A∩B：同时属于 A 和 B 的元素\n3. 差集 A\\B：属于 A 但不属于 B 的元素\n4. 补集 Ā：全集 U 中不属于 A 的元素\n5. 对称差 A△B = (A\\B)∪(B\\A)：恰属于其中一个集合的元素\n\n【容斥原理】\n对于两个集合：|A∪B| = |A| + |B| - |A∩B|\n对于三个集合：|A∪B∪C| = |A|+|B|+|C| - |A∩B|-|A∩C|-|B∩C| + |A∩B∩C|\n\n一般形式（容斥原理）：\n|A₁∪A₂∪...∪Aₙ| = Σ|Ai| - Σ|Ai∩Aj| + Σ|Ai∩Aj∩Ak| - ...\n\n【编程实现】\n用 C++ set 的 insert 遍历可实现并集；用循环+count 可实现交集；\n用 bitset 可以直接用位运算：并（|）、交（&）、差（&~）、对称差（^）。",
+      "exampleCode": "#include <iostream>\n#include <set>\n#include <bitset>\nusing namespace std;\n\nint main() {\n    set<int> A = {1, 2, 3, 4, 5};\n    set<int> B = {3, 4, 5, 6, 7};\n\n    set<int> unionSet = A;\n    for (int x : B) unionSet.insert(x);\n    cout << \"并集大小: \" << unionSet.size() << endl;\n\n    set<int> interSet;\n    for (int x : A) if (B.count(x)) interSet.insert(x);\n    cout << \"交集大小: \" << interSet.size() << endl;\n\n    set<int> diffSet;\n    for (int x : A) if (!B.count(x)) diffSet.insert(x);\n    cout << \"差集 A\\\\B 大小: \" << diffSet.size() << endl;\n\n    bitset<8> bs1(string(\"00111110\"));\n    bitset<8> bs2(string(\"01111000\"));\n    cout << \"并集: \" << (bs1 | bs2) << endl;\n    cout << \"交集: \" << (bs1 & bs2) << endl;\n    cout << \"对称差: \" << (bs1 ^ bs2) << endl;\n\n    int total = 30, likeMath = 15, likePhysics = 12, likeBoth = 5;\n    int likeEither = likeMath + likePhysics - likeBoth;\n    int likeNeither = total - likeEither;\n    cout << \"至少喜欢一门: \" << likeEither << endl;\n    cout << \"都不喜欢: \" << likeNeither << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "并集：把 B 的元素全部插入 A 的副本中，set 自动去重",
+        "交集：遍历 A，检查每个元素是否也在 B 中",
+        "bitset 的位运算直接对应集合运算：| 并、& 交、^ 对称差",
+        "容斥原理的核心：加上单集合大小，减去两两交集，加上三三交集，交替进行"
+      ],
+      "commonMistakes": [
+        {
+          "title": "容斥原理符号搞错",
+          "description": "在多集合容斥中，加减交替的规律记错，导致计数结果偏差",
+          "fix": "记住规律：奇数个集合的交集取「+」，偶数个集合的交集取「-」"
+        },
+        {
+          "title": "差集方向混淆",
+          "description": "把 A\\B 和 B\\A 搞混，两者是不同的集合",
+          "fix": "A\\B 是「在 A 中但不在 B 中」，B\\A 是「在 B 中但不在 A 中」，方向不能反"
+        }
+      ],
+      "practice": {
+        "prompt": "一个班有 50 人，喜欢语文的有 20 人，喜欢数学的有 25 人，两门都喜欢的有 8 人。求至少喜欢一门的有多少人？两门都不喜欢的有多少人？",
+        "hint": "用容斥原理：|A∪B| = |A| + |B| - |A∩B|，都不喜欢的 = 总人数 - 至少喜欢一门的。",
+        "expectedIdea": "至少喜欢一门 = 20 + 25 - 8 = 37，都不喜欢 = 50 - 37 = 13"
+      },
+      "quiz": [
+        {
+          "question": "|A| = 10，|B| = 15，|A∪B| = 20，则 |A∩B| 等于？",
+          "options": [
+            "5",
+            "10",
+            "25",
+            "15"
+          ],
+          "answerIndex": 0,
+          "explanation": "由容斥原理：|A∪B| = |A| + |B| - |A∩B|，即 20 = 10 + 15 - |A∩B|，所以 |A∩B| = 5"
+        },
+        {
+          "question": "集合 A = {1,2,3,4}，B = {3,4,5,6}，则 A△B（对称差）等于？",
+          "options": [
+            "{3,4}",
+            "{1,2,5,6}",
+            "{1,2,3,4,5,6}",
+            "{1,2}"
+          ],
+          "answerIndex": 1,
+          "explanation": "对称差 = (A\\B)∪(B\\A)，A\\B = {1,2}，B\\A = {5,6}，所以 A△B = {1,2,5,6}"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.3",
+      "title": "命题与逻辑连接词",
+      "learningGoal": "理解命题的概念，掌握与、或、非、蕴含等逻辑连接词，能在 C++ 中用 &&、||、! 表示逻辑运算",
+      "explanation": "【命题】\n可以判断真假的陈述句称为命题。\n例如：「3 是质数」是真命题；「北京是沿海城市」是假命题。\n「x > 5」不是命题（x 未知时无法判断真假）。\n\n【逻辑连接词】\n1. 与（∧）：p∧q，p 和 q 同时为真时结果为真 → C++ 中 p && q\n2. 或（∨）：p∨q，p 和 q 至少一个为真时结果为真 → C++ 中 p || q\n3. 非（¬）：¬p，取反 → C++ 中 !p\n4. 蕴含（→）：p→q，「如果 p 则 q」→ C++ 中 !p || q\n5. 等价（↔）：p↔q，p 和 q 同真假 → C++ 中 p == q\n\n【蕴含的真值】\np→q 只在 p 为真且 q 为假时为假，其余情况都为真。\n这和日常语言中「如果...就...」的含义一致：\n前提为假时，命题自动为真（空虚真）。\n\n【运算优先级】\n¬ > ∧ > ∨ > → > ↔\n在 C++ 中：! > && > ||，建议多用括号明确优先级。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    bool p = true, q = false;\n\n    cout << \"p && q (与): \" << (p && q) << endl;\n    cout << \"p || q (或): \" << (p || q) << endl;\n    cout << \"!p (非): \" << (!p) << endl;\n    cout << \"!p || q (蕴含 p->q): \" << (!p || q) << endl;\n    cout << \"p == q (等价): \" << (p == q) << endl;\n\n    int x = 7;\n    bool isPositive = (x > 0);\n    bool isEven = (x % 2 == 0);\n    cout << x << \" 是正数且是偶数: \" << (isPositive && isEven) << endl;\n    cout << x << \" 是正数或是偶数: \" << (isPositive || isEven) << endl;\n\n    int age = 15;\n    bool canRide = (age >= 12) && (age <= 60);\n    cout << age << \" 岁可以乘坐: \" << canRide << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "C++ 中 bool 值输出为 1（true）或 0（false），可用 boolalpha 输出 true/false",
+        "蕴含 p→q 等价于 !p || q：只有 p 真 q 假时为假",
+        "&& 和 || 有短路求值特性：&& 左边为假则不计算右边，|| 左边为真则不计算右边",
+        "复杂逻辑表达式建议多用括号，避免优先级混淆"
+      ],
+      "commonMistakes": [
+        {
+          "title": "蕴含理解错误",
+          "description": "误以为 p→q 表示 p 和 q 有因果关系，实际上它只是一个真值函数",
+          "fix": "p→q 的本质是「p 为真时 q 不能为假」，只有 p=1,q=0 时为假"
+        },
+        {
+          "title": "逻辑运算符写成位运算",
+          "description": "把 && 写成 &，把 || 写成 |，虽然对 bool 值结果相同，但语义不同且没有短路求值",
+          "fix": "逻辑运算用 &&、||、!，位运算用 &、|、~，不要混淆"
+        }
+      ],
+      "practice": {
+        "prompt": "给定整数 x，判断以下命题的真假并输出：① x 是正偶数；② x 是 3 的倍数或 5 的倍数；③ 如果 x > 10 则 x 是质数。",
+        "hint": "分别用 &&、||、蕴含（!p || q）来组合条件。判断质数需要单独写一个循环。",
+        "expectedIdea": "用逻辑运算符组合条件判断，蕴含用 !p || q 或条件表达式实现"
+      },
+      "quiz": [
+        {
+          "question": "命题「如果 2+2=5，则太阳从西边升起」的真值是？",
+          "options": [
+            "真",
+            "假",
+            "无法判断",
+            "取决于太阳"
+          ],
+          "answerIndex": 0,
+          "explanation": "蕴含 p→q 中，p =「2+2=5」为假。前提为假时蕴含命题自动为真（空虚真）"
+        },
+        {
+          "question": "在 C++ 中，表达式 true || false && false 的值是？",
+          "options": [
+            "false",
+            "true",
+            "编译错误",
+            "未定义"
+          ],
+          "answerIndex": 1,
+          "explanation": "&& 优先级高于 ||，所以等价于 true || (false && false) = true || false = true"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.4",
+      "title": "命题否定",
+      "learningGoal": "掌握命题的否定方法，理解德摩根定律，能对复合命题进行否定",
+      "explanation": "【命题的否定】\n命题 p 的否定记作 ¬p，真值取反。\n- ¬(¬p) = p（双重否定等于肯定）\n\n【德摩根定律】\n- ¬(p ∧ q) = ¬p ∨ ¬q（「并非（p 且 q）」=「非 p 或 非 q」）\n- ¬(p ∨ q) = ¬p ∧ ¬q（「并非（p 或 q）」=「非 p 且 非 q」）\n\n【量词的否定】\n- ¬(∀x, P(x)) = ∃x, ¬P(x)（「并非所有 x 都满足 P」=「存在 x 不满足 P」）\n- ¬(∃x, P(x)) = ∀x, ¬P(x)（「不存在 x 满足 P」=「所有 x 都不满足 P」）\n\n【蕴含的否定】\n¬(p→q) = p ∧ ¬q\n即「p→q 为假」当且仅当「p 为真且 q 为假」。\n\n【实际应用】\n在信奥中，经常需要将条件取反：\n- 否定「所有元素都满足条件」→「存在一个元素不满足条件」\n- 否定「存在元素满足条件」→「所有元素都不满足条件」\n- 否定「x ≥ 0 且 x ≤ 100」→ 「x < 0 或 x > 100」",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    bool p = true, q = false;\n    cout << \"not (p and q) = \" << (!(p && q)) << endl;\n    cout << \"(not p) or (not q) = \" << ((!p) || (!q)) << endl;\n    cout << \"两者相等: \" << ((!(p && q)) == ((!p) || (!q))) << endl;\n\n    cout << \"not (p or q) = \" << (!(p || q)) << endl;\n    cout << \"(not p) and (not q) = \" << ((!p) && (!q)) << endl;\n    cout << \"两者相等: \" << ((!(p || q)) == ((!p) && (!q))) << endl;\n\n    vector<int> arr = {3, 7, 12, -5, 8};\n    bool allPositive = true;\n    for (int x : arr) if (x <= 0) { allPositive = false; break; }\n    bool existsNonPositive = false;\n    for (int x : arr) if (x <= 0) { existsNonPositive = true; break; }\n    cout << \"全部为正: \" << allPositive << endl;\n    cout << \"存在非正: \" << existsNonPositive << endl;\n    cout << \"互为否定: \" << (allPositive != existsNonPositive) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "德摩根定律：!(p && q) == (!p || !q)，!(p || q) == (!p && !q)",
+        "否定「全部满足」等价于「存在一个不满足」，反之亦然",
+        "C++ 中用 != 可以判断两个 bool 值是否互为否定",
+        "量词否定在遍历数组时很常见：判断「所有」「存在」的否定"
+      ],
+      "commonMistakes": [
+        {
+          "title": "否定蕴含时出错",
+          "description": "误以为 ¬(p→q) = ¬p→¬q，实际上 ¬(p→q) = p ∧ ¬q",
+          "fix": "p→q 只在 p 真且 q 假时为假，所以否定后是 p 为真且 q 为假，即 p ∧ ¬q"
+        },
+        {
+          "title": "量词否定搞混",
+          "description": "否定「所有都满足」时，误写成「所有都不满足」",
+          "fix": "¬(∀x P(x)) = ∃x ¬P(x)，是「存在一个不满足」而非「所有都不满足」"
+        }
+      ],
+      "practice": {
+        "prompt": "写出命题「所有学生的成绩都大于等于 60 分」的否定，并用 C++ 验证：给定数组表示成绩，检查原命题和其否定是否互补。",
+        "hint": "否定是「存在一个学生的成绩小于 60 分」。用循环检查全部≥60 和存在<60 是否互补。",
+        "expectedIdea": "遍历数组，allPass = 所有元素≥60，existsFail = 存在元素<60，验证 allPass != existsFail"
+      },
+      "quiz": [
+        {
+          "question": "¬(p ∧ q) 等价于以下哪个表达式？",
+          "options": [
+            "¬p ∧ ¬q",
+            "¬p ∨ ¬q",
+            "p ∨ ¬q",
+            "¬p → q"
+          ],
+          "answerIndex": 1,
+          "explanation": "根据德摩根定律，¬(p ∧ q) = ¬p ∨ ¬q。「并非（p 且 q）」=「非 p 或 非 q」"
+        },
+        {
+          "question": "「所有鸟都会飞」的否定是？",
+          "options": [
+            "所有鸟都不会飞",
+            "没有鸟会飞",
+            "存在一只鸟不会飞",
+            "有些鸟会飞"
+          ],
+          "answerIndex": 2,
+          "explanation": "¬(∀x P(x)) = ∃x ¬P(x)，否定「所有鸟会飞」是「存在一只鸟不会飞」"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.5",
+      "title": "真值表",
+      "learningGoal": "掌握真值表的构建方法，能用真值表判断命题是永真、永假还是可满足的",
+      "explanation": "【真值表】\n将命题中所有变量的取值组合列出，计算每种组合下命题的真值。\n\n【构建步骤】\n1. 确定所有命题变量（如 p, q）\n2. 列出所有可能的真假组合（n 个变量有 2ⁿ 种）\n3. 逐步计算每个子表达式的值\n4. 最终得到整个命题的值\n\n【分类】\n- 永真式（重言式）：所有取值下都为真，如 p ∨ ¬p\n- 永假式（矛盾式）：所有取值下都为假，如 p ∧ ¬p\n- 可满足式：至少有一种取值使其为真\n\n【用编程构建真值表】\n可以用二进制枚举所有变量组合：\n0 到 2ⁿ-1 的每个数的二进制位代表各变量的真假。\n\n【信奥应用】\n真值表可以验证两个逻辑表达式是否等价、\n判断条件是否永真/永假、简化复杂的条件判断。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"p q | p&&q p||q !p p->q\" << endl;\n    cout << \"----+--------------------\" << endl;\n    for (int p = 0; p <= 1; p++) {\n        for (int q = 0; q <= 1; q++) {\n            bool bp = p, bq = q;\n            bool and_ = bp && bq;\n            bool or_ = bp || bq;\n            bool not_ = !bp;\n            bool imp = !bp || bq;\n            cout << p << \" \" << q << \" |  \"\n                 << and_ << \"    \" << or_ << \"   \"\n                 << not_ << \"   \" << imp << endl;\n        }\n    }\n\n    cout << \"\\n验证 p->q 等价于 !p||q:\" << endl;\n    bool isTautology = true;\n    for (int p = 0; p <= 1; p++) {\n        for (int q = 0; q <= 1; q++) {\n            bool bp = p, bq = q;\n            bool imp = (!bp) || bq;\n            bool contraPos = (!bq) || (!(!bp));\n            if (imp != contraPos) isTautology = false;\n        }\n    }\n    cout << \"永真式验证: \" << (isTautology ? \"是\" : \"否\") << endl;\n\n    cout << \"\\n验证德摩根定律:\" << endl;\n    bool demorgan = true;\n    for (int p = 0; p <= 1; p++) {\n        for (int q = 0; q <= 1; q++) {\n            bool bp = p, bq = q;\n            if (!(bp && bq) != (!bp || !bq)) demorgan = false;\n        }\n    }\n    cout << \"德摩根定律成立: \" << (demorgan ? \"是\" : \"否\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "用二重循环枚举 p 和 q 的 0/1 取值，覆盖所有组合",
+        "每个子表达式独立计算，便于调试和理解",
+        "验证等价性：如果两个表达式在所有取值下都相同，则等价",
+        "永真式验证：在所有取值下结果都为 true"
+      ],
+      "commonMistakes": [
+        {
+          "title": "遗漏取值组合",
+          "description": "构建真值表时遗漏了某些变量组合，导致判断错误",
+          "fix": "n 个变量一定有 2ⁿ 种组合，用二进制枚举 0 到 2ⁿ-1 可确保不遗漏"
+        },
+        {
+          "title": "混淆永真和可满足",
+          "description": "把「存在为真的情况」和「所有情况都为真」混淆",
+          "fix": "永真要求所有取值都为真；可满足只需要至少一种取值为真"
+        }
+      ],
+      "practice": {
+        "prompt": "用程序验证 (p→q) ∧ (q→r) → (p→r) 是永真式（即假言三段论）。",
+        "hint": "枚举 p、q、r 的所有 8 种组合，检查表达式是否在所有情况下都为真。",
+        "expectedIdea": "三重循环枚举 p,q,r 的 0/1，计算蕴含链，验证所有情况下结果为 true"
+      },
+      "quiz": [
+        {
+          "question": "命题 p ∨ ¬p 属于以下哪种类型？",
+          "options": [
+            "永真式",
+            "永假式",
+            "可满足但非永真",
+            "无法判断"
+          ],
+          "answerIndex": 0,
+          "explanation": "p ∨ ¬p 是排中律：p 为真时 ∨ 后为真，p 为假时 ∨ 前为真。无论 p 取何值，结果都为真，是永真式"
+        },
+        {
+          "question": "两个变量 p 和 q 的真值表共有多少行？",
+          "options": [
+            "2 行",
+            "3 行",
+            "4 行",
+            "8 行"
+          ],
+          "answerIndex": 2,
+          "explanation": "n 个变量的真值表有 2ⁿ 行。2 个变量有 2² = 4 行：(0,0), (0,1), (1,0), (1,1)"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.6",
+      "title": "充分条件与必要条件",
+      "learningGoal": "理解充分条件、必要条件和充要条件的含义，能判断 p→q 中 p 和 q 的条件关系",
+      "explanation": "【充分条件与必要条件】\n对于命题 p→q：\n- p 是 q 的「充分条件」：p 成立足以保证 q 成立\n- q 是 p 的「必要条件」：q 成立是 p 成立所必需的\n\n【四种条件关系】\n1. 充分不必要：p→q 成立但 q→p 不成立\n   例：「x = 2」是「x 是偶数」的充分不必要条件\n2. 必要不充分：q→p 成立但 p→q 不成立\n   例：「x 是偶数」是「x = 2」的必要不充分条件\n3. 充要条件：p→q 且 q→p 都成立（p↔q）\n   例：「x 是偶数」↔「x² 是偶数」\n4. 既不充分也不必要：p→q 和 q→p 都不成立\n\n【判断方法】\n1. 找反例：若存在 p 真但 q 假的情况，则 p 不是 q 的充分条件\n2. 找反例：若存在 q 真但 p 假的情况，则 p 不是 q 的必要条件\n3. 若找不到反例，则条件关系成立\n\n【信奥中的体现】\n- 「n 能被 4 整除」是「n 能被 2 整除」的充分条件\n- 「排序数组」是「二分查找正确运行」的必要条件",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"判断 x=2 与 x 是偶数的关系:\" << endl;\n    int x = 2;\n    bool p = (x == 2);\n    bool q = (x % 2 == 0);\n    cout << \"x=2 -> x 是偶数: \" << ((!(x == 2)) || (x % 2 == 0)) << endl;\n    cout << \"x 是偶数 -> x=2: \" << ((!(x % 2 == 0)) || (x == 2));\n    cout << \" (x=4 时为假，所以不成立)\" << endl;\n\n    cout << \"\\n判断 n%4==0 与 n%2==0 的关系:\" << endl;\n    bool sufficient = true, necessary = false;\n    for (int n = 0; n < 100; n++) {\n        if (n % 4 == 0 && n % 2 != 0) sufficient = false;\n    }\n    for (int n = 0; n < 100; n++) {\n        if (n % 2 == 0 && n % 4 != 0) necessary = true;\n    }\n    cout << \"n%4==0 是 n%2==0 的充分条件: \" << sufficient << endl;\n    cout << \"n%4==0 是 n%2==0 的必要条件: \" << (!necessary ? \"是\" : \"否\") << endl;\n    cout << \"结论: 充分不必要条件\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "判断充分条件：检查是否存在 p 真但 q 假的情况（不存在则为充分）",
+        "判断必要条件：检查是否存在 q 真但 p 假的情况（不存在则为必要）",
+        "充要条件意味着两个方向的蕴含都成立，即 p↔q",
+        "编程验证时可以用循环枚举范围内的所有值来找反例"
+      ],
+      "commonMistakes": [
+        {
+          "title": "充分与必要搞反",
+          "description": "把「A 是 B 的充分条件」说成「A 是 B 的必要条件」",
+          "fix": "记住口诀：「充分」= 有了就够了（A→B），「必要」= 没它不行（B→A）"
+        },
+        {
+          "title": "混淆条件方向",
+          "description": "题目问「A 是 B 的什么条件」，误以为是问「B 是 A 的什么条件」",
+          "fix": "明确题目方向：「A 是 B 的 ? 条件」看的是 A→B（充分）和 B→A（必要）"
+        }
+      ],
+      "practice": {
+        "prompt": "判断「三角形三边相等」是「三角形是等腰三角形」的什么条件？用程序验证（枚举三边组合）。",
+        "hint": "三边相等 → 等腰（至少两边相等）：一定成立。等腰 → 三边相等：不一定（如 3,3,5）。",
+        "expectedIdea": "充分不必要条件。三边相等必然等腰，但等腰不一定三边相等"
+      },
+      "quiz": [
+        {
+          "question": "「x² = 4」是「x = 2」的什么条件？",
+          "options": [
+            "充分不必要",
+            "必要不充分",
+            "充要条件",
+            "既不充分也不必要"
+          ],
+          "answerIndex": 1,
+          "explanation": "x²=4 时 x 可能是 2 或 -2，所以 x²=4 推不出 x=2（不充分）。但 x=2 一定能推出 x²=4（必要）。所以是必要不充分条件"
+        },
+        {
+          "question": "「n 是偶数」和「n² 是偶数」之间的关系是？",
+          "options": [
+            "充分不必要",
+            "必要不充分",
+            "充要条件",
+            "既不充分也不必要"
+          ],
+          "answerIndex": 2,
+          "explanation": "n 是偶数 → n² 是偶数（充分），n² 是偶数 → n 是偶数（必要，因为 n 为奇数时 n² 也是奇数）。两者互相推出，是充要条件"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.7",
+      "title": "反证法",
+      "learningGoal": "掌握反证法的基本思想和步骤，能用反证法证明简单的数学命题",
+      "explanation": "【反证法思想】\n要证明命题 P 为真，先假设 P 为假（即 ¬P 为真），\n然后从这个假设出发进行推理，最终得出矛盾。\n由于矛盾不可能出现，所以假设 ¬P 不成立，即 P 为真。\n\n【反证法的步骤】\n1. 假设结论不成立（假设结论的反面）\n2. 从假设出发进行正确的逻辑推理\n3. 得出矛盾（与已知条件、定义、公理或自身矛盾）\n4. 因此假设不成立，原命题成立\n\n【常见应用场景】\n1. 证明存在性：「存在某个满足条件的对象」\n2. 证明唯一性：「满足条件的对象只有一个」\n3. 证明无穷：「某类对象有无穷多个」\n4. 证明不可能：「某种情况不可能发生」\n\n【经典例子】\n证明：√2 不是有理数。\n假设 √2 = p/q（p,q 互质），则 2 = p²/q²，p² = 2q²，所以 p 是偶数。\n设 p = 2k，则 4k² = 2q²，q² = 2k²，q 也是偶数。\np 和 q 都是偶数，与 p,q 互质矛盾！\n\n【编程中的体现】\n假设最优解不满足某个性质 → 推出矛盾 → 说明最优解一定满足该性质。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nbool isRationalSquareRootOfTwo(int maxDenom) {\n    for (int q = 1; q <= maxDenom; q++) {\n        for (int p = 1; p <= maxDenom; p++) {\n            if (p * p == 2 * q * q) {\n                return true;\n            }\n        }\n    }\n    return false;\n}\n\nbool hasTwoConsecutiveNonPrimes(int n) {\n    int consecutive = 0;\n    for (int i = 2; i <= n; i++) {\n        bool isPrime = true;\n        for (int j = 2; j * j <= i; j++) {\n            if (i % j == 0) { isPrime = false; break; }\n        }\n        if (!isPrime) {\n            consecutive++;\n            if (consecutive >= 2) return true;\n        } else {\n            consecutive = 0;\n        }\n    }\n    return false;\n}\n\nint main() {\n    cout << \"验证 sqrt(2) 不是有理数（搜索范围 1-10000）:\" << endl;\n    bool found = isRationalSquareRootOfTwo(10000);\n    cout << \"找到 p,q 使得 p^2=2q^2: \" << (found ? \"是\" : \"否\") << endl;\n    cout << \"没有找到，支持反证法的结论\" << endl;\n\n    cout << \"\\n证明：素数有无穷多个\" << endl;\n    cout << \"思路：假设素数有限个 p1,...,pn\" << endl;\n    cout << \"构造 N = p1*p2*...*pn + 1\" << endl;\n    cout << \"N 除以任何 pi 都余 1，所以 N 的因子不在列表中\" << endl;\n    cout << \"矛盾！所以素数有无穷多个\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "程序不能直接做反证法，但可以数值验证来支持反证法的结论",
+        "验证 √2 不是有理数：穷举搜索找不到 p²=2q² 的整数解",
+        "欧几里得证明素数无穷：构造新数 = 所有已知素数之积 + 1",
+        "反证法的核心是「假设反面 → 推出矛盾 → 原命题成立」"
+      ],
+      "commonMistakes": [
+        {
+          "title": "假设时否定不彻底",
+          "description": "要证明「所有 x 都满足 P」时，假设成「所有 x 都不满足 P」而不是正确的「存在 x 不满足 P」",
+          "fix": "否定「∀x P(x)」应该是「∃x ¬P(x)」，注意正确否定"
+        },
+        {
+          "title": "推理过程有漏洞",
+          "description": "从假设推出的矛盾不是真正的矛盾，或者推理中有跳步",
+          "fix": "每一步推理都要严谨，矛盾必须是明确的（与已知条件、公理或自身矛盾）"
+        }
+      ],
+      "practice": {
+        "prompt": "用反证法证明：如果 n² 是偶数，则 n 是偶数。写出证明过程。",
+        "hint": "假设 n 是奇数，则 n = 2k+1，计算 n² = 4k²+4k+1 = 2(2k²+2k)+1 是奇数，与 n² 是偶数矛盾。",
+        "expectedIdea": "假设 n 是奇数 → n=2k+1 → n² 是奇数 → 与条件矛盾 → n 必须是偶数"
+      },
+      "quiz": [
+        {
+          "question": "反证法的第一步是什么？",
+          "options": [
+            "直接证明结论",
+            "假设结论不成立",
+            "举一个例子",
+            "画图辅助"
+          ],
+          "answerIndex": 1,
+          "explanation": "反证法的核心是先假设结论的反面成立，然后推出矛盾，从而证明原结论"
+        },
+        {
+          "question": "用反证法证明「素数有无穷多个」时，构造的数 N = p₁×p₂×...×pₙ + 1，N 除以任何已知素数 pᵢ 的余数是？",
+          "options": [
+            "0",
+            "1",
+            "pᵢ-1",
+            "N"
+          ],
+          "answerIndex": 1,
+          "explanation": "N = p₁×p₂×...×pₙ + 1，所以 N ÷ pᵢ 的余数是 1，说明 N 不能被任何已知素数整除"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.8",
+      "title": "构造法",
+      "learningGoal": "掌握构造法的思想，能通过直接构造满足条件的解来证明存在性命题",
+      "explanation": "【构造法思想】\n要证明「存在某个满足条件的对象」，最直接的方法就是把这个对象构造出来。\n不需要推理和矛盾，只要展示一个具体的例子即可。\n\n【构造法的步骤】\n1. 明确需要满足的条件\n2. 设计构造方案\n3. 验证构造的对象确实满足所有条件\n4. 得证\n\n【与反证法的区别】\n- 反证法：假设不存在 → 推出矛盾\n- 构造法：直接把解构造出来\n\n构造法更有说服力，因为它不仅证明了存在性，还给出了具体的例子。\n\n【信奥中的构造】\n竞赛中很多题目要求构造满足特定条件的解：\n- 构造一个满足约束的序列\n- 构造一种方案使目标最优\n- 构造一棵满足条件的树\n\n这类题目通常需要找到规律，然后按规律生成解。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    cout << \"构造：对于任意 n>=3，存在 n 个连续合数\" << endl;\n    cout << \"构造方案：(n+1)! + 2, (n+1)! + 3, ..., (n+1)! + (n+1)\" << endl;\n    int n = 5;\n    long long factorial = 1;\n    for (int i = 2; i <= n + 1; i++) factorial *= i;\n    cout << n + 1 << \"! = \" << factorial << endl;\n    cout << \"连续 \" << n << \" 个合数: \";\n    for (int i = 2; i <= n + 1; i++) {\n        cout << factorial + i << \"(\" << (factorial + i) << \"/\" << i\n             << \"=\" << (factorial + i) / i << \") \";\n    }\n    cout << endl;\n\n    cout << \"\\n构造：1 到 n 的排列，使得相邻两数之和为素数\" << endl;\n    vector<int> perm = {1, 2, 3, 4};\n    do {\n        bool valid = true;\n        for (int i = 0; i < 3; i++) {\n            int sum = perm[i] + perm[i + 1];\n            bool isPrime = true;\n            for (int j = 2; j * j <= sum; j++) {\n                if (sum % j == 0) { isPrime = false; break; }\n            }\n            if (!isPrime) { valid = false; break; }\n        }\n        if (valid) {\n            cout << \"找到排列: \";\n            for (int x : perm) cout << x << \" \";\n            cout << endl;\n            break;\n        }\n    } while (next_permutation(perm.begin(), perm.end()));\n\n    return 0;\n}",
+      "codeNotes": [
+        "构造连续合数：(n+1)!+k 能被 k 整除（2≤k≤n+1），所以都是合数",
+        "排列问题可以用 next_permutation 枚举所有排列来搜索满足条件的解",
+        "构造法的关键是找到构造规律，验证比构造简单",
+        "信奥中构造题通常要求输出一个具体方案，本质就是构造法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "构造不满足所有条件",
+          "description": "构造的对象只满足了部分条件，遗漏了某些约束",
+          "fix": "构造完成后，逐一验证所有条件是否满足"
+        },
+        {
+          "title": "构造范围不合法",
+          "description": "构造的值超出了题目要求的范围（如超出数据类型的表示范围）",
+          "fix": "注意检查构造的值是否在题目规定的范围内，必要时用更大的数据类型"
+        }
+      ],
+      "practice": {
+        "prompt": "构造一个长度为 n 的由 0 和 1 组成的序列，使得序列中没有三个连续相同的数字（如 001011 合法，000101 不合法）。",
+        "hint": "可以交替放置，如 00101101...，即每两个相同数字后切换。",
+        "expectedIdea": "按规律生成：每放两个 0 就放两个 1，循环往复，保证不会出现三个连续相同"
+      },
+      "quiz": [
+        {
+          "question": "构造法最适合证明哪类命题？",
+          "options": [
+            "所有 x 都满足 P",
+            "存在 x 满足 P",
+            "不存在 x 满足 P",
+            "如果 P 则 Q"
+          ],
+          "answerIndex": 1,
+          "explanation": "构造法最适合证明存在性命题「存在 x 满足 P」——直接把满足条件的 x 构造出来即可"
+        },
+        {
+          "question": "要证明「存在两个无理数 a 和 b，使得 a^b 是有理数」，可以用构造法取 a=√2，b 等于？",
+          "options": [
+            "2",
+            "√2",
+            "log₂3",
+            "π"
+          ],
+          "answerIndex": 1,
+          "explanation": "取 a=√2, b=√2。若 (√2)^(√2) 是有理数则得证；若不是，则令 a=(√2)^(√2)（无理数），b=√2，a^b = ((√2)^(√2))^(√2) = (√2)^2 = 2 是有理数"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.9",
+      "title": "递推与递归证明",
+      "learningGoal": "理解递推关系的概念，能用递推和数学方法证明数列或递归算法的正确性",
+      "explanation": "【递推关系】\n递推关系是用前若干项来表示后一项的关系。\n例如斐波那契数列：F(n) = F(n-1) + F(n-2)，F(1)=F(2)=1。\n\n【递推证明的思路】\n要证明某个关于数列的命题 P(n) 对所有 n 成立：\n1. 验证初始项满足（基础步）\n2. 假设 P(k) 成立，利用递推关系推出 P(k+1) 也成立（递推步）\n\n这与数学归纳法本质相同，但更侧重于利用递推关系本身。\n\n【递归算法的正确性】\n证明递归算法正确通常需要：\n1. 证明基本情况（base case）正确\n2. 假设递归调用返回正确结果\n3. 证明当前层的计算也正确\n\n【信奥中的递推】\n- 动态规划的状态转移方程就是递推关系\n- 证明 DP 的正确性本质上就是递推证明\n- 常见递推：阶乘、斐波那契、汉诺塔、卡特兰数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nlong long fib[51];\nlong long factorial[21];\n\nint main() {\n    fib[1] = 1;\n    fib[2] = 1;\n    for (int i = 3; i <= 50; i++) {\n        fib[i] = fib[i - 1] + fib[i - 2];\n    }\n    cout << \"斐波那契数列前 15 项:\" << endl;\n    for (int i = 1; i <= 15; i++) {\n        cout << \"F(\" << i << \")=\" << fib[i] << \" \";\n        if (i % 5 == 0) cout << endl;\n    }\n\n    factorial[0] = 1;\n    for (int i = 1; i <= 20; i++) {\n        factorial[i] = factorial[i - 1] * i;\n    }\n    cout << \"\\n阶乘验证 10!=\" << factorial[10] << endl;\n\n    cout << \"\\n证明 F(1)+F(2)+...+F(n) = F(n+2)-1:\" << endl;\n    long long sum = 0;\n    for (int n = 1; n <= 15; n++) {\n        sum += fib[n];\n        cout << \"n=\" << n << \": sum=\" << sum\n             << \", F(\" << n+2 << \")-1=\" << fib[n + 2] - 1;\n        cout << (sum == fib[n + 2] - 1 ? \" ✓\" : \" ✗\") << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "斐波那契数列的递推关系：F(n) = F(n-1) + F(n-2)，需要两个初始值",
+        "阶乘的递推关系：n! = n × (n-1)!，只需要一个初始值 0! = 1",
+        "递推证明时，先验证基础情况，再用递推关系推导后续情况",
+        "程序可以数值验证递推公式的正确性，支持数学证明"
+      ],
+      "commonMistakes": [
+        {
+          "title": "递推初始值遗漏",
+          "description": "只写了递推关系但忘记定义初始值，导致无法计算",
+          "fix": "递推必须有初始值（边界条件），否则无法启动。如 F(1)=1, F(2)=1"
+        },
+        {
+          "title": "递归中忽略终止条件",
+          "description": "递归函数没有正确的 base case，导致无限递归",
+          "fix": "递归必须要有终止条件（对应递推的初始值），且每层递归都在向终止条件靠近"
+        }
+      ],
+      "practice": {
+        "prompt": "已知 a(1) = 1，a(n) = 2×a(n-1) + 1（n ≥ 2）。先用递推计算 a(1) 到 a(10)，然后猜想 a(n) 的通项公式并用数值验证。",
+        "hint": "写出前几项：1, 3, 7, 15, 31, ... 它们都是 2^n - 1 的形式。",
+        "expectedIdea": "猜想 a(n) = 2^n - 1，用数值验证前 10 项都匹配"
+      },
+      "quiz": [
+        {
+          "question": "斐波那契数列 F(1)=1, F(2)=1, F(n)=F(n-1)+F(n-2)，F(7) 等于？",
+          "options": [
+            "8",
+            "13",
+            "21",
+            "5"
+          ],
+          "answerIndex": 1,
+          "explanation": "F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5, F(6)=8, F(7)=13"
+        },
+        {
+          "question": "递推证明「F(1)+F(2)+...+F(n)=F(n+2)-1」时，从 n=k 到 n=k+1 这一步需要证明？",
+          "options": [
+            "F(k+1)=F(k+2)-1",
+            "F(k+3)-1 = F(k+2)-1+F(k+1)",
+            "F(k+2)=F(k+1)+F(k)",
+            "sum+F(k+1)=F(k+3)-1"
+          ],
+          "answerIndex": 3,
+          "explanation": "假设前 k 项和 = F(k+2)-1，则前 k+1 项和 = F(k+2)-1+F(k+1)，需要等于 F(k+3)-1，即证 F(k+2)+F(k+1)=F(k+3)，恰好是斐波那契递推"
+        }
+      ]
+    },
+    {
+      "itemId": "4.4.10",
+      "title": "数学归纳法",
+      "learningGoal": "掌握数学归纳法的两步证明过程，能用数学归纳法证明等式、不等式和命题",
+      "explanation": "【数学归纳法】\n数学归纳法是证明「对任意正整数 n，命题 P(n) 成立」的重要方法。\n\n【两步证明】\n1. 基础步（Base Case）：验证 P(1) 成立（或 P(n₀) 成立，n₀ 是起始值）\n2. 归纳步（Inductive Step）：\n   假设 P(k) 成立（归纳假设），\n   利用 P(k) 推导出 P(k+1) 也成立。\n\n如果两步都完成，则 P(n) 对所有 n ≥ n₀ 成立。\n\n【直观理解】\n像多米诺骨牌：\n- 基础步：推倒第一块骨牌\n- 归纳步：每块骨牌倒下时会推倒下一块\n- 结论：所有骨牌都会倒下\n\n【常见应用】\n1. 证明求和公式：1+2+...+n = n(n+1)/2\n2. 证明不等式：2^n > n+1 (n ≥ 2)\n3. 证明整除：3 整除 n³-n\n4. 证明递推关系的性质\n\n【强归纳法】\n归纳步中假设 P(1), P(2), ..., P(k) 全部成立（而不只是 P(k)），\n来推导 P(k+1)。适用于递推关系依赖多个前项的情况。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"验证 1+2+...+n = n(n+1)/2\" << endl;\n    long long sum = 0;\n    for (int n = 1; n <= 20; n++) {\n        sum += n;\n        long long formula = (long long)n * (n + 1) / 2;\n        cout << \"n=\" << n << \": sum=\" << sum\n             << \", n(n+1)/2=\" << formula\n             << (sum == formula ? \" ✓\" : \" ✗\") << endl;\n    }\n\n    cout << \"\\n验证 2^n > n+1 (n >= 2)\" << endl;\n    long long power = 1;\n    for (int n = 1; n <= 20; n++) {\n        power *= 2;\n        if (n >= 2) {\n            cout << \"n=\" << n << \": 2^n=\" << power\n                 << \", n+1=\" << n + 1\n                 << (power > n + 1 ? \" ✓\" : \" ✗\") << endl;\n        }\n    }\n\n    cout << \"\\n验证 3 整除 n^3 - n\" << endl;\n    for (int n = 1; n <= 15; n++) {\n        int val = n * n * n - n;\n        cout << \"n=\" << n << \": n^3-n=\" << val\n             << \", mod 3=\" << val % 3\n             << (val % 3 == 0 ? \" ✓\" : \" ✗\") << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "数值验证不能代替证明，但可以增加信心并帮助发现错误",
+        "归纳证明的关键：必须用归纳假设 P(k) 来推导 P(k+1)，不能绕过",
+        "注意整数溢出：n(n+1)/2 和 2^n 增长很快，用 long long",
+        "强归纳法允许假设 P(1) 到 P(k) 全部成立，适用于复杂递推"
+      ],
+      "commonMistakes": [
+        {
+          "title": "归纳步未使用归纳假设",
+          "description": "在证明 P(k+1) 时没有用到 P(k) 成立的假设，而是直接证明了 P(k+1)",
+          "fix": "归纳步必须明确使用归纳假设 P(k) 来推导 P(k+1)，否则不是归纳法"
+        },
+        {
+          "title": "忘记验证基础步",
+          "description": "只做了归纳步，忘记验证 P(1)（基础步），导致归纳链无法启动",
+          "fix": "归纳法必须先验证基础步（如 P(1) 或 P(0)），这是整个证明的起点"
+        }
+      ],
+      "practice": {
+        "prompt": "用数学归纳法证明：1² + 2² + ... + n² = n(n+1)(2n+1)/6。先写出证明过程，再用程序验证 n=1 到 20。",
+        "hint": "基础步：n=1 时左边=1，右边=1×2×3/6=1。归纳步：假设 1²+...+k²=k(k+1)(2k+1)/6，加 (k+1)² 后整理。",
+        "expectedIdea": "基础步验证 n=1；归纳步利用假设展开 (k+1)² + k(k+1)(2k+1)/6，因式分解得到 (k+1)(k+2)(2k+3)/6"
+      },
+      "quiz": [
+        {
+          "question": "数学归纳法中，归纳步需要证明的是？",
+          "options": [
+            "P(1) 成立",
+            "P(k) 成立",
+            "P(k) 成立 → P(k+1) 成立",
+            "P(n) 对所有 n 成立"
+          ],
+          "answerIndex": 2,
+          "explanation": "归纳步是证明「如果 P(k) 成立，那么 P(k+1) 也成立」这个蕴含关系，而非单独证明某一情况"
+        },
+        {
+          "question": "用归纳法证明「n³ - n 能被 3 整除」时，从 k 到 k+1 这一步，(k+1)³ - (k+1) 展开后的关键观察是？",
+          "options": [
+            "(k+1)³ = k³+3k²+3k+1",
+            "(k+1)³-(k+1) = (k³-k)+3k²+3k",
+            "(k+1)³-(k+1) = k³+3k²+2k",
+            "3k²+3k = 3k(k+1) 能被 3 整除"
+          ],
+          "answerIndex": 1,
+          "explanation": "(k+1)³-(k+1) = k³+3k²+3k+1-k-1 = (k³-k)+3k(k+1)，由归纳假设 k³-k 被 3 整除，而 3k(k+1) 显然被 3 整除"
+        }
+      ]
+    }
+  ]
+}

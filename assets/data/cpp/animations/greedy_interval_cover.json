@@ -1,0 +1,205 @@
+{
+  "animationId": "algo_greedy_interval_cover",
+  "itemId": "2.4.4",
+  "title": "区间覆盖",
+  "description": "展示按左端点排序后贪心选择最少区间覆盖目标范围[0,10]的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [], "note": "5个候选区间"},
+      {"name": "已选", "type": "array", "values": [], "highlights": [], "note": "选中的区间"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题描述",
+      "description": "给定若干区间，选出最少的区间使得它们的并集能完全覆盖目标范围 [0, 10]。",
+      "codeLine": "int targetL = 0, targetR = 10;",
+      "highlights": ["targetL", "targetR"],
+      "state": {
+        "variables": [
+          {"name": "目标左端", "value": "0", "type": "int", "note": "覆盖起点"},
+          {"name": "目标右端", "value": "10", "type": "int", "note": "覆盖终点"},
+          {"name": "当前覆盖", "value": "0", "type": "int", "note": "已覆盖到的位置"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [], "note": "原始区间"},
+          {"name": "已选", "type": "array", "values": [], "highlights": [], "note": ""}
+        ],
+        "output": "目标: 用最少区间覆盖 [0, 10]"
+      }
+    },
+    {
+      "step": 2,
+      "title": "按左端点排序",
+      "description": "将所有区间按左端点从小到大排序。排序后依次考虑每个区间。",
+      "codeLine": "sort(intervals.begin(), intervals.end());",
+      "highlights": ["sort"],
+      "state": {
+        "variables": [
+          {"name": "目标左端", "value": "0", "type": "int", "note": ""},
+          {"name": "目标右端", "value": "10", "type": "int", "note": ""},
+          {"name": "当前覆盖", "value": "0", "type": "int", "note": "尚未开始覆盖"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [], "note": "已按左端点排序"},
+          {"name": "已选", "type": "array", "values": [], "highlights": [], "note": ""}
+        ],
+        "output": "排序完成: [0,3] [2,5] [3,7] [5,9] [8,10]"
+      }
+    },
+    {
+      "step": 3,
+      "title": "寻找第一个区间",
+      "description": "当前需要覆盖位置 0。遍历左端点 ≤ 0 的区间，选右端点最大的。[0,3] 的左端点为0，满足条件，且是唯一选择。选中 [0,3]。",
+      "codeLine": "if (intervals[i].first <= cur) best = max(best, intervals[i].second);",
+      "highlights": ["cur", "best"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "0", "type": "int", "note": "需要覆盖0"},
+          {"name": "最远右端", "value": "3", "type": "int", "note": "当前最远可达3"},
+          {"name": "已选数量", "value": "0", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [0], "note": "考察 [0,3]"},
+          {"name": "已选", "type": "array", "values": [], "highlights": [], "note": ""}
+        ],
+        "output": "考察左端点≤0的区间: [0,3] 右端=3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "继续考察 [2,5]",
+      "description": "[2,5] 的左端点 2 > 当前覆盖 0，不属于同一轮。[0,3] 是本轮最优。选中 [0,3]，更新当前覆盖到 3。",
+      "codeLine": "selected.push_back(best_interval);  cur = best;",
+      "highlights": ["selected", "cur=best"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "3", "type": "int", "note": "更新为3"},
+          {"name": "最远右端", "value": "3", "type": "int", "note": ""},
+          {"name": "已选数量", "value": "1", "type": "int", "note": "已选1个区间"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [0], "note": "✓ 选中 [0,3]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]"], "highlights": [0], "note": "覆盖到3"}
+        ],
+        "output": "选中 [0,3]，覆盖范围扩展到 [0, 3]"
+      }
+    },
+    {
+      "step": 5,
+      "title": "寻找下一个区间",
+      "description": "当前需要覆盖位置 3。考察左端点 ≤ 3 的区间：[2,5] 右端=5，[3,7] 右端=7。选右端最大的 [3,7]。",
+      "codeLine": "if (intervals[i].first <= cur) best = max(best, intervals[i].second);",
+      "highlights": ["best"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "3", "type": "int", "note": "需要覆盖3"},
+          {"name": "最远右端", "value": "7", "type": "int", "note": "[3,7]右端最大"},
+          {"name": "已选数量", "value": "1", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [1, 2], "note": "考察 [2,5]和[3,7]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]"], "highlights": [0], "note": ""}
+        ],
+        "output": "左端点≤3: [2,5]右端=5, [3,7]右端=7 → 选 [3,7]"
+      }
+    },
+    {
+      "step": 6,
+      "title": "选中 [3,7]",
+      "description": "选中右端点最大的 [3,7]，覆盖范围从 3 扩展到 7。",
+      "codeLine": "selected.push_back(best_interval);  cur = best;",
+      "highlights": ["selected"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "7", "type": "int", "note": "更新为7"},
+          {"name": "最远右端", "value": "7", "type": "int", "note": ""},
+          {"name": "已选数量", "value": "2", "type": "int", "note": "已选2个区间"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [2], "note": "✓ 选中 [3,7]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]", "[3,7]"], "highlights": [1], "note": "覆盖到7"}
+        ],
+        "output": "选中 [3,7]，覆盖范围扩展到 [0, 7]"
+      }
+    },
+    {
+      "step": 7,
+      "title": "寻找下一个区间",
+      "description": "当前需要覆盖位置 7。考察左端点 ≤ 7 的区间：[5,9] 右端=9，[8,10] 左端=8>7 不在本轮。选 [5,9]。",
+      "codeLine": "if (intervals[i].first <= cur) best = max(best, intervals[i].second);",
+      "highlights": ["best"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "7", "type": "int", "note": "需要覆盖7"},
+          {"name": "最远右端", "value": "9", "type": "int", "note": "[5,9]右端=9"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [3], "note": "考察 [5,9]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]", "[3,7]"], "highlights": [1], "note": ""}
+        ],
+        "output": "左端点≤7: [5,9]右端=9 → 选 [5,9]"
+      }
+    },
+    {
+      "step": 8,
+      "title": "选中 [5,9]",
+      "description": "选中 [5,9]，覆盖范围从 7 扩展到 9。仍未达到目标 10。",
+      "codeLine": "selected.push_back(best_interval);  cur = best;",
+      "highlights": ["selected"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "9", "type": "int", "note": "更新为9"},
+          {"name": "最远右端", "value": "9", "type": "int", "note": ""},
+          {"name": "已选数量", "value": "3", "type": "int", "note": "已选3个区间"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [3], "note": "✓ 选中 [5,9]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]", "[3,7]", "[5,9]"], "highlights": [2], "note": "覆盖到9"}
+        ],
+        "output": "选中 [5,9]，覆盖范围扩展到 [0, 9]"
+      }
+    },
+    {
+      "step": 9,
+      "title": "寻找最后一个区间",
+      "description": "当前需要覆盖位置 9。考察左端点 ≤ 9 的区间：[8,10] 右端=10。选中 [8,10]。",
+      "codeLine": "if (intervals[i].first <= cur) best = max(best, intervals[i].second);",
+      "highlights": ["best"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "9", "type": "int", "note": "需要覆盖9"},
+          {"name": "最远右端", "value": "10", "type": "int", "note": "[8,10]右端=10"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [4], "note": "考察 [8,10]"},
+          {"name": "已选", "type": "array", "values": ["[0,3]", "[3,7]", "[5,9]"], "highlights": [2], "note": ""}
+        ],
+        "output": "左端点≤9: [8,10]右端=10 → 选 [8,10]"
+      }
+    },
+    {
+      "step": 10,
+      "title": "最终结果",
+      "description": "选中 [8,10]，覆盖范围扩展到 10，达到目标。共使用4个区间覆盖 [0,10]。",
+      "codeLine": "cout << \"最少需要 \" << selected.size() << \" 个区间\";",
+      "highlights": ["selected.size()"],
+      "state": {
+        "variables": [
+          {"name": "当前覆盖", "value": "10", "type": "int", "note": "达到目标"},
+          {"name": "已选数量", "value": "4", "type": "int", "note": "共4个区间"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[0,3]", "[2,5]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [0, 2, 3, 4], "note": "选中的区间"},
+          {"name": "已选", "type": "array", "values": ["[0,3]", "[3,7]", "[5,9]", "[8,10]"], "highlights": [0, 1, 2, 3], "note": "完全覆盖 [0,10]"}
+        ],
+        "output": "最少需要 4 个区间: [0,3] [3,7] [5,9] [8,10]"
+      }
+    }
+  ]
+}

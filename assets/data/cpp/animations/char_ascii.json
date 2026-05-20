@@ -1,0 +1,71 @@
+{
+  "animationId": "cpp_char_ascii",
+  "itemId": "1.3.4",
+  "title": "char 与 ASCII",
+  "description": "演示 char 类型的字符存储、ASCII 码查看和字符运算",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明 char 变量",
+      "description": "char 类型用单引号存储单个字符。'A' 是字符 A，不是字符串。char 占 1 个字节。",
+      "codeLine": "char ch = 'A';",
+      "highlights": ["char", "'A'"],
+      "state": {
+        "variables": [
+          {"name": "ch", "value": "'A'", "note": "字符 A，占 1 字节"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "查看 ASCII 码",
+      "description": "char 本质是一个小整数。用 (int)ch 可以查看字符对应的 ASCII 码值。'A' 的 ASCII 码是 65。",
+      "codeLine": "cout << (int)ch << endl;",
+      "highlights": ["(int)ch"],
+      "state": {
+        "variables": [
+          {"name": "ch", "value": "'A'", "note": "ASCII 码 = 65"}
+        ],
+        "containers": [],
+        "output": "65"
+      }
+    },
+    {
+      "step": 3,
+      "title": "字符加减运算",
+      "description": "因为 char 本质是整数，所以可以对它做加减。ch + 1 就是 65 + 1 = 66，对应字符 'B'。",
+      "codeLine": "ch = ch + 1;\ncout << ch;",
+      "highlights": ["ch + 1"],
+      "state": {
+        "variables": [
+          {"name": "ch", "value": "'B'", "note": "从 'A' 变为 'B'，ASCII 65→66"}
+        ],
+        "containers": [],
+        "output": "65\nB"
+      }
+    },
+    {
+      "step": 4,
+      "title": "大小写转换",
+      "description": "大写字母和小写字母的 ASCII 码差 32。'a' - 'A' = 32。所以 'A' + 32 = 'a'，这就是大小写转换的原理。",
+      "codeLine": "char upper = 'A';\nchar lower = upper + 32;\ncout << lower;",
+      "highlights": ["upper + 32"],
+      "state": {
+        "variables": [
+          {"name": "ch", "value": "'B'", "note": ""},
+          {"name": "upper", "value": "'A'", "note": "ASCII 65"},
+          {"name": "lower", "value": "'a'", "note": "ASCII 97，大写+32=小写"}
+        ],
+        "containers": [],
+        "output": "65\nB\na"
+      }
+    }
+  ]
+}

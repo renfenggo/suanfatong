@@ -1,0 +1,158 @@
+{
+  "sectionId": "2.6",
+  "sectionName": "图论算法",
+  "units": [
+    {
+      "itemId": "2.6.1",
+      "title": "图的表示与遍历",
+      "learningGoal": "掌握图的邻接矩阵和邻接表表示法，学会 BFS/DFS 遍历图",
+      "explanation": "图的两种常见存储方式：\n\n1. 邻接矩阵：g[i][j] 表示 i 到 j 是否有边\n   - 优点：判断两点是否相邻 O(1)\n   - 缺点：空间 O(n^2)，适合稠密图\n\n2. 邻接表：adj[i] 存储与 i 相邻的所有节点\n   - 优点：空间 O(V+E)，适合稀疏图\n   - 缺点：判断两点是否相邻 O(degree)\n\n图的遍历：\n- DFS：递归或栈，深入探索\n- BFS：队列，逐层扩展\n\n竞赛中绝大多数图用邻接表存储。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    cout << u << \" \";\n    for (int v : adj[u]) {\n        if (!visited[v]) dfs(v);\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    dfs(1);\n    return 0;\n}",
+      "codeNotes": [
+        "邻接表 adj[] 存储每个节点的邻居",
+        "无向图每条边存两次",
+        "visited[] 防止重复访问",
+        "DFS 从节点 1 开始遍历"
+      ],
+      "commonMistakes": [
+        {
+          "title": "有向图存成无向图",
+          "description": "有向图只需要 adj[u].push_back(v)，不需要反向。",
+          "fix": "有向图只存单向边，无向图存双向边。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入一个无向图，用 DFS 输出从节点 1 出发能到达的所有节点。",
+        "hint": "邻接表 + visited + DFS。",
+        "expectedIdea": "标准图的 DFS 遍历模板"
+      },
+      "quiz": [
+        {
+          "question": "稀疏图（边数远小于 n^2）应该用什么存储？",
+          "options": [
+            "邻接矩阵",
+            "邻接表",
+            "边集数组",
+            "前向星"
+          ],
+          "answerIndex": 1,
+          "explanation": "邻接表空间 O(V+E)，适合稀疏图。邻接矩阵空间 O(V^2)，适合稠密图。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.6.2",
+      "title": "最短路径",
+      "learningGoal": "掌握 Dijkstra、Floyd、Bellman-Ford 最短路算法",
+      "explanation": "三种常见最短路算法：\n\n1. Dijkstra（无负权边）：\n   - 贪心 + 优先队列\n   - 时间 O((V+E) log V)\n   - 单源最短路\n\n2. Floyd（多源最短路）：\n   - 三重循环枚举中转点\n   - 时间 O(V^3)\n   - 能求任意两点间最短路\n\n3. Bellman-Ford / SPFA（有负权边）：\n   - 松弛操作\n   - 时间 O(VE)\n   - 能检测负环\n\n选择建议：\n- 无负权 → Dijkstra\n- 多源 → Floyd（n 小时）\n- 有负权 → SPFA\n- 判负环 → Bellman-Ford",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\n#include <algorithm>\nusing namespace std;\n\ntypedef pair<int,int> pii;\nvector<pii> adj[10000];\nint dist[10000];\n\nvoid dijkstra(int start, int n) {\n    fill(dist, dist + n + 1, 1e9);\n    dist[start] = 0;\n    priority_queue<pii, vector<pii>, greater<pii>> pq;\n    pq.push({0, start});\n    while (!pq.empty()) {\n        auto [d, u] = pq.top(); pq.pop();\n        if (d > dist[u]) continue;\n        for (auto [v, w] : adj[u]) {\n            if (dist[u] + w < dist[v]) {\n                dist[v] = dist[u] + w;\n                pq.push({dist[v], v});\n            }\n        }\n    }\n}\n\nint main() {\n    int n, m, s;\n    cin >> n >> m >> s;\n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    dijkstra(s, n);\n    for (int i = 1; i <= n; i++) cout << dist[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "优先队列按距离排序（小根堆）",
+        "d > dist[u] 说明是旧数据，跳过",
+        "松弛：如果经过 u 到 v 更短就更新",
+        "时间复杂度 O((V+E) log V)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "有负权边用 Dijkstra",
+          "description": "图中有负权边但用了 Dijkstra，结果不正确。",
+          "fix": "有负权边必须用 Bellman-Ford 或 SPFA。"
+        }
+      ],
+      "practice": {
+        "prompt": "给一个有向带权图和起点 s，求 s 到所有点的最短距离。",
+        "hint": "Dijkstra + 优先队列。",
+        "expectedIdea": "标准 Dijkstra 模板"
+      },
+      "quiz": [
+        {
+          "question": "Dijkstra 算法的前提条件是什么？",
+          "options": [
+            "图是有向的",
+            "图是连通的",
+            "图中没有负权边",
+            "图是完全图"
+          ],
+          "answerIndex": 2,
+          "explanation": "Dijkstra 要求所有边权非负，否则贪心策略不成立。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.6.3",
+      "title": "最小生成树",
+      "learningGoal": "掌握 Kruskal 和 Prim 最小生成树算法",
+      "explanation": "最小生成树（MST）：在带权连通图中找一棵生成树，使所有边的权值之和最小。\n\n两个经典算法：\n\n1. Kruskal：\n   - 按边权从小到大排序\n   - 依次取边，如果边的两端不在同一连通块就加入（用并查集判断）\n   - 时间 O(E log E)\n   - 适合稀疏图\n\n2. Prim：\n   - 从一个点开始，每次选连接已选集合和未选集合的最小边\n   - 用优先队列优化，时间 O((V+E) log V)\n   - 适合稠密图\n\nMST 性质：\n- n 个节点的 MST 有 n-1 条边\n- MST 可能不唯一，但权值和唯一",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint parent[10000];\nint find(int x) { return parent[x] == x ? x : parent[x] = find(parent[x]); }\n\nstruct Edge { int u, v, w; };\nbool cmp(const Edge& a, const Edge& b) { return a.w < b.w; }\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    Edge edges[100000];\n    for (int i = 0; i < m; i++) cin >> edges[i].u >> edges[i].v >> edges[i].w;\n    sort(edges, edges + m, cmp);\n    for (int i = 1; i <= n; i++) parent[i] = i;\n    long long total = 0;\n    int cnt = 0;\n    for (int i = 0; i < m && cnt < n - 1; i++) {\n        int pu = find(edges[i].u), pv = find(edges[i].v);\n        if (pu != pv) {\n            parent[pu] = pv;\n            total += edges[i].w;\n            cnt++;\n        }\n    }\n    cout << total << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "Kruskal：按边权排序 + 并查集",
+        "find() 带路径压缩的并查集",
+        "如果边两端不在同一集合就合并",
+        "选够 n-1 条边就结束"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记初始化并查集",
+          "description": "parent[] 没有初始化，find() 死循环。",
+          "fix": "for (int i = 1; i <= n; i++) parent[i] = i;"
+        }
+      ],
+      "practice": {
+        "prompt": "给一个无向带权图，求最小生成树的权值和。",
+        "hint": "Kruskal：排序 + 并查集。",
+        "expectedIdea": "标准 Kruskal 模板"
+      },
+      "quiz": [
+        {
+          "question": "Kruskal 算法的核心步骤是什么？",
+          "options": [
+            "从每个点出发做 DFS",
+            "按边权排序，用并查集依次加入不构成环的边",
+            "用优先队列每次选最近的点",
+            "动态规划求解"
+          ],
+          "answerIndex": 1,
+          "explanation": "Kruskal 按边权从小到大排序，用并查集判断是否会构成环，不会就加入。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.6.4",
+      "title": "拓扑排序",
+      "learningGoal": "理解拓扑排序的原理和应用场景",
+      "explanation": "拓扑排序用于有向无环图（DAG），将图中所有节点排成一个线性序列，使得每条边的起点在终点前面。\n\n实现方法（Kahn 算法）：\n1. 计算每个节点的入度\n2. 把入度为 0 的节点入队\n3. 取出队首，输出，将其所有邻居的入度减 1\n4. 如果邻居入度变为 0，入队\n5. 重复直到队列为空\n\n如果输出的节点数 < 总节点数，说明图中有环。\n\n应用：\n- 任务调度（有依赖关系）\n- 判断有向图是否有环\n- DP 的预处理（按拓扑序递推）",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nvector<int> adj[10000];\nint indegree[10000];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        indegree[v]++;\n    }\n    queue<int> q;\n    for (int i = 1; i <= n; i++)\n        if (indegree[i] == 0) q.push(i);\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        cout << u << \" \";\n        for (int v : adj[u]) {\n            indegree[v]--;\n            if (indegree[v] == 0) q.push(v);\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "先计算每个节点的入度",
+        "入度为 0 的节点先入队",
+        "取出节点后，邻居入度减 1",
+        "入度变为 0 的邻居入队"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记判环",
+          "description": "没有检查输出节点数是否等于 n，可能图中有环。",
+          "fix": "拓扑排序后检查输出了多少节点，少于 n 说明有环。"
+        }
+      ],
+      "practice": {
+        "prompt": "给 n 个任务和 m 个依赖关系（u 必须在 v 之前完成），输出一个合法的执行顺序。",
+        "hint": "拓扑排序：入度为 0 的先做。",
+        "expectedIdea": "标准拓扑排序 Kahn 算法模板"
+      },
+      "quiz": [
+        {
+          "question": "拓扑排序的前提条件是什么？",
+          "options": [
+            "图是无向的",
+            "图是有向无环图（DAG）",
+            "图是完全图",
+            "图是二分图"
+          ],
+          "answerIndex": 1,
+          "explanation": "拓扑排序只适用于有向无环图（DAG），有环的图无法排出线性序列。"
+        }
+      ]
+    }
+  ]
+}

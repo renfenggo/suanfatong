@@ -1,0 +1,542 @@
+{
+  "sectionId": "2.7",
+  "sectionName": "搜索与回溯",
+  "units": [
+    {
+      "itemId": "2.7.1",
+      "title": "递归基础",
+      "learningGoal": "理解递归函数的原理，掌握递归边界、参数含义和调用栈，能写出正确的递归函数",
+      "explanation": "递归是函数直接或间接调用自身的编程技巧。递归函数必须包含两个要素：\n\n1. 递归边界（base case）：什么时候停止递归。没有边界会导致无限递归和栈溢出。\n2. 递归步骤（recursive step）：把大问题分解为规模更小的同类问题，参数必须向边界收敛。\n\n递归调用的本质是调用栈：每次调用压入一个栈帧，返回时弹出。理解调用栈有助于理解递归执行过程。\n\n递归三要素：\n- 参数含义：每个参数代表什么\n- 递归边界：什么条件下直接返回\n- 递归关系：如何把大问题拆成小问题\n\n常见递归问题：阶乘、数组求和、树深度、斐波那契数列。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint factorial(int n) {\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nint arraySum(int a[], int n) {\n    if (n == 0) return 0;\n    return a[n - 1] + arraySum(a, n - 1);\n}\n\nint main() {\n    cout << \"5! = \" << factorial(5) << endl;\n    int a[] = {1, 2, 3, 4, 5};\n    cout << \"sum = \" << arraySum(a, 5) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "factorial: 边界 n<=1 返回 1，否则返回 n*factorial(n-1)",
+        "arraySum: 边界 n==0 返回 0，否则返回最后一个元素 + 前面元素之和",
+        "每次递归调用参数都向边界收敛（n-1）",
+        "递归调用栈：factorial(5)→factorial(4)→...→factorial(1)→返回"
+      ],
+      "commonMistakes": [
+        {
+          "title": "没有递归边界",
+          "description": "函数没有终止条件，导致无限递归直到栈溢出。",
+          "fix": "始终写好 base case，如 if (n <= 1) return 1;，放在函数最前面。"
+        },
+        {
+          "title": "参数不收敛",
+          "description": "递归调用时参数没有向边界靠近，如 factorial(n) 调用 factorial(n) 而不是 factorial(n-1)。",
+          "fix": "确保每次递归调用都让参数向 base case 靠近。"
+        },
+        {
+          "title": "忘记返回递归结果",
+          "description": "调用了递归函数但没有 return 其结果，导致返回值未定义。",
+          "fix": "递归调用必须 return，如 return n * factorial(n-1);，不能只写 factorial(n-1);。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个递归函数，计算斐波那契数列第 n 项。fib(1)=1, fib(2)=1, fib(n)=fib(n-1)+fib(n-2)。",
+        "hint": "边界：n<=2 返回 1。递归：return fib(n-1)+fib(n-2)。",
+        "expectedIdea": "int fib(int n) { if (n<=2) return 1; return fib(n-1)+fib(n-2); }"
+      },
+      "quiz": [
+        {
+          "question": "递归函数必须包含的两个要素是什么？",
+          "options": ["循环和条件", "递归边界和递归步骤", "数组和指针", "输入和输出"],
+          "answerIndex": 1,
+          "explanation": "递归必须有边界（base case）防止无限递归，和递归步骤把大问题分解为小问题。"
+        },
+        {
+          "question": "factorial(3) 的递归调用顺序是什么？",
+          "options": [
+            "factorial(3)→factorial(2)→factorial(1)→返回1→返回2→返回6",
+            "factorial(1)→factorial(2)→factorial(3)",
+            "factorial(3) 直接返回 6",
+            "factorial(3)→factorial(3)→factorial(3)"
+          ],
+          "answerIndex": 0,
+          "explanation": "递归先逐层调用到底，然后逐层返回。factorial(3)=3*factorial(2)=3*2*factorial(1)=3*2*1=6。"
+        },
+        {
+          "question": "以下哪个会导致栈溢出？",
+          "options": [
+            "factorial(10)",
+            "递归没有边界条件的函数",
+            "递归调用 factorial(n-1)",
+            "使用全局变量"
+          ],
+          "answerIndex": 1,
+          "explanation": "没有递归边界，函数会无限调用自身，调用栈不断增长直到溢出。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.2",
+      "title": "DFS 基础",
+      "learningGoal": "理解深度优先搜索的原理，学会用递归实现 DFS，掌握 visited 数组的作用",
+      "explanation": "DFS（Depth-First Search）深度优先搜索：沿着一条路走到底，走不通就回退，换另一条路。\n\n核心思想：\n1. 从起点出发\n2. 选择一个未访问的邻居，递归深入\n3. 走到死路就回溯（backtrack）\n4. 所有路都走过后结束\n\nDFS 通常用递归实现，需要：\n- visited 数组标记已访问的节点\n- 递归函数处理当前节点\n- 遍历所有邻居并递归\n\nDFS 标准模板：\nvoid dfs(int u) {\n    visited[u] = true;\n    for (int v : graph[u]) {\n        if (!visited[v]) {\n            dfs(v);\n        }\n    }\n}\n\n时间复杂度：O(V + E)（V 是节点数，E 是边数）",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    cout << u << \" \";\n    for (int v : adj[u]) {\n        if (!visited[v]) {\n            dfs(v);\n        }\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    dfs(1);\n    return 0;\n}",
+      "codeNotes": [
+        "adj[] 邻接表存图",
+        "visited[] 标记已访问节点，防止重复访问和死循环",
+        "进入 dfs 第一行就标记 visited[u] = true",
+        "遍历所有未访问邻居并递归，时间复杂度 O(V+E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记标记 visited",
+          "description": "没有标记已访问节点，导致在有环的图中无限递归。",
+          "fix": "进入 dfs 第一行就标记 visited[u] = true。"
+        },
+        {
+          "title": "visited 标记位置不对",
+          "description": "在递归调用之后才标记 visited，已经来不及了。",
+          "fix": "visited[u] = true 必须放在 dfs 函数开头，处理当前节点之前。"
+        },
+        {
+          "title": "图中有环导致死递归",
+          "description": "无向图中 1-2-3-1 构成环，不标记 visited 会 1→2→3→1→2→...无限循环。",
+          "fix": "visited 数组是 DFS 处理有环图的必要手段，始终使用。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 DFS 输出图中从节点 1 出发能到达的所有节点。",
+        "hint": "标准 DFS 模板，标记 visited 后递归遍历邻居。",
+        "expectedIdea": "void dfs(u) { visited[u]=true; cout<<u; for v in adj[u] if (!visited[v]) dfs(v); }"
+      },
+      "quiz": [
+        {
+          "question": "DFS 使用什么数据结构来实现？",
+          "options": ["队列", "栈（或递归）", "堆", "哈希表"],
+          "answerIndex": 1,
+          "explanation": "DFS 用栈实现，递归本身就是栈结构（调用栈）。"
+        },
+        {
+          "question": "DFS 遍历一个 n 个节点 m 条边的图，时间复杂度是？",
+          "options": ["O(n)", "O(n*m)", "O(n+m)", "O(n^2)"],
+          "answerIndex": 2,
+          "explanation": "每个节点访问一次 O(n)，每条边检查一次或两次 O(m)，总共 O(n+m)。"
+        },
+        {
+          "question": "在无向图中，不使用 visited 数组会导致什么问题？",
+          "options": [
+            "编译错误",
+            "运行速度变慢",
+            "在有环的图中无限递归",
+            "输出结果顺序不同"
+          ],
+          "answerIndex": 2,
+          "explanation": "无向图有环时，不标记 visited 会导致节点被反复访问，形成无限递归。"
+        },
+        {
+          "question": "DFS 的核心思想是什么？",
+          "options": [
+            "逐层扩展，先近后远",
+            "沿一条路走到底，走不通就回退",
+            "每次选最优的走",
+            "随机选择路径"
+          ],
+          "answerIndex": 1,
+          "explanation": "DFS 是深度优先，沿着一条路径尽可能深入，无法继续时回溯到上一个分叉点。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.3",
+      "title": "网格 DFS",
+      "learningGoal": "学会在二维网格上应用 DFS，掌握方向数组 dx/dy、边界判断和 visited 标记",
+      "explanation": "网格 DFS 是 DFS 在二维数组上的应用。常见于岛屿数量、最大岛屿面积、迷宫可达等问题。\n\n实现要点：\n1. 用方向数组 dx[]、dy[] 表示四个方向（上下左右）\n2. 检查新位置是否越界（0 <= nx < n, 0 <= ny < m）\n3. 检查新位置是否可走/未访问\n\n方向数组：\nint dx[] = {-1, 1, 0, 0};  // 上、下、左、右\nint dy[] = {0, 0, -1, 1};\n\n网格 DFS 模板：\nvoid dfs(int x, int y) {\n    visited[x][y] = true;\n    for (int d = 0; d < 4; d++) {\n        int nx = x + dx[d], ny = y + dy[d];\n        if (合法且未访问) dfs(nx, ny);\n    }\n}\n\n常见题型：\n- 岛屿数量：对每个未访问的陆地起点做 DFS，DFS 调用次数 = 岛屿数\n- 最大岛屿面积：在 DFS 中计数\n- 迷宫可达：从起点 DFS，检查终点是否被访问",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint n, m;\nchar grid[100][100];\nbool visited[100][100];\nint dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\n\nvoid dfs(int x, int y) {\n    visited[x][y] = true;\n    for (int d = 0; d < 4; d++) {\n        int nx = x + dx[d], ny = y + dy[d];\n        if (nx >= 0 && nx < n && ny >= 0 && ny < m\n            && !visited[nx][ny] && grid[nx][ny] == '1') {\n            dfs(nx, ny);\n        }\n    }\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> grid[i][j];\n    int cnt = 0;\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            if (grid[i][j] == '1' && !visited[i][j]) {\n                dfs(i, j);\n                cnt++;\n            }\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "dx/dy 方向数组表示上下左右四个方向",
+        "检查 nx, ny 是否在合法范围 [0, n) 和 [0, m)",
+        "检查 grid[nx][ny] 是否是陆地且未访问",
+        "岛屿计数：对每个未访问的陆地点启动一次 DFS"
+      ],
+      "commonMistakes": [
+        {
+          "title": "越界访问",
+          "description": "没有检查 nx、ny 是否在网格范围内，导致数组越界。",
+          "fix": "始终加条件 if (nx>=0 && nx<n && ny>=0 && ny<m) 才继续 DFS。"
+        },
+        {
+          "title": "把 x 和 y 写反",
+          "description": "grid[x][y] 中 x 是行（第一维），y 是列（第二维），容易搞混。",
+          "fix": "记住 grid[x][y] 中 x 对应行（上下），y 对应列（左右），dx 改变行，dy 改变列。"
+        },
+        {
+          "title": "忘记检查格子内容",
+          "description": "只检查了 visited 和越界，没检查 grid[nx][ny] 是否是可走的格子。",
+          "fix": "三个条件缺一不可：不越界 && 未访问 && 是目标格子（如 '1' 或 '.'）。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个 n*m 的网格（'1' 表示陆地，'0' 表示水域），求最大岛屿的面积（格子数）。",
+        "hint": "在 DFS 中用计数器统计每个岛屿的面积，维护最大值。",
+        "expectedIdea": "int dfs(x,y) { visited[x][y]=true; int area=1; for 四方向 { if(合法) area+=dfs(nx,ny); } return area; }"
+      },
+      "quiz": [
+        {
+          "question": "网格搜索中，方向数组 dx[]={-1,1,0,0}, dy[]={0,0,-1,1} 表示什么？",
+          "options": [
+            "对角线方向",
+            "上下左右四个方向",
+            "只有左右两个方向",
+            "八个方向"
+          ],
+          "answerIndex": 1,
+          "explanation": "dx/dy 组合 (-1,0)(1,0)(0,-1)(0,1) 分别表示上、下、左、右。"
+        },
+        {
+          "question": "网格 DFS 中，检查下一个位置 (nx, ny) 合法的条件是什么？",
+          "options": [
+            "只检查不越界",
+            "不越界 && 未访问",
+            "不越界 && 未访问 && 是目标格子",
+            "只检查未访问"
+          ],
+          "answerIndex": 2,
+          "explanation": "三个条件缺一不可：不越界保证安全，未访问防止重复，是目标格子保证逻辑正确。"
+        },
+        {
+          "question": "求岛屿数量时，需要从多少个起点分别启动 DFS？",
+          "options": [
+            "1个",
+            "n*m个",
+            "每个未访问的陆地点都是一个新起点",
+            "每个格子都要启动"
+          ],
+          "answerIndex": 2,
+          "explanation": "遍历所有格子，遇到未访问的陆地就启动一次 DFS（代表发现一个新岛屿）。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.4",
+      "title": "树与图 DFS",
+      "learningGoal": "掌握树和图的 DFS 遍历，学会求树深度、子树大小、连通块数量，理解无向图中 parent 参数的作用",
+      "explanation": "树的 DFS：树是特殊的图（连通、无环、n-1条边），DFS 是遍历树的基本方法。\n\n树的遍历：\n- 从根节点出发，递归访问每个子节点\n- 可以在递归过程中计算深度、子树大小等信息\n\n图的 DFS：\n- 图可能有环，需要 visited 数组\n- 无向图需要传 parent 参数避免走回头路\n- 有向图只需 visited 数组\n\n无向图中 parent 的作用：\n从 u 走到 v 后，v 的邻居包含 u，如果不跳过 parent 就会回头。所以 dfs(u, parent) 中遍历邻居 v 时，if (v == parent) continue;\n\n常见应用：\n- 树深度：dfs 返回 max(子节点深度) + 1\n- 子树大小：dfs 返回 1 + sum(子树大小)\n- 连通块数量：从每个未访问节点出发 DFS，计数",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\n\nint treeDepth(int u, int parent) {\n    int maxDepth = 0;\n    for (int v : adj[u]) {\n        if (v != parent) {\n            maxDepth = max(maxDepth, treeDepth(v, u));\n        }\n    }\n    return maxDepth + 1;\n}\n\nint subtreeSize(int u, int parent) {\n    int size = 1;\n    for (int v : adj[u]) {\n        if (v != parent) {\n            size += subtreeSize(v, u);\n        }\n    }\n    return size;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n - 1; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    cout << \"Tree depth: \" << treeDepth(1, -1) << endl;\n    cout << \"Subtree size of 1: \" << subtreeSize(1, -1) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "树 DFS 中用 parent 参数避免走回头路",
+        "treeDepth: 返回所有子树深度的最大值 + 1",
+        "subtreeSize: 返回 1 + 所有子树大小之和",
+        "无向图 DFS 时 v != parent 等价于 visited 检查"
+      ],
+      "commonMistakes": [
+        {
+          "title": "无向图中忘记传 parent",
+          "description": "在无向图的树遍历中，不跳过 parent 会导致节点被反复访问。",
+          "fix": "dfs(u, parent) 中遍历邻居 v 时，if (v == parent) continue; 跳过来路。"
+        },
+        {
+          "title": "混淆 parent 和 visited",
+          "description": "树中可以用 parent 代替 visited，但一般图中（可能有环）仍需要 visited。",
+          "fix": "树（无环）用 parent 足够，一般图（可能有环）用 visited 数组。"
+        },
+        {
+          "title": "子树大小忘记加 1",
+          "description": "计算子树大小时只统计了子节点的子树大小，忘记加上当前节点自身。",
+          "fix": "subtreeSize 应返回 1 + sum(子树大小)，1 代表当前节点自身。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一棵以节点 1 为根的树，输出每个节点的子树大小。",
+        "hint": "dfs(u, parent) 返回以 u 为根的子树大小，遍历所有子节点递归求和。",
+        "expectedIdea": "int dfs(u, p) { int sz=1; for(int v:adj[u]) if(v!=p) sz+=dfs(v,u); return sz; }"
+      },
+      "quiz": [
+        {
+          "question": "在无向图的 DFS 中，parent 参数的作用是什么？",
+          "options": [
+            "记录节点的深度",
+            "避免走回头路（把父边当成环）",
+            "标记节点是否已访问",
+            "记录路径"
+          ],
+          "answerIndex": 1,
+          "explanation": "无向图中每条边双向可达，从 u 到 v 后 v 的邻居包含 u，需要 parent 来跳过来路。"
+        },
+        {
+          "question": "一棵有 n 个节点的树，以节点 1 为根，其深度最多是多少？",
+          "options": ["n-1", "n", "n/2", "log(n)"],
+          "answerIndex": 0,
+          "explanation": "树退化为链时深度最大，从根到最远叶节点经过 n-1 条边，深度为 n-1。"
+        },
+        {
+          "question": "树 DFS 和一般图 DFS 的关键区别是什么？",
+          "options": [
+            "树的 DFS 不需要递归",
+            "树无环，用 parent 即可；图可能有环，需要 visited",
+            "图的 DFS 更快",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "树天然无环，用 parent 参数就能避免回头。一般图可能有环，必须用 visited 数组。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.5",
+      "title": "BFS 基础",
+      "learningGoal": "理解广度优先搜索的原理，学会用队列实现 BFS，能求无权图最短路径",
+      "explanation": "BFS（Breadth-First Search）广度优先搜索：逐层扩展，先访问距离近的节点，再访问距离远的。\n\n核心思想：\n1. 起点入队\n2. 队列不空时，取出队首\n3. 将队首的所有未访问邻居入队\n4. 重复直到队列为空\n\nBFS 的特点：\n- 能找到最短路径（无权图）\n- 用队列实现\n- 逐层扩展\n\n时间复杂度：O(V + E)",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\nint dist[100];\n\nvoid bfs(int start) {\n    queue<int> q;\n    q.push(start);\n    visited[start] = true;\n    dist[start] = 0;\n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                dist[v] = dist[u] + 1;\n                q.push(v);\n            }\n        }\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    bfs(1);\n    for (int i = 1; i <= n; i++)\n        cout << i << \": \" << dist[i] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用 queue 实现 BFS",
+        "入队时标记 visited",
+        "dist 记录距离起点的距离",
+        "BFS 天然求最短路径（无权图）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "出队时才标记 visited",
+          "description": "在 pop 后才标记，导致同一节点被多次入队。",
+          "fix": "入队时就标记 visited，不是出队时。"
+        },
+        {
+          "title": "dist 数组未初始化",
+          "description": "dist 默认为 0，无法区分未到达和距离为 0 的节点。",
+          "fix": "BFS 前用 memset(dist, -1, sizeof(dist)) 初始化为 -1。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 BFS 求无权图中从节点 1 到节点 n 的最短路径长度。",
+        "hint": "BFS 时记录 dist，dist[n] 就是答案。",
+        "expectedIdea": "标准 BFS 模板，用 dist 数组记录距离，初始化为 -1。"
+      },
+      "quiz": [
+        {
+          "question": "BFS 使用什么数据结构？",
+          "options": ["栈", "队列", "优先队列", "链表"],
+          "answerIndex": 1,
+          "explanation": "BFS 用队列（queue）实现，先进先出，保证逐层扩展。"
+        },
+        {
+          "question": "BFS 为什么能求无权图最短路径？",
+          "options": [
+            "BFS 按编号顺序访问",
+            "BFS 逐层扩展，先到达的距离更短",
+            "BFS 使用优先队列",
+            "BFS 会回溯找最短路"
+          ],
+          "answerIndex": 1,
+          "explanation": "BFS 按距离递增的顺序访问节点，第一次到达某节点时的距离就是最短距离。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.6",
+      "title": "回溯枚举",
+      "learningGoal": "理解回溯法的核心思想「选择、递归、撤销选择」，学会用回溯枚举子集、组合、排列",
+      "explanation": "回溯法是「试错」的搜索方法：尝试每种可能，发现走不通就回退（撤销选择），换另一条路。\n\n回溯框架：\nvoid backtrack(状态) {\n    if (满足结束条件) { 记录答案; return; }\n    for (每个候选选择) {\n        做选择;\n        backtrack(新状态);\n        撤销选择;  // 回溯\n    }\n}\n\nDFS 遍历 vs 回溯枚举：\n- DFS 遍历：访问图中所有节点，每个节点只访问一次，不撤销状态\n- 回溯枚举：在解空间中搜索所有可能的解，需要撤销选择来尝试其他方案\n\n回溯三步曲：\n1. 做选择：修改当前状态（如 path.push_back(i)）\n2. 递归：backtrack(新状态)\n3. 撤销选择：恢复状态（如 path.pop_back()）\n\n常见问题：子集、组合、排列、N皇后。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint n;\nvector<int> path;\n\nvoid backtrack(int used) {\n    if (path.size() == n) {\n        for (int x : path) cout << x << \" \";\n        cout << endl;\n        return;\n    }\n    for (int i = 1; i <= n; i++) {\n        if (used & (1 << i)) continue;\n        path.push_back(i);\n        backtrack(used | (1 << i));\n        path.pop_back();\n    }\n}\n\nint main() {\n    cin >> n;\n    backtrack(0);\n    return 0;\n}",
+      "codeNotes": [
+        "path 保存当前选择路径",
+        "used 位掩码记录已选数字",
+        "push_back 做选择，pop_back 撤销",
+        "path.size() == n 时输出一组排列"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记撤销选择",
+          "description": "递归返回后没有 pop_back，导致状态污染，后续枚举出错。",
+          "fix": "回溯必须对称：做了什么操作就撤销什么。push_back 对应 pop_back。"
+        },
+        {
+          "title": "做选择和撤销选择不对称",
+          "description": "做了两步操作但只撤销了一步，如标记了 used 但没有取消标记。",
+          "fix": "确保做选择和撤销选择的操作完全对称，一一对应。"
+        },
+        {
+          "title": "边界条件写错",
+          "description": "结束条件判断错误，如 path.size() == n 写成 path.size() == n-1。",
+          "fix": "仔细确认边界：排列是选满 n 个，组合是选够 k 个，子集是每个元素选或不选。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出 1 到 n 的所有排列。",
+        "hint": "回溯模板，用 used 数组或位掩码记录已选。",
+        "expectedIdea": "标准全排列回溯模板，做选择→递归→撤销选择。"
+      },
+      "quiz": [
+        {
+          "question": "回溯法的核心步骤是什么？",
+          "options": [
+            "只做选择不撤销",
+            "做选择 → 递归 → 撤销选择",
+            "随机选择",
+            "贪心选择"
+          ],
+          "answerIndex": 1,
+          "explanation": "回溯 = 做选择 + 递归探索 + 撤销选择，三步缺一不可。"
+        },
+        {
+          "question": "DFS 遍历图和回溯枚举的主要区别是什么？",
+          "options": [
+            "回溯不需要递归",
+            "回溯需要撤销状态来尝试其他方案",
+            "DFS 不能搜索图",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "DFS 遍历每个节点只访问一次，不需要撤销。回溯在解空间中搜索所有解，需要撤销选择来尝试不同方案。"
+        },
+        {
+          "question": "枚举 {1,2,3} 的所有排列，共有多少种？",
+          "options": ["3", "6", "9", "27"],
+          "answerIndex": 1,
+          "explanation": "n 个元素的排列数 = n! = 3! = 6。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.7",
+      "title": "剪枝优化",
+      "learningGoal": "理解剪枝优化的原理，学会可行性剪枝、最优性剪枝、排序剪枝和去重剪枝",
+      "explanation": "剪枝是在搜索过程中提前判断某些分支不可能产生正确答案，直接跳过，减少搜索量。\n\n常见剪枝策略：\n\n1. 可行性剪枝：当前状态已经不满足约束，直接 return\n   if (当前和 > target) return;\n\n2. 最优性剪枝：当前方案不可能比已知最优更好，直接 return\n   if (当前代价 >= best) return;\n\n3. 排序剪枝：先将候选按某种顺序排列，配合剪枝更高效\n   sort(candidates.begin(), candidates.end());\n   如果最小的都超了，后面更大的更超，直接 break\n\n4. 去重剪枝：避免生成重复的方案\n   if (i > start && candidates[i] == candidates[i-1]) continue;\n\n剪枝的核心思想：宁可多剪一点时间，也不要漏掉正确答案。剪枝条件必须保守——宁可不过关，不能误杀。\n\n常见错误：剪枝条件过强导致漏解。例如把 >= 写成 >，把不该剪的分支也剪掉了。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nvector<int> candidates;\nvector<vector<int>> results;\nvector<int> path;\nint target;\n\nvoid dfs(int start, int remain) {\n    if (remain == 0) {\n        results.push_back(path);\n        return;\n    }\n    for (int i = start; i < (int)candidates.size(); i++) {\n        if (candidates[i] > remain) break;\n        if (i > start && candidates[i] == candidates[i - 1]) continue;\n        path.push_back(candidates[i]);\n        dfs(i + 1, remain - candidates[i]);\n        path.pop_back();\n    }\n}\n\nint main() {\n    int n;\n    cin >> n >> target;\n    candidates.resize(n);\n    for (int i = 0; i < n; i++) cin >> candidates[i];\n    sort(candidates.begin(), candidates.end());\n    dfs(0, target);\n    for (auto& r : results) {\n        for (int x : r) cout << x << \" \";\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "先排序，保证后续剪枝有效",
+        "candidates[i] > remain: 排序剪枝，后面的更大直接 break",
+        "i > start && candidates[i]==candidates[i-1]: 去重剪枝",
+        "remain == 0: 找到一组解"
+      ],
+      "commonMistakes": [
+        {
+          "title": "剪枝条件过强导致漏解",
+          "description": "把 >= 写成 > 或剪枝条件判断有误，导致本应保留的分支被剪掉。",
+          "fix": "剪枝条件要保守，宁可少剪也不能误杀。写完后用小数据手动验证。"
+        },
+        {
+          "title": "去重位置错误",
+          "description": "去重剪枝的 i > start 条件写错，导致在同一层不该跳过的也被跳过。",
+          "fix": "去重只在同一层循环中生效，i > start 确保只跳过同层重复，不影响不同层选相同值。"
+        },
+        {
+          "title": "忘记排序",
+          "description": "排序剪枝依赖数组有序，忘记排序导致 break 提前退出的逻辑失效。",
+          "fix": "使用排序剪枝前，必须先 sort(candidates.begin(), candidates.end())。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一组正整数 candidates 和目标值 target，找出所有不重复的组合，使得组合中数的和等于 target。每个数只能用一次。",
+        "hint": "排序 + 回溯 + 排序剪枝（break）+ 去重剪枝（跳过重复）。",
+        "expectedIdea": "排序后 dfs(start, remain)，candidates[i]>remain 时 break，i>start 且重复时 continue。"
+      },
+      "quiz": [
+        {
+          "question": "排序剪枝的前提条件是什么？",
+          "options": [
+            "数组元素互不相同",
+            "数组必须有序",
+            "目标值必须为正",
+            "数组长度不超过 10"
+          ],
+          "answerIndex": 1,
+          "explanation": "排序剪枝依赖数组有序：如果最小的候选都超了目标，后面更大的更超，可以安全 break。"
+        },
+        {
+          "question": "去重剪枝 if (i > start && candidates[i] == candidates[i-1]) continue; 的作用是什么？",
+          "options": [
+            "跳过所有重复元素",
+            "只跳过同一层循环中的重复元素，避免重复组合",
+            "保证组合中的元素不重复",
+            "加快排序速度"
+          ],
+          "answerIndex": 1,
+          "explanation": "i > start 确保只在同层循环中生效，跳过同层重复值以避免生成重复组合。不同层仍可选相同值。"
+        },
+        {
+          "question": "以下哪个是可行性剪枝？",
+          "options": [
+            "if (当前和 > target) return;",
+            "if (path.size() == k) 记录答案;",
+            "sort(candidates);",
+            "path.push_back(x);"
+          ],
+          "answerIndex": 0,
+          "explanation": "可行性剪枝判断当前状态是否还能满足约束。当前和已超过 target，继续加只会更大，直接 return。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.8",
+      "title": "记忆化搜索",
+      "learningGoal": "理解记忆化搜索作为 DFS 到 DP 的桥梁，掌握 memo 数组的使用，理解重复子问题的优化",
+      "explanation": "记忆化搜索是 DFS + 缓存的优化方法，用于避免重复计算相同的子问题。它是从 DFS 到动态规划（DP）的桥梁。\n\n核心思想：\n- 用 DFS 的方式自顶向下递归求解\n- 用 memo 数组/Map 缓存已计算的结果\n- 再次遇到相同状态时直接查表返回，不再重复计算\n\n三者的关系：\n- 普通 DFS：所有路径都试，可能重复计算同一子问题，指数级时间\n- 记忆化搜索：DFS + memo，算过的状态不再算，时间降到多项式级\n- 递推 DP：按顺序填表，自底向上，通常更快但思路不如记忆化直观\n\n记忆化模板：\nint memo[N];  // 初始化为 -1（表示未计算）\nint dfs(int state) {\n    if (边界条件) return 基础值;\n    if (memo[state] != -1) return memo[state];  // 命中缓存\n    int result = 递归计算;\n    return memo[state] = result;  // 存入缓存\n}\n\n示例：\n- 斐波那契：fib(n) = fib(n-1) + fib(n-2)，memo 后 O(n)\n- 爬楼梯：到达第 n 级的方法数 = dfs(n-1) + dfs(n-2)\n- 最长递增路径：dfs(i,j) = 1 + max(四个方向的 dfs)，memo 后 O(n*m)",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint memo[50];\n\nint fib(int n) {\n    if (n <= 1) return n;\n    if (memo[n] != -1) return memo[n];\n    return memo[n] = fib(n - 1) + fib(n - 2);\n}\n\nint climbStairs(int n) {\n    if (n <= 2) return n;\n    if (memo[n] != -1) return memo[n];\n    return memo[n] = climbStairs(n - 1) + climbStairs(n - 2);\n}\n\nint main() {\n    memset(memo, -1, sizeof(memo));\n    cout << \"fib(10) = \" << fib(10) << endl;\n    memset(memo, -1, sizeof(memo));\n    cout << \"climbStairs(10) = \" << climbStairs(10) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "memo 初始化为 -1 表示未计算",
+        "memo[n] != -1 说明已算过，直接返回（缓存命中）",
+        "return memo[n] = ...; 同时存入缓存并返回",
+        "memset 重置 memo 用于不同问题"
+      ],
+      "commonMistakes": [
+        {
+          "title": "memo 初始化错误",
+          "description": "memo 数组没有初始化为 -1，导致 0 被误判为已计算。",
+          "fix": "每次使用前 memset(memo, -1, sizeof(memo))，确保 -1 表示未计算。"
+        },
+        {
+          "title": "忘记存入 memo",
+          "description": "计算了结果但忘记存入 memo 数组，下次遇到相同状态还会重复计算。",
+          "fix": "return memo[state] = result; 确保计算结果被缓存。"
+        },
+        {
+          "title": "memo 下标越界",
+          "description": "状态值超出 memo 数组范围，导致越界访问。",
+          "fix": "memo 数组大小要能容纳所有可能的状态值。如果状态是坐标对(i,j)，用二维数组或哈希。"
+        }
+      ],
+      "practice": {
+        "prompt": "用记忆化搜索求解爬楼梯问题：每次可以爬 1 或 2 级台阶，到达第 n 级有多少种方法？",
+        "hint": "dfs(n) = dfs(n-1) + dfs(n-2)，边界 dfs(1)=1, dfs(2)=2。用 memo 数组缓存。",
+        "expectedIdea": "int dfs(n) { if(n<=2) return n; if(memo[n]!=-1) return memo[n]; return memo[n]=dfs(n-1)+dfs(n-2); }"
+      },
+      "quiz": [
+        {
+          "question": "记忆化搜索和普通 DFS 的核心区别是什么？",
+          "options": [
+            "记忆化搜索不需要递归",
+            "记忆化搜索用 memo 缓存已计算的结果，避免重复计算",
+            "记忆化搜索更快但结果不同",
+            "记忆化搜索只能用于图"
+          ],
+          "answerIndex": 1,
+          "explanation": "记忆化搜索 = DFS + memo，核心是用缓存避免重复计算相同的子问题，从指数级降到多项式级。"
+        },
+        {
+          "question": "计算 fib(10) 时，普通递归和记忆化搜索的时间复杂度分别是？",
+          "options": [
+            "都是 O(n)",
+            "O(2^n) 和 O(n)",
+            "O(n) 和 O(n^2)",
+            "O(n^2) 和 O(n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "普通递归 fib 每次分裂为两个子问题，O(2^n)。记忆化后每个值只算一次，O(n)。"
+        },
+        {
+          "question": "memo 数组初始化为 -1 的原因是什么？",
+          "options": [
+            "-1 是默认值",
+            "0 可能是合法的计算结果，不能用 0 判断是否已计算",
+            "-1 计算更快",
+            "数组下标从 -1 开始"
+          ],
+          "answerIndex": 1,
+          "explanation": "0 可能是合法结果（如 fib(0)=0），用 -1 作为「未计算」标记可以和合法结果 0 区分。"
+        },
+        {
+          "question": "记忆化搜索和递推 DP 的关系是什么？",
+          "options": [
+            "完全不同的算法",
+            "记忆化搜索是自顶向下的 DP，递推是自底向上的 DP",
+            "记忆化搜索更慢",
+            "递推 DP 不能解决相同问题"
+          ],
+          "answerIndex": 1,
+          "explanation": "两者本质相同，都是避免重复计算。记忆化自顶向下（从大问题到小问题），递推自底向上（从小问题到大问题）。"
+        }
+      ]
+    }
+  ]
+}

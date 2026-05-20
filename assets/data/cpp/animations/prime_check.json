@@ -1,0 +1,89 @@
+{
+  "animationId": "cpp_prime_check",
+  "itemId": "4.1.7",
+  "title": "质数判定",
+  "description": "演示用试除法判断 29 是否为质数的过程",
+  "initialState": {
+    "variables": [
+      {"name": "n", "value": "29", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "要判断 n=29 是否为质数。质数是大于 1 且只能被 1 和自身整除的整数",
+      "codeLine": "int n = 29;",
+      "highlights": ["n"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "29", "note": "待判断"},
+          {"name": "i", "value": "2", "note": "从 2 开始试除"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "试除 i=2",
+      "description": "29 % 2 = 1 ≠ 0，2 不能整除 29，继续",
+      "codeLine": "if (n % i == 0) break;",
+      "highlights": ["n % i"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "29", "note": ""},
+          {"name": "i", "value": "2", "note": "29%2=1≠0"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "试除 i=3、i=4、i=5",
+      "description": "29%3=2≠0, 29%4=1≠0, 29%5=4≠0，均不能整除",
+      "codeLine": "if (n % i == 0) break;",
+      "highlights": ["n % i"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "29", "note": ""},
+          {"name": "i", "value": "5", "note": "29%3,29%4,29%5均≠0"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "只需试到 √29 ≈ 5.4",
+      "description": "i*i = 36 > 29，循环结束。如果 n 有因子，必有一个 ≤ √n，所以只需试到 √n",
+      "codeLine": "for (int i = 2; i * i <= n; i++)",
+      "highlights": ["i * i <= n"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "29", "note": ""},
+          {"name": "i", "value": "6", "note": "6×6=36 > 29，结束"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "结论：29 是质数",
+      "description": "从 2 到 √29 没有任何数能整除 29，所以 29 是质数",
+      "codeLine": "cout << \"是质数\";",
+      "highlights": ["是质数"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "29", "note": "质数 ✓"}
+        ],
+        "containers": [],
+        "output": "29 是质数"
+      }
+    }
+  ]
+}

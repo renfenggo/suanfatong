@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_math_induction",
+  "itemId": "4.4.10",
+  "title": "归纳法",
+  "description": "演示数学归纳法证明 1+2+…+n = n(n+1)/2 的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "命题",
+      "description": "要证明：对所有正整数 n，1+2+…+n = n(n+1)/2",
+      "codeLine": "// P(n): 1+2+...+n = n(n+1)/2",
+      "highlights": ["P(n)"],
+      "state": {
+        "variables": [
+          {"name": "P(n)", "value": "1+2+…+n = n(n+1)/2", "note": "待证"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "基础步：验证 P(1)",
+      "description": "P(1): 左边 = 1，右边 = 1×(1+1)/2 = 1 ✓。基础步成立",
+      "codeLine": "// P(1): 1 = 1*2/2 = 1 ✓",
+      "highlights": ["P(1)"],
+      "state": {
+        "variables": [
+          {"name": "左边", "value": "1", "note": ""},
+          {"name": "右边", "value": "1", "note": "1×2/2=1"},
+          {"name": "P(1)", "value": "✓", "note": "成立"}
+        ],
+        "containers": [],
+        "output": "P(1) ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "归纳假设：假设 P(k) 成立",
+      "description": "假设 1+2+…+k = k(k+1)/2 成立",
+      "codeLine": "// 假设 P(k) 成立: 1+...+k = k(k+1)/2",
+      "highlights": ["P(k)"],
+      "state": {
+        "variables": [
+          {"name": "P(k)", "value": "1+…+k = k(k+1)/2", "note": "假设成立"}
+        ],
+        "containers": [],
+        "output": "P(1) ✓\n假设 P(k) 成立"
+      }
+    },
+    {
+      "step": 4,
+      "title": "归纳步：证明 P(k+1)",
+      "description": "1+2+…+k+(k+1) = k(k+1)/2 + (k+1) = (k+1)(k+2)/2。P(k+1) 成立",
+      "codeLine": "// = k(k+1)/2 + (k+1) = (k+1)(k+2)/2",
+      "highlights": ["(k+1)(k+2)/2"],
+      "state": {
+        "variables": [
+          {"name": "P(k)", "value": "k(k+1)/2", "note": "归纳假设"},
+          {"name": "+(k+1)", "value": "k(k+1)/2+(k+1)", "note": ""},
+          {"name": "=P(k+1)", "value": "(k+1)(k+2)/2", "note": "✓"}
+        ],
+        "containers": [],
+        "output": "P(1) ✓\n假设 P(k) 成立\nP(k+1) ✓"
+      }
+    }
+  ]
+}

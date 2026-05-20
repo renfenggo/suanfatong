@@ -1,0 +1,579 @@
+{
+  "sectionId": "4.1",
+  "sectionName": "数论基础",
+  "units": [
+    {
+      "itemId": "4.1.1",
+      "title": "整数与自然数",
+      "learningGoal": "理解整数和自然数的概念，掌握它们在编程中的表示方法，了解整数的范围限制",
+      "explanation": "【自然数】\n从 0 开始，依次为 0, 1, 2, 3, ... 的数称为自然数。\n自然数集用 N 表示。\n\n【整数】\n整数包括正整数、零和负整数：... , -3, -2, -1, 0, 1, 2, 3, ...\n整数集用 Z 表示。\n\n整数的分类：\n  - 正整数：1, 2, 3, ...\n  - 零：0\n  - 负整数：-1, -2, -3, ...\n\n【编程中的整数类型】\n在 C++ 中，整数用不同的数据类型存储：\n  - int：通常为 32 位，范围约 -2×10^9 到 2×10^9\n  - long long：64 位，范围约 -9×10^18 到 9×10^18\n  - unsigned int：无符号 32 位，范围 0 到约 4×10^9\n\n【重要性质】\n1. 整数运算在计算机中是精确的（不会丢失精度）\n2. 但整数有范围限制，超出范围会「溢出」\n3. 整数除法是「整除」，即截断小数部分：7/2 = 3",
+      "exampleCode": "#include <iostream>\n#include <climits>\nusing namespace std;\n\nint main() {\n    cout << \"int 的范围: \" << INT_MIN << \" 到 \" << INT_MAX << endl;\n    cout << \"long long 的范围: \" << LLONG_MIN << \" 到 \" << LLONG_MAX << endl;\n\n    int a = 2000000000;\n    int b = 2000000000;\n    cout << \"a + b (int 溢出): \" << a + b << endl;\n\n    long long c = 2000000000LL;\n    long long d = 2000000000LL;\n    cout << \"c + d (long long): \" << c + d << endl;\n\n    cout << \"整数除法 7/2 = \" << 7 / 2 << endl;\n    cout << \"整数除法 -7/2 = \" << -7 / 2 << endl;\n    cout << \"取余运算 7%2 = \" << 7 % 2 << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "INT_MIN 和 INT_MAX 是 <climits> 中定义的 int 范围常量",
+        "两个 int 相加可能溢出，结果变成负数",
+        "使用 long long 并加 LL 后缀可以避免溢出",
+        "整数除法向零取整，-7/2 = -3（不是 -4）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "int 溢出",
+          "description": "两个较大的 int 值相加或相乘时，结果超出 int 范围，导致溢出得到错误结果",
+          "fix": "使用 long long 类型，注意常量要加 LL 后缀，如 1000000000LL"
+        },
+        {
+          "title": "整数除法方向混淆",
+          "description": "误以为整数除法是向下取整，实际上 C++ 中是向零取整",
+          "fix": "记住 C++ 整数除法向零取整：7/2=3, -7/2=-3。如果需要向下取整，用 floor 函数"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个整数 n，判断 n 是否在 int 类型的表示范围内。如果超出范围，输出 \"overflow\"，否则输出 \"ok\"。",
+        "hint": "int 的范围是 -2147483648 到 2147483647。注意用 long long 来存储输入。",
+        "expectedIdea": "用 long long 读取输入，然后与 INT_MIN 和 INT_MAX 比较"
+      },
+      "quiz": [
+        {
+          "question": "在 C++ 中，表达式 -7/2 的值是多少？",
+          "options": [
+            "-4",
+            "-3",
+            "-3.5",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 中整数除法向零取整，-7/2 = -3（向零方向取整，不是向下取整）"
+        },
+        {
+          "question": "int 类型最多能表示多大的正整数（约）？",
+          "options": [
+            "10^6",
+            "10^9",
+            "10^18",
+            "10^308"
+          ],
+          "answerIndex": 1,
+          "explanation": "32 位有符号整数最大值是 2^31 - 1 ≈ 2.1×10^9，约 21 亿"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.2",
+      "title": "正数与负数",
+      "learningGoal": "理解正数和负数的概念，掌握编程中处理负数的注意事项，特别是取余和除法运算",
+      "explanation": "【正数与负数】\n大于 0 的数是正数，小于 0 的数是负数，0 既不是正数也不是负数。\n\n【负数在编程中的表示】\n计算机用补码（Two's Complement）存储负数。\n例如 8 位二进制：\n  - 5 表示为 00000101\n  - -5 表示为 11111011（补码）\n\n【负数的运算规则】\n1. 加法：正 + 负 = 相减\n2. 减法：a - (-b) = a + b\n3. 乘法：正 × 负 = 负，负 × 负 = 正\n4. 除法（C++）：向零取整\n   -7 / 2 = -3（向零方向）\n5. 取余（C++）：结果的符号与被除数相同\n   -7 % 2 = -1，7 % -2 = 1\n\n【信奥中的常见应用】\n- 温度、坐标等可以为负的场景\n- 差分数组中可能产生负数\n- 需要特别注意取余运算中负数的处理",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = -17, b = 5;\n\n    cout << a << \" / \" << b << \" = \" << a / b << endl;\n    cout << a << \" % \" << b << \" = \" << a % b << endl;\n\n    int nonNegMod = (a % b + b) % b;\n    cout << \"非负取余: \" << nonNegMod << endl;\n\n    int temp[] = {-10, 0, 15, -3, 28};\n    int minVal = temp[0], maxVal = temp[0];\n    for (int i = 1; i < 5; i++) {\n        if (temp[i] < minVal) minVal = temp[i];\n        if (temp[i] > maxVal) maxVal = temp[i];\n    }\n    cout << \"最低温度: \" << minVal << \" 度\" << endl;\n    cout << \"最高温度: \" << maxVal << \" 度\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "C++ 中负数取余结果符号与被除数相同：-17%5=-2",
+        "用 (a%b+b)%b 可以将负数取余转化为非负结果",
+        "这是信奥中非常常用的技巧，尤其在取模运算中",
+        "处理包含负数的数组时，注意初始值的设置"
+      ],
+      "commonMistakes": [
+        {
+          "title": "负数取余为负",
+          "description": "在 C++ 中 -17%5 = -2，而不是 3。如果期望得到非负余数，直接用 % 会出错",
+          "fix": "使用 (a%b+b)%b 保证结果为非负数"
+        },
+        {
+          "title": "绝对值函数用错类型",
+          "description": "对 long long 类型使用了 abs()（int 版本）而不是 llabs()",
+          "fix": "对于 long long 使用 abs() 即可（C++11 起 abs 支持重载），或者使用条件表达式判断"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个包含正数和负数的数组，求其中所有负数的和以及所有正数的和，分别输出。",
+        "hint": "遍历数组，用 if 判断正负，分别累加。",
+        "expectedIdea": "遍历数组，用两个变量分别累加正数之和与负数之和"
+      },
+      "quiz": [
+        {
+          "question": "在 C++ 中，-17 % 5 的结果是多少？",
+          "options": [
+            "3",
+            "-2",
+            "2",
+            "-3"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 中取余结果的符号与被除数相同。-17 = (-4)×5 + 3 是错的，正确是 -17 = (-3)×5 + (-2)，所以 -17%5 = -2"
+        },
+        {
+          "question": "如何将 C++ 中负数的取余结果转化为非负数？",
+          "options": [
+            "abs(a%b)",
+            "(a%b+b)%b",
+            "a%abs(b)",
+            "abs(a)%b"
+          ],
+          "answerIndex": 1,
+          "explanation": "(a%b+b)%b 是标准做法。例如 (-17%5+5)%5 = (-2+5)%5 = 3%5 = 3"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.3",
+      "title": "零的特殊性质",
+      "learningGoal": "理解零在数学和编程中的特殊地位，掌握零参与的运算规则和常见陷阱",
+      "explanation": "【零的定义】\n零（0）既不是正数也不是负数，是正数和负数的分界点。\n\n【零的运算性质】\n1. 加法：a + 0 = a（零是加法单位元）\n2. 减法：a - 0 = a，0 - a = -a\n3. 乘法：a × 0 = 0（任何数乘以 0 都等于 0）\n4. 除法：0 ÷ a = 0（a ≠ 0），a ÷ 0 无意义（除以零未定义）\n5. 幂运算：0^0 在数学中有争议，C++ 中 pow(0,0)=1\n6. 取余：0 % a = 0（a ≠ 0）\n\n【编程中的零陷阱】\n1. 除以零会导致运行时错误（浮点异常）\n2. 整数 0 在条件判断中为 false\n3. -0 在整数中就是 0\n4. 浮点数有 +0.0 和 -0.0 的区别\n5. 数组下标从 0 开始，不是从 1 开始\n\n【信奥常见场景】\n- 前缀和：S[0] = 0 表示空区间的和\n- 计数：初始计数为 0\n- 特判：处理除数为零的情况",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0;\n\n    cout << \"0 作为条件: \" << (a ? \"true\" : \"false\") << endl;\n\n    int prefixSum[6] = {0, 3, 7, 12, 15, 20};\n    int l = 2, r = 4;\n    int sum = prefixSum[r] - prefixSum[l - 1];\n    cout << \"区间 [\" << l << \",\" << r << \"] 的和: \" << sum << endl;\n\n    int arr[] = {0, 0, 3, 0, 5, 0, 0, 7};\n    int n = 8;\n    int cnt = 0;\n    for (int i = 0; i < n; i++) {\n        if (arr[i] != 0) cnt++;\n    }\n    cout << \"非零元素个数: \" << cnt << endl;\n\n    int divisor = 0;\n    if (divisor != 0) {\n        cout << 10 / divisor << endl;\n    } else {\n        cout << \"除数不能为零！\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "整数 0 在条件判断中为 false，非零为 true",
+        "前缀和中 S[0]=0 是基础，用于统一计算区间和",
+        "统计非零元素时用 != 0 判断",
+        "做除法前一定要检查除数是否为 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "除以零",
+          "description": "程序中出现除以零的操作，导致运行时崩溃（浮点异常 Floating point exception）",
+          "fix": "在除法前检查除数是否为 0，做特判处理"
+        },
+        {
+          "title": "数组下标混淆",
+          "description": "混淆数组从 0 开始和从 1 开始，导致 off-by-one 错误",
+          "fix": "明确约定：如果用前缀和，数组从下标 1 开始存储数据，下标 0 为 0"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个长度为 n 的数组，统计其中 0 的个数，并将所有非零元素移到数组前部（保持相对顺序），输出新数组。",
+        "hint": "遍历数组，用一个新的下标记录放置位置，遇到非零元素就放到前面。",
+        "expectedIdea": "双指针法：用一个指针记录当前放置位置，遍历数组将非零元素前移"
+      },
+      "quiz": [
+        {
+          "question": "在 C++ 中，以下哪个操作会导致程序崩溃？",
+          "options": [
+            "0 + 5",
+            "5 * 0",
+            "5 / 0",
+            "0 % 5"
+          ],
+          "answerIndex": 2,
+          "explanation": "除以零是未定义行为，在大多数系统上会导致浮点异常（Floating point exception）使程序崩溃"
+        },
+        {
+          "question": "前缀和数组中，S[0] 的值通常设为多少？",
+          "options": [
+            "1",
+            "-1",
+            "0",
+            "数组第一个元素"
+          ],
+          "answerIndex": 2,
+          "explanation": "S[0] = 0 表示空前缀的元素和为 0，这样可以统一处理从下标 1 开始的区间求和"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.4",
+      "title": "奇偶性",
+      "learningGoal": "理解奇数和偶数的定义与性质，掌握在编程中判断奇偶的方法，了解奇偶性的应用",
+      "explanation": "【定义】\n- 偶数：能被 2 整除的整数，如 ...-4, -2, 0, 2, 4...\n- 奇数：不能被 2 整除的整数，如 ...-3, -1, 1, 3, 5...\n\n【判断方法】\n在编程中用取余运算判断：\n  - n % 2 == 0 → 偶数\n  - n % 2 != 0 → 奇数\n也可以用位运算：\n  - (n & 1) == 0 → 偶数\n  - (n & 1) == 1 → 奇数（更快）\n\n【运算性质】\n奇偶性在运算中的规律：\n  奇 + 奇 = 偶    偶 + 偶 = 偶    奇 + 偶 = 奇\n  奇 × 奇 = 奇    偶 × 任意 = 偶\n\n【信奥应用】\n1. 棋盘染色问题：坐标 (x,y) 的奇偶性决定颜色\n2. 判断无解：如果奇数个物品无法两两配对\n3. 奇偶剪枝：搜索中的优化\n4. 二分图判定",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nbool isOdd(int n) {\n    return (n & 1) == 1;\n}\n\nbool isEven(int n) {\n    return (n & 1) == 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n\n    if (isEven(n)) {\n        cout << n << \" 是偶数\" << endl;\n    } else {\n        cout << n << \" 是奇数\" << endl;\n    }\n\n    cout << \"1 到 \" << n << \" 中的奇数: \";\n    for (int i = 1; i <= n; i += 2) {\n        cout << i << \" \";\n    }\n    cout << endl;\n\n    int arr[] = {3, 7, 2, 8, 5, 10};\n    int oddCount = 0, evenCount = 0;\n    for (int i = 0; i < 6; i++) {\n        if (isEven(arr[i])) evenCount++;\n        else oddCount++;\n    }\n    cout << \"奇数个数: \" << oddCount << \", 偶数个数: \" << evenCount << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "用位运算 n & 1 判断奇偶比取余运算更快",
+        "注意运算符优先级：(n & 1) 需要加括号",
+        "遍历奇数可以用 i += 2 从 1 开始",
+        "奇偶计数在信奥中很常见，如统计黑白格子数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "位运算优先级错误",
+          "description": "写 n & 1 == 1 实际上等价于 n & (1==1) 即 n & 1，但由于优先级问题可能导致逻辑错误",
+          "fix": "始终加括号：(n & 1) == 1"
+        },
+        {
+          "title": "忽略负数的奇偶性",
+          "description": "误认为负数没有奇偶性，实际上 -3 也是奇数，-4 也是偶数",
+          "fix": "奇偶性的定义对所有整数都适用，-3 % 2 = -1（非零），所以 -3 是奇数"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个整数，将数组中的奇数放在前面，偶数放在后面，不要求保持原来的相对顺序。输出调整后的数组。",
+        "hint": "可以用双指针，左指针找偶数，右指针找奇数，然后交换。",
+        "expectedIdea": "双指针法：左指针从前往后找偶数，右指针从后往前找奇数，交换两者"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个表达式能正确判断 n 是否为奇数？",
+          "options": [
+            "n % 2 == 1",
+            "n % 2 != 0",
+            "n / 2 * 2 != n",
+            "以上都可以"
+          ],
+          "answerIndex": 3,
+          "explanation": "三种方法都可以。n%2==1 对正数有效，但负奇数时 n%2=-1。不过 n%2!=0 对所有整数都有效。n/2*2!=n 也是正确的判断方式"
+        },
+        {
+          "question": "在棋盘上，坐标 (3, 5) 和 (4, 6) 的格子颜色是否相同？",
+          "options": [
+            "相同",
+            "不同",
+            "取决于棋盘大小",
+            "无法确定"
+          ],
+          "answerIndex": 0,
+          "explanation": "棋盘染色规律：格子 (r,c) 的颜色由 (r+c) 的奇偶性决定。(3,5) 的 3+5=8（偶数），(4,6) 的 4+6=10（偶数）。两者奇偶性相同，因此颜色相同"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.5",
+      "title": "整除",
+      "learningGoal": "理解整除的定义和性质，掌握判断整除的方法，了解整除在信奥中的应用",
+      "explanation": "【定义】\n若存在整数 k，使得 a = k × b（b ≠ 0），则称 b 整除 a，记作 b | a。\n即 a 能被 b 整除，等价于 a % b == 0。\n\n【基本性质】\n1. 若 a | b 且 b | c，则 a | c（传递性）\n2. 若 a | b 且 a | c，则 a | (b+c) 和 a | (b-c)\n3. 若 a | b，则 a | (b × k)，k 为任意整数\n4. 1 能整除任何整数\n5. 任何整数都能整除 0\n\n【常见整除规则】\n2 的倍数：末位是偶数\n3 的倍数：各位数字之和是 3 的倍数\n4 的倍数：末两位组成的数是 4 的倍数\n5 的倍数：末位是 0 或 5\n9 的倍数：各位数字之和是 9 的倍数\n11 的倍数：奇数位数字之和与偶数位数字之和的差是 11 的倍数\n\n【信奥应用】\n- 判断一个数是否为某数的倍数\n- 筛选满足条件的数据",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nbool isDivisible(int a, int b) {\n    return b != 0 && a % b == 0;\n}\n\nbool isDivBy3(int n) {\n    int sum = 0;\n    n = abs(n);\n    while (n > 0) {\n        sum += n % 10;\n        n /= 10;\n    }\n    return sum % 3 == 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n\n    cout << n << \" 能被 2 整除? \" << (isDivisible(n, 2) ? \"是\" : \"否\") << endl;\n    cout << n << \" 能被 3 整除? \" << (isDivisible(n, 3) ? \"是\" : \"否\") << endl;\n    cout << n << \" 能被 5 整除? \" << (isDivisible(n, 5) ? \"是\" : \"否\") << endl;\n\n    cout << \"用数字和判断 3 的倍数: \" << (isDivBy3(n) ? \"是\" : \"否\") << endl;\n\n    cout << \"1 到 \" << n << \" 中 3 的倍数: \";\n    for (int i = 3; i <= n; i += 3) {\n        cout << i << \" \";\n    }\n    cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "整除判断的核心是取余运算 a % b == 0",
+        "注意除数不能为 0，函数中需要特判",
+        "3 的倍数可以用数字之和来判断",
+        "枚举某数的倍数可以从该数开始，每次加该数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记检查除数为零",
+          "description": "直接使用 a % b 而不检查 b 是否为 0",
+          "fix": "在做取余运算前先判断 b != 0"
+        },
+        {
+          "title": "负数整除判断错误",
+          "description": "负数取余在 C++ 中结果可能为负，导致整除判断出错",
+          "fix": "负数的整除判断不受影响，因为如果 b|a，则 a%b 一定等于 0（无论正负）"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个正整数 n，输出 1 到 n 中所有既能被 3 整除又能被 5 整除的数，以及它们的个数。",
+        "hint": "能同时被 3 和 5 整除，等价于能被 15 整除。",
+        "expectedIdea": "遍历 1 到 n，判断每个数是否能被 15 整除（因为 lcm(3,5)=15）"
+      },
+      "quiz": [
+        {
+          "question": "若 a | b 且 a | c，以下哪个不一定成立？",
+          "options": [
+            "a | (b+c)",
+            "a | (b-c)",
+            "a | (b×c)",
+            "a | (b/c)"
+          ],
+          "answerIndex": 3,
+          "explanation": "b/c 不一定是整数，所以 a | (b/c) 不一定成立。例如 6|12 且 6|18，但 12/18 不是整数"
+        },
+        {
+          "question": "判断一个数能否被 4 整除，只需要看这个数的哪一部分？",
+          "options": [
+            "首位数字",
+            "末位数字",
+            "末两位数字",
+            "所有数字之和"
+          ],
+          "answerIndex": 2,
+          "explanation": "因为 100 = 4×25，所以任何大于 100 的数，其百位及以上部分一定是 4 的倍数，只需要看末两位"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.6",
+      "title": "倍数与因数",
+      "learningGoal": "理解倍数和因数的概念与关系，掌握编程中求因数的方法，了解因数的应用",
+      "explanation": "【定义】\n若 b | a（b 整除 a，b ≠ 0），则：\n  - b 是 a 的因数（约数）\n  - a 是 b 的倍数\n\n例如：6 的因数有 1, 2, 3, 6\n      6 的倍数有 6, 12, 18, 24, ...\n\n【重要性质】\n1. 1 是所有正整数的因数\n2. 每个数都是自身的因数\n3. 因数总是成对出现的（除了完全平方数的平方根）\n   例如 12 的因数对：(1,12), (2,6), (3,4)\n4. 一个数 n 的因数个数不超过 2√n\n5. 因数的个数是有限的，倍数的个数是无限的\n\n【求因数的高效方法】\n枚举 1 到 √n，如果 i | n，则 i 和 n/i 都是 n 的因数。\n时间复杂度 O(√n)。\n\n【因数个数定理】\n若 n = p1^a1 × p2^a2 × ... × pk^ak（质因数分解），\n则因数个数 d(n) = (a1+1)(a2+1)...(ak+1)。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nvector<int> getFactors(int n) {\n    vector<int> factors;\n    for (int i = 1; i * i <= n; i++) {\n        if (n % i == 0) {\n            factors.push_back(i);\n            if (i != n / i) {\n                factors.push_back(n / i);\n            }\n        }\n    }\n    sort(factors.begin(), factors.end());\n    return factors;\n}\n\nint countFactors(int n) {\n    int cnt = 0;\n    for (int i = 1; i * i <= n; i++) {\n        if (n % i == 0) {\n            cnt++;\n            if (i != n / i) cnt++;\n        }\n    }\n    return cnt;\n}\n\nint main() {\n    int n;\n    cin >> n;\n\n    vector<int> factors = getFactors(n);\n    cout << n << \" 的所有因数: \";\n    for (int f : factors) {\n        cout << f << \" \";\n    }\n    cout << endl;\n\n    cout << \"因数个数: \" << countFactors(n) << endl;\n    cout << \"因数之和: \";\n    int sum = 0;\n    for (int f : factors) sum += f;\n    cout << sum << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "枚举到 sqrt(n) 即 i*i <= n，避免浮点运算",
+        "因数成对出现：i 和 n/i",
+        "注意完全平方数：i == n/i 时不要重复添加",
+        "排序后输出可以得到有序的因数列表"
+      ],
+      "commonMistakes": [
+        {
+          "title": "重复添加平方根因数",
+          "description": "当 n 是完全平方数时（如 n=36，i=6），i 和 n/i 相同，会被添加两次",
+          "fix": "添加前检查 i != n / i，如果相同则只添加一次"
+        },
+        {
+          "title": "用 sqrt() 函数产生精度问题",
+          "description": "用 i <= sqrt(n) 可能因为浮点精度导致少枚举或多枚举",
+          "fix": "用 i * i <= n 代替 sqrt(n)，完全避免浮点运算"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个正整数 n，找出 n 的所有因数，并判断 n 是否为「完全数」（即除自身外的所有因数之和等于自身，如 6=1+2+3）。",
+        "hint": "求出所有因数后，将除 n 以外的因数求和，判断是否等于 n。",
+        "expectedIdea": "枚举 1 到 sqrt(n) 求所有因数，累加不等于 n 的因数之和，判断是否等于 n"
+      },
+      "quiz": [
+        {
+          "question": "36 的因数有几个？",
+          "options": [
+            "7 个",
+            "8 个",
+            "9 个",
+            "10 个"
+          ],
+          "answerIndex": 2,
+          "explanation": "36 = 2^2 × 3^2，因数个数 = (2+1)(2+1) = 9。因数为：1,2,3,4,6,9,12,18,36"
+        },
+        {
+          "question": "枚举 n 的所有因数，最优的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n/2)",
+            "O(√n)",
+            "O(log n)"
+          ],
+          "answerIndex": 2,
+          "explanation": "只需枚举 1 到 √n，每次检查是否整除。因数成对出现，所以 O(√n) 即可找到所有因数"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.7",
+      "title": "质数判定",
+      "learningGoal": "理解质数的定义，掌握试除法判定质数的方法，了解质数筛法的基本思想",
+      "explanation": "【定义】\n质数（素数）：大于 1 的自然数中，除了 1 和它本身外没有其他因数的数。\n例如：2, 3, 5, 7, 11, 13, 17, 19, 23, ...\n\n合数：大于 1 的自然数中，不是质数的数。\n例如：4, 6, 8, 9, 10, 12, ...\n\n注意：1 既不是质数也不是合数！\n\n【试除法】\n要判断 n 是否为质数，只需检查 2 到 √n 之间是否有 n 的因数。\n原理：如果 n 有因数 d（d > √n），那么 n/d < √n 也是因数。\n所以只要检查到 √n 就够了。\n\n时间复杂度：O(√n)\n\n【优化】\n1. 先特判 n <= 1 → 不是质数\n2. 先特判 n == 2 → 是质数\n3. 先特判 n 是偶数 → 不是质数\n4. 然后从 3 开始，每次加 2，只检查奇数\n\n【小技巧】\n100 以内的质数共 25 个：\n2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nbool isPrime(int n) {\n    if (n <= 1) return false;\n    if (n == 2) return true;\n    if (n % 2 == 0) return false;\n    for (int i = 3; i * i <= n; i += 2) {\n        if (n % i == 0) return false;\n    }\n    return true;\n}\n\nint main() {\n    int n;\n    cin >> n;\n\n    if (isPrime(n)) {\n        cout << n << \" 是质数\" << endl;\n    } else {\n        cout << n << \" 不是质数\" << endl;\n    }\n\n    cout << \"1 到 100 中的质数: \" << endl;\n    int cnt = 0;\n    for (int i = 2; i <= 100; i++) {\n        if (isPrime(i)) {\n            cout << i << \" \";\n            cnt++;\n        }\n    }\n    cout << endl << \"共 \" << cnt << \" 个\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "n <= 1 时不是质数，这是最容易遗漏的特判",
+        "n == 2 是唯一的偶质数，需要单独处理",
+        "从 3 开始每次加 2，只检查奇因数，效率翻倍",
+        "循环条件用 i*i <= n 而非 i <= sqrt(n)，避免浮点误差"
+      ],
+      "commonMistakes": [
+        {
+          "title": "把 1 当作质数",
+          "description": "忘记 1 既不是质数也不是合数，错误地将 isPrime(1) 返回 true",
+          "fix": "函数开头加上 if (n <= 1) return false; 的特判"
+        },
+        {
+          "title": "循环条件用 sqrt 导致错误",
+          "description": "用 for(int i=2; i<=sqrt(n); i++) 可能因浮点精度问题导致边界错误",
+          "fix": "使用 i*i <= n 代替，完全避免浮点运算"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个正整数 n（n ≤ 10^6），输出 2 到 n 之间所有质数的个数。",
+        "hint": "可以对每个数调用试除法，也可以学习埃拉托斯特尼筛法来提高效率。",
+        "expectedIdea": "对每个 2 到 n 的数调用 isPrime 函数，或者使用埃氏筛法"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个数是质数？",
+          "options": [
+            "1",
+            "9",
+            "15",
+            "17"
+          ],
+          "answerIndex": 3,
+          "explanation": "1 不是质数也不是合数。9=3×3，15=3×5，都是合数。17 只有 1 和 17 两个因数，是质数"
+        },
+        {
+          "question": "用试除法判断 n（约 10^9）是否为质数，最坏情况下需要做多少次除法？",
+          "options": [
+            "约 10^9 次",
+            "约 10^4.5 次（约 31623 次）",
+            "约 10^6 次",
+            "约 log(n) 次"
+          ],
+          "answerIndex": 1,
+          "explanation": "试除法只需检查到 √n ≈ √(10^9) ≈ 31623 次。加上只检查奇数的优化，约 15000 次"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.8",
+      "title": "质因数分解",
+      "learningGoal": "理解质因数分解的概念和唯一分解定理，掌握编程中质因数分解的方法",
+      "explanation": "【唯一分解定理（算术基本定理）】\n任何大于 1 的正整数都可以唯一地表示为质数的乘积：\n  n = p1^a1 × p2^a2 × ... × pk^ak\n其中 p1 < p2 < ... < pk 为质数，a1, a2, ..., ak 为正整数。\n\n例如：\n  12 = 2^2 × 3\n  60 = 2^2 × 3 × 5\n  360 = 2^3 × 3^2 × 5\n  100 = 2^2 × 5^2\n\n【分解方法】\n从小到大枚举可能的质因数，不断试除：\n1. 从 i=2 开始，检查 n 能被 i 整除多少次\n2. 每次整除就将 n 除以 i，记录 i 的幂次\n3. 如果 i*i > n，则剩下的 n（如果 > 1）本身就是一个质因数\n\n时间复杂度：O(√n)\n\n【分解结果的应用】\n- 求因数个数：(a1+1)(a2+1)...(ak+1)\n- 求所有因数之和\n- 求最大公约数和最小公倍数\n- 判断两个数是否互质",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nstruct Factor {\n    int prime;\n    int power;\n};\n\nvector<Factor> factorize(int n) {\n    vector<Factor> result;\n    for (int i = 2; i * i <= n; i++) {\n        if (n % i == 0) {\n            Factor f;\n            f.prime = i;\n            f.power = 0;\n            while (n % i == 0) {\n                n /= i;\n                f.power++;\n            }\n            result.push_back(f);\n        }\n    }\n    if (n > 1) {\n        result.push_back({n, 1});\n    }\n    return result;\n}\n\nint main() {\n    int n;\n    cin >> n;\n\n    vector<Factor> factors = factorize(n);\n\n    cout << n << \" = \";\n    for (int i = 0; i < factors.size(); i++) {\n        if (i > 0) cout << \" × \";\n        cout << factors[i].prime;\n        if (factors[i].power > 1) {\n            cout << \"^\" << factors[i].power;\n        }\n    }\n    cout << endl;\n\n    int divisorCount = 1;\n    for (auto& f : factors) {\n        divisorCount *= (f.power + 1);\n    }\n    cout << \"因数个数: \" << divisorCount << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "外层循环枚举可能的质因数，i*i <= n",
+        "内层 while 循环计算该质因数的幂次",
+        "循环结束后如果 n > 1，则 n 本身是质因数",
+        "因数个数 = 各质因数幂次加 1 后相乘"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记处理最后的质因数",
+          "description": "循环结束后 n 可能还大于 1，此时 n 本身就是一个质因数",
+          "fix": "循环结束后检查 if (n > 1)，将 n 作为一个幂次为 1 的质因数加入结果"
+        },
+        {
+          "title": "混淆质数和合数的分解",
+          "description": "误以为需要先判断一个数是质数才能作为因数",
+          "fix": "不需要判断质数。因为从小到大枚举，合数在之前已经被其质因数除尽了，不会被选到"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个正整数 n，对其进行质因数分解，并输出每个质因数及其幂次。然后根据质因数分解结果，求 n 的所有因数之和。",
+        "hint": "因数之和公式：如果 n = p1^a1 × p2^a2 × ... × pk^ak，则因数之和 = ∏(pi^(ai+1) - 1)/(pi - 1)。",
+        "expectedIdea": "先质因数分解，然后用因数之和公式计算，注意整数除法"
+      },
+      "quiz": [
+        {
+          "question": "将 360 分解质因数的结果是？",
+          "options": [
+            "2^3 × 3^2 × 5",
+            "2^2 × 3^2 × 10",
+            "2^3 × 9 × 5",
+            "4 × 3^2 × 10"
+          ],
+          "answerIndex": 0,
+          "explanation": "360 = 8×45 = 8×9×5 = 2^3 × 3^2 × 5。分解必须全部是质数，所以含 4、9、10 的选项不对"
+        },
+        {
+          "question": "12 = 2^2 × 3，那么 12 的因数个数是多少？",
+          "options": [
+            "4 个",
+            "5 个",
+            "6 个",
+            "8 个"
+          ],
+          "answerIndex": 2,
+          "explanation": "因数个数 = (2+1)(1+1) = 6。实际因数为：1,2,3,4,6,12，确实是 6 个"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.9",
+      "title": "最大公约数（gcd）",
+      "learningGoal": "理解最大公约数的概念，掌握欧几里得算法（辗转相除法）求 gcd，了解其应用",
+      "explanation": "【定义】\n最大公约数 gcd(a, b)：同时整除 a 和 b 的最大正整数。\n例如 gcd(12, 18) = 6，gcd(15, 25) = 5。\n\n【欧几里得算法（辗转相除法）】\n核心原理：gcd(a, b) = gcd(b, a mod b)\n当 b = 0 时，gcd(a, 0) = a\n\n证明思路：\n设 d = gcd(a, b)，则 d | a 且 d | b。\n因为 a = q×b + r（r = a mod b），\n所以 d | r。\n反之，d | b 且 d | r → d | a。\n所以 gcd(a, b) = gcd(b, a mod b)。\n\n【算法实现】\n递归版本：\n  int gcd(int a, int b) { return b ? gcd(b, a%b) : a; }\n\n迭代版本：\n  while (b) { int t = a%b; a = b; b = t; }\n\n时间复杂度：O(log(min(a,b)))\n\n【扩展欧几里得算法】\n可以求出 ax + by = gcd(a,b) 的一组整数解 (x, y)。\n这在求逆元等问题中非常重要。\n\n【信奥应用】\n- 分数化简\n- 判断两个数是否互质\n- 中国剩余定理\n- 求解线性同余方程",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint gcd(int a, int b) {\n    return b ? gcd(b, a % b) : a;\n}\n\nint gcdIterative(int a, int b) {\n    while (b) {\n        int t = a % b;\n        a = b;\n        b = t;\n    }\n    return a;\n}\n\nint extGcd(int a, int b, int& x, int& y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    int x1, y1;\n    int g = extGcd(b, a % b, x1, y1);\n    x = y1;\n    y = x1 - (a / b) * y1;\n    return g;\n}\n\nint main() {\n    int a = 48, b = 18;\n    cout << \"gcd(\" << a << \", \" << b << \") = \" << gcd(a, b) << endl;\n\n    cout << \"辗转相除过程: \" << endl;\n    int x = a, y = b;\n    while (y) {\n        cout << x << \" = \" << x/y << \" × \" << y << \" + \" << x%y << endl;\n        int t = x % y;\n        x = y;\n        y = t;\n    }\n    cout << \"gcd = \" << x << endl;\n\n    int ex, ey;\n    int g = extGcd(48, 18, ex, ey);\n    cout << \"48×\" << ex << \" + 18×\" << ey << \" = \" << g << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "递归版本极其简洁：b ? gcd(b, a%b) : a",
+        "迭代版本避免递归开销，适合大数据",
+        "辗转相除法的每一步都在减小数值，保证终止",
+        "扩展欧几里得算法可以求 ax+by=gcd(a,b) 的解"
+      ],
+      "commonMistakes": [
+        {
+          "title": "参数顺序错误",
+          "description": "调用 gcd(a%b, b) 导致死递归或结果错误",
+          "fix": "正确的递归调用是 gcd(b, a%b)，第一个参数是除数，第二个参数是余数"
+        },
+        {
+          "title": "对负数求 gcd",
+          "description": "当 a 或 b 为负数时，gcd 结果可能为负",
+          "fix": "可以在函数开头取绝对值，或对结果取绝对值：gcd(abs(a), abs(b))"
+        }
+      ],
+      "practice": {
+        "prompt": "给定两个正整数 a 和 b，用辗转相除法求 gcd(a, b)，并输出每一步的过程。",
+        "hint": "每次输出 a = q × b + r 的形式，然后令 a=b, b=r，直到 r=0。",
+        "expectedIdea": "循环执行辗转相除，每步输出商和余数，直到余数为 0"
+      },
+      "quiz": [
+        {
+          "question": "gcd(48, 18) 等于多少？",
+          "options": [
+            "2",
+            "3",
+            "6",
+            "9"
+          ],
+          "answerIndex": 2,
+          "explanation": "48=2×18+12, 18=1×12+6, 12=2×6+0，所以 gcd(48,18)=6"
+        },
+        {
+          "question": "欧几里得算法求 gcd(a, b) 的时间复杂度是？",
+          "options": [
+            "O(a)",
+            "O(b)",
+            "O(log(min(a,b)))",
+            "O(ab)"
+          ],
+          "answerIndex": 2,
+          "explanation": "每一步至少将较大的数减半，所以最多 O(log(min(a,b))) 步就能完成"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.10",
+      "title": "最小公倍数（lcm）",
+      "learningGoal": "理解最小公倍数的概念，掌握 lcm(a,b) = a*b/gcd(a,b) 的计算方法，了解 lcm 的应用",
+      "explanation": "【定义】\n最小公倍数 lcm(a, b)：同时是 a 和 b 的倍数的最小正整数。\n例如 lcm(4, 6) = 12，lcm(3, 5) = 15。\n\n【核心公式】\nlcm(a, b) = a × b / gcd(a, b)\n\n证明：\n设 a = gcd(a,b) × p，b = gcd(a,b) × q，其中 gcd(p,q)=1。\n则 a × b = gcd(a,b)^2 × p × q。\nlcm(a,b) = gcd(a,b) × p × q = a × b / gcd(a,b)。\n\n【编程注意事项】\na × b 可能溢出！特别是 a 和 b 都是 int 时。\n解决方案：先除后乘。\n  lcm = a / gcd(a,b) * b\n这样 a/gcd(a,b) 一定能整除，且中间结果不会溢出。\n\n【多个数的 lcm】\nlcm(a, b, c) = lcm(lcm(a, b), c)\n即可以两两求 lcm。\n\n【与 gcd 的关系】\ngcd 和 lcm 满足：gcd(a,b) × lcm(a,b) = a × b\n\n【信奥应用】\n- 分数通分\n- 周期问题（求多个周期的公共周期）\n- 多个数的最小公倍数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint gcd(int a, int b) {\n    return b ? gcd(b, a % b) : a;\n}\n\nlong long lcm(int a, int b) {\n    return (long long)a / gcd(a, b) * b;\n}\n\nlong long lcmMulti(int arr[], int n) {\n    long long result = arr[0];\n    for (int i = 1; i < n; i++) {\n        result = lcm(result, arr[i]);\n        if (result > 1e18) break;\n    }\n    return result;\n}\n\nint main() {\n    int a = 12, b = 18;\n    cout << \"gcd(\" << a << \", \" << b << \") = \" << gcd(a, b) << endl;\n    cout << \"lcm(\" << a << \", \" << b << \") = \" << lcm(a, b) << endl;\n    cout << \"验证: gcd × lcm = \" << (long long)gcd(a, b) * lcm(a, b) << endl;\n    cout << \"验证: a × b = \" << (long long)a * b << endl;\n\n    int arr[] = {4, 6, 8, 12};\n    cout << \"lcm(4, 6, 8, 12) = \" << lcmMulti(arr, 4) << endl;\n\n    cout << \"\\n分数通分示例: 1/6 + 1/8\" << endl;\n    int d = lcm(6, 8);\n    cout << \"公分母: \" << d << endl;\n    cout << d/6 << \"/\" << d << \" + \" << d/8 << \"/\" << d;\n    cout << \" = \" << (d/6 + d/8) << \"/\" << d << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "先除后乘：a/gcd(a,b)*b 避免中间结果溢出",
+        "返回值用 long long 防止结果超出 int 范围",
+        "多个数的 lcm 可以两两依次求",
+        "lcm 可能增长非常快，注意判断溢出"
+      ],
+      "commonMistakes": [
+        {
+          "title": "先乘后除导致溢出",
+          "description": "写成 a * b / gcd(a, b)，当 a 和 b 都是 10^9 级别时，a*b 会超出 long long 范围",
+          "fix": "写成 a / gcd(a, b) * b，先除后乘，因为 gcd(a,b) 一定能整除 a"
+        },
+        {
+          "title": "lcm 求多个数时溢出",
+          "description": "多个数依次求 lcm 时，中间结果可能超出数据类型范围",
+          "fix": "使用 long long，并在每次计算后检查是否超出预期范围"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个正整数，求它们的最小公倍数。如果最小公倍数超过 10^18，输出 \"overflow\"。",
+        "hint": "依次两两求 lcm，每次计算后检查结果是否超过 10^18。",
+        "expectedIdea": "用 long long 依次求 lcm，每次检查是否溢出"
+      },
+      "quiz": [
+        {
+          "question": "lcm(12, 18) 等于多少？",
+          "options": [
+            "24",
+            "36",
+            "54",
+            "72"
+          ],
+          "answerIndex": 1,
+          "explanation": "gcd(12,18)=6, lcm = 12/6×18 = 2×18 = 36。36 = 3×12 = 2×18 ✓"
+        },
+        {
+          "question": "计算 lcm 时，为什么要先除后乘（a/gcd*b 而非 a*b/gcd）？",
+          "options": [
+            "因为结果更精确",
+            "因为先除后乘运行更快",
+            "因为 a*b 可能溢出",
+            "因为 gcd 只能整除 a"
+          ],
+          "answerIndex": 2,
+      "explanation": "当 a 和 b 都很大时，a×b 可能超出 int 甚至 long long 的范围。先除后乘可以避免中间结果溢出"
+        }
+      ]
+    },
+    {
+      "itemId": "4.1.11",
+      "title": "乘法逆元",
+      "learningGoal": "理解乘法逆元的概念，掌握用费马小定理和扩展欧几里得求逆元",
+      "explanation": "乘法逆元是模运算中的核心概念。\n\n定义：若 a * x ≡ 1 (mod m)，则 x 是 a 模 m 的乘法逆元，记作 a^(-1) mod m。\n\n存在条件：逆元存在当且仅当 gcd(a, m) = 1（a 和 m 互质）。\n\n求法一：费马小定理\n当 m 是质数时：a^(m-1) ≡ 1 (mod m)，所以 a^(-1) = a^(m-2) mod m\n用快速幂计算，时间 O(log m)。\n\n求法二：扩展欧几里得算法\n解方程 a*x + m*y = 1，x 即为逆元。\n时间 O(log min(a,m))。\n\n除法取模：\n(a / b) mod m = (a * b^(-1)) mod m\n这就是逆元最核心的应用——把除法转成乘法。\n\n常见场景：组合数取模、概率计算、分数取模。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\ntypedef long long ll;\n\nll power(ll a, ll b, ll mod) {\n    ll res = 1;\n    a %= mod;\n    while (b > 0) {\n        if (b & 1) res = res * a % mod;\n        a = a * a % mod;\n        b >>= 1;\n    }\n    return res;\n}\n\nll inv(ll a, ll mod) {\n    return power(a, mod - 2, mod);\n}\n\nint main() {\n    ll a, mod;\n    cin >> a >> mod;\n    cout << inv(a, mod) << endl;\n    cout << a * inv(a, mod) % mod << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "费马小定理：a^(p-2) ≡ a^(-1) (mod p)",
+        "用快速幂计算 a^(mod-2)",
+        "逆元存在的条件是 gcd(a, mod) = 1",
+        "除法取模转化为乘以逆元"
+      ],
+      "commonMistakes": [
+        {
+          "title": "mod 不是质数时用费马小定理",
+          "description": "费马小定理要求 mod 是质数，mod 不是质数时结果错误。",
+          "fix": "mod 不是质数时用扩展欧几里得算法求逆元。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定质数 mod，预处理 1 到 n 所有数的逆元，输入 n 个数，输出每个数的逆元。",
+        "hint": "可以用递推公式 inv[i] = (mod - mod/i) * inv[mod%i] % mod 预处理。",
+        "expectedIdea": "逆元预处理或快速幂求逆"
+      },
+      "quiz": [
+        {
+          "question": "费马小定理求逆元的前提是？",
+          "options": ["a 是质数", "mod 是质数且 gcd(a,mod)=1", "a 和 mod 都是质数", "mod 是偶数"],
+          "answerIndex": 1,
+          "explanation": "费马小定理要求 mod 是质数，且 a 和 mod 互质（即 gcd(a,mod)=1）。"
+        }
+      ]
+    }
+  ]
+}

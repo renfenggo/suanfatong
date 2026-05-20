@@ -1,0 +1,70 @@
+{
+  "animationId": "cpp_divisibility",
+  "itemId": "4.1.5",
+  "title": "整除",
+  "description": "演示整除的概念：a 整除 b 意味着 b = a × k（k 为整数）",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "a 整除 b（记作 a|b）意味着存在整数 k 使得 b = a × k",
+      "codeLine": "// a|b ⟺ b % a == 0",
+      "highlights": ["b % a == 0"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "3 整除 12",
+      "description": "12 % 3 = 0，所以 3|12。因为 12 = 3 × 4",
+      "codeLine": "cout << (12 % 3); // = 0 → 3|12 ✓",
+      "highlights": ["12 % 3"],
+      "state": {
+        "variables": [
+          {"name": "12%3", "value": "0", "note": "3|12 ✓"}
+        ],
+        "containers": [],
+        "output": "3 整除 12 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "5 不整除 12",
+      "description": "12 % 5 = 2 ≠ 0，所以 5 不整除 12",
+      "codeLine": "cout << (12 % 5); // = 2 → 5∤12 ✗",
+      "highlights": ["12 % 5"],
+      "state": {
+        "variables": [
+          {"name": "12%3", "value": "0", "note": "3|12 ✓"},
+          {"name": "12%5", "value": "2", "note": "5∤12 ✗"}
+        ],
+        "containers": [],
+        "output": "3 整除 12 ✓\n5 不整除 12 ✗"
+      }
+    },
+    {
+      "step": 4,
+      "title": "整除的性质",
+      "description": "若 a|b 且 b|c，则 a|c（传递性）。若 a|b 且 a|c，则 a|(b+c) 和 a|(b-c)",
+      "codeLine": "// a|b, b|c ⟹ a|c",
+      "highlights": ["传递性"],
+      "state": {
+        "variables": [
+          {"name": "2|6", "value": "✓", "note": "6=2×3"},
+          {"name": "6|12", "value": "✓", "note": "12=6×2"},
+          {"name": "2|12", "value": "✓", "note": "传递性"}
+        ],
+        "containers": [],
+        "output": "3 整除 12 ✓\n5 不整除 12 ✗"
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "animationId": "cpp_memoization_fib",
+  "itemId": "2.7.8",
+  "title": "记忆化搜索斐波那契",
+  "description": "演示记忆化搜索计算斐波那契数列的过程：DFS + memo 避免重复计算",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {
+        "name": "memo",
+        "type": "array",
+        "values": ["-1", "-1", "-1", "-1", "-1", "-1"],
+        "activeIndex": -1,
+        "note": "memo[0..5]，-1=未计算"
+      },
+      {
+        "name": "调用栈",
+        "type": "stack",
+        "values": [],
+        "activeIndex": -1,
+        "note": "DFS 递归调用栈"
+      }
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "调用 fib(5)",
+      "description": "开始计算 fib(5)。检查 memo[5]=-1，未命中，需要递归计算。将 fib(5) 压入调用栈。",
+      "codeLine": "fib(5); // memo[5]=-1，需递归",
+      "highlights": ["memo[5]", "fib(5)"],
+      "state": {
+        "variables": [
+          { "name": "n", "value": "5" },
+          { "name": "memo[5]", "value": "-1" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "-1", "-1", "-1", "-1"],
+            "activeIndex": 5,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": ["fib(5)"],
+            "activeIndex": 0,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n"
+      }
+    },
+    {
+      "step": 2,
+      "title": "递归调用 fib(4)",
+      "description": "fib(5) 需要计算 fib(4)。检查 memo[4]=-1，未命中，需要递归。将 fib(4) 压入调用栈。",
+      "codeLine": "fib(4); // memo[4]=-1，需递归",
+      "highlights": ["memo[4]", "fib(4)"],
+      "state": {
+        "variables": [
+          { "name": "n", "value": "4" },
+          { "name": "memo[4]", "value": "-1" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "-1", "-1", "-1", "-1"],
+            "activeIndex": 4,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": ["fib(5)", "fib(4)"],
+            "activeIndex": 1,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n递归 fib(4)，memo[4]=-1 未命中\n"
+      }
+    },
+    {
+      "step": 3,
+      "title": "深度递归至基础情况",
+      "description": "递归调用链：fib(3)→fib(2)→fib(1)=1（基础情况），fib(0)=0（基础情况）。回溯计算 fib(2)=fib(1)+fib(0)=1+0=1，存入 memo[2]=1。",
+      "codeLine": "memo[2] = fib(1) + fib(0); // = 1 + 0 = 1",
+      "highlights": ["memo[2]", "fib(1)", "fib(0)"],
+      "state": {
+        "variables": [
+          { "name": "fib(0)", "value": "0" },
+          { "name": "fib(1)", "value": "1" },
+          { "name": "fib(2)", "value": "1" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "1", "-1", "-1", "-1"],
+            "activeIndex": 2,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": ["fib(5)", "fib(4)", "fib(3)"],
+            "activeIndex": 2,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n递归 fib(4)，memo[4]=-1 未命中\n递归 fib(3)→fib(2)→fib(1)=1, fib(0)=0\n回溯计算 fib(2)=1, memo[2]=1\n"
+      }
+    },
+    {
+      "step": 4,
+      "title": "回溯计算 fib(3)",
+      "description": "继续回溯。fib(3) 需要计算 fib(2)+fib(1)。fib(2)=1（已计算），fib(1)=1（基础情况）。回溯计算 fib(3)=1+1=2，存入 memo[3]=2。fib(3) 出栈。",
+      "codeLine": "memo[3] = fib(2) + fib(1); // = 1 + 1 = 2",
+      "highlights": ["memo[3]", "fib(2)", "fib(1)"],
+      "state": {
+        "variables": [
+          { "name": "fib(2)", "value": "1" },
+          { "name": "fib(1)", "value": "1" },
+          { "name": "fib(3)", "value": "2" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "1", "2", "-1", "-1"],
+            "activeIndex": 3,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": ["fib(5)", "fib(4)"],
+            "activeIndex": 1,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n递归 fib(4)，memo[4]=-1 未命中\n递归 fib(3)→fib(2)→fib(1)=1, fib(0)=0\n回溯计算 fib(2)=1, memo[2]=1\n回溯计算 fib(3)=2, memo[3]=2\n"
+      }
+    },
+    {
+      "step": 5,
+      "title": "回到 fib(4)，memo 命中",
+      "description": "回到 fib(4)，需要 fib(3)。检查 memo[3]=2，命中！直接使用已计算的值，无需重复递归。fib(4)=fib(3)+fib(2)=2+1=3，存入 memo[4]=3。fib(4) 出栈。",
+      "codeLine": "memo[3]=2; // 命中！直接返回",
+      "highlights": ["memo[3]", "memo[4]"],
+      "state": {
+        "variables": [
+          { "name": "fib(3)", "value": "2" },
+          { "name": "fib(2)", "value": "1" },
+          { "name": "fib(4)", "value": "3" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "1", "2", "3", "-1"],
+            "activeIndex": 4,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": ["fib(5)"],
+            "activeIndex": 0,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n递归 fib(4)，memo[4]=-1 未命中\n递归 fib(3)→fib(2)→fib(1)=1, fib(0)=0\n回溯计算 fib(2)=1, memo[2]=1\n回溯计算 fib(3)=2, memo[3]=2\n回到 fib(4)，memo[3]=2 命中！fib(4)=3, memo[4]=3\n"
+      }
+    },
+    {
+      "step": 6,
+      "title": "回到 fib(5)，memo 命中，输出结果",
+      "description": "回到 fib(5)，需要 fib(3)。检查 memo[3]=2，命中！直接使用已计算的值，无需重复递归。fib(5)=fib(4)+fib(3)=3+2=5，存入 memo[5]=5。调用栈清空，计算完成！",
+      "codeLine": "memo[3]=2; // 命中！直接返回",
+      "highlights": ["memo[3]", "memo[5]"],
+      "state": {
+        "variables": [
+          { "name": "fib(4)", "value": "3" },
+          { "name": "fib(3)", "value": "2" },
+          { "name": "fib(5)", "value": "5" }
+        ],
+        "containers": [
+          {
+            "name": "memo",
+            "type": "array",
+            "values": ["-1", "-1", "1", "2", "3", "5"],
+            "activeIndex": 5,
+            "note": "memo[0..5]，-1=未计算"
+          },
+          {
+            "name": "调用栈",
+            "type": "stack",
+            "values": [],
+            "activeIndex": -1,
+            "note": "DFS 递归调用栈"
+          }
+        ],
+        "output": "调用 fib(5)，memo[5]=-1 未命中\n递归 fib(4)，memo[4]=-1 未命中\n递归 fib(3)→fib(2)→fib(1)=1, fib(0)=0\n回溯计算 fib(2)=1, memo[2]=1\n回溯计算 fib(3)=2, memo[3]=2\n回到 fib(4)，memo[3]=2 命中！fib(4)=3, memo[4]=3\n回到 fib(5)，memo[3]=2 命中！fib(5)=5, memo[5]=5\n结果：fib(5) = 5\n"
+      }
+    }
+  ]
+}

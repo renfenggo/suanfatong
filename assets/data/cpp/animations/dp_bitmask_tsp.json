@@ -1,0 +1,100 @@
+{
+  "animationId": "cpp_dp_bitmask_tsp",
+  "itemId": "2.5.6",
+  "title": "状态压缩 DP：TSP",
+  "description": "演示用二进制 mask 表示已访问城市集合的状态压缩 DP",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": -1, "note": "3城市距离矩阵"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化：从城市0出发",
+      "description": "dp[001][0] = 0，即只访问了城市0（mask=001），当前在城市0，距离为0。mask 用二进制表示已访问集合。",
+      "codeLine": "dp[1][0] = 0;  // mask=001(二进制) = 只访问了城市0",
+      "highlights": ["dp[1][0]", "mask=001"],
+      "state": {
+        "variables": [
+          {"name": "mask", "value": "001(二进制)=1", "note": "只访问了城市0"},
+          {"name": "dp[1][0]", "value": "0", "note": "起点距离为0"}
+        ],
+        "containers": [
+          {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": 0, "note": "城市0出发"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "扩展到城市1：mask = 011 = 3",
+      "description": "dp[3][1] = dp[1][0] + dist[0][1] = 0+2 = 2。mask 从 001 变成 011（第1位也置1）。",
+      "codeLine": "dp[S|(1<<j)][j] = dp[S][i] + dist[i][j];  // j=1",
+      "highlights": ["S|(1<<j)", "011"],
+      "state": {
+        "variables": [
+          {"name": "mask", "value": "011(二进制)=3", "note": "已访问城市0和1"},
+          {"name": "dp[3][1]", "value": "2", "note": "0→1，距离2"}
+        ],
+        "containers": [
+          {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": 1, "note": "访问城市1"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "扩展到城市2：mask = 101 = 5",
+      "description": "dp[5][2] = dp[1][0] + dist[0][2] = 0+3 = 3。mask 从 001 变成 101（第2位置1）。",
+      "codeLine": "dp[S|(1<<j)][j] = dp[S][i] + dist[i][j];  // j=2",
+      "highlights": ["101"],
+      "state": {
+        "variables": [
+          {"name": "mask", "value": "101(二进制)=5", "note": "已访问城市0和2"},
+          {"name": "dp[5][2]", "value": "3", "note": "0→2，距离3"}
+        ],
+        "containers": [
+          {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": 2, "note": "访问城市2"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "全部访问：mask = 111 = 7",
+      "description": "从 dp[3][1]=2 → dp[7][2] = 2+1 = 3（0→1→2）。从 dp[5][2]=3 → dp[7][1] = 3+1 = 4（0→2→1）。",
+      "codeLine": "dp[7][2] = min(dp[7][2], dp[3][1] + dist[1][2]);",
+      "highlights": ["111"],
+      "state": {
+        "variables": [
+          {"name": "mask", "value": "111(二进制)=7", "note": "所有城市已访问"},
+          {"name": "dp[7][2]", "value": "3", "note": "路径 0→1→2 = 2+1 = 3"},
+          {"name": "dp[7][1]", "value": "4", "note": "路径 0→2→1 = 3+1 = 4"}
+        ],
+        "containers": [
+          {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": -1, "note": "全部访问"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "回到起点：最短路 = 6",
+      "description": "dp[7][2] + dist[2][0] = 3+3 = 6（0→1→2→0）。dp[7][1] + dist[1][0] = 4+2 = 6（0→2→1→0）。最短路为 6。mask 的每一位代表一个城市的访问状态，这是状态压缩 DP 的核心思想。",
+      "codeLine": "ans = min(dp[(1<<n)-1][i] + dist[i][0]);",
+      "highlights": ["(1<<n)-1"],
+      "state": {
+        "variables": [
+          {"name": "答案", "value": "6", "note": "0→1→2→0 = 2+1+3 = 6"}
+        ],
+        "containers": [
+          {"name": "dist", "type": "int[][]", "values": ["0-2-3", "2-0-1", "3-1-0"], "activeIndex": -1, "note": "TSP完成"}
+        ],
+        "output": "最短回路 = 6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "animationId": "cpp_addition_principle",
+  "itemId": "4.3.1",
+  "title": "加法原理",
+  "description": "演示计数中的加法原理：分类计数，各类互斥时直接相加",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题",
+      "description": "从 A 城到 B 城有 3 条火车线路，2 条飞机线路，共有多少种走法？",
+      "codeLine": "// 火车 3 种 + 飞机 2 种 = ?",
+      "highlights": ["火车", "飞机"],
+      "state": {
+        "variables": [
+          {"name": "火车", "value": "3", "note": "方案 A1, A2, A3"},
+          {"name": "飞机", "value": "2", "note": "方案 B1, B2"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "加法原理",
+      "description": "两类方案互斥（要么火车要么飞机，不能同时），总数 = 3 + 2 = 5",
+      "codeLine": "int total = 3 + 2; // = 5",
+      "highlights": ["3 + 2"],
+      "state": {
+        "variables": [
+          {"name": "火车", "value": "3", "note": ""},
+          {"name": "飞机", "value": "2", "note": ""},
+          {"name": "total", "value": "5", "note": "3+2=5"}
+        ],
+        "containers": [],
+        "output": "5"
+      }
+    },
+    {
+      "step": 3,
+      "title": "推广",
+      "description": "加法原理：若完成一件事有 n 类方法，各类分别有 a₁, a₂, …, aₙ 种，且各类互斥，则总方法数 = a₁+a₂+…+aₙ",
+      "codeLine": "// total = sum of all categories",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "类1", "value": "a₁", "note": ""},
+          {"name": "类2", "value": "a₂", "note": ""},
+          {"name": "…", "value": "…", "note": "互斥"},
+          {"name": "类n", "value": "aₙ", "note": ""},
+          {"name": "total", "value": "Σaᵢ", "note": "直接相加"}
+        ],
+        "containers": [],
+        "output": "5"
+      }
+    },
+    {
+      "step": 4,
+      "title": "关键条件",
+      "description": "各类方法必须互斥（不重叠）。如果同时坐火车和飞机，就不能简单相加了",
+      "codeLine": "// 条件：各类互斥，不重叠",
+      "highlights": ["互斥"],
+      "state": {
+        "variables": [
+          {"name": "total", "value": "5", "note": "3+2"}
+        ],
+        "containers": [],
+        "output": "5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "sectionId": "5.8",
+  "sectionName": "常见错误定位",
+  "units": [
+    {
+      "itemId": "5.8.1",
+      "title": "CE",
+      "learningGoal": "理解编译错误（CE）的常见原因和解决方法",
+      "explanation": "CE（Compilation Error）是代码无法通过编译。常见原因：语法错误、未声明变量、类型不匹配、缺少头文件、分号缺失等。\n\n解决方法：从第一个错误开始看，通常一个错误会引发连锁报错。修复第一个后重新编译。",
+      "exampleCode": "// 常见 CE 原因：\n// 1. 缺分号: int a = 5\n// 2. 未声明: cout << x; (x 未定义)\n// 3. 类型错误: string s = 5;\n// 4. 缺头文件: 使用 cout 没有 #include <iostream>",
+      "codeNotes": ["语法错误最常见", "从第一个错误开始修", "一个错误可能引发多个报错", "注意行号提示"],
+      "commonMistakes": [{"title": "忽略警告", "description": "警告可能隐藏真正的 bug。", "fix": "把所有警告当作错误来处理。"}],
+      "practice": {"prompt": "找出以下代码的编译错误：int main() { cout << \"hi\" << endl return 0; }", "hint": "缺少分号和头文件", "expectedIdea": "需要 #include <iostream> 和 using namespace std;，cout 语句末尾缺分号。"},
+      "quiz": [{"question": "CE 表示什么？", "options": ["正确答案", "编译错误", "运行超时", "答案错误"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.2",
+      "title": "RE",
+      "learningGoal": "理解运行时错误（RE）的常见原因和解决方法",
+      "explanation": "RE（Runtime Error）是程序运行时崩溃。常见原因：数组越界、除以零、空指针、栈溢出、访问非法内存。\n\n调试方法：添加边界检查、用 assert、打印变量定位崩溃位置。",
+      "exampleCode": "// 常见 RE 原因：\n// 1. 数组越界: a[n]（大小为 n 的数组最大下标 n-1）\n// 2. 除以零: int x = 5 / 0;\n// 3. 栈溢出: 递归太深\n// 4. 空指针: int *p = nullptr; *p = 5;",
+      "codeNotes": ["数组越界最常见", "除以零立即崩溃", "递归太深栈溢出", "用 assert 检查前提条件"],
+      "commonMistakes": [{"title": "不知道哪里崩溃", "description": "程序崩溃但不知道哪一行出错。", "fix": "添加 cerr 输出定位崩溃位置。"}],
+      "practice": {"prompt": "找出导致 RE 的代码：int a[5]; for (int i = 0; i <= 5; i++) a[i] = i;", "hint": "a[5] 越界", "expectedIdea": "循环条件 i <= 5 导致访问 a[5]，但数组大小只有 5（下标 0~4）。改为 i < 5。"},
+      "quiz": [{"question": "以下哪种情况会导致 RE？", "options": ["答案不对", "数组越界", "时间太长", "输出格式错误"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.3",
+      "title": "TLE",
+      "learningGoal": "理解超时（TLE）的常见原因和优化方向",
+      "explanation": "TLE（Time Limit Exceeded）表示程序运行超时。常见原因：算法复杂度太高、死循环、输入输出太慢。\n\n优化方向：换更高效的算法、优化常数（如用 scanf 替代 cin）、减少不必要的操作。",
+      "exampleCode": "// 常见 TLE 原因：\n// 1. O(n²) 但 n = 10^5\n// 2. 死循环\n// 3. cin/cout 太慢（大数据时）\n// 解决：ios::sync_with_stdio(false); cin.tie(0);",
+      "codeNotes": ["算法复杂度不够优", "死循环导致永远不结束", "cin/cout 加速技巧", "考虑换更优算法"],
+      "commonMistakes": [{"title": "只优化常数不换算法", "description": "O(n²) 怎么优化常数还是 O(n²)。", "fix": "先确认算法复杂度是否正确，再考虑常数优化。"}],
+      "practice": {"prompt": "cin/cout 处理大数据太慢，添加加速代码。", "hint": "ios::sync_with_stdio(false);", "expectedIdea": "ios::sync_with_stdio(false);\ncin.tie(0);\n// 然后正常使用 cin/cout"},
+      "quiz": [{"question": "大数据时加速 cin/cout 的代码是？", "options": ["cin.sync()", "ios::sync_with_stdio(false);", "cin.fast()", "cout.speed(1);"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.4",
+      "title": "MLE",
+      "learningGoal": "理解内存超限（MLE）的常见原因和解决方法",
+      "explanation": "MLE（Memory Limit Exceeded）表示程序使用了超出限制的内存。常见原因：数组太大、不必要的全局数组、递归太深。\n\n解决方法：减小数组大小、用滚动数组优化空间、检查是否有多余的大数组。",
+      "exampleCode": "// MLE 常见原因：\n// int dp[10000][10000];  // 约 400MB，超限\n// 解决：用滚动数组\n// int dp[2][10000];  // 约 80KB",
+      "codeNotes": ["大数组占用内存多", "滚动数组减少空间", "全局数组算总内存", "注意 int 4 字节"],
+      "commonMistakes": [{"title": "不计算内存用量", "description": "int dp[5000][5000] 约 100MB，超过一般限制。", "fix": "开数组前估算：字节数 = 元素数 × 类型大小。"}],
+      "practice": {"prompt": "计算 int a[1000][1000] 占用多少内存。", "hint": "1000 × 1000 × 4 字节", "expectedIdea": "1000000 × 4 = 4000000 字节 ≈ 3.8 MB。"},
+      "quiz": [{"question": "int a[2000][2000] 约占多少内存？", "options": ["约 4 MB", "约 16 MB", "约 64 MB", "约 256 MB"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.5",
+      "title": "OLE",
+      "learningGoal": "理解输出超限（OLE）的常见原因",
+      "explanation": "OLE（Output Limit Exceeded）表示程序输出了超出限制的内容。通常是死循环中不断输出、调试输出没关、或输出了过多数据。",
+      "exampleCode": "// OLE 常见原因：\n// while (true) cout << 1;  // 无限输出\n// 调试用的 cout 没注释掉",
+      "codeNotes": ["死循环中输出", "调试输出没关", "输出量超出题目要求", "检查循环终止条件"],
+      "commonMistakes": [{"title": "调试输出混入正式输出", "description": "cout 的调试信息导致输出超限。", "fix": "用 cerr 输出调试信息。"}],
+      "practice": {"prompt": "找出导致 OLE 的代码：while (n > 0) { cout << n; n--; }（n 初始为 -1）", "hint": "n 为负数时循环不终止", "expectedIdea": "n = -1 时 n > 0 为 false，循环不执行，不会 OLE。但如果条件是 n != 0，n = -1 时死循环。"},
+      "quiz": [{"question": "OLE 通常是什么原因？", "options": ["答案太长", "程序输出了过多内容", "算法太慢", "内存不够"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.6",
+      "title": "WA 常见原因分类",
+      "learningGoal": "了解 WA（答案错误）的常见原因分类",
+      "explanation": "WA 是最常见的判题结果。常见原因分类：\n1. 题意理解错误\n2. 算法逻辑错误\n3. 数据类型错误（int 溢出、精度丢失）\n4. 边界条件未处理\n5. 输出格式错误\n6. 多组数据未清空变量\n\n定位 WA 的方法：从最可能的原因开始排查。",
+      "exampleCode": "// WA 排查清单：\n// □ 重新读题，确认理解正确\n// □ 手推样例\n// □ 检查数据类型（long long？）\n// □ 检查边界（n=1？n=0？）\n// □ 检查输出格式\n// □ 多组数据变量重置",
+      "codeNotes": ["题意理解错误最常见", "数据类型错误容易忽略", "边界条件要特别关注", "按可能性从高到低排查"],
+      "commonMistakes": [{"title": "盲目修改代码", "description": "没有定位问题就乱改，越改越错。", "fix": "先分析可能的原因，有针对性地排查。"}],
+      "practice": {"prompt": "你的程序 WA 了，列出排查步骤。", "hint": "从最常见原因开始", "expectedIdea": "1. 重新读题\n2. 手推样例\n3. 检查 long long\n4. 构造极端数据\n5. 检查边界条件\n6. 检查输出格式"},
+      "quiz": [{"question": "WA 最常见的原因是？", "options": ["编译器 bug", "题意理解错误或算法逻辑错误", "电脑太慢", "网络问题"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.7",
+      "title": "数组越界（错误定位）",
+      "learningGoal": "学会定位和修复数组越界错误",
+      "explanation": "数组越界的症状：程序崩溃（RE）或输出错误结果（WA）。定位方法：在数组访问前加 assert 检查下标范围。\n\n常见越界位置：循环条件、前缀和的边界、二维数组的行列访问。",
+      "exampleCode": "for (int i = 0; i < n; i++) {\n    assert(i >= 0 && i < n);\n    // 使用 a[i]\n    if (i + 1 < n) {\n        // 使用 a[i+1] 安全\n    }\n}",
+      "codeNotes": ["加 assert 检查下标", "循环条件用 < 不用 <=", "前缀和多开一位", "访问前确认范围"],
+      "commonMistakes": [{"title": "只修一个越界点", "description": "修了 a[i+1] 的越界，忘了 a[i-1] 的。", "fix": "搜索所有数组访问，逐一检查。"}],
+      "practice": {"prompt": "在代码中添加 assert 防止数组越界。", "hint": "assert(idx >= 0 && idx < n)", "expectedIdea": "assert(i >= 0 && i < n);\ncout << a[i] << endl;"},
+      "quiz": [{"question": "数组越界通常导致什么判题结果？", "options": ["只有 RE", "只有 WA", "RE 或 WA 都有可能", "只有 CE"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.8.8",
+      "title": "死循环",
+      "learningGoal": "学会定位和修复死循环问题",
+      "explanation": "死循环的症状：TLE 或 OLE。定位方法：在循环内添加计数器，超过一定次数就 break 并输出调试信息。\n\n常见原因：循环变量没有更新、更新方向错误、终止条件永远不满足。",
+      "exampleCode": "int cnt = 0;\nwhile (condition) {\n    cnt++;\n    if (cnt > 1000000) {\n        cerr << \"可能死循环！当前变量: \" << /* 关键变量 */ << endl;\n        break;\n    }\n    // 循环体\n}",
+      "codeNotes": ["加计数器检测死循环", "检查循环变量是否更新", "检查终止条件是否可达", "TLE 时首先怀疑死循环"],
+      "commonMistakes": [{"title": "while (n > 0) 但 n 从不减小", "description": "循环体中忘了 n--。", "fix": "确保每次循环都向终止条件靠近。"}],
+      "practice": {"prompt": "以下代码哪里可能死循环？while (n != 1) { if (n % 2 == 0) n /= 2; }", "hint": "n 为奇数时不变", "expectedIdea": "当 n 为奇数时 n % 2 != 0，n 不变，死循环。需要 else n = 3 * n + 1;（类似冰雹猜想）。"},
+      "quiz": [{"question": "检测死循环最简单的方法是？", "options": ["看代码", "加计数器限制循环次数", "用 debug 工具", "不检测"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.9",
+      "title": "栈溢出",
+      "learningGoal": "理解递归导致的栈溢出及解决方法",
+      "explanation": "递归太深会耗尽栈空间，导致 RE。C++ 默认栈大小通常为几 MB，递归深度超过约 10^5 就可能溢出。\n\n解决方法：改用迭代（循环）、减小递归深度、或手动增大栈大小（竞赛中有时可以）。\n\n局部变量太大也会导致栈溢出，大数组应声明为全局变量。",
+      "exampleCode": "// 可能溢出：\nint deepRecurse(int n) {\n    if (n == 0) return 0;\n    return deepRecurse(n - 1) + 1;  // n 很大时溢出\n}\n\n// 安全：改用循环\nint iterate(int n) {\n    int result = 0;\n    for (int i = 0; i < n; i++) result++;\n    return result;\n}",
+      "codeNotes": ["递归深度超过 10^5 可能溢出", "大数组用全局变量", "递归可改循环", "局部变量占用栈空间"],
+      "commonMistakes": [{"title": "大数组放在局部", "description": "int a[1000000] 放在函数内，直接栈溢出。", "fix": "大数组声明为全局变量。"}],
+      "practice": {"prompt": "将以下递归函数改为迭代：int sum(int n) { if (n==0) return 0; return n + sum(n-1); }", "hint": "用 for 循环累加", "expectedIdea": "int sum(int n) {\n    int s = 0;\n    for (int i = 1; i <= n; i++) s += i;\n    return s;\n}"},
+      "quiz": [{"question": "以下哪种情况可能导致栈溢出？", "options": ["数组太大", "递归太深", "循环太多", "变量太多"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.10",
+      "title": "long long 漏掉",
+      "learningGoal": "学会识别和修复整数溢出问题",
+      "explanation": "int 范围约 ±2×10^9。当数据或中间结果可能超过这个范围时，必须使用 long long。\n\n常见场景：大数相乘、累加大量数据、计算阶乘等。\n\n注意：两个 int 相乘可能溢出，要用 1LL * a * b 强制提升。中间结果也要注意。",
+      "exampleCode": "int a = 100000, b = 100000;\n// 错误：int 溢出\nlong long wrong = a * b;\n// 正确：先转 long long\nlong long correct = 1LL * a * b;",
+      "codeNotes": ["int 范围 ±2×10^9", "大数用 long long", "乘法用 1LL * a * b", "中间结果也要检查"],
+      "commonMistakes": [{"title": "赋值给 long long 但右边已溢出", "description": "long long x = a * b; a 和 b 都是 int，a*b 已经溢出。", "fix": "long long x = 1LL * a * b;"}],
+      "practice": {"prompt": "计算 n!（n ≤ 20），确保不溢出。", "hint": "用 long long", "expectedIdea": "long long fact = 1;\nfor (int i = 1; i <= n; i++) fact *= i;\ncout << fact << endl;"},
+      "quiz": [{"question": "int a = 50000, b = 50000; a * b 的结果会？", "options": ["2500000000", "溢出变成负数", "0", "报错"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.11",
+      "title": "多测未清空",
+      "learningGoal": "理解多组测试数据时变量未重置的问题",
+      "explanation": "多组数据时，上一组残留的变量值会影响当前组。所有变量必须在每组数据开始前重新初始化。\n\n特别注意：全局变量、容器（vector、map 等）、vis 数组等都需要清空。",
+      "exampleCode": "int T;\ncin >> T;\nwhile (T--) {\n    // 每组数据前重置\n    int sum = 0;\n    memset(vis, false, sizeof(vis));\n    vec.clear();\n    // 处理当前组\n}",
+      "codeNotes": ["每组数据前重置变量", "全局变量也要重置", "容器要 clear", "vis 数组要清空"],
+      "commonMistakes": [{"title": "只重置部分变量", "description": "重置了 sum 但忘了重置 maxVal。", "fix": "列出所有变量，逐一检查是否需要重置。"}],
+      "practice": {"prompt": "多组数据，每组求 n 个数的和。写出框架，确保变量重置。", "hint": "sum = 0 在 while 内部", "expectedIdea": "int T;\ncin >> T;\nwhile (T--) {\n    int n, sum = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        sum += x;\n    }\n    cout << sum << endl;\n}"},
+      "quiz": [{"question": "多组数据时，变量初始化应该放在哪里？", "options": ["循环外部", "每组数据处理的开始处", "随意", "不需要初始化"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.12",
+      "title": "浮点误差",
+      "learningGoal": "认识浮点数精度问题，学会避免常见陷阱",
+      "explanation": "浮点数（float/double）有精度限制。例如 0.1 + 0.2 != 0.3，比较浮点数不能用 ==，要用 fabs(a - b) < 1e-9。\n\n常见陷阱：累加误差、大数吃小数、输出精度不够等。\n\n尽量用整数运算，只在必要时使用浮点数。",
+      "exampleCode": "#include <cmath>\ndouble a = 0.1 + 0.2;\nif (fabs(a - 0.3) < 1e-9) {\n    cout << \"近似相等\" << endl;\n}",
+      "codeNotes": ["浮点比较用 fabs(a-b) < eps", "0.1 + 0.2 ≠ 0.3", "尽量用整数运算", "输出用 setprecision 控制精度"],
+      "commonMistakes": [{"title": "浮点数用 ==", "description": "if (a == 0.3) 可能永远不成立。", "fix": "用 if (fabs(a - 0.3) < 1e-9) 近似比较。"}],
+      "practice": {"prompt": "比较两个浮点数是否近似相等。", "hint": "fabs(a - b) < 1e-9", "expectedIdea": "bool equal(double a, double b) {\n    return fabs(a - b) < 1e-9;\n}"},
+      "quiz": [{"question": "0.1 + 0.2 == 0.3 的结果是？", "options": ["true", "false", "编译错误", "取决于编译器"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.13",
+      "title": "visited 标记时机错误",
+      "learningGoal": "学会排查 BFS/DFS 中 visited 标记时机的问题",
+      "explanation": "BFS 应该入队时标记，DFS 的 vis 回溯时要恢复（如果需要）。标记时机错误会导致重复访问或漏访问。\n\n症状：TLE（重复访问导致死循环）、WA（漏访问导致结果不完整）。",
+      "exampleCode": "// BFS 正确：入队即标记\nq.push(s); vis[s] = true;\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u]) {\n        if (!vis[v]) { vis[v] = true; q.push(v); }\n    }\n}",
+      "codeNotes": ["BFS 入队即标记", "DFS 回溯时恢复（按需）", "标记时机错误导致 TLE/WA", "这是 BFS 最常见 bug"],
+      "commonMistakes": [{"title": "BFS 出队才标记", "description": "同一节点被多个前驱重复入队。", "fix": "入队时立即 vis[v] = true。"}],
+      "practice": {"prompt": "修复以下 BFS 代码的标记时机错误：q.push(s); while (!q.empty()) { int u = q.front(); q.pop(); vis[u] = true; ... }", "hint": "vis[s] = true 放在 push 之后", "expectedIdea": "q.push(s); vis[s] = true;\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u]) {\n        if (!vis[v]) { vis[v] = true; q.push(v); }\n    }\n}"},
+      "quiz": [{"question": "BFS 中 visited 应该在什么时候标记？", "options": ["出队时", "入队时", "处理完邻接后", "随意"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.14",
+      "title": "判重错误",
+      "learningGoal": "学会排查去重/判重逻辑的错误",
+      "explanation": "判重错误通常表现为：重复计算了不该重复的元素，或者错误地跳过了合法元素。\n\n常见原因：排序后 unique 忘了 erase、set 的 insert 返回值没检查、哈希冲突等。",
+      "exampleCode": "// 正确去重\nsort(v.begin(), v.end());\nv.erase(unique(v.begin(), v.end()), v.end());\n\n// 用 set 去重\nset<int> s;\nfor (int x : data) s.insert(x);",
+      "codeNotes": ["sort + unique + erase", "set 自动去重", "检查哈希函数", "注意浮点数的判重"],
+      "commonMistakes": [{"title": "unique 后不 erase", "description": "unique 不改变大小，重复元素仍在末尾。", "fix": "v.erase(unique(v.begin(), v.end()), v.end());"}],
+      "practice": {"prompt": "输入 n 个数，去重后输出个数和结果。", "hint": "sort + unique + erase", "expectedIdea": "sort(a, a+n);\nint m = unique(a, a+n) - a;\ncout << m << endl;\nfor (int i = 0; i < m; i++) cout << a[i] << \" \";"},
+      "quiz": [{"question": "unique 函数处理后 vector 的大小会变吗？", "options": ["会变小", "不会变", "取决于数据", "会变大"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.8.15",
+      "title": "条件顺序错误",
+      "learningGoal": "学会排查 if-else 条件判断顺序导致的逻辑错误",
+      "explanation": "if-else 条件按顺序匹配，第一个满足的条件会执行，后续的不再判断。如果条件顺序错误，可能走错分支。\n\n例如 if (x > 0) ... else if (x > 10) ... 中 x > 10 永远不会被检查（因为 x > 10 时 x > 0 也成立）。\n\n正确做法：特殊条件放前面，一般条件放后面。",
+      "exampleCode": "// 错误：大范围在前\nif (x >= 60) grade = 'C';\nelse if (x >= 80) grade = 'B';  // 永远不会执行\nelse if (x >= 90) grade = 'A';  // 永远不会执行\n\n// 正确：小范围在前\nif (x >= 90) grade = 'A';\nelse if (x >= 80) grade = 'B';\nelse if (x >= 60) grade = 'C';",
+      "codeNotes": ["条件从特殊到一般", "if-else 按顺序匹配", "大范围在前会吞掉小范围", "仔细检查条件顺序"],
+      "commonMistakes": [{"title": "条件顺序搞反", "description": "if (x > 0) 在 if (x > 10) 前面，后者永远不执行。", "fix": "把更严格的条件放在前面。"}],
+      "practice": {"prompt": "修复以下条件判断：if (n % 2 == 0) cout << \"偶数\"; else if (n % 3 == 0) cout << \"3 的倍数\"; else cout << \"其他\";（n=6 时应该输出什么？）", "hint": "n=6 是偶数也是 3 的倍数", "expectedIdea": "n=6 会输出「偶数」而不是「3 的倍数」。如果需要同时判断两个条件，应该用 if-else if 结构或分开处理。"},
+      "quiz": [{"question": "if (x > 0) ... else if (x > 100) ... 中 x=200 时会执行哪个？", "options": ["x > 0 分支", "x > 100 分支", "两个都执行", "都不执行"], "answerIndex": 0}]
+    }
+  ]
+}

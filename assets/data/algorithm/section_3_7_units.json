@@ -1,0 +1,187 @@
+{
+  "sectionId": "3.7",
+  "sectionName": "树状数组",
+  "units": [
+    {
+      "itemId": "3.7.1",
+      "title": "树状数组（BIT）",
+      "learningGoal": "理解树状数组（Binary Indexed Tree）的核心原理，掌握 lowbit 运算、单点修改 add 和前缀查询 sum 操作，能用树状数组高效解决单点修改+区间查询问题",
+      "explanation": "树状数组（Binary Indexed Tree / Fenwick Tree）是一种支持单点修改和前缀查询的数据结构，两种操作的时间复杂度均为 O(log n)。\n\n核心思想：利用二进制的性质，将数组分成若干段，每个节点 tree[i] 管辖一段区间的信息。\n\n关键操作 lowbit(x) = x & (-x)：取出 x 二进制最低位的 1 所代表的值。例如 lowbit(6) = lowbit(0b110) = 2。\n\nlowbit 的意义：tree[i] 管辖的区间长度恰好等于 lowbit(i)，即 tree[i] 负责 [i - lowbit(i) + 1, i] 这一段。\n\n两个核心函数：\n1. add(i, v)：在位置 i 加上 v。从 i 开始，每次沿 i += lowbit(i) 向上跳，更新所有包含 i 的 tree 节点。\n2. sum(i)：查询前 i 个元素的和。从 i 开始，每次沿 i -= lowbit(i) 向前跳，累加所有管辖区间的 tree 值。\n\n区间查询 [l, r] 可以通过 sum(r) - sum(l - 1) 实现。\n\n树状数组相比线段树的优点：代码极短、常数极小、空间只需一倍数组。缺点是功能不如线段树灵活（例如不支持区间修改+区间查询的复杂操作）。\n\n注意事项：树状数组下标必须从 1 开始，因为 lowbit(0) = 0 会导致死循环。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint tree[100001], n;\n\nint lowbit(int x) { return x & (-x); }\n\nvoid add(int i, int v) {\n    for (; i <= n; i += lowbit(i))\n        tree[i] += v;\n}\n\nint sum(int i) {\n    int s = 0;\n    for (; i > 0; i -= lowbit(i))\n        s += tree[i];\n    return s;\n}\n\nint rangeSum(int l, int r) {\n    return sum(r) - sum(l - 1);\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        int x;\n        cin >> x;\n        add(i, x);\n    }\n    int q;\n    cin >> q;\n    while (q--) {\n        int op;\n        cin >> op;\n        if (op == 1) {\n            int idx, v;\n            cin >> idx >> v;\n            add(idx, v);\n        } else {\n            int l, r;\n            cin >> l >> r;\n            cout << rangeSum(l, r) << endl;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "lowbit(x) = x & (-x) 取二进制最低位1代表的值",
+        "add 沿 i += lowbit(i) 向上更新所有祖先节点",
+        "sum 沿 i -= lowbit(i) 向前累加管辖区间的值",
+        "区间查询 = sum(r) - sum(l-1)，下标必须从1开始"
+      ],
+      "commonMistakes": [
+        {
+          "title": "下标从0开始导致死循环",
+          "description": "树状数组下标从0开始时，lowbit(0)=0，add 和 sum 的循环不会前进，导致无限循环。",
+          "fix": "所有操作确保下标从1开始，如果原数组从0开始则统一加1偏移。"
+        },
+        {
+          "title": "忘记初始化时使用 add 而直接赋值 tree",
+          "description": "直接 tree[i] = a[i] 无法正确维护树状数组的层级关系。",
+          "fix": "初始化时应遍历每个位置调用 add(i, a[i])，或使用 O(n) 建树方法。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个长度为 n 的数组，支持 q 次操作：1 idx v（将 a[idx] 加上 v）或 2 l r（查询区间 [l, r] 的和）。请用树状数组实现。",
+        "hint": "实现 lowbit、add、sum 三个函数，区间和用 sum(r)-sum(l-1)。",
+        "expectedIdea": "标准树状数组模板：lowbit 取最低位1，add 沿 i+=lowbit(i) 更新，sum 沿 i-=lowbit(i) 查询。"
+      },
+      "quiz": [
+        {
+          "question": "树状数组中 tree[i] 管辖的区间长度等于？",
+          "options": ["i", "i/2", "lowbit(i)", "2^i"],
+          "answerIndex": 2,
+          "explanation": "tree[i] 管辖 [i-lowbit(i)+1, i]，区间长度恰好是 lowbit(i)。"
+        },
+        {
+          "question": "树状数组的 add 操作最多访问多少个节点？",
+          "options": ["1个", "O(sqrt(n))个", "O(log n)个", "O(n)个"],
+          "answerIndex": 2,
+          "explanation": "每次 i += lowbit(i) 至少让最低位1进位，最多跳 log n 次就超过 n。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.7.2",
+      "title": "树状数组求逆序对",
+      "learningGoal": "理解如何将逆序对计数问题转化为前缀查询，掌握离散化技巧配合树状数组高效统计逆序对，时间复杂度 O(n log n)",
+      "explanation": "逆序对：在序列 a[1..n] 中，若 i < j 且 a[i] > a[j]，则 (i, j) 构成一个逆序对。\n\n暴力统计 O(n^2) 太慢，用树状数组可以优化到 O(n log n)。\n\n核心思路：从右往左遍历序列，对于每个元素 a[i]，查询已经出现过的、比 a[i] 小的元素个数，即为以 i 为左端点的逆序对数。\n\n具体步骤：\n1. 从右往左扫描，维护一个树状数组表示「值域上每个值出现了多少次」\n2. 对于当前元素 a[i]，逆序对贡献 = sum(a[i] - 1)，即查询值域 [1, a[i]-1] 中已经出现的元素个数（这些元素在 i 右边且值比 a[i] 小）\n3. 然后执行 add(a[i], 1)，标记 a[i] 已出现\n\n离散化：当值域很大（如 10^9）但元素个数不多时，需要先离散化。将所有值排序后用排名代替原值，这样值域压缩到 [1, n]。\n\n离散化步骤：\n1. 复制数组并排序去重\n2. 用 lower_bound 将原值映射到排名\n3. 在排名上做树状数组操作\n\n也可以从左往右扫，查询 sum(n) - sum(a[i])，即统计左边比 a[i] 大的元素个数。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint tree[500001], n;\nint lowbit(int x) { return x & (-x); }\nvoid add(int i, int v) {\n    for (; i <= n; i += lowbit(i)) tree[i] += v;\n}\nint sum(int i) {\n    int s = 0;\n    for (; i > 0; i -= lowbit(i)) s += tree[i];\n    return s;\n}\n\nint main() {\n    cin >> n;\n    int a[500001], b[500001];\n    for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n        b[i] = a[i];\n    }\n    sort(b + 1, b + n + 1);\n    int m = unique(b + 1, b + n + 1) - (b + 1);\n    for (int i = 1; i <= n; i++)\n        a[i] = lower_bound(b + 1, b + m + 1, a[i]) - b;\n    long long ans = 0;\n    for (int i = n; i >= 1; i--) {\n        ans += sum(a[i] - 1);\n        add(a[i], 1);\n    }\n    cout << ans << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "先离散化：排序 + unique + lower_bound 将值压缩到 [1, n]",
+        "从右往左扫，sum(a[i]-1) 查右边比当前小的元素数",
+        "逆序对数可能很大，用 long long 存储答案",
+        "也可以从左往右扫，查 sum(n)-sum(a[i]) 统计左边比当前大的数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记离散化",
+          "description": "当值域达到 10^9 时直接用原值做树状数组下标，数组开不下。",
+          "fix": "先离散化将值压缩到 [1, n] 范围内，再进行树状数组操作。"
+        },
+        {
+          "title": "答案没用 long long",
+          "description": "n 个元素的逆序对最多有 n*(n-1)/2 个，int 会溢出。",
+          "fix": "统计逆序对的变量用 long long 类型。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个长度为 n 的排列（1到n的某个排列），求逆序对数。",
+        "hint": "排列天然离散化，值域就是 [1, n]，无需额外离散化。从右往左扫即可。",
+        "expectedIdea": "排列本身就是 [1,n] 的值，直接从右往左用树状数组统计 sum(a[i]-1)。"
+      },
+      "quiz": [
+        {
+          "question": "从右往左扫描时，对于当前元素 a[i]，它贡献的逆序对数等于？",
+          "options": ["sum(a[i])", "sum(a[i]-1)", "sum(n) - sum(a[i])", "sum(n) - sum(a[i]-1)"],
+          "answerIndex": 1,
+          "explanation": "从右往左扫时，tree 中存的是右边已出现的元素。sum(a[i]-1) 统计右边值比 a[i] 小的元素个数，即逆序对数。"
+        },
+        {
+          "question": "n=100000 的序列最多有多少个逆序对？",
+          "options": ["约 10^5", "约 5*10^9", "约 10^10", "约 10^15"],
+          "answerIndex": 1,
+          "explanation": "最多 n*(n-1)/2 ≈ 100000*99999/2 ≈ 5*10^9，超过 int 范围，需要 long long。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.7.3",
+      "title": "二维树状数组",
+      "learningGoal": "理解如何将一维树状数组扩展到二维，掌握二维场景下的单点修改 add 和前缀查询 sum 操作，能用二维树状数组解决矩阵单点更新+子矩阵求和问题",
+      "explanation": "二维树状数组是一维树状数组在二维平面的自然扩展，支持矩阵上的单点修改和前缀查询。\n\n核心思想：在一维树状数组中，tree[i] 管辖 [i-lowbit(i)+1, i] 这段区间。类似地，二维树状数组中 tree[i][j] 管辖以 (i, j) 为右下角、边长分别为 lowbit(i) 和 lowbit(j) 的矩形区域。\n\n结构：tree[x][y] 管辖的矩形范围为 [x-lowbit(x)+1, x] × [y-lowbit(y)+1, y]。\n\n两个核心函数：\n1. add(x, y, v)：在位置 (x, y) 加上 v。外层循环 x 沿 x += lowbit(x) 向上跳，内层循环 y 沿 y += lowbit(y) 向上跳，更新所有包含 (x, y) 的 tree 节点。\n2. sum(x, y)：查询从 (1,1) 到 (x,y) 的矩形和。外层循环 x 沿 x -= lowbit(x) 向前跳，内层循环 y 沿 y -= lowbit(y) 向前跳，累加所有管辖区域的值。\n\n子矩阵查询：\n矩形 [x1,y1] 到 [x2,y2] 的和 = sum(x2,y2) - sum(x1-1,y2) - sum(x2,y1-1) + sum(x1-1,y1-1)\n这是二维前缀和的容斥原理。\n\n时间复杂度：单次操作 O(log n * log m)，空间 O(n * m)。\n\n注意：二维树状数组的下标同样必须从 1 开始。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint tree[1001][1001];\nint n, m;\n\nint lowbit(int x) { return x & (-x); }\n\nvoid add(int x, int y, int v) {\n    for (int i = x; i <= n; i += lowbit(i))\n        for (int j = y; j <= m; j += lowbit(j))\n            tree[i][j] += v;\n}\n\nint sum(int x, int y) {\n    int s = 0;\n    for (int i = x; i > 0; i -= lowbit(i))\n        for (int j = y; j > 0; j -= lowbit(j))\n            s += tree[i][j];\n    return s;\n}\n\nint rectSum(int x1, int y1, int x2, int y2) {\n    return sum(x2, y2) - sum(x1 - 1, y2)\n         - sum(x2, y1 - 1) + sum(x1 - 1, y1 - 1);\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 1; i <= n; i++)\n        for (int j = 1; j <= m; j++) {\n            int x;\n            cin >> x;\n            add(i, j, x);\n        }\n    int q;\n    cin >> q;\n    while (q--) {\n        int op;\n        cin >> op;\n        if (op == 1) {\n            int x, y, v;\n            cin >> x >> y >> v;\n            add(x, y, v);\n        } else {\n            int x1, y1, x2, y2;\n            cin >> x1 >> y1 >> x2 >> y2;\n            cout << rectSum(x1, y1, x2, y2) << endl;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "tree[x][y] 管辖 [x-lowbit(x)+1, x] × [y-lowbit(y)+1, y] 的矩形",
+        "add 双重循环：外层 i 沿 lowbit 跳，内层 j 沿 lowbit 跳",
+        "子矩阵查询用二维容斥：sum(x2,y2) - sum(x1-1,y2) - sum(x2,y1-1) + sum(x1-1,y1-1)",
+        "单次操作 O(log n * log m)，空间 O(n*m)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "子矩阵查询容斥符号写错",
+          "description": "二维前缀和的容斥公式中加减号容易搞混，漏加 sum(x1-1,y1-1)。",
+          "fix": "牢记公式：+sum(x2,y2) -sum(x1-1,y2) -sum(x2,y1-1) +sum(x1-1,y1-1)，画图验证。"
+        },
+        {
+          "title": "数组空间不够",
+          "description": "二维树状数组需要 tree[n+1][m+1]，当 n 和 m 较大时容易超出内存限制。",
+          "fix": "根据题目数据范围合理开数组，n*m 较大时考虑是否需要其他方法。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个 n×m 的矩阵，支持 q 次操作：1 x y v（将 (x,y) 位置加 v）或 2 x1 y1 x2 y2（查询子矩阵和）。用二维树状数组实现。",
+        "hint": "add 和 sum 各用双重循环，子矩阵查询用二维容斥。",
+        "expectedIdea": "二维树状数组模板：双重循环实现 add/sum，rectSum 用二维前缀和容斥。"
+      },
+      "quiz": [
+        {
+          "question": "二维树状数组单次 add 操作的时间复杂度是？",
+          "options": ["O(log n)", "O(log n + log m)", "O(log n * log m)", "O(n * m)"],
+          "answerIndex": 2,
+          "explanation": "二维树状数组的 add 操作有双重循环，外层 O(log n)，内层 O(log m)，总共 O(log n * log m)。"
+        },
+        {
+          "question": "查询子矩阵 [x1,y1] 到 [x2,y2] 的和需要调用几次 sum 函数？",
+          "options": ["1次", "2次", "3次", "4次"],
+          "answerIndex": 3,
+          "explanation": "二维容斥需要 4 次 sum 调用：sum(x2,y2) - sum(x1-1,y2) - sum(x2,y1-1) + sum(x1-1,y1-1)。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.7.4",
+      "title": "树状数组维护区间最值",
+      "learningGoal": "理解如何改造树状数组来维护区间最大值/最小值，掌握其适用场景和局限性，能正确实现单点更新+前缀最值查询",
+      "explanation": "树状数组本质上维护的是前缀信息（前缀和），但经过改造也可以维护前缀最值（前缀最大值/最小值）。\n\n原理：tree[i] 存储 [i-lowbit(i)+1, i] 这段区间的最大值。维护时利用分段结构：\n- sum 操作（前缀最大值查询）：tree[i] 已经维护了 [i-lowbit(i)+1, i] 的最大值，但前缀查询需要比较多个区间的最大值。\n- add 操作（单点更新）：需要更新所有包含该位置的 tree 节点。\n\n关键区别：维护最值时，add 操作比维护和时更复杂。\n对于求和，tree[i] += v 即可。但对于最大值，更新 tree[i] 时需要重新计算 [i-lowbit(i)+1, i] 内的最大值，不能简单地取 max(tree[i], v)。\n\n正确的单点更新方式（以维护最大值为例）：\n更新位置 p 的值为 v 时，对于每个需要更新的 tree[i]，需要检查 [i-lowbit(i)+1, i] 中所有直接子节点的 tree 值和 a[p] 的值来重新计算最大值。\n\n简化方法（适用于只做单点修改、查询前缀最大值）：\n在更新 tree[i] 时，遍历 i 的所有直接子区间取最大值：\ntree[i] = max(a[i], tree[i-1], tree[i-2], ..., tree[i-lowbit(i)+1])\n这可以通过枚举 j 从 1 到 lowbit(i)-1 中 lowbit(j) 递增的子节点来优化。\n\n局限性：\n1. 只能高效查询前缀最值（[1, i]），不能像求和那样通过减法得到任意区间最值\n2. 不支持区间修改\n3. 如果需要任意区间最值查询，线段树是更好的选择\n\n竞赛中更常用的替代方案：ST 表（静态区间最值，O(1) 查询）或线段树（支持修改）。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint tree[100001], a[100001];\nint n;\n\nint lowbit(int x) { return x & (-x); }\n\nvoid update(int i) {\n    for (int x = i; x <= n; x += lowbit(x)) {\n        tree[x] = a[x];\n        for (int j = 1; j < lowbit(x); j <<= 1)\n            tree[x] = max(tree[x], tree[x - j]);\n    }\n}\n\nint query(int i) {\n    int res = a[i];\n    for (int x = i; x > 0; x -= lowbit(x))\n        res = max(res, tree[x]);\n    return res;\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n        update(i);\n    }\n    int q;\n    cin >> q;\n    while (q--) {\n        int op;\n        cin >> op;\n        if (op == 1) {\n            int idx, v;\n            cin >> idx >> v;\n            a[idx] = v;\n            update(idx);\n        } else {\n            int r;\n            cin >> r;\n            cout << query(r) << endl;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "维护最值时 update 需要重新计算每个覆盖节点的区间最大值",
+        "枚举 j 从 1 到 lowbit(x) 的子区间来取最大值",
+        "query 前缀最大值：沿 i -= lowbit(i) 取所有区间最大值的最大值",
+        "不能像求和那样做减法得到任意区间最值，这是核心局限"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 sum 的减法技巧查询区间最值",
+          "description": "误以为 max[l,r] = query(r) - query(l-1) 或类似方式可以求区间最值。",
+          "fix": "前缀最值不能通过减法得到任意区间最值。需要任意区间最值时请使用线段树或 ST 表。"
+        },
+        {
+          "title": "update 时只做 max(tree[x], v)",
+          "description": "维护最大值时，如果原来 tree[x] 对应旧的最大值，修改后该位置变小了，max(tree[x], v) 不会降低 tree[x]。",
+          "fix": "更新时必须重新计算 tree[x] 对应区间 [x-lowbit(x)+1, x] 的最大值，遍历子节点。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个数组，支持单点修改和查询前缀 [1, r] 的最大值。用树状数组实现。",
+        "hint": "update 时需要遍历子区间重新计算最大值，query 时取所有覆盖区间的最大值。",
+        "expectedIdea": "维护前缀最大值的树状数组，update 枚举子区间重算，query 沿 lowbit 取 max。"
+      },
+      "quiz": [
+        {
+          "question": "树状数组维护区间最值的核心局限是什么？",
+          "options": [
+            "不能做单点修改",
+            "不能查询前缀最大值",
+            "不能通过减法得到任意区间 [l,r] 的最值",
+            "时间复杂度是 O(n)"
+          ],
+          "answerIndex": 2,
+          "explanation": "前缀和可以通过 sum(r)-sum(l-1) 得到任意区间和，但最值不满足减法性质，max(l,r) ≠ query(r) - query(l-1)。"
+        },
+        {
+          "question": "如果需要支持修改的任意区间最值查询，应该优先选择什么数据结构？",
+          "options": ["树状数组", "ST 表", "线段树", "差分数组"],
+          "answerIndex": 2,
+          "explanation": "线段树支持单点/区间修改和任意区间最值查询，O(log n) 每次。ST 表只支持静态（不支持修改）。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_expectation",
+  "itemId": "4.6.4",
+  "title": "数学期望",
+  "description": "演示离散随机变量数学期望的计算过程：E(X) = Σ xᵢ × P(xᵢ)",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义随机变量",
+      "description": "掷一颗均匀骰子，X 表示掷出的点数，X ∈ {1,2,3,4,5,6}",
+      "codeLine": "// X = 掷骰子结果, X ∈ {1,2,3,4,5,6}",
+      "highlights": ["X"],
+      "state": {
+        "variables": [
+          {"name": "X", "value": "1~6", "note": "每个概率 1/6"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算加权和",
+      "description": "E(X) = 1×(1/6) + 2×(1/6) + 3×(1/6) + 4×(1/6) + 5×(1/6) + 6×(1/6)",
+      "codeLine": "// E(X) = Σ x_i * P(x_i)",
+      "highlights": ["Σ x_i * P(x_i)"],
+      "state": {
+        "variables": [
+          {"name": "1×1/6", "value": "1/6", "note": ""},
+          {"name": "2×1/6", "value": "2/6", "note": ""},
+          {"name": "3×1/6", "value": "3/6", "note": ""},
+          {"name": "4×1/6", "value": "4/6", "note": ""},
+          {"name": "5×1/6", "value": "5/6", "note": ""},
+          {"name": "6×1/6", "value": "6/6", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "求和",
+      "description": "E(X) = (1+2+3+4+5+6)/6 = 21/6 = 3.5",
+      "codeLine": "double E = (1+2+3+4+5+6) / 6.0; // = 3.5",
+      "highlights": ["21/6"],
+      "state": {
+        "variables": [
+          {"name": "分子", "value": "21", "note": "1+2+3+4+5+6"},
+          {"name": "E(X)", "value": "3.5", "note": "21/6=3.5"}
+        ],
+        "containers": [],
+        "output": "E(X) = 3.5"
+      }
+    },
+    {
+      "step": 4,
+      "title": "含义",
+      "description": "期望 3.5 不一定是某个可能结果，它表示大量重复实验的平均值趋近 3.5",
+      "codeLine": "// 期望 = 长期平均值",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "E(X)", "value": "3.5", "note": "骰子点数的长期平均"}
+        ],
+        "containers": [],
+        "output": "E(X) = 3.5"
+      }
+    }
+  ]
+}

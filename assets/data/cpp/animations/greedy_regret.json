@@ -1,0 +1,208 @@
+{
+  "animationId": "algo_greedy_regret",
+  "itemId": "2.4.14",
+  "title": "反悔贪心",
+  "description": "展示课程选择中先贪心选择再反悔移除最大耗时任务的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [], "note": "任务耗时"},
+      {"name": "已选", "type": "array", "values": [], "highlights": [], "note": "已选任务"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题描述",
+      "description": "有5个任务，耗时分别为 3, 5, 2, 4, 1。时间限制为 8。要求在不超过时间限制的前提下完成尽量多的任务。",
+      "codeLine": "int tasks[] = {3, 5, 2, 4, 1};  int limit = 8;",
+      "highlights": ["tasks", "limit"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": "最大可用时间"},
+          {"name": "已用时间", "value": "0", "type": "int", "note": ""},
+          {"name": "已选数量", "value": "0", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [], "note": "5个任务"},
+          {"name": "已选", "type": "array", "values": [], "highlights": [], "note": "空"}
+        ],
+        "output": "任务耗时: 3, 5, 2, 4, 1\n时间限制: 8"
+      }
+    },
+    {
+      "step": 2,
+      "title": "选择任务1: 耗时3",
+      "description": "贪心策略：先选择任务。当前已用时间 0 + 3 = 3 ≤ 8，直接选择。",
+      "codeLine": "selected.push(task);  totalTime += task;",
+      "highlights": ["push", "totalTime"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "3", "type": "int", "note": "0+3=3"},
+          {"name": "已选数量", "value": "1", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [0], "note": "选择耗时3的任务"},
+          {"name": "已选", "type": "array", "values": [3], "highlights": [0], "note": "已选: [3]"}
+        ],
+        "output": "选择任务(耗时3)，已用时间=3 ≤ 8 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "选择任务2: 耗时5",
+      "description": "当前已用时间 3 + 5 = 8 ≤ 8，刚好等于限制，直接选择。",
+      "codeLine": "selected.push(task);  totalTime += task;",
+      "highlights": ["push", "totalTime"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "8", "type": "int", "note": "3+5=8"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [1], "note": "选择耗时5的任务"},
+          {"name": "已选", "type": "array", "values": [3, 5], "highlights": [1], "note": "已选: [3, 5]"}
+        ],
+        "output": "选择任务(耗时5)，已用时间=8 ≤ 8 ✓"
+      }
+    },
+    {
+      "step": 4,
+      "title": "选择任务3: 耗时2",
+      "description": "当前已用时间 8 + 2 = 10 > 8，超出限制！需要反悔。",
+      "codeLine": "selected.push(task);  totalTime += task;  // 超出限制",
+      "highlights": ["totalTime", "超出限制"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "10", "type": "int", "note": "8+2=10 > 8 ⚠"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [2], "note": "尝试选择耗时2的任务"},
+          {"name": "已选", "type": "array", "values": [3, 5, 2], "highlights": [2], "note": "已选: [3, 5, 2]，总时间10 > 8 ⚠"}
+        ],
+        "output": "选择任务(耗时2)，已用时间=10 > 8 ⚠ 超出限制!"
+      }
+    },
+    {
+      "step": 5,
+      "title": "反悔！移除最大耗时任务",
+      "description": "超出限制，触发反悔机制。从已选任务中找到耗时最大的：5 > 3 > 2，移除耗时5的任务。已用时间 = 10-5 = 5 ≤ 8，恢复合法。",
+      "codeLine": "int maxTask = *max_element(selected.begin(), selected.end());\ntotalTime -= maxTask;  selected.remove(maxTask);",
+      "highlights": ["max_element", "反悔移除"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "5", "type": "int", "note": "10-5=5"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": "移除1个"},
+          {"name": "反悔移除", "value": "5", "type": "int", "note": "移除耗时最大的5"}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [2], "note": "反悔：移除耗时5的任务"},
+          {"name": "已选", "type": "array", "values": [3, 2], "highlights": [0, 1], "note": "已选: [3, 2]，总时间=5 ✓"}
+        ],
+        "output": "反悔! 移除耗时最大的任务(5)\n已用时间=10-5=5 ≤ 8 ✓"
+      }
+    },
+    {
+      "step": 6,
+      "title": "选择任务4: 耗时4",
+      "description": "当前已用时间 5 + 4 = 9 > 8，又超出限制！需要再次反悔。",
+      "codeLine": "selected.push(task);  totalTime += task;  // 超出限制",
+      "highlights": ["totalTime", "超出限制"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "9", "type": "int", "note": "5+4=9 > 8 ⚠"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [3], "note": "尝试选择耗时4的任务"},
+          {"name": "已选", "type": "array", "values": [3, 2, 4], "highlights": [2], "note": "已选: [3, 2, 4]，总时间9 > 8 ⚠"}
+        ],
+        "output": "选择任务(耗时4)，已用时间=9 > 8 ⚠ 超出限制!"
+      }
+    },
+    {
+      "step": 7,
+      "title": "反悔！移除最大耗时任务",
+      "description": "从已选任务 [3, 2, 4] 中找到最大耗时：4。移除耗时4的任务。已用时间 = 9-4 = 5 ≤ 8，恢复合法。",
+      "codeLine": "int maxTask = *max_element(selected.begin(), selected.end());\ntotalTime -= maxTask;  selected.remove(maxTask);",
+      "highlights": ["max_element", "反悔移除"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "5", "type": "int", "note": "9-4=5"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": "移除1个"},
+          {"name": "反悔移除", "value": "4", "type": "int", "note": "移除耗时最大的4"}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [3], "note": "反悔：移除耗时4的任务"},
+          {"name": "已选", "type": "array", "values": [3, 2], "highlights": [0, 1], "note": "已选: [3, 2]，总时间=5 ✓"}
+        ],
+        "output": "反悔! 移除耗时最大的任务(4)\n已用时间=9-4=5 ≤ 8 ✓"
+      }
+    },
+    {
+      "step": 8,
+      "title": "选择任务5: 耗时1",
+      "description": "当前已用时间 5 + 1 = 6 ≤ 8，未超出限制，直接选择。",
+      "codeLine": "selected.push(task);  totalTime += task;",
+      "highlights": ["push", "totalTime"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "6", "type": "int", "note": "5+1=6"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [4], "note": "选择耗时1的任务"},
+          {"name": "已选", "type": "array", "values": [3, 2, 1], "highlights": [2], "note": "已选: [3, 2, 1]，总时间=6 ✓"}
+        ],
+        "output": "选择任务(耗时1)，已用时间=6 ≤ 8 ✓"
+      }
+    },
+    {
+      "step": 9,
+      "title": "遍历结束",
+      "description": "所有任务已处理完毕。最终选择了3个任务：耗时 3, 2, 1，总时间6，未超出限制8。",
+      "codeLine": "return selected.size();",
+      "highlights": ["selected"],
+      "state": {
+        "variables": [
+          {"name": "时间限制", "value": "8", "type": "int", "note": ""},
+          {"name": "已用时间", "value": "6", "type": "int", "note": ""},
+          {"name": "已选数量", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "任务", "type": "array", "values": [3, 5, 2, 4, 1], "highlights": [], "note": "全部处理完毕"},
+          {"name": "已选", "type": "array", "values": [3, 2, 1], "highlights": [0, 1, 2], "note": "最终选择: [3, 2, 1]"}
+        ],
+        "output": "处理完毕"
+      }
+    },
+    {
+      "step": 10,
+      "title": "最终结果",
+      "description": "反悔贪心的核心思想：先贪心选择，超出限制后反悔移除已选中代价最大的。这样可以在保持合法性的同时最大化选择数量。",
+      "codeLine": "cout << \"最多完成 \" << selected.size() << \" 个任务\";",
+      "highlights": ["反悔贪心"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "3", "type": "int", "note": "最多完成3个任务"},
+          {"name": "总耗时", "value": "6", "type": "int", "note": "总耗时6 ≤ 限制8"},
+          {"name": "反悔次数", "value": "2", "type": "int", "note": "移除了耗时5和4的任务"}
+        ],
+        "containers": [
+          {"name": "已选任务", "type": "array", "values": ["任务1(耗时3)", "任务3(耗时2)", "任务5(耗时1)"], "highlights": [0, 1, 2], "note": ""},
+          {"name": "反悔移除", "type": "array", "values": ["任务2(耗时5)", "任务4(耗时4)"], "highlights": [0, 1], "note": "超出限制时移除最大耗时"}
+        ],
+        "output": "最多完成 3 个任务\n选中: 耗时3, 2, 1 (总耗时=6)\n反悔移除: 耗时5, 耗时4"
+      }
+    }
+  ]
+}

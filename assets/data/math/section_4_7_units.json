@@ -1,0 +1,990 @@
+{
+  "sectionId": "4.7",
+  "sectionName": "计算几何",
+  "units": [
+    {
+      "itemId": "4.7.1",
+      "title": "坐标系",
+      "learningGoal": "理解平面直角坐标系的建立方法，掌握点的坐标表示，学会在编程中用结构体或 pair 表示点",
+      "explanation": "【平面直角坐标系】\n在平面上画两条互相垂直的数轴：\n  - 水平的叫 x 轴（横轴），向右为正方向\n  - 竖直的叫 y 轴（纵轴），向上为正方向\n  - 交点叫原点 O(0, 0)\n\n【点的表示】\n平面上任意一点 P 可以用有序数对 (x, y) 唯一表示。\n  - x 叫横坐标（点到 y 轴的有向距离）\n  - y 叫纵坐标（点到 x 轴的有向距离）\n\n【象限】\n坐标系将平面分为四个象限：\n  - 第一象限：x > 0, y > 0\n  - 第二象限：x < 0, y > 0\n  - 第三象限：x < 0, y < 0\n  - 第四象限：x > 0, y < 0\n\n【编程中的表示】\n在 C++ 中通常用 struct 或 pair 来表示点：\n  struct Point { double x, y; };\n也可以直接用两个变量表示。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nstruct Point {\n    double x, y;\n    Point(double x = 0, double y = 0) : x(x), y(y) {}\n};\n\nint getQuadrant(Point p) {\n    if (p.x > 0 && p.y > 0) return 1;\n    if (p.x < 0 && p.y > 0) return 2;\n    if (p.x < 0 && p.y < 0) return 3;\n    if (p.x > 0 && p.y < 0) return 4;\n    return 0;\n}\n\nbool onAxis(Point p) {\n    return p.x == 0 || p.y == 0;\n}\n\nint main() {\n    Point a(3, 4);\n    Point b(-2, 5);\n    Point c(-1, -3);\n    Point d(4, -2);\n    Point e(0, 3);\n\n    cout << \"A(\" << a.x << \",\" << a.y << \") 在第\" << getQuadrant(a) << \"象限\" << endl;\n    cout << \"B(\" << b.x << \",\" << b.y << \") 在第\" << getQuadrant(b) << \"象限\" << endl;\n    cout << \"C(\" << c.x << \",\" << c.y << \") 在第\" << getQuadrant(c) << \"象限\" << endl;\n    cout << \"D(\" << d.x << \",\" << d.y << \") 在第\" << getQuadrant(d) << \"象限\" << endl;\n    cout << \"E(\" << e.x << \",\" << e.y << \") 在坐标轴上: \" << (onAxis(e) ? \"是\" : \"否\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "用 struct 封装点的坐标，方便传参和管理",
+        "构造函数带默认参数，可以无参创建原点 Point()",
+        "判断象限时注意坐标轴上的点不属于任何象限",
+        "浮点数比较应考虑精度，这里用 == 仅作演示"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆象限编号",
+          "description": "记错象限的编号顺序，把第三象限和第四象限搞混",
+          "fix": "记住象限按逆时针编号：一(x+,y+)、二(x-,y+)、三(x-,y-)、四(x+,y-)"
+        },
+        {
+          "title": "忽略坐标轴上的点",
+          "description": "判断象限时没有考虑点在坐标轴上的情况，导致逻辑出错",
+          "fix": "先判断是否在坐标轴上（x==0 或 y==0），再判断象限"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个点的坐标，统计每个象限各有多少个点（在坐标轴上的点不计入任何象限）。",
+        "hint": "遍历所有点，用 if-else 判断象限，四个计数器分别统计。",
+        "expectedIdea": "遍历每个点，判断 x 和 y 的正负来确定象限，用四个变量分别计数"
+      },
+      "quiz": [
+        {
+          "question": "点 (-3, 5) 在第几象限？",
+          "options": [
+            "第一象限",
+            "第二象限",
+            "第三象限",
+            "第四象限"
+          ],
+          "answerIndex": 1,
+          "explanation": "x = -3 < 0, y = 5 > 0，在第二象限"
+        },
+        {
+          "question": "点 (0, -4) 在哪个位置？",
+          "options": [
+            "第三象限",
+            "第四象限",
+            "y 轴上",
+            "x 轴上"
+          ],
+          "answerIndex": 2,
+          "explanation": "x = 0，所以该点在 y 轴上，不属于任何象限"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.2",
+      "title": "向量",
+      "learningGoal": "理解向量的概念，掌握用坐标表示向量的方法，区分向量与标量",
+      "explanation": "【什么是向量】\n向量是既有大小又有方向的量，也叫矢量。\n与之相对的是标量，只有大小没有方向（如温度、质量）。\n\n【向量的几何表示】\n向量用有向线段表示：\n  - 箭头的方向就是向量的方向\n  - 线段的长度就是向量的大小（模）\n\n【向量的坐标表示】\n从点 A(x₁, y₁) 指向点 B(x₂, y₂) 的向量：\n  AB = (x₂ - x₁, y₂ - y₁)\n\n即向量的坐标 = 终点坐标 - 起点\n\n【特殊向量】\n  - 零向量：(0, 0)，大小为 0，方向不定\n  - 单位向量：长度为 1 的向量\n  - 相等向量：方向相同、大小相同的向量\n\n【自由向量】\n向量可以平移而不改变其本质。只要方向和大小不变，\n无论起点在哪里，都是同一个向量。\n因此在编程中，我们通常只存储 (x, y) 分量。",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Vector {\n    double x, y;\n    Vector(double x = 0, double y = 0) : x(x), y(y) {}\n\n    double length() const {\n        return sqrt(x * x + y * y);\n    }\n\n    void print() const {\n        cout << \"(\" << x << \", \" << y << \")\";\n    }\n};\n\nVector fromPoints(double x1, double y1, double x2, double y2) {\n    return Vector(x2 - x1, y2 - y1);\n}\n\nint main() {\n    Vector v(3, 4);\n    cout << \"向量 v = \"; v.print(); cout << endl;\n    cout << \"长度 |v| = \" << v.length() << endl;\n\n    Vector ab = fromPoints(1, 2, 4, 6);\n    cout << \"从 A(1,2) 到 B(4,6) 的向量: \"; ab.print(); cout << endl;\n    cout << \"长度 = \" << ab.length() << endl;\n\n    Vector zero;\n    cout << \"零向量: \"; zero.print(); cout << \", 长度 = \" << zero.length() << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "Vector 结构体存储向量的 x 和 y 分量",
+        "向量的长度用勾股定理：sqrt(x² + y²)",
+        "从两点构造向量：终点坐标减起点坐标",
+        "零向量是默认构造的结果，长度为 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆点和向量",
+          "description": "把点 (3, 4) 和向量 (3, 4) 混淆。点表示位置，向量表示方向和大小",
+          "fix": "点表示固定位置，向量表示方向和大小。从原点出发的向量与点的坐标数值相同但含义不同"
+        },
+        {
+          "title": "向量方向搞反",
+          "description": "构造向量时把起点和终点弄反，导致方向相反",
+          "fix": "记住向量 = 终点 - 起点，AB = B - A"
+        }
+      ],
+      "practice": {
+        "prompt": "给定两个点 A(x₁, y₁) 和 B(x₂, y₂)，求向量 AB 的坐标和长度。",
+        "hint": "向量 AB = (x₂-x₁, y₂-y₁)，长度用勾股定理。",
+        "expectedIdea": "用终点坐标减起点坐标得到向量分量，再用 sqrt(x²+y²) 求长度"
+      },
+      "quiz": [
+        {
+          "question": "从点 A(2, 3) 到点 B(5, 7) 的向量 AB 的坐标是什么？",
+          "options": [
+            "(7, 10)",
+            "(3, 4)",
+            "(5, 7)",
+            "(-3, -4)"
+          ],
+          "answerIndex": 1,
+          "explanation": "AB = (5-2, 7-3) = (3, 4)，终点减起点"
+        },
+        {
+          "question": "向量 (3, 4) 的长度是多少？",
+          "options": [
+            "7",
+            "12",
+            "5",
+            "25"
+          ],
+          "answerIndex": 2,
+          "explanation": "长度 = sqrt(3² + 4²) = sqrt(9 + 16) = sqrt(25) = 5"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.3",
+      "title": "向量加减",
+      "learningGoal": "掌握向量加法和减法的坐标运算，理解其几何意义（三角形法则和平行四边形法则）",
+      "explanation": "【向量加法】\n两个向量 a = (x₁, y₁) 和 b = (x₂, y₂) 相加：\n  a + b = (x₁ + x₂, y₁ + y₂)\n\n几何意义：将 b 的起点放在 a 的终点，\n结果向量从 a 的起点指向 b 的终点（三角形法则）。\n\n【向量减法】\n  a - b = (x₁ - x₂, y₁ - y₂)\n\n几何意义：从 b 的终点指向 a 的终点的向量。\n\n【运算律】\n1. 交换律：a + b = b + a\n2. 结合律：(a + b) + c = a + (b + c)\n3. 零向量：a + 0 = a\n4. 相反向量：a + (-a) = 0\n\n【信奥应用】\n- 力的合成与分解\n- 速度的叠加\n- 计算两点之间的位移",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nstruct Vec {\n    double x, y;\n    Vec(double x = 0, double y = 0) : x(x), y(y) {}\n    Vec operator+(const Vec& b) const { return Vec(x + b.x, y + b.y); }\n    Vec operator-(const Vec& b) const { return Vec(x - b.x, y - b.y); }\n    void print() const { cout << \"(\" << x << \", \" << y << \")\"; }\n};\n\nint main() {\n    Vec a(3, 4);\n    Vec b(1, -2);\n\n    Vec sum = a + b;\n    Vec diff = a - b;\n\n    cout << \"a = \"; a.print(); cout << endl;\n    cout << \"b = \"; b.print(); cout << endl;\n    cout << \"a + b = \"; sum.print(); cout << endl;\n    cout << \"a - b = \"; diff.print(); cout << endl;\n\n    Vec p1(1, 2), p2(4, 6);\n    Vec displacement = p2 - p1;\n    cout << \"从 P1 到 P2 的位移: \"; displacement.print(); cout << endl;\n\n    Vec forces[] = {Vec(3, 0), Vec(0, 4), Vec(-1, -1)};\n    Vec total(0, 0);\n    for (int i = 0; i < 3; i++) total = total + forces[i];\n    cout << \"合力: \"; total.print(); cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "重载 + 和 - 运算符让向量运算更直观",
+        "向量加法是分量对应相加：(x₁+x₂, y₁+y₂)",
+        "向量减法是分量对应相减：(x₁-x₂, y₁-y₂)",
+        "多个向量相加时可以用循环累加"
+      ],
+      "commonMistakes": [
+        {
+          "title": "减法方向搞反",
+          "description": "记混 a - b 的方向，以为是从 a 指向 b",
+          "fix": "a - b 的向量从 b 的终点指向 a 的终点，即方向是 'b 到 a'"
+        },
+        {
+          "title": "忘记重载运算符的 const",
+          "description": "重载运算符时忘记加 const 修饰，导致编译错误",
+          "fix": "成员函数后面加 const 表示不修改对象状态：Vec operator+(const Vec& b) const"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个力向量，求它们的合力（向量和），输出合力向量的坐标。",
+        "hint": "将所有向量的 x 分量和 y 分量分别累加。",
+        "expectedIdea": "初始化合力为零向量，循环累加每个力的 x 和 y 分量"
+      },
+      "quiz": [
+        {
+          "question": "向量 (3, 4) + (1, -2) 的结果是什么？",
+          "options": [
+            "(4, 2)",
+            "(2, 6)",
+            "(4, -2)",
+            "(2, 2)"
+          ],
+          "answerIndex": 0,
+          "explanation": "(3+1, 4+(-2)) = (4, 2)，分量对应相加"
+        },
+        {
+          "question": "向量 (5, 3) - (2, 7) 的结果是什么？",
+          "options": [
+            "(7, 10)",
+            "(3, -4)",
+            "(-3, 4)",
+            "(3, 4)"
+          ],
+          "answerIndex": 1,
+          "explanation": "(5-2, 3-7) = (3, -4)，分量对应相减"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.4",
+      "title": "向量数乘",
+      "learningGoal": "掌握向量与标量相乘的运算规则，理解数乘对向量长度和方向的影响",
+      "explanation": "【向量数乘定义】\n向量 a = (x, y) 与标量 k 相乘：\n  k × a = (k×x, k×y)\n\n每个分量都乘以这个标量。\n\n【数乘的几何意义】\n  - 当 k > 0 时：方向不变，长度变为原来的 k 倍\n  - 当 k < 0 时：方向相反，长度变为原来的 |k| 倍\n  - 当 k = 0 时：结果为零向量\n\n【常用操作】\n1. 缩放向量：2a 使长度翻倍\n2. 反转向量：-a 使方向相反\n3. 单位化：a/|a| 使长度变为 1\n\n【运算律】\n1. k(a + b) = ka + kb\n2. (k₁ + k₂)a = k₁a + k₂a\n3. k₁(k₂a) = (k₁k₂)a",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Vec {\n    double x, y;\n    Vec(double x = 0, double y = 0) : x(x), y(y) {}\n    Vec operator*(double k) const { return Vec(x * k, y * k); }\n    double len() const { return sqrt(x * x + y * y); }\n    Vec unit() const {\n        double l = len();\n        if (l == 0) return Vec(0, 0);\n        return Vec(x / l, y / l);\n    }\n    void print() const { cout << \"(\" << x << \", \" << y << \")\"; }\n};\n\nVec operator*(double k, const Vec& v) {\n    return Vec(v.x * k, v.y * k);\n}\n\nint main() {\n    Vec a(3, 4);\n\n    Vec doubled = a * 2;\n    Vec reversed = a * (-1);\n    Vec halved = a * 0.5;\n    Vec u = a.unit();\n\n    cout << \"a = \"; a.print(); cout << \", |a| = \" << a.len() << endl;\n    cout << \"2a = \"; doubled.print(); cout << \", |2a| = \" << doubled.len() << endl;\n    cout << \"-a = \"; reversed.print(); cout << \", |-a| = \" << reversed.len() << endl;\n    cout << \"0.5a = \"; halved.print(); cout << \", |0.5a| = \" << halved.len() << endl;\n    cout << \"单位向量 = \"; u.print(); cout << \", |u| = \" << u.len() << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "数乘是每个分量都乘以标量：(kx, ky)",
+        "乘以负数会反转方向，乘以 0 得到零向量",
+        "单位化：除以自身长度，得到长度为 1 的向量",
+        "重载全局 operator* 支持 标量*向量 的写法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "单位化时除以零",
+          "description": "对零向量做单位化时除以零，导致程序出错或得到 nan",
+          "fix": "单位化前检查长度是否为 0，为零则直接返回零向量"
+        },
+        {
+          "title": "混淆数乘和点积",
+          "description": "把向量数乘（结果是向量）和向量点积（结果是标量）混淆",
+          "fix": "数乘是向量 × 标量 = 向量；点积是向量 · 向量 = 标量"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个向量 v 和一个目标长度 L，将 v 缩放为长度恰好为 L 的向量（方向不变），输出新向量的坐标。",
+        "hint": "先求单位向量 v/|v|，再乘以 L。",
+        "expectedIdea": "将向量单位化后乘以目标长度：v_unit * L"
+      },
+      "quiz": [
+        {
+          "question": "向量 (3, 4) 乘以 3 后的长度是多少？",
+          "options": [
+            "5",
+            "15",
+            "12",
+            "25"
+          ],
+          "answerIndex": 1,
+          "explanation": "原长度为 5，乘以 3 后长度为 15。也可以直接算：|(9,12)| = sqrt(81+144) = sqrt(225) = 15"
+        },
+        {
+          "question": "向量 (2, -3) 乘以 -1 后的结果是什么？",
+          "options": [
+            "(2, -3)",
+            "(-2, 3)",
+            "(-2, -3)",
+            "(2, 3)"
+          ],
+          "answerIndex": 1,
+          "explanation": "乘以 -1 相当于取反：(-2, 3)，方向相反，长度不变"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.5",
+      "title": "向量长度",
+      "learningGoal": "掌握向量长度的计算公式 |v| = sqrt(x² + y²)，理解勾股定理在向量中的应用",
+      "explanation": "【向量长度公式】\n对于向量 v = (x, y)：\n  |v| = sqrt(x² + y²)\n\n这就是勾股定理！x 和 y 是直角边，|v| 是斜边。\n\n【推导过程】\n向量 (x, y) 可以看作从原点到点 (x, y) 的有向线段。\n根据勾股定理，这个线段的长度就是 sqrt(x² + y²)。\n\n【性质】\n1. |v| ≥ 0，当且仅当 v = (0,0) 时 |v| = 0\n2. |kv| = |k| × |v|（数乘的长度）\n3. |a + b| ≤ |a| + |b|（三角不等式）\n4. |a - b|² = |a|² + |b|² - 2(a·b)\n\n【编程注意事项】\n- 使用 double 类型避免精度问题\n- 比较长度时可以比较长度的平方（避免开方）\n- sqrt 函数在 <cmath> 中",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Vec {\n    double x, y;\n    Vec(double x = 0, double y = 0) : x(x), y(y) {}\n    double len() const { return sqrt(x * x + y * y); }\n    double len2() const { return x * x + y * y; }\n};\n\nint main() {\n    Vec v(3, 4);\n    cout << \"向量 (3, 4) 的长度: \" << v.len() << endl;\n    cout << \"向量 (3, 4) 的长度平方: \" << v.len2() << endl;\n\n    Vec a(1, 2), b(4, 6);\n    double dx = b.x - a.x;\n    double dy = b.y - a.y;\n    cout << \"A(1,2) 到 B(4,6) 的距离: \" << sqrt(dx * dx + dy * dy) << endl;\n\n    Vec c(5, 0);\n    Vec d(0, 12);\n    Vec sum = Vec(a.x + c.x, a.y + c.y);\n    cout << \"三角不等式验证: \" << c.len() << \" + \" << d.len\n        << \" >= \" << Vec(c.x + d.x, c.y + d.y).len() << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "len() 返回长度 sqrt(x²+y²)，len2() 返回长度平方 x²+y²",
+        "比较长度时优先用 len2() 避免开方的精度损失和性能开销",
+        "两点之间的距离就是向量 AB 的长度",
+        "三角不等式：两边之和大于第三边"
+      ],
+      "commonMistakes": [
+        {
+          "title": "比较长度时使用开方",
+          "description": "只比较长度大小却先开方，既损失精度又浪费计算",
+          "fix": "如果只需要比较长度大小，比较长度的平方即可，避免调用 sqrt"
+        },
+        {
+          "title": "忘记 double 类型",
+          "description": "用 int 存储坐标导致开方结果被截断",
+          "fix": "几何计算中坐标和长度都用 double 类型"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个二维点，找出距离原点最远的点，输出该点的坐标和到原点的距离。",
+        "hint": "对每个点计算 x²+y²（不需要开方），找最大值对应的点。",
+        "expectedIdea": "遍历所有点，比较 x²+y² 的值找最大，最后对最大值开方得到距离"
+      },
+      "quiz": [
+        {
+          "question": "向量 (-6, 8) 的长度是多少？",
+          "options": [
+            "14",
+            "2",
+            "10",
+            "100"
+          ],
+          "answerIndex": 2,
+          "explanation": "|v| = sqrt((-6)² + 8²) = sqrt(36 + 64) = sqrt(100) = 10"
+        },
+        {
+          "question": "如果只需要比较两个向量的长度大小，最高效的做法是？",
+          "options": [
+            "比较 len() 的值",
+            "比较 len2() 的值",
+            "比较 x 分量",
+            "比较 y 分量"
+          ],
+          "answerIndex": 1,
+          "explanation": "比较长度平方 x²+y² 即可，不需要开方，精度更高且速度更快"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.6",
+      "title": "向量夹角",
+      "learningGoal": "掌握用向量点积计算两向量夹角的方法：cos(θ) = (a·b) / (|a||b|)",
+      "explanation": "【向量夹角公式】\n两个非零向量 a 和 b 的夹角 θ 满足：\n  cos(θ) = (a · b) / (|a| × |b|)\n\n其中 a · b 是点积（详见 4.7.13 节）。\n\n【计算步骤】\n1. 计算点积：a · b = x₁×x₂ + y₁×y₂\n2. 计算两向量的长度 |a| 和 |b|\n3. 求 cos(θ) = (a·b) / (|a|×|b|)\n4. 用反余弦函数求 θ = acos(cosθ)\n\n【夹角的范围】\n  - θ = 0°：两向量同向\n  - θ = 90°：两向量垂直（点积为 0）\n  - θ = 180°：两向量反向\n  - 0° < θ < 180°\n\n【判断方向关系】\n  - 点积 > 0：夹角为锐角（< 90°）\n  - 点积 = 0：垂直（= 90°）\n  - 点积 < 0：夹角为钝角（> 90°）\n\n【注意事项】\n- acos 的参数必须在 [-1, 1] 范围内\n- 由于浮点误差，可能需要 clamp",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nconst double PI = acos(-1.0);\n\nstruct Vec {\n    double x, y;\n    Vec(double x = 0, double y = 0) : x(x), y(y) {}\n    double dot(const Vec& b) const { return x * b.x + y * b.y; }\n    double len() const { return sqrt(x * x + y * y); }\n};\n\ndouble angleBetween(Vec a, Vec b) {\n    double la = a.len(), lb = b.len();\n    if (la == 0 || lb == 0) return 0;\n    double cosTheta = a.dot(b) / (la * lb);\n    if (cosTheta > 1) cosTheta = 1;\n    if (cosTheta < -1) cosTheta = -1;\n    return acos(cosTheta);\n}\n\nint main() {\n    Vec a(1, 0);\n    Vec b(0, 1);\n    Vec c(1, 1);\n\n    cout << \"(1,0) 与 (0,1) 的夹角: \" << angleBetween(a, b) / PI * 180 << \" 度\" << endl;\n    cout << \"(1,0) 与 (1,1) 的夹角: \" << angleBetween(a, c) / PI * 180 << \" 度\" << endl;\n    cout << \"(1,0) 与 (-1,0) 的夹角: \" << angleBetween(a, Vec(-1, 0)) / PI * 180 << \" 度\" << endl;\n\n    Vec d(3, 4), e(4, -3);\n    cout << \"(3,4)·(4,-3) = \" << d.dot(e) << \" => \";\n    if (d.dot(e) == 0) cout << \"垂直\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "acos(-1.0) 是获取 PI 的标准方法",
+        "点积除以长度乘积得到 cos(θ)，再用 acos 求弧度",
+        "浮点误差可能导致 cosTheta 超出 [-1,1]，必须 clamp",
+        "弧度转角度：乘以 180/PI"
+      ],
+      "commonMistakes": [
+        {
+          "title": "acos 参数越界",
+          "description": "浮点误差导致 cosTheta 超过 1 或小于 -1，使 acos 返回 nan",
+          "fix": "计算 cosTheta 后用 if 语句将其限制在 [-1, 1] 范围内"
+        },
+        {
+          "title": "弧度角度混淆",
+          "description": "C++ 三角函数使用弧度制，但题目可能要求角度",
+          "fix": "弧度转角度乘 180/PI，角度转弧度乘 PI/180"
+        }
+      ],
+      "practice": {
+        "prompt": "给定三个点 A、B、C，求 ∠ABC（即 BA 和 BC 的夹角），输出角度值。",
+        "hint": "构造向量 BA = A-B 和 BC = C-B，用夹角公式计算。",
+        "expectedIdea": "以 B 为顶点，构造 BA 和 BC 两个向量，用点积公式求夹角"
+      },
+      "quiz": [
+        {
+          "question": "向量 (1, 0) 和 (0, 1) 的夹角是多少？",
+          "options": [
+            "30°",
+            "45°",
+            "60°",
+            "90°"
+          ],
+          "answerIndex": 3,
+          "explanation": "点积 = 1×0 + 0×1 = 0，点积为 0 说明两向量垂直，夹角为 90°"
+        },
+        {
+          "question": "如果两个向量的点积为负数，它们的夹角是什么范围？",
+          "options": [
+            "0° 到 90°",
+            "90° 到 180°",
+            "等于 90°",
+            "等于 180°"
+          ],
+          "answerIndex": 1,
+          "explanation": "cos(θ) < 0 说明 θ > 90°，而向量夹角范围是 [0°, 180°]，所以夹角在 90° 到 180° 之间"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.7",
+      "title": "直线方程",
+      "learningGoal": "掌握直线的三种常见方程形式：点斜式、两点式、一般式，学会在编程中表示和判断直线",
+      "explanation": "【点斜式】\n已知直线上一点 (x₀, y₀) 和斜率 k：\n  y - y₀ = k(x - x₀)\n\n【两点式】\n已知直线上两点 (x₁, y₁) 和 (x₂, y₂)：\n  (y - y₁) / (y₂ - y₁) = (x - x₁) / (x₂ - x₁)\n\n斜率 k = (y₂ - y₁) / (x₂ - x₁)\n\n【一般式】\n  Ax + By + C = 0\n其中 A、B 不全为零。\n一般式可以表示所有直线，包括垂直线。\n\n【点斜式 → 一般式】\ny - y₀ = k(x - x₀)\nkx - y + (y₀ - kx₀) = 0\n即 A = k, B = -1, C = y₀ - kx₀\n\n【两点 → 一般式】\nA = y₁ - y₂\nB = x₂ - x₁\nC = x₁y₂ - x₂y₁\n\n【判断点在直线上】\n将点代入一般式，若 Ax + By + C = 0 则在直线上。",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Line {\n    double A, B, C;\n    Line(double A, double B, double C) : A(A), B(B), C(C) {}\n    static Line fromTwoPoints(double x1, double y1, double x2, double y2) {\n        return Line(y1 - y2, x2 - x1, x1 * y2 - x2 * y1);\n    }\n    static Line fromPointSlope(double x0, double y0, double k) {\n        return Line(k, -1, y0 - k * x0);\n    }\n    bool contains(double x, double y) const {\n        return fabs(A * x + B * y + C) < 1e-9;\n    }\n    double slope() const {\n        if (fabs(B) < 1e-9) return 1e18;\n        return -A / B;\n    }\n};\n\nint main() {\n    Line l1 = Line::fromTwoPoints(1, 2, 3, 6);\n    cout << \"过 (1,2) 和 (3,6) 的直线: \" << l1.A << \"x + \" << l1.B << \"y + \" << l1.C << \" = 0\" << endl;\n    cout << \"斜率: \" << l1.slope() << endl;\n    cout << \"(2,4) 在直线上? \" << (l1.contains(2, 4) ? \"是\" : \"否\") << endl;\n    cout << \"(0,0) 在直线上? \" << (l1.contains(0, 0) ? \"是\" : \"否\") << endl;\n\n    Line l2 = Line::fromPointSlope(1, 1, 2);\n    cout << \"过 (1,1) 斜率 2 的直线: \" << l2.A << \"x + \" << l2.B << \"y + \" << l2.C << \" = 0\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "用一般式 Ax+By+C=0 统一表示直线，包括垂直线",
+        "从两点构造直线：A=y₁-y₂, B=x₂-x₁, C=x₁y₂-x₂y₁",
+        "判断点在直线上时用 fabs < eps 而非 == 0",
+        "斜率不存在时（垂直线）B≈0，返回极大值表示"
+      ],
+      "commonMistakes": [
+        {
+          "title": "垂直线无法用点斜式表示",
+          "description": "垂直于 x 轴的直线斜率不存在，用 y = kx + b 无法表示",
+          "fix": "使用一般式 Ax + By + C = 0 可以表示所有直线，包括垂直线"
+        },
+        {
+          "title": "浮点精度判断",
+          "description": "用 == 0 判断点是否在直线上，由于浮点误差永远不成立",
+          "fix": "用 fabs(Ax + By + C) < 1e-9 判断，允许微小误差"
+        }
+      ],
+      "practice": {
+        "prompt": "给定两个点的坐标，求过这两点的直线方程（一般式），并判断第三个点是否在该直线上。",
+        "hint": "用两点式公式求 A、B、C，再将第三个点代入方程判断。",
+        "expectedIdea": "用公式 A=y₁-y₂, B=x₂-x₁, C=x₁y₂-x₂y₁ 构造直线，代入第三点判断"
+      },
+      "quiz": [
+        {
+          "question": "过点 (1, 2) 和 (3, 6) 的直线的斜率是多少？",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "0.5"
+          ],
+          "answerIndex": 1,
+          "explanation": "斜率 k = (6-2)/(3-1) = 4/2 = 2"
+        },
+        {
+          "question": "直线 2x - 3y + 6 = 0 的一般式系数 A, B, C 分别是？",
+          "options": [
+            "2, -3, 6",
+            "2, 3, 6",
+            "2, -3, -6",
+            "-2, 3, 6"
+          ],
+          "answerIndex": 0,
+          "explanation": "一般式 Ax + By + C = 0，对照可得 A=2, B=-3, C=6"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.8",
+      "title": "两点距离",
+      "learningGoal": "掌握二维平面上两点间距离公式：d = sqrt((x₂-x₁)² + (y₂-y₁)²)，理解其与勾股定理的关系",
+      "explanation": "【两点距离公式】\n平面上两点 A(x₁, y₁) 和 B(x₂, y₂) 之间的距离：\n  d = sqrt((x₂-x₁)² + (y₂-y₁)²)\n\n【与勾股定理的关系】\n将 A、B 两点分别向 x 轴和 y 轴作投影，\n构成一个直角三角形：\n  - 水平边长 = |x₂ - x₁|\n  - 竖直边长 = |y₂ - y₁|\n  - 斜边 = AB 的距离\n由勾股定理：d² = (x₂-x₁)² + (y₂-y₁)²\n\n【距离平方】\n在比较距离大小时，用距离平方可以避免开方：\n  d² = (x₂-x₁)² + (y₂-y₁)²\n\n【编程技巧】\n- 比较距离时用距离平方\n- 求精确距离时用 sqrt\n- 注意使用 double 类型",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\ndouble distance(double x1, double y1, double x2, double y2) {\n    double dx = x2 - x1;\n    double dy = y2 - y1;\n    return sqrt(dx * dx + dy * dy);\n}\n\ndouble distance2(double x1, double y1, double x2, double y2) {\n    double dx = x2 - x1;\n    double dy = y2 - y1;\n    return dx * dx + dy * dy;\n}\n\nint main() {\n    double x1 = 1, y1 = 2;\n    double x2 = 4, y2 = 6;\n\n    cout << \"A(\" << x1 << \",\" << y1 << \") 到 B(\" << x2 << \",\" << y2 << \") 的距离: \"\n         << distance(x1, y1, x2, y2) << endl;\n    cout << \"距离平方: \" << distance2(x1, y1, x2, y2) << endl;\n\n    double x3 = 1, y3 = 2;\n    double x4 = 4, y4 = 6;\n    double x5 = 5, y5 = 5;\n\n    double d1 = distance2(x1, y1, x3, y3);\n    double d2 = distance2(x1, y1, x5, y5);\n    cout << \"A 到 C 更近\" << (d1 < d2 ? \"是\" : \"否\") << endl;\n\n    double x0 = 0, y0 = 0;\n    double radius = 5.0;\n    double px = 3, py = 4;\n    cout << \"点 (3,4) 到原点距离: \" << distance(x0, y0, px, py) << endl;\n    cout << \"在半径 5 的圆内? \" << (distance2(x0, y0, px, py) <= radius * radius ? \"是\" : \"否\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "distance() 用 sqrt 计算精确距离",
+        "distance2() 只计算距离平方，用于比较大小更高效",
+        "判断点是否在圆内时，比较距离平方和半径平方即可",
+        "dx 和 dy 提前计算，避免重复运算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记开方",
+          "description": "需要精确距离时只算了距离平方，忘记开方",
+          "fix": "需要距离值时记得调用 sqrt，仅比较大小时可以不开方"
+        },
+        {
+          "title": "整数溢出",
+          "description": "坐标用 int 存储，距离平方超出 int 范围",
+          "fix": "坐标和距离计算都用 double 类型，避免溢出和精度问题"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个点的坐标和一个圆心 (cx, cy) 及半径 r，统计有多少个点在圆内（含边界）。",
+        "hint": "对每个点计算到圆心的距离平方，与 r² 比较。",
+        "expectedIdea": "遍历每个点，计算 (x-cx)²+(y-cy)²，判断是否 ≤ r²"
+      },
+      "quiz": [
+        {
+          "question": "点 (1, 2) 到点 (4, 6) 的距离是多少？",
+          "options": [
+            "3",
+            "5",
+            "7",
+            "25"
+          ],
+          "answerIndex": 1,
+          "explanation": "d = sqrt((4-1)² + (6-2)²) = sqrt(9+16) = sqrt(25) = 5"
+        },
+        {
+          "question": "要判断点 P 是否在以原点为圆心、半径为 5 的圆内，最高效的方法是？",
+          "options": [
+            "计算 distance 并与 5 比较",
+            "计算 distance² 并与 25 比较",
+            "计算 distance² 并与 5 比较",
+            "计算 distance 并与 25 比较"
+          ],
+          "answerIndex": 1,
+          "explanation": "比较 x²+y² 与 25（即 5²），无需开方，效率最高"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.9",
+      "title": "点到直线距离",
+      "learningGoal": "掌握点到直线的距离公式：d = |Ax₀ + By₀ + C| / sqrt(A² + B²)，理解公式推导",
+      "explanation": "【点到直线距离公式】\n直线 Ax + By + C = 0，点 P(x₀, y₀) 到直线的距离：\n  d = |Ax₀ + By₀ + C| / sqrt(A² + B²)\n\n【公式推导思路】\n1. 设直线上与 P 最近的点为 Q\n2. PQ 垂直于直线，PQ 就是距离 d\n3. 直线法向量 n = (A, B)\n4. 将 P 代入方程的绝对值 |Ax₀ + By₀ + C| 是沿法线方向的'偏移量'\n5. 除以法向量长度 sqrt(A² + B²) 就得到垂直距离\n\n【特殊情况】\n- 点在直线上：d = 0\n- A² + B² = 0：不是有效直线\n\n【常用场景】\n- 判断点与直线的位置关系\n- 求点到线段的最近距离（需额外判断）\n- 计算平行线之间的距离",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Line {\n    double A, B, C;\n};\n\ndouble pointToLineDist(double px, double py, Line l) {\n    return fabs(l.A * px + l.B * py + l.C) / sqrt(l.A * l.A + l.B * l.B);\n}\n\nLine fromTwoPoints(double x1, double y1, double x2, double y2) {\n    return {y1 - y2, x2 - x1, x1 * y2 - x2 * y1};\n}\n\nint main() {\n    Line l = {3, 4, -5};\n\n    double px = 1, py = 1;\n    double d = pointToLineDist(px, py, l);\n    cout << \"点 (1,1) 到直线 3x+4y-5=0 的距离: \" << d << endl;\n\n    Line l2 = fromTwoPoints(0, 0, 3, 4);\n    double d2 = pointToLineDist(1, 2, l2);\n    cout << \"点 (1,2) 到过 (0,0) 和 (3,4) 直线的距离: \" << d2 << endl;\n\n    double d3 = pointToLineDist(0, 0, l2);\n    cout << \"原点到该直线的距离: \" << d3 << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "分子 fabs(Ax+By+C) 是将点代入方程取绝对值",
+        "分母 sqrt(A²+B²) 是法向量 (A,B) 的长度",
+        "从两点构造直线时用公式 A=y₁-y₂, B=x₂-x₁, C=x₁y₂-x₂y₁",
+        "点在直线上时距离为 0（代入方程值为 0）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记取绝对值",
+          "description": "计算距离时忘记对 Ax₀+By₀+C 取绝对值，可能得到负数",
+          "fix": "距离必须非负，公式中要加 fabs 或 abs"
+        },
+        {
+          "title": "直线方程不标准",
+          "description": "直线方程没有化成一般式 Ax+By+C=0 就直接套公式",
+          "fix": "先确认直线方程是一般式，例如 y=2x+1 要化为 2x-y+1=0"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一条直线（一般式 A, B, C）和 n 个点，找出离直线最远的点及其距离。",
+        "hint": "对每个点用距离公式计算，维护最大值。",
+        "expectedIdea": "遍历所有点，用点到直线距离公式计算，维护最大距离和对应点"
+      },
+      "quiz": [
+        {
+          "question": "点 (1, 1) 到直线 3x + 4y - 5 = 0 的距离是多少？",
+          "options": [
+            "2/5",
+            "2",
+            "5/2",
+            "1"
+          ],
+          "answerIndex": 0,
+          "explanation": "d = |3×1 + 4×1 - 5| / sqrt(9+16) = |2| / 5 = 2/5"
+        },
+        {
+          "question": "如果点 P 恰好在直线 L 上，那么点 P 到 L 的距离是？",
+          "options": [
+            "无法确定",
+            "等于 1",
+            "等于 0",
+            "取决于直线的斜率"
+          ],
+          "answerIndex": 2,
+          "explanation": "点在直线上，代入方程 Ax+By+C=0，分子为 0，距离为 0"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.10",
+      "title": "线段关系",
+      "learningGoal": "掌握判断两条线段是否相交的方法，理解叉积在判断中的应用",
+      "explanation": "【线段相交判断】\n判断线段 P₁P₂ 和 Q₁Q₂ 是否相交，分两步：\n\n【快速排斥实验】\n如果两条线段的最小包围矩形（ bounding box）不相交，\n则线段一定不相交。这是快速排除不相交的情况。\n\n【跨立实验（叉积判断）】\n如果线段 P₁P₂ 的两端点在 Q₁Q₂ 的两侧，\n且线段 Q₁Q₂ 的两端点在 P₁P₂ 的两侧，\n则两线段相交。\n\n用叉积判断：\n  cross(Q₁Q₂, Q₁P₁) × cross(Q₁Q₂, Q₁P₂) ≤ 0\n  cross(P₁P₂, P₁Q₁) × cross(P₁P₂, P₁Q₂) ≤ 0\n两个条件同时成立则相交。\n\n【叉积】\ncross(a, b) = a.x × b.y - a.y × b.x\n叉积 > 0：b 在 a 的逆时针方向\n叉积 < 0：b 在 a 的顺时针方向\n叉积 = 0：共线",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nstruct Point {\n    double x, y;\n    Point(double x = 0, double y = 0) : x(x), y(y) {}\n    Point operator-(const Point& b) const { return Point(x - b.x, y - b.y); }\n};\n\ndouble cross(Point a, Point b) {\n    return a.x * b.y - a.y * b.x;\n}\n\ndouble direction(Point pi, Point pj, Point pk) {\n    return cross(pk - pi, pj - pi);\n}\n\nbool onSegment(Point pi, Point pj, Point pk) {\n    double minX = min(pi.x, pj.x), maxX = max(pi.x, pj.x);\n    double minY = min(pi.y, pj.y), maxY = max(pi.y, pj.y);\n    return pk.x >= minX && pk.x <= maxX && pk.y >= minY && pk.y <= maxY;\n}\n\nbool segmentsIntersect(Point p1, Point p2, Point p3, Point p4) {\n    double d1 = direction(p3, p4, p1);\n    double d2 = direction(p3, p4, p2);\n    double d3 = direction(p1, p2, p3);\n    double d4 = direction(p1, p2, p4);\n\n    if (((d1 > 0 && d2 < 0) || (d1 < 0 && d2 > 0)) &&\n        ((d3 > 0 && d4 < 0) || (d3 < 0 && d4 > 0)))\n        return true;\n\n    if (d1 == 0 && onSegment(p3, p4, p1)) return true;\n    if (d2 == 0 && onSegment(p3, p4, p2)) return true;\n    if (d3 == 0 && onSegment(p1, p2, p3)) return true;\n    if (d4 == 0 && onSegment(p1, p2, p4)) return true;\n\n    return false;\n}\n\nint main() {\n    Point a(0, 0), b(2, 2);\n    Point c(0, 2), d(2, 0);\n    cout << \"(0,0)-(2,2) 与 (0,2)-(2,0) 相交? \"\n         << (segmentsIntersect(a, b, c, d) ? \"是\" : \"否\") << endl;\n\n    Point e(0, 0), f(1, 1), g(2, 2), h(3, 3);\n    cout << \"(0,0)-(1,1) 与 (2,2)-(3,3) 相交? \"\n         << (segmentsIntersect(e, f, g, h) ? \"是\" : \"否\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "叉积 cross(a,b) = ax*by - ay*bx，用于判断方向",
+        "direction 函数计算点 pk 相对于线段 pi-pj 的位置",
+        "叉积异号说明点在线段两侧（跨立）",
+        "叉积为零时需要额外判断点是否在线段上（共线情况）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忽略共线情况",
+          "description": "只做了跨立实验，没有处理叉积为 0（共线）的情况",
+          "fix": "叉积为 0 时额外判断点是否在线段的范围内"
+        },
+        {
+          "title": "混淆直线相交和线段相交",
+          "description": "两条直线相交但对应线段不一定相交",
+          "fix": "直线相交只看方向，线段相交还需判断交点是否在两线段范围内"
+        }
+      ],
+      "practice": {
+        "prompt": "给定两条线段的端点坐标，判断它们是否相交。如果相交，输出 \"YES\"，否则输出 \"NO\"。",
+        "hint": "使用跨立实验：分别判断每条线段的端点是否在另一条线段的两侧。",
+        "expectedIdea": "用叉积做跨立实验，同时处理共线特殊情况"
+      },
+      "quiz": [
+        {
+          "question": "线段 (0,0)-(2,2) 和 (0,2)-(2,0) 是否相交？",
+          "options": [
+            "相交于 (1,1)",
+            "不相交",
+            "共线",
+            "端点重合"
+          ],
+          "answerIndex": 0,
+          "explanation": "两条线段互相交叉，交点为 (1,1)，跨立实验可以通过"
+        },
+        {
+          "question": "叉积 cross(a, b) > 0 表示什么？",
+          "options": [
+            "b 在 a 的顺时针方向",
+            "b 在 a 的逆时针方向",
+            "a 和 b 共线",
+            "a 和 b 垂直"
+          ],
+          "answerIndex": 1,
+          "explanation": "叉积大于 0 表示从 a 到 b 是逆时针方向（在标准坐标系中）"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.11",
+      "title": "面积计算",
+      "learningGoal": "掌握矩形、三角形、圆的面积计算公式，学会在编程中灵活运用",
+      "explanation": "【矩形面积】\nS = 长 × 宽\n如果矩形由左下角 (x₁, y₁) 和右上角 (x₂, y₂) 确定：\n  S = (x₂ - x₁) × (y₂ - y₁)\n\n【三角形面积】\n1. 底 × 高 ÷ 2：S = base × height / 2\n2. 已知三边（海伦公式）：\n   p = (a + b + c) / 2\n   S = sqrt(p(p-a)(p-b)(p-c))\n3. 已知三个顶点坐标：\n   S = |x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)| / 2\n   等价于叉积法：S = |cross(AB, AC)| / 2\n\n【圆的面积】\nS = π × r²\n其中 π ≈ 3.14159265358979\n\n【编程技巧】\n- π 用 acos(-1.0) 获取最精确值\n- 注意绝对值处理",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nconst double PI = acos(-1.0);\n\ndouble rectArea(double x1, double y1, double x2, double y2) {\n    return fabs((x2 - x1) * (y2 - y1));\n}\n\ndouble triangleArea(double x1, double y1, double x2, double y2, double x3, double y3) {\n    return fabs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2.0;\n}\n\ndouble circleArea(double r) {\n    return PI * r * r;\n}\n\ndouble heronArea(double a, double b, double c) {\n    double p = (a + b + c) / 2.0;\n    return sqrt(p * (p - a) * (p - b) * (p - c));\n}\n\nint main() {\n    cout << \"矩形面积: \" << rectArea(0, 0, 4, 3) << endl;\n    cout << \"三角形面积(坐标法): \" << triangleArea(0, 0, 4, 0, 0, 3) << endl;\n    cout << \"三角形面积(海伦公式): \" << heronArea(3, 4, 5) << endl;\n    cout << \"圆面积(r=5): \" << circleArea(5) << endl;\n\n    double x1 = 0, y1 = 0, x2 = 3, y2 = 0, x3 = 1, y3 = 4;\n    cout << \"三角形 (0,0)(3,0)(1,4) 面积: \" << triangleArea(x1, y1, x2, y2, x3, y3) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "三角形坐标面积公式本质是叉积：|cross(AB, AC)|/2",
+        "海伦公式需要先算半周长 p = (a+b+c)/2",
+        "PI 用 acos(-1.0) 获取最精确的 π 值",
+        "用 fabs 确保面积为正值"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记除以 2",
+          "description": "用坐标法或叉积法计算三角形面积时忘记除以 2",
+          "fix": "三角形面积 = |叉积| / 2，别忘了最后的除以 2"
+        },
+        {
+          "title": "海伦公式精度问题",
+          "description": "三边很长时 p*(p-a)*(p-b)*(p-c) 可能为负（浮点误差）",
+          "fix": "对 sqrt 内的值取 max(0, ...) 防止负数开方"
+        }
+      ],
+      "practice": {
+        "prompt": "给定三角形三个顶点的坐标，用坐标法计算三角形面积，并判断它是否为直角三角形。",
+        "hint": "面积用叉积公式。判断直角：检查三边长度是否满足勾股定理。",
+        "expectedIdea": "用叉积公式求面积，计算三边长度平方，检查是否满足 a²+b²=c²"
+      },
+      "quiz": [
+        {
+          "question": "顶点为 (0,0)、(4,0)、(0,3) 的三角形面积是多少？",
+          "options": [
+            "12",
+            "7",
+            "6",
+            "5"
+          ],
+          "answerIndex": 2,
+          "explanation": "S = |0×(0-3) + 4×(3-0) + 0×(0-0)| / 2 = |12| / 2 = 6"
+        },
+        {
+          "question": "半径为 3 的圆的面积约为？（取 π ≈ 3.14）",
+          "options": [
+            "9.42",
+            "18.84",
+            "28.26",
+            "6.28"
+          ],
+          "answerIndex": 2,
+          "explanation": "S = π × r² = 3.14 × 9 = 28.26"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.12",
+      "title": "欧氏距离",
+      "learningGoal": "掌握二维和多维欧氏距离的计算方法，学会在信奥竞赛中灵活运用距离概念",
+      "explanation": "【二维欧氏距离】\n两点 A(x₁, y₁) 和 B(x₂, y₂)：\n  d = sqrt((x₂-x₁)² + (y₂-y₁)²)\n\n【多维欧氏距离】\n两个 n 维点 A(a₁, a₂, ..., aₙ) 和 B(b₁, b₂, ..., bₙ)：\n  d = sqrt(Σ(bᵢ-aᵢ)²)  (i=1 到 n)\n\n即各维度差值平方之和再开方。\n\n【其他常见距离】\n1. 曼哈顿距离：d = |x₂-x₁| + |y₂-y₁|\n2. 切比雪夫距离：d = max(|x₂-x₁|, |y₂-y₁|)\n\n【距离的应用】\n1. 最近点对问题\n2. K-means 聚类\n3. 判断图形关系\n4. 路径规划\n\n【编程注意事项】\n- 比较距离时用距离平方避免开方\n- 高维距离注意数值范围，防止溢出",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\ndouble euclidean(double x1, double y1, double x2, double y2) {\n    double dx = x2 - x1, dy = y2 - y1;\n    return sqrt(dx * dx + dy * dy);\n}\n\ndouble euclideanND(double a[], double b[], int n) {\n    double sum = 0;\n    for (int i = 0; i < n; i++) {\n        double diff = b[i] - a[i];\n        sum += diff * diff;\n    }\n    return sqrt(sum);\n}\n\ndouble manhattan(double x1, double y1, double x2, double y2) {\n    return fabs(x2 - x1) + fabs(y2 - y1);\n}\n\ndouble chebyshev(double x1, double y1, double x2, double y2) {\n    return max(fabs(x2 - x1), fabs(y2 - y1));\n}\n\nint main() {\n    cout << \"欧氏距离: \" << euclidean(1, 2, 4, 6) << endl;\n    cout << \"曼哈顿距离: \" << manhattan(1, 2, 4, 6) << endl;\n    cout << \"切比雪夫距离: \" << chebyshev(1, 2, 4, 6) << endl;\n\n    double a[] = {1, 2, 3};\n    double b[] = {4, 6, 3};\n    cout << \"3D 欧氏距离: \" << euclideanND(a, b, 3) << endl;\n\n    int n = 5;\n    double pts[5][2] = {{0,0},{3,4},{1,1},{5,5},{2,7}};\n    double maxDist = 0;\n    for (int i = 0; i < n; i++)\n        for (int j = i + 1; j < n; j++) {\n            double d = euclidean(pts[i][0], pts[i][1], pts[j][0], pts[j][1]);\n            if (d > maxDist) maxDist = d;\n        }\n    cout << \"最远两点距离: \" << maxDist << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "多维欧氏距离是各维度差值平方求和再开方",
+        "曼哈顿距离是各维度差值绝对值之和",
+        "切比雪夫距离是各维度差值绝对值的最大值",
+        "求最远点对时暴力枚举 O(n²)，大数据需用更优算法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆不同距离定义",
+          "description": "题目要求曼哈顿距离却用了欧氏距离，或反之",
+          "fix": "仔细读题确认距离类型：欧氏（直线）、曼哈顿（横竖走）、切比雪夫（棋盘距离）"
+        },
+        {
+          "title": "高维距离溢出",
+          "description": "维度很多时，差值平方之和可能超出 double 范围",
+          "fix": "使用 long double 或分段计算，信奥中维度通常不大"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个二维点和目标点 P，找出离 P 曼哈顿距离最近的点，输出该点和距离。",
+        "hint": "对每个点计算 |x-xp| + |y-yp|，找最小值。",
+        "expectedIdea": "遍历所有点，计算曼哈顿距离，维护最小值"
+      },
+      "quiz": [
+        {
+          "question": "点 (1, 2) 和 (4, 6) 的曼哈顿距离是多少？",
+          "options": [
+            "5",
+            "7",
+            "3",
+            "4"
+          ],
+          "answerIndex": 1,
+          "explanation": "曼哈顿距离 = |4-1| + |6-2| = 3 + 4 = 7"
+        },
+        {
+          "question": "三维点 (1,2,3) 和 (4,6,3) 的欧氏距离是多少？",
+          "options": [
+            "5",
+            "7",
+            "sqrt(25)",
+            "sqrt(50)"
+          ],
+          "answerIndex": 2,
+          "explanation": "d = sqrt((4-1)²+(6-2)²+(3-3)²) = sqrt(9+16+0) = sqrt(25) = 5"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.13",
+      "title": "向量点积",
+      "learningGoal": "掌握向量点积的计算 a·b = x₁x₂ + y₁y₂，理解点积的几何意义和应用",
+      "explanation": "【点积定义】\n向量 a = (x₁, y₁) 和 b = (x₂, y₂) 的点积：\n  a · b = x₁ × x₂ + y₁ × y₂\n\n点积的结果是一个标量（数值），不是向量。\n\n【几何意义】\na · b = |a| × |b| × cos(θ)\n其中 θ 是两向量的夹角。\n\n【点积的应用】\n1. 判断垂直：a · b = 0 ⟹ a ⊥ b\n2. 判断方向：\n   - a · b > 0：夹角为锐角（同向趋势）\n   - a · b < 0：夹角为钝角（反向趋势）\n3. 计算夹角：cos(θ) = (a·b) / (|a||b|)\n4. 计算投影：a 在 b 上的投影长度 = (a·b) / |b|\n\n【运算律】\n1. 交换律：a · b = b · a\n2. 分配律：a · (b + c) = a · b + a · c\n3. 数乘结合律：(ka) · b = k(a · b)",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Vec {\n    double x, y;\n    Vec(double x = 0, double y = 0) : x(x), y(y) {}\n    double dot(const Vec& b) const { return x * b.x + y * b.y; }\n    double len() const { return sqrt(x * x + y * y); }\n    Vec operator-(const Vec& b) const { return Vec(x - b.x, y - b.y); }\n};\n\nbool isPerpendicular(Vec a, Vec b) {\n    return fabs(a.dot(b)) < 1e-9;\n}\n\ndouble projection(Vec a, Vec b) {\n    return a.dot(b) / b.len();\n}\n\nint main() {\n    Vec a(3, 4), b(4, -3);\n    cout << \"(3,4)·(4,-3) = \" << a.dot(b) << endl;\n    cout << \"垂直? \" << (isPerpendicular(a, b) ? \"是\" : \"否\") << endl;\n\n    Vec c(1, 0), d(1, 1);\n    cout << \"(1,0)·(1,1) = \" << c.dot(d) << endl;\n    cout << \"(1,0) 在 (1,1) 上的投影长度: \" << projection(c, d) << endl;\n\n    Vec e(2, 3), f(-1, 4);\n    double dp = e.dot(f);\n    cout << \"(2,3)·(-1,4) = \" << dp;\n    if (dp > 0) cout << \" (锐角)\";\n    else if (dp < 0) cout << \" (钝角)\";\n    else cout << \" (垂直)\";\n    cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "点积 dot = x1*x2 + y1*y2，结果是标量不是向量",
+        "点积为 0 说明两向量垂直",
+        "点积 > 0 锐角，< 0 钝角，= 0 垂直",
+        "投影长度 = dot(a,b) / |b|，是 a 在 b 方向上的分量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆点积和叉积",
+          "description": "把点积（结果为标量）和叉积（结果为向量/标量）搞混",
+          "fix": "点积是 x₁x₂+y₁y₂（对应相乘相加），叉积是 x₁y₂-x₂y₁（交叉相乘相减）"
+        },
+        {
+          "title": "浮点判断垂直",
+          "description": "用 dot == 0 判断垂直，浮点误差导致永远不成立",
+          "fix": "用 fabs(dot) < 1e-9 判断近似为零"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个向量，判断哪些向量与向量 (3, 4) 垂直，输出它们的编号。",
+        "hint": "与 (3,4) 垂直的向量 v 满足 3*vx + 4*vy = 0。",
+        "expectedIdea": "对每个向量计算与 (3,4) 的点积，fabs < eps 则垂直"
+      },
+      "quiz": [
+        {
+          "question": "向量 (3, 4) 和 (4, -3) 的点积是多少？",
+          "options": [
+            "25",
+            "0",
+            "-7",
+            "24"
+          ],
+          "answerIndex": 1,
+          "explanation": "a·b = 3×4 + 4×(-3) = 12 - 12 = 0，两向量垂直"
+        },
+        {
+          "question": "向量 a·b > 0 说明两向量的夹角是什么？",
+          "options": [
+            "钝角",
+            "直角",
+            "锐角",
+            "180°"
+          ],
+          "answerIndex": 2,
+          "explanation": "点积 > 0 即 cos(θ) > 0，说明 θ < 90°，为锐角"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.14",
+      "title": "向量叉积",
+      "learningGoal": "掌握叉积计算 cross(a,b) = x₁y₂ - x₂y₁，理解叉积判断方向和求面积的应用",
+      "explanation": "【叉积定义】\n二维向量 a = (x₁, y₁) 和 b = (x₂, y₂) 的叉积：\n  a × b = x₁ × y₂ - x₂ × y₁\n\n结果是一个标量（二维情况）。\n\n【几何意义】\n|a × b| = |a| × |b| × sin(θ)\n叉积的绝对值等于两向量构成的平行四边形面积。\n三角形面积 = |a × b| / 2\n\n【方向判断】\n  - a × b > 0：b 在 a 的逆时针方向（左转）\n  - a × b < 0：b 在 a 的顺时针方向（右转）\n  - a × b = 0：两向量共线\n\n【应用】\n1. 判断点在直线的哪一侧\n2. 判断线段相交（跨立实验）\n3. 计算多边形面积\n4. 判断多边形顶点的排列方向（顺/逆时针）\n5. 凸包算法中的极角排序",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nstruct Point {\n    double x, y;\n    Point(double x = 0, double y = 0) : x(x), y(y) {}\n    Point operator-(const Point& b) const { return Point(x - b.x, y - b.y); }\n};\n\ndouble cross(Point a, Point b) {\n    return a.x * b.y - a.y * b.x;\n}\n\ndouble triangleArea(Point a, Point b, Point c) {\n    return fabs(cross(b - a, c - a)) / 2.0;\n}\n\nint direction(Point a, Point b, Point c) {\n    double cp = cross(b - a, c - a);\n    if (cp > 1e-9) return 1;\n    if (cp < -1e-9) return -1;\n    return 0;\n}\n\nint main() {\n    Point a(1, 0), b(0, 1);\n    cout << \"cross((1,0),(0,1)) = \" << cross(a, b) << \" (逆时针)\" << endl;\n    cout << \"cross((0,1),(1,0)) = \" << cross(b, a) << \" (顺时针)\" << endl;\n\n    Point p1(0, 0), p2(4, 0), p3(0, 3);\n    cout << \"三角形面积: \" << triangleArea(p1, p2, p3) << endl;\n\n    Point o(0, 0), x(1, 0), y1(1, 1), y2(1, -1);\n    cout << \"(1,1) 在 x 轴的: \" << (direction(o, x, y1) > 0 ? \"左侧\" : \"右侧\") << endl;\n    cout << \"(1,-1) 在 x 轴的: \" << (direction(o, x, y2) > 0 ? \"左侧\" : \"右侧\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "叉积 cross(a,b) = ax*by - ay*bx，注意是交叉相乘",
+        "叉积 > 0 逆时针（左转），< 0 顺时针（右转），= 0 共线",
+        "三角形面积 = |叉积| / 2，平行四边形面积 = |叉积|",
+        "direction 函数用叉积判断点在直线的哪一侧"
+      ],
+      "commonMistakes": [
+        {
+          "title": "叉积顺序搞反",
+          "description": "cross(a, b) 和 cross(b, a) 符号相反，顺序弄反会得到错误的方向判断",
+          "fix": "记住 cross(a,b) = -cross(b,a)，使用时保持一致的参数顺序"
+        },
+        {
+          "title": "忘记取绝对值",
+          "description": "用叉积求面积时忘记取绝对值，可能得到负数面积",
+          "fix": "面积 = |叉积| / 2，必须用 fabs 取绝对值"
+        }
+      ],
+      "practice": {
+        "prompt": "给定三个点 A、B、C，判断 C 在有向直线 AB 的左侧还是右侧（或共线），并求三角形 ABC 的面积。",
+        "hint": "用叉积 cross(B-A, C-A) 判断方向，取绝对值除以 2 求面积。",
+        "expectedIdea": "计算叉积 cross(B-A, C-A)，正为左侧，负为右侧，零为共线"
+      },
+      "quiz": [
+        {
+          "question": "向量 (1, 0) × (0, 1) 的叉积是多少？",
+          "options": [
+            "1",
+            "-1",
+            "0",
+            "2"
+          ],
+          "answerIndex": 0,
+          "explanation": "cross = 1×1 - 0×0 = 1，正值说明 (0,1) 在 (1,0) 的逆时针方向"
+        },
+        {
+          "question": "用叉积计算，顶点 (0,0)、(4,0)、(0,3) 构成的三角形面积是多少？",
+          "options": [
+            "12",
+            "6",
+            "3",
+            "24"
+          ],
+          "answerIndex": 1,
+          "explanation": "cross((4,0),(0,3)) = 4×3-0×0 = 12，面积 = |12|/2 = 6"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.15",
+      "title": "凸包",
+      "learningGoal": "理解凸包的概念，掌握 Graham 扫描法求凸包的过程和实现",
+      "explanation": "【凸包定义】\n给定平面上的一些点，凸包是包含所有点的最小凸多边形。\n可以想象为用一根橡皮筋包围所有点，橡皮筋的形状就是凸包。\n\n【Graham 扫描法】\n步骤：\n1. 找到最下方的点（y 最小，y 相同取 x 最小）作为起点 P₀\n2. 将其余点按相对于 P₀ 的极角排序（用叉积比较）\n3. 用栈维护凸包顶点：\n   - 对每个新点，检查栈顶两个点与新点是否左转\n   - 如果不是左转（右转或共线），弹出栈顶\n   - 将新点压入栈\n4. 栈中的点就是凸包顶点（逆时针排列）\n\n【极角排序】\n用叉积比较两个点相对于 P₀ 的极角：\n  cross(P₁-P₀, P₂-P₀) > 0 → P₁ 极角更小\n  = 0 → 极角相同，距离近的排前面\n\n【时间复杂度】\nO(n log n)，瓶颈在排序。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <cmath>\nusing namespace std;\n\nstruct Point {\n    double x, y;\n    Point(double x = 0, double y = 0) : x(x), y(y) {}\n    Point operator-(const Point& b) const { return Point(x - b.x, y - b.y); }\n};\n\ndouble cross(Point a, Point b) { return a.x * b.y - a.y * b.x; }\ndouble dist2(Point a, Point b) {\n    return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);\n}\n\nPoint pivot;\nbool angleCmp(Point a, Point b) {\n    double c = cross(a - pivot, b - pivot);\n    if (fabs(c) > 1e-9) return c > 0;\n    return dist2(pivot, a) < dist2(pivot, b);\n}\n\nvector<Point> convexHull(vector<Point>& pts) {\n    int n = pts.size();\n    if (n <= 1) return pts;\n\n    int minIdx = 0;\n    for (int i = 1; i < n; i++) {\n        if (pts[i].y < pts[minIdx].y ||\n            (pts[i].y == pts[minIdx].y && pts[i].x < pts[minIdx].x))\n            minIdx = i;\n    }\n    swap(pts[0], pts[minIdx]);\n    pivot = pts[0];\n\n    sort(pts.begin() + 1, pts.end(), angleCmp);\n\n    vector<Point> hull;\n    hull.push_back(pts[0]);\n    if (n > 1) hull.push_back(pts[1]);\n\n    for (int i = 2; i < n; i++) {\n        while (hull.size() >= 2) {\n            Point a = hull[hull.size() - 2];\n            Point b = hull[hull.size() - 1];\n            if (cross(b - a, pts[i] - a) <= 0)\n                hull.pop_back();\n            else break;\n        }\n        hull.push_back(pts[i]);\n    }\n    return hull;\n}\n\nint main() {\n    vector<Point> pts = {Point(0,0), Point(1,0), Point(2,0),\n                         Point(0,2), Point(1,1), Point(2,2), Point(3,1)};\n    vector<Point> hull = convexHull(pts);\n    cout << \"凸包顶点数: \" << hull.size() << endl;\n    for (auto& p : hull)\n        cout << \"(\" << p.x << \",\" << p.y << \") \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "先找最下方的点作为起点 pivot，保证极角排序正确",
+        "极角排序用叉积比较：叉积 > 0 说明 a 极角更小",
+        "用栈维护凸包，非左转就弹出，保证凸性",
+        "共线点用距离排序，近的排前面"
+      ],
+      "commonMistakes": [
+        {
+          "title": "起点选择错误",
+          "description": "没有选最下方（最左下）的点作为起点，导致极角排序错误",
+          "fix": "找 y 最小的点，y 相同找 x 最小的，确保所有极角在 [0, 2π) 内"
+        },
+        {
+          "title": "弹出条件写错",
+          "description": "栈维护时弹出条件写成 < 0 而非 <= 0，导致共线点未被正确处理",
+          "fix": "用 <= 0 弹出（非左转就弹），保留严格凸包；如果需要保留共线点则用 < 0"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个点的坐标，求凸包并计算凸包的周长。",
+        "hint": "先用 Graham 扫描法求凸包顶点，再依次计算相邻顶点之间的距离求和。",
+        "expectedIdea": "求凸包后遍历相邻顶点计算距离之和，注意首尾相连"
+      },
+      "quiz": [
+        {
+          "question": "Graham 扫描法的时间复杂度主要取决于哪一步？",
+          "options": [
+            "找起点",
+            "极角排序",
+            "栈操作",
+            "计算叉积"
+          ],
+          "answerIndex": 1,
+          "explanation": "排序是 O(n log n)，其余步骤是 O(n)，所以瓶颈在极角排序"
+        },
+        {
+          "question": "在 Graham 扫描中，什么情况下需要弹出栈顶？",
+          "options": [
+            "新点在栈顶两点的左侧",
+            "新点在栈顶两点的右侧或共线",
+            "新点的 y 坐标更大",
+            "新点的 x 坐标更小"
+          ],
+          "answerIndex": 1,
+          "explanation": "非左转（右转或共线）时弹出栈顶，保证凸包的凸性"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.16",
+      "title": "多边形面积",
+      "learningGoal": "掌握用叉积（鞋带公式）计算多边形面积的方法，理解公式的推导",
+      "explanation": "【鞋带公式（Shoelace Formula）】\n给定多边形 n 个顶点按顺序排列 (x₁,y₁), (x₂,y₂), ..., (xₙ,yₙ)：\n\n  S = |Σᵢ₌₁ⁿ (xᵢ × yᵢ₊₁ - xᵢ₊₁ × yᵢ)| / 2\n\n其中下标 n+1 等于 1（首尾相连）。\n\n【公式展开】\nS = |(x₁y₂ - x₂y₁) + (x₂y₃ - x₃y₂) + ... + (xₙy₁ - x₁yₙ)| / 2\n\n【理解方式】\n每一项 (xᵢyᵢ₊₁ - xᵢ₊₁yᵢ) 就是从原点到相邻两点的叉积，\n所有三角形面积的有向之和就是多边形面积。\n\n【注意事项】\n1. 顶点必须按顺序排列（顺时针或逆时针都可以）\n2. 公式对凹多边形也成立\n3. 结果取绝对值\n4. 如果顶点顺序不对（交叉排列），结果会错误",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <cmath>\nusing namespace std;\n\nstruct Point {\n    double x, y;\n    Point(double x = 0, double y = 0) : x(x), y(y) {}\n};\n\ndouble polygonArea(const vector<Point>& poly) {\n    int n = poly.size();\n    double area = 0;\n    for (int i = 0; i < n; i++) {\n        int j = (i + 1) % n;\n        area += poly[i].x * poly[j].y;\n        area -= poly[j].x * poly[i].y;\n    }\n    return fabs(area) / 2.0;\n}\n\nint main() {\n    vector<Point> square = {Point(0,0), Point(4,0), Point(4,4), Point(0,4)};\n    cout << \"正方形面积: \" << polygonArea(square) << endl;\n\n    vector<Point> tri = {Point(0,0), Point(4,0), Point(0,3)};\n    cout << \"三角形面积: \" << polygonArea(tri) << endl;\n\n    vector<Point> pentagon = {Point(0,0), Point(2,1), Point(1,3), Point(-1,3), Point(-2,1)};\n    cout << \"五边形面积: \" << polygonArea(pentagon) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "鞋带公式：面积 = |Σ(xᵢyᵢ₊₁ - xᵢ₊₁yᵢ)| / 2",
+        "下标 j = (i+1)%n 实现首尾相连",
+        "顺时针和逆时针排列都可以，取绝对值保证正数",
+        "凹多边形也适用，这是鞋带公式的优势"
+      ],
+      "commonMistakes": [
+        {
+          "title": "顶点顺序不对",
+          "description": "顶点没有按顺时针或逆时针排列，而是随机顺序，导致面积计算错误",
+          "fix": "确保顶点按顺序排列，可以先排序或按输入顺序处理"
+        },
+        {
+          "title": "忘记首尾相连",
+          "description": "循环中没有处理最后一个点到第一个点的连线",
+          "fix": "用 j = (i+1) % n 确保最后一个点连回第一个点"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个简单多边形的 n 个顶点坐标（按逆时针顺序），用鞋带公式计算面积。",
+        "hint": "遍历所有顶点对，累加 xᵢyᵢ₊₁ - xᵢ₊₁yᵢ，最后取绝对值除以 2。",
+        "expectedIdea": "循环遍历顶点，用鞋带公式累加叉积项，取绝对值除以 2"
+      },
+      "quiz": [
+        {
+          "question": "用鞋带公式计算正方形 (0,0), (4,0), (4,4), (0,4) 的面积，结果是多少？",
+          "options": [
+            "8",
+            "16",
+            "32",
+            "4"
+          ],
+          "answerIndex": 1,
+          "explanation": "面积 = |(0×0-4×0)+(4×4-4×0)+(4×4-0×4)+(0×0-0×4)|/2 = |0+16+16+0|/2 = 16"
+        },
+        {
+          "question": "鞋带公式对凹多边形是否适用？",
+          "options": [
+            "不适用",
+            "只适用于凸多边形",
+            "适用",
+            "只适用于三角形"
+          ],
+          "answerIndex": 2,
+          "explanation": "鞋带公式对所有简单多边形（包括凹多边形）都适用"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.17",
+      "title": "三角函数",
+      "learningGoal": "掌握 sin、cos、tan 的定义和在编程中的应用，学会用三角函数解决几何问题",
+      "explanation": "【基本定义】\n在直角三角形中，设角 θ 的对边为 a、邻边为 b、斜边为 c：\n  sin(θ) = a / c （对边 / 斜边）\n  cos(θ) = b / c （邻边 / 斜边）\n  tan(θ) = a / b （对边 / 邻边）= sin(θ) / cos(θ)\n\n【特殊角的值】\n  0°: sin=0, cos=1, tan=0\n  30°: sin=0.5, cos=√3/2, tan=√3/3\n  45°: sin=√2/2, cos=√2/2, tan=1\n  60°: sin=√3/2, cos=0.5, tan=√3\n  90°: sin=1, cos=0, tan=∞\n\n【重要公式】\n1. sin²θ + cos²θ = 1\n2. sin(2θ) = 2sinθcosθ\n3. cos(2θ) = cos²θ - sin²θ\n\n【C++ 中的三角函数】\n在 <cmath> 中：\n  sin(x), cos(x), tan(x) — 参数为弧度\n  asin(x), acos(x), atan(x) — 返回弧度\n  atan2(y, x) — 返回点(x,y)的极角，范围 [-π, π]\n\n【弧度与角度】\n弧度 = 角度 × π / 180\n角度 = 弧度 × 180 / π",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nconst double PI = acos(-1.0);\n\ndouble degToRad(double deg) { return deg * PI / 180.0; }\ndouble radToDeg(double rad) { return rad * 180.0 / PI; }\n\nint main() {\n    cout << \"sin(30°) = \" << sin(degToRad(30)) << endl;\n    cout << \"cos(60°) = \" << cos(degToRad(60)) << endl;\n    cout << \"tan(45°) = \" << tan(degToRad(45)) << endl;\n\n    double x = 3, y = 4;\n    double angle = atan2(y, x);\n    cout << \"点(3,4)的极角: \" << radToDeg(angle) << \"度\" << endl;\n\n    double r = 5;\n    double theta = degToRad(30);\n    double px = r * cos(theta);\n    double py = r * sin(theta);\n    cout << \"极坐标(r=5,θ=30°) -> 直角坐标(\" << px << \",\" << py << \")\" << endl;\n\n    double a = 30, b = 60;\n    double sinSum = sin(degToRad(a)) * cos(degToRad(b)) + cos(degToRad(a)) * sin(degToRad(b));\n    cout << \"sin(30°+60°) = \" << sinSum << endl;\n    cout << \"sin(90°) = \" << sin(degToRad(90)) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "C++ 三角函数使用弧度制，必须先转换角度",
+        "atan2(y, x) 比 atan(y/x) 更好，能正确处理所有象限",
+        "极坐标转直角坐标：x = r*cos(θ), y = r*sin(θ)",
+        "PI 用 acos(-1.0) 获取最精确的 π 值"
+      ],
+      "commonMistakes": [
+        {
+          "title": "角度弧度混淆",
+          "description": "直接用角度值调用 sin/cos 等函数，导致结果完全错误",
+          "fix": "C++ 三角函数参数是弧度，用 deg * PI / 180 转换"
+        },
+        {
+          "title": "用 atan 代替 atan2",
+          "description": "用 atan(y/x) 计算极角，当 x < 0 时得到错误角度",
+          "fix": "使用 atan2(y, x)，它能正确处理所有四个象限的角度"
+        }
+      ],
+      "practice": {
+        "prompt": "给定圆的半径 r 和圆心角 θ（角度），求扇形面积和弧长。",
+        "hint": "扇形面积 = r²×θ/2（θ 用弧度），弧长 = r×θ。",
+        "expectedIdea": "将角度转弧度，用公式 S = r²×θ_rad/2 和 L = r×θ_rad"
+      },
+      "quiz": [
+        {
+          "question": "在 C++ 中，sin(30) 计算的是什么？",
+          "options": [
+            "sin(30°)",
+            "sin(30弧度)",
+            "sin(30π)",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 的 sin 函数参数是弧度，sin(30) 是 30 弧度的正弦值，不是 30° 的正弦"
+        },
+        {
+          "question": "atan2(4, 3) 返回的值最接近哪个角度？",
+          "options": [
+            "30°",
+            "37°",
+            "45°",
+            "53°"
+          ],
+          "answerIndex": 3,
+          "explanation": "atan2(4,3) ≈ 0.9273 弧度 ≈ 53.13°，即点(3,4)与x轴的夹角"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.18",
+      "title": "竞赛数学综合",
+      "learningGoal": "综合运用数论、组合、代数等数学知识解决竞赛问题",
+      "explanation": "竞赛数学综合题通常需要同时运用多个数学知识点。\n\n常见组合方式：\n\n1. 数论 + 组合：如求 C(n,m) mod p（Lucas 定理）\n2. 数论 + DP：如数位 DP 中处理整除关系\n3. 组合 + 容斥：如错排问题、多重集组合\n4. 代数 + 数论：如多项式取模、原根\n\n解题策略：\n- 先识别涉及哪些数学知识\n- 将问题分解为子问题\n- 对每个子问题选择合适的方法\n- 注意边界条件和特殊情况\n\n常见技巧：\n- 取模运算的等价变形\n- 质因数分解的灵活应用\n- 容斥原理简化计数\n- 构造法证明存在性",
+      "exampleCode": "#include <iostream>\nusing namespace std;\ntypedef long long ll;\n\nll power(ll a, ll b, ll mod) {\n    ll res = 1; a %= mod;\n    while (b > 0) {\n        if (b & 1) res = res * a % mod;\n        a = a * a % mod;\n        b >>= 1;\n    }\n    return res;\n}\n\nint main() {\n    ll n, mod;\n    cin >> n >> mod;\n    ll sum = 0;\n    for (ll i = 1; i <= n; i++) {\n        sum = (sum + power(i, i, mod)) % mod;\n    }\n    cout << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "综合运用快速幂和取模运算",
+        "循环中注意每步取模防溢出",
+        "power(i, i, mod) 计算 i^i mod mod",
+        "求和后统一取模"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记中间步骤取模",
+          "description": "先算完所有结果最后才取模，中间结果溢出。",
+          "fix": "每一步运算后都取模，保持中间结果在范围内。"
+        }
+      ],
+      "practice": {
+        "prompt": "求 1^1 + 2^2 + 3^3 + ... + n^n 对 1000000007 取模的结果。",
+        "hint": "快速幂逐项计算并累加取模。",
+        "expectedIdea": "快速幂 + 求和取模"
+      },
+      "quiz": [
+        {
+          "question": "竞赛数学综合题最重要的解题策略是？",
+          "options": ["暴力枚举", "识别知识点并分解问题", "只用一种方法", "背公式"],
+          "answerIndex": 1,
+          "explanation": "综合题需要识别涉及哪些知识，分解为子问题分别解决。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.7.19",
+      "title": "数学思维拓展",
+      "learningGoal": "培养数学直觉和创造性思维，学习竞赛中常用的构造和证明技巧",
+      "explanation": "数学思维拓展关注竞赛中的高级思维方式。\n\n核心思维方式：\n\n1. 构造法：\n   - 构造满足条件的特殊解\n   - 构造反例证明命题不成立\n   - 常见：构造序列、构造图、构造矩阵\n\n2. 归纳法：\n   - 数学归纳法证明命题\n   - 从小规模情况猜测一般规律\n   - 强归纳法的应用\n\n3. 极端原理：\n   - 考虑最大/最小、最长/最短等极端情况\n   - 常用于证明存在性\n\n4. 抽屉原理：\n   - n+1 个物品放入 n 个抽屉，至少有一个抽屉有 2 个物品\n   - 用于证明必然性\n\n5. 不变量法：\n   - 寻找操作过程中不变的量\n   - 用于证明不可能性\n\n这些思维方法在信息学竞赛中频繁出现，是解决难题的关键。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint gcd(int a, int b) {\n    return b == 0 ? a : gcd(b, a % b);\n}\n\nint main() {\n    int n;\n    cin >> n;\n    int g = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        g = gcd(g, x);\n    }\n    cout << g << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "gcd 运算是求最大公约数",
+        "g=0 开始，gcd(0,x)=x",
+        "逐步求所有数的 gcd",
+        "不变量思想：gcd 不被线性组合改变"
+      ],
+      "commonMistakes": [
+        {
+          "title": "不会选择合适的思维方法",
+          "description": "看到题目不知道该用构造法、归纳法还是其他方法。",
+          "fix": "多练习经典例题，总结各类方法适用的题型特征。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个正整数，求它们的最大公约数。",
+        "hint": "辗转相除法求 gcd，逐步缩小。",
+        "expectedIdea": "gcd 运算 + 不变量思维"
+      },
+      "quiz": [
+        {
+          "question": "抽屉原理说明了什么？",
+          "options": ["存在最优解", "物品多于容器时至少一个容器有多个物品", "所有容器都有物品", "物品数量等于容器数量"],
+          "answerIndex": 1,
+          "explanation": "抽屉原理的核心：如果 n+1 个物品放入 n 个容器，至少有一个容器有至少 2 个物品。"
+        }
+      ]
+    }
+  ]
+}

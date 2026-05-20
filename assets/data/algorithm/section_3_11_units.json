@@ -1,0 +1,162 @@
+{
+  "sectionId": "3.11",
+  "sectionName": "哈希",
+  "units": [
+    {
+      "itemId": "3.11.1",
+      "title": "哈希表原理",
+      "learningGoal": "理解哈希表的基本原理，掌握哈希函数设计和冲突处理方法",
+      "explanation": "哈希表（Hash Table）是一种根据键值直接访问内存位置的数据结构，平均情况下插入、查找、删除都是 O(1)。\n\n核心概念：\n- 哈希函数 h(x)：将键值映射到数组下标，理想情况下分布均匀\n- 哈希冲突：不同的键值映射到相同的下标\n- 负载因子 α = 元素数量 / 表大小，α 越大冲突概率越高\n\n常用哈希函数：\n- 取模法：h(x) = x % M（M 取大素数，如 1000003、999983）\n- 乘法哈希：h(x) = (A * x) >> w\n\n冲突解决方法：\n1. 拉链法（Chaining）：每个桶维护一个链表，冲突元素挂在链表上\n   - 优点：实现简单，删除方便\n   - 缺点：链表过长时效率下降\n\n2. 开放寻址法（Open Addressing）：冲突时按规则寻找下一个空位\n   - 线性探测：h(x), h(x)+1, h(x)+2, ...\n   - 平方探测：h(x), h(x)+1, h(x)+4, h(x)+9, ...\n\n竞赛中最常用的是拉链法，因为实现简单且性能稳定。\nC++ STL 中 unordered_set / unordered_map 就是哈希表的封装。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int M = 1000003;\n\nint head[M], nxt[100001], key[100001], val[100001], tot;\n\nint h(int x) {\n    return ((x % M) + M) % M;\n}\n\nvoid insert(int k, int v) {\n    int pos = h(k);\n    tot++;\n    key[tot] = k;\n    val[tot] = v;\n    nxt[tot] = head[pos];\n    head[pos] = tot;\n}\n\nint query(int k) {\n    int pos = h(k);\n    for (int i = head[pos]; i; i = nxt[i])\n        if (key[i] == k) return val[i];\n    return -1;\n}\n\nint main() {\n    insert(12345, 100);\n    insert(67890, 200);\n    insert(1234567, 300);\n    cout << \"查询12345: \" << query(12345) << endl;\n    cout << \"查询67890: \" << query(67890) << endl;\n    cout << \"查询99999: \" << query(99999) << endl;\n    return 0;\n}",
+      "codeNotes": ["h(x) 取模哈希函数，加 M 再取模处理负数", "head[pos] 存每个桶的链表头", "拉链法：用 nxt 数组链接同桶元素", "插入用头插法，查询遍历链表"],
+      "commonMistakes": [
+        {
+          "title": "哈希函数不能处理负数",
+          "description": "当键值为负数时，x % M 可能得到负数下标，导致数组越界。",
+          "fix": "使用 ((x % M) + M) % M 确保结果为非负数。"
+        },
+        {
+          "title": "哈希表大小不是素数",
+          "description": "取模法中如果表大小不是素数，哈希分布容易不均匀，导致某些桶过长。",
+          "fix": "选择一个较大的素数作为表大小，如 1000003、999983 等。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现一个哈希表，支持插入键值对和查询操作，处理 n 次操作。",
+        "hint": "使用拉链法，数组 + 链表实现，哈希函数取大素数取模。",
+        "expectedIdea": "用 head/nxt 数组模拟链表，实现拉链法哈希表的插入和查询。"
+      },
+      "quiz": [
+        {
+          "question": "哈希表在平均情况下的查找时间复杂度是？",
+          "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
+          "answerIndex": 2,
+          "explanation": "哈希表通过哈希函数直接定位，平均情况下查找只需 O(1)。最坏情况（所有元素冲突）为 O(n)。"
+        },
+        {
+          "question": "拉链法处理冲突的方式是什么？",
+          "options": ["寻找下一个空位", "在同一个桶中维护链表", "扩大哈希表", "重新哈希"],
+          "answerIndex": 1,
+          "explanation": "拉链法在每个桶中维护一个链表，哈希到同一个位置的元素都挂在对应的链表上。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.11.2",
+      "title": "字符串哈希",
+      "learningGoal": "掌握多项式滚动哈希的原理，能够 O(1) 查询任意子串的哈希值",
+      "explanation": "字符串哈希（String Hashing）是将字符串映射为一个整数的方法，常用于快速比较字符串是否相同。\n\n多项式滚动哈希：\nH(s) = s[0] * B^(n-1) + s[1] * B^(n-2) + ... + s[n-1] * B^0 (mod M)\n\n其中 B 是基数（常用 131、13331），M 是大素数（或用 unsigned long long 自然溢出）。\n\n前缀哈希：\n定义 h[i] = s[0]*B^(i-1) + s[1]*B^(i-2) + ... + s[i-1]*B^0\n\n则子串 s[l..r] 的哈希值为：\nhash(l, r) = h[r+1] - h[l] * B^(r-l+1)\n\n这样预处理 O(n)，每次查询子串哈希 O(1)。\n\n应用：\n- 判断两个子串是否相同：比较哈希值\n- 字符串匹配：计算模式串哈希，在文本中找相同哈希的子串\n- 最长回文子串：二分 + 正反哈希\n- 字符串去重：用哈希值作为标识\n\n使用 unsigned long long 自然溢出可以避免取模运算，速度快。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nconst unsigned long long B = 13331;\n\nunsigned long long h[100001], pw[100001];\n\nvoid init(const string &s) {\n    int n = s.size();\n    pw[0] = 1;\n    for (int i = 1; i <= n; i++) pw[i] = pw[i-1] * B;\n    h[0] = 0;\n    for (int i = 0; i < n; i++)\n        h[i+1] = h[i] * B + s[i];\n}\n\nunsigned long long getHash(int l, int r) {\n    return h[r+1] - h[l] * pw[r - l + 1];\n}\n\nint main() {\n    string s;\n    cin >> s;\n    init(s);\n    int q;\n    cin >> q;\n    while (q--) {\n        int l1, r1, l2, r2;\n        cin >> l1 >> r1 >> l2 >> r2;\n        if (getHash(l1, r1) == getHash(l2, r2))\n            cout << \"相同\" << endl;\n        else\n            cout << \"不同\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["pw[i] 预计算 B 的 i 次幂", "h[i] 是前 i 个字符的前缀哈希", "getHash(l,r) = h[r+1] - h[l]*pw[r-l+1]", "用 unsigned long long 自然溢出代替取模"],
+      "commonMistakes": [
+        {
+          "title": "忘记预处理 pw 数组",
+          "description": "计算子串哈希需要用到 B 的幂次，如果没有预处理 pw 数组会导致计算错误。",
+          "fix": "在 init 函数中先计算 pw[0..n]，pw[i] = pw[i-1] * B。"
+        },
+        {
+          "title": "下标混淆",
+          "description": "字符串下标从 0 开始，但前缀哈希 h 数组从 0 开始，l 和 r 的含义容易搞混。",
+          "fix": "统一约定：h[i] 表示前 i 个字符的哈希，getHash(l,r) 中 l,r 是字符串下标（从0开始）。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个字符串，有 q 次询问，每次询问两个子串是否相同。下标从 0 开始。",
+        "hint": "预处理前缀哈希和幂次数组，O(1) 比较子串哈希值。",
+        "expectedIdea": "init 预处理，getHash(l,r) 获取子串哈希，比较两个哈希值判断是否相同。"
+      },
+      "quiz": [
+        {
+          "question": "字符串哈希中，基数 B 通常选择什么值？",
+          "options": ["2 或 10", "131 或 13331", "1", "26"],
+          "answerIndex": 1,
+          "explanation": "基数通常选择 131 或 13331 等大于字符集大小的数，这样能减少哈希冲突的概率。"
+        },
+        {
+          "question": "使用 unsigned long long 自然溢出等价于对什么取模？",
+          "options": ["2^31", "2^32", "2^63", "2^64"],
+          "answerIndex": 3,
+          "explanation": "unsigned long long 是 64 位无符号整数，溢出时自动对 2^64 取模，省去了手动取模的开销。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.11.3",
+      "title": "哈希冲突处理",
+      "learningGoal": "掌握多种哈希冲突处理策略，理解各自的优缺点和适用场景",
+      "explanation": "哈希冲突是不可避免的（鸽巢原理），不同的冲突处理策略会影响哈希表的性能。\n\n1. 线性探测（Linear Probing）：\n冲突时依次检查 h+1, h+2, h+3, ... 直到找到空位。\n- 优点：缓存友好（访问连续内存），实现简单\n- 缺点：容易出现「聚集」现象，连续占用区域越来越大\n\n2. 平方探测（Quadratic Probing）：\n冲突时检查 h+1, h+4, h+9, h+16, ...\n- 优点：比线性探测分散，减少聚集\n- 缺点：不能保证找到所有空位（表大小需为素数且负载因子 < 0.5）\n\n3. 双重哈希（Double Hashing）：\n使用两个哈希函数 h1(x) 和 h2(x)，探测序列为 (h1(x) + i*h2(x)) % M\n- 优点：探测序列分散，不易聚集\n- 缺点：计算两次哈希，常数稍大\n\n4. 拉链法（Chaining）：\n每个桶维护一个链表，冲突元素挂到链表上。\n- 优点：不受负载因子限制，删除简单\n- 缺点：链表指针开销，缓存不友好\n\n负载因子与性能：\n- 拉链法：负载因子建议 < 1\n- 开放寻址法：负载因子建议 < 0.7\n- 负载因子过高时需要扩容（rehash）\n\n竞赛中推荐拉链法，简单稳定。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int M = 1000003;\n\nint table[M];\nbool used[M];\n\nint h1(int x) {\n    return ((x % M) + M) % M;\n}\n\nint h2(int x) {\n    return ((x % 999983) + 999983) % 999983 + 1;\n}\n\nvoid insertLinear(int x) {\n    int pos = h1(x);\n    while (used[pos]) pos = (pos + 1) % M;\n    table[pos] = x;\n    used[pos] = true;\n}\n\nbool searchLinear(int x) {\n    int pos = h1(x);\n    while (used[pos]) {\n        if (table[pos] == x) return true;\n        pos = (pos + 1) % M;\n    }\n    return false;\n}\n\nvoid insertDouble(int x) {\n    int pos = h1(x);\n    int step = h2(x);\n    while (used[pos]) pos = (pos + step) % M;\n    table[pos] = x;\n    used[pos] = true;\n}\n\nbool searchDouble(int x) {\n    int pos = h1(x);\n    int step = h2(x);\n    while (used[pos]) {\n        if (table[pos] == x) return true;\n        pos = (pos + step) % M;\n    }\n    return false;\n}\n\nint main() {\n    insertLinear(12345);\n    insertLinear(67890);\n    insertLinear(1234567);\n    cout << \"线性探测查询12345: \" << (searchLinear(12345) ? \"找到\" : \"未找到\") << endl;\n    insertDouble(11111);\n    insertDouble(22222);\n    cout << \"双重哈希查询11111: \" << (searchDouble(11111) ? \"找到\" : \"未找到\") << endl;\n    return 0;\n}",
+      "codeNotes": ["线性探测：冲突时 +1 依次查找空位", "双重哈希：两个哈希函数，探测步长由 h2 决定", "平方探测：步长为 1,4,9,16...", "负载因子越高，冲突越多，性能越差"],
+      "commonMistakes": [
+        {
+          "title": "线性探测导致无限循环",
+          "description": "当哈希表满时，线性探测会无限循环找不到空位。",
+          "fix": "确保负载因子不超过阈值，或使用拉链法避免此问题。"
+        },
+        {
+          "title": "h2(x) 返回 0",
+          "description": "双重哈希中如果第二个哈希函数返回 0，则探测位置不变，死循环。",
+          "fix": "确保 h2(x) 返回值不为 0，通常加 1 处理：step = h2(x) | 1 或 h2(x) + 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "分别实现线性探测和双重哈希的哈希表，比较相同数据下两种方法的探测次数。",
+        "hint": "在 insert 和 search 中计数探测次数，插入相同数量的元素后比较。",
+        "expectedIdea": "线性探测容易聚集，双重哈希分布更均匀，探测次数通常更少。"
+      },
+      "quiz": [
+        {
+          "question": "线性探测法的主要缺点是什么？",
+          "options": ["代码复杂", "容易出现聚集现象", "不能处理负数", "需要额外内存"],
+          "answerIndex": 1,
+          "explanation": "线性探测每次步进 1，连续占用的区域会越来越大，形成聚集，导致后续插入和查找效率下降。"
+        },
+        {
+          "question": "开放寻址法中，负载因子建议不超过多少？",
+          "options": ["0.3", "0.5", "0.7", "1.0"],
+          "answerIndex": 2,
+          "explanation": "开放寻址法在负载因子超过 0.7 时性能会急剧下降，因为空位变少，探测链变长。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.11.4",
+      "title": "离散化",
+      "learningGoal": "掌握离散化（坐标压缩）的原理和实现，理解其在减少空间和优化算法中的应用",
+      "explanation": "离散化（Discretization / Coordinate Compression）是将大范围的数值映射到小范围的连续下标上。\n\n适用场景：\n- 数值范围很大（如 -10^9 到 10^9），但实际出现的数值很少（如只有 10^5 个）\n- 需要用数值作为数组下标，但数组开不了那么大\n- 典型应用：线段树/树状数组的坐标建立、逆序对计数等\n\n离散化步骤：\n1. 收集所有需要离散化的值\n2. 排序并去重\n3. 对每个值用 lower_bound 查找其在排序后数组中的位置\n\n这样就将任意范围的数值映射到 [1, n] 的连续下标上。\n\n注意事项：\n- 去重是必要的，相同的值应该映射到同一下标\n- lower_bound 返回的是迭代器，减去 begin() 得到下标（从 0 开始）\n- 如果需要从 1 开始的下标，在结果上加 1\n- 离散化后数值的相对大小关系不变（保序性）",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nvector<int> disc;\n\nint discretize(int x) {\n    return lower_bound(disc.begin(), disc.end(), x) - disc.begin() + 1;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n        disc.push_back(a[i]);\n    }\n    sort(disc.begin(), disc.end());\n    disc.erase(unique(disc.begin(), disc.end()), disc.end());\n    cout << \"离散化结果:\" << endl;\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" -> \" << discretize(a[i]) << endl;\n    }\n    cout << \"去重后元素个数: \" << disc.size() << endl;\n    return 0;\n}",
+      "codeNotes": ["先排序再 unique 去重", "lower_bound 查找映射后的下标", "加 1 使下标从 1 开始", "离散化后数值的相对大小关系不变"],
+      "commonMistakes": [
+        {
+          "title": "忘记去重",
+          "description": "排序后忘记用 unique 去重，导致相同值映射到不同下标。",
+          "fix": "sort 后必须调用 unique 并 erase 去重：disc.erase(unique(disc.begin(), disc.end()), disc.end())。"
+        },
+        {
+          "title": "离散化时遗漏值",
+          "description": "只收集了部分需要离散化的值，导致后续查询时找不到对应下标。",
+          "fix": "在离散化之前，先把所有会用到的值（包括查询中的值）都加入 disc 数组。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个数，值域很大（-10^9 ~ 10^9），请将它们离散化后用树状数组求逆序对个数。",
+        "hint": "先将所有值离散化，然后按顺序插入树状数组，每次查询比当前值大的已插入元素个数。",
+        "expectedIdea": "离散化 + 树状数组，从左到右处理，每次 ans += i - sum(a[i])，然后 add(a[i], 1)。"
+      },
+      "quiz": [
+        {
+          "question": "离散化的主要目的是什么？",
+          "options": ["给数据排序", "将大范围数值映射到小范围连续下标", "删除重复数据", "加速排序"],
+          "answerIndex": 1,
+          "explanation": "离散化将大范围的数值（如 -10^9 到 10^9）映射到小范围连续下标（如 1 到 n），使得可以用数组下标访问。"
+        },
+        {
+          "question": "离散化后数值的什么性质保持不变？",
+          "options": ["绝对值大小", "数值之和", "相对大小关系（保序性）", "数值的奇偶性"],
+          "answerIndex": 2,
+          "explanation": "离散化是保序映射，即如果原来 a < b，则离散化后 disc(a) < disc(b)，相对大小关系不变。"
+        }
+      ]
+    }
+  ]
+}

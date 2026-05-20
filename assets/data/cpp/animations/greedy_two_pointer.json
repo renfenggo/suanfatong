@@ -1,0 +1,163 @@
+{
+  "animationId": "algo_greedy_two_pointer",
+  "itemId": "2.4.7",
+  "title": "双指针贪心/分发饼干",
+  "description": "展示排序后双指针贪心匹配孩子胃口和饼干尺寸的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [], "note": "g[i] 第i个孩子的胃口值"},
+      {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [], "note": "s[j] 第j块饼干的尺寸"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题描述",
+      "description": "有4个孩子，胃口值分别为 2, 3, 5, 7；有4块饼干，尺寸分别为 3, 4, 6, 8。每块饼干只能分给一个孩子，且饼干尺寸 ≥ 孩子胃口才能满足。求最多能满足多少个孩子。",
+      "codeLine": "int findContentChildren(vector<int>& g, vector<int>& s);",
+      "highlights": ["g", "s"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "0", "type": "int", "note": "已满足的孩子数"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [], "note": ""},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [], "note": ""}
+        ],
+        "output": "孩子胃口: 2, 3, 5, 7\n饼干尺寸: 3, 4, 6, 8"
+      }
+    },
+    {
+      "step": 2,
+      "title": "排序",
+      "description": "将孩子胃口和饼干尺寸都从小到大排序，这样可以用双指针从小到大依次匹配。",
+      "codeLine": "sort(g.begin(), g.end());  sort(s.begin(), s.end());",
+      "highlights": ["sort"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "0", "type": "int", "note": ""},
+          {"name": "i", "value": "0", "type": "int", "note": "孩子指针"},
+          {"name": "j", "value": "0", "type": "int", "note": "饼干指针"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [], "note": "已排序"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [], "note": "已排序"}
+        ],
+        "output": "排序后: g=[2,3,5,7], s=[3,4,6,8]"
+      }
+    },
+    {
+      "step": 3,
+      "title": "匹配第1个孩子",
+      "description": "i=0, j=0: 孩子 g[0]=2, 饼干 s[0]=3。3 ≥ 2，满足！i++, j++。",
+      "codeLine": "if (s[j] >= g[i]) { count++; i++; }  j++;",
+      "highlights": ["s[j] >= g[i]", "count++"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "1", "type": "int", "note": "已满足1个孩子"},
+          {"name": "i", "value": "1", "type": "int", "note": "指向孩子1"},
+          {"name": "j", "value": "1", "type": "int", "note": "指向饼干1"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [0], "note": "g[0]=2 ✓ 已满足"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [0], "note": "s[0]=3 分配给 g[0]"}
+        ],
+        "output": "g[0]=2 ≤ s[0]=3 → 满足! count=1"
+      }
+    },
+    {
+      "step": 4,
+      "title": "匹配第2个孩子",
+      "description": "i=1, j=1: 孩子 g[1]=3, 饼干 s[1]=4。4 ≥ 3，满足！i++, j++。",
+      "codeLine": "if (s[j] >= g[i]) { count++; i++; }  j++;",
+      "highlights": ["s[j] >= g[i]", "count++"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "2", "type": "int", "note": "已满足2个孩子"},
+          {"name": "i", "value": "2", "type": "int", "note": "指向孩子2"},
+          {"name": "j", "value": "2", "type": "int", "note": "指向饼干2"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [0, 1], "note": "g[1]=3 ✓ 已满足"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [1], "note": "s[1]=4 分配给 g[1]"}
+        ],
+        "output": "g[1]=3 ≤ s[1]=4 → 满足! count=2"
+      }
+    },
+    {
+      "step": 5,
+      "title": "匹配第3个孩子",
+      "description": "i=2, j=2: 孩子 g[2]=5, 饼干 s[2]=6。6 ≥ 5，满足！i++, j++。",
+      "codeLine": "if (s[j] >= g[i]) { count++; i++; }  j++;",
+      "highlights": ["s[j] >= g[i]", "count++"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "3", "type": "int", "note": "已满足3个孩子"},
+          {"name": "i", "value": "3", "type": "int", "note": "指向孩子3"},
+          {"name": "j", "value": "3", "type": "int", "note": "指向饼干3"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [0, 1, 2], "note": "g[2]=5 ✓ 已满足"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [2], "note": "s[2]=6 分配给 g[2]"}
+        ],
+        "output": "g[2]=5 ≤ s[2]=6 → 满足! count=3"
+      }
+    },
+    {
+      "step": 6,
+      "title": "匹配第4个孩子",
+      "description": "i=3, j=3: 孩子 g[3]=7, 饼干 s[3]=8。8 ≥ 7，满足！i++, j++。",
+      "codeLine": "if (s[j] >= g[i]) { count++; i++; }  j++;",
+      "highlights": ["s[j] >= g[i]", "count++"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "4", "type": "int", "note": "已满足4个孩子"},
+          {"name": "i", "value": "4", "type": "int", "note": "越界，结束"},
+          {"name": "j", "value": "4", "type": "int", "note": "越界，结束"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [0, 1, 2, 3], "note": "g[3]=7 ✓ 已满足"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [3], "note": "s[3]=8 分配给 g[3]"}
+        ],
+        "output": "g[3]=7 ≤ s[3]=8 → 满足! count=4"
+      }
+    },
+    {
+      "step": 7,
+      "title": "遍历结束",
+      "description": "i=4 超出孩子数组范围，遍历结束。所有4个孩子都被满足。",
+      "codeLine": "return count;",
+      "highlights": ["return"],
+      "state": {
+        "variables": [
+          {"name": "满足数", "value": "4", "type": "int", "note": ""},
+          {"name": "i", "value": "4", "type": "int", "note": "已遍历完"},
+          {"name": "j", "value": "4", "type": "int", "note": "已遍历完"}
+        ],
+        "containers": [
+          {"name": "孩子胃口", "type": "array", "values": [2, 3, 5, 7], "highlights": [0, 1, 2, 3], "note": "全部满足"},
+          {"name": "饼干尺寸", "type": "array", "values": [3, 4, 6, 8], "highlights": [0, 1, 2, 3], "note": "全部分配"}
+        ],
+        "output": "所有孩子都已满足"
+      }
+    },
+    {
+      "step": 8,
+      "title": "最终结果",
+      "description": "贪心策略：排序后双指针从小到大匹配，每块饼干尽量满足胃口最小的孩子。最多满足4个孩子。时间复杂度 O(n log n)。",
+      "codeLine": "cout << \"最多满足 \" << count << \" 个孩子\";",
+      "highlights": ["count"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "4", "type": "int", "note": "最多满足4个孩子"}
+        ],
+        "containers": [
+          {"name": "匹配关系", "type": "array", "values": ["g[0]=2←s[0]=3", "g[1]=3←s[1]=4", "g[2]=5←s[2]=6", "g[3]=7←s[3]=8"], "highlights": [0, 1, 2, 3], "note": ""}
+        ],
+        "output": "最多满足 4 个孩子\n匹配: 2←3, 3←4, 5←6, 7←8"
+      }
+    }
+  ]
+}

@@ -63,6 +63,12 @@ class CppQuizProgressNotifier extends StateNotifier<Progress> {
     final updatedAttempts = Map<String, int>.from(current.cppQuizAttempts);
     updatedAttempts[sectionId] = (updatedAttempts[sectionId] ?? 0) + 1;
 
+    final updatedLastDates = Map<String, String>.from(current.cppQuizLastDates);
+    final now = DateTime.now();
+    updatedLastDates[sectionId] =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')} '
+        '${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}';
+
     final updatedWrong = Set<String>.from(current.cppWrongQuizIds);
     updatedWrong.addAll(newWrongIds);
     updatedWrong.removeAll(correctedIds);
@@ -70,6 +76,7 @@ class CppQuizProgressNotifier extends StateNotifier<Progress> {
     final updated = current.copyWith(
       cppQuizScores: updatedScores,
       cppQuizAttempts: updatedAttempts,
+      cppQuizLastDates: updatedLastDates,
       cppWrongQuizIds: updatedWrong,
     );
     await _service.saveProgress(updated);

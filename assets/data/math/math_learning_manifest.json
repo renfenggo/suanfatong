@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "category": "算法竞赛数学",
+  "baseFile": "assets/data/math/math_learning_units.json",
+  "sectionFiles": [
+    "assets/data/math/section_4_1_units.json",
+    "assets/data/math/section_4_2_units.json",
+    "assets/data/math/section_4_3_units.json",
+    "assets/data/math/section_4_4_units.json",
+    "assets/data/math/section_4_5_units.json",
+    "assets/data/math/section_4_6_units.json",
+    "assets/data/math/section_4_7_units.json"
+  ]
+}

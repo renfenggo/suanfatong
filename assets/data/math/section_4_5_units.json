@@ -1,0 +1,547 @@
+{
+  "section": "4.5",
+  "sectionName": "图论数学",
+  "units": [
+    {
+      "itemId": "4.5.1",
+      "title": "点、边、度",
+      "learningGoal": "理解图的顶点、边和度数的基本概念，掌握握手定理（度数之和等于两倍边数）",
+      "explanation": "【图的基本组成】\n图由顶点（Vertex）和边（Edge）组成。\n通常用 V 表示顶点集，E 表示边集，图记为 G = (V, E)。\n\n【度数】\n一个顶点的度（degree）是与该顶点相连的边数。\n记作 deg(v)，例如 deg(A) = 3 表示顶点 A 连了 3 条边。\n\n【握手定理】\n所有顶点的度数之和等于边数的两倍：\n  sum(deg(v)) = 2 × |E|\n原因：每条边连接两个顶点，在度数统计中被计算了两次。\n\n【推论】\n1. 度数之和一定是偶数\n2. 度数为奇数的顶点个数一定是偶数个（奇度点成对出现）\n3. 若有 n 个顶点的简单图，每个顶点的度数最大为 n-1",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    int degree[105] = {};\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        degree[u]++;\n        degree[v]++;\n    }\n\n    int sum = 0;\n    int oddCount = 0;\n    for (int i = 1; i <= n; i++) {\n        cout << \"顶点 \" << i << \" 的度数: \" << degree[i] << endl;\n        sum += degree[i];\n        if (degree[i] % 2 == 1) oddCount++;\n    }\n\n    cout << \"度数之和: \" << sum << endl;\n    cout << \"2 × 边数: \" << 2 * m << endl;\n    cout << \"握手定理验证: \" << (sum == 2 * m ? \"正确\" : \"错误\") << endl;\n    cout << \"奇度点个数: \" << oddCount << (oddCount % 2 == 0 ? \" (偶数，符合定理)\" : \" (奇数，出错)\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "用数组 degree[] 统计每个顶点的度数",
+        "每读入一条边 (u,v)，两个顶点的度数各加 1",
+        "握手定理：度数之和 = 2 × 边数，可以用来验证输入的正确性",
+        "奇度点个数一定是偶数个，这是握手定理的重要推论"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记给两个顶点都更新度数",
+          "description": "读入边 (u,v) 时只更新了一个顶点的度数，忘记另一个。",
+          "fix": "每条边连接两个顶点，degree[u]++ 和 degree[v]++ 都要执行。"
+        },
+        {
+          "title": "混淆度数与边数的关系",
+          "description": "误以为度数之和等于边数，实际上度数之和等于边数的两倍。",
+          "fix": "牢记握手定理：每条边被两个顶点各计算一次，所以 sum = 2m。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个图有 n 个顶点和 m 条边，以及每个顶点的度数，判断这些度数是否可能构成一个合法的图。",
+        "hint": "利用握手定理：度数之和必须是 2m，且每个度数在 0 到 n-1 之间。",
+        "expectedIdea": "检查所有度数之和是否等于 2m，以及每个度数是否在合理范围内"
+      },
+      "quiz": [
+        {
+          "question": "一个图有 5 个顶点，度数分别为 4, 3, 2, 3, 2，这个图有多少条边？",
+          "options": [
+            "14",
+            "7",
+            "5",
+            "10"
+          ],
+          "answerIndex": 1,
+          "explanation": "由握手定理，边数 = 度数之和 / 2 = (4+3+2+3+2) / 2 = 14 / 2 = 7"
+        },
+        {
+          "question": "以下哪个度数序列不可能出现在一个合法的简单图中？",
+          "options": [
+            "3, 3, 2, 2",
+            "3, 3, 3, 3",
+            "4, 3, 2, 1",
+            "2, 2, 2, 2"
+          ],
+          "answerIndex": 2,
+          "explanation": "4个顶点的简单图，度数最大为3。4,3,2,1中出现了度数4，超过n-1=3，不可能。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.2",
+      "title": "路径、回路、连通",
+      "learningGoal": "理解路径、回路和连通的定义，了解欧拉路径和欧拉回路的判定条件",
+      "explanation": "【路径】\n路径是图中一系列依次相连的顶点和边：v0 → v1 → v2 → ... → vk。\n路径的长度等于经过的边数 k。\n简单路径：路径上所有顶点都不重复。\n\n【回路】\n回路（也叫环/圈）是一条起点和终点相同的路径：v0 = vk。\n即从一个顶点出发，经过若干条边后回到该顶点。\n\n【连通】\n如果顶点 u 到顶点 v 之间存在路径，则称 u 和 v 是连通的。\n连通是顶点之间的等价关系（自反、对称、传递）。\n\n【欧拉路径与欧拉回路】\n- 欧拉路径：经过图中每条边恰好一次的路径\n- 欧拉回路：起点和终点相同的欧拉路径\n\n判定条件（无向图）：\n- 存在欧拉路径：恰好有 0 个或 2 个奇度顶点\n  - 0 个奇度点：欧拉路径就是欧拉回路\n  - 2 个奇度点：欧拉路径从一个奇度点出发到另一个结束\n- 存在欧拉回路：所有顶点度数都是偶数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    int degree[105] = {};\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        degree[u]++;\n        degree[v]++;\n    }\n\n    int oddCount = 0;\n    for (int i = 1; i <= n; i++) {\n        if (degree[i] % 2 == 1) oddCount++;\n    }\n\n    if (oddCount == 0) {\n        cout << \"存在欧拉回路（所有顶点度数为偶数）\" << endl;\n    } else if (oddCount == 2) {\n        cout << \"存在欧拉路径（恰好 2 个奇度顶点）\" << endl;\n    } else {\n        cout << \"不存在欧拉路径（奇度顶点有 \" << oddCount << \" 个）\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "统计奇度顶点的个数来判断欧拉路径/回路的存在性",
+        "0 个奇度点 → 存在欧拉回路；2 个奇度点 → 存在欧拉路径",
+        "欧拉路径和欧拉回路要求图是连通的（除孤立点外）",
+        "奇度点个数不是 0 或 2 时，不存在欧拉路径"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忽略图的连通性",
+          "description": "只检查了奇度点个数就断定存在欧拉路径，但图可能不连通。",
+          "fix": "除了检查奇度点个数，还需要确认图是连通的（可用 BFS/DFS 验证）。"
+        },
+        {
+          "title": "混淆路径和简单路径",
+          "description": "误以为路径上不能有重复顶点，实际上一般路径允许重复，简单路径才不允许。",
+          "fix": "区分概念：路径允许重复顶点，简单路径不允许。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个无向图，判断它是否存在欧拉路径，如果存在指出起点。",
+        "hint": "统计奇度顶点个数。0 个奇度点可以从任意顶点出发；2 个奇度点从其中一个奇度点出发。",
+        "expectedIdea": "统计每个顶点的度数，判断奇度点个数是否为 0 或 2，同时验证图的连通性"
+      },
+      "quiz": [
+        {
+          "question": "一个无向连通图有 4 个奇度顶点，关于欧拉路径和欧拉回路，以下正确的是？",
+          "options": [
+            "存在欧拉回路",
+            "存在欧拉路径",
+            "既不存在欧拉路径也不存在欧拉回路",
+            "存在两条欧拉路径"
+          ],
+          "answerIndex": 2,
+          "explanation": "存在欧拉路径要求奇度点恰好 0 或 2 个。4 个奇度点不满足条件，所以欧拉路径和欧拉回路都不存在。"
+        },
+        {
+          "question": "关于简单路径，以下说法正确的是？",
+          "options": [
+            "简单路径可以重复经过同一条边",
+            "简单路径上所有顶点互不相同",
+            "简单路径必须经过所有顶点",
+            "简单路径的起点和终点必须不同"
+          ],
+          "answerIndex": 1,
+          "explanation": "简单路径的定义是路径上所有顶点互不相同（不重复经过任何顶点）。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.3",
+      "title": "子图",
+      "learningGoal": "理解子图的概念，区分导出子图和生成子图，掌握它们在算法中的应用",
+      "explanation": "【子图】\n如果图 H 的顶点集是图 G 顶点集的子集，边集也是 G 边集的子集，\n而且 H 中的每条边的两个端点都在 H 的顶点集中，则 H 是 G 的子图。\n记作 H ⊆ G。\n\n【导出子图（Induced Subgraph）】\n取 G 的一个顶点子集 V'，保留 V' 中所有顶点之间在 G 中的全部边。\n即「取一些点，把它们之间的所有边都带上」。\n导出子图由顶点子集唯一确定。\n\n【生成子图（Spanning Subgraph）】\n取 G 的全部顶点，但只取 G 的部分边。\n即「保留所有顶点，删掉一些边」。\n生成子图的顶点集与原图相同。\n\n【区别总结】\n- 子图：顶点和边都可以少\n- 导出子图：选定顶点后，边由顶点决定（全部保留）\n- 生成子图：顶点全部保留，边可以删",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 5, m = 6;\n    int edges[][2] = {{1,2},{1,3},{2,3},{2,4},{3,5},{4,5}};\n\n    bool keep[6] = {};\n    keep[0] = keep[1] = keep[2] = keep[4] = true;\n\n    cout << \"原图的边:\" << endl;\n    for (int i = 0; i < m; i++) {\n        cout << \"(\" << edges[i][0] << \",\" << edges[i][1] << \") \";\n    }\n    cout << endl;\n\n    cout << \"生成子图（保留所有顶点，部分边）:\" << endl;\n    for (int i = 0; i < m; i++) {\n        if (keep[i]) {\n            cout << \"(\" << edges[i][0] << \",\" << edges[i][1] << \") \";\n        }\n    }\n    cout << endl;\n\n    bool inV[6] = {};\n    inV[1] = inV[2] = inV[3] = true;\n    cout << \"顶点 {1,2,3} 的导出子图:\" << endl;\n    for (int i = 0; i < m; i++) {\n        if (inV[edges[i][0]] && inV[edges[i][1]]) {\n            cout << \"(\" << edges[i][0] << \",\" << edges[i][1] << \") \";\n        }\n    }\n    cout << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "生成子图：顶点集不变，从原图边集中选一部分",
+        "导出子图：选定顶点子集后，保留这些顶点之间的所有原图边",
+        "用布尔数组标记哪些顶点/边被选中",
+        "导出子图的边不能随意选择，由顶点子集唯一确定"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆导出子图和一般子图",
+          "description": "以为选了顶点后可以自由选择保留哪些边，但导出子图要求保留顶点之间的所有边。",
+          "fix": "导出子图中，只要两个顶点都在子集中且原图中有边，这条边就必须保留。"
+        },
+        {
+          "title": "生成子图遗漏顶点",
+          "description": "构造生成子图时误删了顶点，导致不再是生成子图。",
+          "fix": "生成子图必须保留原图的全部顶点，只能删边。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有 n 个顶点 m 条边的无向图，以及一个顶点子集 V'，输出 V' 的导出子图的边数。",
+        "hint": "遍历所有边，统计两端点都在 V' 中的边数。",
+        "expectedIdea": "用布尔数组标记 V' 中的顶点，遍历所有边统计两端都在 V' 中的边"
+      },
+      "quiz": [
+        {
+          "question": "关于生成子图，以下说法正确的是？",
+          "options": [
+            "顶点集和边集都是原图的子集",
+            "顶点集与原图相同，边集是原图的子集",
+            "边集与原图相同，顶点集是原图的子集",
+            "顶点集和边集都与原图相同"
+          ],
+          "answerIndex": 1,
+          "explanation": "生成子图保留原图的所有顶点，只选取部分边。"
+        },
+        {
+          "question": "从 5 个顶点的完全图中，选取 3 个顶点的导出子图有多少条边？",
+          "options": [
+            "3",
+            "6",
+            "10",
+            "4"
+          ],
+          "answerIndex": 0,
+          "explanation": "3 个顶点的导出子图就是 3 个顶点之间的完全图 K3，边数 = C(3,2) = 3×2/2 = 3 条边。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.4",
+      "title": "连通图",
+      "learningGoal": "理解连通图和连通分量的概念，能用 BFS 或 DFS 判断图的连通性",
+      "explanation": "【连通图】\n如果一个无向图中任意两个顶点之间都存在路径，则称该图为连通图。\n否则称为非连通图（或 disconnected graph）。\n\n【连通分量】\n非连通图可以分成若干个连通的部分，每个部分称为一个连通分量。\n连通分量是图中极大连通子图：「极大」意味着不能再加入任何顶点而保持连通。\n\n连通图只有一个连通分量（就是它自己）。\n非连通图有多个连通分量。\n\n【判断连通性】\n用 BFS 或 DFS 从任意一个顶点出发遍历：\n- 如果能访问到所有顶点 → 连通图\n- 如果有顶点未被访问 → 非连通图\n\n未被访问的顶点属于其他连通分量，可以继续 BFS/DFS 来找出所有连通分量。",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    vector<int> adj[105];\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n\n    bool visited[105] = {};\n    int componentCount = 0;\n\n    for (int start = 1; start <= n; start++) {\n        if (!visited[start]) {\n            componentCount++;\n            queue<int> q;\n            q.push(start);\n            visited[start] = true;\n            cout << \"连通分量 \" << componentCount << \": \";\n            while (!q.empty()) {\n                int u = q.front();\n                q.pop();\n                cout << u << \" \";\n                for (int v : adj[u]) {\n                    if (!visited[v]) {\n                        visited[v] = true;\n                        q.push(v);\n                    }\n                }\n            }\n            cout << endl;\n        }\n    }\n\n    cout << \"连通分量个数: \" << componentCount << endl;\n    if (componentCount == 1) {\n        cout << \"该图是连通图\" << endl;\n    } else {\n        cout << \"该图不是连通图\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "用 BFS 遍历图，每次从一个未访问顶点出发就是一个新的连通分量",
+        "连通分量个数 = BFS/DFS 启动次数",
+        "连通图当且仅当连通分量个数为 1",
+        "邻接表 adj[u] 存储顶点 u 的所有邻居"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记标记已访问顶点",
+          "description": "BFS/DFS 中没有及时标记已访问的顶点，导致重复访问甚至死循环。",
+          "fix": "在将顶点放入队列（或递归调用）时就标记为已访问，而不是在取出时才标记。"
+        },
+        {
+          "title": "误以为所有图都连通",
+          "description": "做题时默认图是连通的，但题目没有保证这一点。",
+          "fix": "除非题目明确说明，否则不要假设图是连通的，需要先判断或处理非连通的情况。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有 n 个顶点 m 条边的无向图，判断它是否是连通图，如果不是，输出每个连通分量中的顶点数。",
+        "hint": "用 BFS 从顶点 1 出发，看能否访问所有顶点。如果不能，继续从其他未访问顶点出发。",
+        "expectedIdea": "多次 BFS/DFS 找出所有连通分量，统计每个分量中的顶点数"
+      },
+      "quiz": [
+        {
+          "question": "一个有 6 个顶点的无向图，至少需要多少条边才能保证它是连通图？",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "10"
+          ],
+          "answerIndex": 0,
+          "explanation": "n 个顶点的连通图至少需要 n-1 条边（即生成树）。6 个顶点至少需要 5 条边。"
+        },
+        {
+          "question": "用 BFS 判断连通性，从顶点 1 出发遍历后，发现还有顶点未被访问，这说明什么？",
+          "options": [
+            "BFS 写错了",
+            "图是非连通的，至少有 2 个连通分量",
+            "图一定是树",
+            "图中存在环"
+          ],
+          "answerIndex": 1,
+          "explanation": "如果 BFS 从一个顶点出发无法访问所有顶点，说明存在不可达的顶点，即图是非连通的。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.5",
+      "title": "邻接矩阵",
+      "learningGoal": "理解邻接矩阵表示图的方法，掌握用二维数组存储和操作图的技能",
+      "explanation": "【邻接矩阵】\n用一个 n×n 的二维矩阵 A 表示图：\n  A[i][j] = 1 表示顶点 i 和顶点 j 之间有边\n  A[i][j] = 0 表示没有边\n\n对于无向图，邻接矩阵是对称的：A[i][j] = A[j][i]。\n对于带权图，A[i][j] 存储边的权值（无权时用 1 表示存在，0 表示不存在）。\n\n【性质】\n1. 空间复杂度 O(n²)，适合稠密图（边数接近 n²）\n2. 判断两点是否有边：O(1)\n3. 遍历某个顶点的所有邻居：O(n)\n4. 对角线 A[i][i]：简单图中为 0（没有自环）\n5. 第 i 行（或第 i 列）中 1 的个数 = 顶点 i 的度数\n\n【与邻接表的对比】\n- 邻接矩阵：空间 O(n²)，查边 O(1)，适合稠密图\n- 邻接表：空间 O(n+m)，遍历邻居 O(degree)，适合稀疏图",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    int adj[105][105] = {};\n\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u][v] = 1;\n        adj[v][u] = 1;\n    }\n\n    cout << \"邻接矩阵:\" << endl;\n    cout << \"  \";\n    for (int i = 1; i <= n; i++) cout << i << \" \";\n    cout << endl;\n    for (int i = 1; i <= n; i++) {\n        cout << i << \" \";\n        for (int j = 1; j <= n; j++) {\n            cout << adj[i][j] << \" \";\n        }\n        cout << endl;\n    }\n\n    cout << \"各顶点度数: \";\n    for (int i = 1; i <= n; i++) {\n        int deg = 0;\n        for (int j = 1; j <= n; j++) deg += adj[i][j];\n        cout << \"deg(\" << i << \")=\" << deg << \" \";\n    }\n    cout << endl;\n\n    int u, v;\n    cin >> u >> v;\n    if (adj[u][v]) {\n        cout << u << \" 和 \" << v << \" 之间有边\" << endl;\n    } else {\n        cout << u << \" 和 \" << v << \" 之间没有边\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "用二维数组 adj[u][v] 存储邻接矩阵，初始化为全 0",
+        "无向图每条边需要在两个方向都标记：adj[u][v] = adj[v][u] = 1",
+        "第 i 行中 1 的个数就是顶点 i 的度数",
+        "判断两点之间是否有边只需 O(1)：直接查 adj[u][v]"
+      ],
+      "commonMistakes": [
+        {
+          "title": "邻接矩阵空间不够",
+          "description": "顶点数 n 较大时（如 n=10000），邻接矩阵需要 10^8 大小，会超出内存限制。",
+          "fix": "当 n 较大且图为稀疏图时，改用邻接表存储。"
+        },
+        {
+          "title": "忘记无向图要双向标记",
+          "description": "读入边 (u,v) 时只写了 adj[u][v]=1，忘记 adj[v][u]=1。",
+          "fix": "无向图每条边都要在矩阵中对称位置都标记。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有 n 个顶点的有向图（用邻接矩阵存储），判断图中是否存在从顶点 1 到顶点 n 的路径。",
+        "hint": "可以用 BFS 或 Floyd 算法，也可以直接用邻接矩阵做矩阵乘法。",
+        "expectedIdea": "用 BFS 从顶点 1 出发，根据邻接矩阵找邻居，看能否到达顶点 n"
+      },
+      "quiz": [
+        {
+          "question": "用邻接矩阵存储一个有 1000 个顶点的无向图，需要多少空间？",
+          "options": [
+            "约 1000 个整数",
+            "约 1000000 个整数",
+            "约 2000 个整数",
+            "约 500000 个整数"
+          ],
+          "answerIndex": 1,
+          "explanation": "邻接矩阵是 n×n 的，1000×1000 = 1000000 个整数。无向图虽然是对称的可以优化，但标准存储需要 n² 空间。"
+        },
+        {
+          "question": "以下哪种图更适合用邻接矩阵存储？",
+          "options": [
+            "10000 个顶点 20000 条边",
+            "100 个顶点 4500 条边",
+            "100000 个顶点 100000 条边",
+            "50000 个顶点 50000 条边"
+          ],
+          "answerIndex": 1,
+          "explanation": "100 个顶点的完全图有 100×99/2 = 4950 条边，4500 条边接近完全图，是稠密图，适合邻接矩阵。其他都是稀疏图。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.6",
+      "title": "树的基本概念",
+      "learningGoal": "理解树的定义和性质，掌握「n 个顶点 n-1 条边的连通无环图」这一核心特征",
+      "explanation": "【树的定义】\n树是一种特殊的无向图，满足以下条件（等价定义）：\n1. 连通且无环的图\n2. 连通且有 n-1 条边（n 为顶点数）\n3. 无环且有 n-1 条边\n4. 任意两点之间有且仅有一条路径\n\n以上四个条件等价，满足任何一个都可以称为树。\n\n【树的重要性质】\n1. n 个顶点的树恰好有 n-1 条边\n2. 删去树中任意一条边，树就变得不连通\n3. 在树中添加任意一条边，就会产生恰好一个环\n4. 树中度数为 1 的顶点称为叶子节点（叶节点）\n5. 度数 ≥ 2 的顶点称为内部节点\n6. 任意两个顶点之间有且仅有一条简单路径\n\n【特殊树】\n- 有根树：指定一个顶点为根的树\n- 二叉树：每个节点最多有两个子节点\n- 星形树：一个中心节点连接所有其他节点",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int degree[105] = {};\n    int m = n - 1;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        degree[u]++;\n        degree[v]++;\n    }\n\n    int leafCount = 0;\n    for (int i = 1; i <= n; i++) {\n        if (degree[i] == 1) leafCount++;\n    }\n\n    cout << \"顶点数: \" << n << endl;\n    cout << \"边数: \" << m << \" (= n-1 = \" << n - 1 << \")\" << endl;\n    cout << \"叶子节点数: \" << leafCount << endl;\n\n    if (n == 1) {\n        cout << \"只有一个顶点，它既是根也是叶子\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "树有 n 个顶点则恰好有 n-1 条边",
+        "度数为 1 的顶点是叶子节点",
+        "单顶点 n=1 时边数为 0，该顶点也是叶子",
+        "可以用 BFS/DFS 来判断一个图是否为树"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忽略 n=1 的特殊情况",
+          "description": "当只有一个顶点时，边数为 0，也是一棵合法的树。",
+          "fix": "n=1 时树没有边，这个顶点既是根也是叶子。注意特判。"
+        },
+        {
+          "title": "只检查边数不检查连通性",
+          "description": "只看到 n-1 条边就认为是树，但可能有 n-1 条边的非连通图（如森林）。",
+          "fix": "树必须同时满足：连通 + n-1 条边。两个条件缺一不可。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有 n 个顶点 m 条边的无向图，判断它是否是一棵树。",
+        "hint": "树的条件：连通 + n-1 条边。先检查边数是否为 n-1，再用 BFS 判断连通性。",
+        "expectedIdea": "先检查 m == n-1，然后用 BFS 从顶点 1 出发看能否访问所有 n 个顶点"
+      },
+      "quiz": [
+        {
+          "question": "一棵有 10 个顶点的树有多少条边？",
+          "options": [
+            "9",
+            "10",
+            "8",
+            "不确定"
+          ],
+          "answerIndex": 0,
+          "explanation": "树的基本性质：n 个顶点的树恰好有 n-1 条边。10-1 = 9。"
+        },
+        {
+          "question": "在一个有 n 个顶点的树中添加一条边，会发生什么？",
+          "options": [
+            "变成两棵树",
+            "产生恰好一个环",
+            "仍然是树",
+            "变成不连通图"
+          ],
+          "answerIndex": 1,
+          "explanation": "树中任意两点间有唯一路径，添加一条边后，连接的两点间有了两条路径，形成恰好一个环。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.7",
+      "title": "生成树",
+      "learningGoal": "理解生成树的概念，了解最小生成树的定义和常见算法（Kruskal、Prim）的基本思想",
+      "explanation": "【生成树】\n给定一个连通无向图 G，生成树是 G 的一个子图，满足：\n1. 包含 G 的所有顶点\n2. 是一棵树（连通且无环）\n\n因为树有 n-1 条边，所以生成树恰好保留 n-1 条边。\n\n【最小生成树（MST）】\n如果图中的边带有权值，最小生成树是所有边权值之和最小的生成树。\n\n【Kruskal 算法思想】\n1. 将所有边按权值从小到大排序\n2. 依次考虑每条边，如果加入后不形成环就加入\n3. 用并查集来判断是否形成环\n4. 时间复杂度 O(m log m)\n\n【Prim 算法思想】\n1. 从任意一个顶点开始\n2. 每次选择与当前生成树相连的权值最小的边\n3. 将新顶点加入生成树\n4. 重复直到所有顶点都被包含\n5. 时间复杂度 O(n²) 或 O(m log n)\n\n【重要性质】\n- 连通图一定存在生成树\n- 生成树不唯一，但最小生成树的权值和唯一",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nstruct Edge {\n    int u, v, w;\n    bool operator<(const Edge& other) const {\n        return w < other.w;\n    }\n};\n\nint parent[105];\n\nint find(int x) {\n    if (parent[x] != x) parent[x] = find(parent[x]);\n    return parent[x];\n}\n\nvoid unite(int x, int y) {\n    parent[find(x)] = find(y);\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    Edge edges[5005];\n    for (int i = 0; i < m; i++) {\n        cin >> edges[i].u >> edges[i].v >> edges[i].w;\n    }\n\n    sort(edges, edges + m);\n\n    for (int i = 1; i <= n; i++) parent[i] = i;\n\n    int totalWeight = 0;\n    int edgeCount = 0;\n\n    for (int i = 0; i < m && edgeCount < n - 1; i++) {\n        int u = edges[i].u, v = edges[i].v, w = edges[i].w;\n        if (find(u) != find(v)) {\n            unite(u, v);\n            totalWeight += w;\n            edgeCount++;\n            cout << \"选边: (\" << u << \",\" << v << \") 权值=\" << w << endl;\n        }\n    }\n\n    cout << \"最小生成树总权值: \" << totalWeight << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "Kruskal 算法：按边权从小到大排序，贪心选择不形成环的边",
+        "并查集 find() 判断两个顶点是否在同一连通分量",
+        "如果 find(u) != find(v) 说明加入这条边不会形成环",
+        "选够 n-1 条边后停止，此时得到最小生成树"
+      ],
+      "commonMistakes": [
+        {
+          "title": "Kruskal 中忘记排序",
+          "description": "没有将边按权值排序就进行选择，导致结果不是最小生成树。",
+          "fix": "Kruskal 算法第一步必须将所有边按权值从小到大排序。"
+        },
+        {
+          "title": "并查集路径压缩遗漏",
+          "description": "find 函数中没有做路径压缩，导致复杂度退化。",
+          "fix": "在 find 函数中使用 parent[x] = find(parent[x]) 进行路径压缩。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有 n 个顶点 m 条带权边的连通无向图，用 Kruskal 算法求最小生成树的权值和。",
+        "hint": "将边排序后用并查集依次选择不构成环的边，累计权值。",
+        "expectedIdea": "排序 + 并查集的 Kruskal 算法，选 n-1 条边后输出总权值"
+      },
+      "quiz": [
+        {
+          "question": "关于最小生成树，以下说法正确的是？",
+          "options": [
+            "最小生成树一定唯一",
+            "最小生成树的权值和一定唯一",
+            "最小生成树最多有 n 条边",
+            "非连通图也有最小生成树"
+          ],
+          "answerIndex": 1,
+          "explanation": "最小生成树可能不唯一（存在多条权值相同的边时），但最小生成树的权值和是唯一的。"
+        },
+        {
+          "question": "Kruskal 算法的时间复杂度主要取决于？",
+          "options": [
+            "顶点数 n",
+            "边数 m 和排序",
+            "顶点数 n 的平方",
+            "图是否连通"
+          ],
+          "answerIndex": 1,
+          "explanation": "Kruskal 算法需要排序所有边，时间复杂度为 O(m log m)，主要取决于边数。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.8",
+      "title": "有向图与无向图",
+      "learningGoal": "理解有向图和无向图的区别，掌握有向图中入度和出度的概念",
+      "explanation": "【无向图】\n边没有方向，(u,v) 和 (v,u) 是同一条边。\n用邻接矩阵存储时是对称矩阵。\n\n【有向图】\n边有方向，从 u 指向 v 的边记为 <u,v> 或 u→v。\n<u,v> 和 <v,u> 是两条不同的有向边。\n用邻接矩阵存储时 A[u][v]=1 表示存在 u→v 的边。\n\n【有向图的度数】\n在有向图中，度数分为入度和出度：\n- 入度（in-degree）：指向该顶点的边数，记作 deg⁻(v)\n- 出度（out-degree）：从该顶点出发的边数，记作 deg⁺(v)\n- 总度数 = 入度 + 出度\n\n【有向图的握手定理】\n所有顶点的入度之和 = 所有顶点的出度之和 = 边数 m\n即：Σdeg⁻(v) = Σdeg⁺(v) = m\n\n【有向图中的路径】\n有向图中的路径必须沿着边的方向走。\n从 u 到 v 有路径，不一定从 v 到 u 也有路径。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    int inDeg[105] = {};\n    int outDeg[105] = {};\n\n    cout << \"有向图的边:\" << endl;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        outDeg[u]++;\n        inDeg[v]++;\n        cout << u << \" -> \" << v << endl;\n    }\n\n    int sumIn = 0, sumOut = 0;\n    for (int i = 1; i <= n; i++) {\n        sumIn += inDeg[i];\n        sumOut += outDeg[i];\n        cout << \"顶点 \" << i << \": 入度=\" << inDeg[i]\n             << \" 出度=\" << outDeg[i]\n             << \" 总度数=\" << inDeg[i] + outDeg[i] << endl;\n    }\n\n    cout << \"入度之和: \" << sumIn << endl;\n    cout << \"出度之和: \" << sumOut << endl;\n    cout << \"边数: \" << m << endl;\n    cout << \"验证: \" << (sumIn == sumOut && sumIn == m ? \"正确\" : \"错误\") << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "有向边 u→v：u 的出度加 1，v 的入度加 1",
+        "有向图的握手定理：入度之和 = 出度之和 = 边数",
+        "有向图中路径必须沿边的方向行走",
+        "入度为 0 的顶点称为源点，出度为 0 的顶点称为汇点"
+      ],
+      "commonMistakes": [
+        {
+          "title": "有向图中入度和出度弄反",
+          "description": "读入有向边 u→v 时，把 u 当成入度、v 当成出度。",
+          "fix": "u→v 表示边从 u 出发到 v，所以 u 的出度+1，v 的入度+1。"
+        },
+        {
+          "title": "在有向图中使用无向图的握手定理",
+          "description": "在有向图中用 sum = 2m 来验证，但这是无向图的公式。",
+          "fix": "有向图中 Σ入度 = Σ出度 = m（不是 2m）。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个有向图，找出所有入度为 0 的顶点（源点）和出度为 0 的顶点（汇点）。",
+        "hint": "分别统计每个顶点的入度和出度，入度为 0 的是源点，出度为 0 的是汇点。",
+        "expectedIdea": "遍历所有顶点，检查入度和出度是否为 0，分别收集源点和汇点"
+      },
+      "quiz": [
+        {
+          "question": "一个有向图有 5 个顶点 8 条边，所有顶点的入度之和是多少？",
+          "options": [
+            "16",
+            "8",
+            "10",
+            "无法确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "有向图的握手定理：Σ入度 = Σ出度 = 边数 m = 8。"
+        },
+        {
+          "question": "在有向图中，一个顶点的入度为 3、出度为 2，以下说法正确的是？",
+          "options": [
+            "有 3 条边从该顶点出发",
+            "有 2 条边指向该顶点",
+            "与该顶点关联的边共有 5 条",
+            "该顶点的度数为 2"
+          ],
+          "answerIndex": 2,
+          "explanation": "入度 3 表示有 3 条边指向该顶点，出度 2 表示有 2 条边从该顶点出发，总共 3+2=5 条边与该顶点关联。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.9",
+      "title": "二分图",
+      "learningGoal": "理解二分图的定义和判定方法，能用染色法（BFS/DFS）判断一个图是否为二分图",
+      "explanation": "【二分图的定义】\n二分图（Bipartite Graph）是指可以将所有顶点分成两个不相交的集合 X 和 Y，\n使得每条边的两个端点分别属于不同的集合。\n\n简单理解：顶点分成两组，所有边都只连接不同组的顶点，同组内没有边。\n\n【等价条件】\n一个图是二分图，当且仅当图中不存在奇数长度的环（奇环）。\n即：二分图 ↔ 图中没有奇环。\n\n【判定方法：染色法】\n用两种颜色（如 0 和 1）对顶点染色：\n1. 从任意一个未染色的顶点开始，染成颜色 0\n2. 将其所有邻居染成颜色 1\n3. 将邻居的邻居染成颜色 0\n4. 如此交替染色\n5. 如果发现某个顶点的邻居与自己颜色相同 → 不是二分图\n6. 如果所有顶点都能成功染色 → 是二分图\n\n【信奥应用】\n- 匹配问题（最大匹配、完美匹配）\n- 任务分配问题\n- 棋盘问题（黑白染色）",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    vector<int> adj[105];\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n\n    int color[105];\n    for (int i = 1; i <= n; i++) color[i] = -1;\n\n    bool isBipartite = true;\n\n    for (int start = 1; start <= n; start++) {\n        if (color[start] != -1) continue;\n\n        color[start] = 0;\n        queue<int> q;\n        q.push(start);\n\n        while (!q.empty() && isBipartite) {\n            int u = q.front();\n            q.pop();\n            for (int v : adj[u]) {\n                if (color[v] == -1) {\n                    color[v] = 1 - color[u];\n                    q.push(v);\n                } else if (color[v] == color[u]) {\n                    isBipartite = false;\n                    break;\n                }\n            }\n        }\n    }\n\n    if (isBipartite) {\n        cout << \"是二分图\" << endl;\n        cout << \"集合 X: \";\n        for (int i = 1; i <= n; i++) if (color[i] == 0) cout << i << \" \";\n        cout << endl;\n        cout << \"集合 Y: \";\n        for (int i = 1; i <= n; i++) if (color[i] == 1) cout << i << \" \";\n        cout << endl;\n    } else {\n        cout << \"不是二分图\" << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "用 color 数组记录每个顶点的颜色，-1 表示未染色",
+        "BFS 染色：邻居的颜色与当前顶点相反（1 - color[u]）",
+        "如果发现邻居与自己颜色相同，说明存在奇环，不是二分图",
+        "需要对每个连通分量都执行染色，因为图可能不连通"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只从一个顶点出发染色",
+          "description": "图可能不连通，只从一个顶点出发只能染色一个连通分量。",
+          "fix": "外层循环遍历所有顶点，对每个未染色的顶点启动 BFS。"
+        },
+        {
+          "title": "颜色初始值设为 0",
+          "description": "将 color 数组初始化为 0，无法区分「未染色」和「染了颜色 0」。",
+          "fix": "初始化为 -1 表示未染色，0 和 1 表示两种颜色。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个无向图，用染色法判断它是否为二分图，如果是则输出两个顶点集合。",
+        "hint": "用 BFS 从每个未染色顶点出发，交替染色，遇到冲突则不是二分图。",
+        "expectedIdea": "BFS 染色法，用 color 数组交替染色，检测是否有相邻同色顶点"
+      },
+      "quiz": [
+        {
+          "question": "以下关于二分图的说法，正确的是？",
+          "options": [
+            "二分图中不能有任何环",
+            "二分图中可以有偶数长度的环",
+            "二分图中可以有奇数长度的环",
+            "树一定不是二分图"
+          ],
+          "answerIndex": 1,
+          "explanation": "二分图中不能有奇环，但可以有偶环。树没有环，一定是二分图。"
+        },
+        {
+          "question": "一棵有 n 个顶点的树，是否一定是二分图？",
+          "options": [
+            "是，因为树中没有环",
+            "不是，只有特殊的树才是",
+            "只有当 n 是偶数时才是",
+            "取决于树的具体形状"
+          ],
+          "answerIndex": 0,
+          "explanation": "树中没有环（自然也没有奇环），所以树一定是二分图。可以从任意根节点开始黑白交替染色。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.5.10",
+      "title": "图的着色",
+      "learningGoal": "理解图的着色问题和色数的概念，了解四色定理和常见的着色算法思想",
+      "explanation": "【图的着色】\n图的着色是指给图的每个顶点分配一种颜色，使得相邻的两个顶点颜色不同。\n\n【色数】\n色数 χ(G) 是给图 G 着色所需的最少颜色数。\n\n【一些特殊图的色数】\n- 空图（没有边）：χ = 1\n- 二分图：χ = 2（除非没有边）\n- 完全图 Kn：χ = n\n- 奇数个顶点的环：χ = 3\n- 偶数个顶点的环：χ = 2\n\n【四色定理】\n四色定理（1976 年证明）：任意平面图最多只需要 4 种颜色就可以着色。\n即平面图的色数 χ(G) ≤ 4。\n\n这是数学史上第一个主要借助计算机证明的定理。\n\n【着色的应用】\n1. 排课问题：有冲突的课程不能同时上课\n2. 寄存器分配：冲突的变量不能共用寄存器\n3. 地图着色：相邻区域颜色不同\n\n【着色的难度】\n一般图的色数判定是 NP 困难问题，没有已知的多项式时间算法。\n但对于平面图，保证 4 种颜色就够了。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint n, m;\nint adj[105][105] = {};\nint color[105];\n\nbool isSafe(int v, int c) {\n    for (int i = 1; i <= n; i++) {\n        if (adj[v][i] && color[i] == c) return false;\n    }\n    return true;\n}\n\nbool solve(int v, int maxColor) {\n    if (v > n) return true;\n    for (int c = 1; c <= maxColor; c++) {\n        if (isSafe(v, c)) {\n            color[v] = c;\n            if (solve(v + 1, maxColor)) return true;\n            color[v] = 0;\n        }\n    }\n    return false;\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u][v] = 1;\n        adj[v][u] = 1;\n    }\n\n    for (int maxColor = 1; maxColor <= n; maxColor++) {\n        for (int i = 1; i <= n; i++) color[i] = 0;\n        if (solve(1, maxColor)) {\n            cout << \"色数: \" << maxColor << endl;\n            for (int i = 1; i <= n; i++) {\n                cout << \"顶点 \" << i << \" -> 颜色 \" << color[i] << endl;\n            }\n            break;\n        }\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "isSafe(v,c) 检查顶点 v 是否可以染颜色 c（与邻居不冲突）",
+        "回溯法尝试给每个顶点着色，从少到多枚举颜色数",
+        "找到最少颜色数即为色数 χ(G)",
+        "这是一般图的着色方法，时间复杂度较高（NP 困难问题）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "贪心着色不能保证最优",
+          "description": "用贪心法按某种顺序着色，得到的颜色数不一定是最少的。",
+          "fix": "贪心着色结果受顶点顺序影响，要求色数需要回溯搜索或更复杂的算法。"
+        },
+        {
+          "title": "混淆平面图和一般图",
+          "description": "误以为所有图都可以用 4 种颜色着色。",
+          "fix": "四色定理只适用于平面图。完全图 K5 需要 5 种颜色，且 K5 不是平面图。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个无向图，判断它是否可以用 3 种颜色着色（3-着色问题）。",
+        "hint": "用回溯法尝试给每个顶点分配 3 种颜色之一，检查是否与邻居冲突。",
+        "expectedIdea": "回溯法枚举每个顶点的颜色，检查相邻顶点颜色不同"
+      },
+      "quiz": [
+        {
+          "question": "完全图 K5（5个顶点两两相连）的色数是多少？",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answerIndex": 3,
+          "explanation": "完全图 Kn 中每个顶点都与其他所有顶点相邻，所以需要 n 种颜色。K5 的色数是 5。"
+        },
+        {
+          "question": "四色定理说的是？",
+          "options": [
+            "任何图都可以用 4 种颜色着色",
+            "任何平面图都可以用 4 种颜色着色",
+            "二分图只需要 4 种颜色",
+            "地图着色最多需要 4 种颜色，但未证明"
+          ],
+          "answerIndex": 1,
+          "explanation": "四色定理：任意平面图最多只需要 4 种颜色就能使相邻顶点颜色不同。注意限于平面图，不是所有图。"
+        }
+      ]
+    }
+  ],
+  "sectionId": "4.5"
+}

@@ -1,0 +1,28 @@
+{
+  "sectionId": "3.5",
+  "sectionName": "堆",
+  "units": [
+    {
+      "itemId": "3.5.1",
+      "title": "二叉堆基础",
+      "learningGoal": "理解二叉堆的性质和操作，掌握 priority_queue 的使用",
+      "explanation": "二叉堆是一棵完全二叉树，满足堆性质：\n- 大根堆：每个节点 >= 它的孩子\n- 小根堆：每个节点 <= 它的孩子\n\nC++ STL 的 priority_queue 默认是大根堆：\n- push(x)：插入 O(log n)\n- pop()：删除堆顶 O(log n)\n- top()：获取堆顶 O(1)\n\n小根堆声明：priority_queue<int, vector<int>, greater<int>> pq;\n\n应用：Dijkstra、堆排序、动态求中位数、合并有序序列。",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n    priority_queue<int> pq;\n    pq.push(3); pq.push(1); pq.push(4); pq.push(1);\n    while (!pq.empty()) {\n        cout << pq.top() << \" \";\n        pq.pop();\n    }\n    return 0;\n}",
+      "codeNotes": ["默认大根堆", "push/pop O(log n)", "top O(1)", "小根堆用 greater<int>"],
+      "commonMistakes": [{"title": "以为默认是小根堆", "description": "priority_queue 默认大根堆，堆顶是最大值。", "fix": "小根堆用 priority_queue<int, vector<int>, greater<int>>。"}],
+      "practice": {"prompt": "读入 n 个数，每次输出当前所有数的中位数。", "hint": "用两个堆：大根堆存较小的一半，小根堆存较大的一半。", "expectedIdea": "对顶堆：维护两个堆平衡，堆顶就是中位数。"},
+      "quiz": [{"question": "C++ priority_queue 默认是什么堆？", "options": ["小根堆", "大根堆", "最小堆", "随机堆"], "answerIndex": 1, "explanation": "priority_queue 默认大根堆，top() 返回最大值。"}]
+    },
+    {
+      "itemId": "3.5.2",
+      "title": "手写堆",
+      "learningGoal": "掌握手写二叉堆的上浮和下沉操作",
+      "explanation": "手写堆用数组实现完全二叉树：\n- 节点 i 的左儿子：2*i\n- 节点 i 的右儿子：2*i+1\n- 节点 i 的父节点：i/2\n\n核心操作：\n- up(i)：上浮，和父节点比较交换（插入时用）\n- down(i)：下沉，和较大儿子比较交换（删除时用）\n\n建堆：从 n/2 到 1 依次 down 即可 O(n)。\n\n竞赛中一般直接用 priority_queue，但有些题需要手写（如支持修改任意元素）。",
+      "exampleCode": "int heap[N], sz;\n\nvoid up(int i) {\n    while (i > 1 && heap[i] > heap[i/2]) {\n        swap(heap[i], heap[i/2]);\n        i /= 2;\n    }\n}\n\nvoid down(int i) {\n    while (2*i <= sz) {\n        int j = 2*i;\n        if (j+1 <= sz && heap[j+1] > heap[j]) j++;\n        if (heap[i] >= heap[j]) break;\n        swap(heap[i], heap[j]);\n        i = j;\n    }\n}\n\nvoid push(int x) { heap[++sz] = x; up(sz); }\nvoid pop() { heap[1] = heap[sz--]; down(1); }",
+      "codeNotes": ["左儿子 2*i，右儿子 2*i+1", "up 上浮，down 下沉", "push = 放末尾 + up", "pop = 末尾换到顶 + down"],
+      "commonMistakes": [{"title": "down时忘记找较大儿子", "description": "直接和左儿子比较，忽略了右儿子可能更大。", "fix": "先比较左右儿子找较大的，再和当前节点比较。"}],
+      "practice": {"prompt": "手写大根堆，支持插入、删除堆顶、查询堆顶。", "hint": "up/down 两个核心函数。", "expectedIdea": "手写堆模板：up/down/push/pop/top"},
+      "quiz": [{"question": "手写堆中，节点 i 的父节点下标是？", "options": ["2*i", "2*i+1", "i/2", "i-1"], "answerIndex": 2, "explanation": "数组实现完全二叉树中，i 的父节点是 i/2。"}]
+    }
+  ]
+}

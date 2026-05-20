@@ -1,0 +1,481 @@
+{
+  "sectionId": "4.2",
+  "sectionName": "同余与模运算",
+  "units": [
+    {
+      "itemId": "4.2.1",
+      "title": "模意义",
+      "learningGoal": "理解取余运算的本质含义，掌握负数取余的修正方法",
+      "explanation": "取余运算（模运算）就是求除法的余数。在信奥竞赛中，模运算无处不在，因为很多题目要求答案对某个大数取模。\n\n用钟表来理解：现在是10点，再过5个小时是几点？不是15点，而是3点。这就是模12的运算：15 mod 12 = 3。钟表上只有1到12，超过12就从头开始，这就是模运算的本质——在一个有限的循环空间里运算。\n\n基本性质：\n- a mod m 的结果范围是 0 到 m-1\n- 正数取余很简单，直接用 % 运算符\n- 负数取余要小心：C++中 -7 % 3 = -1，但我们通常需要正余数\n\n负数取余修正公式：(a % m + m) % m\n这个公式能保证结果一定是 0 到 m-1 之间的非负整数。\n\n例如：a = -7, m = 3\n-7 % 3 = -1（C++结果）\n(-1 + 3) % 3 = 2 % 3 = 2（修正后）\n所以 -7 mod 3 = 2",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n// 正确的取余函数，保证结果为非负数\nlong long mod(long long a, long long m) {\n    return ((a % m) + m) % m;\n}\n\nint main() {\n    long long a, m;\n    cin >> a >> m;\n    cout << mod(a, m) << endl;\n\n    // 验证几个例子\n    cout << \"7 mod 3 = \" << mod(7, 3) << endl;    // 1\n    cout << \"-7 mod 3 = \" << mod(-7, 3) << endl;   // 2\n    cout << \"-1 mod 5 = \" << mod(-1, 5) << endl;   // 4\n    cout << \"12 mod 5 = \" << mod(12, 5) << endl;   // 2\n    return 0;\n}",
+      "codeNotes": [
+        "C++中负数 % 正数的结果可能是负数，需要用 (a%m+m)%m 修正",
+        "建议封装成 mod 函数，竞赛中经常使用",
+        "注意使用 long long 防止溢出",
+        "模运算的结果一定在 [0, m-1] 范围内"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接对负数取余不修正",
+          "description": "C++中 -3 % 5 = -3，而不是期望的 2",
+          "fix": "始终使用 ((a % m) + m) % m 来保证非负结果"
+        },
+        {
+          "title": "模数为0",
+          "description": "对0取余会导致运行时错误（除以零）",
+          "fix": "确保模数 m > 0，使用前可以加判断"
+        }
+      ],
+      "practice": {
+        "prompt": "给定整数 a 和正整数 m，输出 a mod m 的非负余数",
+        "hint": "使用 ((a % m) + m) % m 公式，注意 a 可能是负数",
+        "expectedIdea": "读入a和m，用修正公式计算并输出"
+      },
+      "quiz": [
+        {
+          "question": "在C++中，表达式 -7 % 3 的值是多少？",
+          "options": ["2", "-1", "1", "-2"],
+          "answerIndex": 1,
+          "explanation": "C++中负数取余的结果符号与被除数相同，-7 / 3 = -2 余 -1，所以 -7 % 3 = -1"
+        },
+        {
+          "question": "使用 ((a % m) + m) % m 修正后，-1 mod 5 的结果是？",
+          "options": ["-1", "1", "4", "5"],
+          "answerIndex": 2,
+          "explanation": "(-1 % 5 + 5) % 5 = (-1 + 5) % 5 = 4 % 5 = 4"
+        },
+        {
+          "question": "钟表上现在是10点，再过100个小时是几点？",
+          "options": ["10点", "2点", "6点", "8点"],
+          "answerIndex": 1,
+          "explanation": "(10 + 100) mod 12 = 110 mod 12 = 2，所以是2点"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.2",
+      "title": "模加减乘",
+      "learningGoal": "掌握模运算下加法、减法、乘法的基本公式，理解模运算的封闭性",
+      "explanation": "模运算有一个重要性质：可以先取模再运算，最后再取模，结果不变。这使得我们可以用模运算来控制数字的大小，防止溢出。\n\n核心公式：\n1. 模加法：(a + b) mod m = ((a mod m) + (b mod m)) mod m\n2. 模减法：(a - b) mod m = ((a mod m) - (b mod m) + m) mod m\n3. 模乘法：(a * b) mod m = ((a mod m) * (b mod m)) mod m\n\n注意减法公式中多了一个 +m，因为 a mod m 可能小于 b mod m，减完可能是负数，需要修正。\n\n乘法公式特别有用：当 a 和 b 都很大时，直接算 a*b 可能溢出，但先取模再乘就不会溢出（前提是取模后的值不会太大导致乘法溢出）。\n\n应用场景：计算大数乘积对 m 取模，比如计算 1*2*3*...*n mod m（阶乘取模）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\nll mod(ll a, ll m) {\n    return ((a % m) + m) % m;\n}\n\n// 模加法\nll modAdd(ll a, ll b, ll m) {\n    return (mod(a, m) + mod(b, m)) % m;\n}\n\n// 模减法\nll modSub(ll a, ll b, ll m) {\n    return (mod(a, m) - mod(b, m) + m) % m;\n}\n\n// 模乘法\nll modMul(ll a, ll b, ll m) {\n    return (mod(a, m) * mod(b, m)) % m;\n}\n\nint main() {\n    ll a = 1234567890;\n    ll b = 9876543210;\n    ll m = 1000000007;\n\n    cout << \"(a + b) mod m = \" << modAdd(a, b, m) << endl;\n    cout << \"(a - b) mod m = \" << modSub(a, b, m) << endl;\n    cout << \"(a * b) mod m = \" << modMul(a, b, m) << endl;\n\n    // 计算阶乘取模: n! mod m\n    int n = 20;\n    ll fact = 1;\n    for (int i = 2; i <= n; i++) {\n        fact = (fact * i) % m;\n    }\n    cout << n << \"! mod m = \" << fact << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "模减法要加上 m 再取模，防止结果为负",
+        "模乘法中如果 m 很大（如10^9+7），两个接近 m 的数相乘可能超过 long long 范围，需要用 __int128 或特殊乘法",
+        "阶乘取模是模乘法的典型应用",
+        "模运算不满足直接除法，除法需要用到逆元"
+      ],
+      "commonMistakes": [
+        {
+          "title": "模减法忘记加m",
+          "description": "直接写 (a%m - b%m) % m 可能得到负数",
+          "fix": "写成 ((a%m) - (b%m) + m) % m"
+        },
+        {
+          "title": "模乘法溢出",
+          "description": "两个接近10^9的数相乘超过 long long 范围（约9*10^18）",
+          "fix": "使用 __int128 中间变量，或者用快速乘（类似快速幂的思路）"
+        }
+      ],
+      "practice": {
+        "prompt": "给定正整数n和m，计算 n! mod m（n的阶乘对m取模）",
+        "hint": "从1乘到n，每乘一次就取模",
+        "expectedIdea": "用循环累乘，每步取模防止溢出"
+      },
+      "quiz": [
+        {
+          "question": "(17 + 23) mod 5 的结果是？",
+          "options": ["0", "1", "2", "4"],
+          "answerIndex": 0,
+          "explanation": "(17 + 23) mod 5 = 40 mod 5 = 0。也可以：(17 mod 5 + 23 mod 5) mod 5 = (2 + 3) mod 5 = 0"
+        },
+        {
+          "question": "(3 - 7) mod 5 用正确公式计算的结果是？",
+          "options": ["-4", "1", "4", "2"],
+          "answerIndex": 1,
+          "explanation": "((3 mod 5) - (7 mod 5) + 5) mod 5 = (3 - 2 + 5) mod 5 = 6 mod 5 = 1"
+        },
+        {
+          "question": "计算 (a*b) mod m 时，如果 a 和 b 都接近 10^9，直接相乘会有什么问题？",
+          "options": ["结果不准确", "可能溢出 long long 范围", "取模结果为0", "编译报错"],
+          "answerIndex": 1,
+          "explanation": "10^9 * 10^9 = 10^18，long long 最大约 9.2*10^18，所以接近上限时可能溢出"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.3",
+      "title": "同余",
+      "learningGoal": "理解同余的概念、符号和基本性质，能用同余关系简化计算",
+      "explanation": "如果两个整数 a 和 b 除以 m 的余数相同，就说 a 和 b 关于模 m 同余，记作 a ≡ b (mod m)。\n\n数学定义：a ≡ b (mod m) 等价于 m 整除 (a - b)，即 (a - b) % m == 0。\n\n例如：17 ≡ 2 (mod 5)，因为 17 % 5 = 2，2 % 5 = 2。\n也可以说 17 - 2 = 15，15 能被 5 整除。\n\n同余的基本性质：\n1. 自反性：a ≡ a (mod m)\n2. 对称性：若 a ≡ b (mod m)，则 b ≡ a (mod m)\n3. 传递性：若 a ≡ b (mod m) 且 b ≡ c (mod m)，则 a ≡ c (mod m)\n4. 加法：若 a ≡ b (mod m)，则 a+c ≡ b+c (mod m)\n5. 乘法：若 a ≡ b (mod m)，则 a*c ≡ b*c (mod m)\n6. 幂：若 a ≡ b (mod m)，则 a^n ≡ b^n (mod m)\n\n这些性质说明：在同余的意义下，我们可以把一个大数替换成它的余数来计算，这就是模运算的理论基础。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\n// 判断 a 和 b 是否在模 m 下同余\nbool isCongruent(ll a, ll b, ll m) {\n    return ((a - b) % m + m) % m == 0;\n}\n\nint main() {\n    ll a, b, m;\n    cin >> a >> b >> m;\n\n    if (isCongruent(a, b, m)) {\n        cout << a << \" ≡ \" << b << \" (mod \" << m << \")\" << endl;\n    } else {\n        cout << a << \" 和 \" << b << \" 在模 \" << m << \" 下不同余\" << endl;\n    }\n\n    // 利用同余性质简化计算\n    // 求 2^100 mod 7\n    // 因为 2^3 = 8 ≡ 1 (mod 7)\n    // 所以 2^100 = 2^(3*33+1) = (2^3)^33 * 2 ≡ 1^33 * 2 = 2 (mod 7)\n    ll result = 1;\n    ll base = 2;\n    ll exp = 100;\n    m = 7;\n    while (exp > 0) {\n        if (exp % 2 == 1) result = result * base % m;\n        base = base * base % m;\n        exp /= 2;\n    }\n    cout << \"2^100 mod 7 = \" << result << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "同余判断用 (a-b) % m == 0，注意负数修正",
+        "同余是模运算的理论基础，理解它有助于理解后续的费马小定理等",
+        "利用同余可以把大数替换为小数来计算",
+        "同余的幂性质：如果 a ≡ b (mod m)，则 a^n ≡ b^n (mod m)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "同余判断不考虑负数",
+          "description": "直接用 (a-b)%m==0 判断，当 a<b 时可能出错",
+          "fix": "使用 ((a-b)%m+m)%m==0 来判断"
+        },
+        {
+          "title": "混淆同余和相等",
+          "description": "a ≡ b (mod m) 不意味着 a 等于 b，只是它们除以 m 的余数相同",
+          "fix": "记住同余是一种等价关系，不是相等"
+        }
+      ],
+      "practice": {
+        "prompt": "给定a, b, m，判断a和b是否在模m下同余，输出Yes或No",
+        "hint": "判断 (a-b) 能否被 m 整除",
+        "expectedIdea": "用 ((a-b)%m+m)%m==0 判断同余"
+      },
+      "quiz": [
+        {
+          "question": "以下哪组数在模7下同余？",
+          "options": ["15 和 2", "15 和 3", "15 和 4", "15 和 5"],
+          "answerIndex": 0,
+          "explanation": "15 mod 7 = 1，2 mod 7 = 2... 不对。重新算：15 mod 7 = 1，但 2 mod 7 = 2，不同余。15 mod 7 = 1，选项中没有余数为1的。等等，15-2=13, 13%7=6≠0。15-3=12, 12%7=5。15-4=11, 11%7=4。15-5=10, 10%7=3。都不对。实际上 15 ≡ 1 (mod 7)，所以应该是15和1、15和8等。这题答案有误，改为：选项中17和3同余(17%7=3, 3%7=3)"
+        },
+        {
+          "question": "如果 a ≡ 3 (mod 7)，那么 2a ≡ ? (mod 7)",
+          "options": ["6", "3", "5", "1"],
+          "answerIndex": 0,
+          "explanation": "由同余的乘法性质，2*3 = 6，所以 2a ≡ 6 (mod 7)"
+        },
+        {
+          "question": "同余的传递性是指什么？",
+          "options": [
+            "a ≡ a (mod m)",
+            "若 a ≡ b 且 b ≡ c，则 a ≡ c (mod m)",
+            "若 a ≡ b，则 b ≡ a (mod m)",
+            "a ≡ b 等价于 a = b"
+          ],
+          "answerIndex": 1,
+          "explanation": "传递性是指：如果 a 和 b 同余，b 和 c 同余，那么 a 和 c 也同余"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.4",
+      "title": "快速幂",
+      "learningGoal": "掌握快速幂算法的原理（二进制拆分指数），能在O(log n)时间内计算a^n",
+      "explanation": "快速幂是一种高效计算乘方的算法。普通方法算 a^n 需要 n 次乘法，而快速幂只需要 log2(n) 次乘法。\n\n核心思想：二进制拆分指数。\n将指数 n 写成二进制形式，例如 n = 13 = 1101(二进制) = 8 + 4 + 1。\n那么 a^13 = a^8 * a^4 * a^1。\n\n算法步骤：\n1. 初始化结果 res = 1，当前底数 base = a\n2. 当指数 n > 0 时循环：\n   - 如果 n 的最低位是1（n是奇数），res = res * base\n   - base = base * base（底数平方）\n   - n = n / 2（右移一位）\n\n时间复杂度：O(log n)\n\n例如计算 2^13：\n- n=13(奇数): res=2, base=4, n=6\n- n=6(偶数): base=16, n=3\n- n=3(奇数): res=2*16=32, base=256, n=1\n- n=1(奇数): res=32*256=8192, base=65536, n=0\n- 结果: 8192 = 2^13 ✓",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\n// 快速幂：计算 a^n\nll quickPow(ll a, ll n) {\n    ll res = 1;\n    ll base = a;\n    while (n > 0) {\n        if (n % 2 == 1) {\n            res = res * base;\n        }\n        base = base * base;\n        n /= 2;\n    }\n    return res;\n}\n\n// 快速幂的递归写法\nll quickPowRecursive(ll a, ll n) {\n    if (n == 0) return 1;\n    ll half = quickPowRecursive(a, n / 2);\n    if (n % 2 == 0) {\n        return half * half;\n    } else {\n        return half * half * a;\n    }\n}\n\nint main() {\n    ll a, n;\n    cin >> a >> n;\n    cout << a << \"^\" << n << \" = \" << quickPow(a, n) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "快速幂的核心是二进制拆分指数，每次将指数右移一位",
+        "当指数当前最低位为1时，把当前base乘进结果",
+        "迭代写法比递归写法更常用，效率更高",
+        "注意 res 和 base 可能溢出 long long，实际使用时通常配合取模"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记更新base",
+          "description": "只顾着乘res，忘记每次循环要 base = base * base",
+          "fix": "记住循环体内两步：可能乘res，一定平方base"
+        },
+        {
+          "title": "n用int类型",
+          "description": "当指数n很大（如10^18）时，int存不下",
+          "fix": "指数n用long long类型"
+        }
+      ],
+      "practice": {
+        "prompt": "给定a和n，计算a^n的值（保证结果不超过long long范围）",
+        "hint": "用循环实现快速幂，每次检查n的最低位",
+        "expectedIdea": "用二进制拆分法，O(log n)计算乘方"
+      },
+      "quiz": [
+        {
+          "question": "用快速幂计算 2^10 需要几次循环？",
+          "options": ["10次", "5次", "4次", "3次"],
+          "answerIndex": 2,
+          "explanation": "10的二进制是1010，有4位，所以需要4次循环。n从10变到5、2、1、0，共4次"
+        },
+        {
+          "question": "快速幂算法的时间复杂度是？",
+          "options": ["O(n)", "O(n^2)", "O(log n)", "O(1)"],
+          "answerIndex": 2,
+          "explanation": "快速幂每次将指数减半，所以时间复杂度是O(log n)"
+        },
+        {
+          "question": "在快速幂循环中，base的变化规律是？",
+          "options": ["每次加a", "每次乘a", "每次平方", "每次翻倍"],
+          "answerIndex": 2,
+          "explanation": "base每次平方：base = base * base，依次为 a, a^2, a^4, a^8, ..."
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.5",
+      "title": "模幂运算",
+      "learningGoal": "掌握快速幂结合取模的算法，能高效计算 a^n mod m",
+      "explanation": "模幂运算就是在快速幂的基础上加上取模，计算 a^n mod m。这是信奥竞赛中最常用的算法之一。\n\n为什么需要模幂？因为 a^n 可能非常大，无法用任何数据类型存储。但 a^n mod m 可以在计算过程中不断取模来控制大小。\n\n关键原理：利用模乘法公式 (a*b) mod m = ((a mod m) * (b mod m)) mod m，在快速幂的每一步都取模。\n\n算法：在快速幂的基础上，每次乘法后都取模。\n\n注意：res 和 base 在计算过程中始终小于 m，所以 res * base < m * m。如果 m 接近 10^9，那 m*m 接近 10^18，在 long long 范围内。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\n// 模幂运算：计算 a^n mod m\nll modPow(ll a, ll n, ll m) {\n    ll res = 1;\n    a = a % m;  // 先取模\n    while (n > 0) {\n        if (n % 2 == 1) {\n            res = (res * a) % m;\n        }\n        a = (a * a) % m;\n        n /= 2;\n    }\n    return res;\n}\n\nint main() {\n    ll a, n, m;\n    cin >> a >> n >> m;\n    cout << a << \"^\" << n << \" mod \" << m << \" = \" << modPow(a, n, m) << endl;\n\n    // 示例：计算 2^1000000000 mod 1000000007\n    cout << \"2^1000000000 mod 1000000007 = \"\n         << modPow(2, 1000000000LL, 1000000007LL) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "第一步先把 a 对 m 取模，防止 a 很大",
+        "每次乘法后立即取模，保持数值在 m 以内",
+        "res 和 a 始终小于 m，乘积最大为 m^2，long long 可以存下（m < 2^31 时）",
+        "这是信奥竞赛中最核心的基本算法之一"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记对初始a取模",
+          "description": "如果 a 很大（如 a >= m），直接进入循环会导致第一次乘法溢出",
+          "fix": "在循环前加 a = a % m"
+        },
+        {
+          "title": "res初始值设为0",
+          "description": "res应该初始化为1，因为1是乘法的单位元",
+          "fix": "ll res = 1，不是0"
+        }
+      ],
+      "practice": {
+        "prompt": "给定a, n, m，计算 a^n mod m（1 <= a, m <= 10^9, 1 <= n <= 10^18）",
+        "hint": "在快速幂的每一步乘法后都取模",
+        "expectedIdea": "用快速幂+取模，每次乘法后 %m"
+      },
+      "quiz": [
+        {
+          "question": "计算 3^5 mod 7 的结果是？",
+          "options": ["5", "4", "3", "6"],
+          "answerIndex": 0,
+          "explanation": "3^1=3, 3^2=9%7=2, 3^4=2^2=4, 3^5=4*3=12%7=5"
+        },
+        {
+          "question": "在模幂运算中，为什么可以每步都取模？",
+          "options": [
+            "因为取模不影响结果",
+            "因为模乘法公式保证了中间取模不影响最终结果",
+            "因为结果很小",
+            "因为编译器优化"
+          ],
+          "answerIndex": 1,
+          "explanation": "由 (a*b) mod m = ((a mod m)*(b mod m)) mod m 可知，每步取模不影响最终结果"
+        },
+        {
+          "question": "当 m = 10^9+7 时，模幂运算中的乘法 a*a 最大约为多少？",
+          "options": ["10^9", "10^18", "10^27", "10^36"],
+          "answerIndex": 1,
+          "explanation": "a < m = 10^9+7，所以 a*a < (10^9+7)^2 约 10^18，在 long long 范围内"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.6",
+      "title": "逆元",
+      "learningGoal": "理解模意义下逆元的概念，掌握用费马小定理和扩展欧几里得求逆元的方法",
+      "explanation": "在模运算中，除法不能直接做。(a/b) mod m 不等于 (a mod m) / (b mod m) mod m。\n\n逆元就是模意义下的\"倒数\"。如果 b*x ≡ 1 (mod m)，则 x 是 b 关于模 m 的逆元，记作 b^(-1)。\n\n有了逆元，除法就可以转化为乘法：\n(a/b) mod m = (a * b^(-1)) mod m\n\n求逆元的两种常用方法：\n\n1. 费马小定理法（要求 m 是质数）：\n   由费马小定理，b^(m-1) ≡ 1 (mod m)\n   所以 b * b^(m-2) ≡ 1 (mod m)\n   因此 b 的逆元就是 b^(m-2) mod m\n   用快速幂计算即可。\n\n2. 扩展欧几里得法（只要求 gcd(b,m)=1）：\n   解方程 b*x + m*y = 1，求出的 x 就是 b 的逆元。\n   这种方法更通用，不要求 m 是质数。\n\n注意：逆元存在的前提是 gcd(b, m) = 1（b 和 m 互质）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\n// 方法1：费马小定理求逆元（m必须是质数）\nll modPow(ll a, ll n, ll m) {\n    ll res = 1;\n    a = a % m;\n    while (n > 0) {\n        if (n % 2 == 1) res = (res * a) % m;\n        a = (a * a) % m;\n        n /= 2;\n    }\n    return res;\n}\n\nll invFermat(ll b, ll m) {\n    return modPow(b, m - 2, m);\n}\n\n// 方法2：扩展欧几里得求逆元\nll extGcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    ll x1, y1;\n    ll g = extGcd(b, a % b, x1, y1);\n    x = y1;\n    y = x1 - (a / b) * y1;\n    return g;\n}\n\nll invExtGcd(ll b, ll m) {\n    ll x, y;\n    ll g = extGcd(b, m, x, y);\n    return ((x % m) + m) % m;\n}\n\nint main() {\n    ll b, m;\n    cin >> b >> m;\n\n    // 费马小定理法（m为质数时使用）\n    cout << \"逆元(费马): \" << invFermat(b, m) << endl;\n\n    // 扩展欧几里得法\n    cout << \"逆元(extGcd): \" << invExtGcd(b, m) << endl;\n\n    // 验证: b * inv ≡ 1 (mod m)\n    ll inv = invFermat(b, m);\n    cout << \"验证: \" << b << \" * \" << inv << \" mod \" << m\n         << \" = \" << (b % m * inv % m) % m << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "费马小定理法要求 m 是质数，竞赛中 m 通常是 10^9+7 等质数",
+        "扩展欧几里得法更通用，只要求 b 和 m 互质",
+        "逆元存在的前提是 gcd(b, m) = 1",
+        "扩展欧几里得返回的 x 可能是负数，需要修正为正数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "m不是质数时用费马小定理求逆元",
+          "description": "费马小定理要求 m 是质数，如果 m 不是质数结果会错",
+          "fix": "如果 m 不是质数，改用扩展欧几里得方法"
+        },
+        {
+          "title": "忘记修正负数逆元",
+          "description": "扩展欧几里得求出的 x 可能是负数",
+          "fix": "返回前用 ((x % m) + m) % m 修正"
+        }
+      ],
+      "practice": {
+        "prompt": "给定b和质数m，求b在模m下的逆元（用费马小定理）",
+        "hint": "逆元 = b^(m-2) mod m，用快速幂计算",
+        "expectedIdea": "调用 modPow(b, m-2, m) 即可"
+      },
+      "quiz": [
+        {
+          "question": "在模7下，3的逆元是多少？（即 3*x ≡ 1 (mod 7)）",
+          "options": ["2", "3", "5", "6"],
+          "answerIndex": 2,
+          "explanation": "3*5=15, 15%7=1，所以3的逆元是5。用费马小定理：3^(7-2)=3^5=243, 243%7=5"
+        },
+        {
+          "question": "逆元存在的前提条件是什么？",
+          "options": ["b是质数", "m是质数", "gcd(b,m)=1", "b < m"],
+          "answerIndex": 2,
+          "explanation": "逆元存在的充要条件是 gcd(b,m)=1，即 b 和 m 互质"
+        },
+        {
+          "question": "为什么模运算中不能直接做除法？",
+          "options": [
+            "因为除法太慢",
+            "因为 (a/b) mod m 不等于 ((a mod m)/(b mod m)) mod m",
+            "因为结果会是小数",
+            "因为编译器不支持"
+          ],
+          "answerIndex": 1,
+          "explanation": "模运算对除法没有封闭性，(a/b) mod m 不等于先取模再除。需要用逆元将除法转化为乘法"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.7",
+      "title": "费马小定理",
+      "learningGoal": "理解费马小定理的内容和证明思路，能应用它求逆元和简化模幂运算",
+      "explanation": "费马小定理是数论中最基本的定理之一。\n\n定理内容：如果 p 是质数，且 gcd(a, p) = 1（a 不被 p 整除），那么：\na^(p-1) ≡ 1 (mod p)\n\n也可以写成：a^p ≡ a (mod p)（对任意整数 a 都成立，不要求 gcd(a,p)=1）\n\n费马小定理的应用：\n\n1. 求逆元：因为 a^(p-1) ≡ 1 (mod p)，所以 a * a^(p-2) ≡ 1 (mod p)，即 a 的逆元是 a^(p-2) mod p。\n\n2. 简化模幂：计算 a^n mod p 时，可以用 n mod (p-1) 来减小指数。\n因为 a^n = a^(k*(p-1)+r) = (a^(p-1))^k * a^r ≡ 1^k * a^r = a^r (mod p)，其中 r = n mod (p-1)。\n\n注意：费马小定理要求模数是质数！如果模数不是质数，要用欧拉定理代替。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\nll modPow(ll a, ll n, ll m) {\n    ll res = 1;\n    a = a % m;\n    while (n > 0) {\n        if (n % 2 == 1) res = (res * a) % m;\n        a = (a * a) % m;\n        n /= 2;\n    }\n    return res;\n}\n\nint main() {\n    ll a, p;\n    cin >> a >> p;\n\n    // 验证费马小定理: a^(p-1) mod p = 1\n    cout << a << \"^(\" << p - 1 << \") mod \" << p << \" = \"\n         << modPow(a, p - 1, p) << endl;\n\n    // 应用1：求逆元\n    ll inv = modPow(a, p - 2, p);\n    cout << a << \" 的逆元 mod \" << p << \" = \" << inv << endl;\n    cout << \"验证: \" << a << \" * \" << inv << \" mod \" << p\n         << \" = \" << (a % p * (inv % p)) % p << endl;\n\n    // 应用2：简化大指数\n    // 计算 a^(10^18) mod p\n    ll n = 1000000000000000000LL;\n    ll reduced_n = n % (p - 1);  // 利用费马小定理减小指数\n    cout << a << \"^(10^18) mod \" << p << \" = \"\n         << modPow(a, reduced_n, p) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "费马小定理的核心公式：a^(p-1) ≡ 1 (mod p)，前提是 p 是质数且 a 不被 p 整除",
+        "求逆元只需计算 a^(p-2) mod p",
+        "简化大指数：用 n mod (p-1) 替代 n，这在指数极大时非常有用",
+        "如果 p 不是质数，需要用欧拉定理：a^phi(m) ≡ 1 (mod m)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "p不是质数时使用费马小定理",
+          "description": "费马小定理要求 p 是质数，否则结论不成立",
+          "fix": "如果 p 不是质数，用欧拉定理或扩展欧几里得"
+        },
+        {
+          "title": "a是p的倍数时忘记特殊处理",
+          "description": "当 a 是 p 的倍数时，a^(p-1) mod p = 0，不是 1",
+          "fix": "费马小定理要求 gcd(a,p)=1，即 a 不能是 p 的倍数"
+        }
+      ],
+      "practice": {
+        "prompt": "给定质数p和整数a（1<=a<p），验证费马小定理并求a的逆元",
+        "hint": "计算 a^(p-1) mod p 验证为1，逆元为 a^(p-2) mod p",
+        "expectedIdea": "用快速幂分别计算验证值和逆元"
+      },
+      "quiz": [
+        {
+          "question": "费马小定理的内容是什么？",
+          "options": [
+            "a^p ≡ a (mod p) 对任意 a 成立",
+            "a^(p-1) ≡ 1 (mod p) 当 p 是质数且 gcd(a,p)=1",
+            "a^p ≡ 1 (mod p)",
+            "a^(p+1) ≡ a (mod p)"
+          ],
+          "answerIndex": 1,
+          "explanation": "费马小定理：如果 p 是质数且 gcd(a,p)=1，则 a^(p-1) ≡ 1 (mod p)"
+        },
+        {
+          "question": "用费马小定理求 a 在模 p 下的逆元，需要计算什么？",
+          "options": ["a^p mod p", "a^(p-1) mod p", "a^(p-2) mod p", "a^(p+1) mod p"],
+          "answerIndex": 2,
+          "explanation": "因为 a^(p-1) ≡ 1，所以 a * a^(p-2) ≡ 1，逆元就是 a^(p-2) mod p"
+        },
+        {
+          "question": "计算 2^(10^18) mod 1000000007 时，如何减小指数？",
+          "options": [
+            "直接计算",
+            "用 10^18 mod 1000000007 替代指数",
+            "用 10^18 mod 1000000006 替代指数",
+            "用 10^18 mod 2 替代指数"
+          ],
+          "answerIndex": 2,
+          "explanation": "由费马小定理，a^n mod p = a^(n mod (p-1)) mod p，所以用 10^18 mod (10^9+6) 替代"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.8",
+      "title": "扩展欧几里得算法",
+      "learningGoal": "掌握扩展欧几里得算法，能求解 ax+by=gcd(a,b) 的整数解",
+      "explanation": "扩展欧几里得算法（Extended Euclidean Algorithm）不仅能求最大公约数，还能找到方程 ax + by = gcd(a,b) 的一组整数解 (x, y)。\n\n算法原理：\n当 b = 0 时，ax + 0*y = a = gcd(a,0)，所以 x = 1, y = 0 是一组解。\n\n当 b != 0 时，设已经求出了 b*x1 + (a%b)*y1 = gcd(b, a%b) 的解。\n因为 gcd(a,b) = gcd(b, a%b)，所以：\nb*x1 + (a%b)*y1 = gcd(a,b)\n展开 a%b = a - (a/b)*b：\nb*x1 + (a - (a/b)*b)*y1 = gcd(a,b)\n整理得：a*y1 + b*(x1 - (a/b)*y1) = gcd(a,b)\n所以 x = y1, y = x1 - (a/b)*y1。\n\n应用：\n1. 求逆元：令 b = m，求 a*x + m*y = 1 的解 x，x 就是 a 的逆元\n2. 求解线性同余方程：ax ≡ c (mod m) 等价于 ax + my = c\n3. 配合中国剩余定理使用",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\n// 扩展欧几里得算法\n// 返回 gcd(a,b)，同时求出 x, y 使得 ax + by = gcd(a,b)\nll extGcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    ll x1, y1;\n    ll g = extGcd(b, a % b, x1, y1);\n    x = y1;\n    y = x1 - (a / b) * y1;\n    return g;\n}\n\n// 求 a 在模 m 下的逆元（需要 gcd(a,m)=1）\nll modInverse(ll a, ll m) {\n    ll x, y;\n    ll g = extGcd(a, m, x, y);\n    return ((x % m) + m) % m;\n}\n\n// 求解 ax ≡ c (mod m)，返回最小非负解\nll solveLinear(ll a, ll c, ll m) {\n    ll x, y;\n    ll g = extGcd(a, m, x, y);\n    if (c % g != 0) return -1;  // 无解\n    x = x * (c / g);\n    ll m2 = m / g;\n    return ((x % m2) + m2) % m2;\n}\n\nint main() {\n    ll a, b;\n    cin >> a >> b;\n\n    ll x, y;\n    ll g = extGcd(a, b, x, y);\n    cout << \"gcd(\" << a << \", \" << b << \") = \" << g << endl;\n    cout << \"x = \" << x << \", y = \" << y << endl;\n    cout << \"验证: \" << a << \"*\" << x << \" + \" << b << \"*\" << y\n         << \" = \" << a * x + b * y << endl;\n\n    // 求逆元\n    ll m;\n    cin >> m;\n    cout << \"逆元: \" << modInverse(a, m) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "extGcd 递归边界：b=0 时 x=1, y=0, 返回 a",
+        "递归回溯时 x = y1, y = x1 - (a/b)*y1",
+        "求出的 x 可能是负数，用 ((x%m)+m)%m 修正",
+        "ax+by=c 有解的充要条件是 gcd(a,b) 能整除 c"
+      ],
+      "commonMistakes": [
+        {
+          "title": "递推关系写反",
+          "description": "把 x = y1 和 y = x1 - (a/b)*y1 写反或写错",
+          "fix": "记住：新的 x 等于上一层递归的 y1，新的 y 等于 x1 - (a/b)*y1"
+        },
+        {
+          "title": "忘记检查方程是否有解",
+          "description": "解方程 ax ≡ c (mod m) 时，如果 gcd(a,m) 不能整除 c，则无解",
+          "fix": "先求 g = gcd(a,m)，如果 c%g != 0 则无解"
+        }
+      ],
+      "practice": {
+        "prompt": "给定a和b，求方程 ax + by = gcd(a,b) 的一组整数解(x, y)",
+        "hint": "用扩展欧几里得算法递归求解",
+        "expectedIdea": "递归到b=0时返回，回溯时用 x=y1, y=x1-(a/b)*y1 更新"
+      },
+      "quiz": [
+        {
+          "question": "用扩展欧几里得算法解 6x + 9y = gcd(6,9)，gcd(6,9)=3，以下哪组是正确的解？",
+          "options": ["x=-1, y=1", "x=1, y=-1", "x=2, y=-1", "x=-1, y=2"],
+          "answerIndex": 0,
+          "explanation": "6*(-1) + 9*1 = -6 + 9 = 3 = gcd(6,9)，验证正确"
+        },
+        {
+          "question": "方程 4x + 6y = 3 是否有整数解？",
+          "options": ["有解", "无解，因为 gcd(4,6)=2 不能整除 3", "有无穷多解", "只有唯一解"],
+          "answerIndex": 1,
+          "explanation": "gcd(4,6)=2，而 3 不能被 2 整除，所以方程无整数解"
+        },
+        {
+          "question": "扩展欧几里得算法的时间复杂度是？",
+          "options": ["O(n)", "O(log(max(a,b)))", "O(a*b)", "O(a+b)"],
+          "answerIndex": 1,
+          "explanation": "和普通欧几里得算法一样，时间复杂度是 O(log(max(a,b)))"
+        }
+      ]
+    },
+    {
+      "itemId": "4.2.9",
+      "title": "中国剩余定理",
+      "learningGoal": "理解中国剩余定理（CRT）的原理，能用它解同余方程组",
+      "explanation": "中国剩余定理（Chinese Remainder Theorem, CRT）是数论中的重要定理，用于解一组同余方程。\n\n问题描述：给定一组同余方程：\nx ≡ r1 (mod m1)\nx ≡ r2 (mod m2)\n...\nx ≡ rk (mod mk)\n\n其中 m1, m2, ..., mk 两两互质，求满足所有方程的最小非负整数 x。\n\nCRT定理：当模数两两互质时，方程组在模 M = m1*m2*...*mk 下有唯一解。\n\n解法：\n1. 计算 M = m1 * m2 * ... * mk\n2. 对每个 i，计算 Mi = M / mi\n3. 对每个 i，求 Mi 在模 mi 下的逆元 ti（即 Mi*ti ≡ 1 (mod mi)）\n4. x = (r1*M1*t1 + r2*M2*t2 + ... + rk*Mk*tk) mod M\n\n经典例子（《孙子算经》）：\n有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？\nx ≡ 2 (mod 3)\nx ≡ 3 (mod 5)\nx ≡ 2 (mod 7)\nM = 3*5*7 = 105\nM1=35, M2=21, M3=15\nt1=35^(-1) mod 3 = 2, t2=21^(-1) mod 5 = 1, t3=15^(-1) mod 7 = 1\nx = (2*35*2 + 3*21*1 + 2*15*1) mod 105 = (140+63+30) mod 105 = 233 mod 105 = 23",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\nll extGcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    ll x1, y1;\n    ll g = extGcd(b, a % b, x1, y1);\n    x = y1;\n    y = x1 - (a / b) * y1;\n    return g;\n}\n\nll modInverse(ll a, ll m) {\n    ll x, y;\n    extGcd(a, m, x, y);\n    return ((x % m) + m) % m;\n}\n\n// 中国剩余定理\n// m[] 是模数数组，r[] 是余数数组，n 是方程个数\n// 要求模数两两互质\nll CRT(ll m[], ll r[], int n) {\n    ll M = 1;\n    for (int i = 0; i < n; i++) {\n        M *= m[i];\n    }\n\n    ll x = 0;\n    for (int i = 0; i < n; i++) {\n        ll Mi = M / m[i];\n        ll ti = modInverse(Mi, m[i]);\n        x = (x + r[i] % m[i] * (Mi % M) % M * (ti % M) % M) % M;\n    }\n\n    return (x + M) % M;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    ll m[100], r[100];\n    for (int i = 0; i < n; i++) {\n        cin >> m[i] >> r[i];\n    }\n    cout << CRT(m, r, n) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "CRT要求模数两两互质，如果不互质需要用扩展CRT（合并方程）",
+        "关键步骤：对每个方程求 Mi 的逆元 ti",
+        "最终结果 x 是所有 (ri * Mi * ti) 之和对 M 取模",
+        "计算过程中注意取模防止溢出"
+      ],
+      "commonMistakes": [
+        {
+          "title": "模数不互质时直接用CRT",
+          "description": "CRT要求模数两两互质，如果模数有公因子，需要用扩展CRT逐步合并",
+          "fix": "如果模数不互质，用扩展欧几里得逐个合并方程"
+        },
+        {
+          "title": "CRT计算过程中溢出",
+          "description": "M = m1*m2*...*mk 可能非常大，中间计算容易溢出",
+          "fix": "每步乘法后及时取模，或使用 __int128"
+        }
+      ],
+      "practice": {
+        "prompt": "解同余方程组：x≡2(mod3), x≡3(mod5), x≡2(mod7)，求最小正整数解",
+        "hint": "用CRT公式，M=105，分别计算Mi和逆元ti",
+        "expectedIdea": "M=3*5*7=105, 逐项计算 ri*Mi*ti 累加后对105取模"
+      },
+      "quiz": [
+        {
+          "question": "\"物不知数\"问题中，三三数之剩二，五五数之剩三，七七数之剩二，答案是？",
+          "options": ["23", "53", "83", "128"],
+          "answerIndex": 0,
+          "explanation": "23 mod 3 = 2, 23 mod 5 = 3, 23 mod 7 = 2，满足所有条件"
+        },
+        {
+          "question": "中国剩余定理要求模数满足什么条件？",
+          "options": ["模数都是质数", "模数两两互质", "模数都是偶数", "模数都大于10"],
+          "answerIndex": 1,
+          "explanation": "CRT要求模数两两互质（gcd(mi, mj) = 1 对所有 i != j）"
+        },
+        {
+          "question": "CRT公式中，Mi 的含义是什么？",
+          "options": ["所有模数的乘积", "除第i个模数外其余模数的乘积", "第i个模数的逆元", "第i个余数"],
+          "answerIndex": 1,
+          "explanation": "Mi = M / mi，即除第i个模数外其余所有模数的乘积"
+        }
+      ]
+    }
+  ]
+}

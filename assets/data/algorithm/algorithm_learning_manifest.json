@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "category": "算法与数据结构",
+  "baseFile": "assets/data/algorithm/algorithm_learning_units.json",
+  "sectionFiles": [
+    "assets/data/algorithm/section_2_2_units.json",
+    "assets/data/algorithm/section_2_3_units.json",
+    "assets/data/algorithm/section_2_4_units.json",
+    "assets/data/algorithm/section_2_4_b_units.json",
+    "assets/data/algorithm/section_2_5_units.json",
+    "assets/data/algorithm/section_2_6_units.json",
+    "assets/data/algorithm/section_2_7_units.json",
+    "assets/data/algorithm/section_2_8_units.json",
+    "assets/data/algorithm/section_3_1_units.json",
+    "assets/data/algorithm/section_3_2_units.json",
+    "assets/data/algorithm/section_3_3_units.json",
+    "assets/data/algorithm/section_3_4_units.json",
+    "assets/data/algorithm/section_3_5_units.json",
+    "assets/data/algorithm/section_3_6_units.json",
+    "assets/data/algorithm/section_3_7_units.json",
+    "assets/data/algorithm/section_3_8_units.json",
+    "assets/data/algorithm/section_3_9_units.json",
+    "assets/data/algorithm/section_3_10_units.json",
+    "assets/data/algorithm/section_3_11_units.json",
+    "assets/data/algorithm/section_3_12_units.json"
+  ]
+}

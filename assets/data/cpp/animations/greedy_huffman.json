@@ -1,0 +1,193 @@
+{
+  "animationId": "algo_greedy_huffman",
+  "itemId": "2.4.8",
+  "title": "合并果子/Huffman",
+  "description": "展示每次从小根堆取出两个最小值合并，累加总代价的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "堆", "type": "array", "values": [3, 5, 8, 2, 9], "highlights": [], "note": "初始果子堆"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始状态",
+      "description": "有5堆果子，重量分别为 3, 5, 8, 2, 9。每次合并两堆，代价为两堆重量之和，求最小总代价。",
+      "codeLine": "priority_queue<int, vector<int>, greater<int>> pq;",
+      "highlights": ["priority_queue", "greater"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "0", "type": "int", "note": "累计代价"},
+          {"name": "堆大小", "value": "5", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [3, 5, 8, 2, 9], "highlights": [], "note": "初始5堆"}
+        ],
+        "output": "初始果子: 3, 5, 8, 2, 9"
+      }
+    },
+    {
+      "step": 2,
+      "title": "建小根堆",
+      "description": "将所有果子重量放入小根堆（优先队列），堆顶始终是最小值。排序后：2, 3, 5, 8, 9。",
+      "codeLine": "for (int x : weights) pq.push(x);",
+      "highlights": ["pq.push"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "0", "type": "int", "note": ""},
+          {"name": "堆大小", "value": "5", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [2, 3, 5, 8, 9], "highlights": [0], "note": "小根堆，堆顶=2"}
+        ],
+        "output": "建堆完成，堆顶元素=2"
+      }
+    },
+    {
+      "step": 3,
+      "title": "取出最小的两个",
+      "description": "从堆顶取出两个最小值：a=2, b=3。合并代价 = 2+3 = 5。",
+      "codeLine": "int a = pq.top(); pq.pop();  int b = pq.top(); pq.pop();",
+      "highlights": ["pq.top()", "pq.pop()"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "2", "type": "int", "note": "最小值"},
+          {"name": "b", "value": "3", "type": "int", "note": "次小值"},
+          {"name": "合并代价", "value": "5", "type": "int", "note": "2+3=5"},
+          {"name": "总代价", "value": "0", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [2, 3, 5, 8, 9], "highlights": [0, 1], "note": "取出2和3"}
+        ],
+        "output": "取出 a=2, b=3，合并代价=5"
+      }
+    },
+    {
+      "step": 4,
+      "title": "合并 2+3=5",
+      "description": "将合并结果 5 放回堆中。总代价累加 5。当前堆：5, 5, 8, 9。",
+      "codeLine": "pq.push(a + b);  total += a + b;",
+      "highlights": ["pq.push(a+b)", "total"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "5", "type": "int", "note": "0+5=5"},
+          {"name": "堆大小", "value": "4", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [5, 5, 8, 9], "highlights": [0], "note": "新堆顶=5"}
+        ],
+        "output": "合并 2+3=5，总代价=5"
+      }
+    },
+    {
+      "step": 5,
+      "title": "取出最小的两个",
+      "description": "从堆中取出两个最小值：a=5, b=5。合并代价 = 5+5 = 10。",
+      "codeLine": "int a = pq.top(); pq.pop();  int b = pq.top(); pq.pop();",
+      "highlights": ["pq.top()", "pq.pop()"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "5", "type": "int", "note": "最小值"},
+          {"name": "b", "value": "5", "type": "int", "note": "次小值"},
+          {"name": "合并代价", "value": "10", "type": "int", "note": "5+5=10"},
+          {"name": "总代价", "value": "5", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [5, 5, 8, 9], "highlights": [0, 1], "note": "取出两个5"}
+        ],
+        "output": "取出 a=5, b=5，合并代价=10"
+      }
+    },
+    {
+      "step": 6,
+      "title": "合并 5+5=10",
+      "description": "将合并结果 10 放回堆中。总代价累加 10。当前堆：8, 9, 10。",
+      "codeLine": "pq.push(a + b);  total += a + b;",
+      "highlights": ["pq.push(a+b)", "total"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "15", "type": "int", "note": "5+10=15"},
+          {"name": "堆大小", "value": "3", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [8, 9, 10], "highlights": [0], "note": "新堆顶=8"}
+        ],
+        "output": "合并 5+5=10，总代价=15"
+      }
+    },
+    {
+      "step": 7,
+      "title": "取出最小的两个",
+      "description": "从堆中取出两个最小值：a=8, b=9。合并代价 = 8+9 = 17。",
+      "codeLine": "int a = pq.top(); pq.pop();  int b = pq.top(); pq.pop();",
+      "highlights": ["pq.top()", "pq.pop()"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "8", "type": "int", "note": "最小值"},
+          {"name": "b", "value": "9", "type": "int", "note": "次小值"},
+          {"name": "合并代价", "value": "17", "type": "int", "note": "8+9=17"},
+          {"name": "总代价", "value": "15", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [8, 9, 10], "highlights": [0, 1], "note": "取出8和9"}
+        ],
+        "output": "取出 a=8, b=9，合并代价=17"
+      }
+    },
+    {
+      "step": 8,
+      "title": "合并 8+9=17",
+      "description": "将合并结果 17 放回堆中。总代价累加 17。当前堆：10, 17。",
+      "codeLine": "pq.push(a + b);  total += a + b;",
+      "highlights": ["pq.push(a+b)", "total"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "32", "type": "int", "note": "15+17=32"},
+          {"name": "堆大小", "value": "2", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [10, 17], "highlights": [0], "note": "新堆顶=10"}
+        ],
+        "output": "合并 8+9=17，总代价=32"
+      }
+    },
+    {
+      "step": 9,
+      "title": "最后一次合并",
+      "description": "取出最后两个：a=10, b=17。合并代价 = 10+17 = 27。",
+      "codeLine": "int a = pq.top(); pq.pop();  int b = pq.top(); pq.pop();",
+      "highlights": ["pq.top()", "pq.pop()"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "10", "type": "int", "note": "最小值"},
+          {"name": "b", "value": "17", "type": "int", "note": "次小值"},
+          {"name": "合并代价", "value": "27", "type": "int", "note": "10+17=27"},
+          {"name": "总代价", "value": "32", "type": "int", "note": ""}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [10, 17], "highlights": [0, 1], "note": "取出10和17"}
+        ],
+        "output": "取出 a=10, b=17，合并代价=27"
+      }
+    },
+    {
+      "step": 10,
+      "title": "最终结果",
+      "description": "合并 10+17=27，总代价 = 32+27 = 59。堆中只剩一个元素，合并完成。",
+      "codeLine": "cout << \"最小总代价: \" << total;",
+      "highlights": ["total"],
+      "state": {
+        "variables": [
+          {"name": "总代价", "value": "59", "type": "int", "note": "32+27=59"},
+          {"name": "堆大小", "value": "1", "type": "int", "note": "合并完成"}
+        ],
+        "containers": [
+          {"name": "堆", "type": "array", "values": [27], "highlights": [0], "note": "所有果子合并为一堆"}
+        ],
+        "output": "最小总代价 = 59\n合并顺序: (2+3)=5, (5+5)=10, (8+9)=17, (10+17)=27"
+      }
+    }
+  ]
+}

@@ -492,10 +492,17 @@ void main() {
     }
 
     bool isCppSyntaxSection(String sectionId) {
-      final match = RegExp(r'^1\.(\d+)$').firstMatch(sectionId);
-      if (match == null) return false;
-      final n = int.parse(match.group(1)!);
-      return n >= 1 && n <= 10;
+      final match1 = RegExp(r'^1\.(\d+)$').firstMatch(sectionId);
+      if (match1 != null) {
+        final n = int.parse(match1.group(1)!);
+        return n >= 1 && n <= 10;
+      }
+      final match5 = RegExp(r'^5\.(\d+)$').firstMatch(sectionId);
+      if (match5 != null) {
+        final n = int.parse(match5.group(1)!);
+        return n >= 1 && n <= 9;
+      }
+      return false;
     }
 
     setUpAll(() async {
@@ -534,7 +541,6 @@ void main() {
 
       cppSyntaxItemIds = {};
       for (final cat in graph.categories) {
-        if (cat.name != 'C++语法') continue;
         for (final sec in cat.sections) {
           if (!isCppSyntaxSection(sec.id)) continue;
           for (final item in sec.items) {

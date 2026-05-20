@@ -1,0 +1,531 @@
+{
+  "sectionId": "2.4b",
+  "sectionName": "贪心（进阶）",
+  "units": [
+    {
+      "itemId": "2.4.9",
+      "title": "栈贪心",
+      "learningGoal": "掌握单调栈与贪心结合的策略，学会用栈维护最优序列",
+      "explanation": "栈贪心通常和单调栈结合使用，核心思想是维护一个单调序列，当遇到更优选择时弹出栈顶。\n\n常见问题类型：\n1. 单调递增栈：维护递增序列，弹出比当前大的栈顶\n2. 单调递减栈：维护递减序列，弹出比当前小的栈顶\n3. 删除元素获得最优序列：移掉K位数字\n4. 局部替换：用更优选择替换栈顶\n\n栈贪心的核心逻辑：\n- 当栈顶比当前选择更差，且还能删除/替换时，弹出栈顶\n- 弹出不是回溯！而是贪心修正：用更优的选择替代\n- 需要控制删除/弹出的次数限制\n\n经典问题：移掉K位数字\n- 遍历数字字符串\n- 如果栈顶数字 > 当前数字且还能删除，弹出栈顶\n- 当前数字入栈\n- 最后如果还能删，从末尾删\n\n去除重复字母：\n- 需要额外维护每个字母的剩余出现次数\n- 只有后面还会出现的字母才能被弹出\n\n时间复杂度：O(n)，每个元素最多入栈出栈各一次。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    int k;\n    cin >> s >> k;\n    string stk;\n    for (char c : s) {\n        while (!stk.empty() && k > 0 && stk.back() > c) {\n            stk.pop_back();\n            k--;\n        }\n        stk.push_back(c);\n    }\n    while (k > 0) {\n        stk.pop_back();\n        k--;\n    }\n    int start = 0;\n    while (start < (int)stk.size() - 1 && stk[start] == '0') start++;\n    if (start == (int)stk.size()) cout << \"0\" << endl;\n    else cout << stk.substr(start) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用字符串模拟单调栈",
+        "栈顶比当前大且还能删除时弹出",
+        "弹出是贪心修正：让更小的数字在更高位",
+        "最后处理前导零和剩余删除次数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记处理前导零",
+          "description": "结果可能以0开头，比如删完后得到\"0019\"。",
+          "fix": "输出前跳过前导零，如果全是0则输出\"0\"。"
+        },
+        {
+          "title": "忘记处理剩余删除次数",
+          "description": "遍历完后k还大于0，比如输入\"12345\"删3位。",
+          "fix": "遍历完后如果k>0，从末尾继续删除。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定数字字符串 s 和整数 k，删除 k 个字符使结果最小。例如 s=\"10200\", k=1 输出\"200\"。",
+        "hint": "单调栈贪心，栈顶比当前大时弹出。",
+        "expectedIdea": "for c: while stack.top>c && k>0: pop; push(c); remove trailing k; strip leading zeros."
+      },
+      "quiz": [
+        {
+          "question": "栈贪心中弹出栈顶的本质是什么？",
+          "options": [
+            "回溯到之前的状态",
+            "贪心修正：用更优选择替代较差选择",
+            "随机删除一个元素",
+            "栈溢出保护"
+          ],
+          "answerIndex": 1,
+          "explanation": "弹出栈顶是贪心修正：发现当前选择比栈顶更优时，用当前替换栈顶。"
+        },
+        {
+          "question": "移掉K位数字问题中，s=\"1432219\", k=3 的结果是什么？",
+          "options": [
+            "1221",
+            "1219",
+            "1319",
+            "1419"
+          ],
+          "answerIndex": 1,
+          "explanation": "弹出4→3→2后栈中为[1,2,2,1,9]，从末尾删1个得到1219。"
+        },
+        {
+          "question": "栈贪心的时间复杂度通常是？",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(n)",
+            "O(2^n)"
+          ],
+          "answerIndex": 2,
+          "explanation": "每个元素最多入栈出栈各一次，总操作次数不超过2n，所以是O(n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.10",
+      "title": "图论贪心",
+      "learningGoal": "理解图论中经典贪心算法：Kruskal、Prim、Dijkstra 的贪心思想",
+      "explanation": "图论中有三大经典贪心算法，它们的共同特点是每步选择当前最优的边或顶点。\n\n1. Kruskal 最小生成树：\n   - 将所有边按权值从小到大排序\n   - 依次选最小的边，如果不构成环就加入生成树\n   - 用并查集（Union-Find）判断是否成环\n   - 贪心依据：割性质——横跨割的最小边一定在某个MST中\n   - 时间复杂度：O(E log E)\n\n2. Prim 最小生成树：\n   - 从任意顶点开始\n   - 每次选连接\"已在树中的点\"和\"不在树中的点\"的最小边\n   - 贪心依据：同样基于割性质\n   - 时间复杂度：O(V^2) 或 O(E log V)\n\n3. Dijkstra 最短路径：\n   - 从源点开始，每次确定距离最小的未确定点\n   - 用该点更新邻居的距离\n   - 贪心依据：已确定点的最短距离不会再变小\n   - 注意：要求边权非负！\n   - 时间复杂度：O(V^2) 或 O(E log V)\n\n重要区别：\n- Dijkstra 依赖非负边权，有负边权要用 Bellman-Ford\n- MST 贪心依赖割性质和环性质\n- 这三个算法都是「每步选当前最优」的贪心思想",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nstruct Edge {\n    int u, v, w;\n};\n\nint parent[10001];\n\nint find(int x) {\n    if (parent[x] != x) parent[x] = find(parent[x]);\n    return parent[x];\n}\n\nvoid unite(int a, int b) {\n    parent[find(a)] = find(b);\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    Edge edges[100000];\n    for (int i = 0; i < m; i++)\n        cin >> edges[i].u >> edges[i].v >> edges[i].w;\n    sort(edges, edges + m, [](const Edge& a, const Edge& b) {\n        return a.w < b.w;\n    });\n    for (int i = 1; i <= n; i++) parent[i] = i;\n    long long total = 0;\n    int cnt = 0;\n    for (int i = 0; i < m && cnt < n - 1; i++) {\n        if (find(edges[i].u) != find(edges[i].v)) {\n            unite(edges[i].u, edges[i].v);\n            total += edges[i].w;\n            cnt++;\n        }\n    }\n    cout << total << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "Kruskal：按边权排序，依次选最小不成环的边",
+        "并查集判断两个端点是否在同一连通块",
+        "路径压缩优化find操作",
+        "选够n-1条边即可构成最小生成树"
+      ],
+      "commonMistakes": [
+        {
+          "title": "Dijkstra 用于负权图",
+          "description": "Dijkstra 的贪心假设已确定点的距离最优，负权边可能打破这个假设。",
+          "fix": "有负权边时使用 Bellman-Ford 或 SPFA。"
+        },
+        {
+          "title": "并查集没有路径压缩",
+          "description": "find 操作没有压缩路径，导致超时。",
+          "fix": "parent[x] = find(parent[x]) 实现路径压缩。"
+        }
+      ],
+      "practice": {
+        "prompt": "给 n 个点 m 条边的无向图，求最小生成树的权值和。",
+        "hint": "Kruskal：排序边，并查集判环。",
+        "expectedIdea": "sort edges by weight; for each edge: if find(u)!=find(v): unite, add weight."
+      },
+      "quiz": [
+        {
+          "question": "Kruskal 算法的贪心策略是什么？",
+          "options": [
+            "每次选连接生成树和外部的最小边",
+            "每次选权值最小且不成环的边",
+            "每次选度数最小的点",
+            "每次随机选一条边"
+          ],
+          "answerIndex": 1,
+          "explanation": "Kruskal 按边权排序，依次选最小的不成环的边加入生成树。"
+        },
+        {
+          "question": "Dijkstra 算法为什么不适用于负权边？",
+          "options": [
+            "时间复杂度太高",
+            "已确定点的最短距离可能被负权边更新",
+            "不能处理有向图",
+            "需要太多内存"
+          ],
+          "answerIndex": 1,
+          "explanation": "Dijkstra 假设已确定点的距离最优不会再变，但负权边可能通过绕路得到更短距离。"
+        },
+        {
+          "question": "Kruskal 中用什么数据结构高效判断是否成环？",
+          "options": [
+            "栈",
+            "队列",
+            "并查集",
+            "堆"
+          ],
+          "answerIndex": 2,
+          "explanation": "并查集可以O(α(n))判断两个点是否在同一连通块，高效判断成环。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.11",
+      "title": "树上贪心",
+      "learningGoal": "掌握树结构上的贪心策略，理解自底向上和自顶向下贪心的区别",
+      "explanation": "树结构上的贪心通常利用树的层次性，从叶子或根开始做选择。\n\n常见策略：\n1. 自底向上（叶子优先）：先处理子树，再处理父节点\n2. 自顶向下（根优先）：从根开始，每步做局部最优选择\n3. 覆盖问题：尽量在高层节点放置，覆盖更多子树\n4. 树上配对：叶子间配对，或与父节点配对\n\n经典问题：\n\n监控二叉树（简化版）：\n- 给定二叉树，在最少的节点上放置监控\n- 监控可以覆盖自身、父节点和子节点\n- 贪心策略：自底向上遍历，如果一个节点未被覆盖，在其父节点放监控\n- 为什么在父节点放？因为父节点能覆盖更多节点（向上覆盖祖父，向下覆盖兄弟）\n\n树上最小支配集（简化）：\n- 选最少的点使得每个点要么被选，要么邻居被选\n- 贪心：自底向上，如果当前节点和父节点都没被支配，选父节点\n\n与树形 DP 的区别：\n- 有些树问题能用贪心解决（如上面的问题）\n- 有些必须用 DP（如树的最大独立集在一般图上是NP-hard，但在树上用DP可解）\n- 判断依据：贪心选择是否不影响后续子问题的最优性",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint n;\nvector<int> children[10001];\nint state[10001];\n\nint dfs(int u) {\n    if (children[u].empty()) return 0;\n    int res = 0;\n    for (int v : children[u]) res += dfs(v);\n    bool hasUncovered = false;\n    for (int v : children[u]) {\n        if (state[v] == 0) hasUncovered = true;\n    }\n    if (hasUncovered) {\n        state[u] = 2;\n        for (int v : children[u]) state[v] = max(state[v], 1);\n        res++;\n    }\n    return res;\n}\n\nint main() {\n    cin >> n;\n    for (int i = 2; i <= n; i++) {\n        int p;\n        cin >> p;\n        children[p].push_back(i);\n    }\n    int ans = dfs(1);\n    if (state[1] == 0) ans++;\n    cout << ans << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "自底向上DFS遍历树",
+        "state: 0=未覆盖, 1=被覆盖, 2=放置监控",
+        "如果子节点有未覆盖的，在当前节点放监控",
+        "贪心：尽量在父节点放，覆盖范围更大"
+      ],
+      "commonMistakes": [
+        {
+          "title": "自顶向下贪心导致覆盖不优",
+          "description": "从根开始放监控，可能放过多了。",
+          "fix": "自底向上，只在必要时（子节点未覆盖）才在父节点放。"
+        },
+        {
+          "title": "混淆树贪心和树形DP",
+          "description": "把需要树形DP的问题用贪心做了。",
+          "fix": "先分析贪心选择是否影响子问题最优性，如果不能保证就用DP。"
+        }
+      ],
+      "practice": {
+        "prompt": "给一棵 n 个节点的树（1为根），在每个节点可以放置监控覆盖自身和相邻节点，求最少放置数使所有节点被覆盖。",
+        "hint": "自底向上DFS，子节点有未覆盖的就在当前节点放。",
+        "expectedIdea": "post-order DFS; if any child uncovered: place at current, mark covered."
+      },
+      "quiz": [
+        {
+          "question": "树上贪心通常采用什么遍历顺序？",
+          "options": [
+            "前序遍历（自顶向下）",
+            "中序遍历",
+            "后序遍历（自底向上）",
+            "层序遍历"
+          ],
+          "answerIndex": 2,
+          "explanation": "自底向上可以先处理子树的结果，再根据子树状态做贪心选择。"
+        },
+        {
+          "question": "监控二叉树问题中，为什么在父节点而不是子节点放监控？",
+          "options": [
+            "父节点编号更小",
+            "父节点能覆盖更多节点（向上覆盖祖父，向下覆盖兄弟）",
+            "子节点不能放监控",
+            "题目规定"
+          ],
+          "answerIndex": 1,
+          "explanation": "在父节点放监控能同时覆盖祖父和兄弟子树，覆盖范围更大。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.12",
+      "title": "数学贪心",
+      "learningGoal": "掌握利用数学性质进行贪心选择的方法，理解贪心成立的数学条件",
+      "explanation": "数学贪心利用数学性质来确定局部最优选择，关键是要明确贪心成立的条件。\n\n常见类型：\n1. 硬币找零：币制为 1,5,10,25 时从大面额贪心可行，但通用币制不一定\n2. 最大乘积拆分：将整数拆分为若干正整数之和使乘积最大\n3. 排列不等式：两组数同序排列内积最大，反序排列内积最小\n4. 均值不等式：和固定时，数越接近乘积越大\n5. 取整与余数：利用整除和取余性质做贪心\n\n最大乘积拆分问题：\n- 将 n 拆分成若干正整数之和，使乘积最大\n- 贪心策略：尽量拆成 3，余 1 则把 3+1 改成 2+2\n- 数学依据：3^a > 2^(3a/2)，3是最优拆分单位\n- 特殊情况：n%3==1 时，取出一个3和1换成两个2\n\n重要提醒：\n- 数学贪心一定要说明成立条件\n- 硬币找零贪心成立当且仅当币制满足特定条件\n- 排列不等式可以严格证明\n- 很多数学贪心可以用均值不等式或AM-GM证明",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    if (n <= 3) {\n        cout << n - 1 << endl;\n        return 0;\n    }\n    long long result = 1;\n    while (n > 4) {\n        result *= 3;\n        n -= 3;\n    }\n    result *= n;\n    cout << result << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "尽量拆成3，使乘积最大",
+        "当n>4时不断减3并乘3",
+        "余数n<=4时直接乘剩余的n",
+        "n%3==1时自动处理：3+1变成保留4（=2*2）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "硬币找零认为所有币制都能贪心",
+          "description": "币制为 [1,3,4] 时，找6元贪心选4+1+1=3枚，但3+3=2枚更优。",
+          "fix": "硬币找零贪心只在特定币制下成立，通用情况要用DP。"
+        },
+        {
+          "title": "最大乘积拆分拆成2",
+          "description": "以为拆成2是最优的，实际上3更优。",
+          "fix": "3^a > 2^(3a/2)，即3个2换成2个3乘积更大。"
+        }
+      ],
+      "practice": {
+        "prompt": "将整数 n (n>=2) 拆分成至少两个正整数之和，使乘积最大。输出最大乘积。",
+        "hint": "尽量拆成3，余1时和前一个3一起换成2+2。",
+        "expectedIdea": "while n>4: result*=3, n-=3; result*=n;"
+      },
+      "quiz": [
+        {
+          "question": "整数拆分使乘积最大，最优的拆分单位是几？",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answerIndex": 1,
+          "explanation": "3是最优拆分单位，因为3^a > 2^(3a/2)，即用3比用2乘积更大。"
+        },
+        {
+          "question": "币制为[1,3,4]，找6元用贪心策略（每次选最大面额）需要几枚？",
+          "options": [
+            "2枚",
+            "3枚",
+            "4枚",
+            "6枚"
+          ],
+          "answerIndex": 1,
+          "explanation": "贪心选4+1+1=3枚，但最优是3+3=2枚，说明此币制贪心不正确。"
+        },
+        {
+          "question": "排列不等式告诉我们什么？",
+          "options": [
+            "两组数反序排列内积最大",
+            "两组数同序排列内积最大",
+            "排列不影响内积",
+            "只能用于正整数"
+          ],
+          "answerIndex": 1,
+          "explanation": "排列不等式：两组数同序排列时内积最大，反序排列时内积最小。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.13",
+      "title": "构造贪心",
+      "learningGoal": "掌握用贪心一步步构造答案的方法，学会先判断必要条件再构造",
+      "explanation": "构造贪心的核心思想：用贪心策略一步步构造满足约束的答案。\n\n常见问题类型：\n1. 构造排列：根据约束构造字典序最小/最大的排列\n2. 构造字符串：重排字符避免相邻相同\n3. 构造合法序列：满足某些限制的最短/最长序列\n4. 满足约束的最小/最大答案\n\n构造贪心的通用步骤：\n1. 先判断必要条件：如果连必要条件都不满足，直接输出无解\n2. 每一步选择当前最优且不破坏后续可行性的选项\n3. 更新剩余约束，继续下一步\n\n重排字符串避免相邻相同（核心思路）：\n- 统计每个字符的频率\n- 每次选剩余频率最高且不与上一个相同的字符\n- 用大根堆维护：按频率排序\n- 每次弹出频率最高的字符，使用后频率减1\n- 下一步才能重新把它加入堆（保证不相邻）\n\n常见错误：\n- 构造到一半才发现不可行（没有先判断必要条件）\n- 局部选择破坏了后续的可行性\n- 没有考虑必须保留的元素",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <queue>\nusing namespace std;\n\nstruct Node {\n    char ch;\n    int cnt;\n    bool operator<(const Node& o) const { return cnt < o.cnt; }\n};\n\nint main() {\n    string s;\n    cin >> s;\n    int freq[26] = {};\n    for (char c : s) freq[c - 'a']++;\n    priority_queue<Node> pq;\n    for (int i = 0; i < 26; i++) {\n        if (freq[i] > 0) pq.push({(char)('a' + i), freq[i]});\n    }\n    string result;\n    Node prev = {0, 0};\n    while (!pq.empty()) {\n        Node cur = pq.top(); pq.pop();\n        result += cur.ch;\n        cur.cnt--;\n        if (prev.cnt > 0) pq.push(prev);\n        prev = cur;\n    }\n    bool valid = true;\n    for (int i = 1; i < (int)result.size(); i++) {\n        if (result[i] == result[i-1]) valid = false;\n    }\n    if (valid) cout << result << endl;\n    else cout << \"\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "大根堆按字符频率排序",
+        "每次选频率最高且不与上一个相同的字符",
+        "使用后暂存，下一步才重新加入堆",
+        "保证相邻字符不相同"
+      ],
+      "commonMistakes": [
+        {
+          "title": "没有先判断必要条件",
+          "description": "某个字符频率超过一半，根本不可能重排。",
+          "fix": "先检查：如果某字符频率 > (n+1)/2，直接判定无解。"
+        },
+        {
+          "title": "局部选择破坏后续可行性",
+          "description": "选了当前最优但导致后面无法继续构造。",
+          "fix": "每步选择时确保不破坏剩余问题的可行性。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定字符串 s，重排字符使得相邻字符不相同。如果不可能则输出空字符串。",
+        "hint": "用大根堆按频率贪心选择，每次选最高频且不与上一个相同的。",
+        "expectedIdea": "priority_queue by freq; pop top; use it; push back previous; check adjacent."
+      },
+      "quiz": [
+        {
+          "question": "重排字符串避免相邻相同的必要条件是什么？",
+          "options": [
+            "字符串长度不超过26",
+            "每个字符频率不超过(n+1)/2",
+            "字符串只含小写字母",
+            "字符串长度为偶数"
+          ],
+          "answerIndex": 1,
+          "explanation": "如果某字符超过一半，无论怎么排都会有两个相邻。"
+        },
+        {
+          "question": "构造贪心的第一步通常是什么？",
+          "options": [
+            "随机选择一个方案",
+            "先判断必要条件是否满足",
+            "直接开始构造",
+            "用DP预处理"
+          ],
+          "answerIndex": 1,
+          "explanation": "先判断必要条件，如果不满足直接输出无解，避免构造到一半才发现不行。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.14",
+      "title": "反悔贪心",
+      "learningGoal": "掌握反悔贪心的核心思想：先选后换，用堆维护已选集合中的最差选择",
+      "explanation": "反悔贪心是高级贪心技巧，核心思想：先贪心选择，后面发现更优选择时反悔替换。\n\n反悔 ≠ 回溯：\n- 回溯：撤销选择，重新考虑所有可能\n- 反悔：只替换已选集合中最差的选择，不回退整个搜索过程\n- 反悔通常用堆来高效实现\n\n通用框架：\n1. 按某种顺序遍历候选\n2. 先贪心选择当前候选\n3. 如果超出限制，从已选集合中移除代价最大的（用大根堆维护）\n4. 继续处理下一个候选\n\n经典问题：\n\n课程表III（简化版）：\n- 有 n 门课程，每门有耗时和截止时间\n- 按截止时间排序\n- 依次选课，累计已选总时间\n- 如果当前总时间超过截止时间，移除已选中耗时最长的课\n- 用大根堆维护已选课程的耗时\n\n项目收益最大化：\n- 先按某种标准排序\n- 选收益最大的项目\n- 超出预算时替换掉已选中收益最低的\n\n关键理解：\n- 反悔贪心巧妙地结合了贪心和堆\n- 贪心保证了选择的顺序\n- 堆保证了能快速找到最差的已选进行替换",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\n#include <queue>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    pair<int,int> courses[100000];\n    for (int i = 0; i < n; i++) cin >> courses[i].first >> courses[i].second;\n    sort(courses, courses + n, [](const auto& a, const auto& b) {\n        return a.second < b.second;\n    });\n    priority_queue<int> selected;\n    long long totalTime = 0;\n    for (int i = 0; i < n; i++) {\n        int duration = courses[i].first;\n        int deadline = courses[i].second;\n        totalTime += duration;\n        selected.push(duration);\n        if (totalTime > deadline) {\n            totalTime -= selected.top();\n            selected.pop();\n        }\n    }\n    cout << selected.size() << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "按截止时间排序，先处理截止早的",
+        "每门课先选入，累计总时间",
+        "如果超时，移除已选中耗时最长的（大根堆）",
+        "反悔：用堆快速找到并替换最差选择"
+      ],
+      "commonMistakes": [
+        {
+          "title": "反悔贪心和回溯搞混",
+          "description": "以为是回溯搜索，写了指数级复杂度。",
+          "fix": "反悔只替换一个最差选择，不回退整个搜索，用堆O(log n)完成。"
+        },
+        {
+          "title": "堆的类型选错",
+          "description": "应该用大根堆移除最大耗时，却用了小根堆。",
+          "fix": "移除最大的用大根堆（默认），移除最小的用小根堆（greater）。"
+        }
+      ],
+      "practice": {
+        "prompt": "有 n 门课程，每门有耗时 ti 和截止时间 di。按顺序选课，总耗时不能超过截止时间。求最多能选多少门课。",
+        "hint": "按截止时间排序，先选后反悔：超时则移除耗时最长的。",
+        "expectedIdea": "sort by deadline; push duration; if totalTime>deadline: pop max, subtract."
+      },
+      "quiz": [
+        {
+          "question": "反悔贪心和回溯的本质区别是什么？",
+          "options": [
+            "反悔贪心更快",
+            "反悔只替换一个最差选择，不回退整个搜索",
+            "回溯不需要堆",
+            "反悔贪心不能用于课程问题"
+          ],
+          "answerIndex": 1,
+          "explanation": "反悔贪心只替换已选中最差的一个选择，用堆O(log n)完成，不是指数级搜索。"
+        },
+        {
+          "question": "课程表III中，超时后应该移除哪门课？",
+          "options": [
+            "最后一门选的课",
+            "截止时间最早的课",
+            "已选中耗时最长的课",
+            "随机一门课"
+          ],
+          "answerIndex": 2,
+          "explanation": "移除耗时最长的课能最大程度减少总时间，给后续课程更多空间。"
+        },
+        {
+          "question": "反悔贪心通常用什么数据结构维护已选集合？",
+          "options": [
+            "数组",
+            "栈",
+            "堆",
+            "链表"
+          ],
+          "answerIndex": 2,
+          "explanation": "用堆可以O(log n)找到并移除已选集合中最差（最大或最小）的选择。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.15",
+      "title": "贪心与DP的区别",
+      "learningGoal": "深入理解贪心和动态规划的本质区别，学会判断一个问题该用贪心还是DP",
+      "explanation": "贪心和DP都是解决优化问题的方法，但本质区别很大。\n\n核心区别：\n- 贪心：每一步做不可撤销的局部最优选择，不回头\n- DP：枚举所有状态，保留多种可能性，取最优\n- 记忆化搜索：递归+缓存，本质和DP一样\n\n什么时候用贪心？\n- 局部最优能推导出全局最优（需要证明）\n- 问题具有贪心选择性质\n- 常见：活动选择、最小生成树、最短路径、Huffman\n\n什么时候用DP？\n- 局部最优不能保证全局最优\n- 需要考虑多种子问题的组合\n- 常见：背包问题、最长公共子序列、编辑距离\n\n经典对比：\n\n零钱兑换：\n- 币制 [1,5,10,25]：贪心可行（从大到小选）\n- 币制 [1,3,4]：贪心不可行（找6元：贪心4+1+1=3枚，最优3+3=2枚）\n- 通用币制：必须用DP\n\n活动选择：\n- 贪心可行（按结束时间排序选）\n- 不需要DP\n\n0/1背包：\n- 按性价比（价值/重量）贪心不可行\n- 反例：容量5，物品[(价值3,重量3),(价值4,重量4)]\n  贪心选性价比高的4/4=1，但只装了1个\n  最优是装3+...只能装一个，实际上如果再有个(价值2,重量2)\n  贪心选4+...超了，最优是3+2=5\n- 必须用DP\n\n判断口诀：\n- 能严格证明贪心正确→用贪心（代码简单，效率高）\n- 找到反例或无法证明→用DP（保证正确）",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int coins[] = {25, 10, 5, 1};\n    int n;\n    cin >> n;\n    int cnt = 0;\n    for (int i = 0; i < 4; i++) {\n        cnt += n / coins[i];\n        n %= coins[i];\n    }\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "币制[1,5,10,25]贪心可行：从大到小选",
+        "每次选最大面额不超过剩余金额",
+        "这是贪心：每步不可撤销的局部最优选择",
+        "如果币制是[1,3,4]则贪心失败，必须用DP"
+      ],
+      "commonMistakes": [
+        {
+          "title": "所有最优化问题都想用贪心",
+          "description": "看到求最大/最小就想贪心，没有验证正确性。",
+          "fix": "先尝试找反例，如果贪心不正确就考虑DP。"
+        },
+        {
+          "title": "贪心和DP选择困难",
+          "description": "不确定一个问题该用贪心还是DP。",
+          "fix": "先尝试贪心并找反例。有反例就用DP，没有就尝试证明贪心正确。"
+        }
+      ],
+      "practice": {
+        "prompt": "分别用贪心和DP解决零钱兑换问题（币制[1,3,4]，金额6），比较结果。",
+        "hint": "贪心：4+1+1=3枚；DP：dp[6]=min(dp[5],dp[3],dp[2])+1=2枚（3+3）。",
+        "expectedIdea": "贪心不一定最优；DP: dp[i]=min(dp[i-c]+1) for all coins c<=i."
+      },
+      "quiz": [
+        {
+          "question": "贪心和DP最本质的区别是什么？",
+          "options": [
+            "贪心更快",
+            "贪心每步不可撤销，DP保留多种可能",
+            "贪心不需要状态定义",
+            "DP只能解决最优化问题"
+          ],
+          "answerIndex": 1,
+          "explanation": "贪心做不可撤销的选择，DP通过枚举状态保留多种可能性再取最优。"
+        },
+        {
+          "question": "0/1背包为什么不能用性价比贪心？",
+          "options": [
+            "因为物品太多了",
+            "因为选了性价比最高的可能放不下其他物品，浪费空间",
+            "因为价值可能是负数",
+            "因为重量可能是0"
+          ],
+          "answerIndex": 1,
+          "explanation": "性价比贪心可能选了一个大物品占满背包，但两个小物品组合价值更高。"
+        },
+        {
+          "question": "币制为[1,3,4]找6元，贪心和DP的结果分别是？",
+          "options": [
+            "贪心2枚，DP2枚",
+            "贪心3枚，DP2枚",
+            "贪心2枚，DP3枚",
+            "贪心3枚，DP3枚"
+          ],
+          "answerIndex": 1,
+          "explanation": "贪心选4+1+1=3枚；DP选3+3=2枚。贪心不是最优。"
+        },
+        {
+          "question": "活动选择问题应该用贪心还是DP？",
+          "options": [
+            "必须用DP",
+            "贪心即可（按结束时间排序）",
+            "两者都不行",
+            "必须用搜索"
+          ],
+          "answerIndex": 1,
+          "explanation": "活动选择问题有贪心选择性质，按结束时间排序贪心即可得到最优解。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.4.16",
+      "title": "贪心常见误区与反例",
+      "learningGoal": "掌握贪心算法的常见误区，通过反例理解贪心不总是正确的",
+      "explanation": "贪心算法最容易犯的错误就是想当然。本单元总结常见误区和经典反例。\n\n误区一：局部最优 != 全局最优\n- 不是所有问题都能通过局部最优达到全局最优\n- 反例：0/1背包按性价比选\n\n误区二：排序字段选错\n- 排序依据选错了，贪心结果就错了\n- 反例：区间选择按开始时间排序\n  区间 [1,5], [2,3], [4,6]\n  按开始时间选：[1,5] 只能选1个\n  按结束时间选：[2,3] 和 [4,6] 选2个！\n\n误区三：硬币找零都能贪心\n- 反例：币制 [1,3,4]，找6元\n  贪心：4+1+1=3枚\n  最优：3+3=2枚\n\n误区四：0/1背包按性价比选\n- 标准反例：容量10，物品(价值7,重量7),(价值5,重量5),(价值5,重量5)\n  性价比都是1.0\n  贪心可能选7，剩余3装不下=7\n  最优：5+5=10\n\n误区五：只测样例就够了\n- 样例可能恰好通过，但边界情况失败\n- 必须构造极端数据和反例\n\n总结：\n- 写贪心前先想：能证明吗？\n- 想不到证明就先找贪心反例\n- 有贪心反例就用DP或搜索",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int W = 10;\n    int w[] = {7, 5, 5};\n    int v[] = {7, 5, 5};\n    int n = 3;\n\n    double ratio[3];\n    int idx[3] = {0, 1, 2};\n    for (int i = 0; i < n; i++) ratio[i] = (double)v[i] / w[i];\n    sort(idx, idx + n, [&](int a, int b) { return ratio[a] > ratio[b]; });\n\n    int greedyVal = 0, greedyW = 0;\n    for (int i = 0; i < n; i++) {\n        if (greedyW + w[idx[i]] <= W) {\n            greedyW += w[idx[i]];\n            greedyVal += v[idx[i]];\n        }\n    }\n\n    int dp[11] = {};\n    for (int i = 0; i < n; i++)\n        for (int j = W; j >= w[i]; j--)\n            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n\n    cout << \"greedy=\" << greedyVal << endl;\n    cout << \"dp=\" << dp[W] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "贪心按性价比排序选择",
+        "性价比相同时可能做出错误选择",
+        "DP枚举所有状态保证最优",
+        "运行结果：greedy=7, dp=10（反例！）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "想当然认为贪心一定对",
+          "description": "没有证明也没有找反例就直接提交。",
+          "fix": "养成习惯：写贪心前先尝试证明或找反例。"
+        },
+        {
+          "title": "样例过了就以为正确",
+          "description": "样例可能太弱，没有覆盖边界情况。",
+          "fix": "自己构造极端数据：最小/最大输入、边界值、等价情况。"
+        },
+        {
+          "title": "不会构造反例",
+          "description": "知道贪心可能错但不知道怎么找反例。",
+          "fix": "从简单情况开始枚举，找贪心策略做出错误选择的最小实例。"
+        }
+      ],
+      "practice": {
+        "prompt": "构造一个0/1背包的反例：使得按性价比贪心得到的结果不是最优的。写出物品列表和背包容量。",
+        "hint": "让一个大物品性价比略高但占满背包，两个小物品组合价值更高。",
+        "expectedIdea": "容量10, 物品(7,7)和(5,5)和(5,5). 贪心选7, DP选5+5=10."
+      },
+      "quiz": [
+        {
+          "question": "区间选择问题按开始时间排序的反例是？",
+          "options": [
+            "不存在反例",
+            "区间[1,5],[2,3],[4,6]：按开始时间选1个，按结束时间选2个",
+            "所有区间等长时按开始时间排序不对",
+            "只有负数区间才有反例"
+          ],
+          "answerIndex": 1,
+          "explanation": "[1,5]开始最早但占了最多空间，[2,3]+[4,6]按结束时间选能选2个。"
+        },
+        {
+          "question": "币制[1,3,4]找6元，贪心和最优分别需要几枚？",
+          "options": [
+            "都是2枚",
+            "贪心3枚，最优2枚",
+            "贪心2枚，最优3枚",
+            "都是3枚"
+          ],
+          "answerIndex": 1,
+          "explanation": "贪心4+1+1=3枚，最优3+3=2枚。"
+        },
+        {
+          "question": "0/1背包按性价比贪心失败的根本原因是什么？",
+          "options": [
+            "性价比计算有误差",
+            "选了高性价比物品可能占满背包，无法装其他物品",
+            "物品数量太多了",
+            "背包容量太小"
+          ],
+          "answerIndex": 1,
+          "explanation": "高性价比物品可能占用太多空间，导致无法装入总价值更高的物品组合。"
+        },
+        {
+          "question": "如何判断一个问题应该用贪心还是DP？",
+          "options": [
+            "数据量小用DP，大用贪心",
+            "先尝试贪心并找反例，有反例就用DP",
+            "所有问题都先用贪心",
+            "所有问题都用DP"
+          ],
+          "answerIndex": 1,
+          "explanation": "先尝试贪心，如果能证明正确就用贪心，找到反例就改用DP。"
+        }
+      ]
+    }
+  ]
+}

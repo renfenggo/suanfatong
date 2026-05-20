@@ -10,6 +10,7 @@ class Progress {
   final Set<String> completedCppItems;
   final Map<String, int> cppQuizScores;
   final Map<String, int> cppQuizAttempts;
+  final Map<String, String> cppQuizLastDates;
   final Set<String> cppWrongQuizIds;
   final String lastKnowledgeItemId;
 
@@ -23,6 +24,7 @@ class Progress {
     this.completedCppItems = const {},
     this.cppQuizScores = const {},
     this.cppQuizAttempts = const {},
+    this.cppQuizLastDates = const {},
     this.cppWrongQuizIds = const {},
     this.lastKnowledgeItemId = '',
   });
@@ -37,6 +39,7 @@ class Progress {
     Set<String>? completedCppItems,
     Map<String, int>? cppQuizScores,
     Map<String, int>? cppQuizAttempts,
+    Map<String, String>? cppQuizLastDates,
     Set<String>? cppWrongQuizIds,
     String? lastKnowledgeItemId,
   }) {
@@ -50,6 +53,7 @@ class Progress {
       completedCppItems: completedCppItems ?? this.completedCppItems,
       cppQuizScores: cppQuizScores ?? this.cppQuizScores,
       cppQuizAttempts: cppQuizAttempts ?? this.cppQuizAttempts,
+      cppQuizLastDates: cppQuizLastDates ?? this.cppQuizLastDates,
       cppWrongQuizIds: cppWrongQuizIds ?? this.cppWrongQuizIds,
       lastKnowledgeItemId: lastKnowledgeItemId ?? this.lastKnowledgeItemId,
     );
@@ -66,6 +70,7 @@ class Progress {
       'completedCppItems': completedCppItems.toList(),
       'cppQuizScores': cppQuizScores,
       'cppQuizAttempts': cppQuizAttempts,
+      'cppQuizLastDates': cppQuizLastDates,
       'cppWrongQuizIds': cppWrongQuizIds.toList(),
       'lastKnowledgeItemId': lastKnowledgeItemId,
     };
@@ -80,14 +85,19 @@ class Progress {
       quizScores: Map<String, int>.from(json['quizScores'] as Map? ?? {}),
       totalQuizAttempts: json['totalQuizAttempts'] as int? ?? 0,
       answerRecords: Map<String, int>.from(json['answerRecords'] as Map? ?? {}),
-      answerHistory: (json['answerHistory'] as List?)
+      answerHistory:
+          (json['answerHistory'] as List?)
               ?.map((e) => AnswerRecord.fromJson(e as Map<String, dynamic>))
-              .toList() ?? [],
+              .toList() ??
+          [],
       completedCppItems:
           (json['completedCppItems'] as List?)?.cast<String>().toSet() ?? {},
       cppQuizScores: Map<String, int>.from(json['cppQuizScores'] as Map? ?? {}),
       cppQuizAttempts: Map<String, int>.from(
         json['cppQuizAttempts'] as Map? ?? {},
+      ),
+      cppQuizLastDates: Map<String, String>.from(
+        json['cppQuizLastDates'] as Map? ?? {},
       ),
       cppWrongQuizIds:
           (json['cppWrongQuizIds'] as List?)?.cast<String>().toSet() ?? {},

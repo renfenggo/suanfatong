@@ -1,0 +1,138 @@
+{
+  "sectionId": "3.3",
+  "sectionName": "集合与映射",
+  "units": [
+    {
+      "itemId": "3.3.1",
+      "title": "set",
+      "learningGoal": "掌握 C++ set 的使用，理解有序集合的应用",
+      "explanation": "set 是 C++ STL 中的有序集合，自动排序且去重。\n\n常用操作：\n- insert(x)：插入元素\n- erase(x)：删除元素\n- find(x)：查找元素，返回迭代器\n- count(x)：是否存在（0或1）\n- lower_bound(x)：第一个 >= x 的元素\n- upper_bound(x)：第一个 > x 的元素\n\n底层是红黑树，所有操作 O(log n)。\n\n竞赛常用于：维护有序集合、动态排名、去重。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    set<int> s;\n    s.insert(3); s.insert(1); s.insert(4); s.insert(1);\n    for (int x : s) cout << x << \" \";\n    cout << endl;\n    cout << s.count(3) << endl;\n    auto it = s.lower_bound(2);\n    cout << *it << endl;\n    return 0;\n}",
+      "codeNotes": ["自动排序+去重", "insert/find/erase O(log n)", "lower_bound/upper_bound 可用", "遍历得到升序序列"],
+      "commonMistakes": [{"title": "插入重复元素没效果", "description": "set 自动去重，insert 重复值不会增加元素。", "fix": "需要允许重复用 multiset。"}],
+      "practice": {"prompt": "维护一个集合，支持插入、删除、查询第 k 小。", "hint": "用 set 维护，查询时用 next(s.begin(), k-1)。", "expectedIdea": "set + advance(it, k-1) 获取第k小。"},
+      "quiz": [{"question": "set 的底层实现是什么？", "options": ["数组", "链表", "红黑树", "哈希表"], "answerIndex": 2, "explanation": "set 底层是红黑树，保证元素有序且操作 O(log n)。"}]
+    },
+    {
+      "itemId": "3.3.3",
+      "title": "map",
+      "learningGoal": "掌握 C++ map 的使用，理解键值对映射",
+      "explanation": "map 是有序键值对容器，按键自动排序。\n\n常用操作：\n- mp[key] = value：插入/修改\n- mp.count(key)：是否存在\n- mp.find(key)：查找\n- mp.erase(key)：删除\n\n底层是红黑树，操作 O(log n)。\n\n竞赛常用于：计数、离散化、坐标映射。\n\nunordered_map 基于哈希表，平均 O(1) 但无序。",
+      "exampleCode": "#include <iostream>\n#include <map>\nusing namespace std;\n\nint main() {\n    map<string, int> mp;\n    mp[\"apple\"] = 3;\n    mp[\"banana\"] = 5;\n    mp[\"apple\"]++;\n    for (auto& [k, v] : mp)\n        cout << k << \": \" << v << endl;\n    return 0;\n}",
+      "codeNotes": ["键值对，按键有序", "mp[key] 可直接访问", "count 检查 key 是否存在", "遍历按 key 升序"],
+      "commonMistakes": [{"title": "mp[key] 会自动创建", "description": "访问不存在的 key 会自动插入默认值0。", "fix": "用 mp.count(key) 先检查是否存在。"}],
+      "practice": {"prompt": "统计一组字符串中每个字符串出现的次数。", "hint": "map<string, int> cnt; cnt[s]++;", "expectedIdea": "map<string,int> cnt; for each s: cnt[s]++; for auto& [k,v]: output"},
+      "quiz": [{"question": "map 和 unordered_map 的区别是什么？", "options": ["map更快", "map有序，unordered_map无序", "map可以存更多数据", "没有区别"], "answerIndex": 1, "explanation": "map 按键有序（红黑树），unordered_map 无序但平均 O(1)。"}]
+    },
+    {
+      "itemId": "3.3.6",
+      "title": "unordered_map / unordered_set",
+      "learningGoal": "掌握哈希表容器的高效用法",
+      "explanation": "unordered_map 和 unordered_set 基于哈希表实现：\n- 平均时间复杂度 O(1)\n- 不保证元素顺序\n- 适合快速查找和计数\n\n和 map/set 的区别：\n- map/set：红黑树，有序，O(log n)\n- unordered_*：哈希表，无序，平均 O(1)\n\n竞赛中如果不需要顺序，优先用 unordered_* 获取更快的速度。\n\n注意：最坏情况可能退化到 O(n)，但竞赛中很少遇到。",
+      "exampleCode": "#include <iostream>\n#include <unordered_map>\nusing namespace std;\n\nint main() {\n    unordered_map<string, int> cnt;\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string s;\n        cin >> s;\n        cnt[s]++;\n    }\n    for (auto& [k, v] : cnt)\n        cout << k << \" \" << v << endl;\n    return 0;\n}",
+      "codeNotes": ["哈希表实现，平均 O(1)", "不保证顺序", "适合计数和快速查找", "比 map 快但不有序"],
+      "commonMistakes": [{"title": "遍历顺序不确定", "description": "unordered_map 遍历顺序和插入顺序不同。", "fix": "需要有序遍历时用 map 代替。"}],
+      "practice": {"prompt": "给定 n 个整数，统计出现次数最多的数及其次数。", "hint": "unordered_map<int,int> 统计计数，找最大。", "expectedIdea": "unordered_map<int,int> cnt; 统计后遍历找 max。"},
+      "quiz": [{"question": "unordered_map 的平均查找时间复杂度是？", "options": ["O(n)", "O(log n)", "O(1)", "O(n^2)"], "answerIndex": 2, "explanation": "哈希表平均情况下查找是 O(1)。"}]
+    },
+    {
+      "itemId": "3.3.2",
+      "title": "multiset",
+      "learningGoal": "掌握 multiset 的基本用法，理解与 set 的区别",
+      "explanation": "multiset 是 C++ STL 中的有序容器，与 set 类似但允许重复元素。\n\n头文件：<set>\n\n与 set 的区别：\n- set 不允许重复，multiset 允许\n- 插入重复元素时 set 会忽略，multiset 会保留\n\n常用操作：\n- insert(x)：插入元素\n- erase(x)：删除所有等于 x 的元素（注意！传值会删全部）\n- erase(it)：删除迭代器指向的单个元素\n- count(x)：统计 x 出现的次数\n- find(x)：找到第一个等于 x 的迭代器\n- lower_bound(x) / upper_bound(x)：二分查找\n- size()：元素个数\n\n内部实现：红黑树，所有操作 O(log n)。\n\n典型应用：维护动态有序序列、求中位数、滑动窗口最值。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    multiset<int> ms;\n    ms.insert(3);\n    ms.insert(1);\n    ms.insert(3);\n    ms.insert(2);\n    for (int x : ms) cout << x << \" \";\n    cout << endl;\n    cout << \"count(3): \" << ms.count(3) << endl;\n    auto it = ms.find(3);\n    if (it != ms.end()) ms.erase(it);\n    for (int x : ms) cout << x << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "multiset 允许重复元素",
+        "insert 插入元素，自动排序",
+        "count 统计某值出现次数",
+        "erase(it) 只删除迭代器指向的一个元素"
+      ],
+      "commonMistakes": [
+        {
+          "title": "erase 传值删除全部",
+          "description": "用 ms.erase(3) 会删除所有等于 3 的元素，而不是只删一个。",
+          "fix": "要只删一个，先用 find 找到迭代器，再用 erase(it) 删除。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 multiset 维护一个动态集合，支持插入、删除一个、查询最小值。",
+        "hint": "multiset 自动有序，*ms.begin() 就是最小值。",
+        "expectedIdea": "multiset 增删查操作"
+      },
+      "quiz": [
+        {
+          "question": "multiset 与 set 的主要区别是？",
+          "options": ["multiset 无序", "multiset 允许重复元素", "multiset 更快", "multiset 不支持查找"],
+          "answerIndex": 1,
+          "explanation": "multiset 和 set 都是有序的，区别在于 multiset 允许存储重复元素。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.3.4",
+      "title": "pair",
+      "learningGoal": "掌握 pair 的用法，理解二元组在算法中的应用",
+      "explanation": "pair 是 C++ STL 中的二元组模板，可以将两个值绑定在一起。\n\n头文件：<utility>（通常 <algorithm> 和 <map> 已包含）\n\n定义：pair<int, int> p; pair<int, string> ps;\n\n创建：\n- make_pair(1, 2)\n- {1, 2}（C++11 初始化列表）\n\n访问：p.first, p.second\n\n比较规则：先比 first，first 相等再比 second。这个特性使得 pair 可以方便地排序。\n\n常见应用：\n- 存坐标 (x, y)\n- 存边 (权值, 终点)\n- map 的元素就是 pair<const Key, Value>\n- 函数返回两个值",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    pair<int, int> p = {3, 5};\n    cout << p.first << \" \" << p.second << endl;\n    vector<pair<int, int>> v = {{3, 1}, {1, 2}, {2, 3}};\n    sort(v.begin(), v.end());\n    for (auto& x : v) cout << x.first << \",\" << x.second << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "pair 用 {a, b} 或 make_pair 创建",
+        "用 .first 和 .second 访问成员",
+        "排序时先比 first 再比 second",
+        "常用于存坐标、边权等二元数据"
+      ],
+      "commonMistakes": [
+        {
+          "title": "比较方向搞反",
+          "description": "想按 second 排序但直接用了 sort，结果按 first 排了。",
+          "fix": "按 second 排序需要自定义比较函数或把 second 放在 first 位置。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个点的坐标，按 y 坐标从小到大排序后输出。",
+        "hint": "用 pair<int,int> 存坐标，自定义比较或调整 first/second。",
+        "expectedIdea": "pair + 自定义排序"
+      },
+      "quiz": [
+        {
+          "question": "pair 的默认排序规则是？",
+          "options": ["只比 first", "先比 first，相等再比 second", "只比 second", "随机比较"],
+          "answerIndex": 1,
+          "explanation": "pair 默认字典序比较：先比较 first，first 相等时再比较 second。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.3.5",
+      "title": "tuple",
+      "learningGoal": "掌握 tuple 的用法，理解多元组在算法中的应用",
+      "explanation": "tuple 是 C++11 引入的多元组模板，可以存储任意数量的不同类型值。\n\n头文件：<tuple>\n\n定义：tuple<int, int, int> t; tuple<int, string, double> ts;\n\n创建：\n- make_tuple(1, 2, 3)\n- {1, 2, 3}（部分编译器支持）\n\n访问：get<0>(t), get<1>(t), get<2>(t)（编译期索引）\n\n解包：tie(a, b, c) = t;\n\n比较规则：字典序，从第一个元素开始比较。\n\n常见应用：\n- 存三维坐标 (x, y, z)\n- 存图的边 (起点, 终点, 权值)\n- 函数返回多个值\n- Dijkstra 优先队列中存 (距离, 节点, 其他信息)",
+      "exampleCode": "#include <iostream>\n#include <tuple>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    auto t = make_tuple(3, 2, 1);\n    cout << get<0>(t) << \" \" << get<1>(t) << \" \" << get<2>(t) << endl;\n    int a, b, c;\n    tie(a, b, c) = t;\n    cout << a << \" \" << b << \" \" << c << endl;\n    vector<tuple<int,int,int>> v;\n    v.push_back({3, 2, 1});\n    v.push_back({1, 5, 3});\n    v.push_back({1, 2, 4});\n    sort(v.begin(), v.end());\n    for (auto& x : v) cout << get<0>(x) << \",\" << get<1>(x) << \",\" << get<2>(x) << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "get<i>(t) 访问第 i 个元素（从 0 开始）",
+        "tie(a, b, c) = t 解包 tuple",
+        "sort 默认字典序比较",
+        "常用于存多维数据"
+      ],
+      "commonMistakes": [
+        {
+          "title": "get 的索引必须是编译期常量",
+          "description": "写了 get<i>(t) 其中 i 是变量，编译报错。",
+          "fix": "get 的模板参数必须是编译期常量，如 get<0>(t)、get<1>(t)。运行时索引需要其他方法。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 条边（起点、终点、权值），按权值从小到大排序输出。",
+        "hint": "用 tuple<int,int,int> 存边，权值放第一个位置方便排序。",
+        "expectedIdea": "tuple 存图边 + 排序"
+      },
+      "quiz": [
+        {
+          "question": "访问 tuple 第三个元素用什么语法？",
+          "options": ["t[2]", "t.at(2)", "get<2>(t)", "t.third"],
+          "answerIndex": 2,
+          "explanation": "tuple 用 get<index>(t) 访问元素，索引从 0 开始，第三个是 get<2>(t)。"
+        }
+      ]
+    }
+  ]
+}

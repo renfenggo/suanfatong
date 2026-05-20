@@ -1,0 +1,39 @@
+{
+  "sectionId": "3.4",
+  "sectionName": "并查集",
+  "units": [
+    {
+      "itemId": "3.4.1",
+      "title": "基本并查集",
+      "learningGoal": "理解并查集的原理，掌握 union-find 的实现",
+      "explanation": "并查集（Union-Find）用于处理不相交集合的合并与查询。\n\n核心操作：\n- find(x)：查找 x 所属集合的代表元素（根）\n- union(x, y)：合并 x 和 y 所在的集合\n\n用数组 fa[] 实现：fa[i] 表示 i 的父节点，根节点的 fa 指向自己。\n\n初始化：fa[i] = i（每个元素独立成集合）\n\nfind 操作：沿着父指针一直找到根。\nunion 操作：把一个根的父指针指向另一个根。\n\n时间复杂度：不带优化最坏 O(n)，带路径压缩接近 O(1)。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint fa[100001];\n\nvoid init(int n) { for (int i = 1; i <= n; i++) fa[i] = i; }\n\nint find(int x) {\n    if (fa[x] == x) return x;\n    return find(fa[x]);\n}\n\nvoid unite(int x, int y) {\n    fa[find(x)] = find(y);\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    init(n);\n    for (int i = 0; i < m; i++) {\n        int op, x, y;\n        cin >> op >> x >> y;\n        if (op == 1) unite(x, y);\n        else cout << (find(x) == find(y) ? \"Yes\" : \"No\") << endl;\n    }\n    return 0;\n}",
+      "codeNotes": ["fa[i] 存父节点", "根节点的 fa 指向自己", "find 沿父指针找到根", "union 把一个根挂到另一个根"],
+      "commonMistakes": [{"title": "union 时直接改 fa[x]", "description": "应该改 fa[find(x)]，不是 fa[x]。", "fix": "fa[find(x)] = find(y); 合并的是两个根。"}],
+      "practice": {"prompt": "实现并查集，支持合并和查询两个元素是否在同一集合。", "hint": "init/ find/ unite 三件套。", "expectedIdea": "标准并查集模板"},
+      "quiz": [{"question": "并查集的 find 操作的作用是什么？", "options": ["找到最大元素", "找到集合的代表元素（根）", "删除元素", "排序元素"], "answerIndex": 1, "explanation": "find(x) 沿着父指针找到 x 所属集合的根节点（代表元素）。"}]
+    },
+    {
+      "itemId": "3.4.2",
+      "title": "路径压缩",
+      "learningGoal": "掌握路径压缩优化，让 find 操作接近 O(1)",
+      "explanation": "路径压缩：在 find 操作时，把路径上的所有节点直接指向根，让树变扁平。\n\n实现：递归版 find 中，fa[x] = find(fa[x]) 代替 return find(fa[x])。\n\n效果：后续再 find 这些节点时只需一步就能找到根。\n\n路径压缩后，均摊时间复杂度接近 O(α(n))，其中 α 是反阿克曼函数，实际可以认为是 O(1)。\n\n竞赛中并查集几乎必带路径压缩。",
+      "exampleCode": "int find(int x) {\n    if (fa[x] == x) return x;\n    fa[x] = find(fa[x]);\n    return fa[x];\n}",
+      "codeNotes": ["fa[x] = find(fa[x]) 是关键", "把路径上所有节点指向根", "递归实现最简洁", "均摊接近 O(1)"],
+      "commonMistakes": [{"title": "忘记更新 fa[x]", "description": "只 return find(fa[x]) 没有赋值给 fa[x]。", "fix": "必须 fa[x] = find(fa[x])，先压缩再返回。"}],
+      "practice": {"prompt": "给并查集加上路径压缩，对比压缩前后的 find 深度。", "hint": "fa[x] = find(fa[x]); 一行搞定。", "expectedIdea": "递归版路径压缩模板"},
+      "quiz": [{"question": "路径压缩的效果是什么？", "options": ["减少内存", "让树变扁平，加速后续 find", "支持删除操作", "自动排序"], "answerIndex": 1, "explanation": "路径压缩把路径上所有节点直接指向根，让树变成扁平结构。"}]
+    },
+    {
+      "itemId": "3.4.3",
+      "title": "按秩 / 按大小合并",
+      "learningGoal": "掌握启发式合并优化，保持并查集树的高度较低",
+      "explanation": "按秩合并：总是把小树（高度低或节点少）的根挂到大树上。\n\n按大小合并：维护每个集合的大小 sz[]，合并时把小的挂到大的上。\n\n实现：\n- sz[i] 初始化为 1\n- union 时比较两边 sz，小的挂大的\n- 更新 sz[root] += sz[被挂的root]\n\n路径压缩 + 按秩合并 = 完全优化的并查集，均摊 O(α(n))。\n\n竞赛中通常只加路径压缩就够用了。",
+      "exampleCode": "int fa[100001], sz[100001];\nvoid init(int n) {\n    for (int i = 1; i <= n; i++) { fa[i] = i; sz[i] = 1; }\n}\nvoid unite(int x, int y) {\n    int rx = find(x), ry = find(y);\n    if (rx == ry) return;\n    if (sz[rx] < sz[ry]) { fa[rx] = ry; sz[ry] += sz[rx]; }\n    else { fa[ry] = rx; sz[rx] += sz[ry]; }\n}",
+      "codeNotes": ["sz[i] 记录集合大小", "小树挂到大树上", "更新 sz", "配合路径压缩效果最佳"],
+      "commonMistakes": [{"title": "合并后忘记更新sz", "description": "挂完后没有更新根的 sz。", "fix": "fa[rx]=ry 后加 sz[ry] += sz[rx]。"}],
+      "practice": {"prompt": "用并查集（路径压缩+按大小合并）判断连通性。", "hint": "init/ find(带压缩)/ unite(按大小)。", "expectedIdea": "完整并查集模板"},
+      "quiz": [{"question": "按大小合并的原则是什么？", "options": ["随机合并", "大树挂小树", "小树挂大树", "按编号合并"], "answerIndex": 2, "explanation": "按大小合并把小集合挂到大集合上，保持树较矮。"}]
+    }
+  ]
+}

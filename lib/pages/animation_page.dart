@@ -126,7 +126,7 @@ class _AnimationPageState extends ConsumerState<AnimationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BFS 动画演示')),
+      appBar: AppBar(title: const Text('BFS 迷宫动画')),
       body: SafeArea(child: _buildBody()),
     );
   }

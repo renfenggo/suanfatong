@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_set_basics",
+  "itemId": "4.4.1",
+  "title": "集合",
+  "description": "演示集合的基本概念：元素、子集、并集、交集",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义集合",
+      "description": "集合是不同元素的总体。A = {1,2,3}, B = {2,3,4}",
+      "codeLine": "// A = {1,2,3}, B = {2,3,4}",
+      "highlights": ["A", "B"],
+      "state": {
+        "variables": [
+          {"name": "A", "value": "{1,2,3}", "note": "|A|=3"},
+          {"name": "B", "value": "{2,3,4}", "note": "|B|=3"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "交集 A∩B",
+      "description": "A∩B = {2,3}，同时属于 A 和 B 的元素",
+      "codeLine": "// A∩B = {2,3}",
+      "highlights": ["A∩B"],
+      "state": {
+        "variables": [
+          {"name": "A", "value": "{1,2,3}", "note": ""},
+          {"name": "B", "value": "{2,3,4}", "note": ""},
+          {"name": "A∩B", "value": "{2,3}", "note": "|A∩B|=2"}
+        ],
+        "containers": [],
+        "output": "A∩B = {2,3}"
+      }
+    },
+    {
+      "step": 3,
+      "title": "并集 A∪B",
+      "description": "A∪B = {1,2,3,4}，属于 A 或 B 的所有元素（去重）",
+      "codeLine": "// A∪B = {1,2,3,4}",
+      "highlights": ["A∪B"],
+      "state": {
+        "variables": [
+          {"name": "A", "value": "{1,2,3}", "note": ""},
+          {"name": "B", "value": "{2,3,4}", "note": ""},
+          {"name": "A∪B", "value": "{1,2,3,4}", "note": "|A∪B|=4"}
+        ],
+        "containers": [],
+        "output": "A∩B = {2,3}\nA∪B = {1,2,3,4}"
+      }
+    },
+    {
+      "step": 4,
+      "title": "子集",
+      "description": "若 A 的每个元素都在 B 中，则 A⊆B。{2,3} ⊆ {1,2,3}。空集 ∅ 是任何集合的子集",
+      "codeLine": "// A⊆B ⟹ ∀x∈A, x∈B",
+      "highlights": ["⊆"],
+      "state": {
+        "variables": [
+          {"name": "{2,3}⊆{1,2,3}", "value": "✓", "note": "是子集"},
+          {"name": "{1,4}⊆{1,2,3}", "value": "✗", "note": "不是子集"}
+        ],
+        "containers": [],
+        "output": "A∩B = {2,3}\nA∪B = {1,2,3,4}"
+      }
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
-    "name": "bfs_learn",
-    "short_name": "bfs_learn",
+    "name": "算法通",
+    "short_name": "算法通",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "算法通离线学习 App",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,0 +1,110 @@
+{
+  "animationId": "cpp_two_pointer",
+  "itemId": "2.5.1",
+  "title": "相向双指针",
+  "description": "演示相向双指针在有序数组中查找两数之和等于目标值的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": "有序数组"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化双指针",
+      "description": "目标 target = 12。左指针 left=0 指向 arr[0]=1，右指针 right=5 指向 arr[5]=10。",
+      "codeLine": "int left = 0, right = n - 1;",
+      "highlights": ["left", "right"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "12", "note": "目标和"},
+          {"name": "left", "value": "0", "note": "arr[0]=1"},
+          {"name": "right", "value": "5", "note": "arr[5]=10"},
+          {"name": "sum", "value": "11", "note": "1+10=11"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": ""}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "sum=11 < 12，右移左指针",
+      "description": "arr[left]+arr[right] = 1+10 = 11 < 12，和太小，需要增大。左指针右移，left=1。",
+      "codeLine": "if (arr[left] + arr[right] < target) left++;",
+      "highlights": ["left++"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "12", "note": ""},
+          {"name": "left", "value": "1", "note": "arr[1]=3"},
+          {"name": "right", "value": "5", "note": "arr[5]=10"},
+          {"name": "sum", "value": "13", "note": "3+10=13"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": ""}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "sum=13 > 12，左移右指针",
+      "description": "3+10 = 13 > 12，和太大，需要减小。右指针左移，right=4。",
+      "codeLine": "else if (arr[left] + arr[right] > target) right--;",
+      "highlights": ["right--"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "12", "note": ""},
+          {"name": "left", "value": "1", "note": "arr[1]=3"},
+          {"name": "right", "value": "4", "note": "arr[4]=8"},
+          {"name": "sum", "value": "11", "note": "3+8=11"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": ""}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "sum=11 < 12，右移左指针",
+      "description": "3+8 = 11 < 12，和太小。左指针右移，left=2。",
+      "codeLine": "if (arr[left] + arr[right] < target) left++;",
+      "highlights": ["left++"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "12", "note": ""},
+          {"name": "left", "value": "2", "note": "arr[2]=4"},
+          {"name": "right", "value": "4", "note": "arr[4]=8"},
+          {"name": "sum", "value": "12", "note": "4+8=12 ✓"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": ""}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "找到！4 + 8 = 12",
+      "description": "arr[left]+arr[right] = 4+8 = 12 = target，找到答案。双指针从两端向中间收缩，每次只移动一个指针，时间 O(n)。",
+      "codeLine": "if (arr[left] + arr[right] == target) break;",
+      "highlights": ["== target"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "12", "note": ""},
+          {"name": "left", "value": "2", "note": "arr[2]=4"},
+          {"name": "right", "value": "4", "note": "arr[4]=8"},
+          {"name": "sum", "value": "12", "note": "4+8=12 ✓"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "3", "4", "6", "8", "10"], "activeIndex": -1, "note": "4+8=12"}
+        ],
+        "output": "找到：arr[2]=4 + arr[4]=8 = 12"
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "animationId": "cpp_area_calculation",
+  "itemId": "4.7.11",
+  "title": "面积",
+  "description": "演示常见图形面积的计算：矩形、三角形、圆",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "矩形面积",
+      "description": "矩形面积 = 长 × 宽。S = 5 × 3 = 15",
+      "codeLine": "int s1 = 5 * 3; // 矩形 15",
+      "highlights": ["5 * 3"],
+      "state": {
+        "variables": [
+          {"name": "长", "value": "5", "note": ""},
+          {"name": "宽", "value": "3", "note": ""},
+          {"name": "矩形面积", "value": "15", "note": "5×3"}
+        ],
+        "containers": [],
+        "output": "矩形面积 = 15"
+      }
+    },
+    {
+      "step": 2,
+      "title": "三角形面积",
+      "description": "三角形面积 = 底 × 高 / 2。底=6, 高=4, S = 6×4/2 = 12",
+      "codeLine": "double s2 = 6.0 * 4.0 / 2; // 三角形 12",
+      "highlights": ["6 * 4 / 2"],
+      "state": {
+        "variables": [
+          {"name": "底", "value": "6", "note": ""},
+          {"name": "高", "value": "4", "note": ""},
+          {"name": "三角形面积", "value": "12", "note": "6×4/2"}
+        ],
+        "containers": [],
+        "output": "矩形面积 = 15\n三角形面积 = 12"
+      }
+    },
+    {
+      "step": 3,
+      "title": "圆面积",
+      "description": "圆面积 = π × r²。r=3, S = π × 9 ≈ 28.27",
+      "codeLine": "double s3 = 3.14159 * 3 * 3; // ≈ 28.27",
+      "highlights": ["π × r²"],
+      "state": {
+        "variables": [
+          {"name": "r", "value": "3", "note": ""},
+          {"name": "r²", "value": "9", "note": ""},
+          {"name": "圆面积", "value": "28.27", "note": "π×9"}
+        ],
+        "containers": [],
+        "output": "矩形面积 = 15\n三角形面积 = 12\n圆面积 ≈ 28.27"
+      }
+    },
+    {
+      "step": 4,
+      "title": "竞赛常用：叉积求面积",
+      "description": "多边形面积可用叉积求：三角形面积 = |叉积|/2。这比底×高/2 更通用",
+      "codeLine": "// S = |cross(a,b)| / 2",
+      "highlights": ["cross"],
+      "state": {
+        "variables": [
+          {"name": "矩形", "value": "15", "note": "长×宽"},
+          {"name": "三角形", "value": "12", "note": "底×高/2 或 |叉积|/2"},
+          {"name": "圆", "value": "28.27", "note": "πr²"}
+        ],
+        "containers": [],
+        "output": "矩形面积 = 15\n三角形面积 = 12\n圆面积 ≈ 28.27"
+      }
+    }
+  ]
+}

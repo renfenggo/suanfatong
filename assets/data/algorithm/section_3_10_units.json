@@ -1,0 +1,162 @@
+{
+  "sectionId": "3.10",
+  "sectionName": "平衡树与STL容器",
+  "units": [
+    {
+      "itemId": "3.10.1",
+      "title": "平衡树简介",
+      "learningGoal": "理解平衡树的概念和重要性，掌握 C++ STL 中 set、map、multiset 的基本用法",
+      "explanation": "平衡树是一类始终保持树高为 O(log n) 的二叉搜索树，确保查找、插入、删除操作都在 O(log n) 时间内完成。\n\n常见的平衡树类型：\n- AVL 树：严格平衡，左右子树高度差不超过 1，查找效率最高但维护成本大\n- 红黑树：近似平衡，C++ STL 中 set/map 的底层实现，综合性能优秀\n- Treap（树堆）：Tree + Heap 的结合，通过随机优先级保持平衡，代码简洁，竞赛最常用\n- Splay 树：通过旋转将访问节点移到根，适合具有局部性的操作序列\n\n为什么平衡很重要？\n普通的二叉搜索树在极端情况下（如有序插入）会退化为链表，操作变为 O(n)。\n平衡树通过旋转等操作保持树高在 O(log n)，避免退化。\n\n竞赛中通常不需要手写平衡树，可以用 STL 容器替代：\n- std::set：有序不重复集合，底层红黑树\n- std::map：有序键值对，底层红黑树\n- std::multiset：有序可重复集合，底层红黑树\n\nmultiset 特别有用：insert 插入、erase 删除、find 查找、count 计数、lower_bound 查找第一个 >= x 的元素。\n注意：multiset 的 erase(x) 会删除所有等于 x 的元素，如果只想删一个，用 erase(find(x))。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    multiset<int> s;\n    s.insert(3);\n    s.insert(1);\n    s.insert(4);\n    s.insert(1);\n    s.insert(5);\n    s.insert(9);\n    s.insert(2);\n    s.insert(6);\n    cout << \"元素个数: \" << s.size() << endl;\n    cout << \"1的个数: \" << s.count(1) << endl;\n    cout << \"所有元素(升序): \";\n    for (int x : s) cout << x << \" \";\n    cout << endl;\n    auto it = s.lower_bound(4);\n    cout << \"第一个>=4的元素: \" << *it << endl;\n    s.erase(s.find(1));\n    cout << \"删除一个1后，1的个数: \" << s.count(1) << endl;\n    auto kth = next(s.begin(), 2);\n    cout << \"第3小的元素: \" << *kth << endl;\n    return 0;\n}",
+      "codeNotes": ["multiset 允许重复元素，内部自动升序排列", "erase(find(x)) 只删除一个等于x的元素", "lower_bound(x) 返回第一个 >= x 的迭代器", "next(it, k) 获取第 k 个后续迭代器"],
+      "commonMistakes": [
+        {
+          "title": "multiset 的 erase(x) 删除所有",
+          "description": "调用 s.erase(x) 会删除 multiset 中所有等于 x 的元素，而不是只删一个。",
+          "fix": "如果只想删除一个，使用 s.erase(s.find(x))。"
+        },
+        {
+          "title": "对 set 使用下标访问",
+          "description": "set 和 multiset 不支持随机访问，不能用 s[i] 获取元素。",
+          "fix": "使用迭代器或 *next(s.begin(), i) 来获取第 i 个元素。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 multiset 维护一个动态集合，支持以下操作：插入一个数、删除一个数、查询第 k 小的数。",
+        "hint": "insert 插入，erase(find(x)) 删除，next(begin(), k-1) 查第 k 小。",
+        "expectedIdea": "用 multiset 维护有序集合，利用迭代器访问第 k 小元素。"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种平衡树是 C++ STL 中 set 和 map 的底层实现？",
+          "options": ["AVL 树", "红黑树", "Treap", "B 树"],
+          "answerIndex": 1,
+          "explanation": "C++ STL 中的 set 和 map 底层使用红黑树实现，红黑树在插入和删除时通过颜色调整和旋转来保持近似平衡。"
+        },
+        {
+          "question": "multiset 中执行 s.erase(s.find(5)) 会怎样？",
+          "options": ["删除所有等于5的元素", "只删除一个等于5的元素", "删除第一个大于5的元素", "编译报错"],
+          "answerIndex": 1,
+          "explanation": "s.find(5) 返回指向一个等于5的元素的迭代器，erase(it) 只删除该迭代器指向的元素，因此只删除一个。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.10.2",
+      "title": "pb_ds 扩展容器",
+      "learningGoal": "了解 GCC 的 pb_ds 库，掌握基于策略的数据结构中的 tree 容器及其排名查询功能",
+      "explanation": "pb_ds（Policy-Based Data Structures）是 GCC 编译器扩展库 __gnu_pbds 提供的高级数据结构。\n\n它提供了一个强大的 tree 容器，在普通红黑树的基础上支持：\n- order_of_key(x)：查询有多少个元素 < x（即 x 的排名）\n- find_by_order(k)：查询第 k 小的元素（从0开始计数）\n\n这两个操作都是 O(log n) 的，比用 multiset + advance 高效得多。\n\n使用 pb_ds tree 需要包含头文件：<ext/pb_ds/assoc_container.hpp> 和 <ext/pb_ds/tree_policy.hpp>\n\n定义方式：\ntree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> t;\n\n参数说明：\n- int：键类型\n- null_type：无映射值（类似 set），若填 int 则类似 map\n- less<int>：升序排列\n- rb_tree_tag：使用红黑树\n- tree_order_statistics_node_update：启用排名统计功能\n\n注意：pb_ds 是 GCC 扩展，仅限 GCC/MinGW 编译器，VC++ 不支持。\n竞赛中（如洛谷、Codeforces）通常使用 GCC，所以可以使用。",
+      "exampleCode": "#include <iostream>\n#include <ext/pb_ds/assoc_container.hpp>\n#include <ext/pb_ds/tree_policy.hpp>\nusing namespace std;\nusing namespace __gnu_pbds;\n\ntree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> t;\n\nint main() {\n    t.insert(3);\n    t.insert(1);\n    t.insert(4);\n    t.insert(1);\n    t.insert(5);\n    t.insert(9);\n    t.insert(2);\n    t.insert(6);\n    cout << \"元素个数: \" << t.size() << endl;\n    cout << \"排名查询 order_of_key(4): \" << t.order_of_key(4) << endl;\n    cout << \"第3小 find_by_order(2): \" << *t.find_by_order(2) << endl;\n    cout << \"所有元素: \";\n    for (int x : t) cout << x << \" \";\n    cout << endl;\n    t.erase(1);\n    cout << \"删除1后 order_of_key(4): \" << t.order_of_key(4) << endl;\n    return 0;\n}",
+      "codeNotes": ["需要包含 ext/pb_ds 两个头文件", "tree<...> 定义时5个模板参数缺一不可", "order_of_key(x) 返回 < x 的元素个数", "find_by_order(k) 返回第 k 小的迭代器（从0开始）"],
+      "commonMistakes": [
+        {
+          "title": "忘记加 tree_order_statistics_node_update",
+          "description": "如果不加第五个模板参数 tree_order_statistics_node_update，则无法使用 order_of_key 和 find_by_order。",
+          "fix": "定义时必须包含完整的5个模板参数，最后一个为 tree_order_statistics_node_update。"
+        },
+        {
+          "title": "pb_ds tree 不支持重复元素",
+          "description": "pb_ds 的 tree 容器默认不支持重复元素，insert 重复值会被忽略。",
+          "fix": "可以用 pair<int,int> 作为键类型，second 存一个唯一标识（如时间戳）来区分重复元素。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 pb_ds tree 实现一个数据结构，支持：插入一个数、删除一个数、查询第 k 小的数、查询比 x 小的数有多少个。",
+        "hint": "order_of_key 查排名，find_by_order 查第 k 小，insert/erase 维护集合。",
+        "expectedIdea": "定义 pb_ds tree，用 order_of_key 和 find_by_order 完成排名和选择操作。"
+      },
+      "quiz": [
+        {
+          "question": "pb_ds tree 中 order_of_key(5) 返回什么？",
+          "options": ["等于5的元素个数", "第一个等于5的迭代器", "严格小于5的元素个数", "5在容器中的下标"],
+          "answerIndex": 2,
+          "explanation": "order_of_key(x) 返回严格小于 x 的元素个数，即 x 在容器中的排名（从0开始）。"
+        },
+        {
+          "question": "pb_ds tree 容器属于哪个命名空间？",
+          "options": ["std", "std::ext", "__gnu_pbds", "pbds"],
+          "answerIndex": 2,
+          "explanation": "pb_ds 扩展容器在 __gnu_pbds 命名空间中，需要 using namespace __gnu_pbds; 或显式指定。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.10.3",
+      "title": "Treap 简介",
+      "learningGoal": "理解 Treap（树堆）的原理，掌握 Treap 的插入和查找操作",
+      "explanation": "Treap = Tree + Heap，是一种结合了二叉搜索树和堆性质的平衡树。\n\n核心思想：\n- 按键值（key）满足二叉搜索树性质：左子树 < 根 < 右子树\n- 按优先级（priority）满足堆性质：根的优先级最大（大根堆）\n- 优先级随机生成，使树在期望情况下高度为 O(log n)\n\n为什么随机优先级能保证平衡？\n因为优先级是随机的，等价于随机插入顺序构建的 BST，期望高度 O(log n)。\n\nTreap 的插入操作：\n1. 按BST规则找到插入位置，创建新节点，随机分配优先级\n2. 如果新节点的优先级大于父节点，通过旋转将其上移\n3. 左旋：父节点变左儿子；右旋：父节点变右儿子\n4. 直到满足堆性质\n\nTreap 的查找：与普通 BST 完全相同，O(log n)。\n\nTreap 代码相对简单，是竞赛中最常手写的平衡树之一。",
+      "exampleCode": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\nusing namespace std;\n\nstruct Node {\n    int key, pri, l, r;\n} t[100001];\nint tot, root;\n\nint newNode(int key) {\n    tot++;\n    t[tot].key = key;\n    t[tot].pri = rand();\n    t[tot].l = t[tot].r = 0;\n    return tot;\n}\n\nvoid split(int u, int key, int &x, int &y) {\n    if (!u) { x = y = 0; return; }\n    if (t[u].key <= key) {\n        x = u;\n        split(t[u].r, key, t[u].r, y);\n    } else {\n        y = u;\n        split(t[u].l, key, x, t[u].l);\n    }\n}\n\nint merge(int x, int y) {\n    if (!x || !y) return x | y;\n    if (t[x].pri > t[y].pri) {\n        t[x].r = merge(t[x].r, y);\n        return x;\n    } else {\n        t[y].l = merge(x, t[y].l);\n        return y;\n    }\n}\n\nvoid insert(int &root, int key) {\n    int x, y;\n    split(root, key, x, y);\n    root = merge(merge(x, newNode(key)), y);\n}\n\nbool search(int u, int key) {\n    if (!u) return false;\n    if (t[u].key == key) return true;\n    if (key < t[u].key) return search(t[u].l, key);\n    return search(t[u].r, key);\n}\n\nint main() {\n    srand(time(0));\n    insert(root, 5);\n    insert(root, 3);\n    insert(root, 7);\n    insert(root, 1);\n    insert(root, 4);\n    cout << \"查找3: \" << (search(root, 3) ? \"存在\" : \"不存在\") << endl;\n    cout << \"查找6: \" << (search(root, 6) ? \"存在\" : \"不存在\") << endl;\n    return 0;\n}",
+      "codeNotes": ["每个节点有 key（键值）和 pri（随机优先级）", "按 key 满足 BST 性质，按 pri 满足堆性质", "split 按键值将树分为 <= key 和 > key 两棵树", "merge 按优先级合并两棵树"],
+      "commonMistakes": [
+        {
+          "title": "忘记初始化随机种子",
+          "description": "如果不调用 srand(time(0))，rand() 每次运行会产生相同的随机序列，Treap 可能退化。",
+          "fix": "在 main 函数开头调用 srand(time(0)) 或使用更好的随机数生成器。"
+        },
+        {
+          "title": "split 时传错参数顺序",
+          "description": "split 函数中 x 和 y 的引用搞混，导致左树和右树分反。",
+          "fix": "记住 x 是 <= key 的部分，y 是 > key 的部分，按 BST 性质正确分配。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现一个 Treap，支持插入和查找操作，并验证其正确性。",
+        "hint": "先实现 split 和 merge，然后 insert = split + newNode + merge。",
+        "expectedIdea": "使用 split-merge 方式实现无旋 Treap 的插入和查找操作。"
+      },
+      "quiz": [
+        {
+          "question": "Treap 的名字来源是什么？",
+          "options": ["Tree + Map", "Tree + Heap", "Triple + Heap", "Tree + Priority"],
+          "answerIndex": 1,
+          "explanation": "Treap = Tree + Heap，同时满足二叉搜索树性质（Tree）和堆性质（Heap）。"
+        },
+        {
+          "question": "Treap 中为什么使用随机优先级？",
+          "options": ["为了让代码更简洁", "为了在期望情况下保持树高 O(log n)", "为了支持更多操作", "为了减少内存使用"],
+          "answerIndex": 1,
+          "explanation": "随机优先级使得 Treap 等价于按随机顺序插入的 BST，期望高度为 O(log n)，从而保证操作效率。"
+        }
+      ]
+    },
+    {
+      "itemId": "3.10.4",
+      "title": "FHQ Treap（无旋Treap）",
+      "learningGoal": "掌握 FHQ Treap 的 split 和 merge 核心操作，理解无旋 Treap 的优势",
+      "explanation": "FHQ Treap（范浩强 Treap）是一种无旋转的 Treap 实现方式，所有操作都通过 split 和 merge 两个核心函数完成。\n\n核心操作：\n1. split(u, key, x, y)：按 key 将以 u 为根的树分裂为两棵子树\n   - x：所有键值 <= key 的节点\n   - y：所有键值 > key 的节点\n\n2. merge(x, y)：将两棵子树合并，要求 x 中所有键值 < y 中所有键值\n   - 比较优先级，优先级大的作为根\n\n基于 split 和 merge 可以实现：\n- insert(key)：split(root, key, a, b) → merge(merge(a, newNode), b)\n- erase(key)：split(root, key, a, b) → split(a, key-1, a, c) → merge(a, b)\n- 查排名：split(root, key-1, a, b) → rank = size(a) + 1\n- 查第 k 小：根据子树大小在树上二分查找\n\nFHQ Treap 的优势：\n- 代码短，只需要 split 和 merge\n- 支持可持久化（不需要旋转，只创建新路径）\n- 支持区间操作（按排名 split 而非按键值 split）\n- 可以维护子树信息（size、sum 等）",
+      "exampleCode": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\nusing namespace std;\n\nstruct Node {\n    int key, pri, l, r, size;\n} t[100001];\nint tot, root;\n\nint newNode(int key) {\n    tot++;\n    t[tot].key = key;\n    t[tot].pri = rand();\n    t[tot].l = t[tot].r = 0;\n    t[tot].size = 1;\n    return tot;\n}\n\nvoid pushUp(int u) {\n    t[u].size = 1 + t[t[u].l].size + t[t[u].r].size;\n}\n\nvoid splitByKey(int u, int key, int &x, int &y) {\n    if (!u) { x = y = 0; return; }\n    if (t[u].key <= key) {\n        x = u;\n        splitByKey(t[u].r, key, t[u].r, y);\n    } else {\n        y = u;\n        splitByKey(t[u].l, key, x, t[u].l);\n    }\n    pushUp(u);\n}\n\nint merge(int x, int y) {\n    if (!x || !y) return x | y;\n    if (t[x].pri > t[y].pri) {\n        t[x].r = merge(t[x].r, y);\n        pushUp(x);\n        return x;\n    } else {\n        t[y].l = merge(x, t[y].l);\n        pushUp(y);\n        return y;\n    }\n}\n\nvoid insert(int &root, int key) {\n    int x, y;\n    splitByKey(root, key, x, y);\n    root = merge(merge(x, newNode(key)), y);\n}\n\nvoid erase(int &root, int key) {\n    int x, y, z;\n    splitByKey(root, key, x, z);\n    splitByKey(x, key - 1, x, y);\n    y = merge(t[y].l, t[y].r);\n    root = merge(merge(x, y), z);\n}\n\nint getRank(int root, int key) {\n    int x, y;\n    splitByKey(root, key - 1, x, y);\n    int res = t[x].size + 1;\n    root = merge(x, y);\n    return res;\n}\n\nint main() {\n    srand(time(0));\n    insert(root, 5);\n    insert(root, 3);\n    insert(root, 7);\n    insert(root, 1);\n    insert(root, 4);\n    insert(root, 6);\n    insert(root, 8);\n    cout << \"5的排名: \" << getRank(root, 5) << endl;\n    erase(root, 5);\n    cout << \"删除5后，5的排名: \" << getRank(root, 5) << endl;\n    return 0;\n}",
+      "codeNotes": ["splitByKey 按键值分裂树，同时维护 size", "merge 按优先级合并，大的做根", "pushUp 更新子树大小", "erase 通过两次 split 定位节点，再 merge 删除"],
+      "commonMistakes": [
+        {
+          "title": "split 后忘记 merge 回来",
+          "description": "在 getRank 等查询操作中，split 后如果没有 merge 回来，树的结构就被破坏了。",
+          "fix": "查询完成后必须调用 merge 将分裂的子树重新合并，恢复原始树结构。"
+        },
+        {
+          "title": "erase 时没有处理被删节点的子树",
+          "description": "删除节点时直接丢弃，没有将其左右子树 merge 起来重新插入。",
+          "fix": "y = merge(t[y].l, t[y].r) 将被删节点的子树合并后再整体 merge 回去。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现 FHQ Treap，支持：插入、删除、查排名、查第 k 小、查前驱、查后继。",
+        "hint": "查第 k 小可以根据 size 在树上二分；前驱/后继可以通过 split 来定位。",
+        "expectedIdea": "基于 split/merge 实现完整 FHQ Treap，维护 size 支持排名和选择操作。"
+      },
+      "quiz": [
+        {
+          "question": "FHQ Treap 相比传统 Treap 的主要优势是什么？",
+          "options": ["代码更短", "不需要旋转操作，支持可持久化", "常数更小", "不需要随机数"],
+          "answerIndex": 1,
+          "explanation": "FHQ Treap 不需要旋转操作，所有操作只通过 split 和 merge 完成，因此天然支持可持久化（只创建新路径）。"
+        },
+        {
+          "question": "FHQ Treap 中 merge(x, y) 的前提条件是什么？",
+          "options": ["x 的优先级大于 y", "x 中所有键值小于 y 中所有键值", "x 和 y 的节点数相等", "x 和 y 的高度相同"],
+          "answerIndex": 1,
+          "explanation": "merge 的前提是 x 中所有节点的键值都小于 y 中所有节点的键值，这样才能保证合并后仍然满足 BST 性质。"
+        }
+      ]
+    }
+  ]
+}

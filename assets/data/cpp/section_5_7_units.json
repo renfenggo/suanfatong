@@ -1,0 +1,215 @@
+{
+  "sectionId": "5.7",
+  "sectionName": "调试方法",
+  "units": [
+    {
+      "itemId": "5.7.1",
+      "title": "重新翻译题意",
+      "learningGoal": "养成做前先用自己的话复述题意的习惯",
+      "explanation": "很多 WA 不是代码错误，而是题意理解错误。拿到题目后，先用自己的话重新描述一遍：输入是什么、输出是什么、有什么约束条件。\n\n特别注意边界条件和特殊情况。如果题意都不清楚，写出的代码再漂亮也没用。",
+      "exampleCode": "// 示例：题意翻译模板\n// 输入：n 个数\n// 处理：找出最大值\n// 输出：最大值\n// 约束：1 ≤ n ≤ 1000",
+      "codeNotes": ["用自己的话复述", "明确输入输出格式", "注意约束条件", "特别关注边界情况"],
+      "commonMistakes": [{"title": "匆忙读题就开始写", "description": "忽略关键条件导致方向全错。", "fix": "读完题后先复述题意，确认理解无误再开始。"}],
+      "practice": {"prompt": "找一道题，用自己的话写出题意翻译。", "hint": "列出输入、输出、处理逻辑、约束", "expectedIdea": "// 输入：n 和 n 个整数\n// 求：所有正整数之和\n// 输出：和\n// 约束：1 ≤ n ≤ 10000, -10^9 ≤ a[i] ≤ 10^9"},
+      "quiz": [{"question": "WA 最常见的原因是什么？", "options": ["代码有 bug", "题意理解错误", "编译器问题", "时间不够"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.2",
+      "title": "明确输入输出",
+      "learningGoal": "养成做题前明确输入输出格式和数据范围的习惯",
+      "explanation": "仔细看题目的输入输出格式：多组数据还是单组？每行几个数？输出需要换行吗？保留几位小数？\n\n格式错误是常见的低级错误，完全可以通过仔细读题避免。",
+      "exampleCode": "// 检查清单：\n// □ 单组还是多组？\n// □ 每行输入几个数？\n// □ 输出格式：每行几个数？要空格分隔？\n// □ 末尾要换行吗？\n// □ 要保留小数吗？",
+      "codeNotes": ["多组还是单组", "输入每行格式", "输出格式要求", "小数精度要求"],
+      "commonMistakes": [{"title": "忽略输出格式", "description": "多输出了空格或少输出了换行。", "fix": "照着样例的输出格式一模一样地输出。"}],
+      "practice": {"prompt": "看一道题的输入输出描述，写出对应的输入代码和输出代码框架。", "hint": "根据格式选择 cin/scanf 和 cout/printf", "expectedIdea": "int T;\ncin >> T;\nwhile (T--) {\n    int n;\n    cin >> n;\n    // 处理\n    cout << answer << endl;\n}"},
+      "quiz": [{"question": "题目说「每组数据输出一个整数，占一行」，应该怎么输出？", "options": ["cout << ans;", "cout << ans << endl;", "cout << ans << \" \";", "printf(\"%d\", ans);"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.3",
+      "title": "明确数据范围",
+      "learningGoal": "学会根据数据范围选择合适的算法和数据类型",
+      "explanation": "数据范围决定算法选择和时间复杂度要求。n ≤ 20 可以枚举子集，n ≤ 5000 可以 O(n²)，n ≤ 10^5 需要 O(n log n) 或 O(n)，n ≤ 10^7 需要 O(n)。\n\n数据范围也决定数据类型：n ≤ 10^9 用 int，n > 10^9 用 long long。",
+      "exampleCode": "// 根据数据范围选择算法：\n// n ≤ 20:  暴力枚举 O(2^n)\n// n ≤ 5000: O(n^2)\n// n ≤ 10^5: O(n log n)\n// n ≤ 10^7: O(n)",
+      "codeNotes": ["n ≤ 20 可枚举", "n ≤ 5000 可 O(n²)", "n ≤ 10^5 需 O(n log n)", "大数注意 long long"],
+      "commonMistakes": [{"title": "忽略数据范围导致超时", "description": "n = 10^5 时用了 O(n²) 算法。", "fix": "根据 n 的大小预估所需时间复杂度。"}],
+      "practice": {"prompt": "题目 n ≤ 100000，预估需要什么时间复杂度的算法？", "hint": "n = 10^5 时 O(n²) 太慢", "expectedIdea": "需要 O(n log n) 或 O(n) 的算法。"},
+      "quiz": [{"question": "n = 10^5 时，以下哪个时间复杂度可能超时（时限 1 秒）？", "options": ["O(n)", "O(n log n)", "O(n√n)", "O(n²)"], "answerIndex": 3}]
+    },
+    {
+      "itemId": "5.7.4",
+      "title": "判断是否多组数据",
+      "learningGoal": "学会从题目描述中判断是否需要处理多组数据",
+      "explanation": "题目关键词：「多组测试数据」「输入直到文件尾」「第一行一个 T 表示数据组数」。\n\n多组数据要注意每组前重置变量。单组数据则不需要。",
+      "exampleCode": "// 有 T 组\nint T; cin >> T;\nwhile (T--) { /* 每组处理 */ }\n\n// 读到 EOF\nint n;\nwhile (cin >> n) { /* 每组处理 */ }",
+      "codeNotes": ["有 T：for/while T 次", "无 T：while (cin >> ...)", "多组数据要重置变量", "单组不需要"],
+      "commonMistakes": [{"title": "多组数据未重置", "description": "上一组残留的值影响当前组。", "fix": "每组数据开始前重新初始化所有变量。"}],
+      "practice": {"prompt": "题目说「输入包含多组数据，每组一个整数 n，读到 EOF 结束」，写出框架。", "hint": "while (cin >> n)", "expectedIdea": "int n;\nwhile (cin >> n) {\n    // 处理\n    cout << result << endl;\n}"},
+      "quiz": [{"question": "题目说「第一行一个整数 T，接下来 T 组数据」，应该怎么处理？", "options": ["while (cin >> T)", "cin >> T; while (T--)", "for (int i = 0; ; i++)", "不需要特殊处理"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.5",
+      "title": "手推样例",
+      "learningGoal": "养成在编码前先手推样例的习惯",
+      "explanation": "在开始编码之前，先在纸上手动模拟样例的执行过程。这能帮你理解算法流程，发现思路中的漏洞。\n\n如果手推样例都推不出正确结果，说明思路有问题，需要重新思考。",
+      "exampleCode": "// 样例：\n// 输入：5 3 7 1 4\n// 找最大值\n// 手推：\n// i=0: max=5\n// i=1: 3 < 5, max=5\n// i=2: 7 > 5, max=7\n// i=3: 1 < 7, max=7\n// i=4: 4 < 7, max=7\n// 输出：7 ✓",
+      "codeNotes": ["编码前先手推", "记录每一步的变量值", "确认和样例输出一致", "帮助理解算法流程"],
+      "commonMistakes": [{"title": "跳过手推直接编码", "description": "思路可能有误但没发现，写完才 debug。", "fix": "先手推样例确认思路正确再写代码。"}],
+      "practice": {"prompt": "手推一个冒泡排序的执行过程（数组 {5, 3, 1, 4}）。", "hint": "逐轮比较和交换", "expectedIdea": "第1轮: {3, 1, 4, 5} → 第2轮: {1, 3, 4, 5} → 第3轮: {1, 3, 4, 5}（无交换，结束）"},
+      "quiz": [{"question": "手推样例的主要目的是什么？", "options": ["练习手速", "验证算法思路是否正确", "背代码", "消磨时间"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.6",
+      "title": "自造小样例",
+      "learningGoal": "学会自己构造小规模测试数据",
+      "explanation": "除了题目给的样例，自己构造小数据测试。选择容易手算的数据，方便验证。\n\n好的自造样例：空输入、单元素、全相同元素、逆序、已经有序等边界情况。",
+      "exampleCode": "// 测试排序算法，自造样例：\n// 1. 空数组: {}\n// 2. 单元素: {1}\n// 3. 已排序: {1, 2, 3}\n// 4. 逆序: {3, 2, 1}\n// 5. 有重复: {2, 1, 2, 1}",
+      "codeNotes": ["构造小规模数据", "覆盖各种边界情况", "容易手算验证", "帮助发现隐藏 bug"],
+      "commonMistakes": [{"title": "只测题目样例", "description": "题目样例太简单，无法覆盖边界情况。", "fix": "自己构造多种小样例，特别关注边界。"}],
+      "practice": {"prompt": "为「判断回文数」构造 5 个测试用例。", "hint": "正例、反例、边界", "expectedIdea": "// 1. 121 → Yes\n// 2. 123 → No\n// 3. 1 → Yes\n// 4. 11 → Yes\n// 5. 10 → No"},
+      "quiz": [{"question": "以下哪个是好的自造测试样例？", "options": ["随机 10000 个数", "n=0 或 n=1 的边界", "和样例一样的数据", "无法手算的大数据"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.7",
+      "title": "极端样例",
+      "learningGoal": "学会用极端数据测试程序的健壮性",
+      "explanation": "极端样例包括：最大数据范围、最小数据范围、全相同、全递增/递减、负数、0 等。\n\n这些极端情况最容易暴露 bug。例如求和时是否用 long long、数组是否越界、除法是否除以 0 等。",
+      "exampleCode": "// 极端样例清单：\n// n = 1（最小）\n// n = 最大值\n// 所有元素相同\n// 所有元素为 0\n// 所有元素为负数\n// 包含 -10^9 和 10^9",
+      "codeNotes": ["最小 n", "最大 n", "全 0 / 全相同", "包含负数", "边界值"],
+      "commonMistakes": [{"title": "只测正常数据", "description": "极端情况没测，提交后 WA 在边界数据上。", "fix": "每次都测 n=1、n=最大值、全相同等极端情况。"}],
+      "practice": {"prompt": "为「求数组最大值」构造极端测试样例。", "hint": "考虑 n=1, 全负数, 全相同", "expectedIdea": "// n=1, a={5} → 5\n// n=3, a={-1,-2,-3} → -1\n// n=3, a={7,7,7} → 7"},
+      "quiz": [{"question": "以下哪个是极端样例？", "options": ["n=5, a={1,2,3,4,5}", "n=1, a={-1000000000}", "n=10, a 随机", "题目给的样例"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.8",
+      "title": "打印变量",
+      "learningGoal": "学会用 cerr 或 printf 输出中间变量来调试",
+      "explanation": "最基本也最有效的调试方法：在关键位置输出变量的值，观察是否符合预期。\n\n用 cerr 输出调试信息，不会影响标准输出。用 #ifdef DEBUG 包裹调试输出，提交时关闭。\n\n输出格式建议包含变量名和位置信息，方便定位。",
+      "exampleCode": "#define LOCAL\nint main() {\n    int n = 5, sum = 0;\n    int a[] = {3, 1, 4, 1, 5};\n    for (int i = 0; i < n; i++) {\n        sum += a[i];\n#ifdef LOCAL\n        cerr << \"[debug] i=\" << i << \" a[i]=\" << a[i] << \" sum=\" << sum << endl;\n#endif\n    }\n    cout << sum << endl;\n}",
+      "codeNotes": ["cerr 不影响标准输出", "#ifdef DEBUG 条件编译", "输出变量名和值", "在关键位置打印"],
+      "commonMistakes": [{"title": "用 cout 输出调试信息", "description": "调试信息和正式输出混在一起，导致 WA。", "fix": "用 cerr 输出调试信息。"}],
+      "practice": {"prompt": "在循环中添加调试输出，观察变量变化。", "hint": "cerr << \"[debug] ...\" << endl;", "expectedIdea": "for (int i = 0; i < n; i++) {\n    sum += a[i];\n    cerr << \"i=\" << i << \" sum=\" << sum << endl;\n}"},
+      "quiz": [{"question": "调试输出应该用什么流？", "options": ["cout", "cerr", "clog", "printf"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.9",
+      "title": "打印数组",
+      "learningGoal": "学会输出整个数组内容来检查数据状态",
+      "explanation": "当数组相关逻辑出错时，打印整个数组内容可以快速发现问题。输出下标和值，格式清晰。",
+      "exampleCode": "#ifdef LOCAL\ncerr << \"数组内容: \";\nfor (int i = 0; i < n; i++) cerr << \"[\" << i << \"]=\" << a[i] << \" \";\ncerr << endl;\n#endif",
+      "codeNotes": ["输出下标和值", "用 cerr 不影响输出", "在关键步骤后打印", "观察数组变化"],
+      "commonMistakes": [{"title": "数组太大时全部打印", "description": "n = 10^6 时打印整个数组太慢。", "fix": "只打印前几个和后几个元素，或特定条件下的元素。"}],
+      "practice": {"prompt": "写一个打印数组的调试函数。", "hint": "for 循环输出每个元素的下标和值", "expectedIdea": "void printArray(int a[], int n) {\n    cerr << \"[debug] \";\n    for (int i = 0; i < n; i++) cerr << a[i] << \" \";\n    cerr << endl;\n}"},
+      "quiz": [{"question": "打印大数组调试时应该？", "options": ["全部打印", "只打印前几个", "不打印", "打印最小和最大值"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.10",
+      "title": "打印状态转移",
+      "learningGoal": "学会在 DP 中输出状态转移过程来调试",
+      "explanation": "DP 出错时，打印每一步的状态转移可以帮助发现错误的转移来源或初始化问题。\n\n输出格式：当前状态、来源状态、转移结果。",
+      "exampleCode": "for (int i = 1; i <= n; i++) {\n    for (int j = 0; j <= W; j++) {\n        int old = dp[j];\n        if (j >= w[i]) dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n#ifdef LOCAL\n        if (old != dp[j]) cerr << \"dp[\" << j << \"]: \" << old << \" -> \" << dp[j] << endl;\n#endif\n    }\n}",
+      "codeNotes": ["打印转移前后的值", "标明状态和来源", "只在值变化时打印", "帮助发现错误转移"],
+      "commonMistakes": [{"title": "打印太多导致看不过来", "description": "DP 状态空间太大，全部打印不现实。", "fix": "只打印关键状态或值发生变化的状态。"}],
+      "practice": {"prompt": "在 LIS 的 DP 中添加调试输出。", "hint": "每次 dp[i] 更新时打印", "expectedIdea": "for (int i = 0; i < n; i++) {\n    dp[i] = 1;\n    for (int j = 0; j < i; j++) {\n        if (a[j] < a[i] && dp[j] + 1 > dp[i]) {\n            cerr << \"dp[\" << i << \"] \" << dp[i] << \" -> \" << dp[j]+1 << \" from j=\" << j << endl;\n            dp[i] = dp[j] + 1;\n        }\n    }\n}"},
+      "quiz": [{"question": "DP 调试时应该打印什么？", "options": ["所有代码", "状态转移前后的值", "只打印最终答案", "不需要打印"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.11",
+      "title": "打印队列 / 栈",
+      "learningGoal": "学会在 BFS/DFS 中输出队列或栈的内容来调试",
+      "explanation": "BFS 出错时打印队列内容可以看到节点被访问的顺序。DFS 出错时打印栈或递归深度可以看到搜索路径。\n\n打印时机：每次入队/出队时。",
+      "exampleCode": "while (!q.empty()) {\n    int u = q.front(); q.pop();\n#ifdef LOCAL\n    cerr << \"visit: \" << u << endl;\n#endif\n    for (int v : adj[u]) {\n        if (!vis[v]) {\n            vis[v] = true;\n            q.push(v);\n#ifdef LOCAL\n            cerr << \"  push: \" << v << endl;\n#endif\n        }\n    }\n}",
+      "codeNotes": ["打印入队和出队", "显示访问顺序", "帮助发现漏访问或重复访问", "每次操作时打印"],
+      "commonMistakes": [{"title": "打印时机不对", "description": "只在循环外打印，看不到过程。", "fix": "在入队和出队时都打印。"}],
+      "practice": {"prompt": "在 BFS 中添加调试输出，显示节点访问顺序。", "hint": "入队和出队时打印", "expectedIdea": "q.push(start); vis[start] = true;\ncerr << \"push \" << start << endl;\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    cerr << \"pop \" << u << endl;\n    for (int v : adj[u]) {\n        if (!vis[v]) { vis[v] = true; q.push(v); cerr << \"  push \" << v << endl; }\n    }\n}"},
+      "quiz": [{"question": "BFS 调试时应该在哪两个时机打印？", "options": ["循环前后", "入队和出队", "开始和结束", "不需要打印"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.12",
+      "title": "打印递归过程",
+      "learningGoal": "学会输出递归调用的进入和返回来调试递归函数",
+      "explanation": "递归调试的关键是打印进入和返回。进入时打印参数，返回时打印结果。用缩进表示递归深度。\n\n这样可以清楚地看到递归的展开和回溯过程。",
+      "exampleCode": "int indent = 0;\nint fib(int n) {\n    cerr << string(indent * 2, ' ') << \"fib(\" << n << \") enter\" << endl;\n    indent++;\n    int result;\n    if (n <= 1) result = n;\n    else result = fib(n-1) + fib(n-2);\n    indent--;\n    cerr << string(indent * 2, ' ') << \"fib(\" << n << \") = \" << result << endl;\n    return result;\n}",
+      "codeNotes": ["进入时打印参数", "返回时打印结果", "用缩进表示深度", "观察递归展开过程"],
+      "commonMistakes": [{"title": "递归太深打印太多", "description": "递归 1000 层打印太多看不过来。", "fix": "限制打印深度，或只在浅层打印。"}],
+      "practice": {"prompt": "给阶乘递归函数添加调试输出。", "hint": "进入和返回时各打印一行", "expectedIdea": "int fact(int n) {\n    cerr << \"fact(\" << n << \") enter\" << endl;\n    if (n <= 1) { cerr << \"fact(\" << n << \") = 1\" << endl; return 1; }\n    int r = n * fact(n - 1);\n    cerr << \"fact(\" << n << \") = \" << r << endl;\n    return r;\n}"},
+      "quiz": [{"question": "递归调试的关键是什么？", "options": ["只打印最终结果", "打印进入和返回", "不打印", "只打印参数"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.13",
+      "title": "边界检查",
+      "learningGoal": "学会系统性地检查程序的边界条件",
+      "explanation": "边界检查是发现 bug 的高效方法。重点检查：循环起止条件、数组下标范围、空输入、单元素输入、最大输入。\n\n每次写完代码后，脑中模拟边界情况的执行路径。",
+      "exampleCode": "// 边界检查清单：\n// □ n = 0 或 n = 1\n// □ 数组下标 0 和 n-1\n// □ 循环从 0 还是 1 开始\n// □ 条件是 < 还是 <=\n// □ 除法是否除以 0",
+      "codeNotes": ["检查循环边界", "检查数组边界", "检查空/单元素", "检查除零风险"],
+      "commonMistakes": [{"title": "忘记检查边界", "description": "正常数据能过但边界数据出错。", "fix": "养成写完代码后检查边界的习惯。"}],
+      "practice": {"prompt": "检查以下代码的边界问题：for (int i = 1; i < n; i++) sum += a[i];", "hint": "n=0 和 n=1 的情况", "expectedIdea": "n=0 时不进入循环，sum 不变。n=1 时也不进入循环，只用了初始值。如果 n=0 需要特殊处理。"},
+      "quiz": [{"question": "以下哪个不是边界情况？", "options": ["n = 0", "n = 最大值", "n = 随机值", "所有元素相同"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.7.14",
+      "title": "复杂度检查",
+      "learningGoal": "学会估算代码的时间复杂度并判断是否会超时",
+      "explanation": "写完代码后估算时间复杂度，和题目数据范围对比。1 秒大约能执行 10^8 次简单运算。\n\n常见复杂度：O(n) ≤ 10^7, O(n log n) ≤ 10^5, O(n²) ≤ 5000, O(n³) ≤ 500, O(2^n) ≤ 20。",
+      "exampleCode": "// 复杂度速查：\n// n ≤ 10^7:  O(n) 可以\n// n ≤ 10^5:  O(n log n) 可以\n// n ≤ 5000:  O(n²) 可以\n// n ≤ 500:   O(n³) 可以\n// n ≤ 20:    O(2^n) 可以",
+      "codeNotes": ["1 秒约 10^8 次运算", "根据 n 选复杂度", "常数因子也有影响", "多组数据时注意总运算量"],
+      "commonMistakes": [{"title": "忽略多组数据的总运算量", "description": "单组 O(n²) 能过，但 T 组加起来超时。", "fix": "总运算量 = T × 单组复杂度，确保不超过 10^8。"}],
+      "practice": {"prompt": "题目 n ≤ 10^5, T ≤ 10，你的算法 O(n log n)，会超时吗？", "hint": "总运算量 = 10 × 10^5 × log(10^5) ≈ 10^7", "expectedIdea": "10 × 10^5 × 17 ≈ 1.7 × 10^7，不会超时。"},
+      "quiz": [{"question": "n = 10^6，时限 1 秒，以下哪个复杂度可以？", "options": ["O(n²)", "O(n log n)", "O(n√n)", "O(2^n)"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.15",
+      "title": "对拍",
+      "learningGoal": "学会用对拍方法定位程序错误",
+      "explanation": "对拍是写一个暴力程序（保证正确但慢）和你的优化程序，用随机数据生成器产生输入，两个程序分别运行，比较输出。\n\n如果输出不同，就找到了一个错误用例，可以用来调试。\n\n对拍是竞赛中最强大的调试方法之一。",
+      "exampleCode": "// 对拍脚本（伪代码）\n// while true:\n//   生成随机输入 > input.txt\n//   暴力程序 < input.txt > ans1.txt\n//   优化程序 < input.txt > ans2.txt\n//   if ans1 != ans2: 找到错误用例，break",
+      "codeNotes": ["写一个保证正确的暴力", "随机数据生成器", "对比两个程序输出", "发现不一致就是 bug"],
+      "commonMistakes": [{"title": "暴力程序也有 bug", "description": "暴力程序写错了，对拍结果不可靠。", "fix": "暴力程序要尽可能简单，确保正确。"}],
+      "practice": {"prompt": "写一个随机数据生成器，生成 n 个随机整数。", "hint": "用 rand() 生成随机数", "expectedIdea": "#include <cstdlib>\n#include <ctime>\nint main() {\n    srand(time(0));\n    int n = rand() % 10 + 1;\n    cout << n << endl;\n    for (int i = 0; i < n; i++) cout << rand() % 100 << \" \";\n    cout << endl;\n}"},
+      "quiz": [{"question": "对拍中暴力程序的作用是什么？", "options": ["提供正确答案", "测试速度", "生成数据", "优化算法"], "answerIndex": 0}]
+    },
+    {
+      "itemId": "5.7.16",
+      "title": "暴力校验",
+      "learningGoal": "学会用暴力方法验证答案的正确性",
+      "explanation": "当不确定优化算法是否正确时，用暴力方法（如枚举所有情况）验证小数据的答案。如果暴力答案和优化答案一致，说明算法大概率正确。",
+      "exampleCode": "// 暴力：枚举所有子数组\nfor (int i = 0; i < n; i++)\n    for (int j = i; j < n; j++) {\n        int sum = 0;\n        for (int k = i; k <= j; k++) sum += a[k];\n        ans = max(ans, sum);\n    }",
+      "codeNotes": ["暴力方法简单但正确", "用于小数据验证", "和优化答案对比", "帮助确认算法正确性"],
+      "commonMistakes": [{"title": "暴力代码太复杂", "description": "暴力代码也写错了，无法校验。", "fix": "暴力代码越简单越好，只求正确不求效率。"}],
+      "practice": {"prompt": "写一个 O(n³) 的暴力方法求最大子数组和。", "hint": "三重循环枚举子数组", "expectedIdea": "int ans = -1e9;\nfor (int i = 0; i < n; i++)\n    for (int j = i; j < n; j++) {\n        int sum = 0;\n        for (int k = i; k <= j; k++) sum += a[k];\n        ans = max(ans, sum);\n    }"},
+      "quiz": [{"question": "暴力校验适用于多大数据？", "options": ["任意大小", "小数据（n ≤ 100）", "只能 n = 1", "大数据"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.17",
+      "title": "固定随机种子复现",
+      "learningGoal": "学会固定随机种子来复现随机相关的 bug",
+      "explanation": "涉及随机数的程序每次运行结果不同，难以复现 bug。解决方法是用固定种子：srand(42)。\n\n固定种子后，每次运行产生的随机序列相同，可以稳定复现问题。调试完毕后再改回 srand(time(0))。",
+      "exampleCode": "#include <cstdlib>\nusing namespace std;\n\nint main() {\n    srand(42);  // 固定种子\n    for (int i = 0; i < 5; i++) {\n        cout << rand() % 10 << \" \";\n    }\n    return 0;\n}",
+      "codeNotes": ["srand(固定值) 复现", "每次运行结果相同", "调试完改回 srand(time(0))", "帮助定位随机相关 bug"],
+      "commonMistakes": [{"title": "提交时忘记改回", "description": "srand(42) 导致每次结果相同，可能被判定为作弊。", "fix": "调试完改回 srand(time(0))。"}],
+      "practice": {"prompt": "写一个使用固定种子的随机数生成程序。", "hint": "srand(12345);", "expectedIdea": "srand(12345);\nfor (int i = 0; i < 10; i++) {\n    cout << rand() % 100 << endl;\n}"},
+      "quiz": [{"question": "为什么要固定随机种子？", "options": ["让程序更快", "复现随机 bug", "避免随机数", "增加随机性"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.18",
+      "title": "assert",
+      "learningGoal": "学会使用 assert 断言来检查程序中的不变式",
+      "explanation": "assert(条件) 在条件为 false 时终止程序并报告错误位置。用于检查程序中的假设是否成立。\n\n需要 #include <cassert>。在 Release 模式下 assert 被忽略，只在 Debug 模式下生效。\n\n常见用法：assert(n >= 0)、assert(index < size) 等。",
+      "exampleCode": "#include <cassert>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    assert(n > 0);\n    int a[100];\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n        assert(a[i] >= 0);\n    }\n    return 0;\n}",
+      "codeNotes": ["assert(条件) 检查假设", "条件为 false 时终止程序", "需要 #include <cassert>", "帮助快速定位逻辑错误"],
+      "commonMistakes": [{"title": "用 assert 处理正常错误", "description": "用户输入错误不应该用 assert，应该用 if。", "fix": "assert 用于检查程序的内部逻辑，不用于处理外部输入。"}],
+      "practice": {"prompt": "在二分查找中添加 assert 检查前提条件。", "hint": "assert(l >= 0 && r < n)", "expectedIdea": "int binarySearch(int a[], int n, int target) {\n    assert(n > 0);\n    int l = 0, r = n - 1;\n    while (l <= r) {\n        int mid = l + (r - l) / 2;\n        assert(mid >= 0 && mid < n);\n        // ...\n    }\n    return -1;\n}"},
+      "quiz": [{"question": "assert 适合检查什么？", "options": ["用户输入是否合法", "程序内部逻辑是否正确", "输出格式", "运行时间"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.7.19",
+      "title": "LOCAL 条件编译调试",
+      "learningGoal": "学会用 LOCAL 宏控制调试输出的开关",
+      "explanation": "定义 LOCAL 宏来控制调试代码的开关。本地编译时定义 LOCAL，提交时注释掉。\n\n配合 #ifdef LOCAL ... #endif 包裹所有调试代码。这样不需要手动删除调试输出，提交时只需注释一行。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define LOCAL\n\nint main() {\n    int n;\n    cin >> n;\n#ifdef LOCAL\n    freopen(\"input.txt\", \"r\", stdin);\n    freopen(\"output.txt\", \"w\", stdout);\n#endif\n    cout << n * 2 << endl;\n#ifdef LOCAL\n    cerr << \"[debug] n = \" << n << endl;\n#endif\n    return 0;\n}",
+      "codeNotes": ["#define LOCAL 开启调试", "#ifdef LOCAL 包裹调试代码", "提交时注释 #define LOCAL", "一行控制所有调试输出"],
+      "commonMistakes": [{"title": "提交时忘了关闭 LOCAL", "description": "freopen 导致在线评测找不到文件。", "fix": "提交前注释掉 #define LOCAL。"}],
+      "practice": {"prompt": "用 LOCAL 条件编译包裹所有调试输出。", "hint": "#ifdef LOCAL ... #endif", "expectedIdea": "#define LOCAL\nint main() {\n#ifdef LOCAL\n    freopen(\"in.txt\", \"r\", stdin);\n#endif\n    // 正式代码\n#ifdef LOCAL\n    cerr << \"debug info\" << endl;\n#endif\n    return 0;\n}"},
+      "quiz": [{"question": "提交代码时应该怎样处理 LOCAL 宏？", "options": ["保留", "注释掉 #define LOCAL", "删除所有 #ifdef", "不用管"], "answerIndex": 1}]
+    }
+  ]
+}

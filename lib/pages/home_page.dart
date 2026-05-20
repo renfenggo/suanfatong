@@ -26,14 +26,6 @@ class HomePage extends ConsumerWidget {
                 _SectionLabel(label: '学习入口'),
                 const SizedBox(height: 8),
                 _HomeCard(
-                  title: 'C++ 基础',
-                  subtitle: '按知识图谱循序渐进学习语法',
-                  icon: Icons.terminal,
-                  color: const Color(0xFF00897B),
-                  onTap: () => Navigator.pushNamed(context, '/cpp_basic'),
-                ),
-                const SizedBox(height: 10),
-                _HomeCard(
                   title: '知识地图',
                   subtitle: '浏览所有算法与编程知识点',
                   icon: Icons.account_tree,
@@ -48,9 +40,7 @@ class HomePage extends ConsumerWidget {
                   color: const Color(0xFF8E44AD),
                   onTap: () => Navigator.pushNamed(context, '/cpp_search'),
                 ),
-                const SizedBox(height: 20),
-                _SectionLabel(label: '更多'),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 _HomeCard(
                   title: '学习进度',
                   subtitle: '查看你的学习记录',
@@ -126,23 +116,22 @@ class HomePage extends ConsumerWidget {
     String lastItemId,
   ) {
     if (lastItemId.isEmpty) {
-      return _HomeCard(
-        title: '开始学习',
-        subtitle: '从 C++ 基础第一个知识点开始',
-        icon: Icons.play_circle_filled,
-        color: const Color(0xFF27AE60),
-        onTap:
-            () => Navigator.pushNamed(
-              context,
-              '/cpp_learning_unit',
-              arguments: '1.1.1',
-            ),
-      );
+      return _buildStartLearning(context);
     }
 
     final item = graph.itemById(lastItemId);
-    final displayName = item != null ? item.name : lastItemId;
-    final isCppItem = item != null && _isCppItem(item, graph);
+    if (item == null) {
+      return _buildStartLearning(context);
+    }
+
+    final displayName = item.name;
+    final sectionPrefix = item.parent.split('.').first;
+    final isLearnableUnit =
+        sectionPrefix == '1' ||
+        sectionPrefix == '2' ||
+        sectionPrefix == '3' ||
+        sectionPrefix == '4' ||
+        sectionPrefix == '5';
 
     return _HomeCard(
       title: '继续学习',
@@ -152,21 +141,25 @@ class HomePage extends ConsumerWidget {
       onTap:
           () => Navigator.pushNamed(
             context,
-            isCppItem ? '/cpp_learning_unit' : '/knowledge/item',
+            isLearnableUnit ? '/cpp_learning_unit' : '/knowledge/item',
             arguments: lastItemId,
           ),
     );
   }
 
-  bool _isCppItem(dynamic item, dynamic graph) {
-    final section = graph.sectionById(item.parent);
-    if (section == null) return false;
-    for (final cat in graph.categories) {
-      if (cat.name == 'C++语法') {
-        return cat.sections.any((s) => s.id == section.id);
-      }
-    }
-    return false;
+  Widget _buildStartLearning(BuildContext context) {
+    return _HomeCard(
+      title: '开始学习',
+      subtitle: '从 C++ 基础第一个知识点开始',
+      icon: Icons.play_circle_filled,
+      color: const Color(0xFF27AE60),
+      onTap:
+          () => Navigator.pushNamed(
+            context,
+            '/cpp_learning_unit',
+            arguments: '1.1.1',
+          ),
+    );
   }
 }
 

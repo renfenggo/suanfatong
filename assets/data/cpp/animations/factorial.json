@@ -1,0 +1,78 @@
+{
+  "animationId": "cpp_factorial",
+  "itemId": "4.3.6",
+  "title": "阶乘",
+  "description": "演示阶乘 n! = n×(n-1)×…×2×1 的计算过程和递推关系",
+  "initialState": {
+    "variables": [
+      {"name": "n", "value": "6", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "n! = n × (n-1) × … × 2 × 1，特殊地 0! = 1",
+      "codeLine": "// n! = n * (n-1) * ... * 2 * 1",
+      "highlights": ["n!"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "6", "note": "求 6!"},
+          {"name": "result", "value": "1", "note": "初始值"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "递推计算",
+      "description": "1! = 1, 2! = 2×1 = 2, 3! = 3×2 = 6, 4! = 4×6 = 24",
+      "codeLine": "for (int i=1; i<=n; i++) result *= i;",
+      "highlights": ["result *= i"],
+      "state": {
+        "variables": [
+          {"name": "1!", "value": "1", "note": ""},
+          {"name": "2!", "value": "2", "note": "2×1"},
+          {"name": "3!", "value": "6", "note": "3×2"},
+          {"name": "4!", "value": "24", "note": "4×6"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "继续递推",
+      "description": "5! = 5×24 = 120, 6! = 6×120 = 720",
+      "codeLine": "result *= i; // 5! = 120, 6! = 720",
+      "highlights": ["result *= i"],
+      "state": {
+        "variables": [
+          {"name": "4!", "value": "24", "note": ""},
+          {"name": "5!", "value": "120", "note": "5×24"},
+          {"name": "6!", "value": "720", "note": "6×120"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "递推关系",
+      "description": "n! = n × (n-1)!，这是阶乘最核心的递推关系。阶乘增长极快：10! = 3628800",
+      "codeLine": "// n! = n * (n-1)!",
+      "highlights": ["n * (n-1)!"],
+      "state": {
+        "variables": [
+          {"name": "6!", "value": "720", "note": "6×5!"},
+          {"name": "10!", "value": "3628800", "note": "增长极快"}
+        ],
+        "containers": [],
+        "output": "6! = 720"
+      }
+    }
+  ]
+}

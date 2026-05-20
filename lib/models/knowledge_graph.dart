@@ -2,6 +2,8 @@ import 'knowledge_category.dart';
 import 'knowledge_section.dart';
 import 'knowledge_item.dart';
 
+const _categorySortOrder = ['C++语法', '算法', '数据结构', '算法竞赛数学', 'C++编程/调试技巧'];
+
 class KnowledgeGraph {
   final Map<String, dynamic> meta;
   final List<KnowledgeCategory> categories;
@@ -9,15 +11,22 @@ class KnowledgeGraph {
   const KnowledgeGraph({this.meta = const {}, this.categories = const []});
 
   factory KnowledgeGraph.fromJson(Map<String, dynamic> json) {
+    final rawCategories =
+        (json['categories'] as List?)
+            ?.map((e) => KnowledgeCategory.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        const [];
+    final sorted = List<KnowledgeCategory>.from(rawCategories);
+    sorted.sort((a, b) {
+      final ai = _categorySortOrder.indexOf(a.name);
+      final bi = _categorySortOrder.indexOf(b.name);
+      final av = ai == -1 ? _categorySortOrder.length : ai;
+      final bv = bi == -1 ? _categorySortOrder.length : bi;
+      return av.compareTo(bv);
+    });
     return KnowledgeGraph(
       meta: (json['meta'] as Map<String, dynamic>?) ?? const {},
-      categories:
-          (json['categories'] as List?)
-              ?.map(
-                (e) => KnowledgeCategory.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
+      categories: sorted,
     );
   }
 

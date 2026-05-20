@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_rooted_tree",
+  "itemId": "4.5.7",
+  "title": "根树、父子、子树",
+  "description": "演示根树的基本概念：根节点、父子关系、子树",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "选定根节点",
+      "description": "以 A 为根节点，建立根树。A 是最顶层的节点",
+      "codeLine": "// 根 = A",
+      "highlights": ["根"],
+      "state": {
+        "variables": [
+          {"name": "根", "value": "A", "note": "最顶层"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "父子关系",
+      "description": "A 的子节点是 B、C。B 的父节点是 A，B 的子节点是 D、E",
+      "codeLine": "// A→{B,C}, B→{D,E}, C→{F}",
+      "highlights": ["父→子"],
+      "state": {
+        "variables": [
+          {"name": "A的子", "value": "B,C", "note": ""},
+          {"name": "B的父", "value": "A", "note": ""},
+          {"name": "B的子", "value": "D,E", "note": ""},
+          {"name": "C的子", "value": "F", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "祖先与后代",
+      "description": "A 是所有节点的祖先。D 的祖先是 B 和 A。A→B→D 是一条祖先链",
+      "codeLine": "// D 的祖先: B, A",
+      "highlights": ["祖先"],
+      "state": {
+        "variables": [
+          {"name": "D的祖先", "value": "B,A", "note": "从根到D的路径"},
+          {"name": "A的后代", "value": "B,C,D,E,F", "note": "所有其他节点"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "子树",
+      "description": "以 B 为根的子树包含 B,D,E。子树是原树的一部分，本身也是一棵树",
+      "codeLine": "// 子树(B) = {B,D,E}",
+      "highlights": ["子树"],
+      "state": {
+        "variables": [
+          {"name": "子树(B)", "value": "{B,D,E}", "note": ""},
+          {"name": "子树(C)", "value": "{C,F}", "note": ""},
+          {"name": "叶子", "value": "D,E,F", "note": "无子节点"}
+        ],
+        "containers": [],
+        "output": "子树(B) = {B,D,E}\n子树(C) = {C,F}"
+      }
+    }
+  ]
+}

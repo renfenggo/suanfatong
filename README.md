@@ -1,64 +1,67 @@
-# BFS 专题学习 App
+# 算法通
 
-信奥 BFS（广度优先搜索）专题离线学习应用，面向小学四年级及以上信息学竞赛初学者。
+> 历史包名 `bfs_learn`，产品展示名为「算法通」。
 
-## 功能列表
+面向信息学竞赛初学者的离线算法学习 App，涵盖 C++ 语法基础、算法、数据结构、竞赛数学等知识点。
+
+## 功能模块
 
 | 模块 | 功能 |
 |------|------|
-| 知识讲解 | 10 课 BFS 知识（基础 5 课 + 迷宫应用 5 课），含代码示例和学习提示 |
-| 选择题训练 | 20 道 BFS 选择题，即时反馈 + 解释说明，自动计分 |
-| 动画演示 | 5×5 迷宫 BFS 19 步逐帧动画，支持播放/暂停/单步/重置 |
-| 常见错误 | 8 个高频 BFS 编程错误，展示错误代码、原因、正确做法 |
-| 教师模式 | 横屏大字演示，适合教室投屏教学 |
-| 学习进度 | 本地持久化答题记录和成绩统计 |
-| 设置 | 字体大小调节、深色/浅色主题、清除学习进度 |
+| 知识地图 | 按分类、章节浏览全部知识点（387 项），查看前置依赖关系 |
+| 学习单元 | 每个知识点包含学习目标、讲解、示例代码、常见错误、练习、小测 |
+| 动画演示 | 93 个算法动画（排序、搜索、图论等），逐步可视化代码执行过程 |
+| 章节小测 | 每个章节配套选择题测验，即时反馈 + 解析 |
+| 搜索 | 按名称、别名、讲解、常见错误等全文搜索知识点 |
+| 学习进度 | 本地持久化学习记录、测验成绩、错题集 |
+| BFS 专题 | BFS 知识讲解、迷宫动画、选择题训练、常见错误、教师演示模式 |
+| 设置 | 字体大小、深色/浅色主题、多语言切换、清除进度 |
+
+## 知识体系（5 大分类）
+
+| 分类 | 章节数 | 知识点数 | 数据位置 |
+|------|--------|----------|----------|
+| C++ 语法 | 10 sections (1.x) + 9 sections (5.x) | ~247 units | `assets/data/cpp/` |
+| 算法 | 14 sections (2.x + 3.x) | ~40 items | `assets/data/algorithm/` |
+| 数据结构 | 含在知识图谱中 | ~54 items | — |
+| 算法竞赛数学 | 7 sections (4.x) | ~50 items | `assets/data/math/` |
+| C++ 编程/调试技巧 | 9 sections (5.x) | ~102 items | 含在 `assets/data/cpp/` |
+
+知识图谱文件：`assets/data/knowledge/io_v4_4.json`
 
 ## 技术栈
 
-- Flutter 3.29.3 (Dart 3.7.2)
+- Flutter 3.7+ / Dart
 - flutter_riverpod ^2.6.1（状态管理）
 - shared_preferences ^2.5.3（本地存储）
-- 本地 JSON 数据（课程、题库、动画步骤、常见错误）
+- path_provider ^2.1.5
+- 本地 JSON 数据，完全离线运行
 
-## 目录结构
+## 项目结构
 
 ```
 lib/
 ├── app/            # MaterialApp、路由、主题
-├── models/         # 数据模型（ContentManifest, Lesson, Quiz, BfsStep, Mistake 等）
-├── pages/          # 页面（首页、课程、动画、答题、错题、进度、设置、教师模式）
-├── repositories/   # 数据仓库层（JSON 加载、内容 manifest 解析）
-├── services/       # 业务逻辑（答题历史、进度持久化）
-├── state/          # Riverpod Provider（含 defaultContentIdsProvider 统一内容 ID）
-└── widgets/        # 可复用组件（BfsGrid, CodeBlock, StepController 等）
+├── models/         # 数据模型（22 个）
+├── pages/          # 页面（16 个）
+├── repositories/   # 数据仓库层（13 个）
+├── services/       # 业务逻辑（5 个）
+├── state/          # Riverpod Provider（18 个）
+├── utils/          # 搜索等工具
+└── widgets/        # 可复用组件（6 个）
 
 assets/data/
-├── content_manifest.json  # 内容清单（定义 topic、lessonSet、quizSet、动画场景等）
-├── lessons/               # 课程 JSON（bfs_basic.json, bfs_maze.json）
-├── quizzes/               # 题库 JSON（bfs_quiz.json）
-├── mistakes/              # 常见错误 JSON（bfs_mistakes.json）
-└── bfs_steps.json         # 动画步骤数据
+├── knowledge/      # 知识图谱 JSON（io_v4_4.json）
+├── cpp/            # C++ 学习单元 + 动画数据
+│   └── animations/ # 93 个动画 JSON + manifest
+├── algorithm/      # 算法学习单元 + manifest
+├── math/           # 数学学习单元 + manifest
+├── lessons/        # BFS 课程
+├── quizzes/        # BFS 题库
+└── mistakes/       # BFS 常见错误
 
-test/               # 单元测试和 Widget 测试
+test/               # 单元测试 + 资产验证测试
 ```
-
-## 内容系统架构
-
-应用通过 `content_manifest.json` 驱动内容加载，实现内容与 UI 解耦：
-
-```
-content_manifest.json
-  └── topics[]                # 学习专题（如 BFS）
-        ├── lessonSets[]      # 课程集
-        ├── quizSets[]        # 题库集
-        ├── mistakeSets[]     # 常见错误集
-        └── animationScenarios[]  # 动画场景
-  └── modules[]               # 首页功能模块（标题、图标、路由、排序）
-```
-
-- `defaultContentIdsProvider`：从 manifest 的默认 topic 中提取第一个 lessonSet / quizSet / mistakeSet / animationScenario 的 ID，供各页面使用，无需硬编码
-- 新增专题时只需在 manifest 中添加 topic 和对应的 JSON 数据文件，无需修改 Dart 代码
 
 ## 运行方式
 
@@ -71,9 +74,10 @@ flutter run
 
 ```bash
 flutter test
+flutter analyze
 ```
 
-当前包含 17 个测试：模型 fromJson 测试、JSON 数据验证测试、Widget smoke 测试。
+测试覆盖：模型 fromJson、知识图谱解析与验证、C++/算法/数学资产完整性校验、动画 manifest 一致性、搜索功能、Widget smoke 测试。
 
 ## 打包方式
 
@@ -83,23 +87,4 @@ flutter build apk --release
 
 APK 输出路径：`build/app/outputs/flutter-apk/app-release.apk`
 
-注意：当前使用 debug 签名。发布前需要配置自己的签名密钥。
-
-## 数据文件说明
-
-| 文件 | 内容 |
-|------|------|
-| `assets/data/content_manifest.json` | 内容清单（topic 定义、模块路由、默认 ID） |
-| `assets/data/lessons/bfs_basic.json` | 5 课 BFS 基础知识 |
-| `assets/data/lessons/bfs_maze.json` | 5 课迷宫 BFS 应用 |
-| `assets/data/quizzes/bfs_quiz.json` | 20 道 BFS 选择题 |
-| `assets/data/mistakes/bfs_mistakes.json` | 8 个常见 BFS 编程错误 |
-| `assets/data/bfs_steps.json` | 19 步 BFS 网格动画数据 |
-
-## 后续计划
-
-- 增加 DFS 专题学习模块
-- 增加更多题库（中级/高级难度）
-- 增加错题本功能
-- 增加 BFS 代码编辑器（在线编写和测试 BFS 代码）
-- 增加学习成就系统
+注意：当前使用 debug 签名，发布前需配置自己的签名密钥。

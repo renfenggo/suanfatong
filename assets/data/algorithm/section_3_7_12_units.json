@@ -1,0 +1,50 @@
+{
+  "sectionId": "3.7-3.12",
+  "sectionName": "高级数据结构",
+  "units": [
+    {
+      "itemId": "3.7.1",
+      "title": "树状数组（BIT）",
+      "learningGoal": "理解树状数组原理，掌握单点修改+区间查询",
+      "explanation": "树状数组（Binary Indexed Tree / Fenwick Tree）支持：\n- 单点修改：O(log n)\n- 前缀查询：O(log n)\n\n核心操作：\n- lowbit(x) = x & (-x)：取最低位的1\n- add(i, v)：位置 i 加 v\n- sum(i)：查询前 i 个元素的和\n\n区间查询 [l, r] = sum(r) - sum(l-1)\n\n树状数组代码短、常数小，竞赛中非常常用。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint tree[100001], n;\n\nint lowbit(int x) { return x & (-x); }\n\nvoid add(int i, int v) {\n    for (; i <= n; i += lowbit(i)) tree[i] += v;\n}\n\nint sum(int i) {\n    int s = 0;\n    for (; i > 0; i -= lowbit(i)) s += tree[i];\n    return s;\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        int x; cin >> x;\n        add(i, x);\n    }\n    int l, r;\n    cin >> l >> r;\n    cout << sum(r) - sum(l-1) << endl;\n    return 0;\n}",
+      "codeNotes": ["lowbit 取最低位的1", "add：沿 i += lowbit(i) 向上更新", "sum：沿 i -= lowbit(i) 向前累加", "区间和 = sum(r) - sum(l-1)"],
+      "commonMistakes": [{"title": "下标从0开始", "description": "树状数组下标必须从1开始，lowbit(0)=0 会死循环。", "fix": "确保所有操作从1开始。"}],
+      "practice": {"prompt": "用树状数组实现：单点修改，查询区间和。", "hint": "add/sum 两个核心函数。", "expectedIdea": "标准树状数组模板"},
+      "quiz": [{"question": "树状数组单次操作的时间复杂度是？", "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"], "answerIndex": 1, "explanation": "add 和 sum 都是 O(log n)。"}]
+    },
+    {
+      "itemId": "3.7.2",
+      "title": "线段树基础",
+      "learningGoal": "理解线段树原理，掌握区间修改和区间查询",
+      "explanation": "线段树（Segment Tree）支持多种区间操作：\n- 单点/区间修改\n- 区间查询（求和、最值等）\n\n结构：每个节点对应一个区间，左右儿子各管一半。\n\n用数组实现：\n- 节点 i 的左儿子：2*i\n- 节点 i 的右儿子：2*i+1\n\n带懒标记（Lazy Tag）可以做到区间修改 O(log n)。\n\n线段树功能比树状数组强大，但代码更长。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint tree[400001], a[100001];\n\nvoid build(int p, int l, int r) {\n    if (l == r) { tree[p] = a[l]; return; }\n    int mid = (l + r) / 2;\n    build(2*p, l, mid);\n    build(2*p+1, mid+1, r);\n    tree[p] = tree[2*p] + tree[2*p+1];\n}\n\nint query(int p, int l, int r, int ql, int qr) {\n    if (ql <= l && r <= qr) return tree[p];\n    int mid = (l + r) / 2, sum = 0;\n    if (ql <= mid) sum += query(2*p, l, mid, ql, qr);\n    if (qr > mid) sum += query(2*p+1, mid+1, r, ql, qr);\n    return sum;\n}",
+      "codeNotes": ["每个节点对应一个区间", "build 递归建树", "query 递归查询", "带 lazy tag 可区间修改"],
+      "commonMistakes": [{"title": "数组开太小", "description": "线段树数组要开4倍大小。", "fix": "tree[4*N] 保证不越界。"}],
+      "practice": {"prompt": "实现线段树，支持单点修改和区间求和。", "hint": "build + update + query 三件套。", "expectedIdea": "标准线段树模板"},
+      "quiz": [{"question": "线段树数组需要开多大？", "options": ["2倍", "3倍", "4倍", "n倍"], "answerIndex": 2, "explanation": "线段树数组一般开 4*N 避免越界。"}]
+    },
+    {
+      "itemId": "3.9.1",
+      "title": "图的邻接表存储",
+      "learningGoal": "掌握图的邻接表存储方式",
+      "explanation": "图有两种常用存储方式：\n\n1. 邻接矩阵：g[i][j] 表示 i 到 j 是否有边，适合稠密图，空间 O(n^2)\n\n2. 邻接表：每个节点维护一个链表/vector 存邻居，适合稀疏图，空间 O(n+m)\n\n邻接表实现（最常用）：\nvector<int> adj[N];\nadj[u].push_back(v); // 添加边 u→v\n\n带权图：vector<pair<int,int>> adj[N]; // {邻居, 权重}\n\n遍历某点的所有邻居：for (int v : adj[u]) ...",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> adj[100001];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    for (int v : adj[1])\n        cout << v << \" \";\n    return 0;\n}",
+      "codeNotes": ["vector<int> adj[N] 邻接表", "无向图两条边都加", "有向图只加一条", "带权图用 pair<int,int>"],
+      "commonMistakes": [{"title": "无向图只加一条边", "description": "忘记双向都加。", "fix": "无向图：adj[u].push_back(v); adj[v].push_back(u);"}],
+      "practice": {"prompt": "读入一个无向图，输出每个节点的邻居列表。", "hint": "邻接表存图，遍历输出。", "expectedIdea": "for i=1..n: for v in adj[i]: cout<<v;"},
+      "quiz": [{"question": "邻接表存储 n 个节点 m 条边的图，空间复杂度是？", "options": ["O(n^2)", "O(n+m)", "O(m)", "O(n)"], "answerIndex": 1, "explanation": "邻接表存每个节点和每条边，空间 O(n+m)。"}]
+    },
+    {
+      "itemId": "3.10.1",
+      "title": "平衡树简介",
+      "learningGoal": "了解平衡树的概念和 C++ 中的替代方案",
+      "explanation": "平衡树（如 AVL、红黑树、Treap、Splay）保持树的高度在 O(log n)，确保查找/插入/删除都是 O(log n)。\n\n竞赛中通常不需要手写平衡树，可以用：\n- std::set / std::map：底层红黑树\n- std::multiset：允许重复元素\n- pbds（Policy-Based Data Structure）：扩展红黑树，支持排名查询\n\n手写平衡树常见：Treap（最简单）、Splay、FHQ Treap（无旋 Treap）。\n\nTreap = Tree + Heap，给每个节点随机优先级，按优先级维护堆性质。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    multiset<int> s;\n    s.insert(3); s.insert(1); s.insert(4); s.insert(1);\n    cout << \"count of 1: \" << s.count(1) << endl;\n    s.erase(s.find(1));\n    for (int x : s) cout << x << \" \";\n    return 0;\n}",
+      "codeNotes": ["multiset 允许重复", "erase(find(x)) 只删一个", "set 不允许重复", "手写 Treap 是竞赛常用选择"],
+      "commonMistakes": [{"title": "multiset erase(x) 删所有", "description": "s.erase(x) 删除所有等于 x 的元素。", "fix": "s.erase(s.find(x)) 只删除一个。"}],
+      "practice": {"prompt": "用 multiset 维护一个动态集合，支持插入、删除、查询第 k 小。", "hint": "insert/erase(find)/advance。", "expectedIdea": "multiset + next(s.begin(), k-1) 查第k小。"},
+      "quiz": [{"question": "平衡树保持什么性质？", "options": ["所有节点在同一层", "树的高度为 O(log n)", "所有叶子在同一层", "没有左子树"], "answerIndex": 1, "explanation": "平衡树通过旋转等操作保持高度 O(log n)，确保操作效率。"}]
+    }
+  ]
+}

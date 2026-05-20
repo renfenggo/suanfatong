@@ -1,0 +1,95 @@
+{
+  "animationId": "cpp_dp_fib",
+  "itemId": "2.8.1",
+  "title": "DP 思想：斐波那契",
+  "description": "用斐波那契数列演示动态规划的核心思想：从子问题推导大问题，避免重复计算",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "dp", "type": "int[]", "values": ["0", "1", "0", "0", "0", "0"], "activeIndex": -1, "note": "dp[0]=0, dp[1]=1"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化基础情况",
+      "description": "斐波那契数列：fib(0)=0, fib(1)=1。这是递推的基础情况（边界条件）。",
+      "codeLine": "dp[0] = 0; dp[1] = 1;",
+      "highlights": ["dp[0]", "dp[1]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "1", "note": "基础情况已初始化"}
+        ],
+        "containers": [
+          {"name": "dp", "type": "int[]", "values": ["0", "1", "0", "0", "0", "0"], "activeIndex": 1, "note": "fib(0)=0, fib(1)=1"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "推导 dp[2] = dp[1] + dp[0]",
+      "description": "fib(2) = fib(1) + fib(0) = 1 + 0 = 1。从已知的子问题结果推导新值。",
+      "codeLine": "dp[i] = dp[i-1] + dp[i-2];  // i=2",
+      "highlights": ["dp[i-1] + dp[i-2]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "2", "note": "dp[2] = 1+0 = 1"}
+        ],
+        "containers": [
+          {"name": "dp", "type": "int[]", "values": ["0", "1", "1", "0", "0", "0"], "activeIndex": 2, "note": "fib(2)=1"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "推导 dp[3] = dp[2] + dp[1]",
+      "description": "fib(3) = fib(2) + fib(1) = 1 + 1 = 2。每次只需要前两个值。",
+      "codeLine": "dp[i] = dp[i-1] + dp[i-2];  // i=3",
+      "highlights": ["dp[i-1] + dp[i-2]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "3", "note": "dp[3] = 1+1 = 2"}
+        ],
+        "containers": [
+          {"name": "dp", "type": "int[]", "values": ["0", "1", "1", "2", "0", "0"], "activeIndex": 3, "note": "fib(3)=2"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "推导 dp[4] 和 dp[5]",
+      "description": "fib(4) = 2+1 = 3, fib(5) = 3+2 = 5。递推完成，所有子问题已解决。",
+      "codeLine": "dp[i] = dp[i-1] + dp[i-2];  // i=4,5",
+      "highlights": ["dp[i-1] + dp[i-2]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "5", "note": "dp[5] = 3+2 = 5"}
+        ],
+        "containers": [
+          {"name": "dp", "type": "int[]", "values": ["0", "1", "1", "2", "3", "5"], "activeIndex": 5, "note": "fib(5)=5 ✓"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "DP 核心：状态转移方程",
+      "description": "dp[i] = dp[i-1] + dp[i-2] 就是状态转移方程。DP 的关键：定义状态、找转移方程、确定边界。时间 O(n)，比递归的 O(2^n) 快很多。",
+      "codeLine": "for (int i = 2; i <= n; i++) dp[i] = dp[i-1] + dp[i-2];",
+      "highlights": ["dp[i] = dp[i-1] + dp[i-2]"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "fib(5)=5", "note": "O(n) 时间复杂度"}
+        ],
+        "containers": [
+          {"name": "dp", "type": "int[]", "values": ["0", "1", "1", "2", "3", "5"], "activeIndex": -1, "note": "完整数列"}
+        ],
+        "output": "fib(5) = 5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "animationId": "cpp_backtrack_permutation",
+  "itemId": "2.7.6",
+  "title": "回溯枚举排列",
+  "description": "演示回溯法枚举排列的过程：做选择、递归、撤销选择",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {
+        "name": "path",
+        "type": "array",
+        "values": [],
+        "activeIndex": -1,
+        "note": "当前选择路径"
+      },
+      {
+        "name": "used",
+        "type": "bool[]",
+        "values": ["0", "0", "0"],
+        "activeIndex": -1,
+        "note": "标记 1~3 是否已选"
+      }
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "选择 1",
+      "description": "从空路径出发，尝试选择数字 1，将其加入 path 并标记 used[0]=1",
+      "codeLine": "path.push_back(1); // 做选择",
+      "highlights": ["path.push_back(1)", "used[0] = true"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "1", "note": "当前尝试选择数字 1" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1"],
+            "activeIndex": 0,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "0", "0"],
+            "activeIndex": 0,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "选择 2",
+      "description": "继续递归，选择数字 2，将其加入 path 并标记 used[1]=1",
+      "codeLine": "path.push_back(2); // 做选择",
+      "highlights": ["path.push_back(2)", "used[1] = true"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "2", "note": "当前尝试选择数字 2" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1", "2"],
+            "activeIndex": 1,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "1", "0"],
+            "activeIndex": 1,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "选择 3，找到第一个排列",
+      "description": "继续递归，选择数字 3，path 长度等于 3，找到一个完整排列 1 2 3",
+      "codeLine": "path.push_back(3); // 做选择\n// path.size() == 3，记录答案",
+      "highlights": ["path.push_back(3)", "used[2] = true", "result.push_back(path)"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "3", "note": "当前尝试选择数字 3" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1", "2", "3"],
+            "activeIndex": 2,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "1", "1"],
+            "activeIndex": 2,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": "找到排列：1 2 3\n"
+      }
+    },
+    {
+      "step": 4,
+      "title": "撤销选择 3",
+      "description": "回溯：从 path 中弹出 3，将 used[2] 恢复为 0，尝试其他选择",
+      "codeLine": "path.pop_back(); // 撤销选择\nused[2] = false;",
+      "highlights": ["path.pop_back()", "used[2] = false"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "3", "note": "撤销数字 3 的选择" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1", "2"],
+            "activeIndex": 1,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "1", "0"],
+            "activeIndex": 2,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": "找到排列：1 2 3\n"
+      }
+    },
+    {
+      "step": 5,
+      "title": "撤销选择 2，选择 3",
+      "description": "撤销数字 2 的选择，path 变为 [1]，used 变为 [1,0,0]；然后选择数字 3，path 变为 [1,3]",
+      "codeLine": "path.pop_back(); // 撤销选择 2\nused[1] = false;\npath.push_back(3); // 做选择\nused[2] = true;",
+      "highlights": ["path.pop_back()", "used[1] = false", "path.push_back(3)", "used[2] = true"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "3", "note": "撤销 2 后选择数字 3" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1", "3"],
+            "activeIndex": 1,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "0", "1"],
+            "activeIndex": 2,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": "找到排列：1 2 3\n"
+      }
+    },
+    {
+      "step": 6,
+      "title": "选择 2，找到第二个排列",
+      "description": "继续递归，选择数字 2，path 长度等于 3，找到完整排列 1 3 2",
+      "codeLine": "path.push_back(2); // 做选择\n// path.size() == 3，记录答案",
+      "highlights": ["path.push_back(2)", "used[1] = true", "result.push_back(path)"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "2", "note": "当前尝试选择数字 2" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["1", "3", "2"],
+            "activeIndex": 2,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["1", "1", "1"],
+            "activeIndex": 1,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": "找到排列：1 2 3\n找到排列：1 3 2\n"
+      }
+    },
+    {
+      "step": 7,
+      "title": "回溯到空路径，选择 2 开始新一轮",
+      "description": "依次撤销选择 2 和 3，回溯到 path=[1]；再撤销选择 1，path 变为空；然后选择数字 2 开始新一轮搜索",
+      "codeLine": "path.pop_back(); // 撤销选择 2\nused[1] = false;\npath.pop_back(); // 撤销选择 3\nused[2] = false;\npath.pop_back(); // 撤销选择 1\nused[0] = false;\npath.push_back(2); // 选择 2\nused[1] = true;",
+      "highlights": ["path.pop_back()", "path.push_back(2)", "used[1] = true"],
+      "state": {
+        "variables": [
+          { "name": "i", "value": "2", "note": "新一轮选择数字 2" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": ["2"],
+            "activeIndex": 0,
+            "note": "当前选择路径"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["0", "1", "0"],
+            "activeIndex": 1,
+            "note": "标记 1~3 是否已选"
+          }
+        ],
+        "output": "找到排列：1 2 3\n找到排列：1 3 2\n"
+      }
+    },
+    {
+      "step": 8,
+      "title": "完成所有排列，汇总结果",
+      "description": "继续搜索得到排列 2 1 3、2 3 1、3 1 2、3 2 1，最终枚举出 {1,2,3} 的全部 6 种排列",
+      "codeLine": "// 回溯完成，共找到 6 个排列\n// result = {{1,2,3},{1,3,2},{2,1,3},{2,3,1},{3,1,2},{3,2,1}};",
+      "highlights": ["result", "6 个排列"],
+      "state": {
+        "variables": [
+          { "name": "total", "value": "6", "note": "共找到 6 个排列" }
+        ],
+        "containers": [
+          {
+            "name": "path",
+            "type": "array",
+            "values": [],
+            "activeIndex": -1,
+            "note": "当前选择路径（已清空）"
+          },
+          {
+            "name": "used",
+            "type": "bool[]",
+            "values": ["0", "0", "0"],
+            "activeIndex": -1,
+            "note": "标记 1~3 是否已选（已重置）"
+          }
+        ],
+        "output": "所有排列：\n1 2 3\n1 3 2\n2 1 3\n2 3 1\n3 1 2\n3 2 1\n"
+      }
+    }
+  ]
+}

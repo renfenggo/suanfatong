@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_binomial_coefficient",
+  "itemId": "4.3.7",
+  "title": "二项式系数",
+  "description": "演示二项式系数 C(n,k) 的计算：C(n,k) = n! / (k! × (n-k)!)",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "C(n,k) 表示从 n 个不同元素中选 k 个的组合数",
+      "codeLine": "// C(n,k) = n! / (k! * (n-k)!)",
+      "highlights": ["C(n,k)"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算 C(5,2)",
+      "description": "C(5,2) = 5! / (2! × 3!) = 120 / (2×6) = 120/12 = 10",
+      "codeLine": "int c = 120 / (2 * 6); // = 10",
+      "highlights": ["120 / 12"],
+      "state": {
+        "variables": [
+          {"name": "5!", "value": "120", "note": ""},
+          {"name": "2!×3!", "value": "12", "note": "2×6"},
+          {"name": "C(5,2)", "value": "10", "note": "120/12"}
+        ],
+        "containers": [],
+        "output": "C(5,2) = 10"
+      }
+    },
+    {
+      "step": 3,
+      "title": "递推公式",
+      "description": "C(n,k) = C(n-1,k-1) + C(n-1,k)。这就是 Pascal 三角的递推关系",
+      "codeLine": "// C(n,k) = C(n-1,k-1) + C(n-1,k)",
+      "highlights": ["C(n-1,k-1) + C(n-1,k)"],
+      "state": {
+        "variables": [
+          {"name": "C(4,1)", "value": "4", "note": ""},
+          {"name": "C(4,2)", "value": "6", "note": ""},
+          {"name": "C(5,2)", "value": "10", "note": "4+6=10 ✓"}
+        ],
+        "containers": [],
+        "output": "C(5,2) = 10"
+      }
+    },
+    {
+      "step": 4,
+      "title": "重要性质",
+      "description": "C(n,0) = C(n,n) = 1, C(n,1) = n, C(n,k) = C(n,n-k)",
+      "codeLine": "// C(n,0)=1, C(n,1)=n, C(n,k)=C(n,n-k)",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "C(n,0)", "value": "1", "note": ""},
+          {"name": "C(n,1)", "value": "n", "note": ""},
+          {"name": "C(n,n)", "value": "1", "note": ""}
+        ],
+        "containers": [],
+        "output": "C(5,2) = 10"
+      }
+    }
+  ]
+}

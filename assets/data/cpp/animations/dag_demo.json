@@ -1,0 +1,70 @@
+{
+  "animationId": "cpp_dag_demo",
+  "itemId": "4.5.10",
+  "title": "DAG（有向无环图）",
+  "description": "演示 DAG 的概念：有向且无环的图，常用于表示依赖关系和拓扑排序",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "DAG = Directed Acyclic Graph，有向且不存在有向环的图",
+      "codeLine": "// DAG = 有向 + 无环",
+      "highlights": ["有向", "无环"],
+      "state": {
+        "variables": [
+          {"name": "边", "value": "A→B, A→C, B→D, C→D", "note": "有向边"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "无环验证",
+      "description": "从任意顶点出发沿有向边走，都不可能回到起点。A→B→D，无法回到 A",
+      "codeLine": "// A→B→D: 无法回到 A ✓",
+      "highlights": ["无法回到起点"],
+      "state": {
+        "variables": [
+          {"name": "A→B→D", "value": "无法回到A", "note": "✓"},
+          {"name": "A→C→D", "value": "无法回到A", "note": "✓"}
+        ],
+        "containers": [],
+        "output": "无环 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "拓扑序",
+      "description": "DAG 必存在拓扑序：A, B, C, D。每条边的起点在终点前面",
+      "codeLine": "// 拓扑序: A, B, C, D",
+      "highlights": ["拓扑序"],
+      "state": {
+        "variables": [
+          {"name": "拓扑序", "value": "A,B,C,D", "note": "或 A,C,B,D"}
+        ],
+        "containers": [],
+        "output": "拓扑序: A, B, C, D"
+      }
+    },
+    {
+      "step": 4,
+      "title": "应用场景",
+      "description": "DAG 广泛用于：任务调度（先修课程）、版本控制（Git）、电子表格依赖、DP 状态转移",
+      "codeLine": "// 任务依赖、课程先修、DP 状态图",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "应用", "value": "任务调度,DP,版本控制", "note": ""}
+        ],
+        "containers": [],
+        "output": "拓扑序: A, B, C, D"
+      }
+    }
+  ]
+}

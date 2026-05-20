@@ -87,6 +87,8 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
     final section =
         item.parent.isNotEmpty ? graph.sectionById(item.parent) : null;
     final isCppItem = _isCppSyntaxItem(item, graph);
+    final isLearnableItem =
+        isCppItem || _isAlgorithmItem(item, graph) || _isMathItem(item, graph);
     final bfsActions = _getBfsActions(item);
 
     return SingleChildScrollView(
@@ -96,9 +98,11 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
         children: [
           _buildHeader(item, section),
           const SizedBox(height: 16),
-          if (isCppItem) ...[
+          if (isLearnableItem) ...[
             _buildCppLearnCard(context, item),
             const SizedBox(height: 12),
+          ],
+          if (isCppItem) ...[
             _buildCppAnimationCard(context, item),
             const SizedBox(height: 12),
           ],
@@ -431,7 +435,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
               ),
               const SizedBox(width: 6),
               const Text(
-                'BFS 学习工具',
+                '学习工具',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -640,6 +644,20 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
       }
     }
     return false;
+  }
+
+  bool _isAlgorithmItem(KnowledgeItem item, KnowledgeGraph graph) {
+    final section = graph.sectionById(item.parent);
+    if (section == null) return false;
+    final prefix = section.id.split('.').first;
+    return prefix == '2' || prefix == '3';
+  }
+
+  bool _isMathItem(KnowledgeItem item, KnowledgeGraph graph) {
+    final section = graph.sectionById(item.parent);
+    if (section == null) return false;
+    final prefix = section.id.split('.').first;
+    return prefix == '4' || prefix == '5';
   }
 }
 

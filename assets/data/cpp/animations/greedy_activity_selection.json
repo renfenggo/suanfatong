@@ -1,0 +1,176 @@
+{
+  "animationId": "algo_greedy_activity_selection",
+  "itemId": "2.4.4",
+  "title": "活动选择/区间选择",
+  "description": "展示按结束时间排序后贪心选择不重叠区间的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [], "note": "5个活动区间"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "原始区间",
+      "description": "给定5个活动区间，每个区间表示一个活动的开始和结束时间。我们需要选择尽量多的互不重叠的活动。",
+      "codeLine": "vector<pair<int,int>> acts = {{1,3},{2,5},{4,7},{6,9},{8,10}};",
+      "highlights": ["acts"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "type": "int", "note": "区间数量"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [], "note": "原始顺序"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "按结束时间排序",
+      "description": "贪心策略：按结束时间从小到大排序。结束早的活动优先选择，为后续活动留出更多时间。",
+      "codeLine": "sort(acts.begin(), acts.end(), [](auto&a, auto&b){return a.second<b.second;});",
+      "highlights": ["sort", "结束时间"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "type": "int", "note": "区间数量"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [0], "note": "已按结束时间排序"}
+        ],
+        "output": "排序后: [1,3] [2,5] [4,7] [6,9] [8,10]"
+      }
+    },
+    {
+      "step": 3,
+      "title": "选择第一个区间 [1,3]",
+      "description": "第一个区间 [1,3] 结束时间最早，必选。将其加入已选集合，记录其结束时间 end=3。",
+      "codeLine": "selected.push_back(acts[0]);  int end = acts[0].second;",
+      "highlights": ["selected", "end"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "3", "type": "int", "note": "当前选中区间的结束时间"},
+          {"name": "已选数量", "value": "1", "type": "int", "note": "已选1个活动"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [0], "note": "✓ 选中 [1,3]"},
+          {"name": "已选", "type": "array", "values": ["[1,3]"], "highlights": [0], "note": ""}
+        ],
+        "output": "选择 [1,3]，end = 3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "检查区间 [2,5]",
+      "description": "区间 [2,5] 的开始时间 2 < 当前结束时间 3，与已选区间 [1,3] 重叠，跳过。",
+      "codeLine": "if (acts[i].first >= end) selected.push_back(acts[i]);",
+      "highlights": ["冲突", "跳过"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "3", "type": "int", "note": "当前结束时间"},
+          {"name": "已选数量", "value": "1", "type": "int", "note": "已选1个活动"},
+          {"name": "i", "value": "1", "type": "int", "note": "当前检查 [2,5]"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [1], "note": "✗ [2,5] 起始2 < end3，冲突跳过"},
+          {"name": "已选", "type": "array", "values": ["[1,3]"], "highlights": [0], "note": ""}
+        ],
+        "output": "[2,5] 与 [1,3] 冲突 (2<3)，跳过"
+      }
+    },
+    {
+      "step": 5,
+      "title": "检查区间 [4,7]",
+      "description": "区间 [4,7] 的开始时间 4 >= 当前结束时间 3，不重叠，选中！更新 end=7。",
+      "codeLine": "selected.push_back(acts[2]);  end = acts[2].second;",
+      "highlights": ["选中"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "7", "type": "int", "note": "更新为7"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": "已选2个活动"},
+          {"name": "i", "value": "2", "type": "int", "note": "当前检查 [4,7]"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [2], "note": "✓ [4,7] 起始4 >= end3，选中"},
+          {"name": "已选", "type": "array", "values": ["[1,3]", "[4,7]"], "highlights": [1], "note": ""}
+        ],
+        "output": "选择 [4,7]，end = 7"
+      }
+    },
+    {
+      "step": 6,
+      "title": "检查区间 [6,9]",
+      "description": "区间 [6,9] 的开始时间 6 < 当前结束时间 7，与已选区间 [4,7] 重叠，跳过。",
+      "codeLine": "if (acts[i].first >= end) selected.push_back(acts[i]);",
+      "highlights": ["冲突", "跳过"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "7", "type": "int", "note": "当前结束时间"},
+          {"name": "已选数量", "value": "2", "type": "int", "note": "已选2个活动"},
+          {"name": "i", "value": "3", "type": "int", "note": "当前检查 [6,9]"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [3], "note": "✗ [6,9] 起始6 < end7，冲突跳过"},
+          {"name": "已选", "type": "array", "values": ["[1,3]", "[4,7]"], "highlights": [1], "note": ""}
+        ],
+        "output": "[6,9] 与 [4,7] 冲突 (6<7)，跳过"
+      }
+    },
+    {
+      "step": 7,
+      "title": "检查区间 [8,10]",
+      "description": "区间 [8,10] 的开始时间 8 >= 当前结束时间 7，不重叠，选中！更新 end=10。",
+      "codeLine": "selected.push_back(acts[4]);  end = acts[4].second;",
+      "highlights": ["选中"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "10", "type": "int", "note": "更新为10"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": "已选3个活动"},
+          {"name": "i", "value": "4", "type": "int", "note": "当前检查 [8,10]"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [4], "note": "✓ [8,10] 起始8 >= end7，选中"},
+          {"name": "已选", "type": "array", "values": ["[1,3]", "[4,7]", "[8,10]"], "highlights": [2], "note": ""}
+        ],
+        "output": "选择 [8,10]，end = 10"
+      }
+    },
+    {
+      "step": 8,
+      "title": "遍历结束",
+      "description": "所有区间已检查完毕，贪心算法结束。共选择了3个互不重叠的活动。",
+      "codeLine": "return selected;",
+      "highlights": ["return"],
+      "state": {
+        "variables": [
+          {"name": "end", "value": "10", "type": "int", "note": "最终结束时间"},
+          {"name": "已选数量", "value": "3", "type": "int", "note": "共选中3个活动"}
+        ],
+        "containers": [
+          {"name": "区间", "type": "array", "values": ["[1,3]", "[2,5]", "[4,7]", "[6,9]", "[8,10]"], "highlights": [], "note": "检查完毕"},
+          {"name": "已选", "type": "array", "values": ["[1,3]", "[4,7]", "[8,10]"], "highlights": [0, 1, 2], "note": ""}
+        ],
+        "output": "检查完毕，共选中 3 个活动"
+      }
+    },
+    {
+      "step": 9,
+      "title": "最终结果",
+      "description": "贪心选择的结果：[1,3]、[4,7]、[8,10] 共3个活动。被跳过的冲突区间：[2,5]、[6,9]。贪心策略保证了选取最多的不重叠活动。",
+      "codeLine": "cout << \"最多可选 \" << selected.size() << \" 个活动\";",
+      "highlights": ["selected.size()"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "3", "type": "int", "note": "最多可选3个活动"}
+        ],
+        "containers": [
+          {"name": "已选", "type": "array", "values": ["[1,3]", "[4,7]", "[8,10]"], "highlights": [0, 1, 2], "note": "最优解"},
+          {"name": "被跳过", "type": "array", "values": ["[2,5]", "[6,9]"], "highlights": [], "note": "与已选区间冲突"}
+        ],
+        "output": "最多可选 3 个活动: [1,3] [4,7] [8,10]"
+      }
+    }
+  ]
+}

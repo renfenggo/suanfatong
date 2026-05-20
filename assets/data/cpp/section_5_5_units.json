@@ -1,0 +1,99 @@
+{
+  "sectionId": "5.5",
+  "sectionName": "图论实现技巧",
+  "units": [
+    {
+      "itemId": "5.5.1",
+      "title": "建双向边",
+      "learningGoal": "学会在无向图中正确建立双向边",
+      "explanation": "无向图的每条边需要在邻接表中存储两次，即 u→v 和 v→u 各一条。通常用一条编号为偶数的边和它的下一条（奇数）边互为反向边。\n\n用数组模拟邻接表时，每次加边同时加两条：add(u, v, w) 和 add(v, u, w)。边的编号从 0 开始，第 i 条边和第 i+1 条边互为反向。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MAXN = 1005;\nconst int MAXM = 20005;\nint head[MAXN], to[MAXM], nxt[MAXM], weight[MAXM], ecnt = 0;\n\nvoid addEdge(int u, int v, int w) {\n    to[ecnt] = v; weight[ecnt] = w; nxt[ecnt] = head[u]; head[u] = ecnt++;\n    to[ecnt] = u; weight[ecnt] = w; nxt[ecnt] = head[v]; head[v] = ecnt++;\n}\n\nint main() {\n    memset(head, -1, sizeof(head));\n    addEdge(1, 2, 5);\n    addEdge(2, 3, 3);\n    return 0;\n}",
+      "codeNotes": [
+        "无向边存两次：u→v 和 v→u",
+        "链式前向星 addEdge 加两条边",
+        "ecnt 每次加 2",
+        "反向边编号相差 1"
+      ],
+      "commonMistakes": [{"title": "忘记建反向边", "description": "只建了 u→v 忘了 v→u。", "fix": "每次 addEdge 同时加两条方向相反的边。"}],
+      "practice": {"prompt": "输入 n 个点 m 条边的无向图，用链式前向星存储。", "hint": "addEdge 中同时加两个方向", "expectedIdea": "for (int i = 0; i < m; i++) {\n    int u, v, w;\n    cin >> u >> v >> w;\n    addEdge(u, v, w);\n}"},
+      "quiz": [{"question": "无向图一条边需要在邻接表中存几次？", "options": ["1", "2", "3", "取决于算法"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.5.2",
+      "title": "邻接表初始化",
+      "learningGoal": "掌握邻接表的正确初始化方法",
+      "explanation": "使用链式前向星时，head 数组初始化为 -1 表示空链表。每次建图前要重置 head 和 ecnt。\n\n多组测试数据时，只重置用到的部分即可，不必清空整个数组。",
+      "exampleCode": "#include <cstring>\nusing namespace std;\n\nconst int MAXN = 1005;\nint head[MAXN], ecnt = 0;\n\nvoid initGraph(int n) {\n    memset(head, -1, sizeof(int) * (n + 1));\n    ecnt = 0;\n}",
+      "codeNotes": ["head 初始化为 -1", "ecnt 从 0 开始", "多组数据时要重置", "只清用到的范围"],
+      "commonMistakes": [{"title": "多组数据未重置", "description": "上一组的边残留，导致遍历出错。", "fix": "每组数据开始前调用 initGraph 重置。"}],
+      "practice": {"prompt": "写一个 initGraph 函数，重置 head 数组和边计数器。", "hint": "memset(head, -1, ...)", "expectedIdea": "void initGraph(int n) {\n    memset(head, -1, sizeof(int) * (n + 1));\n    ecnt = 0;\n}"},
+      "quiz": [{"question": "head 数组初始化为 -1 表示什么？", "options": ["无效边", "链表为空", "节点不存在", "权重为 -1"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.5.3",
+      "title": "多源点一起入队",
+      "learningGoal": "学会在多源 BFS 中将所有源点同时入队",
+      "explanation": "多源最短路径问题可以将所有源点在初始时全部入队，然后正常执行 BFS。这样每个源点同时向外扩展，第一次到达某个点时就是最近的源点到它的距离。\n\n初始化时将所有源点距离设为 0 并入队，其余点距离设为 INF。",
+      "exampleCode": "#include <queue>\n#include <cstring>\nusing namespace std;\n\nconst int INF = 0x3f3f3f3f;\nint dist[1005];\n\nvoid multiSourceBFS(vector<int>& sources, int n) {\n    memset(dist, 0x3f, sizeof(dist));\n    queue<int> q;\n    for (int s : sources) {\n        dist[s] = 0;\n        q.push(s);\n    }\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        // 遍历邻接边...\n    }\n}",
+      "codeNotes": ["所有源点同时入队", "源点距离初始化为 0", "其余点距离为 INF", "BFS 自然保证最近"],
+      "commonMistakes": [{"title": "逐个源点单独 BFS", "description": "对每个源点跑一次 BFS，时间复杂度乘以源点数。", "fix": "所有源点初始同时入队，只需一次 BFS。"}],
+      "practice": {"prompt": "多个起点同时出发，求所有点到最近起点的距离。", "hint": "所有起点 dist=0 并入队", "expectedIdea": "queue<int> q;\nfor (int s : sources) {\n    dist[s] = 0;\n    q.push(s);\n}\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u]) {\n        if (dist[v] > dist[u] + 1) {\n            dist[v] = dist[u] + 1;\n            q.push(v);\n        }\n    }\n}"},
+      "quiz": [{"question": "多源 BFS 中，源点的初始距离应设为？", "options": ["INF", "-1", "0", "1"], "answerIndex": 2}]
+    },
+    {
+      "itemId": "5.5.4",
+      "title": "BFS 入队即标记",
+      "learningGoal": "理解 BFS 中「入队即标记」的重要性",
+      "explanation": "BFS 中，节点入队时就应该标记为已访问，而不是出队时才标记。如果出队才标记，同一个节点可能被多次入队，导致重复访问甚至死循环。\n\n正确做法：将节点入队的同时设 vis[u] = true。这样后续其他节点再想访问 u 时发现已标记就跳过了。",
+      "exampleCode": "#include <queue>\nusing namespace std;\n\nvoid bfs(int start) {\n    queue<int> q;\n    q.push(start);\n    vis[start] = true;  // 入队即标记\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int v : adj[u]) {\n            if (!vis[v]) {\n                vis[v] = true;  // 入队即标记\n                q.push(v);\n            }\n        }\n    }\n}",
+      "codeNotes": ["入队时立即标记", "不能出队时才标记", "防止重复入队", "BFS 最常见的错误点"],
+      "commonMistakes": [{"title": "出队时才标记", "description": "导致同一节点被多个前驱重复入队。", "fix": "push 之后立即设 vis[v] = true。"}],
+      "practice": {"prompt": "写一个正确的 BFS，确保不会重复访问节点。", "hint": "入队时立即 vis[v] = true", "expectedIdea": "q.push(start);\nvis[start] = true;\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u]) {\n        if (!vis[v]) {\n            vis[v] = true;\n            q.push(v);\n        }\n    }\n}"},
+      "quiz": [{"question": "BFS 中如果出队时才标记 visited，会导致什么？", "options": ["编译错误", "重复入队", "漏访问", "运行更快"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.5.5",
+      "title": "DFS 回溯恢复现场",
+      "learningGoal": "理解 DFS 回溯时恢复状态的重要性",
+      "explanation": "在 DFS 枚举方案时，递归返回前需要撤销本层做的修改，恢复到进入时的状态，否则会影响其他分支的搜索。\n\n例如标记了 vis[u] = true，回溯时要设回 vis[u] = false。加入了某个元素到路径中，回溯时要移除。",
+      "exampleCode": "void dfs(int u) {\n    vis[u] = true;\n    path.push_back(u);\n    for (int v : adj[u]) {\n        if (!vis[v]) dfs(v);\n    }\n    path.pop_back();\n    vis[u] = false;  // 恢复现场\n}",
+      "codeNotes": ["递归返回前撤销修改", "vis 恢复为 false", "path 移除最后元素", "确保不影响其他分支"],
+      "commonMistakes": [{"title": "忘记恢复现场", "description": "vis 没有设回 false，导致后续分支无法访问该节点。", "fix": "在函数返回前恢复所有修改的状态。"}],
+      "practice": {"prompt": "写一个 DFS 枚举从 1 到 n 的所有路径，确保回溯正确。", "hint": "push_back 后 DFS，然后 pop_back 恢复", "expectedIdea": "void dfs(int u, int n) {\n    vis[u] = true;\n    path.push_back(u);\n    if (u == n) { /* 输出路径 */ }\n    for (int v : adj[u]) {\n        if (!vis[v]) dfs(v, n);\n    }\n    path.pop_back();\n    vis[u] = false;\n}"},
+      "quiz": [{"question": "DFS 回溯时需要做什么？", "options": ["什么都不做", "恢复本层修改的状态", "清空所有数据", "重新初始化"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.5.6",
+      "title": "重边 / 自环处理",
+      "learningGoal": "学会处理图中的重边和自环",
+      "explanation": "重边是两个节点之间有多条边。自环是节点到自身的边。不同算法处理方式不同。\n\n最短路：保留最短的边即可。DFS/BFS：邻接表自然处理重边，自环通常直接跳过。并查集：自环无影响，重边多 merge 一次也无害。",
+      "exampleCode": "void addEdgeUnique(int u, int v, int w) {\n    // 保留最短的重边\n    for (int i = head[u]; i != -1; i = nxt[i]) {\n        if (to[i] == v) {\n            weight[i] = min(weight[i], w);\n            return;\n        }\n    }\n    addEdge(u, v, w);\n}",
+      "codeNotes": ["重边保留最优的一条", "自环通常可跳过", "最短路保留最短边", "邻接表自动处理重边"],
+      "commonMistakes": [{"title": "忽略重边导致错误", "description": "题目有重边但只处理了一条。", "fix": "根据题意选择保留最短/最长边或全部保留。"}],
+      "practice": {"prompt": "输入可能有重边的图，建邻接表时只保留两个节点间最短的边。", "hint": "加边前检查是否已有该终点的边", "expectedIdea": "void addEdgeMin(int u, int v, int w) {\n    for (int i = head[u]; ~i; i = nxt[i]) {\n        if (to[i] == v) { weight[i] = min(weight[i], w); return; }\n    }\n    addEdge(u, v, w);\n}"},
+      "quiz": [{"question": "自环（u 到 u 的边）在 BFS 中通常怎么处理？", "options": ["正常处理", "跳过", "报错", "视为双向边"], "answerIndex": 1}]
+    },
+    {
+      "itemId": "5.5.7",
+      "title": "反向边编号",
+      "learningGoal": "理解网络流中用异或快速找反向边的技巧",
+      "explanation": "在链式前向星中，如果第 i 条边和第 i+1 条边互为反向边（成对添加），那么 i ^ 1 就是反向边的编号。\n\n这是因为偶数边的反向是奇数边（0↔1, 2↔3, ...），异或 1 正好翻转最后一位。\n\n这个技巧在网络流的增广路算法中大量使用。",
+      "exampleCode": "void addFlowEdge(int u, int v, int w) {\n    to[ecnt] = v; cap[ecnt] = w; nxt[ecnt] = head[u]; head[u] = ecnt++;\n    to[ecnt] = u; cap[ecnt] = 0; nxt[ecnt] = head[v]; head[v] = ecnt++;\n}\n// 反向边：i 的反向是 i ^ 1",
+      "codeNotes": ["边成对添加", "i ^ 1 找反向边", "偶数边编号 ^ 1 = 奇数", "网络流核心技巧"],
+      "commonMistakes": [{"title": "ecnt 不从 0 或偶数开始", "description": "如果 ecnt 从 1 开始，i ^ 1 找反向边会错。", "fix": "ecnt 必须从 0 开始，确保成对边的编号是 0,1 / 2,3 / ..."}],
+      "practice": {"prompt": "写一个加网络流边的函数，正向边容量 w，反向边容量 0。", "hint": "addEdge(u,v,w) 然后 addEdge(v,u,0)", "expectedIdea": "void addFlowEdge(int u, int v, int w) {\n    to[ecnt] = v; cap[ecnt] = w; nxt[ecnt] = head[u]; head[u] = ecnt++;\n    to[ecnt] = u; cap[ecnt] = 0; nxt[ecnt] = head[v]; head[v] = ecnt++;\n}"},
+      "quiz": [{"question": "第 4 条边（编号 4）的反向边编号是？", "options": ["3", "5", "4", "0"], "answerIndex": 1, "explanation": "4 ^ 1 = 5。成对边编号为 (0,1), (2,3), (4,5)..."}]
+    },
+    {
+      "itemId": "5.5.8",
+      "title": "点编号统一",
+      "learningGoal": "学会统一图中节点的编号方式",
+      "explanation": "不同题目对节点编号方式不同：有的从 1 开始，有的从 0 开始。统一编号方式可以避免混淆。\n\n建议：如果题目是 1-indexed，数组大小开 n+1；如果是 0-indexed，数组大小开 n。内部处理时保持一致的编号体系。\n\n特别注意输入输出时的编号转换。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        // 如果输入是 1-indexed，内部也用 1-indexed\n        addEdge(u, v, 1);\n    }\n    return 0;\n}",
+      "codeNotes": ["确认题目编号方式", "统一使用一种编号体系", "数组大小适配编号", "输入输出时注意转换"],
+      "commonMistakes": [{"title": "编号体系混乱", "description": "输入是 1-indexed 但代码按 0-indexed 处理。", "fix": "确认题目后统一，要么全 0-indexed 要么全 1-indexed。"}],
+      "practice": {"prompt": "题目节点编号 1~n，写一个读入并存储邻接表的代码。", "hint": "for 循环读入 u, v，调用 addEdge(u, v, 1)", "expectedIdea": "for (int i = 0; i < m; i++) {\n    int u, v;\n    cin >> u >> v;\n    addEdge(u, v, 1);\n}"},
+      "quiz": [{"question": "节点编号 1~n 时，数组大小至少要多少？", "options": ["n", "n+1", "2n", "n-1"], "answerIndex": 1}]
+    }
+  ]
+}

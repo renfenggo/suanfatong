@@ -1,0 +1,424 @@
+{
+  "sectionId": "5.4",
+  "sectionName": "常用代码技巧",
+  "units": [
+    {
+      "itemId": "5.4.1",
+      "title": "更新最大最小值",
+      "learningGoal": "掌握用 if 或 max/min 函数更新最大最小值的标准写法",
+      "explanation": "更新最大值：if (x > maxVal) maxVal = x; 或 maxVal = max(maxVal, x);。更新最小值类似。\n\n初始化：最大值初始化为一个很小的值（如 -1e9），最小值初始化为一个很大的值（如 1e9）。也可以用第一个元素初始化。\n\n竞赛中常用 max 和 min 函数，简洁且不易出错。注意 max/min 的两个参数类型必须一致。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {3, 7, 2, 9, 1};\n    int maxVal = a[0], minVal = a[0];\n    for (int i = 1; i < 5; i++) {\n        maxVal = max(maxVal, a[i]);\n        minVal = min(minVal, a[i]);\n    }\n    cout << \"max = \" << maxVal << \", min = \" << minVal << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用第一个元素初始化最安全",
+        "max(a, b) 返回较大值",
+        "min(a, b) 返回较小值",
+        "两个参数类型必须一致"
+      ],
+      "commonMistakes": [
+        {
+          "title": "max/min 参数类型不匹配",
+          "description": "max(maxVal, a[i]) 中一个是 int 一个是 long long 会编译错误。",
+          "fix": "确保类型一致，或强制转换：max((long long)maxVal, (long long)a[i])。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个数，输出最大值和最小值。",
+        "hint": "用 max 和 min 函数更新",
+        "expectedIdea": "int n;\ncin >> n;\nint x;\ncin >> x;\nint maxV = x, minV = x;\nfor (int i = 1; i < n; i++) {\n    cin >> x;\n    maxV = max(maxV, x);\n    minV = min(minV, x);\n}\ncout << maxV << \" \" << minV << endl;"
+      },
+      "quiz": [
+        {
+          "question": "max(3, 5) 的返回值是？",
+          "options": [
+            "3",
+            "5",
+            "true",
+            "false"
+          ],
+          "answerIndex": 1,
+          "explanation": "max(a, b) 返回 a 和 b 中较大的那个，max(3, 5) = 5。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.2",
+      "title": "判奇偶",
+      "learningGoal": "掌握用取余运算判断奇偶的方法",
+      "explanation": "判断奇偶最简单的方法是用 % 2：n % 2 == 0 为偶数，n % 2 == 1（或 n % 2 != 0）为奇数。\n\n更高效的写法是位运算：n & 1 == 0 为偶数，n & 1 == 1 为奇数。但现代编译器会自动优化 % 2 为位运算，所以可读性更重要。\n\n注意：负奇数的 n % 2 在 C++ 中是 -1 而不是 1，所以用 n % 2 != 0 判断奇数更安全。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = -3; i <= 3; i++) {\n        if (i % 2 == 0) cout << i << \" 偶数\" << endl;\n        else cout << i << \" 奇数\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "n % 2 == 0 判断偶数",
+        "n % 2 != 0 判断奇数（安全写法）",
+        "n & 1 位运算判断也可以",
+        "负数注意 % 2 可能是 -1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "负奇数判断错误",
+          "description": "-3 % 2 在 C++ 中是 -1，不是 1。if (n % 2 == 1) 对负数无效。",
+          "fix": "用 n % 2 != 0 判断奇数，或取绝对值后再判断。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个整数，统计其中奇数和偶数各有多少个。",
+        "hint": "n % 2 != 0 为奇数",
+        "expectedIdea": "int n, odd = 0, even = 0;\ncin >> n;\nfor (int i = 0; i < n; i++) {\n    int x;\n    cin >> x;\n    if (x % 2 != 0) odd++;\n    else even++;\n}\ncout << odd << \" \" << even << endl;"
+      },
+      "quiz": [
+        {
+          "question": "-3 % 2 在 C++ 中的值是？",
+          "options": [
+            "1",
+            "-1",
+            "0",
+            "3"
+          ],
+          "answerIndex": 1,
+          "explanation": "C++ 中负数取余结果与被除数同号。-3 / 2 = -1，-3 % 2 = -3 - (-1)*2 = -1。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.3",
+      "title": "向上取整",
+      "learningGoal": "掌握整数除法向上取整的技巧",
+      "explanation": "C++ 整数除法默认向下取整（向零截断）。要实现向上取整，用公式 (a + b - 1) / b。\n\n原理：加上 b-1 后再除以 b，相当于给结果加了不到 1 的余数，实现了向上取整。\n\n例如 7 / 3 = 2（向下），(7 + 3 - 1) / 3 = 9 / 3 = 3（向上）。\n\n也可以用 ceil((double)a / b)，但浮点运算可能有精度问题，整数方法更可靠。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 7, b = 3;\n    cout << \"向下: \" << a / b << endl;\n    cout << \"向上: \" << (a + b - 1) / b << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "(a + b - 1) / b 向上取整",
+        "纯整数运算，无精度问题",
+        "a 能被 b 整除时结果不变",
+        "比 ceil 更可靠"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 ceil 遇到精度问题",
+          "description": "ceil((double)a / b) 在大数时可能因浮点精度出错。",
+          "fix": "使用纯整数公式 (a + b - 1) / b。"
+        }
+      ],
+      "practice": {
+        "prompt": "n 个苹果每箱装 k 个，最少需要几个箱子？",
+        "hint": "(n + k - 1) / k",
+        "expectedIdea": "int n, k;\ncin >> n >> k;\ncout << (n + k - 1) / k << endl;"
+      },
+      "quiz": [
+        {
+          "question": "(10 + 3 - 1) / 3 的结果是？",
+          "options": [
+            "3",
+            "4",
+            "3.33",
+            "3.67"
+          ],
+          "answerIndex": 1,
+          "explanation": "(10 + 2) / 3 = 12 / 3 = 4。10/3=3 余 1，向上取整为 4。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.4",
+      "title": "求中点防溢出",
+      "learningGoal": "学会用安全的方式计算两个整数的中点",
+      "explanation": "计算 (l + r) / 2 时，如果 l 和 r 都很大，l + r 可能溢出 int 范围。\n\n安全写法：l + (r - l) / 2。这个表达式的数学结果和 (l + r) / 2 相同，但不会溢出。\n\n这是二分查找中最经典的技巧之一。所有使用二分的代码都应该使用防溢出写法。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int l = 1000000000, r = 2000000000;\n    int mid = l + (r - l) / 2;\n    cout << \"mid = \" << mid << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "l + (r - l) / 2 防溢出",
+        "数学等价于 (l + r) / 2",
+        "二分查找的标准写法",
+        "r - l 不会溢出（因为 r > l）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接 (l + r) / 2 溢出",
+          "description": "l = r = 2e9 时 l + r 超过 int 最大值 2.1e9。",
+          "fix": "用 l + (r - l) / 2，或者用 long long。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个二分查找的 mid 计算语句，确保不溢出。",
+        "hint": "int mid = l + (r - l) / 2;",
+        "expectedIdea": "int mid = l + (r - l) / 2;"
+      },
+      "quiz": [
+        {
+          "question": "为什么 (l + r) / 2 可能溢出？",
+          "options": [
+            "除法会溢出",
+            "l + r 可能超过 int 范围",
+            "结果不是整数",
+            "不会溢出"
+          ],
+          "answerIndex": 1,
+          "explanation": "两个接近 INT_MAX 的 int 相加，结果超过 int 能表示的最大值，导致溢出。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.5",
+      "title": "模运算防负数",
+      "learningGoal": "学会在模运算中正确处理负数结果",
+      "explanation": "C++ 中负数取模结果仍然为负。例如 -7 % 3 = -1，而不是期望的 2。\n\n要得到非负余数，用公式 ((a % m) + m) % m。这确保结果在 0 到 m-1 之间。\n\n这在竞赛中极为常见，几乎所有涉及模运算的题目都需要这个技巧。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = -7, m = 3;\n    cout << \"直接取模: \" << a % m << endl;\n    cout << \"非负取模: \" << ((a % m) + m) % m << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "C++ 负数取模结果为负",
+        "((a % m) + m) % m 保证非负",
+        "竞赛模运算必备技巧",
+        "结果范围 0 到 m-1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接用 a % m 得到负数",
+          "description": "(-7) % 3 = -1，但题目要求结果为正。",
+          "fix": "用 ((a % m) + m) % m。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 (-13) mod 5 的非负结果。",
+        "hint": "((-13 % 5) + 5) % 5",
+        "expectedIdea": "int a = -13, m = 5;\ncout << ((a % m) + m) % m << endl;"
+      },
+      "quiz": [
+        {
+          "question": "(-7 % 3 + 3) % 3 的结果是？",
+          "options": [
+            "-1",
+            "1",
+            "2",
+            "0"
+          ],
+          "answerIndex": 2,
+          "explanation": "-7 % 3 = -1, -1 + 3 = 2, 2 % 3 = 2。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.6",
+      "title": "INF 取值",
+      "learningGoal": "学会选择合适的 INF 常量值",
+      "explanation": "INF（无穷大）常用于初始化最小值、表示不可达状态等。取值要足够大，但不能大到溢出。\n\n常用值：int 范围用 0x3f3f3f3f（约 10^9）或 1e9 + 7；long long 用 0x3f3f3f3f3f3f3f3f 或 4e18。\n\n0x3f3f3f3f 的好处：两个 INF 相加不会溢出 int；memset 可以一次性设置。\n\n注意不要用 INT_MAX（2147483647），因为加法会溢出。",
+      "exampleCode": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nconst int INF = 0x3f3f3f3f;\n\nint main() {\n    int dist[100];\n    memset(dist, 0x3f, sizeof(dist));\n    cout << \"INF = \" << INF << endl;\n    cout << \"2 * INF = \" << 2 * INF << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "0x3f3f3f3f 约 10^9，常用 INF 值",
+        "两个 INF 相加不溢出",
+        "memset(dist, 0x3f, ...) 批量设置",
+        "不用 INT_MAX 避免溢出"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 INT_MAX 做加法溢出",
+          "description": "INT_MAX + INT_MAX 超出 int 范围，变成负数。",
+          "fix": "用 0x3f3f3f3f，两个相加约为 2e9，仍在 int 范围内。"
+        }
+      ],
+      "practice": {
+        "prompt": "定义一个 int 数组 dist[10]，用 memset 初始化为 INF，然后输出验证。",
+        "hint": "const int INF = 0x3f3f3f3f; memset(dist, 0x3f, sizeof(dist));",
+        "expectedIdea": "const int INF = 0x3f3f3f3f;\nint dist[10];\nmemset(dist, 0x3f, sizeof(dist));\nfor (int i = 0; i < 10; i++) cout << dist[i] << \" \";\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "为什么推荐用 0x3f3f3f3f 而不是 INT_MAX 做 INF？",
+          "options": [
+            "0x3f3f3f3f 更大",
+            "两个 0x3f3f3f3f 相加不溢出",
+            "INT_MAX 不够大",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "0x3f3f3f3f 约 10^6 数量级，两个相加约 2×10^9 不溢出。INT_MAX + INT_MAX 会溢出。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.7",
+      "title": "哨兵",
+      "learningGoal": "理解哨兵元素的概念和用途",
+      "explanation": "哨兵是在数组边界放置的特殊值，用于简化边界判断。例如在数组末尾放一个极大值，循环时不需要单独判断是否到了末尾。\n\n常见用途：在字符串末尾的 '\\0' 就是哨兵；数组末尾放 -1 或 INF 表示结束。\n\n使用哨兵可以减少条件判断，让代码更简洁。但要注意哨兵值不能和正常数据混淆。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[6] = {3, 7, 2, 9, 1, -1};\n    int maxVal = a[0];\n    for (int i = 1; a[i] != -1; i++) {\n        maxVal = max(maxVal, a[i]);\n    }\n    cout << \"max = \" << maxVal << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "末尾 -1 是哨兵，表示数组结束",
+        "循环条件用哨兵判断",
+        "减少单独的边界判断",
+        "哨兵值不能和正常数据冲突"
+      ],
+      "commonMistakes": [
+        {
+          "title": "哨兵值与正常数据冲突",
+          "description": "用 -1 做哨兵但数组中可能有 -1。",
+          "fix": "选择一个不可能出现在正常数据中的值作为哨兵。"
+        }
+      ],
+      "practice": {
+        "prompt": "用哨兵方法遍历数组并求和，数组末尾用 0 作为哨兵。",
+        "hint": "for (int i = 0; a[i] != 0; i++) sum += a[i];",
+        "expectedIdea": "int a[] = {3, 7, 2, 9, 0};\nint sum = 0;\nfor (int i = 0; a[i] != 0; i++) {\n    sum += a[i];\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "哨兵的主要作用是什么？",
+          "options": [
+            "加速数组访问",
+            "简化边界判断",
+            "增加数组大小",
+            "排序数组"
+          ],
+          "answerIndex": 1,
+          "explanation": "哨兵通过在边界放置特殊值，让循环不需要额外的边界条件判断。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.8",
+      "title": "滚动数组",
+      "learningGoal": "理解滚动数组的概念，学会用取模实现空间优化",
+      "explanation": "当 DP 转移只依赖前一层或前几层时，不需要保留所有层的数据。用滚动数组只保留需要的那几层。\n\n实现方法：用 dp[cur][...] 和 dp[pre][...] 交替使用，cur = cur ^ 1 切换。或者用取模 dp[i % 2][...]。\n\n空间复杂度从 O(n × m) 降到 O(m)，节省大量内存。在数据范围大、内存紧张的题目中特别重要。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 5;\n    int dp[2][10] = {};\n    dp[0][0] = 1;\n    for (int i = 1; i <= n; i++) {\n        int cur = i % 2;\n        int pre = 1 - cur;\n        for (int j = 0; j < 10; j++) {\n            dp[cur][j] = dp[pre][j] + (j > 0 ? dp[pre][j-1] : 0);\n        }\n    }\n    cout << dp[n % 2][5] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "i % 2 交替使用两层",
+        "pre 是上一层，cur 是当前层",
+        "空间从 O(n) 降到 O(1)",
+        "适用于只依赖前一层的 DP"
+      ],
+      "commonMistakes": [
+        {
+          "title": "滚动方向错误",
+          "description": "内层循环方向不对，导致覆盖了还需要的数据。",
+          "fix": "如果当前层依赖前一层的左边值，内层应从右往左遍历。"
+        }
+      ],
+      "practice": {
+        "prompt": "用滚动数组计算斐波那契数列第 n 项（n ≤ 1000000）。",
+        "hint": "dp[i % 2] = dp[(i-1) % 2] + dp[(i-2) % 2]",
+        "expectedIdea": "int n;\ncin >> n;\nint f[2] = {0, 1};\nfor (int i = 2; i <= n; i++) {\n    f[i % 2] = f[(i-1) % 2] + f[(i-2) % 2];\n}\ncout << f[n % 2] << endl;"
+      },
+      "quiz": [
+        {
+          "question": "滚动数组主要优化什么？",
+          "options": [
+            "时间复杂度",
+            "空间复杂度",
+            "代码可读性",
+            "运行稳定性"
+          ],
+          "answerIndex": 1,
+          "explanation": "滚动数组通过只保留必要的数据层，将空间复杂度从 O(n) 降到 O(1) 或 O(常数)。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.9",
+      "title": "离散化写法",
+      "learningGoal": "掌握离散化的基本实现方法",
+      "explanation": "离散化是将大范围的值映射到小范围下标的技术。当数据值域很大但实际使用的值很少时，离散化可以节省空间。\n\n基本步骤：收集所有需要离散化的值 → 排序 → 去重 → 用 lower_bound 查找映射后的下标。\n\n常用于坐标压缩、树状数组/线段树等数据结构的预处理。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    vector<int> vals = {100, 50, 200, 50, 100};\n    sort(vals.begin(), vals.end());\n    vals.erase(unique(vals.begin(), vals.end()), vals.end());\n    for (int i = 0; i < vals.size(); i++) {\n        cout << vals[i] << \" -> \" << i << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "排序 → 去重 → 二分查找映射",
+        "unique 去重（需先排序）",
+        "lower_bound 查找映射下标",
+        "值域大但值少时使用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记先排序",
+          "description": "unique 只去除相邻的重复元素，不排序无法完全去重。",
+          "fix": "先 sort 再 unique。"
+        }
+      ],
+      "practice": {
+        "prompt": "将数组 {1000, 500, 2000, 500, 1000} 离散化，输出原始值和映射后的下标。",
+        "hint": "sort → unique → lower_bound",
+        "expectedIdea": "int a[] = {1000, 500, 2000, 500, 1000};\nvector<int> v(a, a + 5);\nsort(v.begin(), v.end());\nv.erase(unique(v.begin(), v.end()), v.end());\nfor (int i = 0; i < 5; i++) {\n    int idx = lower_bound(v.begin(), v.end(), a[i]) - v.begin();\n    cout << a[i] << \" -> \" << idx << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "离散化的三个步骤顺序是？",
+          "options": [
+            "去重 → 排序 → 查找",
+            "排序 → 去重 → 查找",
+            "查找 → 排序 → 去重",
+            "排序 → 查找 → 去重"
+          ],
+          "answerIndex": 1,
+          "explanation": "先排序（让相同值相邻），再去重（去除重复），最后用二分查找映射到下标。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.10",
+      "title": "排序后去重",
+      "learningGoal": "掌握 sort + unique 去重的标准写法",
+      "explanation": "STL 的 unique 函数将相邻的重复元素移到末尾，返回去重后的逻辑终点。配合 sort 使用可以完全去重。\n\n标准写法：sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());\n\nunique 不删除元素，只是把重复的移到后面。erase 真正删除末尾的重复元素。\n\n时间复杂度 O(n log n)。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    vector<int> v = {3, 1, 4, 1, 5, 3, 9};\n    sort(v.begin(), v.end());\n    v.erase(unique(v.begin(), v.end()), v.end());\n    for (int x : v) cout << x << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "sort 先排序",
+        "unique 去除相邻重复",
+        "erase 真正删除末尾多余元素",
+        "三步组合是标准去重写法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只调 unique 不调 erase",
+          "description": "unique 不改变 vector 大小，重复元素仍在末尾。",
+          "fix": "必须配合 erase：v.erase(unique(...), v.end());"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个数，输出去重后的个数和结果。",
+        "hint": "sort → unique → erase",
+        "expectedIdea": "int n;\ncin >> n;\nvector<int> v(n);\nfor (int i = 0; i < n; i++) cin >> v[i];\nsort(v.begin(), v.end());\nv.erase(unique(v.begin(), v.end()), v.end());\ncout << v.size() << endl;\nfor (int x : v) cout << x << \" \";"
+      },
+      "quiz": [
+        {
+          "question": "unique 函数的作用是什么？",
+          "options": [
+            "删除所有重复元素",
+            "将相邻重复元素移到末尾，返回新逻辑终点",
+            "对数组排序",
+            "查找重复元素"
+          ],
+          "answerIndex": 1,
+          "explanation": "unique 只处理相邻的重复元素，把它们移到末尾，返回去重后的终点迭代器。需要先排序才能完全去重。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.4.11",
+      "title": "pair / 结构体排序",
+      "learningGoal": "学会对 pair 和自定义结构体进行排序",
+      "explanation": "pair 默认按 first 排序，first 相同按 second 排序。这在多关键字排序时非常方便。\n\n对于自定义结构体，可以重载 < 运算符，或者给 sort 传自定义比较函数。\n\n竞赛中常用 vector<pair<int,int>> 存储带权边、坐标对等，直接 sort 即可按第一关键字排序。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    vector<pair<int, int>> v = {{3, 2}, {1, 5}, {3, 1}};\n    sort(v.begin(), v.end());\n    for (auto& p : v) {\n        cout << \"(\" << p.first << \",\" << p.second << \") \";\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "pair 默认按 first 再按 second 排序",
+        "用 .first 和 .second 访问成员",
+        "自定义结构体重载 < 运算符",
+        "或给 sort 传比较函数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "排序顺序不对",
+          "description": "需要按 second 排序但默认按 first 排序。",
+          "fix": "自定义比较函数：sort(v.begin(), v.end(), [](auto& a, auto& b) { return a.second < b.second; });"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个学生的姓名和分数，按分数从高到低排序后输出。",
+        "hint": "用 pair<int, string> 存分数和姓名，自定义比较函数",
+        "expectedIdea": "int n;\ncin >> n;\nvector<pair<int, string>> v(n);\nfor (int i = 0; i < n; i++) cin >> v[i].second >> v[i].first;\nsort(v.begin(), v.end(), greater<pair<int,string>>());\nfor (auto& p : v) cout << p.second << \" \" << p.first << endl;"
+      },
+      "quiz": [
+        {
+          "question": "pair<int,int> 默认排序规则是？",
+          "options": [
+            "只按 first 排序",
+            "先按 first，first 相同按 second",
+            "只按 second 排序",
+            "按 first + second 的和排序"
+          ],
+          "answerIndex": 1,
+          "explanation": "pair 的字典序比较：先比 first，first 相同再比 second。"
+        }
+      ]
+    }
+  ]
+}

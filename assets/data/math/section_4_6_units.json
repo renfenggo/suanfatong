@@ -1,0 +1,546 @@
+{
+  "sectionId": "4.6",
+  "sectionName": "概率与期望",
+  "units": [
+    {
+      "itemId": "4.6.1",
+      "title": "有限离散概率",
+      "learningGoal": "理解样本空间、事件的基本概念，掌握概率的定义 P(A)=|A|/|S|，能在有限离散场景中计算概率",
+      "explanation": "【样本空间】\n一个随机试验的所有可能结果构成的集合，记为 S（或 Ω）。\n例如：掷一枚骰子，样本空间 S = {1, 2, 3, 4, 5, 6}。\n\n【事件】\n样本空间的一个子集称为事件。\n例如：掷骰子「掷出偶数」是事件 A = {2, 4, 6}。\n\n【概率的定义】\n对于有限样本空间 S，如果每个基本事件等可能，则事件 A 的概率为：\n  P(A) = |A| / |S|\n其中 |A| 是事件 A 包含的基本事件数，|S| 是样本空间大小。\n\n【概率的基本性质】\n1. 对任意事件 A，0 ≤ P(A) ≤ 1\n2. P(S) = 1（必然事件概率为 1）\n3. P(∅) = 0（不可能事件概率为 0）\n4. 对立事件：P(Ā) = 1 - P(A)\n5. 加法公式：P(A∪B) = P(A) + P(B) - P(A∩B)\n\n【信奥中的应用】\n- 用代码枚举样本空间计算概率\n- 利用对立事件简化计算\n- 组合计数与概率结合",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 掷两枚骰子，求点数之和为 7 的概率\n    int favorable = 0, total = 0;\n    for (int i = 1; i <= 6; i++) {\n        for (int j = 1; j <= 6; j++) {\n            total++;\n            if (i + j == 7) {\n                favorable++;\n            }\n        }\n    }\n    cout << \"总情况数: \" << total << endl;\n    cout << \"有利情况数: \" << favorable << endl;\n    cout << \"概率: \" << favorable << \"/\" << total;\n    cout << \" = \" << (double)favorable / total << endl;\n\n    // 利用对立事件：至少一枚为 6 的概率\n    int noneSix = 0;\n    for (int i = 1; i <= 6; i++)\n        for (int j = 1; j <= 6; j++)\n            if (i != 6 && j != 6) noneSix++;\n    double pAtLeastOneSix = 1.0 - (double)noneSix / total;\n    cout << \"至少一枚为6的概率: \" << pAtLeastOneSix << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "枚举法是最直接的计算方式：遍历所有可能，统计有利情况数",
+        "求\"至少一个\"的概率时，用对立事件 1-P(都不满足) 更方便",
+        "整数除法要强转为 double 才能得到小数结果",
+        "total 是样本空间大小 |S|，favorable 是事件大小 |A|"
+      ],
+      "commonMistakes": [
+        {
+          "title": "整数除法丢失精度",
+          "description": "计算概率时直接用 favorable/total，两个 int 相除结果仍为 int，概率变成 0",
+          "fix": "至少把其中一个转为 double，如 (double)favorable/total 或 favorable*1.0/total"
+        },
+        {
+          "title": "样本空间不完整",
+          "description": "枚举时遗漏了某些情况，导致 |S| 计算错误",
+          "fix": "仔细检查是否覆盖所有可能结果，可以用排列组合公式验证总数是否正确"
+        }
+      ],
+      "practice": {
+        "prompt": "掷三枚骰子，求三枚骰子点数之和大于 15 的概率。输出分子和分母（最简分数）。提示：可以用三重循环枚举所有情况。",
+        "hint": "三枚骰子总共有 6×6×6=216 种情况，用三重循环统计点数之和 > 15 的情况数，然后约分。",
+        "expectedIdea": "用三重循环枚举所有 216 种情况，统计 sum>15 的情况数，用 gcd 约分后输出"
+      },
+      "quiz": [
+        {
+          "question": "掷两枚骰子，点数之和为 7 的概率是多少？",
+          "options": [
+            "1/6",
+            "5/36",
+            "7/36",
+            "1/9"
+          ],
+          "answerIndex": 0,
+          "explanation": "和为7的情况有 (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) 共6种，总36种，概率 = 6/36 = 1/6"
+        },
+        {
+          "question": "从 {1,2,3,...,100} 中随机取一个数，它是 3 的倍数的概率是？",
+          "options": [
+            "33/100",
+            "1/3",
+            "34/100",
+            "32/100"
+          ],
+          "answerIndex": 0,
+          "explanation": "1到100中3的倍数有 3,6,9,...,99 共33个，概率 = 33/100"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.2",
+      "title": "古典概型",
+      "learningGoal": "理解古典概型的两个条件（有限性、等可能性），掌握排列组合在概率计算中的应用",
+      "explanation": "【古典概型的定义】\n一个概率模型满足以下两个条件就是古典概型：\n1. 有限性：样本空间中基本事件数有限\n2. 等可能性：每个基本事件发生的概率相等\n\n在古典概型中：P(A) = |A| / |S| = A 包含的基本事件数 / 总基本事件数\n\n【排列与组合】\n排列数：A(n,m) = n! / (n-m)!\n组合数：C(n,m) = n! / (m! × (n-m)!)\n\nC(n,m) 的性质：\n- C(n,0) = C(n,n) = 1\n- C(n,m) = C(n,n-m)\n- C(n,m) = C(n-1,m-1) + C(n-1,m)（杨辉三角）\n\n【常见场景】\n1. 掷骰子：6 个等可能结果\n2. 抽扑克牌：52 张牌等可能\n3. 从 n 个人中选 m 个：C(n,m) 种\n4. 排列问题：全排列 n! 种\n\n【信奥竞赛中的应用】\n- 用组合数计算有利事件数\n- 需要预处理阶乘和逆元来高效计算组合数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nlong long C(int n, int m) {\n    if (m > n - m) m = n - m;\n    long long result = 1;\n    for (int i = 0; i < m; i++) {\n        result = result * (n - i) / (i + 1);\n    }\n    return result;\n}\n\nint main() {\n    // 从52张扑克牌中抽5张，求恰好3张是红心的概率\n    long long favorable = C(13, 3) * C(39, 2);\n    long long total = C(52, 5);\n    cout << \"有利情况数: \" << favorable << endl;\n    cout << \"总情况数: \" << total << endl;\n    cout << \"概率约为: \" << (double)favorable / total << endl;\n\n    // 10个人中选3个人组成委员会，甲和乙都在委员会的概率\n    long long fav2 = C(8, 1); // 甲乙已选，再从剩余8人选1个\n    long long total2 = C(10, 3);\n    cout << \"甲乙都在的概率: \" << (double)fav2 / total2 << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "C(n,m) 计算组合数，利用 C(n,m)=C(n,n-m) 优化循环次数",
+        "先乘后除可以避免中间结果出现小数：result*(n-i)/(i+1)",
+        "扑克牌问题中红心13张、非红心39张，分别选再相乘",
+        "古典概型的关键是正确计算有利事件数和总事件数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "排列与组合混淆",
+          "description": "题目不要求顺序时用了排列数，或者要求顺序时用了组合数",
+          "fix": "仔细审题：选人/分组不关心顺序用 C，排队/排列关心顺序用 A"
+        },
+        {
+          "title": "组合数计算溢出",
+          "description": "直接用阶乘计算 C(n,m) 时中间结果溢出 long long",
+          "fix": "使用递推或边乘边除的方式计算，避免先算大阶乘再相除"
+        }
+      ],
+      "practice": {
+        "prompt": "袋中有 5 个红球和 3 个蓝球，随机取出 4 个球。求恰好取出 2 个红球和 2 个蓝球的概率（输出最简分数）。",
+        "hint": "有利事件数 = C(5,2)×C(3,2)，总事件数 = C(8,4)，然后约分。",
+        "expectedIdea": "分别计算有利事件数 C(5,2)*C(3,2)=30 和总事件数 C(8,4)=70，用 gcd 约分得到 3/7"
+      },
+      "quiz": [
+        {
+          "question": "从52张扑克牌中随机抽1张，抽到红心（Heart）的概率是？",
+          "options": [
+            "1/52",
+            "1/13",
+            "1/4",
+            "1/2"
+          ],
+          "answerIndex": 2,
+          "explanation": "52张牌分4种花色各13张，红心13张，概率 = 13/52 = 1/4"
+        },
+        {
+          "question": "10个人随机站成一排，甲站在正中间（第5个位置）的概率是？",
+          "options": [
+            "1/10",
+            "1/5",
+            "1/2",
+            "1/4"
+          ],
+          "answerIndex": 0,
+          "explanation": "10个位置等可能，甲站在每个位置的概率都是 1/10"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.3",
+      "title": "条件概率",
+      "learningGoal": "理解条件概率的定义 P(A|B)=P(A∩B)/P(B)，掌握条件概率的计算方法和实际应用",
+      "explanation": "【条件概率的定义】\n在事件 B 已经发生的条件下，事件 A 发生的概率称为条件概率：\n  P(A|B) = P(A∩B) / P(B)\n其中 P(B) > 0。\n\n【直观理解】\n条件概率就是把样本空间从 S 缩小到了 B。\n在 B 的范围内看 A 发生的比例。\n\n【乘法公式】\n由条件概率可以推出：\n  P(A∩B) = P(B) × P(A|B)\n也写作：P(A∩B) = P(A) × P(B|A)\n\n【常见应用】\n1. 不放回抽取问题\n2. 已知部分信息后更新概率\n3. 串联事件的概率计算\n\n【信奥竞赛场景】\n- 不放回摸球问题\n- 信息更新问题\n- 与全概率公式、贝叶斯公式结合使用",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 袋中有3个红球和2个蓝球，不放回取2个\n    // 求：第2个是红球的前提下，第1个也是红球的概率\n    // P(第1个红 | 第2个红) = P(两个都红) / P(第2个红)\n\n    int red = 3, blue = 2, total = 5;\n\n    double pBothRed = (double)(red * (red - 1)) / (total * (total - 1));\n    cout << \"P(两个都红): \" << pBothRed << endl;\n\n    double pSecondRed = (double)red / total;\n    cout << \"P(第2个红): \" << pSecondRed << endl;\n\n    double pFirstRedGivenSecond = pBothRed / pSecondRed;\n    cout << \"P(第1个红|第2个红): \" << pFirstRedGivenSecond << endl;\n\n    // 直接验证：第2个是红球的情况\n    // 第2个红时，相当于从4个球(取决于第1个取了什么)中看第1个\n    // 第2个红说明剩下4个球中3红1蓝(如果第1个蓝)或2红2蓝(如果第1个红)\n    // P(第1红且第2红) = 3/5 * 2/4 = 6/20 = 3/10\n    // P(第2红) = 3/5（对称性）\n    // P(第1红|第2红) = 3/10 / 3/5 = 1/2\n    cout << \"验证: \" << (double)(3 * 2) / (5 * 4) / ((double)3 / 5) << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "P(A|B) = P(A∩B)/P(B)，注意分母 P(B) 必须大于 0",
+        "不放回抽取问题中，条件概率可以简化计算过程",
+        "利用对称性可以快速判断某些概率，如两次抽取的概率相同",
+        "乘法公式 P(A∩B)=P(A)×P(B|A) 用于计算\"都发生\"的概率"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆 P(A|B) 和 P(A∩B)",
+          "description": "混淆条件概率和联合概率，把\"在B条件下A的概率\"当成\"A和B同时发生的概率\"",
+          "fix": "P(A|B) 是在 B 已发生的前提下 A 的概率，值通常比 P(A∩B) 大，因为 P(A|B)=P(A∩B)/P(B)"
+        },
+        {
+          "title": "忽略不放回的影响",
+          "description": "不放回抽取时第二次的概率受第一次结果影响，误当作独立事件处理",
+          "fix": "不放回抽取必须用条件概率，第二次的概率取决于第一次取走了什么"
+        }
+      ],
+      "practice": {
+        "prompt": "袋中有 4 个红球和 6 个蓝球，不放回依次取 3 个球。已知第 1 个是红球的条件下，求第 3 个也是红球的概率。",
+        "hint": "P(第3红 | 第1红) = P(第1红且第3红) / P(第1红)。P(第1红且第3红) 可以用枚举中间球来计算。",
+        "expectedIdea": "P(第1红)=4/10=2/5。第1红后剩3红6蓝共9个。P(第1红且第3红)=P(第1红)×P(第3红|第1红)。枚举第2个球的颜色来计算。"
+      },
+      "quiz": [
+        {
+          "question": "P(A|B) 的定义是什么？",
+          "options": [
+            "P(A)×P(B)",
+            "P(A∩B)/P(B)",
+            "P(A∪B)/P(B)",
+            "P(A∩B)×P(B)"
+          ],
+          "answerIndex": 1,
+          "explanation": "条件概率 P(A|B) = P(A∩B)/P(B)，即在 B 发生条件下 A 发生的概率"
+        },
+        {
+          "question": "袋中有3红2蓝共5个球，不放回取2个。已知第1个是红球，第2个也是红球的概率？",
+          "options": [
+            "2/5",
+            "2/4",
+            "3/5",
+            "1/2"
+          ],
+          "answerIndex": 1,
+          "explanation": "第1个取走红球后，剩2红2蓝共4个球，第2个取红球的概率 = 2/4 = 1/2"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.4",
+      "title": "数学期望",
+      "learningGoal": "理解数学期望的定义 E(X)=Σx_i×P(x_i)，掌握期望的计算方法，理解期望的实际含义",
+      "explanation": "【数学期望的定义】\n设离散随机变量 X 的取值为 x₁, x₂, ..., xₙ，对应的概率为 P(x₁), P(x₂), ..., P(xₙ)，则：\n  E(X) = Σ xᵢ × P(xᵢ) = x₁P(x₁) + x₂P(x₂) + ... + xₙP(xₙ)\n\n期望表示随机变量的「平均值」，是长期实验的理论平均。\n\n【基本例子】\n掷一枚公平骰子，点数 X 的期望：\nE(X) = 1×(1/6) + 2×(1/6) + 3×(1/6) + 4×(1/6) + 5×(1/6) + 6×(1/6)\n     = (1+2+3+4+5+6)/6 = 21/6 = 3.5\n\n【期望的性质】\n1. E(c) = c（常数的期望是常数本身）\n2. E(cX) = c×E(X)（常数可以提出）\n3. E(X+c) = E(X) + c\n4. E(X+Y) = E(X) + E(Y)（线性性）\n5. 若 X,Y 独立，则 E(XY) = E(X)×E(Y)\n\n【信奥竞赛中的应用】\n- 计算游戏的期望收益\n- 期望DP\n- 期望值作为决策依据",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 掷骰子的期望\n    double e = 0;\n    for (int i = 1; i <= 6; i++) {\n        e += i * (1.0 / 6);\n    }\n    cout << \"骰子点数的期望: \" << e << endl;\n\n    // 掷两枚骰子，点数之和的期望\n    double e2 = 0;\n    for (int i = 1; i <= 6; i++) {\n        for (int j = 1; j <= 6; j++) {\n            e2 += (i + j) * (1.0 / 36);\n        }\n    }\n    cout << \"两枚骰子之和的期望: \" << e2 << endl;\n    cout << \"验证（用线性性）: \" << 2 * e << endl;\n\n    // 彩票问题：100张彩票，1张中奖1000元，每张5元\n    // 买一张的期望收益\n    double winProb = 1.0 / 100;\n    double expectGain = 1000 * winProb + 0 * (1 - winProb);\n    double cost = 5;\n    cout << \"期望奖金: \" << expectGain << \" 元\" << endl;\n    cout << \"期望净收益: \" << expectGain - cost << \" 元\" << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "E(X) = Σ xᵢ × P(xᵢ)，每个取值乘以对应的概率再求和",
+        "骰子期望 = 3.5，注意期望不一定是某个可能的取值",
+        "两枚骰子之和的期望 = E(X₁)+E(X₂) = 3.5+3.5 = 7（线性性）",
+        "期望净收益为负说明长期来看买彩票是亏的"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆期望和最可能值",
+          "description": "认为期望值一定是最可能出现的值，但骰子期望 3.5 根本不是可能的点数",
+          "fix": "期望是理论平均值，不是众数（最可能值），也不是中位数"
+        },
+        {
+          "title": "期望计算遗漏情况",
+          "description": "计算期望时遗漏了某些取值（尤其是取值为 0 的情况）",
+          "fix": "确保所有可能取值都包含在求和中，包括概率不为零但取值为零的情况"
+        }
+      ],
+      "practice": {
+        "prompt": "一个转盘分成4个区域，分别标有数字 10、20、30、40，对应的角度分别为 90°、60°、120°、90°。转动转盘，求指针指向数字的期望值。",
+        "hint": "每个区域的概率 = 该区域角度/360°，然后按 E(X)=Σxᵢ×P(xᵢ) 计算。",
+        "expectedIdea": "P(10)=90/360=1/4, P(20)=60/360=1/6, P(30)=120/360=1/3, P(40)=90/360=1/4，期望 = 10×1/4+20×1/6+30×1/3+40×1/4"
+      },
+      "quiz": [
+        {
+          "question": "掷一枚公平骰子，点数的期望值是多少？",
+          "options": [
+            "3",
+            "3.5",
+            "4",
+            "3或4"
+          ],
+          "answerIndex": 1,
+          "explanation": "E(X) = (1+2+3+4+5+6)/6 = 21/6 = 3.5"
+        },
+        {
+          "question": "关于数学期望，下列说法正确的是？",
+          "options": [
+            "期望一定是某个可能的取值",
+            "期望等于众数",
+            "期望是随机变量的理论平均值",
+            "期望等于中位数"
+          ],
+          "answerIndex": 2,
+          "explanation": "数学期望 E(X)=ΣxᵢP(xᵢ) 是随机变量的理论平均值，它不一定等于任何可能的取值"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.5",
+      "title": "期望的线性性",
+      "learningGoal": "掌握期望的线性性质 E(X+Y)=E(X)+E(Y)，理解在竞赛中如何利用线性性简化期望计算",
+      "explanation": "【期望的线性性】\n对于任意两个随机变量 X 和 Y（无论是否独立）：\n  E(X + Y) = E(X) + E(Y)\n  E(cX) = c × E(X)\n\n推广到 n 个随机变量：\n  E(X₁ + X₂ + ... + Xₙ) = E(X₁) + E(X₂) + ... + E(Xₙ)\n\n【重要说明】\n线性性不要求 X 和 Y 独立！这是最强大的性质。\n即使 X 和 Y 有相关性，期望仍然可以分开相加。\n\n【指示变量技巧】\n设 Iᵢ 表示「第 i 个事件是否发生」（0 或 1），则：\n  总数 = I₁ + I₂ + ... + Iₙ\n  E(总数) = E(I₁) + E(I₂) + ... + E(Iₙ) = P₁ + P₂ + ... + Pₙ\n其中 Pᵢ = E(Iᵢ) = 第 i 个事件发生的概率。\n\n这是信奥竞赛中最常用的期望技巧！\n\n【竞赛典型应用】\n1. 随机排列中固定点的期望个数\n2. 随机图中某种子图的期望个数\n3. 随机游走的期望步数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // n个人随机排列，求固定点（位置不变的人）的期望个数\n    int n = 10;\n\n    // 方法：指示变量\n    // I_i = 1 如果第i个人在第i个位置\n    // P(I_i=1) = 1/n（第i个位置等可能放任何一个人）\n    // E(固定点数) = ΣE(I_i) = n × (1/n) = 1\n    double eFixPoint = 0;\n    for (int i = 1; i <= n; i++) {\n        eFixPoint += 1.0 / n;\n    }\n    cout << \"固定点期望个数: \" << eFixPoint << endl;\n\n    // n条线段，随机选两条，求交点数的期望\n    // I_ij = 1 如果线段i和线段j相交\n    // E(交点数) = Σ E(I_ij)\n    // 对每对(i,j)，P(相交) 取决于具体问题\n    int lines = 5;\n    double pIntersect = 0.3;\n    int pairs = lines * (lines - 1) / 2;\n    double eCross = pairs * pIntersect;\n    cout << \"交点期望数: \" << eCross << endl;\n\n    // 掷n枚骰子，点数之和的期望\n    int dice = 5;\n    double eSum = dice * 3.5;\n    cout << dice << \"枚骰子之和的期望: \" << eSum << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "期望线性性不要求变量独立，这是它最强大的地方",
+        "指示变量技巧：把计数问题拆成每个元素的贡献之和",
+        "随机排列中固定点的期望永远是1，与n无关",
+        "求复杂期望时，先拆成简单部分分别求期望再相加"
+      ],
+      "commonMistakes": [
+        {
+          "title": "误以为 E(XY) = E(X)×E(Y) 总成立",
+          "description": "E(XY) = E(X)×E(Y) 只有在 X 和 Y 独立时才成立，而线性性 E(X+Y)=E(X)+E(Y) 总是成立",
+          "fix": "区分线性性（总是成立）和乘法分解（需要独立）。求和用线性性，乘积需要独立"
+        },
+        {
+          "title": "不会拆分复杂期望",
+          "description": "面对复杂的期望问题不知道如何下手，试图直接枚举所有情况",
+          "fix": "用指示变量拆分：把总数写成若干个 0/1 变量之和，然后对每个单独求期望"
+        }
+      ],
+      "practice": {
+        "prompt": "n 个人把自己的帽子混在一起后随机拿一顶。求恰好拿到自己帽子的人数的期望。",
+        "hint": "定义指示变量 I_i=1 表示第 i 个人拿到自己的帽子，则总人数=ΣI_i，E(总数)=ΣE(I_i)=ΣP(I_i=1)。",
+        "expectedIdea": "第i个人拿到自己帽子的概率是 1/n，所以期望 = n×(1/n) = 1"
+      },
+      "quiz": [
+        {
+          "question": "E(X+Y) = E(X)+E(Y) 需要什么条件？",
+          "options": [
+            "X和Y必须独立",
+            "X和Y必须同分布",
+            "不需要任何条件",
+            "X和Y必须不相关"
+          ],
+          "answerIndex": 2,
+          "explanation": "期望的线性性 E(X+Y)=E(X)+E(Y) 对任意两个随机变量都成立，不需要独立性"
+        },
+        {
+          "question": "100个人随机排列，固定点（第i个人在第i个位置）的期望个数是？",
+          "options": [
+            "0",
+            "1",
+            "10",
+            "50"
+          ],
+          "answerIndex": 1,
+          "explanation": "每个人在自己位置的概率是 1/100，由线性性期望 = 100×(1/100) = 1"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.6",
+      "title": "全概率公式",
+      "learningGoal": "理解全概率公式 P(A)=ΣP(Bᵢ)P(A|Bᵢ)，掌握用划分来计算复杂概率的方法",
+      "explanation": "【全概率公式】\n设 B₁, B₂, ..., Bₙ 是样本空间的一个划分（两两互斥且并集为全集），则对任意事件 A：\n  P(A) = Σ P(Bᵢ) × P(A|Bᵢ)\n\n即：P(A) = P(B₁)P(A|B₁) + P(B₂)P(A|B₂) + ... + P(Bₙ)P(A|Bₙ)\n\n【直观理解】\n把 A 发生的概率拆成：在每种情况下 A 发生的概率，按各种情况的概率加权求和。\n就像加权平均一样。\n\n【划分的条件】\n1. Bᵢ 两两互斥：Bᵢ ∩ Bⱼ = ∅（i≠j）\n2. 完备性：B₁ ∪ B₂ ∪ ... ∪ Bₙ = S\n\n【常见划分方式】\n1. 按条件分类：如按天气分（晴/阴/雨）\n2. 按来源分类：如按工厂分（甲厂/乙厂/丙厂）\n3. 二分法：B 和 B̄（互补）\n\n【信奥竞赛场景】\n- 多阶段决策的概率计算\n- 作为贝叶斯公式的前置步骤\n- 分情况讨论的概率问题",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 三个工厂生产零件：\n    // 甲厂产量占50%，次品率2%\n    // 乙厂产量占30%，次品率3%\n    // 丙厂产量占20%，次品率5%\n    // 求任取一个零件是次品的概率\n\n    double pA = 0.50, defectA = 0.02;\n    double pB = 0.30, defectB = 0.03;\n    double pC = 0.20, defectC = 0.05;\n\n    double pDefect = pA * defectA + pB * defectB + pC * defectC;\n    cout << \"次品概率: \" << pDefect << endl;\n    cout << \"即 \" << pDefect * 100 << \"%\" << endl;\n\n    // 天气问题：\n    // 晴天概率0.6，雨天概率0.3，阴天概率0.1\n    // 晴天迟到的概率0.1，雨天0.3，阴天0.2\n    // 求迟到的概率\n    double pSunny = 0.6,  lateSunny = 0.1;\n    double pRainy = 0.3,  lateRainy = 0.3;\n    double pCloudy = 0.1, lateCloudy = 0.2;\n\n    double pLate = pSunny * lateSunny + pRainy * lateRainy + pCloudy * lateCloudy;\n    cout << \"迟到概率: \" << pLate << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "全概率公式 = 各情况概率 × 该情况下A发生的概率，加权求和",
+        "划分条件：各 Bi 互斥且覆盖全部情况",
+        "最常见的二分划分：P(A)=P(B)P(A|B)+P(B̄)P(A|B̄)",
+        "全概率公式是贝叶斯公式的分母部分"
+      ],
+      "commonMistakes": [
+        {
+          "title": "划分不完整",
+          "description": "列出的情况没有覆盖所有可能，导致概率之和不等于 1",
+          "fix": "检查所有 Bi 的概率之和是否等于 1，确保没有遗漏情况"
+        },
+        {
+          "title": "混淆条件概率方向",
+          "description": "把 P(A|Bᵢ) 和 P(Bᵢ|A) 搞混",
+          "fix": "P(A|Bᵢ) 是在 Bᵢ 发生条件下 A 发生的概率，注意谁是条件谁是事件"
+        }
+      ],
+      "practice": {
+        "prompt": "某学校有甲乙丙三个班，人数分别为 40、35、25 人。甲班及格率 90%，乙班 80%，丙班 70%。随机抽一个学生，求该学生及格的概率。",
+        "hint": "用全概率公式：P(及格)=P(甲班)×P(及格|甲班)+P(乙班)×P(及格|乙班)+P(丙班)×P(及格|丙班)。",
+        "expectedIdea": "P(甲班)=40/100=0.4, P(乙班)=0.35, P(丙班)=0.25，代入全概率公式计算"
+      },
+      "quiz": [
+        {
+          "question": "全概率公式 P(A)=ΣP(Bᵢ)P(A|Bᵢ) 要求 B₁,B₂,...,Bₙ 满足什么条件？",
+          "options": [
+            "必须等概率",
+            "两两互斥且并为全集",
+            "必须独立",
+            "必须只有两个"
+          ],
+          "answerIndex": 1,
+          "explanation": "全概率公式要求 Bi 是样本空间的一个划分：两两互斥且并集等于全集"
+        },
+        {
+          "question": "甲袋有3红2白，乙袋有1红4白。随机选一个袋再取一个球，取到红球的概率？",
+          "options": [
+            "4/10",
+            "2/5",
+            "1/2",
+            "3/10"
+          ],
+          "answerIndex": 1,
+          "explanation": "P(红) = P(选甲)×P(红|甲) + P(选乙)×P(红|乙) = 0.5×(3/5) + 0.5×(1/5) = 1.5/5 + 0.5/5 = 2/5"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.7",
+      "title": "贝叶斯公式",
+      "learningGoal": "理解贝叶斯公式 P(Bᵢ|A)=P(Bᵢ)P(A|Bᵢ)/ΣP(Bⱼ)P(A|Bⱼ)，掌握后验概率的计算方法",
+      "explanation": "【贝叶斯公式】\n设 B₁, B₂, ..., Bₙ 是样本空间的一个划分，则：\n  P(Bᵢ|A) = P(Bᵢ) × P(A|Bᵢ) / Σ P(Bⱼ) × P(A|Bⱼ)\n\n即：后验概率 = 先验概率 × 似然 / 证据因子\n\n【核心思想】\n贝叶斯公式解决的是「逆概率」问题：\n已知结果 A 发生了，反推原因 Bᵢ 的概率。\n\nP(Bᵢ) 称为先验概率（事前概率）\nP(Bᵢ|A) 称为后验概率（事后概率）\nP(A|Bᵢ) 称为似然（在 Bᵢ 条件下观察到 A 的概率）\n\n【计算步骤】\n1. 列出所有可能的「原因」Bᵢ 及其先验概率\n2. 计算每个原因下结果 A 的条件概率（似然）\n3. 用全概率公式计算分母\n4. 对每个 Bᵢ 用贝叶斯公式计算后验概率\n\n【信奥竞赛场景】\n- 已知检测结果推断患病概率\n- 已知现象推断原因概率",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 疾病检测问题：\n    // 发病率 1%（先验概率）\n    // 检测准确率：有病检出阳性 99%，无病检出阴性 95%\n    // 问：检测为阳性时，真正有病的概率是多少？\n\n    double pDisease = 0.01;\n    double pNoDisease = 0.99;\n    double pPositiveGivenDisease = 0.99;\n    double pPositiveGivenNoDisease = 0.05;\n\n    // 全概率公式求 P(阳性)\n    double pPositive = pDisease * pPositiveGivenDisease\n                     + pNoDisease * pPositiveGivenNoDisease;\n    cout << \"P(阳性) = \" << pPositive << endl;\n\n    // 贝叶斯公式求 P(有病|阳性)\n    double pDiseaseGivenPositive = pDisease * pPositiveGivenDisease / pPositive;\n    cout << \"P(有病|阳性) = \" << pDiseaseGivenPositive << endl;\n    cout << \"即约 \" << pDiseaseGivenPositive * 100 << \"%\" << endl;\n\n    // 三工厂问题续：已知是次品，来自各工厂的概率\n    double pA = 0.50, defectA = 0.02;\n    double pB = 0.30, defectB = 0.03;\n    double pC = 0.20, defectC = 0.05;\n    double pDefect = pA * defectA + pB * defectB + pC * defectC;\n\n    cout << \"来自甲厂: \" << pA * defectA / pDefect << endl;\n    cout << \"来自乙厂: \" << pB * defectB / pDefect << endl;\n    cout << \"来自丙厂: \" << pC * defectC / pDefect << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "贝叶斯公式是「由果推因」的工具：已知结果反推原因的概率",
+        "分母是全概率公式的结果，分子是某个原因的贡献",
+        "即使检测准确率很高，低发病率下阳性结果也不一定有病",
+        "后验概率 = 先验概率 × 似然 ÷ 归一化常数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忽略先验概率的影响",
+          "description": "看到检测准确率 99% 就认为阳性结果有 99% 概率有病，忽略了先验发病率很低",
+          "fix": "必须用贝叶斯公式完整计算，先验概率（基础率）的影响很大，这就是「基础率忽视」偏差"
+        },
+        {
+          "title": "混淆 P(A|B) 和 P(B|A)",
+          "description": "把「有病检出阳性的概率」和「阳性时有病的概率」搞混",
+          "fix": "P(阳性|有病)≠P(有病|阳性)，前者是检测灵敏度，后者是实际关心的问题，需要用贝叶斯公式转换"
+        }
+      ],
+      "practice": {
+        "prompt": "有3个罐子：甲罐有2红3白球，乙罐有4红1白球，丙罐有1红4白球。随机选一个罐子再取一个球，发现是红球。求这个球来自乙罐的概率。",
+        "hint": "P(乙|红) = P(乙)×P(红|乙) / [P(甲)×P(红|甲)+P(乙)×P(红|乙)+P(丙)×P(红|丙)]",
+        "expectedIdea": "先验 P(甲)=P(乙)=P(丙)=1/3，似然 P(红|甲)=2/5, P(红|乙)=4/5, P(红|丙)=1/5，代入贝叶斯公式"
+      },
+      "quiz": [
+        {
+          "question": "某病发病率1%，检测灵敏度99%（有病阳性率），特异度95%（无病阴性率）。检测阳性时真正有病的概率约为？",
+          "options": [
+            "99%",
+            "约50%",
+            "约16.7%",
+            "95%"
+          ],
+          "answerIndex": 2,
+          "explanation": "P(有病|阳性) = 0.01×0.99 / (0.01×0.99 + 0.99×0.05) ≈ 0.0099/0.0594 ≈ 16.7%"
+        },
+        {
+          "question": "贝叶斯公式解决的核心问题是？",
+          "options": [
+            "计算两个独立事件的联合概率",
+            "由结果反推原因的概率",
+            "计算期望值",
+            "判断两个事件是否独立"
+          ],
+          "answerIndex": 1,
+          "explanation": "贝叶斯公式用于「逆概率」推理：已知结果A发生，反推各个原因Bi的概率P(Bi|A)"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.8",
+      "title": "随机变量",
+      "learningGoal": "理解离散随机变量的概念，掌握概率分布列的表示方法，能计算随机变量的期望和方差",
+      "explanation": "【随机变量的定义】\n随机变量是将样本空间中的每个结果映射到一个实数的函数。\n用大写字母 X, Y, Z 等表示。\n\n【离散随机变量】\n如果随机变量的取值是有限个或可列个，称为离散随机变量。\n\n【概率分布列】\n离散随机变量的概率分布用分布列表示：\n  X 的取值:  x₁  x₂  ...  xₙ\n  概率 P:    p₁  p₂  ...  pₙ\n\n满足：Σpᵢ = 1，且每个 pᵢ ≥ 0\n\n【常见离散分布】\n1. 伯努利分布 B(1,p)：取值 0 或 1，P(1)=p\n   E(X)=p, D(X)=p(1-p)\n\n2. 二项分布 B(n,p)：n次独立实验中成功的次数\n   P(X=k) = C(n,k) × pᵏ × (1-p)^(n-k)\n   E(X)=np, D(X)=np(1-p)\n\n3. 几何分布 G(p)：首次成功所需的实验次数\n   P(X=k) = (1-p)^(k-1) × p\n   E(X)=1/p\n\n【方差】\nD(X) = E((X-E(X))²) = E(X²) - (E(X))²\n方差衡量随机变量取值的波动程度。\n\n【信奥竞赛中的应用】\n- 识别题目中的随机变量类型\n- 利用已知分布的公式直接计算",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nlong long C(int n, int m) {\n    if (m > n - m) m = n - m;\n    long long result = 1;\n    for (int i = 0; i < m; i++)\n        result = result * (n - i) / (i + 1);\n    return result;\n}\n\nint main() {\n    // 二项分布 B(n=5, p=0.3)：5次实验，每次成功概率0.3\n    int n = 5;\n    double p = 0.3;\n\n    cout << \"二项分布 B(5, 0.3):\" << endl;\n    for (int k = 0; k <= n; k++) {\n        double pk = C(n, k) * pow(p, k) * pow(1 - p, n - k);\n        cout << \"  P(X=\" << k << \") = \" << pk << endl;\n    }\n    cout << \"  期望 E(X) = np = \" << n * p << endl;\n    cout << \"  方差 D(X) = np(1-p) = \" << n * p * (1 - p) << endl;\n\n    // 几何分布 G(p=0.2)：首次成功所需次数\n    double pg = 0.2;\n    cout << \"\\n几何分布 G(0.2):\" << endl;\n    double cumProb = 0;\n    for (int k = 1; k <= 10; k++) {\n        double pk = pow(1 - pg, k - 1) * pg;\n        cumProb += pk;\n        cout << \"  P(X=\" << k << \") = \" << pk << \"  累积: \" << cumProb << endl;\n    }\n    cout << \"  期望 E(X) = 1/p = \" << 1 / pg << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "二项分布的公式：P(X=k) = C(n,k)×p^k×(1-p)^(n-k)",
+        "二项分布期望=np，方差=np(1-p)，可以直接用公式不用枚举",
+        "几何分布的期望=1/p，即平均需要1/p次才能首次成功",
+        "验证概率分布的正确性：所有概率之和应等于1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "二项分布的参数混淆",
+          "description": "把二项分布的 n（实验次数）和 k（成功次数）搞混，或者把概率 p 写错",
+          "fix": "B(n,p) 中 n 是总实验次数，p 是每次成功的概率，k 是成功的次数，范围 0 到 n"
+        },
+        {
+          "title": "方差公式记错",
+          "description": "把 D(X) = E(X²) - (E(X))² 记错，遗漏了平方或者减号",
+          "fix": "方差 = E(X²) - [E(X)]²，即「平方的期望」减去「期望的平方」"
+        }
+      ],
+      "practice": {
+        "prompt": "一个射手每次射击命中概率为 0.6，独立射击 8 次。求恰好命中 5 次的概率和期望命中次数。",
+        "hint": "命中次数服从二项分布 B(8, 0.6)，用 P(X=k)=C(n,k)×p^k×(1-p)^(n-k) 计算。",
+        "expectedIdea": "P(X=5) = C(8,5)×0.6^5×0.4^3，E(X) = 8×0.6 = 4.8"
+      },
+      "quiz": [
+        {
+          "question": "二项分布 B(n,p) 的期望值是？",
+          "options": [
+            "p",
+            "np",
+            "np(1-p)",
+            "n/p"
+          ],
+          "answerIndex": 1,
+          "explanation": "二项分布 B(n,p) 的期望 E(X)=np，即 n 次实验中平均成功 np 次"
+        },
+        {
+          "question": "抛硬币10次（正反面等概率），恰好3次正面的概率公式是？",
+          "options": [
+            "C(10,3)×(0.5)^10",
+            "C(10,3)×(0.5)^3",
+            "3/10",
+            "(0.5)^3"
+          ],
+          "answerIndex": 0,
+          "explanation": "P(X=3) = C(10,3)×(0.5)^3×(0.5)^7 = C(10,3)×(0.5)^10"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.9",
+      "title": "独立事件",
+      "learningGoal": "理解独立事件的定义 P(A∩B)=P(A)P(B)，掌握判断事件独立性的方法，区分独立与互斥",
+      "explanation": "【独立事件的定义】\n两个事件 A 和 B 相互独立，当且仅当：\n  P(A∩B) = P(A) × P(B)\n\n等价于：P(A|B) = P(A)，即 B 的发生不影响 A 的概率。\n\n【独立 ≠ 互斥】\n这是最常见的混淆！\n- 独立：A 发生不影响 B 发生的概率\n- 互斥：A 和 B 不能同时发生（A∩B=∅）\n\n事实上，如果 P(A)>0 且 P(B)>0，则独立和互斥不能同时成立！\n因为互斥意味着 P(A∩B)=0，但独立要求 P(A∩B)=P(A)P(B)>0。\n\n【多个事件的独立】\nn 个事件相互独立要求：任取其中任意个子集，它们都相互独立。\n两两独立 ≠ 相互独立！\n\n【独立性的应用】\n1. 简化联合概率计算：P(A∩B)=P(A)P(B)\n2. 独立重复实验（伯努利实验）\n3. E(XY) = E(X)×E(Y)（仅当 X,Y 独立时成立）\n\n【信奥竞赛场景】\n- 多次独立实验的概率\n- 判断是否可以简化计算\n- 概率DP中状态的独立性分析",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 掷两枚骰子：A=第一枚为6, B=第二枚为6\n    double pA = 1.0 / 6;\n    double pB = 1.0 / 6;\n    double pBoth = 1.0 / 36;\n\n    cout << \"P(A)=\" << pA << \", P(B)=\" << pB << endl;\n    cout << \"P(A)*P(B)=\" << pA * pB << \", P(A∩B)=\" << pBoth << endl;\n    cout << \"独立？\" << (pBoth == pA * pB ? \"是\" : \"否\") << endl;\n\n    // 不独立的例子：掷一枚骰子\n    // A=偶数{2,4,6}, B=大于3{4,5,6}\n    double pEven = 3.0 / 6;\n    double pGT3 = 3.0 / 6;\n    double pEvenAndGT3 = 2.0 / 6; // {4,6}\n    cout << \"\\nP(偶数)=\" << pEven << \", P(>3)=\" << pGT3 << endl;\n    cout << \"P(偶数)*P(>3)=\" << pEven * pGT3 << endl;\n    cout << \"P(偶数且>3)=\" << pEvenAndGT3 << endl;\n    cout << \"独立？\" << (pEvenAndGT3 == pEven * pGT3 ? \"是\" : \"否\") << endl;\n\n    // 三枚硬币同时抛，至少一枚正面的概率\n    double pAllTail = 0.5 * 0.5 * 0.5;\n    double pAtLeastOneHead = 1 - pAllTail;\n    cout << \"\\n至少一枚正面: \" << pAtLeastOneHead << endl;\n\n    return 0;\n}",
+      "codeNotes": [
+        "P(A∩B)=P(A)×P(B) 是独立的充要条件，可以用来验证独立性",
+        "两枚骰子的结果互相独立，因为一枚的结果不影响另一枚",
+        "独立 ≠ 互斥：互斥是 A∩B=∅，独立是 P(A∩B)=P(A)P(B)",
+        "多次独立实验用乘法：P(全部发生)=P(A₁)×P(A₂)×...×P(Aₙ)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆独立与互斥",
+          "description": "认为互斥的事件就是独立的，实际上互斥意味着一个发生则另一个不可能发生，恰恰是「不独立」",
+          "fix": "互斥：A发生则B不发生（有影响）→ 不独立。独立：A发生不影响B的概率"
+        },
+        {
+          "title": "误用乘法公式",
+          "description": "在不独立的事件上使用 P(A∩B)=P(A)P(B)",
+          "fix": "使用前必须验证独立性。如果不确定，用一般公式 P(A∩B)=P(B)P(A|B)"
+        }
+      ],
+      "practice": {
+        "prompt": "从 {1,2,3,4,5,6} 中随机取一个数。A={取到偶数}，B={取到大于3的数}，C={取到3的倍数}。判断 A 和 B、A 和 C、B 和 C 是否独立。",
+        "hint": "分别计算 P(X∩Y) 和 P(X)P(Y)，若相等则独立。",
+        "expectedIdea": "P(A)=3/6=1/2, P(B)=3/6=1/2, P(C)=2/6=1/3。P(A∩B)=2/6=1/3≠1/4不独立。P(A∩C)=1/6=1/2×1/3独立。P(B∩C)=1/6≠1/2×1/3=1/6独立。"
+      },
+      "quiz": [
+        {
+          "question": "两个有正概率的事件如果互斥（不能同时发生），它们是否独立？",
+          "options": [
+            "是独立的",
+            "不是独立的",
+            "不一定",
+            "取决于具体概率"
+          ],
+          "answerIndex": 1,
+          "explanation": "互斥意味着 P(A∩B)=0，但 P(A)P(B)>0，所以 P(A∩B)≠P(A)P(B)，不独立"
+        },
+        {
+          "question": "连续掷两枚硬币，「第一枚正面」和「第二枚正面」是否独立？",
+          "options": [
+            "独立",
+            "不独立",
+            "取决于硬币",
+            "无法判断"
+          ],
+          "answerIndex": 0,
+          "explanation": "两枚硬币互不影响，P(两枚都正)=1/4=P(第一枚正)×P(第二枚正)=1/2×1/2，所以独立"
+        }
+      ]
+    },
+    {
+      "itemId": "4.6.10",
+      "title": "概率DP",
+      "learningGoal": "掌握用动态规划求解概率和期望问题的方法，理解概率DP的状态设计和转移方程",
+      "explanation": "【概率DP概述】\n概率DP是用动态规划的方法来计算概率和期望值。\n核心思想：将概率/期望问题转化为状态转移问题。\n\n【求概率的DP】\n状态定义：dp[i] 表示到达状态 i 的概率\n转移方程：dp[新状态] += dp[旧状态] × P(转移)\n\n【求期望的DP】\n状态定义：dp[i] 表示从状态 i 到终态的期望步数（或期望值）\n转移方程：dp[i] = Σ (dp[j] + cost) × P(i→j)\n\n特别注意：期望DP通常需要从终点向起点递推！\n因为 dp[i] 可能依赖于 dp[j]（j>i），需要先算出后面的。\n\n【常见题型】\n1. 棋盘上的概率问题（如从一个点走到另一个点的概率）\n2. 期望步数问题（如期望多少步到达终点）\n3. 收集问题（如期望多少次集齐所有卡片）\n\n【注意事项】\n1. 注意精度：用 double 类型\n2. 注意初始化：起点概率为 1 或终点期望为 0\n3. 注意转移方向\n4. 可能需要高斯消元处理环形依赖",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 问题：从位置0出发，每次掷骰子(1-6)前进对应步数\n    // 到达或超过位置n时停止，求期望掷骰子次数\n    // n = 10 为例\n\n    int n = 10;\n    double dp[20] = {};\n\n    for (int i = n - 1; i >= 0; i--) {\n        double sum = 0;\n        for (int d = 1; d <= 6; d++) {\n            int next = i + d;\n            if (next >= n) {\n                sum += 1;\n            } else {\n                sum += 1 + dp[next];\n            }\n        }\n        dp[i] = sum / 6.0;\n    }\n\n    cout << \"从位置0到\" << n << \"的期望步数: \" << dp[0] << endl;\n\n    // 概率DP：n枚硬币，每枚正面概率p，求恰好k枚正面的概率\n    int coins = 5;\n    double p = 0.6;\n    double prob[10][10] = {};\n    prob[0][0] = 1.0;\n\n    for (int i = 1; i <= coins; i++) {\n        for (int j = 0; j <= i; j++) {\n            if (j > 0)\n                prob[i][j] += prob[i-1][j-1] * p;\n            prob[i][j] += prob[i-1][j] * (1 - p);\n        }\n    }\n\n    cout << \"\\n恰好k枚正面的概率:\" << endl;\n    for (int k = 0; k <= coins; k++) {\n        cout << \"  k=\" << k << \": \" << prob[coins][k] << endl;\n    }\n\n    return 0;\n}",
+      "codeNotes": [
+        "期望DP通常从终点往起点递推，因为期望值依赖于后续状态",
+        "dp[i] = Σ(1+dp[next])/6 表示从i出发的平均步数",
+        "概率DP：prob[i][j] = prob[i-1][j-1]×p + prob[i-1][j]×(1-p)",
+        "注意初始化：概率DP的 prob[0][0]=1，期望DP的终点 dp[n]=0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "期望DP递推方向错误",
+          "description": "期望DP从起点往终点推，导致 dp[i] 依赖尚未计算的 dp[j]",
+          "fix": "期望DP一般从终点往起点递推，先确定终点的值（通常为0），再逐步向前计算"
+        },
+        {
+          "title": "忘记初始化",
+          "description": "概率DP忘记设置初始状态为1，导致所有结果都是0",
+          "fix": "概率DP：初始状态概率设为1（如prob[0][0]=1）；期望DP：终点期望设为0"
+        }
+      ],
+      "practice": {
+        "prompt": "在一个1×n的格子上，你从位置1出发，每次等概率向左或向右移动一格（不能移出边界，移出则原地不动）。求到达位置n的期望步数（n≤20）。例如 n=3 时输出期望步数。",
+        "hint": "定义 dp[i] 为从位置 i 到达位置 n 的期望步数。dp[n]=0，dp[1]=(1+dp[2])/1（边界特殊处理）。对于中间位置 i，dp[i]=1+(dp[i-1]+dp[i+1])/2。",
+        "expectedIdea": "列出方程组：dp[n]=0, dp[1]=1+dp[2], dp[i]=1+(dp[i-1]+dp[i+1])/2 (1<i<n)，可以递推或用高斯消元求解"
+      },
+      "quiz": [
+        {
+          "question": "在概率DP中，状态转移 dp[新] += dp[旧] × P(转移) 的含义是？",
+          "options": [
+            "到达新状态的总概率",
+            "从新状态转移的概率",
+            "旧状态的期望值",
+            "转移的步数"
+          ],
+          "answerIndex": 0,
+          "explanation": "每条转移路径贡献的概率 = 到达旧状态的概率 × 转移概率，累加得到到达新状态的总概率"
+        },
+        {
+          "question": "期望DP通常的递推方向是？",
+          "options": [
+            "从起点到终点",
+            "从终点到起点",
+            "从中间到两边",
+            "随机方向"
+          ],
+          "answerIndex": 1,
+          "explanation": "期望DP一般从终点向起点递推，因为从某点出发的期望依赖于后续状态的期望值"
+        }
+      ]
+    }
+  ]
+}

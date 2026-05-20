@@ -1,0 +1,247 @@
+{
+  "sectionId": "2.2",
+  "sectionName": "排序与顺序统计",
+  "units": [
+    {
+      "itemId": "2.2.1",
+      "title": "冒泡排序",
+      "learningGoal": "理解冒泡排序的原理和实现，掌握相邻交换的基本思想",
+      "explanation": "冒泡排序是最简单的排序算法之一。重复遍历数组，每次比较相邻两个元素，如果顺序错误就交换。\n\n每一轮遍历会把当前最大的元素「冒泡」到末尾，所以叫冒泡排序。\n\n时间复杂度：O(n^2)\n空间复杂度：O(1)，原地排序\n\n优化：如果某一轮没有发生任何交换，说明已经排好序了，可以提前退出。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int a[1000];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    for (int i = 0; i < n - 1; i++) {\n        bool swapped = false;\n        for (int j = 0; j < n - 1 - i; j++) {\n            if (a[j] > a[j + 1]) {\n                swap(a[j], a[j + 1]);\n                swapped = true;\n            }\n        }\n        if (!swapped) break;\n    }\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "外层循环控制轮数，共 n-1 轮",
+        "内层循环比较相邻元素",
+        "每轮把最大的元素移到末尾",
+        "swapped 优化：无交换则提前退出"
+      ],
+      "commonMistakes": [
+        {
+          "title": "内层循环范围错误",
+          "description": "内层写成 j < n，导致越界访问 a[j+1]。",
+          "fix": "内层应该是 j < n - 1 - i，因为后 i 个已排好。"
+        }
+      ],
+      "practice": {
+        "prompt": "用冒泡排序对 5 个整数排序并输出。",
+        "hint": "双重循环，外层 n-1 轮，内层比较相邻。",
+        "expectedIdea": "标准冒泡排序模板"
+      },
+      "quiz": [
+        {
+          "question": "冒泡排序的时间复杂度是？",
+          "options": ["O(n)", "O(n log n)", "O(n^2)", "O(2^n)"],
+          "answerIndex": 2,
+          "explanation": "冒泡排序有两层循环，最坏和平均情况下都是 O(n^2)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.2",
+      "title": "选择排序",
+      "learningGoal": "理解选择排序的原理，每次选最小元素放到前面",
+      "explanation": "选择排序的思路：每一轮从未排序的部分中找到最小的元素，放到已排序部分的末尾。\n\n步骤：\n1. 第 1 轮：在 a[0..n-1] 中找最小值，和 a[0] 交换\n2. 第 2 轮：在 a[1..n-1] 中找最小值，和 a[1] 交换\n3. 以此类推\n\n时间复杂度：O(n^2)，无论数据怎样都是 O(n^2)\n空间复杂度：O(1)\n\n选择排序不稳定（相同元素的相对顺序可能改变）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int a[1000];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    for (int i = 0; i < n - 1; i++) {\n        int minIdx = i;\n        for (int j = i + 1; j < n; j++) {\n            if (a[j] < a[minIdx]) minIdx = j;\n        }\n        swap(a[i], a[minIdx]);\n    }\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "每轮找未排序部分的最小值下标",
+        "找到后和当前位置交换",
+        "总共 n-1 轮",
+        "不稳定的排序算法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只记录最小值不记下标",
+          "description": "只记了最小值是多少，忘了位置，无法交换。",
+          "fix": "用 minIdx 记录最小值的下标，不是值。"
+        }
+      ],
+      "practice": {
+        "prompt": "用选择排序对数组从大到小排序。",
+        "hint": "改为找最大值，和当前位置交换。",
+        "expectedIdea": "把 if (a[j] < a[minIdx]) 改为 if (a[j] > a[maxIdx])"
+      },
+      "quiz": [
+        {
+          "question": "选择排序每轮做什么操作？",
+          "options": [
+            "交换相邻元素",
+            "找到未排序部分的最小值放到前面",
+            "把元素插入到正确位置",
+            "随机选一个元素"
+          ],
+          "answerIndex": 1,
+          "explanation": "选择排序每轮在未排序部分找到最小值，和当前位置交换。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.3",
+      "title": "插入排序",
+      "learningGoal": "理解插入排序原理，学会将元素逐个插入已排序序列",
+      "explanation": "插入排序就像打扑克牌时整理手牌：拿到一张新牌，从右往左找到合适的位置插进去。\n\n步骤：\n1. 认为第一个元素已经排好\n2. 取下一个元素，在已排序序列中从后向前扫描\n3. 找到合适位置插入\n4. 重复直到所有元素都插入\n\n时间复杂度：最好 O(n)（已排序），最坏 O(n^2)\n空间复杂度：O(1)\n\n插入排序是稳定的，对小规模数据或基本有序的数据效率很高。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int a[1000];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    for (int i = 1; i < n; i++) {\n        int key = a[i];\n        int j = i - 1;\n        while (j >= 0 && a[j] > key) {\n            a[j + 1] = a[j];\n            j--;\n        }\n        a[j + 1] = key;\n    }\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "从第 2 个元素开始（下标 1）",
+        "key 保存当前要插入的元素",
+        "比 key 大的元素后移一位",
+        "找到位置后插入 key"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记保存 key",
+          "description": "直接用 a[i] 比较，但 a[i] 可能已被覆盖。",
+          "fix": "先用 key = a[i] 保存，再移动元素。"
+        }
+      ],
+      "practice": {
+        "prompt": "用插入排序对一个整数数组排序并输出。",
+        "hint": "外层 i=1 到 n-1，内层从 i-1 向前找位置。",
+        "expectedIdea": "标准插入排序模板"
+      },
+      "quiz": [
+        {
+          "question": "插入排序最好的时间复杂度是 O(n)，什么时候达到？",
+          "options": [
+            "数组逆序时",
+            "数组已排序时",
+            "数组随机时",
+            "数组全是相同元素时"
+          ],
+          "answerIndex": 1,
+          "explanation": "数组已排序时，每次插入都不需要移动元素，只需 n-1 次比较，所以是 O(n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.4",
+      "title": "归并排序",
+      "learningGoal": "理解归并排序的分治思想和 O(n log n) 复杂度",
+      "explanation": "归并排序是分治思想的经典应用：\n1. 分：把数组从中间分成两半\n2. 治：递归排序两半\n3. 合：合并两个有序数组\n\n合并过程：用两个指针分别指向两个子数组，每次取较小的放入临时数组。\n\n时间复杂度：O(n log n)，稳定\n空间复杂度：O(n)，需要临时数组\n\n归并排序是稳定的排序，适合需要稳定排序的场景。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint tmp[100000];\nvoid mergeSort(int a[], int l, int r) {\n    if (l >= r) return;\n    int mid = (l + r) / 2;\n    mergeSort(a, l, mid);\n    mergeSort(a, mid + 1, r);\n    int i = l, j = mid + 1, k = l;\n    while (i <= mid && j <= r) {\n        if (a[i] <= a[j]) tmp[k++] = a[i++];\n        else tmp[k++] = a[j++];\n    }\n    while (i <= mid) tmp[k++] = a[i++];\n    while (j <= r) tmp[k++] = a[j++];\n    for (int i = l; i <= r; i++) a[i] = tmp[i];\n}\n\nint main() {\n    int n, a[100000];\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> a[i];\n    mergeSort(a, 0, n - 1);\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "递归边界：l >= r 时返回",
+        "合并时用双指针取较小值",
+        "用 <= 保证稳定性",
+        "最后把 tmp 复制回原数组"
+      ],
+      "commonMistakes": [
+        {
+          "title": "合并后忘记复制回原数组",
+          "description": "合并结果在 tmp 里但没有写回 a[]。",
+          "fix": "最后要 for (int i = l; i <= r; i++) a[i] = tmp[i];"
+        }
+      ],
+      "practice": {
+        "prompt": "实现归并排序并统计排序过程中的比较次数。",
+        "hint": "在合并时每次比较 count++。",
+        "expectedIdea": "在 while (i<=mid && j<=r) 循环中加计数。"
+      },
+      "quiz": [
+        {
+          "question": "归并排序的时间复杂度是？",
+          "options": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+          "answerIndex": 1,
+          "explanation": "归并排序每层合并 O(n)，共 log n 层，总计 O(n log n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.5",
+      "title": "快速排序",
+      "learningGoal": "理解快速排序的分区思想和平均 O(n log n) 性能",
+      "explanation": "快速排序是实践中最常用的排序算法之一：\n1. 选一个基准值（pivot）\n2. 把比 pivot 小的放左边，大的放右边（分区）\n3. 递归排序左右两部分\n\n时间复杂度：平均 O(n log n)，最坏 O(n^2)（已排序数组 + 固定选第一个）\n空间复杂度：O(log n)（递归栈）\n\n竞赛中通常直接用 C++ 的 sort()，底层是快速排序的优化版本（Introsort）。\n\n优化技巧：随机选 pivot 或三数取中避免最坏情况。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nvoid quickSort(int a[], int l, int r) {\n    if (l >= r) return;\n    int pivot = a[(l + r) / 2];\n    int i = l, j = r;\n    while (i <= j) {\n        while (a[i] < pivot) i++;\n        while (a[j] > pivot) j--;\n        if (i <= j) {\n            swap(a[i], a[j]);\n            i++; j--;\n        }\n    }\n    quickSort(a, l, j);\n    quickSort(a, i, r);\n}\n\nint main() {\n    int n, a[100000];\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> a[i];\n    quickSort(a, 0, n - 1);\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "选中间元素作为 pivot",
+        "双指针从两端向中间扫描",
+        "左找 >= pivot，右找 <= pivot",
+        "交换后继续，直到指针交叉"
+      ],
+      "commonMistakes": [
+        {
+          "title": "递归范围错误",
+          "description": "写成 quickSort(a, l, mid-1) 和 quickSort(a, mid+1, r)，但分界点不是 mid。",
+          "fix": "用双指针分区的写法，递归 (l, j) 和 (i, r)。"
+        }
+      ],
+      "practice": {
+        "prompt": "用快速排序对数组排序，然后输出第 k 小的元素。",
+        "hint": "排序后直接输出 a[k-1]。",
+        "expectedIdea": "quickSort 后 cout << a[k-1];"
+      },
+      "quiz": [
+        {
+          "question": "快速排序最坏情况的时间复杂度是？",
+          "options": ["O(n)", "O(n log n)", "O(n^2)", "O(n^3)"],
+          "answerIndex": 2,
+          "explanation": "当每次选的 pivot 都是最大或最小值时，分区极度不均衡，退化为 O(n^2)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.6",
+      "title": "堆排序",
+      "learningGoal": "理解堆排序的原理，掌握堆的维护和排序过程",
+      "explanation": "堆排序利用二叉堆（通常是大根堆）来排序：\n1. 把数组建成大根堆（O(n)）\n2. 每次取出堆顶最大元素，放到数组末尾\n3. 对堆顶执行下沉操作维护堆性质\n4. 重复直到堆为空\n\n时间复杂度：O(n log n)\n空间复杂度：O(1)，原地排序\n\n堆排序不稳定。\n\n在 C++ 中可以用 priority_queue 或 make_heap/pop_heap/sort_heap 来实现。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nvoid heapSort(int a[], int n) {\n    for (int i = n / 2 - 1; i >= 0; i--)\n        make_heap(a, a + i + 1);\n    sort_heap(a, a + n);\n}\n\nint main() {\n    int n;\n    cin >> n;\n    int a[100];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    make_heap(a, a + n);\n    sort_heap(a, a + n);\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "make_heap 建大根堆",
+        "sort_heap 逐步取出堆顶排序",
+        "时间复杂度 O(n log n)",
+        "不稳定排序"
+      ],
+      "commonMistakes": [
+        {
+          "title": "堆排序后是升序还是降序搞混",
+          "description": "大根堆排出来是升序还是降序记错了。",
+          "fix": "大根堆 + sort_heap 得到升序。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 priority_queue 实现堆排序。",
+        "hint": "把所有元素 push 进大根堆，然后逐个 pop。",
+        "expectedIdea": "priority_queue<int> pq; push all; while (!empty) { cout << pq.top(); pq.pop(); }"
+      },
+      "quiz": [
+        {
+          "question": "建堆的时间复杂度是？",
+          "options": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+          "answerIndex": 0,
+          "explanation": "从最后一个非叶子节点开始向上调整，总共 O(n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.2.11",
+      "title": "逆序对统计",
+      "learningGoal": "理解逆序对概念，学会用归并排序统计逆序对",
+      "explanation": "逆序对：在数组 a 中，如果 i < j 但 a[i] > a[j]，则 (a[i], a[j]) 是一个逆序对。\n\n统计逆序对最高效的方法是在归并排序的合并阶段统计：\n- 合并两个有序子数组时，如果左边的元素 a[i] > 右边的元素 a[j]\n- 说明 a[i] 到 a[mid] 的所有元素都和 a[j] 构成逆序对\n- 逆序对数量 += mid - i + 1\n\n时间复杂度：O(n log n)\n\n经典例题：给定一个排列，问最少交换多少次相邻元素能让它有序（答案就是逆序对数量）。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nlong long cnt = 0;\nint tmp[100000];\nvoid mergeSort(int a[], int l, int r) {\n    if (l >= r) return;\n    int mid = (l + r) / 2;\n    mergeSort(a, l, mid);\n    mergeSort(a, mid + 1, r);\n    int i = l, j = mid + 1, k = l;\n    while (i <= mid && j <= r) {\n        if (a[i] <= a[j]) tmp[k++] = a[i++];\n        else {\n            tmp[k++] = a[j++];\n            cnt += mid - i + 1;\n        }\n    }\n    while (i <= mid) tmp[k++] = a[i++];\n    while (j <= r) tmp[k++] = a[j++];\n    for (int i = l; i <= r; i++) a[i] = tmp[i];\n}\n\nint main() {\n    int n, a[100000];\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> a[i];\n    mergeSort(a, 0, n - 1);\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "在归并排序合并时统计逆序对",
+        "a[i] > a[j] 时，左边 i..mid 都和 a[j] 构成逆序对",
+        "逆序对数量可能很大，用 long long",
+        "注意用 <= 避免 a[i]==a[j] 时误算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "逆序对数量溢出 int",
+          "description": "n=100000 时逆序对最多约 5*10^9 个，超出 int 范围。",
+          "fix": "用 long long cnt 统计。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个排列，统计其中逆序对的数量。",
+        "hint": "在归并排序合并时，每次 a[j] 被选入 tmp 时加 mid-i+1。",
+        "expectedIdea": "标准逆序对统计模板"
+      },
+      "quiz": [
+        {
+          "question": "数组 [3, 1, 2] 有多少个逆序对？",
+          "options": ["1", "2", "3", "0"],
+          "answerIndex": 1,
+          "explanation": "逆序对：(3,1) 和 (3,2)，共 2 个。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "animationId": "cpp_fast_pow",
+  "itemId": "4.2.4",
+  "title": "快速幂",
+  "description": "演示快速幂算法计算 2^13 的过程：利用二进制拆分指数",
+  "initialState": {
+    "variables": [
+      {"name": "base", "value": "2", "note": ""},
+      {"name": "exp", "value": "13", "note": "二进制: 1101"},
+      {"name": "result", "value": "1", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "计算 2^13。13 的二进制是 1101 = 8+4+1，所以 2^13 = 2^8 × 2^4 × 2^1",
+      "codeLine": "long long base = 2, exp = 13, result = 1;",
+      "highlights": ["base", "exp", "result"],
+      "state": {
+        "variables": [
+          {"name": "base", "value": "2", "note": ""},
+          {"name": "exp", "value": "13", "note": "二进制: 1101"},
+          {"name": "result", "value": "1", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "第 1 轮：exp 最低位为 1",
+      "description": "13 是奇数，最低位为 1：result *= base → result = 1×2 = 2。然后 base 平方 → base = 4，exp >>= 1 → exp = 6",
+      "codeLine": "if (exp & 1) result *= base; base *= base; exp >>= 1;",
+      "highlights": ["exp & 1", "result *= base"],
+      "state": {
+        "variables": [
+          {"name": "base", "value": "4", "note": "2×2=4"},
+          {"name": "exp", "value": "6", "note": "13>>1=6 (二进制:110)"},
+          {"name": "result", "value": "2", "note": "1×2=2"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "第 2 轮：exp 最低位为 0",
+      "description": "6 是偶数，最低位为 0：result 不变。base 平方 → base = 16，exp >>= 1 → exp = 3",
+      "codeLine": "base *= base; exp >>= 1;",
+      "highlights": ["exp & 1"],
+      "state": {
+        "variables": [
+          {"name": "base", "value": "16", "note": "4×4=16"},
+          {"name": "exp", "value": "3", "note": "6>>1=3 (二进制:11)"},
+          {"name": "result", "value": "2", "note": "不变"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "第 3 轮：exp 最低位为 1",
+      "description": "3 是奇数：result *= base → result = 2×16 = 32。base 平方 → base = 256，exp >>= 1 → exp = 1",
+      "codeLine": "if (exp & 1) result *= base; base *= base; exp >>= 1;",
+      "highlights": ["result *= base"],
+      "state": {
+        "variables": [
+          {"name": "base", "value": "256", "note": "16×16=256"},
+          {"name": "exp", "value": "1", "note": "3>>1=1 (二进制:1)"},
+          {"name": "result", "value": "32", "note": "2×16=32"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "第 4 轮：exp 最低位为 1",
+      "description": "1 是奇数：result *= base → result = 32×256 = 8192。exp >>= 1 → exp = 0，循环结束",
+      "codeLine": "if (exp & 1) result *= base; exp >>= 1;",
+      "highlights": ["result *= base"],
+      "state": {
+        "variables": [
+          {"name": "base", "value": "256", "note": ""},
+          {"name": "exp", "value": "0", "note": "结束"},
+          {"name": "result", "value": "8192", "note": "32×256=8192"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 6,
+      "title": "结果",
+      "description": "2^13 = 8192。快速幂只需 log₂(13) ≈ 4 次循环，远快于朴素的 13 次乘法",
+      "codeLine": "cout << result; // 2^13 = 8192",
+      "highlights": ["result"],
+      "state": {
+        "variables": [
+          {"name": "result", "value": "8192", "note": "2^13 = 8192"}
+        ],
+        "containers": [],
+        "output": "8192"
+      }
+    }
+  ]
+}

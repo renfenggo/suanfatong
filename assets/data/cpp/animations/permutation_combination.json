@@ -1,0 +1,96 @@
+{
+  "animationId": "cpp_permutation_combination",
+  "itemId": "4.3.5",
+  "title": "排列与组合",
+  "description": "演示排列数 P(n,k) 和组合数 C(n,k) 的计算过程",
+  "initialState": {
+    "variables": [
+      {"name": "n", "value": "5", "note": ""},
+      {"name": "k", "value": "3", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题",
+      "description": "从 5 个元素中取 3 个，分别求排列数 P(5,3) 和组合数 C(5,3)",
+      "codeLine": "int n = 5, k = 3;",
+      "highlights": ["n", "k"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""},
+          {"name": "k", "value": "3", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算排列数 P(5,3)",
+      "description": "P(5,3) = 5 × 4 × 3 = 60。排列考虑顺序，第1个位置有5种选法，第2个有4种，第3个有3种",
+      "codeLine": "int P = 5 * 4 * 3; // = n! / (n-k)!",
+      "highlights": ["5 * 4 * 3"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""},
+          {"name": "k", "value": "3", "note": ""},
+          {"name": "P(5,3)", "value": "60", "note": "5×4×3=60"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "计算组合数 C(5,3)",
+      "description": "C(5,3) = P(5,3) / 3! = 60 / 6 = 10。组合不考虑顺序，需除以 k! 消除重复排列",
+      "codeLine": "int C = P / (3 * 2 * 1); // = n! / (k! * (n-k)!)",
+      "highlights": ["P / (3 * 2 * 1)"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""},
+          {"name": "k", "value": "3", "note": ""},
+          {"name": "P(5,3)", "value": "60", "note": ""},
+          {"name": "C(5,3)", "value": "10", "note": "60/6=10"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "组合对称性",
+      "description": "C(5,3) = C(5,2) = 10。从5个中选3个等价于从5个中选2个不取的",
+      "codeLine": "// C(n,k) == C(n, n-k)",
+      "highlights": ["C(n, n-k)"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": ""},
+          {"name": "k", "value": "3", "note": ""},
+          {"name": "C(5,3)", "value": "10", "note": "= C(5,2)"},
+          {"name": "C(5,2)", "value": "10", "note": "5×4/2=10"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "总结",
+      "description": "排列 P(n,k)：考虑顺序，从 n 个取 k 个排列。组合 C(n,k)：不考虑顺序，从 n 个取 k 个组合",
+      "codeLine": "cout << P << \" \" << C;",
+      "highlights": ["P", "C"],
+      "state": {
+        "variables": [
+          {"name": "P(5,3)", "value": "60", "note": "排列（有序）"},
+          {"name": "C(5,3)", "value": "10", "note": "组合（无序）"}
+        ],
+        "containers": [],
+        "output": "P(5,3)=60  C(5,3)=10"
+      }
+    }
+  ]
+}

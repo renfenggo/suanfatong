@@ -1,0 +1,78 @@
+{
+  "animationId": "cpp_pigeonhole",
+  "itemId": "4.3.11",
+  "title": "鸽巢原理",
+  "description": "演示鸽巢原理：把 n+1 个物品放入 n 个盒子，至少有一个盒子有 2 个物品",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "基本原理",
+      "description": "鸽巢原理：若将 n+1 个鸽子放入 n 个鸽巢，则至少有一个鸽巢中有 ≥2 只鸽子",
+      "codeLine": "// n+1 只鸽子 → n 个巢 → 至少 1 巢有 ≥2 只",
+      "highlights": ["鸽巢原理"],
+      "state": {
+        "variables": [
+          {"name": "鸽子", "value": "5", "note": ""},
+          {"name": "鸽巢", "value": "4", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "实例：5 人中必有同月生日",
+      "description": "13 人中至少有 2 人在同一个月生日（12 个月 → 13 人）。更简单的：5 个人 4 个座位",
+      "codeLine": "// 5 只鸽子, 4 个巢",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "巢1", "value": "2只", "note": ""},
+          {"name": "巢2", "value": "1只", "note": ""},
+          {"name": "巢3", "value": "1只", "note": ""},
+          {"name": "巢4", "value": "1只", "note": "巢1有≥2只"}
+        ],
+        "containers": [],
+        "output": "巢1 有 2 只鸽子 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "推广形式",
+      "description": "将 kn+1 个物品放入 n 个盒子，至少有一个盒子有 ≥k+1 个物品",
+      "codeLine": "// kn+1 物品 → n 盒 → 至少 1 盒有 ≥k+1",
+      "highlights": ["k+1"],
+      "state": {
+        "variables": [
+          {"name": "n(盒子)", "value": "3", "note": ""},
+          {"name": "k", "value": "2", "note": ""},
+          {"name": "物品", "value": "7", "note": "2×3+1=7"},
+          {"name": "至少一盒", "value": "≥3", "note": "k+1=3"}
+        ],
+        "containers": [],
+        "output": "7 个物品放入 3 盒，至少 1 盒有 ≥3 个"
+      }
+    },
+    {
+      "step": 4,
+      "title": "经典应用",
+      "description": "从 1-100 中任选 51 个数，必有两个数差为 50 的倍数（50 个余数巢放 51 只鸽子）",
+      "codeLine": "// 50 个余数类(巢), 51 个数(鸽) → 必有同余",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "余数类", "value": "50", "note": "0,1,...,49"},
+          {"name": "选的数", "value": "51", "note": ""},
+          {"name": "结论", "value": "必有两数同余", "note": "差为50的倍数"}
+        ],
+        "containers": [],
+        "output": "7 个物品放入 3 盒，至少 1 盒有 ≥3 个"
+      }
+    }
+  ]
+}

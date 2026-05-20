@@ -1,0 +1,71 @@
+{
+  "animationId": "cpp_modulo_concept",
+  "itemId": "4.2.1",
+  "title": "模意义",
+  "description": "演示取模运算的本质：除法取余数，以及钟表模型",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "取模运算",
+      "description": "a % m 得到 a 除以 m 的余数。余数范围是 0 到 m-1",
+      "codeLine": "// a % m ∈ {0, 1, ..., m-1}",
+      "highlights": ["a % m"],
+      "state": {
+        "variables": [
+          {"name": "m", "value": "12", "note": "钟表模型"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "钟表模型",
+      "description": "现在是 10 点，再过 5 小时是几点？(10+5) % 12 = 15 % 12 = 3 点",
+      "codeLine": "cout << (10 + 5) % 12;",
+      "highlights": ["(10 + 5) % 12"],
+      "state": {
+        "variables": [
+          {"name": "10+5", "value": "15", "note": ""},
+          {"name": "15%12", "value": "3", "note": "余数 3"}
+        ],
+        "containers": [],
+        "output": "3 点"
+      }
+    },
+    {
+      "step": 3,
+      "title": "负数取模",
+      "description": "不同语言对负数取模行为不同。C++ 中 -7 % 3 = -1（余数符号与被除数相同）",
+      "codeLine": "cout << (-7) % 3; // C++: -1",
+      "highlights": ["(-7) % 3"],
+      "state": {
+        "variables": [
+          {"name": "-7%3", "value": "-1", "note": "C++ 中余数为负"},
+          {"name": "修正", "value": "2", "note": "(-1+3)%3=2"}
+        ],
+        "containers": [],
+        "output": "3 点\n-7%3 = -1 (修正→2)"
+      }
+    },
+    {
+      "step": 4,
+      "title": "模运算的用途",
+      "description": "模运算在竞赛中广泛用于：防止溢出、哈希、周期性问题、密码学等",
+      "codeLine": "// 常见 MOD = 1e9+7",
+      "highlights": ["1e9+7"],
+      "state": {
+        "variables": [
+          {"name": "MOD", "value": "1000000007", "note": "常用模数 10⁹+7"}
+        ],
+        "containers": [],
+        "output": "3 点\n-7%3 = -1 (修正→2)"
+      }
+    }
+  ]
+}

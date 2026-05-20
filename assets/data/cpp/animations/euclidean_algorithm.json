@@ -1,0 +1,76 @@
+{
+  "animationId": "cpp_euclidean_algorithm",
+  "itemId": "4.1.11",
+  "title": "欧几里得算法",
+  "description": "演示欧几里得算法的递归实现过程：gcd(a,b) = gcd(b, a%b)",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "算法思想",
+      "description": "gcd(a,b) = gcd(b, a%b)，当 b=0 时返回 a。递归调用逐步缩小问题规模",
+      "codeLine": "int gcd(int a, int b) { return b ? gcd(b,a%b) : a; }",
+      "highlights": ["gcd(b, a%b)"],
+      "state": {
+        "variables": [
+          {"name": "初始", "value": "gcd(48,18)", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "递归展开",
+      "description": "gcd(48,18) → gcd(18,12) → gcd(12,6) → gcd(6,0)",
+      "codeLine": "gcd(48,18) → gcd(18,12) → gcd(12,6) → gcd(6,0)",
+      "highlights": ["→"],
+      "state": {
+        "variables": [
+          {"name": "调用1", "value": "gcd(48,18)", "note": "48%18=12"},
+          {"name": "调用2", "value": "gcd(18,12)", "note": "18%12=6"},
+          {"name": "调用3", "value": "gcd(12,6)", "note": "12%6=0"},
+          {"name": "调用4", "value": "gcd(6,0)", "note": "b=0, 返回6"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "递归返回",
+      "description": "gcd(6,0) 返回 6 → gcd(12,6) 返回 6 → gcd(18,12) 返回 6 → gcd(48,18) 返回 6",
+      "codeLine": "// 6 ← 6 ← 6 ← 6",
+      "highlights": ["返回 6"],
+      "state": {
+        "variables": [
+          {"name": "gcd(6,0)", "value": "6", "note": "返回"},
+          {"name": "gcd(12,6)", "value": "6", "note": "返回"},
+          {"name": "gcd(18,12)", "value": "6", "note": "返回"},
+          {"name": "gcd(48,18)", "value": "6", "note": "返回"}
+        ],
+        "containers": [],
+        "output": "gcd(48,18) = 6"
+      }
+    },
+    {
+      "step": 4,
+      "title": "时间复杂度",
+      "description": "欧几里得算法的时间复杂度为 O(log(min(a,b)))，非常高效",
+      "codeLine": "// O(log(min(a,b)))",
+      "highlights": ["O(log)"],
+      "state": {
+        "variables": [
+          {"name": "gcd(48,18)", "value": "6", "note": "3次递归调用"},
+          {"name": "复杂度", "value": "O(log n)", "note": "非常高效"}
+        ],
+        "containers": [],
+        "output": "gcd(48,18) = 6"
+      }
+    }
+  ]
+}

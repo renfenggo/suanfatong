@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../state/progress_provider.dart';
 
 final fontSizeProvider = StateProvider<double>((ref) => 16.0);
@@ -74,6 +75,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   ThemeMode _themeMode = ThemeMode.system;
   Locale? _selectedLocale;
   bool _loading = true;
+  String _version = '';
 
   @override
   void initState() {
@@ -84,6 +86,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
     final savedLang = prefs.getString('app_locale');
+    final info = await PackageInfo.fromPlatform();
     setState(() {
       _fontSize = prefs.getDouble('font_size') ?? 16.0;
       _themeMode = ThemeMode.values[prefs.getInt('theme_mode') ?? 0];
@@ -92,6 +95,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         _selectedLocale =
             parts.length > 1 ? Locale(parts[0], parts[1]) : Locale(parts[0]);
       }
+      _version = '${info.version} (${info.buildNumber})';
       _loading = false;
     });
     ref.read(fontSizeProvider.notifier).state = _fontSize;
@@ -422,11 +426,11 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               ],
             ),
             const SizedBox(height: 12),
-            _buildInfoRow('应用名称', 'BFS 专题学习'),
+            _buildInfoRow('应用名称', '算法通'),
             const SizedBox(height: 8),
-            _buildInfoRow('版本', '1.0.0'),
+            _buildInfoRow('版本', _version.isEmpty ? '加载中…' : _version),
             const SizedBox(height: 8),
-            _buildInfoRow('说明', '信奥 BFS 专题离线学习 App'),
+            _buildInfoRow('说明', '算法比赛学习应用'),
           ],
         ),
       ),

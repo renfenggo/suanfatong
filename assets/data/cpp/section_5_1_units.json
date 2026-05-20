@@ -1,0 +1,321 @@
+{
+  "sectionId": "5.1",
+  "sectionName": "输入输出技巧",
+  "units": [
+    {
+      "itemId": "5.1.1",
+      "title": "多组输入",
+      "learningGoal": "掌握多组数据的输入方式，学会用循环处理多组测试数据",
+      "explanation": "竞赛题中经常需要处理多组测试数据。最常见的方式是用 while 循环反复读取数据，直到不再有输入为止。\n\n基本模式：while (cin >> n) { ... }，每次循环读取一组数据并处理。当输入结束时，cin >> n 会返回 false，循环自动终止。\n\n另一种常见模式是题目先给一个整数 T 表示数据组数，然后用 for (int i = 0; i < T; i++) 循环处理每组数据。\n\n多组输入时要特别注意变量的初始化位置——每组数据开始前都要重置变量，否则上一组数据的残留值会影响当前结果。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    while (cin >> n) {\n        int sum = 0;\n        for (int i = 0; i < n; i++) {\n            int x;\n            cin >> x;\n            sum += x;\n        }\n        cout << sum << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "while (cin >> n) 持续读取直到输入结束",
+        "每组数据前重新初始化变量（如 sum = 0）",
+        "for 循环读取该组的每个数据",
+        "每组数据处理完后立即输出结果"
+      ],
+      "commonMistakes": [
+        {
+          "title": "变量未重置",
+          "description": "把 sum = 0 写在 while 循环外面，导致每组数据累加了前一组的值。",
+          "fix": "将变量初始化放在 while 循环内部，每组数据开始前重新初始化。"
+        },
+        {
+          "title": "忘记读完整组数据",
+          "description": "只读了部分数据就输出结果，剩余数据留给了下一轮。",
+          "fix": "确保每组数据的所有输入都被完整读取后再处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "多组数据，每组一个整数 n，输出 n 的平方。输入以 EOF 结束。",
+        "hint": "while (cin >> n) { cout << n * n << endl; }",
+        "expectedIdea": "int n;\nwhile (cin >> n) {\n    cout << n * n << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "以下哪种写法可以处理「不知道几组数据，读到文件尾结束」的情况？",
+          "options": [
+            "for (int i = 0; i < n; i++)",
+            "while (cin >> n)",
+            "cin >> n;",
+            "if (cin >> n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "while (cin >> n) 会持续读取，直到输入结束（EOF）才停止循环。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.2",
+      "title": "读到 EOF",
+      "learningGoal": "理解 EOF 的概念，掌握用 scanf 和 cin 读到文件尾的方法",
+      "explanation": "EOF（End of File）表示输入结束。在终端测试时，Windows 用 Ctrl+Z，Linux/Mac 用 Ctrl+D 发送 EOF 信号。\n\n用 cin 读取时，while (cin >> n) 会在遇到 EOF 时返回 false，循环结束。用 scanf 时，while (scanf(\"%d\", &n) != EOF) 或 while (scanf(\"%d\", &n) == 1) 是等价写法。\n\nscanf 返回成功读取的变量个数。如果读取一个整数失败（遇到 EOF），返回值不是 1，循环结束。\n\n理解 EOF 对于处理「不定组数输入」的题目至关重要。很多题目不告诉你有几组数据，只说「输入到文件尾」。",
+      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    int a, b;\n    while (scanf(\"%d%d\", &a, &b) != EOF) {\n        printf(\"%d\\n\", a + b);\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "scanf 返回成功读取的变量个数",
+        "遇到 EOF 时 scanf 返回 EOF（即 -1）",
+        "while (scanf(...) != EOF) 是标准写法",
+        "等价于 while (cin >> a >> b)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "用 while (scanf(...) != EOF) 但忘了取地址",
+          "description": "scanf(\"%d\", n) 少了 &，导致段错误。",
+          "fix": "scanf 必须传地址：scanf(\"%d\", &n)。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 scanf 读到 EOF，每组两个整数 a 和 b，输出它们的和。",
+        "hint": "while (scanf(\"%d%d\", &a, &b) != EOF)",
+        "expectedIdea": "int a, b;\nwhile (scanf(\"%d%d\", &a, &b) != EOF) {\n    printf(\"%d\\n\", a + b);\n}"
+      },
+      "quiz": [
+        {
+          "question": "scanf(\"%d\", &n) 成功读取一个整数后返回什么？",
+          "options": [
+            "0",
+            "1",
+            "EOF",
+            "n 的值"
+          ],
+          "answerIndex": 1,
+          "explanation": "scanf 返回成功读取的变量个数。成功读取一个整数返回 1，失败或 EOF 返回 -1（即 EOF）。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.3",
+      "title": "一行输入",
+      "learningGoal": "掌握从一行中读取多个数据的方法",
+      "explanation": "有时候题目要求在一行内输入多个数据。cin 和 scanf 默认以空格和换行为分隔符，所以多个数据在同一行输入时，直接用多个 cin >> 或 scanf 即可自动分隔。\n\n例如一行输入三个整数：cin >> a >> b >> c; 会自动按空格分割。scanf(\"%d%d%d\", &a, &b, &c); 也是同样的效果。\n\n如果一行输入数量不确定，可以用 while 循环配合字符判断来处理，或者先读整行再用 stringstream 分割。\n\n竞赛中更常见的做法是直接用 while (cin >> x) 在一行内持续读取，遇到换行或文件尾时自动停止。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << a << \" + \" << b << \" + \" << c << \" = \" << a + b + c << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cin 自动以空格分隔数据",
+        "同一行的多个数据用多个 cin >> 读取",
+        "scanf 也自动以空白字符分隔",
+        "不需要特殊处理换行"
+      ],
+      "commonMistakes": [
+        {
+          "title": "以为需要手动处理空格",
+          "description": "cin >> 默认跳过空格和换行，不需要手动处理。",
+          "fix": "直接 cin >> a >> b >> c; 即可，空格会被自动跳过。"
+        }
+      ],
+      "practice": {
+        "prompt": "一行输入 5 个整数，计算并输出它们的平均值（保留 2 位小数）。",
+        "hint": "cin >> a >> b >> c >> d >> e; 然后用 1.0 * sum / 5",
+        "expectedIdea": "int a, b, c, d, e;\ncin >> a >> b >> c >> d >> e;\ndouble avg = 1.0 * (a + b + c + d + e) / 5;\ncout << fixed << setprecision(2) << avg << endl;"
+      },
+      "quiz": [
+        {
+          "question": "一行输入「3 5 7」，用 cin >> a >> b >> c 读取后 a, b, c 分别是？",
+          "options": [
+            "a=3, b=5, c=7",
+            "a=\"3 5 7\", b 和 c 未读取",
+            "需要额外处理空格",
+            "只有 a=3，b 和 c 读不到"
+          ],
+          "answerIndex": 0,
+          "explanation": "cin >> 自动跳过空格和换行，依次读取 3、5、7 分别存入 a、b、c。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.4",
+      "title": "含空格输入",
+      "learningGoal": "学会用 getline 读取包含空格的整行字符串",
+      "explanation": "cin >> 遇到空格就会停止读取。如果要读取包含空格的一整行，需要使用 getline 函数。\n\ngetline(cin, s) 会读取一整行内容（包括空格），直到遇到换行符才停止。换行符本身不会被存入字符串。\n\n特别注意：如果在 getline 之前用了 cin >>，需要在中间加 cin.ignore() 来消耗掉残留的换行符，否则 getline 会读到空行。\n\n这是初学者最常遇到的输入陷阱之一。记住规则：cin >> 和 getline 混合使用时，中间一定要 cin.ignore()。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n    string line;\n    getline(cin, line);\n    cout << \"n = \" << n << endl;\n    cout << \"line = \" << line << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "getline(cin, s) 读取整行，包括空格",
+        "cin >> 不读空格，getline 读空格",
+        "cin >> 后接 getline 需要 cin.ignore()",
+        "getline 读取到换行符为止，不存入换行符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cin >> 后直接 getline 读到空行",
+          "description": "cin >> n 后缓冲区残留换行符，getline 直接读到空字符串。",
+          "fix": "在 cin >> n 后加 cin.ignore(); 消耗掉换行符。"
+        }
+      ],
+      "practice": {
+        "prompt": "先输入一个整数 n，然后输入一行包含空格的句子，输出句子长度和内容。",
+        "hint": "cin >> n; cin.ignore(); getline(cin, s);",
+        "expectedIdea": "int n;\ncin >> n;\ncin.ignore();\nstring s;\ngetline(cin, s);\ncout << s.length() << endl;\ncout << s << endl;"
+      },
+      "quiz": [
+        {
+          "question": "cin >> n; getline(cin, s); 如果输入「3\\nHello World」，s 的值是？",
+          "options": [
+            "\"Hello World\"",
+            "\"Hello\"",
+            "\"\"（空字符串）",
+            "\"\\n\""
+          ],
+          "answerIndex": 2,
+          "explanation": "cin >> n 读走 3 后，缓冲区剩换行符。getline 直接读到换行符，得到空字符串。需要加 cin.ignore()。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.5",
+      "title": "输出换行与空格处理",
+      "learningGoal": "掌握输出格式控制，学会正确处理换行和空格",
+      "explanation": "竞赛题对输出格式要求严格，多一个空格或少一个换行都会导致 Wrong Answer。\n\n常见格式：每行输出一个结果用 cout << result << endl; 同一行输出多个结果用空格分隔 cout << a << \" \" << b; 最后一个数后面不要多余空格。\n\n处理「每两个数之间一个空格」的标准写法：第一个直接输出，后面的先输出空格再输出值。或者用条件判断：if (i > 0) cout << \" \"; cout << a[i];。\n\n输出末尾是否需要换行要看题目要求，大多数题目要求每行结果末尾有换行。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5] = {10, 20, 30, 40, 50};\n    for (int i = 0; i < 5; i++) {\n        if (i > 0) cout << \" \";\n        cout << a[i];\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "if (i > 0) cout << \" \" 避免行首多余空格",
+        "最后一个元素后不输出空格",
+        "cout << endl 在行末输出换行",
+        "printf 用 \" %d\" 或条件判断控制空格"
+      ],
+      "commonMistakes": [
+        {
+          "title": "末尾多余空格",
+          "description": "for 循环中每个元素后都输出空格，导致行末多一个空格。",
+          "fix": "用条件判断，第一个元素前不加空格，或者最后一个元素后不加空格。"
+        },
+        {
+          "title": "缺少末尾换行",
+          "description": "最后一行输出后没有 endl 或 \\n，某些判题系统判为格式错误。",
+          "fix": "每行输出末尾加上 endl 或 \\n。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出数组 {1, 2, 3, 4, 5}，数之间用空格分隔，行末不能有多余空格，最后换行。",
+        "hint": "用 if (i > 0) cout << \" \" 控制空格",
+        "expectedIdea": "int a[] = {1, 2, 3, 4, 5};\nfor (int i = 0; i < 5; i++) {\n    if (i > 0) cout << \" \";\n    cout << a[i];\n}\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "输出「1 2 3」，以下哪种写法格式正确（无多余空格）？",
+          "options": [
+            "cout << 1 << \" \" << 2 << \" \" << 3 << \" \";",
+            "cout << \" \" << 1 << \" \" << 2 << \" \" << 3;",
+            "for 循环中用 if (i>0) cout << \" \" 控制空格",
+            "每个数后都输出空格"
+          ],
+          "answerIndex": 2,
+          "explanation": "用 if (i > 0) 判断可以在第一个数前不加空格，在后面的数前加空格，避免首尾多余空格。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.6",
+      "title": "控制精度",
+      "learningGoal": "学会用 fixed、setprecision 和 printf 格式化浮点输出",
+      "explanation": "竞赛题经常要求输出保留若干位小数。C++ 提供了两种方式控制精度。\n\n方式一（C++ 风格）：cout << fixed << setprecision(2) << 3.14159; 输出 3.14。fixed 表示用定点表示法，setprecision(2) 表示保留 2 位小数。需要 #include <iomanip>。\n\n方式二（C 风格）：printf(\"%.2f\\n\", 3.14159); 输出 3.14。%.2f 表示保留 2 位小数，更简洁。\n\nsetprecision 一旦设置，后续所有浮点输出都会受影响，除非重新设置。printf 的格式控制只影响当前输出。\n\n注意：四舍五入由系统自动完成，不需要手动处理。",
+      "exampleCode": "#include <iostream>\n#include <iomanip>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    double pi = 3.14159265;\n    cout << fixed << setprecision(2) << pi << endl;\n    cout << fixed << setprecision(4) << pi << endl;\n    printf(\"%.2f\\n\", pi);\n    printf(\"%.4f\\n\", pi);\n    return 0;\n}",
+      "codeNotes": [
+        "fixed + setprecision(n) 保留 n 位小数",
+        "需要 #include <iomanip>",
+        "printf 用 %.nf 保留 n 位小数",
+        "setprecision 影响后续所有输出",
+        "自动四舍五入"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 fixed",
+          "description": "setprecision(2) 不加 fixed 时，控制的是有效数字位数，不是小数位数。",
+          "fix": "加 fixed：cout << fixed << setprecision(2) << x;。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个双精度数，分别输出保留 1 位、2 位、6 位小数的结果，每行一个。",
+        "hint": "用 printf(\"%.1f\\n\", x); printf(\"%.2f\\n\", x); printf(\"%.6f\\n\", x);",
+        "expectedIdea": "double x;\ncin >> x;\nprintf(\"%.1f\\n\", x);\nprintf(\"%.2f\\n\", x);\nprintf(\"%.6f\\n\", x);"
+      },
+      "quiz": [
+        {
+          "question": "printf(\"%.3f\\n\", 3.14159); 输出什么？",
+          "options": [
+            "3.14159",
+            "3.14",
+            "3.142",
+            "3.141"
+          ],
+          "answerIndex": 2,
+          "explanation": "%.3f 保留 3 位小数，3.14159 的第 4 位是 5，四舍五入后为 3.142。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.7",
+      "title": "文件读写切换",
+      "learningGoal": "学会用 freopen 将标准输入输出重定向到文件",
+      "explanation": "调试大数据时，手动输入太慢。freopen 可以将 cin/cout 的输入输出重定向到文件，方便测试。\n\n用法：freopen(\"input.txt\", \"r\", stdin); 将输入从键盘切换到文件；freopen(\"output.txt\", \"w\", stdout); 将输出切换到文件。\n\n使用 freopen 后，所有 cin、cout、scanf、printf 都自动读写文件，代码其他部分不需要改动。\n\n竞赛中，提交代码前记得注释掉或用条件编译包裹 freopen，否则在线评测时会找不到文件导致错误。",
+      "exampleCode": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    freopen(\"input.txt\", \"r\", stdin);\n    freopen(\"output.txt\", \"w\", stdout);\n    int n;\n    cin >> n;\n    cout << n * 2 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "freopen(\"file\", \"r\", stdin) 从文件读入",
+        "freopen(\"file\", \"w\", stdout) 输出到文件",
+        "之后 cin/cout 自动读写文件",
+        "提交前要注释掉 freopen"
+      ],
+      "commonMistakes": [
+        {
+          "title": "提交时忘记去掉 freopen",
+          "description": "在线评测系统找不到 input.txt，导致运行错误。",
+          "fix": "用 #ifdef LOCAL 包裹 freopen，或提交前注释掉。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，用 freopen 从 data.in 读取一个整数，输出其平方到 data.out。",
+        "hint": "freopen(\"data.in\", \"r\", stdin); freopen(\"data.out\", \"w\", stdout);",
+        "expectedIdea": "freopen(\"data.in\", \"r\", stdin);\nfreopen(\"data.out\", \"w\", stdout);\nint n;\ncin >> n;\ncout << 1LL * n * n << endl;"
+      },
+      "quiz": [
+        {
+          "question": "freopen(\"in.txt\", \"r\", stdin) 的作用是什么？",
+          "options": [
+            "创建一个新文件",
+            "将标准输入重定向到 in.txt",
+            "关闭标准输入",
+            "删除文件内容"
+          ],
+          "answerIndex": 1,
+          "explanation": "freopen 将 stdin 重定向到指定文件，之后所有从 stdin 读取的操作（cin、scanf）都从文件读取。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.1.8",
+      "title": "调试输出与正式输出分离",
+      "learningGoal": "学会用条件编译或 cerr 将调试输出和正式输出分离",
+      "explanation": "调试时经常需要打印中间变量，但这些调试信息不应该出现在最终提交的输出中。\n\n方法一：用 cerr 代替 cout 输出调试信息。cerr 输出到标准错误流，不会被重定向到输出文件，也不影响答案判断。\n\n方法二：用条件编译控制调试输出。定义一个 DEBUG 宏，调试时输出，提交时注释掉宏定义即可。\n\n方法三：用 #ifdef LOCAL 包裹所有调试输出。本地编译时定义 LOCAL 宏，提交时不定义。\n\n推荐使用 cerr 或条件编译，这样调试信息和正式输出完全分离，不会互相干扰。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\n#define LOCAL\n\nint main() {\n    int n;\n    cin >> n;\n#ifdef LOCAL\n    cerr << \"[debug] n = \" << n << endl;\n#endif\n    cout << n * 2 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "cerr 输出到标准错误流，不影响答案",
+        "#ifdef LOCAL 条件编译控制调试输出",
+        "提交时注释掉 #define LOCAL 即可",
+        "调试信息用 cerr，正式答案用 cout"
+      ],
+      "commonMistakes": [
+        {
+          "title": "调试信息混入正式输出",
+          "description": "用 cout 输出调试信息，导致判题系统把调试信息也算作答案的一部分。",
+          "fix": "调试信息用 cerr 输出，或用条件编译包裹。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个数组，用 cerr 输出数组内容作为调试，用 cout 输出数组元素之和作为正式答案。",
+        "hint": "cerr << \"[debug] a[\" << i << \"] = \" << a[i] << endl;",
+        "expectedIdea": "int a[5];\nint sum = 0;\nfor (int i = 0; i < 5; i++) {\n    cin >> a[i];\n    sum += a[i];\n    cerr << \"[debug] a[\" << i << \"] = \" << a[i] << endl;\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "cerr 和 cout 的区别是什么？",
+          "options": [
+            "cerr 更快",
+            "cerr 输出到标准错误流，不受 freopen 重定向 stdout 影响",
+            "cerr 只能输出字符串",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "cerr 输出到标准错误流，即使 stdout 被 freopen 重定向到文件，cerr 仍然输出到屏幕，不影响答案文件。"
+        }
+      ]
+    }
+  ]
+}

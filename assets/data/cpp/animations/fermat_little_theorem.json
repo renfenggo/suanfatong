@@ -1,0 +1,74 @@
+{
+  "animationId": "cpp_fermat_little_theorem",
+  "itemId": "4.2.7",
+  "title": "费马小定理",
+  "description": "演示费马小定理：若 p 是质数且 gcd(a,p)=1，则 a^(p-1) ≡ 1 (mod p)",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定理内容",
+      "description": "若 p 是质数且 a 不被 p 整除，则 a^(p-1) ≡ 1 (mod p)",
+      "codeLine": "// p 质数, gcd(a,p)=1 → a^(p-1) ≡ 1 (mod p)",
+      "highlights": ["a^(p-1) ≡ 1"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": ""},
+          {"name": "p", "value": "7", "note": "质数"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "验证：3^6 mod 7",
+      "description": "3^6 = 729，计算 729 % 7",
+      "codeLine": "// 3^6 = 729",
+      "highlights": ["3^6"],
+      "state": {
+        "variables": [
+          {"name": "3^1", "value": "3", "note": ""},
+          {"name": "3^2", "value": "9", "note": ""},
+          {"name": "3^3", "value": "27", "note": ""},
+          {"name": "3^6", "value": "729", "note": "3^3×3^3"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "取模验证",
+      "description": "729 % 7 = 1 ✓。费马小定理成立",
+      "codeLine": "cout << 729 % 7; // = 1 ✓",
+      "highlights": ["729 % 7"],
+      "state": {
+        "variables": [
+          {"name": "3^6", "value": "729", "note": ""},
+          {"name": "729%7", "value": "1", "note": "✓ 费马小定理成立"}
+        ],
+        "containers": [],
+        "output": "3^6 % 7 = 1 ✓"
+      }
+    },
+    {
+      "step": 4,
+      "title": "应用：求逆元",
+      "description": "由 a^(p-1) ≡ 1 可得 a^(p-2) ≡ a^(-1) (mod p)。即 a 的逆元 = a^(p-2) mod p",
+      "codeLine": "// inv(a) = a^(p-2) mod p",
+      "highlights": ["a^(p-2)"],
+      "state": {
+        "variables": [
+          {"name": "inv(3)", "value": "3^5%7", "note": "= 243%7 = 5"}
+        ],
+        "containers": [],
+        "output": "3^6 % 7 = 1 ✓\ninv(3) = 3^5 % 7 = 5"
+      }
+    }
+  ]
+}

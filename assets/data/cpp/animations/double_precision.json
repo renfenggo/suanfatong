@@ -1,0 +1,77 @@
+{
+  "animationId": "cpp_double_precision",
+  "itemId": "1.3.6",
+  "title": "double 浮点精度",
+  "description": "演示 double 类型的声明、浮点运算和精度问题",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "声明 double 变量",
+      "description": "double 用来存储小数，占 8 字节，有约 15~17 位有效数字的精度。",
+      "codeLine": "double pi = 3.14159265358979;\ndouble r = 5.0;",
+      "highlights": ["double", "pi", "r"],
+      "state": {
+        "variables": [
+          {"name": "pi", "value": "3.14159...", "note": "double，约 15 位有效数字"},
+          {"name": "r", "value": "5.0", "note": "double"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "浮点数运算",
+      "description": "double 变量可以做乘法等运算，结果也是 double，保留小数部分。",
+      "codeLine": "double area = pi * r * r;\ncout << area << endl;",
+      "highlights": ["pi * r * r", "area"],
+      "state": {
+        "variables": [
+          {"name": "pi", "value": "3.14159...", "note": ""},
+          {"name": "r", "value": "5.0", "note": ""},
+          {"name": "area", "value": "78.5398", "note": "3.14159 * 5.0 * 5.0"}
+        ],
+        "containers": [],
+        "output": "78.5398"
+      }
+    },
+    {
+      "step": 3,
+      "title": "浮点精度陷阱",
+      "description": "0.1 + 0.2 在计算机中并不精确等于 0.3！这是二进制浮点数的固有精度问题，不是程序错误。",
+      "codeLine": "double a = 0.1 + 0.2;\ncout << fixed << setprecision(17) << a;",
+      "highlights": ["0.1 + 0.2"],
+      "state": {
+        "variables": [
+          {"name": "pi", "value": "3.14159...", "note": ""},
+          {"name": "r", "value": "5.0", "note": ""},
+          {"name": "area", "value": "78.5398", "note": ""},
+          {"name": "a", "value": "0.30000000000000004", "note": "不等于 0.3！"}
+        ],
+        "containers": [],
+        "output": "78.5398\n0.30000000000000004"
+      }
+    },
+    {
+      "step": 4,
+      "title": "不要用 == 比较浮点数",
+      "description": "因为精度误差，a == 0.3 的结果是 false。正确做法是判断差值是否足够小。",
+      "codeLine": "cout << (a == 0.3) << endl;\ncout << (a - 0.3 < 1e-9) << endl;",
+      "highlights": ["a == 0.3", "1e-9"],
+      "state": {
+        "variables": [
+          {"name": "pi", "value": "3.14159...", "note": ""},
+          {"name": "area", "value": "78.5398", "note": ""},
+          {"name": "a", "value": "0.30000...004", "note": "与 0.3 差约 4e-17"}
+        ],
+        "containers": [],
+        "output": "78.5398\n0.30000000000000004\n0\n1"
+      }
+    }
+  ]
+}

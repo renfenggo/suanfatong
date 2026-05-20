@@ -1,0 +1,104 @@
+{
+  "animationId": "cpp_prime_factorization",
+  "itemId": "4.1.8",
+  "title": "质因数分解",
+  "description": "演示将 60 分解为质因数乘积 2×2×3×5 的过程",
+  "initialState": {
+    "variables": [
+      {"name": "n", "value": "60", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "要分解 n=60，从最小质因子 i=2 开始试除",
+      "codeLine": "int n = 60;",
+      "highlights": ["n"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "60", "note": ""},
+          {"name": "i", "value": "2", "note": "从 2 开始"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "试除 i=2（第 1 次）",
+      "description": "60 % 2 = 0，找到质因子 2，n 变为 60/2 = 30",
+      "codeLine": "while (n % i == 0) { n /= i; cout << i; }",
+      "highlights": ["n % i == 0", "n /= i"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "30", "note": "60÷2=30"},
+          {"name": "i", "value": "2", "note": "找到因子 2"}
+        ],
+        "containers": [],
+        "output": "2 "
+      }
+    },
+    {
+      "step": 3,
+      "title": "试除 i=2（第 2 次）",
+      "description": "30 % 2 = 0，再除一次，n 变为 30/2 = 15。15 % 2 = 1 ≠ 0，i++ → i=3",
+      "codeLine": "while (n % i == 0) { n /= i; cout << i; }",
+      "highlights": ["n /= i"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "15", "note": "30÷2=15"},
+          {"name": "i", "value": "3", "note": "15%2≠0，i++→3"}
+        ],
+        "containers": [],
+        "output": "2 × 2 "
+      }
+    },
+    {
+      "step": 4,
+      "title": "试除 i=3",
+      "description": "15 % 3 = 0，找到质因子 3，n 变为 15/3 = 5。5 % 3 = 2 ≠ 0，i++ → i=4",
+      "codeLine": "while (n % i == 0) { n /= i; cout << i; }",
+      "highlights": ["n % i == 0"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "5", "note": "15÷3=5"},
+          {"name": "i", "value": "4", "note": "5%3≠0，i++→4"}
+        ],
+        "containers": [],
+        "output": "2 × 2 × 3 "
+      }
+    },
+    {
+      "step": 5,
+      "title": "试除 i=4 跳过，i=5 命中",
+      "description": "4 不是质数跳过。5 % 5 = 0，找到质因子 5，n 变为 5/5 = 1。n=1 分解结束",
+      "codeLine": "while (n % i == 0) { n /= i; cout << i; }",
+      "highlights": ["n /= i"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "1", "note": "5÷5=1，结束"},
+          {"name": "i", "value": "5", "note": "找到因子 5"}
+        ],
+        "containers": [],
+        "output": "2 × 2 × 3 × 5"
+      }
+    },
+    {
+      "step": 6,
+      "title": "分解结果",
+      "description": "60 = 2 × 2 × 3 × 5，所有质因子已找到",
+      "codeLine": "// 60 = 2 × 2 × 3 × 5",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "1", "note": "分解完成"}
+        ],
+        "containers": [],
+        "output": "60 = 2 × 2 × 3 × 5"
+      }
+    }
+  ]
+}

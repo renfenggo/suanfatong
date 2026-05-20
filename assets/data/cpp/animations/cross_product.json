@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_cross_product",
+  "itemId": "4.7.15",
+  "title": "叉积",
+  "description": "演示二维向量叉积的计算及其几何意义：判断方向和求面积",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义向量",
+      "description": "向量 a = (3, 1)，向量 b = (1, 2)",
+      "codeLine": "int ax=3, ay=1, bx=1, by=2;",
+      "highlights": ["ax,ay", "bx,by"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,1)", "note": ""},
+          {"name": "b", "value": "(1,2)", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算叉积",
+      "description": "二维叉积：a × b = ax×by - ay×bx = 3×2 - 1×1 = 6 - 1 = 5",
+      "codeLine": "int cross = ax*by - ay*bx;",
+      "highlights": ["ax*by - ay*bx"],
+      "state": {
+        "variables": [
+          {"name": "ax×by", "value": "6", "note": "3×2"},
+          {"name": "ay×bx", "value": "1", "note": "1×1"},
+          {"name": "cross", "value": "5", "note": "6-1=5"}
+        ],
+        "containers": [],
+        "output": "a×b = 5"
+      }
+    },
+    {
+      "step": 3,
+      "title": "符号判断方向",
+      "description": "叉积 > 0：b 在 a 的逆时针方向。叉积 < 0：b 在 a 的顺时针方向。叉积 = 0：共线",
+      "codeLine": "// cross > 0 → 逆时针; < 0 → 顺时针",
+      "highlights": ["逆时针"],
+      "state": {
+        "variables": [
+          {"name": "cross", "value": "5", "note": "> 0 → b 在 a 逆时针侧"}
+        ],
+        "containers": [],
+        "output": "a×b = 5 > 0 → b在a逆时针侧"
+      }
+    },
+    {
+      "step": 4,
+      "title": "几何意义：面积",
+      "description": "|叉积| = |a×b| = 5，等于 a 和 b 构成的平行四边形面积。三角形面积 = |叉积|/2 = 2.5",
+      "codeLine": "double area = abs(cross) / 2.0;",
+      "highlights": ["abs(cross) / 2.0"],
+      "state": {
+        "variables": [
+          {"name": "平行四边形面积", "value": "5", "note": "|a×b|"},
+          {"name": "三角形面积", "value": "2.5", "note": "|a×b|/2"}
+        ],
+        "containers": [],
+        "output": "a×b = 5\n平行四边形面积 = 5\n三角形面积 = 2.5"
+      }
+    }
+  ]
+}

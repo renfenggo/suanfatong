@@ -1,0 +1,110 @@
+{
+  "animationId": "cpp_binary_search_manual",
+  "itemId": "2.3.1",
+  "title": "二分查找",
+  "description": "演示在有序数组中用二分查找定位目标值的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": -1, "note": "有序数组"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化左右边界",
+      "description": "目标值 target = 16。设左边界 left = 0，右边界 right = 6。计算中间位置 mid = (0 + 6) / 2 = 3。",
+      "codeLine": "int left = 0, right = n - 1;\nint mid = (left + right) / 2;",
+      "highlights": ["left", "right", "mid"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "16", "note": "要查找的值"},
+          {"name": "left", "value": "0", "note": "arr[0]=2"},
+          {"name": "right", "value": "6", "note": "arr[6]=38"},
+          {"name": "mid", "value": "3", "note": "arr[3]=12"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": 3, "note": "中间值 12"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "比较：12 < 16，缩小左边界",
+      "description": "arr[mid]=12 < target=16，说明目标在右半部分。将 left 移到 mid + 1 = 4。",
+      "codeLine": "if (arr[mid] < target) left = mid + 1;",
+      "highlights": ["arr[mid] < target", "left = mid + 1"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "16", "note": ""},
+          {"name": "left", "value": "4", "note": "移到 mid+1"},
+          {"name": "right", "value": "6", "note": ""},
+          {"name": "mid", "value": "3", "note": "12 < 16，去右边"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": 3, "note": "排除左半部分"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "新的 mid = 5",
+      "description": "重新计算 mid = (4 + 6) / 2 = 5。arr[5] = 23。",
+      "codeLine": "mid = (left + right) / 2;",
+      "highlights": ["mid"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "16", "note": ""},
+          {"name": "left", "value": "4", "note": ""},
+          {"name": "right", "value": "6", "note": ""},
+          {"name": "mid", "value": "5", "note": "arr[5]=23"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": 5, "note": "中间值 23"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "比较：23 > 16，缩小右边界",
+      "description": "arr[mid]=23 > target=16，说明目标在左半部分。将 right 移到 mid - 1 = 4。",
+      "codeLine": "else if (arr[mid] > target) right = mid - 1;",
+      "highlights": ["arr[mid] > target", "right = mid - 1"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "16", "note": ""},
+          {"name": "left", "value": "4", "note": ""},
+          {"name": "right", "value": "4", "note": "移到 mid-1"},
+          {"name": "mid", "value": "5", "note": "23 > 16，去左边"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": 5, "note": "排除右半部分"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "找到目标！",
+      "description": "mid = (4 + 4) / 2 = 4，arr[4] = 16 = target，找到目标！二分查找只需 O(log n) 次比较。",
+      "codeLine": "else return mid;  // 找到了！",
+      "highlights": ["return mid"],
+      "state": {
+        "variables": [
+          {"name": "target", "value": "16", "note": ""},
+          {"name": "left", "value": "4", "note": ""},
+          {"name": "right", "value": "4", "note": ""},
+          {"name": "mid", "value": "4", "note": "arr[4]=16 ✓"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "5", "8", "12", "16", "23", "38"], "activeIndex": 4, "note": "找到 16，下标 4"}
+        ],
+        "output": "找到 16，下标 = 4"
+      }
+    }
+  ]
+}

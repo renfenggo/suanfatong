@@ -1,0 +1,76 @@
+{
+  "animationId": "cpp_pythagorean_theorem",
+  "itemId": "4.7.13",
+  "title": "勾股定理",
+  "description": "演示勾股定理：直角三角形中 a² + b² = c²",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "直角三角形",
+      "description": "直角三角形两直角边 a=3, b=4，求斜边 c",
+      "codeLine": "int a = 3, b = 4;",
+      "highlights": ["a", "b"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": "直角边"},
+          {"name": "b", "value": "4", "note": "直角边"},
+          {"name": "c", "value": "?", "note": "斜边"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算平方",
+      "description": "a² = 3² = 9，b² = 4² = 16",
+      "codeLine": "int a2 = a*a, b2 = b*b;",
+      "highlights": ["a*a", "b*b"],
+      "state": {
+        "variables": [
+          {"name": "a²", "value": "9", "note": "3×3"},
+          {"name": "b²", "value": "16", "note": "4×4"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "勾股定理",
+      "description": "c² = a² + b² = 9 + 16 = 25",
+      "codeLine": "int c2 = a2 + b2; // = 25",
+      "highlights": ["a2 + b2"],
+      "state": {
+        "variables": [
+          {"name": "a²", "value": "9", "note": ""},
+          {"name": "b²", "value": "16", "note": ""},
+          {"name": "c²", "value": "25", "note": "9+16=25"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "求斜边",
+      "description": "c = √25 = 5。这就是经典的 3-4-5 直角三角形",
+      "codeLine": "double c = sqrt(c2); // = 5",
+      "highlights": ["sqrt"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "3", "note": ""},
+          {"name": "b", "value": "4", "note": ""},
+          {"name": "c", "value": "5", "note": "√25=5"}
+        ],
+        "containers": [],
+        "output": "3² + 4² = 5²"
+      }
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "sectionId": "5.3",
+  "sectionName": "下标与枚举技巧",
+  "units": [
+    {
+      "itemId": "5.3.1",
+      "title": "0 下标与 1 下标转换",
+      "learningGoal": "理解 0-indexed 和 1-indexed 的区别，学会灵活切换",
+      "explanation": "C++ 数组默认从 0 开始编号（0-indexed），但有些题目描述或数学公式从 1 开始（1-indexed）。灵活处理下标偏移是竞赛基本功。\n\n方法一：数组大小多开 1，下标从 1 开始使用。int a[n+1]，使用 a[1] 到 a[n]，a[0] 不用。\n\n方法二：保持 0-indexed，但在输入输出时做偏移。读入第 i 个数存到 a[i-1]，输出第 i 个数用 a[i-1]。\n\n前缀和、差分等场景通常用 1-indexed 更方便，因为边界处理更自然。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 5;\n    int a[6];\n    for (int i = 1; i <= n; i++) {\n        a[i] = i * 10;\n    }\n    for (int i = 1; i <= n; i++) {\n        cout << \"a[\" << i << \"] = \" << a[i] << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "数组大小多开 1，从 1 开始使用",
+        "1-indexed 循环：for (int i = 1; i <= n; i++)",
+        "前缀和、差分推荐 1-indexed",
+        "STL 容器（vector 等）默认 0-indexed"
+      ],
+      "commonMistakes": [
+        {
+          "title": "数组大小不够",
+          "description": "int a[5]; 用 for (int i = 1; i <= 5; i++) a[i] = ...; a[5] 越界。",
+          "fix": "声明 int a[6]（n+1），确保下标 n 有效。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 1-indexed 存储 5 个数并计算前缀和 sum[i] = a[1] + ... + a[i]。",
+        "hint": "sum[0] = 0; sum[i] = sum[i-1] + a[i];",
+        "expectedIdea": "int a[6], sum[6] = {0};\nfor (int i = 1; i <= 5; i++) {\n    cin >> a[i];\n    sum[i] = sum[i-1] + a[i];\n}"
+      },
+      "quiz": [
+        {
+          "question": "使用 1-indexed 时，int a[n] 的大小够用吗？",
+          "options": [
+            "够用",
+            "不够，需要 int a[n+1]",
+            "取决于 n 的值",
+            "取决于编译器"
+          ],
+          "answerIndex": 1,
+          "explanation": "1-indexed 需要访问 a[n]，所以数组大小至少是 n+1。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.2",
+      "title": "一维转二维",
+      "learningGoal": "学会用一维数组模拟二维数组的下标映射",
+      "explanation": "有时候需要用一维数组来模拟二维数组。映射公式为：a[i][j] 对应 flat[i * cols + j]，其中 cols 是列数。\n\n这种技巧在动态开数组、函数传参等场景中很有用。BFS 中经常用一个一维数组存储网格信息。\n\n反向映射：已知一维下标 k，i = k / cols，j = k % cols。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int rows = 3, cols = 4;\n    int flat[12];\n    for (int i = 0; i < rows; i++) {\n        for (int j = 0; j < cols; j++) {\n            flat[i * cols + j] = i * cols + j + 1;\n        }\n    }\n    for (int i = 0; i < rows; i++) {\n        for (int j = 0; j < cols; j++) {\n            cout << flat[i * cols + j] << \"\\t\";\n        }\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "a[i][j] → flat[i * cols + j]",
+        "反向：i = k / cols, j = k % cols",
+        "一维数组大小 = rows * cols",
+        "BFS 等场景常用此映射"
+      ],
+      "commonMistakes": [
+        {
+          "title": "行列搞反",
+          "description": "用 i * rows + j 而不是 i * cols + j。",
+          "fix": "映射公式是 行号 × 列数 + 列号。"
+        }
+      ],
+      "practice": {
+        "prompt": "用一维数组模拟 2×3 矩阵，按行输出。",
+        "hint": "flat[i * 3 + j]",
+        "expectedIdea": "int flat[6];\nfor (int i = 0; i < 2; i++) {\n    for (int j = 0; j < 3; j++) {\n        flat[i * 3 + j] = i * 3 + j;\n        cout << flat[i * 3 + j] << \" \";\n    }\n    cout << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "3 行 4 列的矩阵中，a[1][2] 对应一维下标是？",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "12"
+          ],
+          "answerIndex": 1,
+          "explanation": "1 * 4 + 2 = 6。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.3",
+      "title": "二维转一维",
+      "learningGoal": "学会将一维下标还原为二维坐标",
+      "explanation": "已知一维下标 k 和列数 cols，可以还原出二维坐标：i = k / cols（行号），j = k % cols（列号）。\n\n这在 BFS 中特别常用：队列里存一维下标，需要时还原成二维坐标来检查四个方向。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int cols = 4;\n    for (int k = 0; k < 12; k++) {\n        int i = k / cols;\n        int j = k % cols;\n        cout << \"flat[\" << k << \"] -> (\" << i << \", \" << j << \")\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "k / cols 得到行号",
+        "k % cols 得到列号",
+        "BFS 队列常用一维下标",
+        "需要时还原为二维坐标"
+      ],
+      "commonMistakes": [
+        {
+          "title": "除数用行数而不是列数",
+          "description": "用 k / rows 导致还原的坐标不正确。",
+          "fix": "用列数：i = k / cols, j = k % cols。"
+        }
+      ],
+      "practice": {
+        "prompt": "4×5 网格，输入一维下标 k（0~19），输出对应的 (行, 列)。",
+        "hint": "i = k / 5; j = k % 5;",
+        "expectedIdea": "int k;\ncin >> k;\nint i = k / 5;\nint j = k % 5;\ncout << \"(\" << i << \", \" << j << \")\" << endl;"
+      },
+      "quiz": [
+        {
+          "question": "5 列的网格中，一维下标 7 对应的坐标是？",
+          "options": [
+            "(1, 2)",
+            "(2, 1)",
+            "(0, 7)",
+            "(7, 0)"
+          ],
+          "answerIndex": 0,
+          "explanation": "7 / 5 = 1（行），7 % 5 = 2（列），所以是 (1, 2)。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.4",
+      "title": "正序 / 倒序遍历",
+      "learningGoal": "掌握正序和倒序遍历数组的写法",
+      "explanation": "正序遍历：for (int i = 0; i < n; i++)，从前往后。倒序遍历：for (int i = n - 1; i >= 0; i--)，从后往前。\n\n倒序遍历在「原地修改数组不覆盖」时特别有用。比如从右向左移动元素时，倒序遍历不会覆盖还未处理的值。\n\n两种遍历方向的选择取决于问题需求。有些操作必须用倒序，比如删除元素时从后往前删。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {1, 2, 3, 4, 5};\n    int n = 5;\n    cout << \"正序: \";\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    cout << endl;\n    cout << \"倒序: \";\n    for (int i = n - 1; i >= 0; i--) cout << a[i] << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "正序：i 从 0 到 n-1",
+        "倒序：i 从 n-1 到 0",
+        "倒序遍历条件是 i >= 0",
+        "原地移动元素时倒序更安全"
+      ],
+      "commonMistakes": [
+        {
+          "title": "倒序条件写成 i > 0",
+          "description": "for (int i = n-1; i > 0; i--) 漏掉了 a[0]。",
+          "fix": "条件应该是 i >= 0，确保访问到 a[0]。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 5 个数存入数组，先正序输出，再倒序输出。",
+        "hint": "两个 for 循环，一个 i++ 一个 i--",
+        "expectedIdea": "int a[5];\nfor (int i = 0; i < 5; i++) cin >> a[i];\nfor (int i = 0; i < 5; i++) cout << a[i] << \" \";\ncout << endl;\nfor (int i = 4; i >= 0; i--) cout << a[i] << \" \";\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "倒序遍历 int a[5] 的正确写法是？",
+          "options": [
+            "for (int i = 5; i > 0; i--)",
+            "for (int i = 4; i >= 0; i--)",
+            "for (int i = 0; i >= 0; i--)",
+            "for (int i = 5; i >= 0; i--)"
+          ],
+          "answerIndex": 1,
+          "explanation": "大小为 5 的数组最大下标是 4，倒序从 4 开始到 0 结束：for (int i = 4; i >= 0; i--)。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.5",
+      "title": "不重不漏枚举",
+      "learningGoal": "掌握枚举的基本原则，确保枚举不重复、不遗漏",
+      "explanation": "枚举是最基本的算法思想，但要做到不重不漏并不容易。关键在于确定枚举的起点和终点，以及每次枚举的步长。\n\n基本原则：明确枚举对象、枚举范围、枚举顺序。确保每个候选项恰好被考虑一次。\n\n常见模式：枚举所有下标 for (int i = 0; i < n; i++)；枚举所有子区间 for (int i = 0; i < n; i++) for (int j = i; j < n; j++)。\n\n不重不漏的关键是清晰的边界和有序的枚举。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {3, 1, 4, 1, 5};\n    int n = 5;\n    int maxSum = 0;\n    for (int i = 0; i < n; i++) {\n        int sum = 0;\n        for (int j = i; j < n; j++) {\n            sum += a[j];\n            if (sum > maxSum) maxSum = sum;\n        }\n    }\n    cout << \"最大子数组和: \" << maxSum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "枚举所有子区间 [i, j]",
+        "j 从 i 开始确保不重不漏",
+        "外层枚举起点，内层枚举终点",
+        "时间复杂度 O(n²)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "枚举范围出错",
+          "description": "j 从 0 开始而不是 i 开始，导致重复枚举。",
+          "fix": "确保内层循环从 i 开始，避免重复。"
+        }
+      ],
+      "practice": {
+        "prompt": "枚举数组 {2, 5, -1, 3} 中所有连续子数组的和，找出最大值。",
+        "hint": "双层循环枚举子区间起点和终点",
+        "expectedIdea": "int a[] = {2, 5, -1, 3};\nint maxSum = -1e9;\nfor (int i = 0; i < 4; i++) {\n    int sum = 0;\n    for (int j = i; j < 4; j++) {\n        sum += a[j];\n        maxSum = max(maxSum, sum);\n    }\n}\ncout << maxSum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "枚举长度为 n 的数组所有子区间，时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n²)",
+            "O(n³)",
+            "O(2ⁿ)"
+          ],
+          "answerIndex": 1,
+          "explanation": "子区间数量为 n(n+1)/2，双层循环枚举起点和终点，时间复杂度 O(n²)。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.6",
+      "title": "枚举因子",
+      "learningGoal": "学会高效枚举一个数的所有因子",
+      "explanation": "枚举因子不需要遍历到 n，只需遍历到 √n。因为因子成对出现：如果 i 是 n 的因子，那么 n/i 也是。\n\n方法：for (int i = 1; i * i <= n; i++)，如果 n % i == 0，则 i 和 n/i 都是因子。\n\n注意 i == n/i 时只算一个因子（完全平方数的情况）。\n\n时间复杂度从 O(n) 降到 O(√n)，对大数尤其重要。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 36;\n    cout << n << \" 的因子: \";\n    for (int i = 1; i * i <= n; i++) {\n        if (n % i == 0) {\n            cout << i << \" \";\n            if (i != n / i) cout << n / i << \" \";\n        }\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "只需遍历到 √n",
+        "因子成对出现：i 和 n/i",
+        "i * i <= n 避免浮点运算",
+        "注意 i == n/i 的情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "遍历到 n 导致超时",
+          "description": "for (int i = 1; i <= n; i++) 当 n 很大时超时。",
+          "fix": "只遍历到 √n：for (int i = 1; i * i <= n; i++)。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个正整数 n，输出所有因子（从小到大）。",
+        "hint": "遍历到 √n，收集因子对，排序输出",
+        "expectedIdea": "int n;\ncin >> n;\nvector<int> factors;\nfor (int i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n        factors.push_back(i);\n        if (i != n / i) factors.push_back(n / i);\n    }\n}\nsort(factors.begin(), factors.end());\nfor (int f : factors) cout << f << \" \";"
+      },
+      "quiz": [
+        {
+          "question": "枚举 100 的所有因子，循环执行多少次？",
+          "options": [
+            "100 次",
+            "50 次",
+            "10 次",
+            "25 次"
+          ],
+          "answerIndex": 2,
+          "explanation": "√100 = 10，循环从 i=1 到 i=10，共 10 次。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.7",
+      "title": "枚举倍数",
+      "learningGoal": "学会高效枚举一个数的所有倍数",
+      "explanation": "枚举倍数比枚举因子简单：for (int i = k; i <= n; i += k) 枚举 k 的所有不超过 n 的倍数。\n\n这个技巧在筛法求素数、调和级数等场景中常用。例如埃氏筛中，对于每个素数 p，枚举它的倍数并标记为合数。\n\n注意 i 从 k 开始（而不是 0），步长为 k。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int k = 3, n = 20;\n    cout << k << \" 的倍数（不超过 \" << n << \"）: \";\n    for (int i = k; i <= n; i += k) {\n        cout << i << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "从 k 开始，步长 k",
+        "for (int i = k; i <= n; i += k)",
+        "埃氏筛的核心操作",
+        "时间复杂度 O(n/k)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "从 0 开始",
+          "description": "for (int i = 0; i <= n; i += k) 0 也被枚举为倍数。",
+          "fix": "从 k 开始：for (int i = k; i <= n; i += k)。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出 1~100 中所有 7 的倍数。",
+        "hint": "for (int i = 7; i <= 100; i += 7)",
+        "expectedIdea": "for (int i = 7; i <= 100; i += 7) {\n    cout << i << \" \";\n}\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "枚举不超过 n 的 k 的倍数，循环应从几开始？",
+          "options": [
+            "0",
+            "1",
+            "k",
+            "k-1"
+          ],
+          "answerIndex": 2,
+          "explanation": "k 的最小正倍数是 k 本身，所以从 k 开始。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.8",
+      "title": "枚举子集",
+      "learningGoal": "掌握用位运算枚举集合所有子集的方法",
+      "explanation": "用二进制表示集合，每个元素对应一个比特位。枚举 0 到 2^n - 1 的所有整数，每个整数的二进制表示就是一个子集。\n\n第 i 位为 1 表示选中第 i 个元素，为 0 表示不选。\n\n检查第 i 位是否选中：(mask >> i) & 1。设置第 i 位：mask | (1 << i)。\n\n子集枚举的时间复杂度为 O(n × 2^n)，适用于 n 较小（通常 n ≤ 20）的情况。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {1, 2, 3};\n    int n = 3;\n    for (int mask = 0; mask < (1 << n); mask++) {\n        cout << \"{\";\n        bool first = true;\n        for (int i = 0; i < n; i++) {\n            if ((mask >> i) & 1) {\n                if (!first) cout << \", \";\n                cout << a[i];\n                first = false;\n            }\n        }\n        cout << \"}\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "mask 从 0 到 2^n - 1",
+        "(mask >> i) & 1 检查第 i 位",
+        "1 << n 表示 2^n",
+        "适用于 n ≤ 20 的场景"
+      ],
+      "commonMistakes": [
+        {
+          "title": "位运算优先级错误",
+          "description": "mask >> i & 1 可能因为优先级问题导致错误。",
+          "fix": "加括号：(mask >> i) & 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n 个数，输出所有子集的元素之和。",
+        "hint": "枚举 mask，对每个 mask 累加选中元素",
+        "expectedIdea": "int n;\ncin >> n;\nint a[20];\nfor (int i = 0; i < n; i++) cin >> a[i];\nfor (int mask = 0; mask < (1 << n); mask++) {\n    int sum = 0;\n    for (int i = 0; i < n; i++) {\n        if ((mask >> i) & 1) sum += a[i];\n    }\n    cout << sum << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "n = 3 的集合有多少个子集？",
+          "options": [
+            "3",
+            "6",
+            "8",
+            "9"
+          ],
+          "answerIndex": 2,
+          "explanation": "子集数量 = 2^n = 2^3 = 8。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.9",
+      "title": "枚举排列",
+      "learningGoal": "学会用 next_permutation 枚举所有排列",
+      "explanation": "C++ 的 next_permutation 函数可以按字典序生成下一个排列。配合 do-while 循环可以枚举所有排列。\n\n使用前需要先对数组排序（升序），确保从最小排列开始。next_permutation 返回 true 表示还有下一个排列，false 表示已经是最后一个。\n\n排列数量为 n!，增长极快，只适用于 n 较小（通常 n ≤ 8~10）的情况。",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int a[] = {1, 2, 3};\n    sort(a, a + 3);\n    do {\n        for (int i = 0; i < 3; i++) cout << a[i] << \" \";\n        cout << endl;\n    } while (next_permutation(a, a + 3));\n    return 0;\n}",
+      "codeNotes": [
+        "先 sort 确保从最小排列开始",
+        "do-while 保证第一个排列也被处理",
+        "next_permutation 按字典序生成",
+        "n! 增长极快，n 不宜过大"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记先排序",
+          "description": "如果初始不是最小排列，会漏掉一些排列。",
+          "fix": "使用前先 sort(a, a + n)。"
+        },
+        {
+          "title": "用 while 而非 do-while",
+          "description": "while 第一次判断就跳过了，第一个排列没被处理。",
+          "fix": "用 do-while 确保第一个排列也被输出。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 n（n ≤ 8），输出 1~n 的所有排列。",
+        "hint": "sort + do-while + next_permutation",
+        "expectedIdea": "int n;\ncin >> n;\nint a[8];\nfor (int i = 0; i < n; i++) a[i] = i + 1;\ndo {\n    for (int i = 0; i < n; i++) cout << a[i] << \" \";\n    cout << endl;\n} while (next_permutation(a, a + n));"
+      },
+      "quiz": [
+        {
+          "question": "next_permutation(a, a + n) 的参数是什么？",
+          "options": [
+            "起始下标和长度",
+            "起始地址和末尾地址的下一个",
+            "起始下标和末尾下标",
+            "数组名和大小"
+          ],
+          "answerIndex": 1,
+          "explanation": "STL 算法使用左闭右开区间 [first, last)，所以传 a（起始地址）和 a + n（末尾地址的下一个）。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.10",
+      "title": "dx / dy 方向数组",
+      "learningGoal": "学会用方向数组简化 BFS/DFS 中的四方向移动",
+      "explanation": "在网格上做 BFS 或 DFS 时，需要向四个方向移动。用方向数组可以简化代码。\n\n定义 dx[] = {-1, 1, 0, 0} 和 dy[] = {0, 0, -1, 1}，分别对应上、下、左、右。\n\n移动时：nx = x + dx[d], ny = y + dy[d]，d 从 0 到 3 遍历四个方向。\n\n检查边界：0 <= nx && nx < n && 0 <= ny && ny < m。\n\n也可以用八个方向的对角线扩展。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int dx[] = {-1, 1, 0, 0};\n    int dy[] = {0, 0, -1, 1};\n    string dir[] = {\"上\", \"下\", \"左\", \"右\"};\n    int x = 2, y = 2;\n    for (int d = 0; d < 4; d++) {\n        int nx = x + dx[d];\n        int ny = y + dy[d];\n        cout << dir[d] << \": (\" << nx << \", \" << ny << \")\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "dx/dy 数组表示四个方向偏移",
+        "d=0:上, d=1:下, d=2:左, d=3:右",
+        "nx = x + dx[d], ny = y + dy[d]",
+        "移动前检查边界"
+      ],
+      "commonMistakes": [
+        {
+          "title": "方向数组写错",
+          "description": "dx 和 dy 对应关系不对，导致移动方向错误。",
+          "fix": "确保 dx[d] 和 dy[d] 的对应关系正确：(-1,0)(1,0)(0,-1)(0,1)。"
+        }
+      ],
+      "practice": {
+        "prompt": "在 5×5 网格中，从 (2,2) 出发，输出能走到的四个相邻位置。",
+        "hint": "for d in 0..3: nx = 2+dx[d], ny = 2+dy[d]",
+        "expectedIdea": "int dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\nfor (int d = 0; d < 4; d++) {\n    int nx = 2 + dx[d];\n    int ny = 2 + dy[d];\n    if (nx >= 0 && nx < 5 && ny >= 0 && ny < 5) {\n        cout << \"(\" << nx << \",\" << ny << \")\" << endl;\n    }\n}"
+      },
+      "quiz": [
+        {
+          "question": "dx[] = {-1, 1, 0, 0}，dy[] = {0, 0, -1, 1}，d=2 时移动方向是？",
+          "options": [
+            "上",
+            "下",
+            "左",
+            "右"
+          ],
+          "answerIndex": 2,
+          "explanation": "d=2 时 dx[2]=0, dy[2]=-1，即 x 不变、y 减 1，对应向左移动。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.11",
+      "title": "提前退出",
+      "learningGoal": "学会在找到答案后立即退出循环，优化效率",
+      "explanation": "有时候一旦找到满足条件的答案就可以立即退出循环，不需要继续遍历。使用 break 退出循环，或 return 直接退出函数。\n\n提前退出可以节省不必要的计算，特别是在只需要判断「是否存在」的问题中。\n\n常见场景：查找某个元素是否在数组中、判断是否有满足条件的解等。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {3, 7, 2, 9, 1};\n    int target = 9;\n    bool found = false;\n    for (int i = 0; i < 5; i++) {\n        if (a[i] == target) {\n            found = true;\n            break;\n        }\n    }\n    cout << (found ? \"找到了\" : \"没找到\") << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "break 立即退出循环",
+        "return 直接退出函数",
+        "找到答案后不需要继续",
+        "减少不必要的计算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只退出内层循环",
+          "description": "双层循环中 break 只退出内层，外层继续。",
+          "fix": "用标志变量配合外层 break，或用 return 直接退出函数。"
+        }
+      ],
+      "practice": {
+        "prompt": "在数组中查找第一个大于 10 的元素，找到后输出并退出。",
+        "hint": "找到后 break",
+        "expectedIdea": "int a[] = {3, 5, 12, 7, 15};\nfor (int i = 0; i < 5; i++) {\n    if (a[i] > 10) {\n        cout << a[i] << endl;\n        break;\n    }\n}"
+      },
+      "quiz": [
+        {
+          "question": "双层循环中，内层的 break 会怎样？",
+          "options": [
+            "退出两层循环",
+            "只退出内层循环",
+            "退出整个函数",
+            "编译错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "break 只退出最内层包含它的循环。要退出多层循环需要用标志变量或 return。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.3.12",
+      "title": "剪枝写法基础",
+      "learningGoal": "理解剪枝的概念，学会在搜索中提前排除无效分支",
+      "explanation": "剪枝是在搜索过程中提前判断某个分支不可能产生有效解，直接跳过不再深入。这是提高搜索效率的关键技巧。\n\n基本思路：在递归或循环的每一步，先判断当前状态是否有可能产生解。如果不可能，直接 return 或 continue。\n\n常见的剪枝条件：当前和已经超过目标值、剩余元素不够凑齐所需数量、当前方案已经不可能比已知最优解更好等。\n\n剪枝是 DFS 优化的核心手段，好的剪枝可以把指数级复杂度降到可接受范围。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint a[] = {3, 1, 4, 1, 5};\nint n = 5, target = 7;\nint minCnt = 999;\n\nvoid dfs(int idx, int sum, int cnt) {\n    if (sum > target) return;\n    if (cnt >= minCnt) return;\n    if (idx == n) {\n        if (sum == target && cnt < minCnt) minCnt = cnt;\n        return;\n    }\n    dfs(idx + 1, sum + a[idx], cnt + 1);\n    dfs(idx + 1, sum, cnt);\n}\n\nint main() {\n    dfs(0, 0, 0);\n    cout << \"最少选 \" << minCnt << \" 个\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "sum > target 提前剪枝",
+        "cnt >= minCnt 最优性剪枝",
+        "在递归入口处判断是否值得继续",
+        "剪枝条件越强，效率越高"
+      ],
+      "commonMistakes": [
+        {
+          "title": "剪枝条件过强",
+          "description": "剪掉了实际上有解的分支，导致漏解。",
+          "fix": "仔细验证剪枝条件的正确性，确保不会误剪有效分支。"
+        }
+      ],
+      "practice": {
+        "prompt": "从数组 {2, 3, 5, 7} 中选若干数，使其和恰好为 8，输出所有方案。",
+        "hint": "DFS + 剪枝（sum > 8 时 return）",
+        "expectedIdea": "int a[] = {2, 3, 5, 7};\nvoid dfs(int i, int sum, string path) {\n    if (sum > 8) return;\n    if (i == 4) {\n        if (sum == 8) cout << path << endl;\n        return;\n    }\n    dfs(i + 1, sum + a[i], path + to_string(a[i]) + \" \");\n    dfs(i + 1, sum, path);\n}"
+      },
+      "quiz": [
+        {
+          "question": "剪枝的作用是什么？",
+          "options": [
+            "保证找到所有解",
+            "减少搜索空间，提高效率",
+            "让代码更简洁",
+            "替代所有优化方法"
+          ],
+          "answerIndex": 1,
+          "explanation": "剪枝通过提前排除不可能产生解的分支，减少搜索空间，从而提高搜索效率。"
+        }
+      ]
+    }
+  ]
+}

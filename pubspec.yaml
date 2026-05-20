@@ -1,7 +1,7 @@
 name: bfs_learn
 description: 信奥 BFS 专题离线学习 App
 publish_to: 'none'
-version: 260519.0.0+260519
+version: 260520.1.0+260520a
 
 environment:
   sdk: ^3.7.0
@@ -15,6 +15,7 @@ dependencies:
   flutter_riverpod: ^2.6.1
   shared_preferences: ^2.5.3
   path_provider: ^2.1.5
+  package_info_plus: ^9.0.1
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +32,4 @@ flutter:
     - assets/data/bfs_steps.json
     - assets/data/knowledge/
     - assets/data/cpp/
+    - assets/data/algorithm/

@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_path_walk_cycle",
+  "itemId": "4.5.4",
+  "title": "路径、回路、游走",
+  "description": "演示图中路径、回路和游走的区别",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "游走 (Walk)",
+      "description": "游走是顶点和边的交替序列，允许重复经过顶点和边。如 A-B-C-B-D",
+      "codeLine": "// Walk: A-B-C-B-D (可重复)",
+      "highlights": ["Walk"],
+      "state": {
+        "variables": [
+          {"name": "游走", "value": "A-B-C-B-D", "note": "可重复经过B"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "路径 (Path)",
+      "description": "路径是不经过重复顶点的游走。如 A-B-C-D（每个顶点只经过一次）",
+      "codeLine": "// Path: A-B-C-D (不重复顶点)",
+      "highlights": ["Path"],
+      "state": {
+        "variables": [
+          {"name": "路径", "value": "A-B-C-D", "note": "不重复顶点"},
+          {"name": "长度", "value": "3", "note": "3条边"}
+        ],
+        "containers": [],
+        "output": "路径: A-B-C-D (长度3)"
+      }
+    },
+    {
+      "step": 3,
+      "title": "回路 (Cycle)",
+      "description": "回路是起点和终点相同的路径。如 A-B-C-A（回到起点，中间不重复）",
+      "codeLine": "// Cycle: A-B-C-A (起点=终点)",
+      "highlights": ["Cycle"],
+      "state": {
+        "variables": [
+          {"name": "回路", "value": "A-B-C-A", "note": "起点终点相同"},
+          {"name": "长度", "value": "3", "note": "3条边"}
+        ],
+        "containers": [],
+        "output": "路径: A-B-C-D\n回路: A-B-C-A"
+      }
+    },
+    {
+      "step": 4,
+      "title": "总结",
+      "description": "游走：允许重复。路径：不重复顶点。回路：起点终点相同的路径。树是无回路的连通图",
+      "codeLine": "// 游走 ⊇ 路径 ⊇ 回路",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "游走", "value": "可重复", "note": "最宽松"},
+          {"name": "路径", "value": "不重复顶点", "note": ""},
+          {"name": "回路", "value": "首尾相同", "note": "特殊路径"}
+        ],
+        "containers": [],
+        "output": "路径: A-B-C-D\n回路: A-B-C-A"
+      }
+    }
+  ]
+}

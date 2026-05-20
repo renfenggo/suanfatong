@@ -1,0 +1,99 @@
+{
+  "animationId": "cpp_bubble_sort",
+  "itemId": "2.2.1",
+  "title": "冒泡排序",
+  "description": "演示冒泡排序的相邻比较和交换过程，每轮将最大值冒泡到末尾",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "arr", "type": "int[]", "values": ["5", "3", "8", "1", "2"], "activeIndex": -1, "note": "待排序数组"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "第 1 轮：比较 5 和 3",
+      "description": "比较相邻元素 arr[0]=5 和 arr[1]=3。5 > 3，所以交换它们。",
+      "codeLine": "if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);",
+      "highlights": ["arr[j]", "arr[j+1]"],
+      "state": {
+        "variables": [
+          {"name": "轮次", "value": "1", "note": "第 1 轮冒泡"},
+          {"name": "比较", "value": "5 > 3", "note": "需要交换"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["3", "5", "8", "1", "2"], "activeIndex": 1, "note": "交换 5↔3"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "第 1 轮：比较 5 和 8",
+      "description": "比较 arr[1]=5 和 arr[2]=8。5 < 8，不需要交换。",
+      "codeLine": "if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);",
+      "highlights": ["arr[j]", "arr[j+1]"],
+      "state": {
+        "variables": [
+          {"name": "轮次", "value": "1", "note": ""},
+          {"name": "比较", "value": "5 < 8", "note": "不交换"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["3", "5", "8", "1", "2"], "activeIndex": 2, "note": "不交换"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "第 1 轮：比较 8 和 1",
+      "description": "比较 arr[2]=8 和 arr[3]=1。8 > 1，交换它们。",
+      "codeLine": "if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);",
+      "highlights": ["arr[j]", "arr[j+1]"],
+      "state": {
+        "variables": [
+          {"name": "轮次", "value": "1", "note": ""},
+          {"name": "比较", "value": "8 > 1", "note": "需要交换"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["3", "5", "1", "8", "2"], "activeIndex": 3, "note": "交换 8↔1"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "第 1 轮：比较 8 和 2",
+      "description": "比较 arr[3]=8 和 arr[4]=2。8 > 2，交换。第 1 轮结束，最大值 8 已冒泡到最后。",
+      "codeLine": "if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);",
+      "highlights": ["arr[j]", "arr[j+1]"],
+      "state": {
+        "variables": [
+          {"name": "轮次", "value": "1", "note": "结束"},
+          {"name": "比较", "value": "8 > 2", "note": "交换，8 到末尾"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["3", "5", "1", "2", "8"], "activeIndex": 4, "note": "8 已就位 ✓"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "继续冒泡，最终排序完成",
+      "description": "重复以上过程，每轮将当前最大值冒泡到正确位置。最终数组变为 [1, 2, 3, 5, 8]。",
+      "codeLine": "for (int i = 0; i < n-1; i++)  // 外层循环控制轮次",
+      "highlights": ["n-1"],
+      "state": {
+        "variables": [
+          {"name": "轮次", "value": "全部完成", "note": "共需 n-1 轮"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["1", "2", "3", "5", "8"], "activeIndex": -1, "note": "排序完成 ✓"}
+        ],
+        "output": "1 2 3 5 8"
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "animationId": "cpp_sliding_window",
+  "itemId": "2.5.4",
+  "title": "滑动窗口",
+  "description": "演示滑动窗口技术：维护一个可变长度的窗口，在线性时间内求解子数组问题",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": -1, "note": "数组"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题：找最长子数组和 ≤ 8",
+      "description": "滑动窗口用两个指针 left 和 right 维护一个窗口。目标：找到和不超过 8 的最长子数组。",
+      "codeLine": "int left = 0, sum = 0, maxLen = 0;",
+      "highlights": ["left", "sum", "maxLen"],
+      "state": {
+        "variables": [
+          {"name": "left", "value": "0", "note": "窗口左端"},
+          {"name": "right", "value": "-1", "note": "窗口右端（空窗口）"},
+          {"name": "sum", "value": "0", "note": "窗口内和"},
+          {"name": "maxLen", "value": "0", "note": "最长长度"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": -1, "note": ""}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "扩展窗口：加入 2, 1, 5",
+      "description": "right 右移，依次加入 arr[0]=2, arr[1]=1, arr[2]=5。sum=2+1+5=8 ≤ 8，长度=3。",
+      "codeLine": "right++; sum += arr[right];",
+      "highlights": ["sum += arr[right]"],
+      "state": {
+        "variables": [
+          {"name": "left", "value": "0", "note": ""},
+          {"name": "right", "value": "2", "note": "窗口 [0,2]"},
+          {"name": "sum", "value": "8", "note": "2+1+5=8 ≤ 8 ✓"},
+          {"name": "maxLen", "value": "3", "note": "更新"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": 2, "note": "窗口=[2,1,5]"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "加入 3 超限，收缩窗口",
+      "description": "加入 arr[3]=3，sum=8+3=11 > 8，超限！左端收缩：移除 arr[0]=2，sum=11-2=9 > 8，再移除 arr[1]=1，sum=9-1=8 ≤ 8。",
+      "codeLine": "while (sum > target) { sum -= arr[left]; left++; }",
+      "highlights": ["sum -= arr[left]", "left++"],
+      "state": {
+        "variables": [
+          {"name": "left", "value": "2", "note": "收缩到 2"},
+          {"name": "right", "value": "3", "note": "窗口 [2,3]"},
+          {"name": "sum", "value": "8", "note": "5+3=8 ≤ 8"},
+          {"name": "maxLen", "value": "3", "note": ""}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": 3, "note": "窗口=[5,3]"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "继续扩展：加入 4, 2",
+      "description": "加入 arr[4]=4，sum=8+4=12>8，收缩移除 5，sum=7 ≤ 8，窗口[3,4]。加入 arr[5]=2，sum=9>8，收缩移除 3，sum=6，窗口[4,5]，长度=2。",
+      "codeLine": "right++; sum += arr[right];",
+      "highlights": ["right++"],
+      "state": {
+        "variables": [
+          {"name": "left", "value": "4", "note": ""},
+          {"name": "right", "value": "5", "note": "窗口 [4,5]"},
+          {"name": "sum", "value": "6", "note": "4+2=6 ≤ 8"},
+          {"name": "maxLen", "value": "3", "note": "最长仍为 3"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": 5, "note": "窗口=[4,2]"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "遍历完成，结果 maxLen=3",
+      "description": "滑动窗口的关键：right 只增不减，left 也只增不减，每个元素最多进出窗口各一次，时间 O(n)。",
+      "codeLine": "cout << maxLen;  // 最长子数组长度",
+      "highlights": ["maxLen"],
+      "state": {
+        "variables": [
+          {"name": "maxLen", "value": "3", "note": "子数组 [2,1,5]，O(n)"}
+        ],
+        "containers": [
+          {"name": "arr", "type": "int[]", "values": ["2", "1", "5", "3", "4", "2"], "activeIndex": -1, "note": "完成 ✓"}
+        ],
+        "output": "最长子数组长度 = 3"
+      }
+    }
+  ]
+}

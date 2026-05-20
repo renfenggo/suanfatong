@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_plane_coordinate",
+  "itemId": "4.7.3",
+  "title": "平面坐标",
+  "description": "演示平面直角坐标系中表示点的方法",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "坐标系",
+      "description": "平面直角坐标系由 x 轴（水平）和 y 轴（垂直）组成，交点为原点 (0,0)",
+      "codeLine": "// x 轴 →, y 轴 ↑, 原点 (0,0)",
+      "highlights": ["x轴", "y轴", "(0,0)"],
+      "state": {
+        "variables": [
+          {"name": "原点", "value": "(0,0)", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "表示点",
+      "description": "点 P(3,4) 表示 x=3（向右3格），y=4（向上4格）",
+      "codeLine": "// P(3,4): x=3, y=4",
+      "highlights": ["P(3,4)"],
+      "state": {
+        "variables": [
+          {"name": "P", "value": "(3,4)", "note": "第1象限"},
+          {"name": "Q", "value": "(-2,1)", "note": "第2象限"}
+        ],
+        "containers": [],
+        "output": "P(3,4), Q(-2,1)"
+      }
+    },
+    {
+      "step": 3,
+      "title": "四个象限",
+      "description": "第1象限(+,+), 第2象限(-,+), 第3象限(-,-), 第4象限(+,-)",
+      "codeLine": "// I:(+,+) II:(-,+) III:(-,-) IV:(+,-)",
+      "highlights": ["象限"],
+      "state": {
+        "variables": [
+          {"name": "I(+,+)", "value": "(3,4)", "note": ""},
+          {"name": "II(-,+)", "value": "(-2,1)", "note": ""},
+          {"name": "III(-,-)", "value": "(-3,-2)", "note": ""},
+          {"name": "IV(+,-)", "value": "(1,-3)", "note": ""}
+        ],
+        "containers": [],
+        "output": "P(3,4), Q(-2,1)"
+      }
+    },
+    {
+      "step": 4,
+      "title": "竞赛用途",
+      "description": "坐标系是计算几何的基础：两点距离、向量、面积等都基于坐标表示",
+      "codeLine": "// 距离、向量、面积 都基于坐标",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "基础", "value": "所有几何计算", "note": "都从坐标开始"}
+        ],
+        "containers": [],
+        "output": "P(3,4), Q(-2,1)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "animationId": "cpp_linearity_of_expectation",
+  "itemId": "4.6.5",
+  "title": "期望线性性",
+  "description": "演示期望线性性：E(X+Y) = E(X) + E(Y)，无论 X 和 Y 是否独立",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "线性性",
+      "description": "E(X+Y) = E(X) + E(Y)，E(cX) = cE(X)。无论 X,Y 是否独立都成立",
+      "codeLine": "// E(X+Y) = E(X) + E(Y)",
+      "highlights": ["E(X) + E(Y)"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "例子：掷两颗骰子",
+      "description": "设 X 为第一颗点数，Y 为第二颗点数。E(X) = 3.5, E(Y) = 3.5",
+      "codeLine": "// E(X) = 3.5, E(Y) = 3.5",
+      "highlights": ["3.5"],
+      "state": {
+        "variables": [
+          {"name": "E(X)", "value": "3.5", "note": "第一颗"},
+          {"name": "E(Y)", "value": "3.5", "note": "第二颗"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "求和的期望",
+      "description": "E(X+Y) = E(X) + E(Y) = 3.5 + 3.5 = 7。两颗骰子点数之和的期望是 7",
+      "codeLine": "double e = 3.5 + 3.5; // = 7",
+      "highlights": ["3.5 + 3.5"],
+      "state": {
+        "variables": [
+          {"name": "E(X)", "value": "3.5", "note": ""},
+          {"name": "E(Y)", "value": "3.5", "note": ""},
+          {"name": "E(X+Y)", "value": "7", "note": "直接相加"}
+        ],
+        "containers": [],
+        "output": "E(X+Y) = 7"
+      }
+    },
+    {
+      "step": 4,
+      "title": "竞赛应用",
+      "description": "期望线性性在竞赛中极常用：不需要知道联合分布，只需分别计算各部分的期望再相加",
+      "codeLine": "// 分别计算各部分期望, 再相加",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "关键", "value": "不需要独立", "note": "无论是否独立都成立"}
+        ],
+        "containers": [],
+        "output": "E(X+Y) = 7"
+      }
+    }
+  ]
+}

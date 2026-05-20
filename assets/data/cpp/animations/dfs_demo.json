@@ -1,0 +1,106 @@
+{
+  "animationId": "cpp_dfs_demo",
+  "itemId": "2.7.1",
+  "title": "DFS 深度优先搜索",
+  "description": "演示 DFS 在简单树上从根节点出发的遍历过程：先深入再回溯",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "visited", "type": "bool[]", "values": ["0", "0", "0", "0", "0"], "activeIndex": -1, "note": "0=未访问, 1=已访问"},
+      {"name": "栈", "type": "stack", "values": [], "activeIndex": -1, "note": "DFS 用栈（递归调用栈）"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "从节点 0 出发",
+      "description": "DFS 从节点 0 开始。标记 visited[0]=1，将节点 0 入栈。访问顺序：0。",
+      "codeLine": "dfs(0);  // visited[0] = true",
+      "highlights": ["dfs(0)", "visited[0]"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "0", "note": "根节点"},
+          {"name": "访问序", "value": "0", "note": ""}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "0", "0", "0", "0"], "activeIndex": 0, "note": ""},
+          {"name": "栈", "type": "stack", "values": ["0"], "activeIndex": 0, "note": ""}
+        ],
+        "output": "0"
+      }
+    },
+    {
+      "step": 2,
+      "title": "深入到节点 1",
+      "description": "节点 0 的第一个未访问邻居是 1。递归调用 dfs(1)，标记 visited[1]=1。",
+      "codeLine": "dfs(1);  // 深入子节点",
+      "highlights": ["dfs(1)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "1", "note": "深入"},
+          {"name": "访问序", "value": "0 → 1", "note": ""}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "0", "0", "0"], "activeIndex": 1, "note": ""},
+          {"name": "栈", "type": "stack", "values": ["0", "1"], "activeIndex": 1, "note": "压入 1"}
+        ],
+        "output": "0 → 1"
+      }
+    },
+    {
+      "step": 3,
+      "title": "继续深入到节点 2",
+      "description": "节点 1 的未访问邻居是 2。继续深入 dfs(2)，标记 visited[2]=1。DFS 总是先走到最深处。",
+      "codeLine": "dfs(2);  // 继续深入",
+      "highlights": ["dfs(2)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "2", "note": "最深节点"},
+          {"name": "访问序", "value": "0 → 1 → 2", "note": ""}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "0", "0"], "activeIndex": 2, "note": ""},
+          {"name": "栈", "type": "stack", "values": ["0", "1", "2"], "activeIndex": 2, "note": "压入 2"}
+        ],
+        "output": "0 → 1 → 2"
+      }
+    },
+    {
+      "step": 4,
+      "title": "回溯到节点 1",
+      "description": "节点 2 没有未访问的邻居了，递归返回（回溯）到节点 1。弹出栈顶的 2。",
+      "codeLine": "// dfs(2) 返回，回溯到 dfs(1)",
+      "highlights": ["回溯"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "1", "note": "回溯"},
+          {"name": "访问序", "value": "0 → 1 → 2", "note": ""}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "0", "0"], "activeIndex": 1, "note": ""},
+          {"name": "栈", "type": "stack", "values": ["0", "1"], "activeIndex": 1, "note": "弹出 2"}
+        ],
+        "output": "0 → 1 → 2"
+      }
+    },
+    {
+      "step": 5,
+      "title": "回溯到 0，访问节点 3",
+      "description": "节点 1 也没有未访问邻居了，回溯到 0。然后访问 0 的下一个邻居 3。DFS 完成：0→1→2→3→4。",
+      "codeLine": "dfs(3);  // 回溯后访问另一个分支",
+      "highlights": ["dfs(3)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "3", "note": "新分支"},
+          {"name": "访问序", "value": "0 → 1 → 2 → 3 → 4", "note": "全部访问完成"}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "1", "1"], "activeIndex": 3, "note": "全部访问 ✓"},
+          {"name": "栈", "type": "stack", "values": ["0", "3", "4"], "activeIndex": 2, "note": ""}
+        ],
+        "output": "0 → 1 → 2 → 3 → 4"
+      }
+    }
+  ]
+}

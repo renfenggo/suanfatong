@@ -1,0 +1,412 @@
+{
+  "sectionId": "2.1",
+  "sectionName": "基础算法思想",
+  "units": [
+    {
+      "itemId": "2.1.1",
+      "title": "枚举",
+      "learningGoal": "理解枚举思想，学会用暴力遍历所有可能来寻找答案",
+      "explanation": "枚举（也叫暴力搜索）是最基本的算法思想：把所有可能的情况都试一遍，找到满足条件的答案。\n\n核心步骤：\n1. 确定枚举范围（比如 1 到 n）\n2. 对每个候选值进行检查\n3. 收集或输出满足条件的值\n\n枚举的优点是简单直观，不容易出错。缺点是当范围很大时会很慢。\n\n在竞赛中，很多题目先用枚举写一个暴力解拿部分分，再想办法优化。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int cnt = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 3 == 0 || i % 5 == 0) {\n            cnt++;\n        }\n    }\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "枚举就是遍历所有候选值",
+        "用 for 循环遍历范围",
+        "用 if 判断是否满足条件",
+        "注意枚举范围不要遗漏或重复"
+      ],
+      "commonMistakes": [
+        {
+          "title": "枚举范围错误",
+          "description": "从 0 开始还是从 1 开始搞混，或者漏掉了边界值。",
+          "fix": "仔细读题，明确范围是 [1, n] 还是 [0, n)，是闭区间还是开区间。"
+        },
+        {
+          "title": "时间复杂度太高",
+          "description": "嵌套了三四层循环，n 稍大就超时。",
+          "fix": "先估算运算次数，如果超过 10^8 次就需要优化。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n，枚举所有 1 到 n 中能被 7 整除的数，输出它们的和。",
+        "hint": "for 循环 1 到 n，判断 i % 7 == 0，累加。",
+        "expectedIdea": "for (int i = 1; i <= n; i++) if (i % 7 == 0) sum += i;"
+      },
+      "quiz": [
+        {
+          "question": "枚举算法的核心思想是什么？",
+          "options": [
+            "用数学公式直接计算答案",
+            "遍历所有可能的情况并检查",
+            "只检查第一个和最后一个",
+            "随机猜一个答案"
+          ],
+          "answerIndex": 1,
+          "explanation": "枚举就是把所有候选值都试一遍，找到满足条件的。"
+        },
+        {
+          "question": "枚举 1 到 1000000 中所有偶数，时间复杂度是？",
+          "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n^2)"
+          ],
+          "answerIndex": 2,
+          "explanation": "需要遍历 1 到 n 的每个数，所以是 O(n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.2",
+      "title": "模拟",
+      "learningGoal": "理解模拟思想，学会按照题目描述逐步还原过程",
+      "explanation": "模拟就是按照题目描述的规则，一步步执行操作，最终得到结果。\n\n模拟题的特点：题目会给出一套详细的操作规则，你只需要忠实执行，不需要设计复杂算法。\n\n常见模拟场景：\n- 棋盘/网格操作\n- 日期计算\n- 字符串处理\n- 游戏规则执行\n\n模拟题的关键是仔细读题，不遗漏任何规则细节。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    cin >> s;\n    int x = 0, y = 0;\n    for (char c : s) {\n        if (c == 'U') y++;\n        else if (c == 'D') y--;\n        else if (c == 'L') x--;\n        else if (c == 'R') x++;\n    }\n    cout << x << \" \" << y << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "模拟 = 按规则逐步执行",
+        "用变量记录当前状态",
+        "每一步按照题目规则更新状态",
+        "注意边界条件和特殊情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "漏掉规则细节",
+          "description": "题目说向左走到边界就停下，但代码里没有做边界检查。",
+          "fix": "把题目规则逐条翻译成代码，每条规则都要有对应判断。"
+        }
+      ],
+      "practice": {
+        "prompt": "模拟一个简单队列：初始为空，读入若干操作：E x 表示入队，D 表示出队，最后输出队列中剩余元素。",
+        "hint": "用数组或 vector 维护队列，用一个指针指向队头。",
+        "expectedIdea": "vector<int> q; E 时 push_back，D 时 pop_front（或用 head 指针）。"
+      },
+      "quiz": [
+        {
+          "question": "模拟算法的关键是什么？",
+          "options": [
+            "找到最优解",
+            "忠实按题目规则逐步执行",
+            "用最少代码实现",
+            "用递归实现"
+          ],
+          "answerIndex": 1,
+          "explanation": "模拟就是忠实还原题目描述的操作过程，不需要优化。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.3",
+      "title": "递推",
+      "learningGoal": "理解递推思想，学会从已知状态推导后续状态",
+      "explanation": "递推是用已知的初始条件和递推关系，从前向后逐步计算出结果。\n\n经典例子——斐波那契数列：\n  f(1) = 1, f(2) = 1\n  f(n) = f(n-1) + f(n-2)\n\n递推三要素：\n1. 初始状态（边界条件）\n2. 递推关系（状态转移方程）\n3. 计算顺序（从小到大还是从大到小）\n\n递推通常用循环实现，比递归更高效，也更容易理解。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long f[100];\n    f[1] = 1;\n    f[2] = 1;\n    for (int i = 3; i <= n; i++) {\n        f[i] = f[i-1] + f[i-2];\n    }\n    cout << f[n] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "先确定初始值 f[1]、f[2]",
+        "用循环从 3 到 n 逐步计算",
+        "递推关系：f[i] = f[i-1] + f[i-2]",
+        "注意数组大小要够用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "初始值设错",
+          "description": "f[0] 还是 f[1] 作为第一个值搞混了。",
+          "fix": "根据题目明确定义 f[0] 或 f[1] 的含义和初始值。"
+        },
+        {
+          "title": "数组越界",
+          "description": "n 比较大但数组开太小。",
+          "fix": "数组大小至少开到 n+1，注意 long long 防溢出。"
+        }
+      ],
+      "practice": {
+        "prompt": "爬楼梯问题：每次可以走 1 步或 2 步，走到第 n 级台阶有多少种走法？",
+        "hint": "f[1]=1, f[2]=2, f[i]=f[i-1]+f[i-2]",
+        "expectedIdea": "f[1]=1, f[2]=2, for i=3..n: f[i]=f[i-1]+f[i-2]"
+      },
+      "quiz": [
+        {
+          "question": "递推的核心要素是什么？",
+          "options": [
+            "随机猜测",
+            "初始状态 + 递推关系",
+            "只用初始值就行",
+            "只用递推关系就行"
+          ],
+          "answerIndex": 1,
+          "explanation": "递推需要初始状态（边界条件）和递推关系（状态转移方程）缺一不可。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.4",
+      "title": "递归",
+      "learningGoal": "理解递归思想，学会将大问题分解为同类小问题",
+      "explanation": "递归是函数调用自身的编程技巧。把大问题分解成结构相同的小问题，直到问题足够小可以直接求解。\n\n递归两要素：\n1. 递归边界（什么时候停止）\n2. 递归步骤（如何分解问题）\n\n经典例子：阶乘\n  fact(0) = 1（边界）\n  fact(n) = n * fact(n-1)（递归步骤）\n\n递归的执行过程像套娃：一层层调用进去，到边界后再一层层返回来。\n\n注意：递归层数太深会导致栈溢出，一般不超过 10^5 层。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nlong long fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << fact(n) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "递归函数必须要有终止条件",
+        "每次递归调用问题规模要缩小",
+        "返回值层层传递回来",
+        "注意栈溢出风险"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记写终止条件",
+          "description": "递归函数没有边界判断，导致无限递归。",
+          "fix": "每个递归函数第一行先写 if (满足条件) return 基础值;"
+        },
+        {
+          "title": "递归层数太深",
+          "description": "n 很大时递归超过栈限制。",
+          "fix": "改用递推（循环）实现，或使用记忆化递归减少重复计算。"
+        }
+      ],
+      "practice": {
+        "prompt": "用递归实现求 1+2+3+...+n 的和。",
+        "hint": "sum(n) = n + sum(n-1)，边界 sum(0) = 0。",
+        "expectedIdea": "int sum(int n) { if (n==0) return 0; return n + sum(n-1); }"
+      },
+      "quiz": [
+        {
+          "question": "递归函数必须具备的两个要素是？",
+          "options": [
+            "循环和数组",
+            "递归边界和递归步骤",
+            "输入和输出",
+            "排序和查找"
+          ],
+          "answerIndex": 1,
+          "explanation": "递归需要边界条件（何时停止）和递归步骤（如何分解），缺一不可。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.5",
+      "title": "分治",
+      "learningGoal": "理解分治思想，学会将问题分解、独立求解、合并结果",
+      "explanation": "分治（Divide and Conquer）的思路：\n1. 分（Divide）：把大问题拆成若干个独立的小问题\n2. 治（Conquer）：递归求解每个小问题\n3. 合（Combine）：把小问题的解合并成大问题的解\n\n经典例子：归并排序\n- 把数组从中间分成两半\n- 分别排序\n- 合并两个有序数组\n\n分治通常和递归配合使用，时间复杂度常用主定理分析：T(n) = aT(n/b) + O(n^d)。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint findMax(int a[], int l, int r) {\n    if (l == r) return a[l];\n    int mid = (l + r) / 2;\n    int leftMax = findMax(a, l, mid);\n    int rightMax = findMax(a, mid + 1, r);\n    return leftMax > rightMax ? leftMax : rightMax;\n}\n\nint main() {\n    int a[] = {3, 7, 2, 9, 1, 5};\n    cout << findMax(a, 0, 5) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "分：把数组从中间分成两半",
+        "治：递归求左半和右半的最大值",
+        "合：比较两个最大值取较大者",
+        "递归边界：只剩一个元素时直接返回"
+      ],
+      "commonMistakes": [
+        {
+          "title": "子问题不独立",
+          "description": "分成的子问题有重叠，导致重复计算。",
+          "fix": "确保子问题之间互不影响，或者改用动态规划。"
+        }
+      ],
+      "practice": {
+        "prompt": "用分治思想计算数组中所有元素的和。",
+        "hint": "sum(l, r) = sum(l, mid) + sum(mid+1, r)，边界 sum(i, i) = a[i]。",
+        "expectedIdea": "int sum(int a[], int l, int r) { if (l==r) return a[l]; int m=(l+r)/2; return sum(a,l,m)+sum(a,m+1,r); }"
+      },
+      "quiz": [
+        {
+          "question": "分治算法的三个步骤是？",
+          "options": [
+            "输入、处理、输出",
+            "分解、解决、合并",
+            "排序、查找、删除",
+            "创建、使用、销毁"
+          ],
+          "answerIndex": 1,
+          "explanation": "分治 = Divide（分解）+ Conquer（解决）+ Combine（合并）。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.6",
+      "title": "倍增",
+      "learningGoal": "理解倍增思想，学会通过 2 的幂次跳跃加速查找",
+      "explanation": "倍增的核心：不一步一步走，而是以 2 的幂次跳跃（1, 2, 4, 8, 16...），从而快速定位目标。\n\n常见应用：\n- 倍增求 LCA（最近公共祖先）\n- 倍增找环\n- 快速幂（反复平方）\n\n倍增的关键是预处理 f[i][j] 表示从 i 出发跳 2^j 步到达的位置，然后通过二进制分解确定跳跃方案。\n\n时间复杂度通常是 O(n log n) 预处理 + O(log n) 查询。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nlong long fastPow(long long a, long long b, long long mod) {\n    long long result = 1;\n    a %= mod;\n    while (b > 0) {\n        if (b & 1) result = result * a % mod;\n        a = a * a % mod;\n        b >>= 1;\n    }\n    return result;\n}\n\nint main() {\n    cout << fastPow(2, 10, 1000000007) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "倍增 = 按 2 的幂次跳跃",
+        "b & 1 检查最低位是否为 1",
+        "每次迭代 a 自乘（平方）",
+        "b >>= 1 右移一位（除以 2）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "快速幂忘记取模",
+          "description": "中间结果溢出 long long。",
+          "fix": "每次乘法后立即取模：a = a * a % mod;"
+        }
+      ],
+      "practice": {
+        "prompt": "实现快速幂，计算 3^100 mod 1000000007。",
+        "hint": "用 fastPow 函数，注意每步取模。",
+        "expectedIdea": "用快速幂模板，b=100 的二进制为 1100100，按位处理。"
+      },
+      "quiz": [
+        {
+          "question": "倍增思想的核心是什么？",
+          "options": [
+            "每次只走一步",
+            "以 2 的幂次跳跃加速",
+            "随机跳跃",
+            "倒着走"
+          ],
+          "answerIndex": 1,
+          "explanation": "倍增通过 2 的幂次（1,2,4,8...）跳跃，将 O(n) 操作优化到 O(log n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.7",
+      "title": "构造",
+      "learningGoal": "理解构造思想，学会根据要求直接构造出满足条件的解",
+      "explanation": "构造题要求你直接给出一个满足题目所有条件的解（方案、排列、图等），而不需要搜索或优化。\n\n构造题的特点：\n- 答案不唯一，只需要给出一个合法解\n- 需要观察规律，找到构造方法\n- 常见构造对象：排列、矩阵、树、图\n\n常用构造技巧：\n- 交替排列（如 1, n, 2, n-1, ...）\n- 利用周期性\n- 贪心构造\n- 利用数学性质\n\n构造题考验思维灵活性，多练习找规律。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int l = 1, r = n;\n    for (int i = 1; i <= n; i++) {\n        if (i % 2 == 1) cout << r-- << \" \";\n        else cout << l++ << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "构造 = 直接给出合法解",
+        "这道用交替从两端取数构造",
+        "构造答案不唯一",
+        "关键是找到一种可行的构造规律"
+      ],
+      "commonMistakes": [
+        {
+          "title": "构造方案不满足条件",
+          "description": "没有验证构造出的解是否满足所有约束。",
+          "fix": "构造完后在代码里加验证逻辑，确保正确。"
+        }
+      ],
+      "practice": {
+        "prompt": "构造一个长度为 n 的排列，使得相邻两个数之差的绝对值都不同。",
+        "hint": "用 1, n, 2, n-1, 3, n-2, ... 这样的交替排列。",
+        "expectedIdea": "for i: 奇数位从大端取，偶数位从小端取。"
+      },
+      "quiz": [
+        {
+          "question": "构造题的目标是什么？",
+          "options": [
+            "找到最优解",
+            "找到所有解",
+            "给出一个满足条件的合法解",
+            "证明无解"
+          ],
+          "answerIndex": 2,
+          "explanation": "构造题只需要给出一个满足所有条件的解即可，不需要最优。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.8",
+      "title": "离线思想",
+      "learningGoal": "理解离线思想，学会把询问按特定顺序处理以降低复杂度",
+      "explanation": "离线思想：先把所有输入/询问读进来，按某种有利顺序排好序，再统一处理。\n\n和在线处理的区别：\n- 在线：读一个处理一个，必须按输入顺序回答\n- 离线：读完所有输入，可以重新排序后再处理\n\n经典应用：\n- 莫队算法：把区间询问按某种顺序排列\n- 离线并查集：处理删边操作\n- CDQ 分治\n\n离线的前提是题目允许你读完所有输入后再输出。",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<pair<int,int>> queries(q);\n    for (int i = 0; i < q; i++) {\n        cin >> queries[i].first >> queries[i].second;\n    }\n    sort(queries.begin(), queries.end());\n    for (auto& p : queries) {\n        cout << p.first << \" \" << p.second << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "离线 = 先读所有输入再处理",
+        "可以对询问排序后统一处理",
+        "排序可能大幅降低复杂度",
+        "前提：题目允许离线回答"
+      ],
+      "commonMistakes": [
+        {
+          "title": "离线后丢失原始顺序",
+          "description": "输出顺序必须和输入顺序一致，但排序后搞乱了。",
+          "fix": "给每个询问加上原始下标，排序处理后再按原始顺序输出。"
+        }
+      ],
+      "practice": {
+        "prompt": "有 q 个询问，每个询问给定一个数 x，问数组中 <= x 的数有多少个。用离线排序优化。",
+        "hint": "把数组和询问都排序，用双指针扫描。",
+        "expectedIdea": "排序后双指针：对每个询问 x，数一下数组中 <= x 的元素个数。"
+      },
+      "quiz": [
+        {
+          "question": "离线处理的前提条件是什么？",
+          "options": [
+            "数据量很小",
+            "题目允许读完所有输入后再回答",
+            "必须用递归",
+            "答案唯一"
+          ],
+          "answerIndex": 1,
+          "explanation": "离线要求题目允许先读完所有输入再统一处理和输出。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.9",
+      "title": "启发式基础",
+      "learningGoal": "理解启发式思想，学会用简单规则快速得到近似最优解",
+      "explanation": "启发式（Heuristic）是用简单的经验规则来快速找到「足够好」的解，而不是精确的最优解。\n\n常见启发式规则：\n- 贪心选择：每次选看起来最好的\n- 启发式合并：小集合合并到大集合（按 size 或 rank）\n- 启发式分割：优先处理大的部分\n\n竞赛中的经典应用：\n- 启发式合并 set/map：总复杂度 O(n log n)\n- 重链剖分中的「轻重儿子」选择\n- A* 搜索中的估价函数\n\n启发式不能保证最优，但在实践中往往很快且效果不错。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    set<int> small = {1, 2, 3};\n    set<int> large = {10, 20, 30, 40, 50};\n    if (small.size() > large.size()) swap(small, large);\n    for (int x : small) {\n        large.insert(x);\n    }\n    for (int x : large) cout << x << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "启发式 = 用经验规则快速近似求解",
+        "小集合合并到大集合（启发式合并）",
+        "不保证最优但通常够好",
+        "竞赛中常用来降低复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "合并方向选错",
+          "description": "把大集合的元素逐个插入小集合，导致复杂度退化。",
+          "fix": "始终把小集合合并到大集合中。"
+        }
+      ],
+      "practice": {
+        "prompt": "有两个 set<int>，用启发式合并将它们合并成一个。",
+        "hint": "比较两个 set 的大小，把小的合并到大的。",
+        "expectedIdea": "if (a.size() > b.size()) swap(a, b); for (x : a) b.insert(x);"
+      },
+      "quiz": [
+        {
+          "question": "启发式合并的核心规则是什么？",
+          "options": [
+            "随机选择合并方向",
+            "始终把小集合合并到大集合",
+            "按字母顺序合并",
+            "只保留大的集合"
+          ],
+          "answerIndex": 1,
+          "explanation": "启发式合并的关键是把小集合的元素插入大集合，保证总复杂度 O(n log n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.1.10",
+      "title": "随机化基础",
+      "learningGoal": "理解随机化算法思想，学会利用随机性设计和分析算法",
+      "explanation": "随机化算法在运行过程中使用随机数来做决策。虽然单次运行的结果不确定，但可以保证高概率正确。\n\n常见随机化应用：\n- 随机化快速排序：随机选 pivot，期望 O(n log n)\n- 哈希冲突检测：随机选哈希函数\n- 蒙特卡洛方法：随机采样估算\n- 随机化判定：如 Miller-Rabin 素数测试\n\nC++ 随机数：\n- srand(time(0)) 初始化随机种子\n- rand() 生成 0 到 RAND_MAX 的随机数\n- C++11 推荐用 <random> 库的 mt19937\n\n竞赛中随机化常用于打乱输入顺序来避免被卡。",
+      "exampleCode": "#include <iostream>\n#include <random>\n#include <algorithm>\n#include <vector>\nusing namespace std;\n\nint main() {\n    mt19937 rng(42);\n    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n    shuffle(v.begin(), v.end(), rng);\n    for (int x : v) cout << x << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "mt19937 是高质量的随机数生成器",
+        "shuffle 用于随机打乱数组",
+        "随机化算法不保证每次都最快",
+        "但可以保证期望复杂度或高概率正确"
+      ],
+      "commonMistakes": [
+        {
+          "title": "每次运行 srand(time(0))",
+          "description": "在循环内多次调用 srand，导致生成的随机数不够随机。",
+          "fix": "srand 只在程序开头调用一次。"
+        }
+      ],
+      "practice": {
+        "prompt": "生成 10 个 1 到 100 之间的随机整数并输出。",
+        "hint": "用 mt19937 rng(time(0)); uniform_int_distribution<int> dist(1, 100);",
+        "expectedIdea": "mt19937 rng(time(0)); uniform_int_distribution<int> d(1,100); for 10 times: cout << d(rng);"
+      },
+      "quiz": [
+        {
+          "question": "随机化算法的特点是什么？",
+          "options": [
+            "每次运行结果完全相同",
+            "只能用于排序",
+            "单次结果不确定，但可以保证高概率正确",
+            "不需要随机数"
+          ],
+          "answerIndex": 2,
+          "explanation": "随机化算法利用随机性做决策，不保证每次结果相同，但可以保证大概率正确。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "animationId": "cpp_congruence",
+  "itemId": "4.2.3",
+  "title": "同余",
+  "description": "演示同余的概念：a ≡ b (mod m) 意味着 a 和 b 除以 m 的余数相同",
+  "initialState": {
+    "variables": [
+      {"name": "m", "value": "7", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义同余",
+      "description": "a ≡ b (mod m) 表示 a-b 能被 m 整除，即 a%m == b%m",
+      "codeLine": "// a ≡ b (mod m) ⟺ a % m == b % m",
+      "highlights": ["a % m == b % m"],
+      "state": {
+        "variables": [
+          {"name": "m", "value": "7", "note": "模数"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "验证 17 ≡ 3 (mod 7)",
+      "description": "17 % 7 = 3，3 % 7 = 3，余数相同，所以 17 ≡ 3 (mod 7)",
+      "codeLine": "cout << (17 % 7) << \" \" << (3 % 7);",
+      "highlights": ["17 % 7", "3 % 7"],
+      "state": {
+        "variables": [
+          {"name": "m", "value": "7", "note": ""},
+          {"name": "17%7", "value": "3", "note": ""},
+          {"name": "3%7", "value": "3", "note": "17 ≡ 3 (mod 7) ✓"}
+        ],
+        "containers": [],
+        "output": "3 3 → 17 ≡ 3 (mod 7)"
+      }
+    },
+    {
+      "step": 3,
+      "title": "同余类",
+      "description": "mod 7 的同余类：{…,3,10,17,24,…} 都 ≡ 3 (mod 7)。每个整数属于 {0,1,2,3,4,5,6} 中的一个类",
+      "codeLine": "// {3, 10, 17, 24, ...} ≡ 3 (mod 7)",
+      "highlights": ["同余类"],
+      "state": {
+        "variables": [
+          {"name": "m", "value": "7", "note": ""},
+          {"name": "3%7", "value": "3", "note": ""},
+          {"name": "10%7", "value": "3", "note": ""},
+          {"name": "17%7", "value": "3", "note": ""},
+          {"name": "24%7", "value": "3", "note": "全部 ≡ 3"}
+        ],
+        "containers": [],
+        "output": "3 3 → 17 ≡ 3 (mod 7)"
+      }
+    },
+    {
+      "step": 4,
+      "title": "同余的运算性质",
+      "description": "若 a≡b, c≡d (mod m)，则 a+c≡b+d, a×c≡b×d (mod m)。运算可在同余类上直接进行",
+      "codeLine": "// a≡b ⟹ a+c≡b+c, a*c≡b*c (mod m)",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "m", "value": "7", "note": ""}
+        ],
+        "containers": [],
+        "output": "3 3 → 17 ≡ 3 (mod 7)"
+      }
+    }
+  ]
+}

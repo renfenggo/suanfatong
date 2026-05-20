@@ -1,0 +1,385 @@
+{
+  "sectionId": "5.2",
+  "sectionName": "数位与字符技巧",
+  "units": [
+    {
+      "itemId": "5.2.1",
+      "title": "拆位",
+      "learningGoal": "掌握用取余和除法逐位提取数字的方法",
+      "explanation": "拆位是将一个整数的每一位数字逐一提取出来的技巧。核心方法是循环使用 % 10 取末位，然后 / 10 去掉末位。\n\n例如 n = 123：n % 10 = 3（取末位），n /= 10 后 n = 12；再 n % 10 = 2，n /= 10 后 n = 1；n % 10 = 1，n /= 10 后 n = 0，循环结束。\n\n注意：这样取出的顺序是从低位到高位（3, 2, 1）。如果需要从高位到低位的顺序，可以先把数位存入数组再逆序输出。\n\n拆位是很多数论问题的基础操作，如判断回文数、数位 DP 等。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 12345;\n    while (n > 0) {\n        int d = n % 10;\n        cout << d << \" \";\n        n /= 10;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "n % 10 取末位数字",
+        "n /= 10 去掉末位",
+        "循环直到 n 变为 0",
+        "取出顺序：从低位到高位"
+      ],
+      "commonMistakes": [
+        {
+          "title": "处理 n = 0 的情况",
+          "description": "while (n > 0) 当 n = 0 时循环不执行，无法取出任何位。",
+          "fix": "如果 n 可能为 0，用 do-while 循环，或单独处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个正整数，逆序输出每一位数字，数字之间用空格分隔。",
+        "hint": "while (n > 0) { cout << n % 10 << \" \"; n /= 10; }",
+        "expectedIdea": "int n;\ncin >> n;\nwhile (n > 0) {\n    cout << n % 10 << \" \";\n    n /= 10;\n}\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "n = 5678，n % 10 的值是？",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "answerIndex": 3,
+          "explanation": "n % 10 取的是个位数字，5678 的个位是 8。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.2",
+      "title": "数位和",
+      "learningGoal": "学会计算一个整数各位数字之和",
+      "explanation": "数位和是将一个整数每一位数字相加的结果。实现方法是在拆位的基础上累加每一位的值。\n\n例如 123 的数位和 = 1 + 2 + 3 = 6。循环取余 + 除法 + 累加即可。\n\n数位和在竞赛中常用于：数字特征判断、数位 DP 的状态设计、哈希计算等。\n\n注意处理负数的情况——通常先取绝对值再计算数位和。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 12345;\n    int sum = 0;\n    int temp = n;\n    while (temp > 0) {\n        sum += temp % 10;\n        temp /= 10;\n    }\n    cout << \"数位和: \" << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用临时变量 temp 遍历，保留原数 n",
+        "每次取末位累加到 sum",
+        "temp /= 10 去掉已处理的位",
+        "sum 初始化为 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接修改 n",
+          "description": "计算完数位和后 n 变成了 0，后续代码无法使用原值。",
+          "fix": "用临时变量 temp = n 来遍历，保留 n 的原始值。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个正整数 n，输出它的数位和。",
+        "hint": "循环 n % 10 累加",
+        "expectedIdea": "int n, sum = 0;\ncin >> n;\nint temp = n;\nwhile (temp > 0) {\n    sum += temp % 10;\n    temp /= 10;\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "数字 9999 的数位和是多少？",
+          "options": [
+            "36",
+            "9",
+            "81",
+            "9999"
+          ],
+          "answerIndex": 0,
+          "explanation": "9 + 9 + 9 + 9 = 36。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.3",
+      "title": "数位积",
+      "learningGoal": "学会计算一个整数各位数字之积",
+      "explanation": "数位积是将一个整数每一位数字相乘的结果。和数位和类似，只需把累加换成累乘。\n\n注意累乘的初始值要设为 1（不是 0）。如果某一位是 0，整个数位积就是 0。\n\n例如 123 的数位积 = 1 × 2 × 3 = 6。105 的数位积 = 1 × 0 × 5 = 0。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 234;\n    int product = 1;\n    int temp = n;\n    while (temp > 0) {\n        product *= temp % 10;\n        temp /= 10;\n    }\n    cout << \"数位积: \" << product << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "累乘初始值设为 1",
+        "和数位和的区别只是 += 变成 *=",
+        "任何一位为 0 则结果为 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "累乘初始值设为 0",
+          "description": "product = 0 则结果永远是 0。",
+          "fix": "累乘初始值必须是 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个正整数，输出其数位积。",
+        "hint": "product = 1; 循环中 product *= temp % 10;",
+        "expectedIdea": "int n, product = 1;\ncin >> n;\nint temp = n;\nwhile (temp > 0) {\n    product *= temp % 10;\n    temp /= 10;\n}\ncout << product << endl;"
+      },
+      "quiz": [
+        {
+          "question": "数字 507 的数位积是多少？",
+          "options": [
+            "12",
+            "35",
+            "0",
+            "507"
+          ],
+          "answerIndex": 2,
+          "explanation": "5 × 0 × 7 = 0，因为中间有一位是 0。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.4",
+      "title": "回文数判断",
+      "learningGoal": "学会判断一个整数是否是回文数",
+      "explanation": "回文数是正着读和倒着读都一样的数，如 121、1331、7。\n\n判断方法：先将原数逆序，然后和原数比较是否相等。逆序的方法是逐位取出并重新构造一个新数。\n\n例如 n = 123：逆序数 = 3 × 100 + 2 × 10 + 1 = 321。321 ≠ 123，不是回文数。\n\n负数通常不考虑回文。注意要用临时变量保存原数，因为逆序过程中原数会被修改。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 12321;\n    int temp = n, rev = 0;\n    while (temp > 0) {\n        rev = rev * 10 + temp % 10;\n        temp /= 10;\n    }\n    if (rev == n) {\n        cout << n << \" 是回文数\" << endl;\n    } else {\n        cout << n << \" 不是回文数\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "rev = rev * 10 + digit 构造逆序数",
+        "逆序数和原数相等则是回文",
+        "用临时变量避免修改原数",
+        "一位数一定是回文数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接修改原数后比较",
+          "description": "循环中 n /= 10 把 n 改成了 0，最后 n != rev。",
+          "fix": "用 temp = n 来遍历，保留 n 的值用于最后比较。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个正整数，判断是否是回文数，输出 \"Yes\" 或 \"No\"。",
+        "hint": "构造逆序数 rev，比较 rev 和 n",
+        "expectedIdea": "int n;\ncin >> n;\nint temp = n, rev = 0;\nwhile (temp > 0) {\n    rev = rev * 10 + temp % 10;\n    temp /= 10;\n}\nif (rev == n) cout << \"Yes\" << endl;\nelse cout << \"No\" << endl;"
+      },
+      "quiz": [
+        {
+          "question": "数字 12321 是回文数吗？",
+          "options": [
+            "是",
+            "不是",
+            "取决于奇偶性",
+            "只有偶数位数才是回文数"
+          ],
+          "answerIndex": 0,
+          "explanation": "12321 正读和反读都是 12321，所以是回文数。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.5",
+      "title": "字符转数值",
+      "learningGoal": "掌握字符型数字转整型数值的方法",
+      "explanation": "字符 '0' 到 '9' 在 ASCII 中是连续编码的，'0' 的 ASCII 码是 48。将字符数字转为整数值，只需减去 '0'。\n\n例如 '5' - '0' = 53 - 48 = 5。这个技巧在处理字符串形式的数字时非常有用。\n\n也可以用 c - 48，但 c - '0' 更直观，不依赖记住 ASCII 码值。\n\nstring 中的每个元素是 char 类型，可以直接用这个技巧转换。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char c = '7';\n    int val = c - '0';\n    cout << c << \" -> \" << val << endl;\n    string s = \"1234\";\n    int sum = 0;\n    for (int i = 0; i < s.length(); i++) {\n        sum += s[i] - '0';\n    }\n    cout << \"数位和: \" << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "c - '0' 将字符转为数值",
+        "'0'=48, '1'=49, ..., '9'=57",
+        "string 元素是 char，可直接转换",
+        "转换后可参与整数运算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "直接用 char 参与整数运算",
+          "description": "int val = c; 得到的是 ASCII 码（如 '7' → 55），不是数值 7。",
+          "fix": "用 c - '0' 转换：int val = c - '0';"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个由数字字符组成的字符串，输出各位数字之和。",
+        "hint": "s[i] - '0' 转为数值后累加",
+        "expectedIdea": "string s;\ncin >> s;\nint sum = 0;\nfor (int i = 0; i < s.length(); i++) {\n    sum += s[i] - '0';\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "char c = '3'; c - '0' 的值是？",
+          "options": [
+            "3",
+            "51",
+            "'3'",
+            "48"
+          ],
+          "answerIndex": 0,
+          "explanation": "'3' 的 ASCII 码是 51，'0' 是 48，51 - 48 = 3。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.6",
+      "title": "数值转字符",
+      "learningGoal": "掌握整型数值转字符型数字的方法",
+      "explanation": "将 0~9 的整数转为对应的字符，只需加上 '0'。\n\n例如 5 + '0' = 5 + 48 = 53，对应字符 '5'。需要用 (char) 强制转换或直接赋值给 char 变量。\n\n这个技巧在构造数字字符串时常用。比如把一个整数的每一位转为字符存入 string。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int val = 7;\n    char c = val + '0';\n    cout << val << \" -> '\" << c << \"'\" << endl;\n    int n = 42;\n    string result = \"\";\n    while (n > 0) {\n        result = (char)(n % 10 + '0') + result;\n        n /= 10;\n    }\n    cout << \"结果: \" << result << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "val + '0' 将数值转为字符",
+        "赋值给 char 变量自动转换",
+        "可用于构造数字字符串",
+        "只适用于 0~9 的个位数"
+      ],
+      "commonMistakes": [
+        {
+          "title": "多位数直接加 '0'",
+          "description": "12 + '0' 得到 60（即 '<'），不是 \"12\"。",
+          "fix": "多位数需要逐位转换，每位加 '0' 后拼接。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个 0~9 的整数，输出对应的字符。",
+        "hint": "char c = n + '0';",
+        "expectedIdea": "int n;\ncin >> n;\nchar c = n + '0';\ncout << c << endl;"
+      },
+      "quiz": [
+        {
+          "question": "int a = 8; char c = a + '0'; c 的值是？",
+          "options": [
+            "8（整数）",
+            "'8'（字符）",
+            "56",
+            "'0'"
+          ],
+          "answerIndex": 1,
+          "explanation": "8 + 48 = 56，对应 ASCII 字符 '8'。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.7",
+      "title": "大小写转换",
+      "learningGoal": "掌握字母大小写转换的方法，理解 ASCII 差值关系",
+      "explanation": "在 ASCII 编码中，大写字母 'A'~'Z' 的编码是 65~90，小写字母 'a'~'z' 是 97~122。大小写字母之间相差 32。\n\n大写转小写：c + 32 或 c + ('a' - 'A')。小写转大写：c - 32 或 c - ('a' - 'A')。\n\n也可以使用库函数：tolower(c) 转小写，toupper(c) 转大写（需要 <cctype> 头文件）。\n\n推荐使用库函数，因为更安全、更清晰，且能正确处理非字母字符。",
+      "exampleCode": "#include <iostream>\n#include <cctype>\nusing namespace std;\n\nint main() {\n    char upper = 'H';\n    char lower = upper + 32;\n    cout << upper << \" -> \" << lower << endl;\n    char back = toupper(lower);\n    cout << lower << \" -> \" << back << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "大小写 ASCII 相差 32",
+        "大写 + 32 → 小写",
+        "小写 - 32 → 大写",
+        "tolower() / toupper() 是更安全的做法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "对非字母字符加减 32",
+          "description": "'3' + 32 得到 'S'，这不是大小写转换。",
+          "fix": "先用 isalpha(c) 判断是否是字母，或直接用 tolower/toupper。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个字符串，将其中的大写字母转为小写，小写字母不变，输出结果。",
+        "hint": "for 循环遍历，用 tolower 转换",
+        "expectedIdea": "string s;\ncin >> s;\nfor (int i = 0; i < s.length(); i++) {\n    s[i] = tolower(s[i]);\n}\ncout << s << endl;"
+      },
+      "quiz": [
+        {
+          "question": "'A' + 32 对应的字符是？",
+          "options": [
+            "'A'",
+            "'a'",
+            "'@'",
+            "无法确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "'A' 的 ASCII 码是 65，65 + 32 = 97，对应 'a'。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.8",
+      "title": "ASCII 差值",
+      "learningGoal": "理解字符之间的 ASCII 差值运算",
+      "explanation": "两个字符相减得到它们的 ASCII 码差值。这在很多场景下很有用。\n\n例如 'c' - 'a' = 2，表示 'c' 是字母表中第 3 个字母（从 0 开始计数）。\n\n这个技巧常用于：判断字符顺序、计算字母偏移量、实现简单的加密（如凯撒密码）等。\n\n注意：C++ 中 char 类型可以参与整数运算，结果自动转为 int。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"'c' - 'a' = \" << 'c' - 'a' << endl;\n    cout << \"'9' - '0' = \" << '9' - '0' << endl;\n    cout << \"'C' - 'A' = \" << 'C' - 'A' << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "字符相减得到 ASCII 差值",
+        "'c' - 'a' = 2，表示 c 是第 3 个字母",
+        "结果自动转为 int 类型",
+        "可用于计算字母偏移量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆字符和字符串",
+          "description": "\"a\" - \"b\" 是非法操作，只有 char 才能相减。",
+          "fix": "确保操作的是 char 类型（单引号），不是 string（双引号）。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个字符，输出它在字母表中的位置（a=1, b=2, ..., z=26）。",
+        "hint": "c - 'a' + 1",
+        "expectedIdea": "char c;\ncin >> c;\ncout << c - 'a' + 1 << endl;"
+      },
+      "quiz": [
+        {
+          "question": "'z' - 'a' 的值是？",
+          "options": [
+            "25",
+            "26",
+            "1",
+            "122"
+          ],
+          "answerIndex": 0,
+          "explanation": "'z'=122, 'a'=97, 122-97=25。表示 z 和 a 之间相差 25 个位置。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.9",
+      "title": "字母转编号",
+      "learningGoal": "学会将字母映射为 1~26 的编号",
+      "explanation": "将字母转为编号是小写 a→1、b→2、...、z→26，大写 A→1、B→2、...、Z→26。\n\n小写字母：c - 'a' + 1。大写字母：c - 'A' + 1。\n\n这个技巧在密码学、字符串哈希、字母计数等场景中广泛使用。\n\n反向操作：编号转字母，n + 'a' - 1 得到小写，n + 'A' - 1 得到大写。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char c = 'E';\n    int idx = c - 'A' + 1;\n    cout << c << \" -> \" << idx << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "c - 'a' + 1 小写字母转编号",
+        "c - 'A' + 1 大写字母转编号",
+        "结果范围 1~26",
+        "反向：n + 'a' - 1 编号转小写字母"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 +1",
+          "description": "c - 'a' 得到 0~25，但题目通常要求 1~26。",
+          "fix": "根据题目要求决定是否 +1。编号从 1 开始时要加 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入一个字符串，输出每个字母的编号（空格分隔）。",
+        "hint": "s[i] - 'a' + 1 或 s[i] - 'A' + 1",
+        "expectedIdea": "string s;\ncin >> s;\nfor (int i = 0; i < s.length(); i++) {\n    if (s[i] >= 'a') cout << s[i] - 'a' + 1;\n    else cout << s[i] - 'A' + 1;\n    if (i < s.length() - 1) cout << \" \";\n}\ncout << endl;"
+      },
+      "quiz": [
+        {
+          "question": "字母 'C' 的编号（A=1）是多少？",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "67"
+          ],
+          "answerIndex": 2,
+          "explanation": "'C' - 'A' + 1 = 2 + 1 = 3。"
+        }
+      ]
+    },
+    {
+      "itemId": "5.2.10",
+      "title": "编号转字母",
+      "learningGoal": "学会将 1~26 的编号转为对应的字母",
+      "explanation": "将编号转为字母是字母转编号的逆操作。编号 1→'a'、2→'b'、...、26→'z'。\n\n实现方法：n + 'a' - 1 得到小写字母，n + 'A' - 1 得到大写字母。\n\n这个技巧常用于解密、密码还原等场景。注意编号必须在 1~26 范围内。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 5;\n    char lower = n + 'a' - 1;\n    char upper = n + 'A' - 1;\n    cout << n << \" -> \" << lower << \" / \" << upper << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "n + 'a' - 1 编号转小写",
+        "n + 'A' - 1 编号转大写",
+        "编号范围 1~26",
+        "超出范围会得到非字母字符"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 -1",
+          "description": "n + 'a' 当 n=1 时得到 'b' 而不是 'a'。",
+          "fix": "n + 'a' - 1，因为编号从 1 开始而 'a' 对应编号 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "输入 5 个编号（1~26），输出对应的大写字母，连成一个字符串。",
+        "hint": "char c = n + 'A' - 1;",
+        "expectedIdea": "string result = \"\";\nfor (int i = 0; i < 5; i++) {\n    int n;\n    cin >> n;\n    result += (char)(n + 'A' - 1);\n}\ncout << result << endl;"
+      },
+      "quiz": [
+        {
+          "question": "编号 1 对应的字母是？",
+          "options": [
+            "'a' 和 'A'",
+            "'b' 和 'B'",
+            "'0' 和 '0'",
+            "没有对应字母"
+          ],
+          "answerIndex": 0,
+          "explanation": "1 + 'a' - 1 = 'a'，1 + 'A' - 1 = 'A'。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state/knowledge_graph_provider.dart';
-import '../state/cpp_learning_provider.dart';
+import '../state/unified_learning_provider.dart';
 import '../state/progress_provider.dart';
 import '../state/cpp_animation_provider.dart';
 import '../models/knowledge_item.dart';
@@ -27,7 +27,9 @@ class _CppLearningUnitPageState extends ConsumerState<CppLearningUnitPage> {
   @override
   Widget build(BuildContext context) {
     final graphAsync = ref.watch(knowledgeGraphProvider);
-    final unitAsync = ref.watch(cppLearningUnitByItemIdProvider(widget.itemId));
+    final unitAsync = ref.watch(
+      unifiedLearningUnitByItemIdProvider(widget.itemId),
+    );
 
     return Scaffold(
       appBar: AppBar(title: const Text('C++ 学习')),

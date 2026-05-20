@@ -1,0 +1,72 @@
+{
+  "animationId": "cpp_tree_basics",
+  "itemId": "4.5.6",
+  "title": "树的基本概念",
+  "description": "演示树的基本性质：n 个顶点的树有 n-1 条边，连通且无环",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "树的定义",
+      "description": "树是连通且无环的无向图。5 个顶点的树：{A,B,C,D,E}",
+      "codeLine": "// 树 = 连通 + 无环",
+      "highlights": ["连通", "无环"],
+      "state": {
+        "variables": [
+          {"name": "顶点", "value": "5", "note": "A,B,C,D,E"},
+          {"name": "边", "value": "4", "note": "AB,BC,BD,DE"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "核心性质：边数 = 顶点数 - 1",
+      "description": "n 个顶点的树恰好有 n-1 条边。5 个顶点 → 4 条边 ✓",
+      "codeLine": "// |E| = |V| - 1",
+      "highlights": ["|E| = |V| - 1"],
+      "state": {
+        "variables": [
+          {"name": "|V|", "value": "5", "note": ""},
+          {"name": "|E|", "value": "4", "note": "5-1=4 ✓"}
+        ],
+        "containers": [],
+        "output": "边数 = 顶点数 - 1 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "唯一路径",
+      "description": "树中任意两顶点之间有且仅有一条路径。A→E: A-B-D-E（唯一）",
+      "codeLine": "// A→E 唯一路径: A-B-D-E",
+      "highlights": ["唯一路径"],
+      "state": {
+        "variables": [
+          {"name": "A→E", "value": "A-B-D-E", "note": "唯一路径 ✓"}
+        ],
+        "containers": [],
+        "output": "边数 = 顶点数 - 1 ✓"
+      }
+    },
+    {
+      "step": 4,
+      "title": "叶子节点",
+      "description": "度为 1 的节点是叶子。A、C、E 是叶子（度=1），B（度=3）、D（度=2）不是",
+      "codeLine": "// 叶子 = 度为 1 的节点",
+      "highlights": ["叶子"],
+      "state": {
+        "variables": [
+          {"name": "叶子", "value": "A,C,E", "note": "度=1"},
+          {"name": "内部节点", "value": "B,D", "note": "度>1"}
+        ],
+        "containers": [],
+        "output": "边数 = 顶点数 - 1 ✓\n叶子: A, C, E"
+      }
+    }
+  ]
+}

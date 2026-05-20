@@ -38,13 +38,49 @@
       "order": 4
     },
     {
+      "animationId": "cpp_char_ascii",
+      "itemId": "1.3.4",
+      "title": "char 与 ASCII",
+      "description": "演示 char 类型的字符存储、ASCII 码查看和字符运算",
+      "assetPath": "assets/data/cpp/animations/char_ascii.json",
+      "type": "state_steps",
+      "order": 5
+    },
+    {
+      "animationId": "cpp_bool_compare",
+      "itemId": "1.3.5",
+      "title": "bool 与比较",
+      "description": "演示 bool 类型的 true/false 值，以及比较表达式产生布尔结果的过程",
+      "assetPath": "assets/data/cpp/animations/bool_compare.json",
+      "type": "state_steps",
+      "order": 6
+    },
+    {
+      "animationId": "cpp_double_precision",
+      "itemId": "1.3.6",
+      "title": "double 浮点精度",
+      "description": "演示 double 类型的声明、浮点运算和精度问题",
+      "assetPath": "assets/data/cpp/animations/double_precision.json",
+      "type": "state_steps",
+      "order": 7
+    },
+    {
+      "animationId": "cpp_variable_scope",
+      "itemId": "1.3.12",
+      "title": "变量作用域",
+      "description": "演示花括号 { } 划定的作用域和内层变量遮蔽外层变量的过程",
+      "assetPath": "assets/data/cpp/animations/variable_scope.json",
+      "type": "state_steps",
+      "order": 8
+    },
+    {
       "animationId": "cpp_type_conversion",
       "itemId": "1.3.17",
       "title": "类型转换",
       "description": "演示隐式类型转换和显式类型转换（强制转换），重点展示整数除法的问题",
       "assetPath": "assets/data/cpp/animations/type_conversion.json",
       "type": "state_steps",
-      "order": 5
+      "order": 9
     },
     {
       "animationId": "cpp_if_branch",
@@ -53,7 +89,7 @@
       "description": "演示 if-else 条件分支的执行流程",
       "assetPath": "assets/data/cpp/animations/if_branch.json",
       "type": "state_steps",
-      "order": 6
+      "order": 10
     },
     {
       "animationId": "cpp_for_loop",
@@ -62,7 +98,7 @@
       "description": "演示 for 循环的初始化、条件判断和更新过程",
       "assetPath": "assets/data/cpp/animations/for_loop.json",
       "type": "state_steps",
-      "order": 7
+      "order": 11
     },
     {
       "animationId": "cpp_array_index",
@@ -71,7 +107,7 @@
       "description": "演示一维数组的下标访问和越界风险",
       "assetPath": "assets/data/cpp/animations/array_index.json",
       "type": "state_steps",
-      "order": 8
+      "order": 12
     },
     {
       "animationId": "cpp_array_traverse",
@@ -80,7 +116,7 @@
       "description": "演示用 for 循环逐步遍历一维数组的每个元素",
       "assetPath": "assets/data/cpp/animations/array_traverse.json",
       "type": "state_steps",
-      "order": 9
+      "order": 13
     },
     {
       "animationId": "cpp_string_concat",
@@ -89,7 +125,7 @@
       "description": "演示 C++ string 的 + 拼接操作，逐步展示拼接过程",
       "assetPath": "assets/data/cpp/animations/string_concat.json",
       "type": "state_steps",
-      "order": 10
+      "order": 14
     },
     {
       "animationId": "cpp_function_call",
@@ -98,7 +134,7 @@
       "description": "演示函数调用的完整流程：传参、执行、返回值",
       "assetPath": "assets/data/cpp/animations/function_call.json",
       "type": "state_steps",
-      "order": 11
+      "order": 15
     },
     {
       "animationId": "cpp_recursion_factorial",
@@ -107,7 +143,16 @@
       "description": "演示递归函数计算阶乘的过程：逐层调用与逐层返回",
       "assetPath": "assets/data/cpp/animations/recursion_factorial.json",
       "type": "state_steps",
-      "order": 12
+      "order": 16
+    },
+    {
+      "animationId": "cpp_enumeration",
+      "itemId": "2.1.1",
+      "title": "枚举",
+      "description": "演示枚举思想：逐一尝试所有可能，找出满足条件的解",
+      "assetPath": "assets/data/cpp/animations/enumeration.json",
+      "type": "state_steps",
+      "order": 17
     },
     {
       "animationId": "cpp_vector_push_back",
@@ -116,7 +161,7 @@
       "description": "演示 vector 的动态扩容和 push_back 操作",
       "assetPath": "assets/data/cpp/animations/vector_push_back.json",
       "type": "state_steps",
-      "order": 13
+      "order": 17
     },
     {
       "animationId": "cpp_queue_operations",
@@ -125,7 +170,7 @@
       "description": "演示队列的 push、front、pop 操作",
       "assetPath": "assets/data/cpp/animations/queue_operations.json",
       "type": "state_steps",
-      "order": 14
+      "order": 18
     },
     {
       "animationId": "cpp_stack_operations",
@@ -134,7 +179,7 @@
       "description": "演示栈的 push、top、pop 操作",
       "assetPath": "assets/data/cpp/animations/stack_operations.json",
       "type": "state_steps",
-      "order": 15
+      "order": 19
     },
     {
       "animationId": "cpp_priority_queue",
@@ -143,7 +188,7 @@
       "description": "演示优先队列（大根堆）的 push、top、pop 操作",
       "assetPath": "assets/data/cpp/animations/priority_queue_operations.json",
       "type": "state_steps",
-      "order": 16
+      "order": 20
     },
     {
       "animationId": "cpp_set_operations",
@@ -152,7 +197,7 @@
       "description": "演示 set 的自动排序和去重特性",
       "assetPath": "assets/data/cpp/animations/set_operations.json",
       "type": "state_steps",
-      "order": 17
+      "order": 21
     },
     {
       "animationId": "cpp_map_operations",
@@ -161,7 +206,7 @@
       "description": "演示 map 的键值映射、插入和查找操作",
       "assetPath": "assets/data/cpp/animations/map_operations.json",
       "type": "state_steps",
-      "order": 18
+      "order": 22
     },
     {
       "animationId": "cpp_sort_visualization",
@@ -170,7 +215,7 @@
       "description": "演示 sort 对数组进行升序和降序排序",
       "assetPath": "assets/data/cpp/animations/sort_visualization.json",
       "type": "state_steps",
-      "order": 19
+      "order": 23
     },
     {
       "animationId": "cpp_binary_search",
@@ -179,7 +224,7 @@
       "description": "演示在有序数组上使用 binary_search 查找元素",
       "assetPath": "assets/data/cpp/animations/binary_search_visualization.json",
       "type": "state_steps",
-      "order": 20
+      "order": 24
     },
     {
       "animationId": "cpp_arithmetic",
@@ -188,7 +233,7 @@
       "description": "演示加减乘除和取模运算的过程",
       "assetPath": "assets/data/cpp/animations/arithmetic.json",
       "type": "state_steps",
-      "order": 21
+      "order": 25
     },
     {
       "animationId": "cpp_logical_op",
@@ -197,7 +242,7 @@
       "description": "演示逻辑与 &&、逻辑或 ||、逻辑非 ! 的求值过程",
       "assetPath": "assets/data/cpp/animations/logical_op.json",
       "type": "state_steps",
-      "order": 22
+      "order": 26
     },
     {
       "animationId": "cpp_while_loop",
@@ -206,7 +251,7 @@
       "description": "演示 while 循环的条件判断和变量变化过程",
       "assetPath": "assets/data/cpp/animations/while_loop.json",
       "type": "state_steps",
-      "order": 23
+      "order": 27
     },
     {
       "animationId": "cpp_break_continue",
@@ -215,7 +260,7 @@
       "description": "演示 for 循环中 break 提前退出和 continue 跳过当前轮的区别",
       "assetPath": "assets/data/cpp/animations/break_continue.json",
       "type": "state_steps",
-      "order": 24
+      "order": 28
     },
     {
       "animationId": "cpp_define_macro",
@@ -224,7 +269,7 @@
       "description": "演示 #define 在编译前进行文本替换的过程",
       "assetPath": "assets/data/cpp/animations/define_macro.json",
       "type": "state_steps",
-      "order": 25
+      "order": 29
     },
     {
       "animationId": "cpp_namespace",
@@ -233,7 +278,7 @@
       "description": "演示命名空间的定义、成员访问和 using 声明",
       "assetPath": "assets/data/cpp/animations/namespace_demo.json",
       "type": "state_steps",
-      "order": 26
+      "order": 30
     },
     {
       "animationId": "cpp_integer_division",
@@ -242,7 +287,7 @@
       "description": "演示 C++ 中整数除法截断小数部分的问题及修复方法",
       "assetPath": "assets/data/cpp/animations/integer_division.json",
       "type": "state_steps",
-      "order": 27
+      "order": 31
     },
     {
       "animationId": "cpp_long_long_overflow",
@@ -251,7 +296,394 @@
       "description": "演示 int 乘法溢出问题以及用 long long 和 1LL 修复",
       "assetPath": "assets/data/cpp/animations/long_long_overflow.json",
       "type": "state_steps",
-      "order": 28
+      "order": 32
+    },
+    {
+      "animationId": "cpp_gcd_euclidean",
+      "itemId": "4.1.9",
+      "title": "最大公约数（gcd）",
+      "description": "演示欧几里得算法（辗转相除法）求 gcd(48, 18) 的过程",
+      "assetPath": "assets/data/cpp/animations/gcd_euclidean.json",
+      "type": "state_steps",
+      "order": 33
+    },
+    {
+      "animationId": "cpp_prime_check",
+      "itemId": "4.1.7",
+      "title": "质数判定",
+      "description": "演示用试除法判断 29 是否为质数的过程",
+      "assetPath": "assets/data/cpp/animations/prime_check.json",
+      "type": "state_steps",
+      "order": 34
+    },
+    {
+      "animationId": "cpp_prime_factorization",
+      "itemId": "4.1.8",
+      "title": "质因数分解",
+      "description": "演示将 60 分解为质因数乘积 2×2×3×5 的过程",
+      "assetPath": "assets/data/cpp/animations/prime_factorization.json",
+      "type": "state_steps",
+      "order": 35
+    },
+    {
+      "animationId": "cpp_mod_arithmetic",
+      "itemId": "4.2.2",
+      "title": "模加减乘",
+      "description": "演示模运算中加法、减法、乘法的基本规则，以及每步取模等价性",
+      "assetPath": "assets/data/cpp/animations/mod_arithmetic.json",
+      "type": "state_steps",
+      "order": 36
+    },
+    {
+      "animationId": "cpp_fast_pow",
+      "itemId": "4.2.4",
+      "title": "快速幂",
+      "description": "演示快速幂算法计算 2^13 的过程：利用二进制拆分指数",
+      "assetPath": "assets/data/cpp/animations/fast_pow.json",
+      "type": "state_steps",
+      "order": 37
+    },
+    {
+      "animationId": "cpp_permutation_combination",
+      "itemId": "4.3.5",
+      "title": "排列与组合",
+      "description": "演示排列数 P(n,k) 和组合数 C(n,k) 的计算过程",
+      "assetPath": "assets/data/cpp/animations/permutation_combination.json",
+      "type": "state_steps",
+      "order": 38
+    },
+    {
+      "animationId": "cpp_pascal_triangle",
+      "itemId": "4.3.8",
+      "title": "Pascal 三角",
+      "description": "演示 Pascal 三角（杨辉三角）的递推构建过程：C(n,k) = C(n-1,k-1) + C(n-1,k)",
+      "assetPath": "assets/data/cpp/animations/pascal_triangle.json",
+      "type": "state_steps",
+      "order": 39
+    },
+    {
+      "animationId": "cpp_euclidean_distance",
+      "itemId": "4.7.12",
+      "title": "欧氏距离",
+      "description": "演示计算平面上两点之间欧氏距离的过程：勾股定理的应用",
+      "assetPath": "assets/data/cpp/animations/euclidean_distance.json",
+      "type": "state_steps",
+      "order": 40
+    },
+    {
+      "animationId": "cpp_dot_product",
+      "itemId": "4.7.14",
+      "title": "向量点积",
+      "description": "演示两个二维向量的点积计算过程及其几何意义",
+      "assetPath": "assets/data/cpp/animations/dot_product.json",
+      "type": "state_steps",
+      "order": 41
+    },
+    {
+      "animationId": "cpp_parity_check",
+      "itemId": "4.1.4",
+      "title": "奇偶性",
+      "description": "演示用取模运算判断整数奇偶性的过程",
+      "assetPath": "assets/data/cpp/animations/parity_check.json",
+      "type": "state_steps",
+      "order": 42
+    },
+    {
+      "animationId": "cpp_lcm_demo",
+      "itemId": "4.1.10",
+      "title": "最小公倍数（lcm）",
+      "description": "演示利用 gcd 求 lcm 的过程：lcm(a,b) = a*b/gcd(a,b)",
+      "assetPath": "assets/data/cpp/animations/lcm_demo.json",
+      "type": "state_steps",
+      "order": 43
+    },
+    {
+      "animationId": "cpp_congruence",
+      "itemId": "4.2.3",
+      "title": "同余",
+      "description": "演示同余的概念：a ≡ b (mod m) 意味着 a 和 b 除以 m 的余数相同",
+      "assetPath": "assets/data/cpp/animations/congruence.json",
+      "type": "state_steps",
+      "order": 44
+    },
+    {
+      "animationId": "cpp_modular_inverse",
+      "itemId": "4.2.6",
+      "title": "逆元",
+      "description": "演示模意义下乘法逆元的概念：a × inv(a) ≡ 1 (mod m)",
+      "assetPath": "assets/data/cpp/animations/modular_inverse.json",
+      "type": "state_steps",
+      "order": 45
+    },
+    {
+      "animationId": "cpp_addition_principle",
+      "itemId": "4.3.1",
+      "title": "加法原理",
+      "description": "演示计数中的加法原理：分类计数，各类互斥时直接相加",
+      "assetPath": "assets/data/cpp/animations/addition_principle.json",
+      "type": "state_steps",
+      "order": 46
+    },
+    {
+      "animationId": "cpp_multiplication_principle",
+      "itemId": "4.3.2",
+      "title": "乘法原理",
+      "description": "演示计数中的乘法原理：分步计数，各步独立时直接相乘",
+      "assetPath": "assets/data/cpp/animations/multiplication_principle.json",
+      "type": "state_steps",
+      "order": 47
+    },
+    {
+      "animationId": "cpp_factorial",
+      "itemId": "4.3.6",
+      "title": "阶乘",
+      "description": "演示阶乘 n! = n×(n-1)×…×2×1 的计算过程和递推关系",
+      "assetPath": "assets/data/cpp/animations/factorial.json",
+      "type": "state_steps",
+      "order": 48
+    },
+    {
+      "animationId": "cpp_fibonacci",
+      "itemId": "4.3.12",
+      "title": "Fibonacci 计数",
+      "description": "演示 Fibonacci 数列的递推生成过程：F(n) = F(n-1) + F(n-2)",
+      "assetPath": "assets/data/cpp/animations/fibonacci.json",
+      "type": "state_steps",
+      "order": 49
+    },
+    {
+      "animationId": "cpp_truth_table",
+      "itemId": "4.4.5",
+      "title": "真值表",
+      "description": "演示命题逻辑中 p∧q、p∨q、¬p 的真值表构建过程",
+      "assetPath": "assets/data/cpp/animations/truth_table.json",
+      "type": "state_steps",
+      "order": 50
+    },
+    {
+      "animationId": "cpp_graph_degree",
+      "itemId": "4.5.1",
+      "title": "点、边、度",
+      "description": "演示图的基本概念：顶点、边和度数的统计过程",
+      "assetPath": "assets/data/cpp/animations/graph_degree.json",
+      "type": "state_steps",
+      "order": 51
+    },
+    {
+      "animationId": "cpp_discrete_probability",
+      "itemId": "4.6.1",
+      "title": "有限离散概率",
+      "description": "演示离散概率的基本计算：掷骰子各点数的概率",
+      "assetPath": "assets/data/cpp/animations/discrete_probability.json",
+      "type": "state_steps",
+      "order": 52
+    },
+    {
+      "animationId": "cpp_expectation",
+      "itemId": "4.6.4",
+      "title": "数学期望",
+      "description": "演示离散随机变量数学期望的计算过程：E(X) = Σ xᵢ × P(xᵢ)",
+      "assetPath": "assets/data/cpp/animations/expectation.json",
+      "type": "state_steps",
+      "order": 53
+    },
+    {
+      "animationId": "cpp_vector_basics",
+      "itemId": "4.7.2",
+      "title": "向量",
+      "description": "演示二维向量的基本运算：加法和数乘",
+      "assetPath": "assets/data/cpp/animations/vector_basics.json",
+      "type": "state_steps",
+      "order": 54
+    },
+    {
+      "animationId": "cpp_pythagorean_theorem",
+      "itemId": "4.7.13",
+      "title": "勾股定理",
+      "description": "演示勾股定理：直角三角形中 a² + b² = c²",
+      "assetPath": "assets/data/cpp/animations/pythagorean_theorem.json",
+      "type": "state_steps",
+      "order": 55
+    },
+    {
+      "animationId": "cpp_cross_product",
+      "itemId": "4.7.15",
+      "title": "叉积",
+      "description": "演示二维向量叉积的计算及其几何意义：判断方向和求面积",
+      "assetPath": "assets/data/cpp/animations/cross_product.json",
+      "type": "state_steps",
+      "order": 56
+    },
+    {
+      "animationId": "cpp_binary_search_manual",
+      "itemId": "2.3.1",
+      "title": "二分查找",
+      "description": "演示在有序数组中用二分查找定位目标值的过程",
+      "assetPath": "assets/data/cpp/animations/binary_search_manual.json",
+      "type": "state_steps",
+      "order": 57
+    },
+    {
+      "animationId": "cpp_bubble_sort",
+      "itemId": "2.2.1",
+      "title": "冒泡排序",
+      "description": "演示冒泡排序的相邻比较和交换过程，每轮将最大值冒泡到末尾",
+      "assetPath": "assets/data/cpp/animations/bubble_sort.json",
+      "type": "state_steps",
+      "order": 58
+    },
+    {
+      "animationId": "cpp_prefix_sum",
+      "itemId": "2.4.1",
+      "title": "前缀和",
+      "description": "演示前缀和数组的构建过程，以及如何用前缀和快速求区间和",
+      "assetPath": "assets/data/cpp/animations/prefix_sum.json",
+      "type": "state_steps",
+      "order": 59
+    },
+    {
+      "animationId": "cpp_two_pointer",
+      "itemId": "2.5.1",
+      "title": "相向双指针",
+      "description": "演示相向双指针在有序数组中查找两数之和等于目标值的过程",
+      "assetPath": "assets/data/cpp/animations/two_pointer.json",
+      "type": "state_steps",
+      "order": 60
+    },
+    {
+      "animationId": "cpp_dfs_demo",
+      "itemId": "2.7.1",
+      "title": "DFS 深度优先搜索",
+      "description": "演示 DFS 在简单树上从根节点出发的遍历过程：先深入再回溯",
+      "assetPath": "assets/data/cpp/animations/dfs_demo.json",
+      "type": "state_steps",
+      "order": 61
+    },
+    {
+      "animationId": "cpp_dp_fib",
+      "itemId": "2.8.1",
+      "title": "DP 思想：斐波那契",
+      "description": "用斐波那契数列演示动态规划的核心思想：从子问题推导大问题，避免重复计算",
+      "assetPath": "assets/data/cpp/animations/dp_fib.json",
+      "type": "state_steps",
+      "order": 62
+    },
+    {
+      "animationId": "cpp_divisibility",
+      "itemId": "4.1.5",
+      "title": "整除",
+      "description": "演示整除的概念：a 整除 b 意味着 b = a × k（k 为整数）",
+      "assetPath": "assets/data/cpp/animations/divisibility.json",
+      "type": "state_steps",
+      "order": 63
+    },
+    {
+      "animationId": "cpp_modulo_concept",
+      "itemId": "4.2.1",
+      "title": "模意义",
+      "description": "演示取模运算的本质：除法取余数，以及钟表模型",
+      "assetPath": "assets/data/cpp/animations/modulo_concept.json",
+      "type": "state_steps",
+      "order": 64
+    },
+    {
+      "animationId": "cpp_inclusion_exclusion",
+      "itemId": "4.3.10",
+      "title": "容斥原理",
+      "description": "演示容斥原理：|A∪B| = |A| + |B| - |A∩B|",
+      "assetPath": "assets/data/cpp/animations/inclusion_exclusion.json",
+      "type": "state_steps",
+      "order": 65
+    },
+    {
+      "animationId": "cpp_pigeonhole",
+      "itemId": "4.3.11",
+      "title": "鸽巢原理",
+      "description": "演示鸽巢原理：把 n+1 个物品放入 n 个盒子，至少有一个盒子有 2 个物品",
+      "assetPath": "assets/data/cpp/animations/pigeonhole.json",
+      "type": "state_steps",
+      "order": 66
+    },
+    {
+      "animationId": "cpp_set_basics",
+      "itemId": "4.4.1",
+      "title": "集合",
+      "description": "演示集合的基本概念：元素、子集、并集、交集",
+      "assetPath": "assets/data/cpp/animations/set_basics.json",
+      "type": "state_steps",
+      "order": 67
+    },
+    {
+      "animationId": "cpp_math_induction",
+      "itemId": "4.4.10",
+      "title": "归纳法",
+      "description": "演示数学归纳法证明 1+2+…+n = n(n+1)/2 的过程",
+      "assetPath": "assets/data/cpp/animations/math_induction.json",
+      "type": "state_steps",
+      "order": 68
+    },
+    {
+      "animationId": "cpp_tree_basics",
+      "itemId": "4.5.6",
+      "title": "树的基本概念",
+      "description": "演示树的基本性质：n 个顶点的树有 n-1 条边，连通且无环",
+      "assetPath": "assets/data/cpp/animations/tree_basics.json",
+      "type": "state_steps",
+      "order": 69
+    },
+    {
+      "animationId": "cpp_bipartite_graph",
+      "itemId": "4.5.9",
+      "title": "二分图",
+      "description": "演示二分图的概念：顶点可分为两组，所有边只连接不同组的顶点",
+      "assetPath": "assets/data/cpp/animations/bipartite_graph.json",
+      "type": "state_steps",
+      "order": 70
+    },
+    {
+      "animationId": "cpp_conditional_probability",
+      "itemId": "4.6.3",
+      "title": "条件概率",
+      "description": "演示条件概率 P(A|B) = P(A∩B) / P(B) 的计算过程",
+      "assetPath": "assets/data/cpp/animations/conditional_probability.json",
+      "type": "state_steps",
+      "order": 71
+    },
+    {
+      "animationId": "cpp_area_calculation",
+      "itemId": "4.7.11",
+      "title": "面积",
+      "description": "演示常见图形面积的计算：矩形、三角形、圆",
+      "assetPath": "assets/data/cpp/animations/area_calculation.json",
+      "type": "state_steps",
+      "order": 72
+    },
+    {
+      "animationId": "cpp_trigonometry",
+      "itemId": "4.7.17",
+      "title": "三角函数",
+      "description": "演示基本三角函数 sin、cos、tan 的计算和关系",
+      "assetPath": "assets/data/cpp/animations/trigonometry.json",
+      "type": "state_steps",
+      "order": 73
+    },
+    {
+      "animationId": "cpp_multiple_factor",
+      "itemId": "4.1.6",
+      "title": "倍数与因数",
+      "description": "演示倍数与因数的关系：若 a 整除 b，则 a 是 b 的因数，b 是 a 的倍数",
+      "assetPath": "assets/data/cpp/animations/multiple_factor.json",
+      "type": "state_steps",
+      "order": 74
+    },
+    {
+      "animationId": "cpp_quick_sort",
+      "itemId": "2.2.5",
+      "title": "快速排序",
+      "description": "演示快速排序的分区过程：选基准、分区、递归",
+      "assetPath": "assets/data/cpp/animations/quick_sort.json",
+      "type": "state_steps",
+      "order": 75
     }
   ]
 }

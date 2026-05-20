@@ -1,0 +1,76 @@
+{
+  "animationId": "cpp_logical_connectives",
+  "itemId": "4.4.4",
+  "title": "逻辑联结词",
+  "description": "演示基本逻辑联结词：与∧、或∨、非¬、蕴含→、等价↔",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "基本联结词",
+      "description": "命题逻辑有5个基本联结词：∧(与)、∨(或)、¬(非)、→(蕴含)、↔(等价)",
+      "codeLine": "// ∧ ∨ ¬ → ↔",
+      "highlights": ["∧", "∨", "¬", "→", "↔"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "与∧ 和 或∨",
+      "description": "p∧q: 两真才真。p∨q: 有真即真",
+      "codeLine": "// p∧q: TT→T, 其余→F; p∨q: FF→F, 其余→T",
+      "highlights": ["p∧q", "p∨q"],
+      "state": {
+        "variables": [
+          {"name": "T∧T", "value": "T", "note": ""},
+          {"name": "T∧F", "value": "F", "note": ""},
+          {"name": "T∨F", "value": "T", "note": ""},
+          {"name": "F∨F", "value": "F", "note": ""}
+        ],
+        "containers": [],
+        "output": "∧: 全真才真\n∨: 有真即真"
+      }
+    },
+    {
+      "step": 3,
+      "title": "蕴含 →",
+      "description": "p→q 仅在 p真q假 时为假。理解为：如果 p 则 q，p 假时自动为真",
+      "codeLine": "// p→q: 仅 T→F 为假, 其余为真",
+      "highlights": ["p→q"],
+      "state": {
+        "variables": [
+          {"name": "T→T", "value": "T", "note": ""},
+          {"name": "T→F", "value": "F", "note": "唯一假"},
+          {"name": "F→T", "value": "T", "note": ""},
+          {"name": "F→F", "value": "T", "note": ""}
+        ],
+        "containers": [],
+        "output": "∧: 全真才真\n∨: 有真即真\n→: 仅 T→F 为假"
+      }
+    },
+    {
+      "step": 4,
+      "title": "等价 ↔",
+      "description": "p↔q 在 p 和 q 同真假时为真。p↔q = (p→q)∧(q→p)",
+      "codeLine": "// p↔q: 同真同假 → 真",
+      "highlights": ["p↔q"],
+      "state": {
+        "variables": [
+          {"name": "T↔T", "value": "T", "note": ""},
+          {"name": "T↔F", "value": "F", "note": ""},
+          {"name": "F↔T", "value": "F", "note": ""},
+          {"name": "F↔F", "value": "T", "note": ""}
+        ],
+        "containers": [],
+        "output": "∧: 全真才真\n∨: 有真即真\n→: 仅 T→F 为假\n↔: 同真同假为真"
+      }
+    }
+  ]
+}

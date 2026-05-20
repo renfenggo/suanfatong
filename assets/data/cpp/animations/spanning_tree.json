@@ -1,0 +1,74 @@
+{
+  "animationId": "cpp_spanning_tree",
+  "itemId": "4.5.8",
+  "title": "生成树",
+  "description": "演示生成树的概念：连通图的极小连通子图，包含所有顶点且边数最少",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "原图",
+      "description": "4 个顶点 {A,B,C,D}，5 条边：AB,AC,BC,BD,CD。这是一个连通图",
+      "codeLine": "// V={A,B,C,D}, E={AB,AC,BC,BD,CD}",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "|V|", "value": "4", "note": ""},
+          {"name": "|E|", "value": "5", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "生成树的定义",
+      "description": "生成树包含所有顶点，边数 = |V|-1 = 3，且保持连通。从 5 条边中选 3 条",
+      "codeLine": "// 生成树: |V| 个顶点, |V|-1 条边, 连通",
+      "highlights": ["|V|-1"],
+      "state": {
+        "variables": [
+          {"name": "需要边数", "value": "3", "note": "4-1=3"},
+          {"name": "可选边", "value": "5", "note": "要删掉2条"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "一棵生成树",
+      "description": "选 AB, BC, CD → 生成树。A-B-C-D 连通，3 条边，4 个顶点",
+      "codeLine": "// 生成树1: AB, BC, CD",
+      "highlights": ["AB, BC, CD"],
+      "state": {
+        "variables": [
+          {"name": "边", "value": "AB,BC,CD", "note": "3条"},
+          {"name": "连通", "value": "✓", "note": "A↔B↔C↔D"}
+        ],
+        "containers": [],
+        "output": "生成树: AB-BC-CD"
+      }
+    },
+    {
+      "step": 4,
+      "title": "另一棵生成树",
+      "description": "选 AB, AC, CD → 也是生成树。生成树不唯一，但都恰好有 |V|-1 条边",
+      "codeLine": "// 生成树2: AB, AC, CD",
+      "highlights": ["不唯一"],
+      "state": {
+        "variables": [
+          {"name": "生成树1", "value": "AB,BC,CD", "note": ""},
+          {"name": "生成树2", "value": "AB,AC,CD", "note": ""},
+          {"name": "边数", "value": "都是3", "note": "=|V|-1"}
+        ],
+        "containers": [],
+        "output": "生成树不唯一，但边数都是 |V|-1"
+      }
+    }
+  ]
+}

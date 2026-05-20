@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_bipartite_graph",
+  "itemId": "4.5.9",
+  "title": "二分图",
+  "description": "演示二分图的概念：顶点可分为两组，所有边只连接不同组的顶点",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "二分图的顶点可分为两个集合 L 和 R，每条边连接 L 中的一个点和 R 中的一个点",
+      "codeLine": "// V = L ∪ R, 每条边连接 L 和 R",
+      "highlights": ["L", "R"],
+      "state": {
+        "variables": [
+          {"name": "L", "value": "{1,2}", "note": "左集合"},
+          {"name": "R", "value": "{A,B}", "note": "右集合"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "示例",
+      "description": "边: 1-A, 1-B, 2-A。所有边都是 L→R，没有 L→L 或 R→R 的边",
+      "codeLine": "// 边: 1-A, 1-B, 2-A (都是跨组)",
+      "highlights": ["跨组"],
+      "state": {
+        "variables": [
+          {"name": "1-A", "value": "✓", "note": "L→R"},
+          {"name": "1-B", "value": "✓", "note": "L→R"},
+          {"name": "2-A", "value": "✓", "note": "L→R"}
+        ],
+        "containers": [],
+        "output": "是二分图 ✓"
+      }
+    },
+    {
+      "step": 3,
+      "title": "判定方法：染色法",
+      "description": "用两种颜色交替染色，若相邻点同色则不是二分图。等价于图中无奇数长度的环",
+      "codeLine": "// BFS/DFS 交替染色, 同色相邻 → 非二分图",
+      "highlights": ["交替染色"],
+      "state": {
+        "variables": [
+          {"name": "1", "value": "红色", "note": "L"},
+          {"name": "2", "value": "红色", "note": "L"},
+          {"name": "A", "value": "蓝色", "note": "R"},
+          {"name": "B", "value": "蓝色", "note": "R"}
+        ],
+        "containers": [],
+        "output": "是二分图 ✓"
+      }
+    },
+    {
+      "step": 4,
+      "title": "应用",
+      "description": "二分图常用于匹配问题：任务分配、婚姻匹配等。最大匹配可用匈牙利算法求解",
+      "codeLine": "// 二分匹配 → 匈牙利算法",
+      "highlights": ["匹配"],
+      "state": {
+        "variables": [
+          {"name": "最大匹配", "value": "2", "note": "1-A, 2-B"}
+        ],
+        "containers": [],
+        "output": "是二分图 ✓\n最大匹配 = 2"
+      }
+    }
+  ]
+}

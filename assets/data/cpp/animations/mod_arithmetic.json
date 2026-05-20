@@ -1,0 +1,100 @@
+{
+  "animationId": "cpp_mod_arithmetic",
+  "itemId": "4.2.2",
+  "title": "模加减乘",
+  "description": "演示模运算中加法、减法、乘法的基本规则，以及每步取模等价性",
+  "initialState": {
+    "variables": [
+      {"name": "a", "value": "17", "note": ""},
+      {"name": "b", "value": "8", "note": ""},
+      {"name": "MOD", "value": "7", "note": ""}
+    ],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化",
+      "description": "设 a=17, b=8, MOD=7。所有运算结果对 MOD=7 取模",
+      "codeLine": "int a = 17, b = 8, MOD = 7;",
+      "highlights": ["a", "b", "MOD"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": "17%7=3"},
+          {"name": "b", "value": "8", "note": "8%7=1"},
+          {"name": "MOD", "value": "7", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "模加法",
+      "description": "(a+b) % MOD = (17+8) % 7 = 25 % 7 = 4。等价于先取模再相加：(3+1) % 7 = 4",
+      "codeLine": "cout << (a + b) % MOD;",
+      "highlights": ["(a + b) % MOD"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "8", "note": ""},
+          {"name": "MOD", "value": "7", "note": ""},
+          {"name": "(a+b)%MOD", "value": "4", "note": "25%7=4"}
+        ],
+        "containers": [],
+        "output": "4"
+      }
+    },
+    {
+      "step": 3,
+      "title": "模减法",
+      "description": "(a-b) % MOD = (17-8) % 7 = 9 % 7 = 2。注意若结果为负需加 MOD",
+      "codeLine": "cout << (a - b) % MOD;",
+      "highlights": ["(a - b) % MOD"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "8", "note": ""},
+          {"name": "MOD", "value": "7", "note": ""},
+          {"name": "(a-b)%MOD", "value": "2", "note": "9%7=2"}
+        ],
+        "containers": [],
+        "output": "4 2"
+      }
+    },
+    {
+      "step": 4,
+      "title": "模乘法",
+      "description": "(a*b) % MOD = (17×8) % 7 = 136 % 7 = 3。等价于 (3×1) % 7 = 3",
+      "codeLine": "cout << (a * b) % MOD;",
+      "highlights": ["(a * b) % MOD"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": ""},
+          {"name": "b", "value": "8", "note": ""},
+          {"name": "MOD", "value": "7", "note": ""},
+          {"name": "(a*b)%MOD", "value": "3", "note": "136%7=3"}
+        ],
+        "containers": [],
+        "output": "4 2 3"
+      }
+    },
+    {
+      "step": 5,
+      "title": "关键规则",
+      "description": "(a±b) % MOD = (a%MOD ± b%MOD) % MOD，(a×b) % MOD = (a%MOD × b%MOD) % MOD。中间步骤可随时取模，结果不变",
+      "codeLine": "// 可在中间任意步取模，最终结果不变",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "17", "note": "17%7=3"},
+          {"name": "b", "value": "8", "note": "8%7=1"},
+          {"name": "MOD", "value": "7", "note": ""}
+        ],
+        "containers": [],
+        "output": "4 2 3"
+      }
+    }
+  ]
+}

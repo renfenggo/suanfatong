@@ -1,0 +1,148 @@
+{
+  "sectionId": "2.7",
+  "sectionName": "搜索",
+  "units": [
+    {
+      "itemId": "2.7.1",
+      "title": "DFS 基础",
+      "learningGoal": "理解深度优先搜索的原理，学会用递归实现 DFS",
+      "explanation": "DFS（Depth-First Search）深度优先搜索：沿着一条路走到底，走不通就回退，换另一条路。\n\n核心思想：\n1. 从起点出发\n2. 选择一个未访问的邻居，递归深入\n3. 走到死路就回溯（backtrack）\n4. 所有路都走过后结束\n\nDFS 通常用递归实现，需要：\n- visited 数组标记已访问的节点\n- 递归函数处理当前节点\n- 遍历所有邻居并递归\n\n时间复杂度：O(V + E)（V 是节点数，E 是边数）",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    cout << u << \" \";\n    for (int v : adj[u]) {\n        if (!visited[v]) {\n            dfs(v);\n        }\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    dfs(1);\n    return 0;\n}",
+      "codeNotes": [
+        "adj[] 邻接表存图",
+        "visited[] 标记已访问节点",
+        "递归处理当前节点后遍历邻居",
+        "时间复杂度 O(V+E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记标记 visited",
+          "description": "没有标记已访问节点，导致无限递归。",
+          "fix": "进入 dfs 第一行就标记 visited[u] = true。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 DFS 输出图中从节点 1 出发能到达的所有节点。",
+        "hint": "标准 DFS 模板，标记 visited 后递归。",
+        "expectedIdea": "void dfs(u) { visited[u]=true; for v in adj[u] if (!visited[v]) dfs(v); }"
+      },
+      "quiz": [
+        {
+          "question": "DFS 使用什么数据结构来实现？",
+          "options": ["队列", "栈（或递归）", "堆", "哈希表"],
+          "answerIndex": 1,
+          "explanation": "DFS 用栈实现，递归本身就是栈结构。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.2",
+      "title": "BFS 基础",
+      "learningGoal": "理解广度优先搜索的原理，学会用队列实现 BFS",
+      "explanation": "BFS（Breadth-First Search）广度优先搜索：逐层扩展，先访问距离近的节点，再访问距离远的。\n\n核心思想：\n1. 起点入队\n2. 队列不空时，取出队首\n3. 将队首的所有未访问邻居入队\n4. 重复直到队列为空\n\nBFS 的特点：\n- 能找到最短路径（无权图）\n- 用队列实现\n- 逐层扩展\n\n时间复杂度：O(V + E)",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nvector<int> adj[100];\nbool visited[100];\nint dist[100];\n\nvoid bfs(int start) {\n    queue<int> q;\n    q.push(start);\n    visited[start] = true;\n    dist[start] = 0;\n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                dist[v] = dist[u] + 1;\n                q.push(v);\n            }\n        }\n    }\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    bfs(1);\n    for (int i = 1; i <= n; i++)\n        cout << i << \": \" << dist[i] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "用 queue 实现 BFS",
+        "入队时标记 visited",
+        "dist 记录距离起点的距离",
+        "BFS 天然求最短路径（无权图）"
+      ],
+      "commonMistakes": [
+        {
+          "title": "出队时才标记 visited",
+          "description": "在 pop 后才标记，导致同一节点被多次入队。",
+          "fix": "入队时就标记 visited，不是出队时。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 BFS 求无权图中从节点 1 到节点 n 的最短路径长度。",
+        "hint": "BFS 时记录 dist，dist[n] 就是答案。",
+        "expectedIdea": "标准 BFS 模板，用 dist 数组记录距离。"
+      },
+      "quiz": [
+        {
+          "question": "BFS 使用什么数据结构？",
+          "options": ["栈", "队列", "优先队列", "链表"],
+          "answerIndex": 1,
+          "explanation": "BFS 用队列（queue）实现，先进先出，保证逐层扩展。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.3",
+      "title": "网格搜索",
+      "learningGoal": "学会在二维网格上应用 DFS/BFS",
+      "explanation": "网格搜索是 DFS/BFS 在二维数组上的应用。常见于迷宫、岛屿、连通块等问题。\n\n实现要点：\n1. 用方向数组 dx[]、dy[] 表示四个方向\n2. 检查新位置是否越界（0 <= nx < n, 0 <= ny < m）\n3. 检查新位置是否可走/未访问\n\n方向数组：\nint dx[] = {-1, 1, 0, 0};  // 上下左右\nint dy[] = {0, 0, -1, 1};\n\n常见题型：\n- 岛屿数量（连通块计数）\n- 迷宫最短路（BFS）\n- 最大连通区域（DFS）",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint n, m;\nchar grid[100][100];\nbool visited[100][100];\nint dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\n\nvoid dfs(int x, int y) {\n    visited[x][y] = true;\n    for (int d = 0; d < 4; d++) {\n        int nx = x + dx[d], ny = y + dy[d];\n        if (nx >= 0 && nx < n && ny >= 0 && ny < m\n            && !visited[nx][ny] && grid[nx][ny] == '.') {\n            dfs(nx, ny);\n        }\n    }\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> grid[i][j];\n    int cnt = 0;\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            if (grid[i][j] == '.' && !visited[i][j]) {\n                dfs(i, j);\n                cnt++;\n            }\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "dx/dy 方向数组表示上下左右",
+        "检查 nx, ny 是否越界",
+        "检查是否可走且未访问",
+        "连通块计数：对每个未访问起点 DFS"
+      ],
+      "commonMistakes": [
+        {
+          "title": "越界访问",
+          "description": "没有检查 nx、ny 是否在范围内。",
+          "fix": "if (nx>=0 && nx<n && ny>=0 && ny<m) 才继续。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定一个 n*m 的迷宫（# 表示墙，. 表示空地），用 BFS 求从左上角到右下角的最少步数。",
+        "hint": "BFS 从 (0,0) 开始，到 (n-1,m-1) 结束。",
+        "expectedIdea": "queue<pair<int,int>> q; BFS 逐层扩展，dist 记录步数。"
+      },
+      "quiz": [
+        {
+          "question": "网格搜索中，方向数组 dx[]={-1,1,0,0}, dy[]={0,0,-1,1} 表示什么？",
+          "options": [
+            "对角线方向",
+            "上下左右四个方向",
+            "只有左右两个方向",
+            "八个方向"
+          ],
+          "answerIndex": 1,
+          "explanation": "dx/dy 组合 (-1,0)(1,0)(0,-1)(0,1) 分别表示上、下、左、右。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.7.4",
+      "title": "回溯与剪枝",
+      "learningGoal": "理解回溯法，学会通过剪枝优化搜索效率",
+      "explanation": "回溯法是「试错」的搜索方法：尝试每种可能，发现走不通就回退（撤销选择），换另一条路。\n\n回溯框架：\nvoid backtrack(状态) {\n    if (满足结束条件) { 记录答案; return; }\n    for (每个候选选择) {\n        做选择;\n        backtrack(新状态);\n        撤销选择;  // 回溯\n    }\n}\n\n剪枝：在搜索过程中提前判断某些分支不可能产生正确答案，直接跳过。\n\n常见剪枝：\n- 可行性剪枝：当前状态已经不满足约束\n- 最优性剪枝：当前方案不可能比已知最优更好\n- 对称性剪枝：利用对称性减少重复",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint n;\nvector<int> path;\n\nvoid backtrack(int used) {\n    if (path.size() == n) {\n        for (int x : path) cout << x << \" \";\n        cout << endl;\n        return;\n    }\n    for (int i = 1; i <= n; i++) {\n        if (used & (1 << i)) continue;\n        path.push_back(i);\n        backtrack(used | (1 << i));\n        path.pop_back();\n    }\n}\n\nint main() {\n    cin >> n;\n    backtrack(0);\n    return 0;\n}",
+      "codeNotes": [
+        "path 保存当前选择路径",
+        "used 位掩码记录已选数字",
+        "push_back 做选择，pop_back 撤销",
+        "path.size() == n 时输出一组排列"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记撤销选择",
+          "description": "递归返回后没有 pop_back，导致状态污染。",
+          "fix": "回溯必须对称：做了什么操作就撤销什么。"
+        }
+      ],
+      "practice": {
+        "prompt": "输出 1 到 n 的所有排列。",
+        "hint": "回溯模板，用 used 数组或位掩码记录已选。",
+        "expectedIdea": "标准全排列回溯模板"
+      },
+      "quiz": [
+        {
+          "question": "回溯法的核心步骤是什么？",
+          "options": [
+            "只做选择不撤销",
+            "做选择 → 递归 → 撤销选择",
+            "随机选择",
+            "贪心选择"
+          ],
+          "answerIndex": 1,
+          "explanation": "回溯 = 做选择 + 递归探索 + 撤销选择，三步缺一不可。"
+        }
+      ]
+    }
+  ]
+}

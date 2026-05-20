@@ -1,0 +1,76 @@
+{
+  "animationId": "cpp_discrete_probability",
+  "itemId": "4.6.1",
+  "title": "有限离散概率",
+  "description": "演示离散概率的基本计算：掷骰子各点数的概率",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "样本空间",
+      "description": "掷一颗均匀骰子，样本空间 Ω = {1, 2, 3, 4, 5, 6}，共 6 个等可能结果",
+      "codeLine": "// Ω = {1,2,3,4,5,6}, |Ω| = 6",
+      "highlights": ["Ω"],
+      "state": {
+        "variables": [
+          {"name": "|Ω|", "value": "6", "note": "等可能"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "基本概率",
+      "description": "P(掷出 3) = 1/6 ≈ 0.167。每个点数概率相等",
+      "codeLine": "double p3 = 1.0 / 6; // ≈ 0.167",
+      "highlights": ["1.0 / 6"],
+      "state": {
+        "variables": [
+          {"name": "P(1)", "value": "1/6", "note": "0.167"},
+          {"name": "P(2)", "value": "1/6", "note": "0.167"},
+          {"name": "P(3)", "value": "1/6", "note": "0.167"},
+          {"name": "P(4)", "value": "1/6", "note": "0.167"},
+          {"name": "P(5)", "value": "1/6", "note": "0.167"},
+          {"name": "P(6)", "value": "1/6", "note": "0.167"}
+        ],
+        "containers": [],
+        "output": "P(3) = 1/6 ≈ 0.167"
+      }
+    },
+    {
+      "step": 3,
+      "title": "复合事件",
+      "description": "P(偶数) = P(2)+P(4)+P(6) = 3/6 = 1/2。互斥事件概率直接相加",
+      "codeLine": "double pEven = 3.0 / 6; // = 0.5",
+      "highlights": ["3.0 / 6"],
+      "state": {
+        "variables": [
+          {"name": "P(偶数)", "value": "3/6", "note": "= 1/2 = 0.5"},
+          {"name": "P(≥5)", "value": "2/6", "note": "= 1/3 ≈ 0.333"}
+        ],
+        "containers": [],
+        "output": "P(偶数) = 1/2"
+      }
+    },
+    {
+      "step": 4,
+      "title": "概率公理",
+      "description": "① P(Ω) = 1；② 任意事件 P ≥ 0；③ 互斥事件概率可加。P(Ω) = 6/6 = 1 ✓",
+      "codeLine": "// P(Ω) = 1, 0 ≤ P ≤ 1",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "P(Ω)", "value": "1", "note": "6/6=1 ✓"},
+          {"name": "P(不可能)", "value": "0", "note": ""}
+        ],
+        "containers": [],
+        "output": "P(偶数) = 1/2, P(Ω) = 1"
+      }
+    }
+  ]
+}

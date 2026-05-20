@@ -1,0 +1,39 @@
+{
+  "sectionId": "3.6",
+  "sectionName": "树结构",
+  "units": [
+    {
+      "itemId": "3.6.1",
+      "title": "二叉树基础",
+      "learningGoal": "理解二叉树的概念，掌握前中后序遍历",
+      "explanation": "二叉树每个节点最多有两个子节点（左儿子、右儿子。\n\n三种遍历方式：\n- 前序遍历：根 → 左 → 右\n- 中序遍历：左 → 根 → 右\n- 后序遍历：左 → 右 → 根\n\n用数组模拟：\n- l[i]：节点 i 的左儿子\n- r[i]：节点 i 的右儿子\n\n二叉搜索树（BST）：左子树 < 根 < 右子树，中序遍历得到有序序列。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint l[100], r[100], val[100], idx = 1;\n\nvoid preorder(int u) {\n    if (!u) return;\n    cout << val[u] << \" \";\n    preorder(l[u]);\n    preorder(r[u]);\n}\n\nvoid inorder(int u) {\n    if (!u) return;\n    inorder(l[u]);\n    cout << val[u] << \" \";\n    inorder(r[u]);\n}\n\nint main() {\n    val[1] = 1; l[1] = 2; r[1] = 3;\n    val[2] = 2; val[3] = 3;\n    preorder(1); cout << endl;\n    inorder(1); cout << endl;\n    return 0;\n}",
+      "codeNotes": ["前序：根左右", "中序：左根右", "后序：左右根", "用数组 l[], r[] 模拟"],
+      "commonMistakes": [{"title": "递归边界忘记", "description": "没有 if (!u) return; 导致空指针。", "fix": "每个遍历函数开头检查节点是否为空。"}],
+      "practice": {"prompt": "给定二叉树的前序和中序遍历，求后序遍历。", "hint": "前序第一个是根，中序中找到根分左右子树。", "expectedIdea": "递归：前序定根，中序分左右，递归处理子树。"},
+      "quiz": [{"question": "二叉搜索树的中序遍历结果有什么特点？", "options": ["逆序的", "无序的", "升序排列的", "随机排列的"], "answerIndex": 2, "explanation": "BST 中序遍历（左根右）得到的是升序序列。"}]
+    },
+    {
+      "itemId": "3.6.2",
+      "title": "树的存储与遍历",
+      "learningGoal": "掌握树的孩子表示法和 DFS/BFS 遍历",
+      "explanation": "树的存储常用邻接表（和孩子表示法类似）：\nvector<int> children[N]; // children[i] 存 i 的所有孩子\n\n遍历方式：\n- DFS：递归遍历，常用于求子树大小、深度等\n- BFS：按层遍历，常用于求最短距离\n\n树的常用概念：\n- 度：节点的孩子数\n- 深度：从根到节点的边数\n- 高度：从节点到最远叶子的边数\n- 叶子：没有孩子的节点",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> ch[100];\nint dep[100];\n\nvoid dfs(int u, int d) {\n    dep[u] = d;\n    for (int v : ch[u]) dfs(v, d + 1);\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 2; i <= n; i++) {\n        int p;\n        cin >> p;\n        ch[p].push_back(i);\n    }\n    dfs(1, 0);\n    for (int i = 1; i <= n; i++)\n        cout << i << \": dep=\" << dep[i] << endl;\n    return 0;\n}",
+      "codeNotes": ["邻接表存孩子", "DFS 递归遍历", "dep 记录深度", "BFS 用队列按层遍历"],
+      "commonMistakes": [{"title": "把无根树当有根树处理", "description": "题目没给根，直接从1开始DFS。", "fix": "无根树需要先选一个根（通常选1），或建双向边。"}],
+      "practice": {"prompt": "求树中每个节点的子树大小（包括自己）。", "hint": "DFS 后序遍历，size[u] = 1 + sum(size[v])。", "expectedIdea": "int dfs(u) { int s=1; for v: s+=dfs(v); return sz[u]=s; }"},
+      "quiz": [{"question": "n 个节点的树有多少条边？", "options": ["n", "n-1", "n+1", "2n"], "answerIndex": 1, "explanation": "树是连通无环图，n 个节点的树恰好有 n-1 条边。"}]
+    },
+    {
+      "itemId": "3.6.3",
+      "title": "LCA 最近公共祖先",
+      "learningGoal": "理解 LCA 的概念，掌握倍增法求 LCA",
+      "explanation": "LCA（Lowest Common Ancestor）最近公共祖先：节点 u 和 v 的最近公共祖先就是离它们最近的公共祖先节点。\n\n倍增法求 LCA：\n1. 预处理 fa[i][j]：节点 i 往上跳 2^j 步到达的祖先\n2. 预处理 dep[i]：节点深度\n3. 先把较深的节点跳到同一层\n4. 然后两个节点一起往上跳\n\n预处理：O(n log n)\n查询：O(log n)\n\nLCA 的应用：树上路径、树上距离、子树查询等。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvector<int> ch[100001];\nint dep[100001], fa[100001][20];\n\nvoid dfs(int u, int p) {\n    fa[u][0] = p;\n    dep[u] = dep[p] + 1;\n    for (int j = 1; j < 20; j++)\n        fa[u][j] = fa[fa[u][j-1]][j-1];\n    for (int v : ch[u]) if (v != p) dfs(v, u);\n}\n\nint lca(int u, int v) {\n    if (dep[u] < dep[v]) swap(u, v);\n    for (int j = 19; j >= 0; j--)\n        if (dep[fa[u][j]] >= dep[v]) u = fa[u][j];\n    if (u == v) return u;\n    for (int j = 19; j >= 0; j--)\n        if (fa[u][j] != fa[v][j]) { u = fa[u][j]; v = fa[v][j]; }\n    return fa[u][0];\n}",
+      "codeNotes": ["fa[i][j] 表示 i 跳 2^j 步的祖先", "先跳到同一深度", "再一起往上跳", "预处理 O(n log n)，查询 O(log n)"],
+      "commonMistakes": [{"title": "忘记初始化 fa[root][0] = root", "description": "根节点跳到上面应该是自己。", "fix": "设 dep[root]=0, fa[root][j]=root。"}],
+      "practice": {"prompt": "给一棵树，q 次询问 u 和 v 的 LCA。", "hint": "倍增法预处理，然后每次 O(log n) 查询。", "expectedIdea": "标准倍增LCA模板"},
+      "quiz": [{"question": "倍增法求 LCA 的单次查询时间复杂度是？", "options": ["O(n)", "O(n log n)", "O(log n)", "O(1)"], "answerIndex": 2, "explanation": "倍增法每次查询最多跳 log n 次，所以是 O(log n)。"}]
+    }
+  ]
+}

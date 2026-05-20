@@ -1,0 +1,39 @@
+{
+  "sectionId": "3.3",
+  "sectionName": "集合与映射",
+  "units": [
+    {
+      "itemId": "3.3.1",
+      "title": "set",
+      "learningGoal": "掌握 C++ set 的使用，理解有序集合的应用",
+      "explanation": "set 是 C++ STL 中的有序集合，自动排序且去重。\n\n常用操作：\n- insert(x)：插入元素\n- erase(x)：删除元素\n- find(x)：查找元素，返回迭代器\n- count(x)：是否存在（0或1）\n- lower_bound(x)：第一个 >= x 的元素\n- upper_bound(x)：第一个 > x 的元素\n\n底层是红黑树，所有操作 O(log n)。\n\n竞赛常用于：维护有序集合、动态排名、去重。",
+      "exampleCode": "#include <iostream>\n#include <set>\nusing namespace std;\n\nint main() {\n    set<int> s;\n    s.insert(3); s.insert(1); s.insert(4); s.insert(1);\n    for (int x : s) cout << x << \" \";\n    cout << endl;\n    cout << s.count(3) << endl;\n    auto it = s.lower_bound(2);\n    cout << *it << endl;\n    return 0;\n}",
+      "codeNotes": ["自动排序+去重", "insert/find/erase O(log n)", "lower_bound/upper_bound 可用", "遍历得到升序序列"],
+      "commonMistakes": [{"title": "插入重复元素没效果", "description": "set 自动去重，insert 重复值不会增加元素。", "fix": "需要允许重复用 multiset。"}],
+      "practice": {"prompt": "维护一个集合，支持插入、删除、查询第 k 小。", "hint": "用 set 维护，查询时用 next(s.begin(), k-1)。", "expectedIdea": "set + advance(it, k-1) 获取第k小。"},
+      "quiz": [{"question": "set 的底层实现是什么？", "options": ["数组", "链表", "红黑树", "哈希表"], "answerIndex": 2, "explanation": "set 底层是红黑树，保证元素有序且操作 O(log n)。"}]
+    },
+    {
+      "itemId": "3.3.3",
+      "title": "map",
+      "learningGoal": "掌握 C++ map 的使用，理解键值对映射",
+      "explanation": "map 是有序键值对容器，按键自动排序。\n\n常用操作：\n- mp[key] = value：插入/修改\n- mp.count(key)：是否存在\n- mp.find(key)：查找\n- mp.erase(key)：删除\n\n底层是红黑树，操作 O(log n)。\n\n竞赛常用于：计数、离散化、坐标映射。\n\nunordered_map 基于哈希表，平均 O(1) 但无序。",
+      "exampleCode": "#include <iostream>\n#include <map>\nusing namespace std;\n\nint main() {\n    map<string, int> mp;\n    mp[\"apple\"] = 3;\n    mp[\"banana\"] = 5;\n    mp[\"apple\"]++;\n    for (auto& [k, v] : mp)\n        cout << k << \": \" << v << endl;\n    return 0;\n}",
+      "codeNotes": ["键值对，按键有序", "mp[key] 可直接访问", "count 检查 key 是否存在", "遍历按 key 升序"],
+      "commonMistakes": [{"title": "mp[key] 会自动创建", "description": "访问不存在的 key 会自动插入默认值0。", "fix": "用 mp.count(key) 先检查是否存在。"}],
+      "practice": {"prompt": "统计一组字符串中每个字符串出现的次数。", "hint": "map<string, int> cnt; cnt[s]++;", "expectedIdea": "map<string,int> cnt; for each s: cnt[s]++; for auto& [k,v]: output"},
+      "quiz": [{"question": "map 和 unordered_map 的区别是什么？", "options": ["map更快", "map有序，unordered_map无序", "map可以存更多数据", "没有区别"], "answerIndex": 1, "explanation": "map 按键有序（红黑树），unordered_map 无序但平均 O(1)。"}]
+    },
+    {
+      "itemId": "3.3.6",
+      "title": "unordered_map / unordered_set",
+      "learningGoal": "掌握哈希表容器的高效用法",
+      "explanation": "unordered_map 和 unordered_set 基于哈希表实现：\n- 平均时间复杂度 O(1)\n- 不保证元素顺序\n- 适合快速查找和计数\n\n和 map/set 的区别：\n- map/set：红黑树，有序，O(log n)\n- unordered_*：哈希表，无序，平均 O(1)\n\n竞赛中如果不需要顺序，优先用 unordered_* 获取更快的速度。\n\n注意：最坏情况可能退化到 O(n)，但竞赛中很少遇到。",
+      "exampleCode": "#include <iostream>\n#include <unordered_map>\nusing namespace std;\n\nint main() {\n    unordered_map<string, int> cnt;\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string s;\n        cin >> s;\n        cnt[s]++;\n    }\n    for (auto& [k, v] : cnt)\n        cout << k << \" \" << v << endl;\n    return 0;\n}",
+      "codeNotes": ["哈希表实现，平均 O(1)", "不保证顺序", "适合计数和快速查找", "比 map 快但不有序"],
+      "commonMistakes": [{"title": "遍历顺序不确定", "description": "unordered_map 遍历顺序和插入顺序不同。", "fix": "需要有序遍历时用 map 代替。"}],
+      "practice": {"prompt": "给定 n 个整数，统计出现次数最多的数及其次数。", "hint": "unordered_map<int,int> 统计计数，找最大。", "expectedIdea": "unordered_map<int,int> cnt; 统计后遍历找 max。"},
+      "quiz": [{"question": "unordered_map 的平均查找时间复杂度是？", "options": ["O(n)", "O(log n)", "O(1)", "O(n^2)"], "answerIndex": 2, "explanation": "哈希表平均情况下查找是 O(1)。"}]
+    }
+  ]
+}

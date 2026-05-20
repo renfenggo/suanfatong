@@ -1,0 +1,69 @@
+{
+  "animationId": "cpp_classical_probability",
+  "itemId": "4.6.2",
+  "title": "古典概型",
+  "description": "演示古典概型的计算：等可能事件中 P(A) = |A|/|Ω|",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "古典概型条件",
+      "description": "有限个等可能的基本事件。抛硬币、掷骰子、抽牌都是古典概型",
+      "codeLine": "// P(A) = |A| / |Ω|",
+      "highlights": ["|A| / |Ω|"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "掷两枚硬币",
+      "description": "样本空间 Ω = {HH, HT, TH, TT}，|Ω| = 4",
+      "codeLine": "// Ω = {HH, HT, TH, TT}",
+      "highlights": ["Ω"],
+      "state": {
+        "variables": [
+          {"name": "|Ω|", "value": "4", "note": "4种等可能结果"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "至少一个正面",
+      "description": "A = {HH,HT,TH}，|A| = 3。P(A) = 3/4 = 0.75",
+      "codeLine": "// P(至少一个正面) = 3/4",
+      "highlights": ["3/4"],
+      "state": {
+        "variables": [
+          {"name": "|A|", "value": "3", "note": "HH,HT,TH"},
+          {"name": "P(A)", "value": "0.75", "note": "3/4"}
+        ],
+        "containers": [],
+        "output": "P(至少一个正面) = 3/4"
+      }
+    },
+    {
+      "step": 4,
+      "title": "一正一反",
+      "description": "B = {HT,TH}，|B| = 2。P(B) = 2/4 = 1/2 = 0.5",
+      "codeLine": "// P(一正一反) = 2/4 = 1/2",
+      "highlights": ["1/2"],
+      "state": {
+        "variables": [
+          {"name": "|B|", "value": "2", "note": "HT,TH"},
+          {"name": "P(B)", "value": "0.5", "note": "2/4"}
+        ],
+        "containers": [],
+        "output": "P(至少一个正面) = 3/4\nP(一正一反) = 1/2"
+      }
+    }
+  ]
+}

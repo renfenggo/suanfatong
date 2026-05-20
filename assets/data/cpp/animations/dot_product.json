@@ -1,0 +1,94 @@
+{
+  "animationId": "cpp_dot_product",
+  "itemId": "4.7.14",
+  "title": "向量点积",
+  "description": "演示两个二维向量的点积计算过程及其几何意义",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义向量",
+      "description": "向量 a = (3, 4)，向量 b = (1, 2)",
+      "codeLine": "int ax=3, ay=4, bx=1, by=2;",
+      "highlights": ["ax", "ay", "bx", "by"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,4)", "note": ""},
+          {"name": "b", "value": "(1,2)", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "分量相乘",
+      "description": "a·b = ax×bx + ay×by = 3×1 + 4×2",
+      "codeLine": "int dot = ax * bx + ay * by;",
+      "highlights": ["ax * bx", "ay * by"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,4)", "note": ""},
+          {"name": "b", "value": "(1,2)", "note": ""},
+          {"name": "ax*bx", "value": "3", "note": "3×1=3"},
+          {"name": "ay*by", "value": "8", "note": "4×2=8"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "求和得点积",
+      "description": "a·b = 3 + 8 = 11",
+      "codeLine": "int dot = 3 + 8; // = 11",
+      "highlights": ["dot"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,4)", "note": ""},
+          {"name": "b", "value": "(1,2)", "note": ""},
+          {"name": "dot", "value": "11", "note": "3+8=11"}
+        ],
+        "containers": [],
+        "output": "11"
+      }
+    },
+    {
+      "step": 4,
+      "title": "向量长度",
+      "description": "|a| = √(3²+4²) = 5，|b| = √(1²+2²) = √5 ≈ 2.236",
+      "codeLine": "double lenA = sqrt(ax*ax + ay*ay);",
+      "highlights": ["sqrt"],
+      "state": {
+        "variables": [
+          {"name": "a", "value": "(3,4)", "note": ""},
+          {"name": "b", "value": "(1,2)", "note": ""},
+          {"name": "|a|", "value": "5.0", "note": "√25=5"},
+          {"name": "|b|", "value": "2.236", "note": "√5≈2.236"}
+        ],
+        "containers": [],
+        "output": "11"
+      }
+    },
+    {
+      "step": 5,
+      "title": "几何意义",
+      "description": "a·b = |a|×|b|×cos(θ)，所以 cos(θ) = 11/(5×2.236) ≈ 0.984，θ ≈ 10.3°。点积 > 0 说明两向量夹角 < 90°",
+      "codeLine": "// a·b = |a|*|b|*cos(θ)",
+      "highlights": ["cos(θ)"],
+      "state": {
+        "variables": [
+          {"name": "dot", "value": "11", "note": ""},
+          {"name": "cos(θ)", "value": "0.984", "note": "11/(5×√5)"},
+          {"name": "θ", "value": "10.3°", "note": "锐角，同向"}
+        ],
+        "containers": [],
+        "output": "a·b = 11, cos(θ) ≈ 0.984"
+      }
+    }
+  ]
+}

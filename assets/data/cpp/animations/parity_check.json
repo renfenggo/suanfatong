@@ -1,0 +1,68 @@
+{
+  "animationId": "cpp_parity_check",
+  "itemId": "4.1.4",
+  "title": "奇偶性",
+  "description": "演示用取模运算判断整数奇偶性的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "能被 2 整除的数是偶数，否则是奇数。用 n % 2 判断",
+      "codeLine": "// 偶数: n % 2 == 0; 奇数: n % 2 == 1",
+      "highlights": ["n % 2"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "判断 7",
+      "description": "7 % 2 = 1，7 是奇数",
+      "codeLine": "int n = 7; cout << (n % 2);",
+      "highlights": ["7 % 2"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "7", "note": "7%2=1 → 奇数"}
+        ],
+        "containers": [],
+        "output": "7 是奇数"
+      }
+    },
+    {
+      "step": 3,
+      "title": "判断 12",
+      "description": "12 % 2 = 0，12 是偶数",
+      "codeLine": "n = 12; cout << (n % 2);",
+      "highlights": ["12 % 2"],
+      "state": {
+        "variables": [
+          {"name": "n", "value": "12", "note": "12%2=0 → 偶数"}
+        ],
+        "containers": [],
+        "output": "7 是奇数\n12 是偶数"
+      }
+    },
+    {
+      "step": 4,
+      "title": "位运算判断",
+      "description": "用 n & 1 也可以判断：最低位为 1 则奇数，为 0 则偶数。7 的二进制 111，最低位 1 → 奇数",
+      "codeLine": "// n & 1: 7(111) & 1(001) = 1 → 奇数",
+      "highlights": ["n & 1"],
+      "state": {
+        "variables": [
+          {"name": "7 & 1", "value": "1", "note": "奇数"},
+          {"name": "12 & 1", "value": "0", "note": "偶数"}
+        ],
+        "containers": [],
+        "output": "7 是奇数\n12 是偶数"
+      }
+    }
+  ]
+}

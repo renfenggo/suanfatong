@@ -1,0 +1,75 @@
+{
+  "animationId": "cpp_graph_degree",
+  "itemId": "4.5.1",
+  "title": "点、边、度",
+  "description": "演示图的基本概念：顶点、边和度数的统计过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "图的定义",
+      "description": "图由顶点集合 V 和边集合 E 组成。本例有 4 个顶点 {A,B,C,D}，5 条边",
+      "codeLine": "// V = {A,B,C,D}, E = {AB,AC,BC,BD,CD}",
+      "highlights": ["V", "E"],
+      "state": {
+        "variables": [
+          {"name": "|V|", "value": "4", "note": "顶点数"},
+          {"name": "|E|", "value": "5", "note": "边数"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算度数",
+      "description": "顶点的度 = 与之相连的边数。A 与 B、C 相连，度(A) = 2",
+      "codeLine": "// deg(A) = 2 (边 AB, AC)",
+      "highlights": ["deg(A)"],
+      "state": {
+        "variables": [
+          {"name": "deg(A)", "value": "2", "note": "AB, AC"},
+          {"name": "deg(B)", "value": "3", "note": "AB, BC, BD"},
+          {"name": "deg(C)", "value": "3", "note": "AC, BC, CD"},
+          {"name": "deg(D)", "value": "2", "note": "BD, CD"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "握手定理",
+      "description": "所有顶点度数之和 = 2 × 边数。2+3+3+2 = 10 = 2×5 ✓",
+      "codeLine": "// sum(deg) = 2 * |E|",
+      "highlights": ["2 * |E|"],
+      "state": {
+        "variables": [
+          {"name": "度数和", "value": "10", "note": "2+3+3+2"},
+          {"name": "2×|E|", "value": "10", "note": "2×5=10 ✓"}
+        ],
+        "containers": [],
+        "output": "度数和 = 10 = 2×5 ✓"
+      }
+    },
+    {
+      "step": 4,
+      "title": "推论",
+      "description": "握手定理推论：度数为奇数的顶点个数一定是偶数。本例中度数为奇的有 B(3) 和 C(3)，共 2 个（偶数）✓",
+      "codeLine": "// 奇度点个数一定是偶数",
+      "highlights": ["奇度点"],
+      "state": {
+        "variables": [
+          {"name": "奇度点", "value": "2个", "note": "B(3), C(3)"},
+          {"name": "偶度点", "value": "2个", "note": "A(2), D(2)"}
+        ],
+        "containers": [],
+        "output": "奇度点数 = 2（偶数）✓"
+      }
+    }
+  ]
+}

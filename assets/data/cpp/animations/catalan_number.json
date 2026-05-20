@@ -1,0 +1,71 @@
+{
+  "animationId": "cpp_catalan_number",
+  "itemId": "4.3.13",
+  "title": "Catalan 数",
+  "description": "演示 Catalan 数的计算：C(n) = C(2n,n)/(n+1)，以及经典计数场景",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定义",
+      "description": "Catalan 数 C(n) = C(2n,n) / (n+1)，第 0 项 C(0) = 1",
+      "codeLine": "// Cat(n) = C(2n,n) / (n+1)",
+      "highlights": ["C(2n,n)/(n+1)"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "计算前几项",
+      "description": "C(0)=1, C(1)=C(2,1)/2=1, C(2)=C(4,2)/3=6/3=2, C(3)=C(6,3)/4=20/4=5",
+      "codeLine": "// 1, 1, 2, 5, 14, 42, ...",
+      "highlights": ["1, 1, 2, 5"],
+      "state": {
+        "variables": [
+          {"name": "C(0)", "value": "1", "note": ""},
+          {"name": "C(1)", "value": "1", "note": "C(2,1)/2"},
+          {"name": "C(2)", "value": "2", "note": "C(4,2)/3"},
+          {"name": "C(3)", "value": "5", "note": "C(6,3)/4"}
+        ],
+        "containers": [],
+        "output": "1, 1, 2, 5, 14, ..."
+      }
+    },
+    {
+      "step": 3,
+      "title": "递推关系",
+      "description": "C(n) = C(n-1) × 2(2n-1)/(n+1)。C(4) = 5×14/5 = 14",
+      "codeLine": "// C(n) = C(n-1) * 2*(2n-1) / (n+1)",
+      "highlights": ["递推"],
+      "state": {
+        "variables": [
+          {"name": "C(3)", "value": "5", "note": ""},
+          {"name": "C(4)", "value": "14", "note": "5×14/5"}
+        ],
+        "containers": [],
+        "output": "1, 1, 2, 5, 14, ..."
+      }
+    },
+    {
+      "step": 4,
+      "title": "经典应用",
+      "description": "Catalan 数出现在许多计数问题中：合法括号序列数、二叉树形态数、不相交弦分割数等",
+      "codeLine": "// 括号匹配、二叉树、多边形三角剖分",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "C(3)=5", "value": "5种", "note": "3对括号的合法序列数"}
+        ],
+        "containers": [],
+        "output": "1, 1, 2, 5, 14, ..."
+      }
+    }
+  ]
+}

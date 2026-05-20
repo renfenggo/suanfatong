@@ -1,0 +1,78 @@
+{
+  "animationId": "cpp_inclusion_exclusion",
+  "itemId": "4.3.10",
+  "title": "容斥原理",
+  "description": "演示容斥原理：|A∪B| = |A| + |B| - |A∩B|",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题",
+      "description": "班上 30 人，选数学竞赛的有 18 人，选物理竞赛的有 15 人，至少选一科的有几人？",
+      "codeLine": "// 数学 18 人, 物理 15 人, 同时选 ? 人",
+      "highlights": ["数学", "物理"],
+      "state": {
+        "variables": [
+          {"name": "|A|数学", "value": "18", "note": ""},
+          {"name": "|B|物理", "value": "15", "note": ""},
+          {"name": "|A∩B|", "value": "?", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "假设同时选 5 人",
+      "description": "已知同时选两科的有 5 人，即 |A∩B| = 5",
+      "codeLine": "int cap = 5; // |A∩B| = 5",
+      "highlights": ["|A∩B|"],
+      "state": {
+        "variables": [
+          {"name": "|A|", "value": "18", "note": ""},
+          {"name": "|B|", "value": "15", "note": ""},
+          {"name": "|A∩B|", "value": "5", "note": ""}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "容斥公式",
+      "description": "|A∪B| = |A| + |B| - |A∩B| = 18 + 15 - 5 = 28",
+      "codeLine": "int union = 18 + 15 - 5; // = 28",
+      "highlights": ["18 + 15 - 5"],
+      "state": {
+        "variables": [
+          {"name": "|A|", "value": "18", "note": ""},
+          {"name": "|B|", "value": "15", "note": ""},
+          {"name": "|A∩B|", "value": "5", "note": ""},
+          {"name": "|A∪B|", "value": "28", "note": "18+15-5=28"}
+        ],
+        "containers": [],
+        "output": "至少选一科: 28 人"
+      }
+    },
+    {
+      "step": 4,
+      "title": "为什么要减去交集",
+      "description": "直接相加时，同时选两科的 5 人被算了两次，需要减去多算的部分",
+      "codeLine": "// 多算了一次 A∩B，需要减去",
+      "highlights": ["多算"],
+      "state": {
+        "variables": [
+          {"name": "直接相加", "value": "33", "note": "18+15=33"},
+          {"name": "多算", "value": "5", "note": "交集被算了两次"},
+          {"name": "修正", "value": "28", "note": "33-5=28"}
+        ],
+        "containers": [],
+        "output": "至少选一科: 28 人"
+      }
+    }
+  ]
+}

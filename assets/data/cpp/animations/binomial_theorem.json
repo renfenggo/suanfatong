@@ -1,0 +1,73 @@
+{
+  "animationId": "cpp_binomial_theorem",
+  "itemId": "4.3.9",
+  "title": "二项式定理",
+  "description": "演示二项式定理展开 (a+b)^n 的过程",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "定理内容",
+      "description": "(a+b)^n = Σ C(n,k) × a^(n-k) × b^k，其中 k 从 0 到 n",
+      "codeLine": "// (a+b)^n = Σ C(n,k)*a^(n-k)*b^k",
+      "highlights": ["Σ"],
+      "state": {
+        "variables": [],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "展开 (a+b)^2",
+      "description": "(a+b)^2 = C(2,0)a² + C(2,1)ab + C(2,2)b² = a² + 2ab + b²",
+      "codeLine": "// a^2 + 2ab + b^2",
+      "highlights": ["a^2 + 2ab + b^2"],
+      "state": {
+        "variables": [
+          {"name": "C(2,0)a²", "value": "1", "note": "a²"},
+          {"name": "C(2,1)ab", "value": "2", "note": "2ab"},
+          {"name": "C(2,2)b²", "value": "1", "note": "b²"}
+        ],
+        "containers": [],
+        "output": "(a+b)^2 = a^2 + 2ab + b^2"
+      }
+    },
+    {
+      "step": 3,
+      "title": "展开 (a+b)^3",
+      "description": "(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3。系数 1,3,3,1 就是 Pascal 三角第3行",
+      "codeLine": "// a^3 + 3a^2b + 3ab^2 + b^3",
+      "highlights": ["1,3,3,1"],
+      "state": {
+        "variables": [
+          {"name": "C(3,0)", "value": "1", "note": "a^3"},
+          {"name": "C(3,1)", "value": "3", "note": "3a^2b"},
+          {"name": "C(3,2)", "value": "3", "note": "3ab^2"},
+          {"name": "C(3,3)", "value": "1", "note": "b^3"}
+        ],
+        "containers": [],
+        "output": "(a+b)^2 = a^2 + 2ab + b^2\n(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "与 Pascal 三角的关系",
+      "description": "二项式展开的系数恰好是 Pascal 三角对应行的数。二项式定理是 Pascal 三角的理论基础",
+      "codeLine": "// 系数 = Pascal 三角第 n 行",
+      "highlights": ["Pascal"],
+      "state": {
+        "variables": [
+          {"name": "第2行", "value": "1 2 1", "note": "(a+b)^2"},
+          {"name": "第3行", "value": "1 3 3 1", "note": "(a+b)^3"}
+        ],
+        "containers": [],
+        "output": "(a+b)^2 = a^2 + 2ab + b^2\n(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3"
+      }
+    }
+  ]
+}

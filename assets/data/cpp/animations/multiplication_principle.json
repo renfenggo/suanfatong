@@ -1,0 +1,77 @@
+{
+  "animationId": "cpp_multiplication_principle",
+  "itemId": "4.3.2",
+  "title": "乘法原理",
+  "description": "演示计数中的乘法原理：分步计数，各步独立时直接相乘",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "问题",
+      "description": "午餐有 4 种主食和 3 种饮料，搭配选择有多少种？",
+      "codeLine": "// 主食 4 种 × 饮料 3 种 = ?",
+      "highlights": ["主食", "饮料"],
+      "state": {
+        "variables": [
+          {"name": "主食", "value": "4", "note": "米饭、面条、面包、饺子"},
+          {"name": "饮料", "value": "3", "note": "水、果汁、可乐"}
+        ],
+        "containers": [],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "分步选择",
+      "description": "第 1 步选主食（4 种），第 2 步选饮料（3 种），两步独立",
+      "codeLine": "int total = 4 * 3; // = 12",
+      "highlights": ["4 * 3"],
+      "state": {
+        "variables": [
+          {"name": "主食", "value": "4", "note": "第1步"},
+          {"name": "饮料", "value": "3", "note": "第2步"},
+          {"name": "total", "value": "12", "note": "4×3=12"}
+        ],
+        "containers": [],
+        "output": "12"
+      }
+    },
+    {
+      "step": 3,
+      "title": "推广",
+      "description": "乘法原理：完成一件事需 n 个步骤，各步分别有 a₁, a₂, …, aₙ 种选择且互相独立，则总方法数 = a₁×a₂×…×aₙ",
+      "codeLine": "// total = product of all steps",
+      "highlights": [],
+      "state": {
+        "variables": [
+          {"name": "步1", "value": "a₁", "note": ""},
+          {"name": "步2", "value": "a₂", "note": ""},
+          {"name": "…", "value": "…", "note": "独立"},
+          {"name": "步n", "value": "aₙ", "note": ""},
+          {"name": "total", "value": "Πaᵢ", "note": "直接相乘"}
+        ],
+        "containers": [],
+        "output": "12"
+      }
+    },
+    {
+      "step": 4,
+      "title": "对比加法原理",
+      "description": "加法原理：分类（OR 关系）→ 相加。乘法原理：分步（AND 关系）→ 相乘",
+      "codeLine": "// 分类 → 加; 分步 → 乘",
+      "highlights": ["加", "乘"],
+      "state": {
+        "variables": [
+          {"name": "加法(OR)", "value": "3+2=5", "note": "分类互斥"},
+          {"name": "乘法(AND)", "value": "4×3=12", "note": "分步独立"}
+        ],
+        "containers": [],
+        "output": "12"
+      }
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+    "item_id": "2.21.4",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.construction",
+    "item_id": "2.21.5",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.cactus.algorithm_and_properties",
+    "item_id": "2.21.6",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.chordal_graph.mcs",
+    "item_id": "2.21.7",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.tournament_graph.hamilton_path",
+    "item_id": "2.21.8",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.min_arborescence.chu_liu",
+    "item_id": "2.21.9",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.gomory_hu_tree.construction",
+    "item_id": "2.21.10",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+    "item_id": "2.21.11",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.min_mean_cycle.karp",
+    "item_id": "2.21.12",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.general_matching.blossom.raw",
+    "item_id": "2.21.13",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.tutte_matrix.matching",
+    "item_id": "2.21.14",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.matroid_intersection.basic",
+    "item_id": "2.21.15",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.bridge_tree.construction",
+    "item_id": "2.21.16",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.functional_graph.analysis",
+    "item_id": "2.21.17",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.max_density_subgraph.fractional",
+    "item_id": "2.21.18",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+    "item_id": "2.21.19",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dual_graph.planar",
+    "item_id": "2.21.20",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+    "item_id": "2.21.21",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.general_matching_weighted.blossom",
+    "item_id": "2.21.22",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.steiner_tree.dp",
+    "item_id": "2.21.23",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+    "item_id": "2.21.24",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+    "item_id": "2.21.25",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+    "item_id": "2.21.26",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+    "item_id": "2.21.27",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+    "item_id": "2.21.28",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.project_selection",
+    "item_id": "2.21.29",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.chordal_graph",
+    "item_id": "2.21.30",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+    "item_id": "2.21.31",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.condensation_applications",
+    "item_id": "2.21.32",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+    "item_id": "2.21.33",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.dual_graph",
+    "item_id": "2.21.34",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.semidominator",
+    "item_id": "2.21.35",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_count",
+    "item_id": "3.13.1",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+    "item_id": "3.13.2",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+    "item_id": "3.13.3",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.kd_tree",
+    "item_id": "3.13.4",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+    "item_id": "3.13.5",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+    "item_id": "3.13.6",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.rope_editing",
+    "item_id": "3.13.7",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+    "item_id": "3.13.8",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_array",
+    "item_id": "3.13.9",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+    "item_id": "3.13.10",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+    "item_id": "3.13.11",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.top_tree",
+    "item_id": "3.13.12",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+    "item_id": "3.13.13",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.2d_fenwick",
+    "item_id": "3.13.14",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+    "item_id": "3.13.15",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.overall_binary_search",
+    "item_id": "3.13.16",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+    "item_id": "3.13.17",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+    "item_id": "3.13.18",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+    "item_id": "3.13.19",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+    "item_id": "3.13.20",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+    "item_id": "3.13.21",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+    "item_id": "3.13.22",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+    "item_id": "3.13.23",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.3d_fenwick",
+    "item_id": "3.13.24",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+    "item_id": "3.13.25",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+    "item_id": "3.13.26",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+    "item_id": "3.13.27",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+    "item_id": "3.13.28",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+    "item_id": "3.13.29",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+    "item_id": "3.13.30",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+    "item_id": "3.13.31",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+    "item_id": "3.13.32",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+    "item_id": "2.21.36",
+    "section_id": "2.21",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+    "item_id": "2.21.37",
+    "section_id": "2.21",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+    "item_id": "2.21.38",
+    "section_id": "2.21",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+    "item_id": "2.21.39",
+    "section_id": "2.21",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.merge",
+    "item_id": "3.13.33",
+    "section_id": "3.13",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.static",
+    "item_id": "3.13.34",
+    "section_id": "3.13",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_kth",
+    "item_id": "3.13.35",
+    "section_id": "3.13",
+    "handling": "add_as_subtopic"
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.rollback",
+    "item_id": "3.13.36",
+    "section_id": "3.13",
+    "handling": "add_as_subtopic"
+  }
+]

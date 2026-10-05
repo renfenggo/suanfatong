@@ -1,0 +1,883 @@
+{
+  "audit_time": "2026-06-16T11:00:36.048641",
+  "project_root": "c:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong",
+  "stable_state_check": {
+    "main_graph_item_count": 3240,
+    "frontend_graph_item_count": 3240,
+    "content_index_coverage": 3240,
+    "main_graph_section_count": 65,
+    "frontend_graph_section_count": 65,
+    "id_sets_match": true,
+    "section_sets_match": true,
+    "main_item_ids_sample": [
+      "3.13.8",
+      "2.9.119",
+      "2.21.134",
+      "3.3.21",
+      "2.20.176"
+    ],
+    "frontend_item_ids_sample": [
+      "3.13.8",
+      "2.9.119",
+      "2.21.134",
+      "3.3.21",
+      "2.20.176"
+    ],
+    "main_sections_sample": {
+      "2.1": {
+        "id": "2.1",
+        "name": "基础算法思想",
+        "category": "算法",
+        "item_count": 108
+      },
+      "2.2": {
+        "id": "2.2",
+        "name": "排序与顺序统计",
+        "category": "算法",
+        "item_count": 27
+      },
+      "2.3": {
+        "id": "2.3",
+        "name": "二分与答案搜索",
+        "category": "算法",
+        "item_count": 29
+      }
+    },
+    "frontend_sections_sample": {
+      "2.1": {
+        "id": "2.1",
+        "name": "基础算法思想",
+        "category": "算法",
+        "item_count": 108
+      },
+      "2.2": {
+        "id": "2.2",
+        "name": "排序与顺序统计",
+        "category": "算法",
+        "item_count": 27
+      },
+      "2.3": {
+        "id": "2.3",
+        "name": "二分与答案搜索",
+        "category": "算法",
+        "item_count": 29
+      }
+    },
+    "is_stable_3240": true,
+    "stability_status": "[PASS] 稳定"
+  },
+  "used_candidates": {
+    "batch1_count": 500,
+    "batch2_count": 600,
+    "total_used_count": 1100,
+    "batch1_sample": [
+      {
+        "candidate_id": "cand.2254",
+        "title": null,
+        "item_id": null
+      },
+      {
+        "candidate_id": "cand.2260",
+        "title": null,
+        "item_id": null
+      },
+      {
+        "candidate_id": "cand.2266",
+        "title": null,
+        "item_id": null
+      }
+    ],
+    "batch2_sample": [
+      {
+        "candidate_id": "cand.0733",
+        "title": "A* 搜索的最优性剪枝 (A* 搜索 Optimality Pruning)",
+        "item_id": "2.7.72"
+      },
+      {
+        "candidate_id": "cand.0735",
+        "title": "A* 搜索的估价函数设计 (A* 搜索 Heuristic Function)",
+        "item_id": "2.7.73"
+      },
+      {
+        "candidate_id": "cand.0739",
+        "title": "IDA* 搜索的最优性剪枝 (IDA* 搜索 Optimality Pruning)",
+        "item_id": "2.7.74"
+      }
+    ]
+  },
+  "candidate_pool": {
+    "source_files": [
+      {
+        "file": "data/stage5_hard_knowledge_cleaned_candidates.json",
+        "count": 0
+      },
+      {
+        "file": "data/stage5_hard_knowledge_ready_core_candidates.json",
+        "count": 842
+      },
+      {
+        "file": "data/stage5_hard_knowledge_candidate_pool_1200.json",
+        "count": 138
+      }
+    ],
+    "total_raw_count": 980,
+    "unique_count": 980,
+    "field_sample": [
+      {
+        "original_id": "cand.0731",
+        "title": "A* 搜索的状态图模型 (A* 搜索 State Graph Model)",
+        "category": "算法",
+        "subcategory": "搜索进阶",
+        "section_id": null,
+        "difficulty": 6,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      },
+      {
+        "original_id": "cand.0732",
+        "title": "A* 搜索的可行性剪枝 (A* 搜索 Feasibility Pruning)",
+        "category": "算法",
+        "subcategory": "搜索进阶",
+        "section_id": null,
+        "difficulty": 7,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      },
+      {
+        "original_id": "cand.0733",
+        "title": "A* 搜索的最优性剪枝 (A* 搜索 Optimality Pruning)",
+        "category": "算法",
+        "subcategory": "搜索进阶",
+        "section_id": null,
+        "difficulty": 8,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      }
+    ]
+  },
+  "filtered_candidates": {
+    "original_candidate_count": 980,
+    "batch1_mapping_total_count": 500,
+    "batch2_mapping_total_count": 600,
+    "used_by_batch1_count": 500,
+    "used_by_batch2_count": 339,
+    "batch2_found_in_current_pool_count": 339,
+    "defer_or_drop_count": 0,
+    "duplicate_or_merge_risk_count": 0,
+    "remaining_candidate_count": 141,
+    "remaining_sample": [
+      {
+        "original_id": "cand.2305",
+        "title": "后缀最值 DP的在线转移 (后缀最值 DP Online Transition)",
+        "category": "算法",
+        "subcategory": "DP优化",
+        "section_id": null,
+        "difficulty": 8,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      },
+      {
+        "original_id": "cand.2306",
+        "title": "后缀最值 DP的离线转移 (后缀最值 DP Offline Transition)",
+        "category": "算法",
+        "subcategory": "DP优化",
+        "section_id": null,
+        "difficulty": 8,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      },
+      {
+        "original_id": "cand.2307",
+        "title": "后缀最值 DP的分段决策 (后缀最值 DP Segmented Decision)",
+        "category": "算法",
+        "subcategory": "DP优化",
+        "section_id": null,
+        "difficulty": 8,
+        "duplicate_group": "low",
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+      },
+      {
+        "original_id": "stage5.algo.0001",
+        "title": "贪心：双机调度问题",
+        "category": "algorithm_data_structure",
+        "subcategory": null,
+        "section_id": "2.6",
+        "difficulty": null,
+        "duplicate_group": null,
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_candidate_pool_1200.json"
+      },
+      {
+        "original_id": "stage5.algo.0002",
+        "title": "贪心：多机调度近似",
+        "category": "algorithm_data_structure",
+        "subcategory": null,
+        "section_id": "2.6",
+        "difficulty": null,
+        "duplicate_group": null,
+        "dependencies": null,
+        "status": null,
+        "source_file": "data/stage5_hard_knowledge_candidate_pool_1200.json"
+      }
+    ],
+    "filter_summary": {
+      "排除_已使用": 839,
+      "排除_defer_drop": 0,
+      "排除_重复合并风险": 0,
+      "剩余可用": 141
+    },
+    "batch2_discrepancy_explanation": {
+      "batch2_mapping_total": 600,
+      "batch2_found_in_current_pool": 339,
+      "explanation": "Batch2 mapping记录了600个已使用候选，但当前候选池中只匹配到339个。差异原因：当前候选池主要来自ready_core_candidates(842个)和candidate_pool_1200(138个)，可能不包含所有Batch2使用的候选源。这不影响Batch3剩余候选判断，因为filtering已正确排除池中匹配的Batch2候选。"
+    }
+  },
+  "risk_audit": {
+    "exact_title_duplicate": {
+      "count": 0,
+      "sample": []
+    },
+    "near_title_duplicate": {
+      "count": 0,
+      "sample": []
+    },
+    "ambiguous_section": {
+      "count": 3,
+      "sample": [
+        {
+          "original_id": "cand.2305",
+          "title": "后缀最值 DP的在线转移 (后缀最值 DP Online Transition)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        },
+        {
+          "original_id": "cand.2306",
+          "title": "后缀最值 DP的离线转移 (后缀最值 DP Offline Transition)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        },
+        {
+          "original_id": "cand.2307",
+          "title": "后缀最值 DP的分段决策 (后缀最值 DP Segmented Decision)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        }
+      ]
+    },
+    "overcrowded_section": {
+      "count": 0,
+      "sample": []
+    },
+    "cross_domain_category": {
+      "count": 0,
+      "sample": []
+    },
+    "low_value_or_too_general": {
+      "count": 7,
+      "sample": [
+        {
+          "original_id": "stage5.algo.0055",
+          "title": "图论衔接：最短路变体总结",
+          "category": "algorithm_data_structure",
+          "subcategory": null,
+          "section_id": "2.9",
+          "difficulty": null,
+          "duplicate_group": null,
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_candidate_pool_1200.json"
+        },
+        {
+          "original_id": "stage5.algo.0078",
+          "title": "数据结构衔接：分块与莫队总结",
+          "category": "algorithm_data_structure",
+          "subcategory": null,
+          "section_id": "3.13",
+          "difficulty": null,
+          "duplicate_group": null,
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_candidate_pool_1200.json"
+        },
+        {
+          "original_id": "stage5.math.0099",
+          "title": "组合：组合数取模方法总结",
+          "category": "contest_math",
+          "subcategory": null,
+          "section_id": "4.3",
+          "difficulty": null,
+          "duplicate_group": null,
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_candidate_pool_1200.json"
+        }
+      ]
+    },
+    "dependency_missing": {
+      "count": 141,
+      "sample": [
+        {
+          "original_id": "cand.2305",
+          "title": "后缀最值 DP的在线转移 (后缀最值 DP Online Transition)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        },
+        {
+          "original_id": "cand.2306",
+          "title": "后缀最值 DP的离线转移 (后缀最值 DP Offline Transition)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        },
+        {
+          "original_id": "cand.2307",
+          "title": "后缀最值 DP的分段决策 (后缀最值 DP Segmented Decision)",
+          "category": "算法",
+          "subcategory": "DP优化",
+          "section_id": null,
+          "difficulty": 8,
+          "duplicate_group": "low",
+          "dependencies": null,
+          "status": null,
+          "source_file": "data/stage5_hard_knowledge_ready_core_candidates.json"
+        }
+      ]
+    },
+    "content_generation_risk": {
+      "count": 0,
+      "sample": []
+    },
+    "_summary": {
+      "total_candidates": 141,
+      "risk_type_counts": {
+        "exact_title_duplicate": 0,
+        "near_title_duplicate": 0,
+        "ambiguous_section": 3,
+        "overcrowded_section": 0,
+        "cross_domain_category": 0,
+        "low_value_or_too_general": 7,
+        "dependency_missing": 141,
+        "content_generation_risk": 0
+      },
+      "unique_risky_candidate_count": 141,
+      "safe_candidate_count": 0,
+      "risk_ratio": 100,
+      "dependency_missing_count": 141,
+      "dependency_missing_ratio": 100.0
+    }
+  },
+  "section_capacity": {
+    "total_sections": 65,
+    "top_15_sections": [
+      {
+        "section_id": "3.13",
+        "section_name": "高级数据结构扩展",
+        "item_count": 374,
+        "categories": [
+          "数据结构"
+        ],
+        "sample_items": [
+          "归并排序树：Range Count",
+          "动态树结构：Euler Tour Tree",
+          "高级 RMQ：Disjoint Sparse Table"
+        ]
+      },
+      {
+        "section_id": "2.8",
+        "section_name": "动态规划",
+        "item_count": 292,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "DP 思想",
+          "状态设计",
+          "转移方程"
+        ]
+      },
+      {
+        "section_id": "2.9",
+        "section_name": "图基础与遍历",
+        "item_count": 204,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "图的 DFS",
+          "图的 BFS",
+          "图建模基础"
+        ]
+      },
+      {
+        "section_id": "4.1",
+        "section_name": "整数与数论基础",
+        "item_count": 193,
+        "categories": [
+          "算法竞赛数学"
+        ],
+        "sample_items": [
+          "整数",
+          "四则运算",
+          "比较大小"
+        ]
+      },
+      {
+        "section_id": "2.20",
+        "section_name": "交互题与构造题技巧",
+        "item_count": 187,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "摊还分析证明",
+          "数学归纳法证明",
+          "程序正确性证明"
+        ]
+      },
+      {
+        "section_id": "2.21",
+        "section_name": "高级图论扩展",
+        "item_count": 186,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "虚树",
+          "支配树",
+          "虚树构建"
+        ]
+      },
+      {
+        "section_id": "4.3",
+        "section_name": "计数与组合",
+        "item_count": 158,
+        "categories": [
+          "算法竞赛数学"
+        ],
+        "sample_items": [
+          "加法原理",
+          "乘法原理",
+          "分类计数"
+        ]
+      },
+      {
+        "section_id": "2.1",
+        "section_name": "基础算法思想",
+        "item_count": 108,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "枚举",
+          "模拟",
+          "递推"
+        ]
+      },
+      {
+        "section_id": "2.7",
+        "section_name": "搜索",
+        "item_count": 94,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "DFS",
+          "BFS",
+          "Flood Fill"
+        ]
+      },
+      {
+        "section_id": "2.17",
+        "section_name": "线性代数与插值专题",
+        "item_count": 84,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "高斯消元",
+          "拉格朗日插值",
+          "多项式哈希"
+        ]
+      },
+      {
+        "section_id": "2.4",
+        "section_name": "前缀、差分、离散化、分块",
+        "item_count": 82,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "前缀和",
+          "二维前缀和",
+          "前缀异或"
+        ]
+      },
+      {
+        "section_id": "2.10",
+        "section_name": "字符串算法",
+        "item_count": 81,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "朴素匹配",
+          "KMP",
+          "Z 函数"
+        ]
+      },
+      {
+        "section_id": "2.6",
+        "section_name": "贪心",
+        "item_count": 70,
+        "categories": [
+          "算法"
+        ],
+        "sample_items": [
+          "贪心",
+          "排序贪心",
+          "区间贪心"
+        ]
+      },
+      {
+        "section_id": "4.7",
+        "section_name": "几何基础",
+        "item_count": 63,
+        "categories": [
+          "算法竞赛数学"
+        ],
+        "sample_items": [
+          "点",
+          "向量",
+          "平面坐标"
+        ]
+      },
+      {
+        "section_id": "1.8",
+        "section_name": "结构体与 STL",
+        "item_count": 54,
+        "categories": [
+          "C++语法"
+        ],
+        "sample_items": [
+          "struct",
+          "成员访问",
+          "结构体数组"
+        ]
+      }
+    ],
+    "high_capacity_sections": [
+      {
+        "section_id": "3.13",
+        "section_name": "高级数据结构扩展",
+        "item_count": 374
+      },
+      {
+        "section_id": "2.8",
+        "section_name": "动态规划",
+        "item_count": 292
+      },
+      {
+        "section_id": "2.9",
+        "section_name": "图基础与遍历",
+        "item_count": 204
+      },
+      {
+        "section_id": "4.1",
+        "section_name": "整数与数论基础",
+        "item_count": 193
+      },
+      {
+        "section_id": "2.20",
+        "section_name": "交互题与构造题技巧",
+        "item_count": 187
+      },
+      {
+        "section_id": "2.21",
+        "section_name": "高级图论扩展",
+        "item_count": 186
+      },
+      {
+        "section_id": "4.3",
+        "section_name": "计数与组合",
+        "item_count": 158
+      },
+      {
+        "section_id": "2.1",
+        "section_name": "基础算法思想",
+        "item_count": 108
+      }
+    ],
+    "medium_capacity_sections": [
+      {
+        "section_id": "2.7",
+        "section_name": "搜索",
+        "item_count": 94
+      },
+      {
+        "section_id": "2.17",
+        "section_name": "线性代数与插值专题",
+        "item_count": 84
+      },
+      {
+        "section_id": "2.4",
+        "section_name": "前缀、差分、离散化、分块",
+        "item_count": 82
+      },
+      {
+        "section_id": "2.10",
+        "section_name": "字符串算法",
+        "item_count": 81
+      },
+      {
+        "section_id": "2.6",
+        "section_name": "贪心",
+        "item_count": 70
+      },
+      {
+        "section_id": "4.7",
+        "section_name": "几何基础",
+        "item_count": 63
+      },
+      {
+        "section_id": "1.8",
+        "section_name": "结构体与 STL",
+        "item_count": 54
+      },
+      {
+        "section_id": "3.7",
+        "section_name": "区间维护结构",
+        "item_count": 52
+      },
+      {
+        "section_id": "1.3",
+        "section_name": "数据类型与变量",
+        "item_count": 50
+      },
+      {
+        "section_id": "1.6",
+        "section_name": "数组与字符串",
+        "item_count": 50
+      }
+    ],
+    "low_capacity_sections": [
+      {
+        "section_id": "4.5",
+        "section_name": "图与树的数学基础",
+        "item_count": 46
+      },
+      {
+        "section_id": "1.7",
+        "section_name": "函数、递归、引用与指针",
+        "item_count": 44
+      },
+      {
+        "section_id": "2.16",
+        "section_name": "二分图、匹配与网络流",
+        "item_count": 42
+      },
+      {
+        "section_id": "4.6",
+        "section_name": "概率与期望",
+        "item_count": 37
+      },
+      {
+        "section_id": "3.8",
+        "section_name": "字符串结构",
+        "item_count": 36
+      },
+      {
+        "section_id": "2.13",
+        "section_name": "最短路与生成树",
+        "item_count": 30
+      },
+      {
+        "section_id": "2.3",
+        "section_name": "二分与答案搜索",
+        "item_count": 29
+      },
+      {
+        "section_id": "2.18",
+        "section_name": "综合高级技巧专题",
+        "item_count": 29
+      },
+      {
+        "section_id": "3.3",
+        "section_name": "集合与映射",
+        "item_count": 29
+      },
+      {
+        "section_id": "2.2",
+        "section_name": "排序与顺序统计",
+        "item_count": 27
+      },
+      {
+        "section_id": "3.5",
+        "section_name": "堆",
+        "item_count": 26
+      },
+      {
+        "section_id": "2.5",
+        "section_name": "双指针与滑动窗口",
+        "item_count": 23
+      },
+      {
+        "section_id": "3.10",
+        "section_name": "平衡树与有序维护",
+        "item_count": 23
+      },
+      {
+        "section_id": "2.12",
+        "section_name": "数值与矩阵专题",
+        "item_count": 22
+      },
+      {
+        "section_id": "1.5",
+        "section_name": "控制结构",
+        "item_count": 22
+      },
+      {
+        "section_id": "2.14",
+        "section_name": "树上算法",
+        "item_count": 21
+      },
+      {
+        "section_id": "2.15",
+        "section_name": "连通分量与特殊图",
+        "item_count": 21
+      },
+      {
+        "section_id": "5.7",
+        "section_name": "调试方法",
+        "item_count": 21
+      },
+      {
+        "section_id": "4.4",
+        "section_name": "离散数学基础",
+        "item_count": 18
+      },
+      {
+        "section_id": "3.2",
+        "section_name": "栈与队列",
+        "item_count": 17
+      }
+    ],
+    "recommendations": {
+      "avoid_expanding": [
+        "3.13",
+        "2.8",
+        "2.9",
+        "4.1",
+        "2.20",
+        "2.21",
+        "4.3",
+        "2.1"
+      ],
+      "priority_reinforce": [
+        "4.5",
+        "1.7",
+        "2.16",
+        "4.6",
+        "3.8",
+        "2.13",
+        "2.3",
+        "2.18",
+        "3.3",
+        "2.2"
+      ],
+      "manual_review": []
+    }
+  },
+  "batch3_recommendations": {
+    "immediate_launch": "否，建议等待",
+    "launch_status": "BLOCKED",
+    "recommended_batch_size": 0,
+    "recommendation_reason": "存在阻塞性问题: 风险候选比例过高 (100.0%), 依赖缺失比例过高 (100.0%), 安全候选数量不足 (仅0个)",
+    "blocking_conditions": [
+      "风险候选比例过高 (100.0%)",
+      "依赖缺失比例过高 (100.0%)",
+      "安全候选数量不足 (仅0个)"
+    ],
+    "risk_assessment": {
+      "total_candidates": 141,
+      "unique_risky_candidate_count": 141,
+      "safe_candidate_count": 0,
+      "risk_ratio": "100.0%",
+      "dependency_missing_count": 141,
+      "dependency_missing_ratio": "100.0%"
+    },
+    "priority_strategy": {
+      "high_priority_sections": [
+        "4.5",
+        "1.7",
+        "2.16",
+        "4.6",
+        "3.8"
+      ],
+      "avoid_sections": [
+        "3.13",
+        "2.8",
+        "2.9",
+        "4.1",
+        "2.20"
+      ],
+      "risk_mitigation": "排除高风险候选，优先低风险章节"
+    },
+    "category_distribution": "均衡分布，优先补强低覆盖章节",
+    "preconditions": {
+      "stable_state_required": true,
+      "stable_state_met": true,
+      "dependency_ratio_acceptable": false,
+      "safe_candidates_sufficient": false
+    },
+    "next_steps": [
+      "先补齐依赖信息 (dependency)",
+      "先补齐章节信息 (section_id)",
+      "等待一号、二号线程全部验收完成",
+      "当前141个候选中141个缺依赖，需先解决",
+      "建议后续先做30-50个候选的试点，而非大规模Batch3",
+      "再次验证稳定状态和候选质量后再启动"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Stage3E-Aggressive Batch1 Fix Validation Result",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+  "validation_passed": true,
+  "pre_fix_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "validate_only": "passed",
+    "total_items_in_batch": 30
+  },
+  "post_fix_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "backup_created": true,
+    "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch1_fix.json"
+  },
+  "dependency_fixes": {
+    "total_fixes_needed": 10,
+    "total_fixes_applied": 10,
+    "dependencies_added": 11,
+    "dependencies_removed": 0,
+    "duplicates_removed": 0,
+    "fixes_by_series": {
+      "directed_mst": 1,
+      "dynamic_mst": 6,
+      "global_min_cut": 3,
+      "maximum_closure": 0,
+      "dominator_tree": 0
+    }
+  },
+  "review_status_changes": {
+    "total_patches_needed": 30,
+    "total_patches_applied": 17,
+    "priority_downgrades": {
+      "A_to_C": 2,
+      "A_to_B": 3,
+      "B_to_C": 14
+    },
+    "manual_review_changes": {
+      "true_to_false": 17,
+      "false_to_true": 0
+    }
+  },
+  "problem_pattern_sync": {
+    "sync_candidates": 4,
+    "sync_ready_file": "data/stage3e_aggressive_batch1_problem_pattern_sync_ready.json",
+    "items_marked_as_problem_patterns": [
+      "2.21.70",
+      "2.21.73",
+      "2.21.74",
+      "2.21.75"
+    ]
+  },
+  "priority_distribution_after_fix": {
+    "A": 18,
+    "B": 71,
+    "C": 1280
+  },
+  "manual_review_status_after_fix": {
+    "true": 71,
+    "false": 1441
+  },
+  "hard_validations": {
+    "json_parsable": true,
+    "item_count_still_1512": true,
+    "section_count_still_65": true,
+    "no_duplicate_item_ids": true,
+    "no_section_ids_in_direct_pre": true,
+    "no_section_ids_in_rel": true,
+    "no_section_ids_in_resolved_pre": true,
+    "no_dangling_refs": true,
+    "no_direct_pre_cycles": true,
+    "no_self_in_resolved_pre": true,
+    "no_resolved_pre_mismatches": true
+  }
+}

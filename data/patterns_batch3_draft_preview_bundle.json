@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "title": "Patterns Batch3 Draft Preview Bundle",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T21:00:00.000Z",
+    "task": "batch3_draft_preview_bundle",
+    "version": "1.0",
+    "description": "为 3 个 patterns_batch3 候选准备的 draft preview bundle（Dominance Counting / 莫比乌斯反演应用 / 欧拉函数应用）",
+    "input_files": [
+      "data/patterns_batch2.json",
+      "data/patterns_batch2_validation_result.json",
+      "data/stage3f_batch1_problem_patterns_sync_triage.json",
+      "data/stage3f_mobius_inversion_problem_patterns_triage.json",
+      "data/stage3f_batch3_full40_problem_patterns_sync_triage.json",
+      "data/patterns_batch3_dominance_counting_draft_preview.json",
+      "data/patterns_dominance_counting_boundary_review.json",
+      "data/patterns_v0_1_ready.json",
+      "merged_knowledge_graph_item_dependencies_refined.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "bundle_statistics": {
+    "total_drafts": 3,
+    "dominance_counting": "reuse_and_update",
+    "mobius_inversion_application": "new_draft",
+    "euler_function_application": "new_draft",
+    "boundary_note_count": 3,
+    "all_required_items_mappable": true,
+    "all_related_items_mappable": true,
+    "no_duplicate_with_ready": true,
+    "no_duplicate_with_batch2": true
+  },
+  "drafts": [
+    {
+      "pattern_id": "pat.dominance_counting",
+      "title": "多维支配关系计数",
+      "en_name": "Multidimensional Dominance Counting",
+      "category": "计数模式",
+      "difficulty": "advanced",
+      "tracks": ["icpc", "university_cp", "advanced_data_structure"],
+      "audience": ["university_icpc", "advanced_competitive_programmer"],
+      "visibility": "advanced",
+      "description": "多维支配关系计数（Dominance Counting）是一种用于统计多维偏序关系的计数模式。给定若干多维向量，点 A 支配点 B 当 A 在所有维度上均不小于（或小于等于）B。该模式将多维偏序计数问题转化为离线维护问题，通常配合 CDQ 分治或树状数组求解。",
+      "recognition_signals": [
+        "问题涉及统计满足多维偏序关系的点对数量",
+        "存在多个维度上的比较条件（如时间+坐标、x+y+z 等）",
+        "需要统计每个点前方/后方有多少点的所有维度都小于/大于它",
+        "计数目标与维度顺序无关，只关心全序/偏序关系",
+        "问题可转化为按某维度排序后对另一维度的前缀统计"
+      ],
+      "common_transforms": [
+        "先按某一维度排序降维，将多维偏序转化为按序维护的子问题",
+        "使用 CDQ 分治将多维问题递归拆分为低维子问题",
+        "在分治合并阶段使用树状数组（BIT）统计跨分治区间的支配关系",
+        "若仅需二维，可直接按一维排序后使用 BIT 维护另一维的前缀计数"
+      ],
+      "typical_complexities": [
+        "二维：O(n log n) — 排序 + BIT 维护",
+        "三维：O(n log^2 n) — CDQ 分治 + BIT",
+        "四维及以上：O(n log^k n) — 嵌套 CDQ 或 BIT 套 BIT",
+        "空间复杂度：O(n) 基本存储，BIT O(n) 辅助"
+      ],
+      "required_items": ["3.7.1", "3.7.2"],
+      "related_items": ["3.13.181", "3.13.179", "3.13.180"],
+      "pitfalls": [
+        "区分严格支配（<）与非严格支配（≤）——排序时需注意相等元素的处理顺序",
+        "多维降维时排序维度的选择影响常数和实现复杂度",
+        "CDQ 分治嵌套层数过多时 log 因子增长，四维以上需评估是否换用 BIT 套 BIT",
+        "值域过大时需离散化，BIT 空间与值域相关"
+      ],
+      "boundary_note": "## 边界说明\n\n### 与 ready patterns 的边界\n\n**pat.offline_query_pattern（离线查询模式）**：Dominance Counting 可视为离线查询的一种特殊形式，但离线查询模式关注的是「查询操作」的通用离线处理技术（如莫队、扫描线），而 Dominance Counting 关注的是「多维偏序计数」这一特定问题类型。Dominance Counting 的识别信号更具体（多维支配关系），转化路径更固定（排序降维 + CDQ/BIT），适合作为独立模式。\n\n**pat.coordinate_sweep_compression（离散化扫描）**：离散化扫描是通用预处理技术，Dominance Counting 可能用到离散化作为子步骤，但后者的核心是多维偏序建模而非坐标压缩。\n\n**pat.fenwick_prefix_maintenance（树状数组前缀维护）**：BIT 是 Dominance Counting 实现中的常用工具（用于合并阶段的计数），但 BIT 前缀维护本身不涉及多维偏序的建模和降维。\n\n**pat.sweep_line_pattern（扫描线模式）**：扫描线也涉及排序后扫描维护，但其核心是几何/区间事件处理，而非多维偏序关系统计。扫描线处理的是区间覆盖/交集问题，Dominance Counting 处理的是点之间的支配关系计数。\n\n### 与知识图谱相近节点的边界\n\n**3.13.181 CDQ Divide Conquer（CDQ 分治）**：CDQ 分治是实现 Dominance Counting 的主流算法框架。CDQ 分治的定位是「算法框架」，而 Dominance Counting 的定位是「问题识别与建模模式」。用户应先使用 Dominance Counting 识别问题类型，再参考 CDQ 分治选择合适的实现算法。两者是 problem_pattern 与 algorithm_implementation 的关系。\n\n**3.13.179 Merge Sort Tree: 2d Dominance（归并排序树二维支配）**：归并排序树的 2d Dominance 是解决二维支配查询的一种具体数据结构方案。Dominance Counting 是更高层的问题建模模式，不拘泥于特定实现。\n\n**3.13.180 Bitset Rectangle Query（Bitset 矩形查询）**：Bitset 矩形查询是另一种实现多维查询的优化技巧，与 Dominance Counting 是不同层面的抽象。",
+      "source_knowledge_items": ["3.13.182"],
+      "example_problem_refs": [
+        "二维偏序计数（逆序对推广）",
+        "三维偏序计数（CDQ 分治经典问题）",
+        "多维最长链/最长上升子序列推广"
+      ],
+      "status": "draft_preview",
+      "needs_boundary_review": false
+    },
+    {
+      "pattern_id": "pat.mobius_inversion_application",
+      "title": "莫比乌斯反演应用",
+      "en_name": "Mobius Inversion Application",
+      "category": "计数模式",
+      "difficulty": "advanced",
+      "tracks": ["icpc", "university_cp", "noi", "advanced_math"],
+      "audience": ["university_icpc", "advanced_competitive_programmer"],
+      "visibility": "advanced",
+      "description": "莫比乌斯反演应用（Mobius Inversion Application）是一种利用莫比乌斯函数 μ(n) 进行倍数/因子关系统计和 gcd/lcm 条件计数的数论建模模式。其核心思想是将 gcd(i,j)=d 等数论条件通过莫比乌斯反演公式转化为因子倍数关系的求和，再配合数论分块和线性筛求解。该模式与容斥原理有数学上的同源性，但借助 Dirichlet 卷积具有更系统化的数论结构。",
+      "recognition_signals": [
+        "问题涉及统计 gcd(i,j)=d 或 lcm(i,j)=d 的点对数量",
+        "需要统计满足某个数论条件的数对/数组的个数",
+        "题面中出现因子、倍数、互质、gcd/lcm 关键词的计数问题",
+        "求和公式中包含 ⌊n/d⌋ 形式的数论分块模式",
+        "需要计算积性函数在多点上的前缀和"
+      ],
+      "common_transforms": [
+        "使用 μ(n) 将 gcd 条件转化为 Dirichlet 卷积形式： [gcd(i,j)=d] → Σ_{k|gcd(i,j)} μ(k)",
+        "交换求和顺序，将内外层求和转换为因子倍数关系统计",
+        "使用数论分块（整除分块）优化含 ⌊n/d⌋ 的求和式",
+        "配合线性筛预处理 μ(n) 前缀和，支持 O(1) 查询",
+        "对高维统计问题（如 gcd(i,j,k)），可嵌套数论分块"
+      ],
+      "typical_complexities": [
+        "预处理：O(n) — 线性筛求 μ(n) 前缀和",
+        "单组查询：O(√n) — 数论分块",
+        "多组查询 + 预处理：O(n + Q√n)",
+        "嵌套数论分块（三维以上）：O(n^{2/3}) 或更高"
+      ],
+      "required_items": ["4.9.2", "4.3.10"],
+      "related_items": ["4.9.4", "4.9.6", "4.1.5"],
+      "pitfalls": [
+        "区分莫比乌斯反演（数论函数层面的反演）与一般容斥（集合层面的加减）——两者同源但适用范围不同",
+        "数论分块时需注意 ⌊n/d⌋ 取值变化的分段点计算",
+        "多组测试数据时预处理与查询的平衡：预处理全部 O(n) 还是按需 O(√n)",
+        "高维统计时数论分块的嵌套层数增加导致复杂度上升",
+        "注意与欧拉函数应用在互质计数场景的重叠——两者可通过 φ(n) 和 μ(n) 互相推导"
+      ],
+      "boundary_note": "## 边界说明\n\n### 与 ready patterns 的边界\n\n**pat.inclusion_exclusion_counting（容斥计数）**：容斥计数是通用的组合数学工具（至少/至多条件交叠、集合数量小、按子集奇偶加减），莫比乌斯反演是数论中的系统化容斥表达。两者在部分场景（如互质计数）可互相推导，但莫比乌斯反演有更高效的数学结构（Dirichlet 卷积）和竞赛专用优化（数论分块、线性筛预处理）。容斥计数的识别信号是集合交并条件，莫比乌斯反演的识别信号是倍数/因子关系统计。\n\n**pat.modular_counting_pattern（取模计数模式）**：取模计数关注的是计数过程中对模数的维护和预处理（如阶乘逆元），莫比乌斯反演关注的是数论条件的转换和求和优化。在涉及取模的场景中可能同时使用两者，但定位不同。\n\n### 与同 batch 模式的边界\n\n**pat.euler_function_application（欧拉函数应用）**：两者同属 4.9 高级数学 section 的积性函数应用。莫比乌斯反演应用的识别信号是因子倍数关系统计，转化路径是 μ(n) 的 Dirichlet 卷积转换 + 数论分块。欧拉函数应用的识别信号是互质计数和模幂简化，转化路径是 φ(n) 的筛法预处理 + 欧拉降幂。在互质计数场景有技术重叠（可通过 φ(n) 或 μ(n) 两种方式求解），但各自的典型应用场景和转化路径独立。",
+      "source_knowledge_items": ["4.9.5"],
+      "example_problem_refs": [
+        "[gcd(i,j)=d] 统计（经典莫比乌斯反演问题）",
+        "互质数对计数",
+        "多个数的 gcd/lcm 条件计数",
+        "积性函数前缀和求解"
+      ],
+      "status": "draft_preview",
+      "needs_boundary_review": false
+    },
+    {
+      "pattern_id": "pat.euler_function_application",
+      "title": "欧拉函数应用",
+      "en_name": "Euler Function Application",
+      "category": "计数模式",
+      "difficulty": "advanced",
+      "tracks": ["icpc", "university_cp", "noi", "advanced_math"],
+      "audience": ["high_school_oi", "university_icpc"],
+      "visibility": "advanced",
+      "description": "欧拉函数应用（Euler Function Application）是一种利用欧拉函数 φ(n) 解决互质计数、模幂简化等数论问题的建模模式。φ(n) 表示不超过 n 且与 n 互质的正整数个数，是数论中的核心积性函数。该模式涵盖三种经典应用场景：(1) 互质计数——利用 φ(n) 的积性计算与 n 互质的数的数量及相关统计；(2) 欧拉降幂——利用 a^b ≡ a^(b mod φ(m)) (mod m) 简化大指数模运算；(3) 阶乘互质部分提取——从 n! 中提取与 m 互质的因子部分。",
+      "recognition_signals": [
+        "问题涉及统计与某数互质的数的数量或和",
+        "题面中出现很大的指数需要求模（欧拉降幂场景）",
+        "需要从 n! 中提取与 m 互质的部分",
+        "问题涉及数的欧拉函数值 φ(n) 的求和或递推",
+        "题目描述中明确提到'互质'、'coprime'、'Euler's totient' 等关键词"
+      ],
+      "common_transforms": [
+        "利用 φ(n) 的积性通过线性筛预处理 1~n 的所有欧拉函数值",
+        "使用欧拉降幂公式 a^b ≡ a^(b mod φ(m) + φ(m)) (mod m) 简化大指数幂模",
+        "利用 φ(n) 的性质（n = Σ_{d|n} φ(d)）进行因子和相关求和",
+        "从 n! 中提取与 m 互质的乘积部分——利用 φ 的积性和周期性规律",
+        "结合莫比乌斯反演在互质计数场景中选择最优方案（φ(n) 或 μ(n)）"
+      ],
+      "typical_complexities": [
+        "线性筛预处理欧拉函数：O(n)",
+        "欧拉降幂单次查询：O(log m) — 求 φ(m) + 快速幂",
+        "阶乘互质部分提取：O(log n) — 递归处理",
+        "多点查询：O(n + Q) — 预处理后 O(1)"
+      ],
+      "required_items": ["4.1.10", "4.1.11"],
+      "related_items": ["4.9.5", "1.7.25", "4.1.5"],
+      "pitfalls": [
+        "欧拉降幂公式要求底数与模数互质时用 a^b mod m，不互质时需加上 φ(m) 项",
+        "反复求欧拉函数（如嵌套降幂）每次需 O(√n) 或预处理",
+        "阶乘互质提取的递归深度受对数级限制，注意边界条件",
+        "与莫比乌斯反演在互质计数场景可能互换——根据数据范围和实现复杂度选择",
+        "φ(1)=1 是常见边界易错点"
+      ],
+      "boundary_note": "## 边界说明\n\n### 与 ready patterns 的边界\n\n**pat.inclusion_exclusion_counting（容斥计数）**：欧拉函数应用在互质计数场景与容斥计数有交集（两者都能解决'求与 n 互质的数'问题），但欧拉函数应用通过 φ(n) 的积性实现 O(1) 或 O(√n) 求解，远优于容斥的 O(2^k)。容斥计数更适合集合交并条件的通用计数，而欧拉函数应用专注于数论函数的专用解法。\n\n**pat.modular_counting_pattern（取模计数模式）**：取模计数模式关注计数过程中模运算的预处理和维护（阶乘逆元、组合数取模），欧拉降幂是取模计数的特殊技术——当指数极大时通过模 φ(m) 简化。两者在取模场景中互补但不重叠。\n\n### 与同 batch 模式的边界\n\n**pat.mobius_inversion_application（莫比乌斯反演应用）**：两者同属 4.9 高级数学的积性函数应用。欧拉函数应用的核心场景是互质计数和模幂简化；莫比乌斯反演应用的核心场景是因子倍数关系统计。在互质计数场景中，两种方法可能都能解决同一问题：使用 φ(n) 直接求解或使用 μ(n) 通过莫比乌斯反演间接求解。建议根据数据范围和实现复杂度选择。两个 pattern 的 related_items 应相互引用。",
+      "source_knowledge_items": ["4.9.6"],
+      "example_problem_refs": [
+        "互质数对计数（使用 φ(n) 前缀和）",
+        "大指数幂模（欧拉降幂）",
+        "阶乘互质因子部分提取",
+        "与 n 互质的数的和"
+      ],
+      "status": "draft_preview",
+      "needs_boundary_review": false
+    }
+  ]
+}

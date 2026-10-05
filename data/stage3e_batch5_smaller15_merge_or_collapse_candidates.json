@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Stage3E Batch5 smaller_15 Merge or Collapse Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:25:00.000Z",
+    "main_graph_modified": false
+  },
+  "summary": {
+    "total_candidates": 0,
+    "note": "15 个节点之间无过度拆分，各有独立的教育价值和结构定义。可并堆 5 个虽属同一系列但实现原理各不相同(Binomial 二项树、Fibonacci 懒二项、Leftist 左偏、Pairing 配对联、Skew 斜堆)，合并会损失区分度。不推荐合并或折叠。"
+  },
+  "candidates": []
+}

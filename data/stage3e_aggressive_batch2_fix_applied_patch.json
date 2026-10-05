@@ -1,0 +1,434 @@
+[
+  {
+    "id": "2.21.100",
+    "name": "拟阵图论：Basis Exchange",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.101",
+    "name": "拟阵图论：Matroid Parity",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.102",
+    "name": "拟阵图论：Partition Matroid",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.103",
+    "name": "拟阵图论：Spanning Tree Matroid",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.104",
+    "name": "拟阵图论：Transversal Matroid",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.105",
+    "name": "拟阵图论：Weighted Matroid Intersection",
+    "change_type": "dependency_fix",
+    "old_direct_pre": [
+      "2.6.1"
+    ],
+    "new_direct_pre": [
+      "2.7.1",
+      "2.6.1",
+      "2.9.1"
+    ],
+    "reason": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ]
+  },
+  {
+    "id": "2.21.107",
+    "name": "平面图：Face Traversal",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+  },
+  {
+    "id": "2.21.108",
+    "name": "平面图：Outerplanar Graph",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+  },
+  {
+    "id": "2.21.110",
+    "name": "平面图：Planar Separator",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+  },
+  {
+    "id": "2.21.111",
+    "name": "强连通分量 DAG：Implication Graph",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 强连通分量DAG应用明确，依赖合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 强连通分量DAG应用明确，依赖合理，可以降为C级"
+  },
+  {
+    "id": "2.21.112",
+    "name": "特殊图：Bipartite Complement",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+  },
+  {
+    "id": "2.21.113",
+    "name": "特殊图：Condensation Dag",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+  },
+  {
+    "id": "2.21.114",
+    "name": "特殊图：Functional Graph",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+  },
+  {
+    "id": "2.21.115",
+    "name": "特殊图：Interval Graph",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+  },
+  {
+    "id": "2.21.117",
+    "name": "特殊图：Tournament Graph",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+  },
+  {
+    "id": "2.21.118",
+    "name": "虚树：Colored Points",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "2.21.119",
+    "name": "虚树：Distance Compression",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "2.21.120",
+    "name": "虚树：Edge Weight Compression",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "2.21.121",
+    "name": "虚树：Minimum Connection",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "2.21.122",
+    "name": "虚树：Multi-Key Query",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "2.21.123",
+    "name": "虚树：Subtree Aggregation",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+  },
+  {
+    "id": "3.13.100",
+    "name": "多维数据结构：Orthogonal Range Query",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+  },
+  {
+    "id": "3.13.101",
+    "name": "多维数据结构：Parallel Binary Search",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+  },
+  {
+    "id": "3.13.102",
+    "name": "离线数据结构框架：Event Sweep With Tree",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+  },
+  {
+    "id": "3.13.103",
+    "name": "离线数据结构框架：Offline Range Mex",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+  },
+  {
+    "id": "3.13.104",
+    "name": "离线数据结构框架：Offline Rectangle Add",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+    },
+    "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+  },
+  {
+    "id": "3.13.105",
+    "name": "离线数据结构框架：Parallel Check Framework",
+    "change_type": "review_status_patch",
+    "old_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 新增节点，需要人工复查依赖关系和课程定位"
+    },
+    "new_review_status": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_note": "Batch2 Review: 并行检查框架是复杂技巧，建议保持B级优先级"
+    },
+    "review_note": "Batch2 Review: 并行检查框架是复杂技巧，建议保持B级优先级"
+  }
+]

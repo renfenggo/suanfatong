@@ -1,0 +1,148 @@
+{
+  "sectionId": "2.17",
+  "sectionName": "线性代数与插值专题",
+  "units": [
+    {
+      "itemId": "2.17.1",
+      "title": "高斯消元",
+      "learningGoal": "掌握高斯消元解线性方程组的方法，理解选主元和判断无解/无穷多解",
+      "explanation": "高斯消元是解线性方程组的经典算法，通过初等行变换将增广矩阵化为行阶梯形。\n\n问题背景：\n给定 n 元线性方程组，求解变量的值。\n\n核心思想：\n1. 选主元：选择当前列中绝对值最大的元素作为主元\n2. 消元：用初等行变换将主元下方的元素消为 0\n3. 回代：从最后一行向上回代求解\n\n算法步骤：\nfor (int i = 1; i <= n; i++) {\n    1. 选主元：找到 |a[j][i]| 最大的 j\n    2. 交换行：row[i] ↔ row[j]\n    3. 归一化：row[i] = row[i] / a[i][i]\n    4. 消元：for (j ≠ i) row[j] = row[j] - row[j][i] * row[i]\n}\n\n三种情况：\n- 唯一解：消元后每一列都有主元\n- 无解：出现 0 = k (k ≠ 0)\n- 无穷多解：出现 0 = 0\n\n应用场景：\n1. 解线性方程组\n2. 求行列式：消元后对角线元素之积（注意交换行变号）\n3. 求矩阵的秩：非零行数\n4. 求逆矩阵：构造增广矩阵 [A|I]，消元后 [I|A^{-1}]\n\n竞赛提示：\n- 用 double 存储，注意浮点误差（eps = 1e-8）\n- 实数判断相等：abs(x) < eps\n- 整数消元可用分数运算或模运算\n- 时间复杂度 O(n³)",
+      "exampleCode": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nconst int N = 105;\nconst double eps = 1e-8;\nint n;\ndouble a[N][N + 1];\n\nbool gauss() {\n    for (int i = 1; i <= n; i++) {\n        int max_row = i;\n        for (int j = i + 1; j <= n; j++) {\n            if (fabs(a[j][i]) > fabs(a[max_row][i])) {\n                max_row = j;\n            }\n        }\n        \n        for (int j = i; j <= n + 1; j++) {\n            swap(a[i][j], a[max_row][j]);\n        }\n        \n        if (fabs(a[i][i]) < eps) {\n            return false;\n        }\n        \n        for (int j = n + 1; j >= i; j--) {\n            a[i][j] /= a[i][i];\n        }\n        \n        for (int j = 1; j <= n; j++) {\n            if (i == j || fabs(a[j][i]) < eps) continue;\n            double factor = a[j][i];\n            for (int k = i; k <= n + 1; k++) {\n                a[j][k] -= factor * a[i][k];\n            }\n        }\n    }\n    return true;\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= n + 1; j++) {\n            cin >> a[i][j];\n        }\n    }\n    \n    if (!gauss()) {\n        cout << \"No unique solution\" << endl;\n    } else {\n        for (int i = 1; i <= n; i++) {\n            cout << a[i][n + 1] << \" \";\n        }\n        cout << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "选主元：找当前列绝对值最大的元素，减少浮点误差",
+        "归一化：a[i][j] /= a[i][i]，将主元化为 1",
+        "消元：for (j ≠ i) a[j] = a[j] - a[j][i] * a[i]",
+        "fabs(a[i][i]) < eps 判断主元是否为 0",
+        "时间复杂度 O(n³)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记选主元导致精度误差",
+          "description": "直接用当前行做主元，可能因为数值太小导致精度问题。",
+          "fix": "选主元时找 |a[j][i]| 最大的 j，交换到当前行。"
+        },
+        {
+          "title": "浮点数直接用 == 判断",
+          "description": "浮点数有精度误差，直接用 == 判断相等会出错。",
+          "fix": "用 fabs(x) < eps 判断浮点数是否为 0，eps 一般取 1e-8。"
+        },
+        {
+          "title": "行列式计算时忘记变号",
+          "description": "交换行时行列式会变号，但忘记累加变号次数。",
+          "fix": "int swap_cnt = 0; 每次交换 swap_cnt++; det *= (-1)^swap_cnt。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现高斯消元解 n 元线性方程组，判断是有唯一解、无解还是无穷多解。",
+        "hint": "选主元 -> 归一化 -> 消元 -> 回代，注意浮点精度。",
+        "expectedIdea": "高斯消元模板：选主元减少误差，消元 O(n³)，回代求解。"
+      },
+      "quiz": [
+        {
+          "question": "高斯消元的时间复杂度是？",
+          "options": [
+            "O(n²)",
+            "O(n³)",
+            "O(n log n)",
+            "O(2ⁿ)"
+          ],
+          "answerIndex": 1,
+          "explanation": "高斯消元有三重循环：外层 n 次，内层每次 O(n)，总时间复杂度 O(n³)。"
+        },
+        {
+          "question": "高斯消元中为什么要选主元？",
+          "options": [
+            "加快速度",
+            "减少浮点误差",
+            "增加代码复杂度",
+            "没有必要"
+          ],
+          "answerIndex": 1,
+          "explanation": "选主元选择当前列绝对值最大的元素，可以减少浮点运算的精度误差。"
+        },
+        {
+          "question": "高斯消元如何判断无解？",
+          "options": [
+            "主元为 0",
+            "出现 0 = k (k ≠ 0)",
+            "出现 0 = 0",
+            "方程个数 < 变量个数"
+          ],
+          "answerIndex": 1,
+          "explanation": "消元后如果出现「0 = k」且 k ≠ 0，说明方程矛盾，无解。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.17.2",
+      "title": "拉格朗日插值",
+      "learningGoal": "理解拉格朗日插值的原理，掌握插值多项式的构造和计算方法",
+      "explanation": "拉格朗日插值是用多项式拟合离散点的方法，通过构造插值基函数求解。\n\n问题背景：\n给定 n 个点 (x_i, y_i)，求一个次数 < n 的多项式 P(x)，使得 P(x_i) = y_i。\n\n核心公式：\nP(x) = Σ(y_i × L_i(x))\n其中 L_i(x) = Π(j≠i) (x - x_j) / (x_i - x_j)\n\n构造思路：\n1. L_i(x) 称为插值基函数，满足：\n   - L_i(x_i) = 1\n   - L_i(x_j) = 0 (j ≠ i)\n2. P(x_i) = Σ(y_j × L_j(x_i)) = y_i\n\n实现方式：\nO(n²)：直接套用公式，每次计算 P(x) 都需要 O(n²)\nO(n² + nQ)：预处理所有 x 的乘积，求单个 P(x) 时 O(n)\n\n常见应用：\n1. 已知前 n 项的值，求第 n+1 项（如斐波那契、卡特兰数）\n2. 离散函数求值\n3. 数值积分\n\n竞赛提示：\n- x_i 必须互不相同，否则分母为 0\n- 用 double 存储，注意浮点误差\n- 多项式可以拆分：P(x) = y_1 × L_1(x) + y_2 × L_2(x) + ...\n- 模运算时需要求逆元：inv(x_i - x_j)",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int MOD = 998244353;\n\nlong long power(long long a, long long b) {\n    long long res = 1;\n    while (b) {\n        if (b & 1) res = res * a % MOD;\n        a = a * a % MOD;\n        b >>= 1;\n    }\n    return res;\n}\n\nlong long inv(long long x) {\n    return power(x, MOD - 2);\n}\n\nlong long lagrange(vector<long long>& x, vector<long long>& y, long long X) {\n    int n = x.size();\n    long long ans = 0;\n    \n    for (int i = 0; i < n; i++) {\n        long long num = 1, den = 1;\n        for (int j = 0; j < n; j++) {\n            if (i == j) continue;\n            num = num * (X - x[j] + MOD) % MOD;\n            den = den * (x[i] - x[j] + MOD) % MOD;\n        }\n        ans = (ans + y[i] * num % MOD * inv(den) % MOD) % MOD;\n    }\n    \n    return ans;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<long long> x(n), y(n);\n    \n    for (int i = 0; i < n; i++) {\n        cin >> x[i] >> y[i];\n    }\n    \n    long long X;\n    cin >> X;\n    \n    cout << lagrange(x, y, X) << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "拉格朗日插值公式：P(x) = Σ(y_i × L_i(x))",
+        "L_i(x) = Π(j≠i) (x - x_j) / (x_i - x_j)",
+        "num = 分子，den = 分母，ans += y_i × num × inv(den)",
+        "模运算时求逆元：inv(den) = den^(MOD-2)",
+        "时间复杂度 O(n²)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "分母忘记取模",
+          "description": "分母计算时忘记取模，导致结果错误。",
+          "fix": "den = den * (x[i] - x[j] + MOD) % MOD; 加 MOD 防止负数。"
+        },
+        {
+          "title": "x_i 重复导致分母为 0",
+          "description": "输入的 x_i 有重复值，导致分母 x_i - x_j = 0。",
+          "fix": "拉格朗日插值要求 x_i 互不相同，检查输入或使用牛顿插值。"
+        },
+        {
+          "title": "忘记加 MOD 防止负数",
+          "description": "计算 (X - x[j]) 或 (x[i] - x[j]) 时可能为负数。",
+          "fix": "(X - x[j] + MOD) % MOD，加 MOD 确保非负。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个点 (x_i, y_i)，求拉格朗日插值多项式在 X 处的值。",
+        "hint": "套用公式 P(x) = Σ(y_i × Π(j≠i)(x - x_j)/(x_i - x_j))。",
+        "expectedIdea": "拉格朗日插值模板：O(n²) 计算，注意模运算和逆元。"
+      },
+      "quiz": [
+        {
+          "question": "拉格朗日插值的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n²)",
+            "O(n log n)",
+            "O(2ⁿ)"
+          ],
+          "answerIndex": 1,
+          "explanation": "拉格朗日插值需要计算 n 个插值基函数，每个基函数 O(n)，总时间复杂度 O(n²)。"
+        },
+        {
+          "question": "拉格朗日插值要求 x_i 满足什么条件？",
+          "options": [
+            "单调递增",
+            "互不相同",
+            "连续",
+            "正数"
+          ],
+          "answerIndex": 1,
+          "explanation": "拉格朗日插值要求 x_i 互不相同，否则分母 x_i - x_j = 0。"
+        },
+        {
+          "question": "插值多项式的次数最高是？",
+          "options": [
+            "n-1 次",
+            "n 次",
+            "2n 次",
+            "n² 次"
+          ],
+          "answerIndex": 0,
+          "explanation": "n 个点确定的插值多项式次数最多 n-1 次，次数 < n。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "source_item_id": "2.21.106",
+    "source_item_name": "平面图：Dual Shortest Path",
+    "suggested_pattern_id": "planar.106",
+    "name": "Dual Shortest Path",
+    "en_name": "Dual Shortest Path",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "required_items": [
+      "2.7.1"
+    ],
+    "tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "difficulty": "expert"
+  },
+  {
+    "source_item_id": "2.21.109",
+    "source_item_name": "平面图：Planar Min Cut",
+    "suggested_pattern_id": "planar.109",
+    "name": "Planar Min Cut",
+    "en_name": "Planar Min Cut",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "required_items": [
+      "2.7.1"
+    ],
+    "tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "difficulty": "expert"
+  },
+  {
+    "source_item_id": "2.21.116",
+    "source_item_name": "特殊图：Planar Dual Graph",
+    "suggested_pattern_id": "planar.116",
+    "name": "Planar Dual Graph",
+    "en_name": "Planar Dual Graph",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "required_items": [
+      "2.7.1"
+    ],
+    "tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "difficulty": "expert"
+  }
+]

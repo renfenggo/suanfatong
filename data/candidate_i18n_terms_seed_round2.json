@@ -1,0 +1,931 @@
+{
+  "version": "round2",
+  "total_terms": 115,
+  "coverage_stats": {
+    "has_zh_hans": 115,
+    "has_en": 115,
+    "has_additional_languages": 115
+  },
+  "terms": [
+    {
+      "candidate_id": "cand.graph.dominator_tree.applications",
+      "translations": {
+        "zh-Hans": "支配树应用",
+        "en": "Dominator Tree Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.offline",
+      "translations": {
+        "zh-Hans": "动态连通性 (离线)",
+        "en": "Dynamic Connectivity (Offline)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.euler_tour_tree",
+      "translations": {
+        "zh-Hans": "欧拉游走树",
+        "en": "Euler Tour Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.directed_mst.zhu_liu",
+      "translations": {
+        "zh-Hans": "有向最小生成树 (朱刘算法)",
+        "en": "Directed MST (Zhu-Liu Algorithm)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.gomory_hu_tree.basic",
+      "translations": {
+        "zh-Hans": "Gomory-Hu 树",
+        "en": "Gomory-Hu Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.global_min_cut.stoer_wagner",
+      "translations": {
+        "zh-Hans": "全局最小割 (Stoer-Wagner)",
+        "en": "Global Minimum Cut (Stoer-Wagner)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.karp",
+      "translations": {
+        "zh-Hans": "最小平均权环 (Karp)",
+        "en": "Minimum Mean Cycle (Karp)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.hartmann_orlin",
+      "translations": {
+        "zh-Hans": "最小平均权环 (Hartmann-Orlin)",
+        "en": "Minimum Mean Cycle (Hartmann-Orlin)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.blossom",
+      "translations": {
+        "zh-Hans": "一般图最大匹配 (Blossom)",
+        "en": "General Graph Maximum Matching (Blossom)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.weighted",
+      "translations": {
+        "zh-Hans": "一般图最大权匹配",
+        "en": "General Graph Maximum Weight Matching",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.matroid.basics",
+      "translations": {
+        "zh-Hans": "拟阵基础",
+        "en": "Matroid Basics",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.matroid.intersection",
+      "translations": {
+        "zh-Hans": "拟阵交",
+        "en": "Matroid Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.functional_graph.advanced",
+      "translations": {
+        "zh-Hans": "函数图进阶",
+        "en": "Functional Graph Advanced",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.sat2.modeling_variants",
+      "translations": {
+        "zh-Hans": "2-SAT 建模变形",
+        "en": "2-SAT Modeling Variants",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling",
+      "translations": {
+        "zh-Hans": "差分约束建模变形",
+        "en": "Difference Constraints Modeling",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.bridge_tree.applications",
+      "translations": {
+        "zh-Hans": "桥树应用",
+        "en": "Bridge Tree Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.applications",
+      "translations": {
+        "zh-Hans": "点双连通分量树应用",
+        "en": "Block-Cut Tree Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmin",
+      "translations": {
+        "zh-Hans": "Segment Tree Beats (Range Chmin)",
+        "en": "Segment Tree Beats (Range Chmin)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmax",
+      "translations": {
+        "zh-Hans": "Segment Tree Beats (Range Chmax)",
+        "en": "Segment Tree Beats (Range Chmax)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_add",
+      "translations": {
+        "zh-Hans": "Segment Tree Beats (Range Add)",
+        "en": "Segment Tree Beats (Range Add)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.minimum",
+      "translations": {
+        "zh-Hans": "李超线段树 (最小值)",
+        "en": "Li Chao Tree (Minimum)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.maximum",
+      "translations": {
+        "zh-Hans": "李超线段树 (最大值)",
+        "en": "Li Chao Tree (Maximum)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.segment",
+      "translations": {
+        "zh-Hans": "李超线段树 (线段)",
+        "en": "Li Chao Tree (Segment)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.basic",
+      "translations": {
+        "zh-Hans": "小波树基础",
+        "en": "Wavelet Tree Basic",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.matrix",
+      "translations": {
+        "zh-Hans": "小波矩阵",
+        "en": "Wavelet Matrix",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.basic",
+      "translations": {
+        "zh-Hans": "归并排序树",
+        "en": "Merge Sort Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.sqrt_tree.basic",
+      "translations": {
+        "zh-Hans": "平方根树",
+        "en": "Sqrt Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.disjoint_sparse_table.basic",
+      "translations": {
+        "zh-Hans": "不交稀疏表",
+        "en": "Disjoint Sparse Table",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.rollback_dsu.basic",
+      "translations": {
+        "zh-Hans": "可撤销并查集",
+        "en": "Rollback DSU",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_dsu.basic",
+      "translations": {
+        "zh-Hans": "可持久化并查集",
+        "en": "Persistent DSU",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_segment_tree.basic",
+      "translations": {
+        "zh-Hans": "动态开点线段树",
+        "en": "Dynamic Segment Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.implicit_treap.basic",
+      "translations": {
+        "zh-Hans": "无旋Treap (Implicit Key)",
+        "en": "Implicit Treap",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.order_statistic_tree.basic",
+      "translations": {
+        "zh-Hans": "顺序统计树",
+        "en": "Order Statistic Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.fenwick_tree_2d.basic",
+      "translations": {
+        "zh-Hans": "二维树状数组",
+        "en": "2D Fenwick Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_2d.basic",
+      "translations": {
+        "zh-Hans": "二维线段树",
+        "en": "2D Segment Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.dsu_on_tree.basic",
+      "translations": {
+        "zh-Hans": "树上启发式合并",
+        "en": "DSU on Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.small_to_large.basic",
+      "translations": {
+        "zh-Hans": "小启发式合并",
+        "en": "Small-to-Large Merging",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.basic",
+      "translations": {
+        "zh-Hans": "Z 算法",
+        "en": "Z Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.ex_kmp.basic",
+      "translations": {
+        "zh-Hans": "扩展KMP",
+        "en": "Ex-KMP",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.kmp_automaton.basic",
+      "translations": {
+        "zh-Hans": "KMP 自动机",
+        "en": "KMP Automaton",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.ac_automaton.applications",
+      "translations": {
+        "zh-Hans": "AC 自动机应用",
+        "en": "AC Automaton Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.ac_failure_tree.basic",
+      "translations": {
+        "zh-Hans": "AC 自动机失败树",
+        "en": "AC Failure Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_array.sais",
+      "translations": {
+        "zh-Hans": "后缀数组 (SA-IS)",
+        "en": "Suffix Array (SA-IS)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.lcp_rmq.basic",
+      "translations": {
+        "zh-Hans": "LCP + RMQ",
+        "en": "LCP RMQ",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.generalized_sam.basic",
+      "translations": {
+        "zh-Hans": "广义后缀自动机",
+        "en": "Generalized SAM",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.sam_parent_tree.basic",
+      "translations": {
+        "zh-Hans": "SAM 父树",
+        "en": "SAM Parent Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.eertree.basic",
+      "translations": {
+        "zh-Hans": "回文树",
+        "en": "Eertree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_tree.ukkonen",
+      "translations": {
+        "zh-Hans": "后缀树 (Ukkonen)",
+        "en": "Suffix Tree (Ukkonen)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.lyndon_decomposition.basic",
+      "translations": {
+        "zh-Hans": "Lyndon 分解",
+        "en": "Lyndon Decomposition",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.duval_algorithm.basic",
+      "translations": {
+        "zh-Hans": "Duval 算法",
+        "en": "Duval Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.runs.basic",
+      "translations": {
+        "zh-Hans": "Runs (重复子串)",
+        "en": "Runs",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.border_tree.basic",
+      "translations": {
+        "zh-Hans": "Border 树",
+        "en": "Border Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.primality_test.miller_rabin",
+      "translations": {
+        "zh-Hans": "Miller-Rabin 素性测试",
+        "en": "Miller-Rabin Primality Test",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.factorization.pollard_rho",
+      "translations": {
+        "zh-Hans": "Pollard Rho 分解",
+        "en": "Pollard Rho Factorization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.primitive_root.basic",
+      "translations": {
+        "zh-Hans": "原根",
+        "en": "Primitive Root",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.bsgs",
+      "translations": {
+        "zh-Hans": "离散对数 (BSGS)",
+        "en": "Discrete Logarithm (BSGS)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.exbsgs",
+      "translations": {
+        "zh-Hans": "扩展BSGS",
+        "en": "Extended BSGS",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+      "translations": {
+        "zh-Hans": "二次剩余 (Tonelli-Shanks)",
+        "en": "Quadratic Residue (Tonelli-Shanks)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.dirichlet_conv.basic",
+      "translations": {
+        "zh-Hans": "狄利克雷卷积",
+        "en": "Dirichlet Convolution",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.du_jiao_sieve.basic",
+      "translations": {
+        "zh-Hans": "杜教筛",
+        "en": "Du Jiao Sieve",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.min_25_sieve.basic",
+      "translations": {
+        "zh-Hans": "Min_25 筛",
+        "en": "Min_25 Sieve",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.lucas.basic",
+      "translations": {
+        "zh-Hans": "Lucas 定理",
+        "en": "Lucas Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.lucas.extended",
+      "translations": {
+        "zh-Hans": "扩展Lucas",
+        "en": "Extended Lucas",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.crt.basic",
+      "translations": {
+        "zh-Hans": "中国剩余定理",
+        "en": "Chinese Remainder Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.crt.extended",
+      "translations": {
+        "zh-Hans": "扩展中国剩余定理",
+        "en": "Extended CRT",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.crt.garner",
+      "translations": {
+        "zh-Hans": "Garner 算法",
+        "en": "Garner Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.fwt.basic",
+      "translations": {
+        "zh-Hans": "快速沃尔什变换",
+        "en": "Fast Walsh Transform",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.rotating_calipers.basic",
+      "translations": {
+        "zh-Hans": "旋转卡壳",
+        "en": "Rotating Calipers",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.half_plane_intersection.basic",
+      "translations": {
+        "zh-Hans": "半平面交",
+        "en": "Half-Plane Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.sweep_line.geometry",
+      "translations": {
+        "zh-Hans": "扫描线几何",
+        "en": "Sweep Line Geometry",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.segment_intersection.basic",
+      "translations": {
+        "zh-Hans": "线段交点",
+        "en": "Segment Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.point_in_polygon.basic",
+      "translations": {
+        "zh-Hans": "点在多边形内",
+        "en": "Point in Polygon",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.convex_polygon_queries.basic",
+      "translations": {
+        "zh-Hans": "凸多边形查询",
+        "en": "Convex Polygon Queries",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.minkowski_sum.basic",
+      "translations": {
+        "zh-Hans": "闵可夫斯基和",
+        "en": "Minkowski Sum",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.smallest_enclosing_circle.basic",
+      "translations": {
+        "zh-Hans": "最小包围圆",
+        "en": "Smallest Enclosing Circle",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.lattice_geometry.basic",
+      "translations": {
+        "zh-Hans": "格点几何",
+        "en": "Lattice Geometry",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.pick_theorem.basic",
+      "translations": {
+        "zh-Hans": "Pick 定理",
+        "en": "Pick Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.two_sum",
+      "translations": {
+        "zh-Hans": "两数之和模式",
+        "en": "Two Sum Pattern",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.prefix_sum_hashmap",
+      "translations": {
+        "zh-Hans": "前缀和 + HashMap",
+        "en": "Prefix Sum + HashMap",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.fast_slow_pointers",
+      "translations": {
+        "zh-Hans": "快慢指针",
+        "en": "Fast and Slow Pointers",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.linked_list_reversal",
+      "translations": {
+        "zh-Hans": "链表反转",
+        "en": "Linked List Reversal",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.merge_intervals",
+      "translations": {
+        "zh-Hans": "合并区间",
+        "en": "Merge Intervals",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.meeting_rooms",
+      "translations": {
+        "zh-Hans": "会议室问题",
+        "en": "Meeting Rooms",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.top_k_frequent",
+      "translations": {
+        "zh-Hans": "前K个高频元素",
+        "en": "Top K Frequent",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.k_way_merge",
+      "translations": {
+        "zh-Hans": "K路归并",
+        "en": "K-way Merge",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.monotonic_stack",
+      "translations": {
+        "zh-Hans": "单调栈下一个更大",
+        "en": "Monotonic Stack Next Greater",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_fixed",
+      "translations": {
+        "zh-Hans": "滑动窗口固定大小",
+        "en": "Sliding Window Fixed",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_variable",
+      "translations": {
+        "zh-Hans": "滑动窗口可变大小",
+        "en": "Sliding Window Variable",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.binary_search_answer",
+      "translations": {
+        "zh-Hans": "二分答案",
+        "en": "Binary Search on Answer",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.island_problems",
+      "translations": {
+        "zh-Hans": "岛屿问题",
+        "en": "Island Problems",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.word_ladder",
+      "translations": {
+        "zh-Hans": "单词阶梯",
+        "en": "Word Ladder",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.pattern.course_schedule",
+      "translations": {
+        "zh-Hans": "课程表",
+        "en": "Course Schedule",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.state_as_graph.basic",
+      "translations": {
+        "zh-Hans": "状态看成点",
+        "en": "State as Graph Nodes",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.operation_as_edge.basic",
+      "translations": {
+        "zh-Hans": "操作看成边",
+        "en": "Operation as Graph Edges",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.constraint_as_graph.basic",
+      "translations": {
+        "zh-Hans": "约束看成图",
+        "en": "Constraint as Graph",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.minmax_to_binary.basic",
+      "translations": {
+        "zh-Hans": "最小最大转二分答案",
+        "en": "Min-Max to Binary Search",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_sweep.basic",
+      "translations": {
+        "zh-Hans": "区间贡献转扫描线",
+        "en": "Range to Sweep Line",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.tree_path_to_lca.basic",
+      "translations": {
+        "zh-Hans": "树上路径转LCA",
+        "en": "Tree Path to LCA",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.multiple_to_offline.basic",
+      "translations": {
+        "zh-Hans": "多次询问转离线",
+        "en": "Multiple Queries to Offline",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.dynamic_to_divide.basic",
+      "translations": {
+        "zh-Hans": "动态问题转时间分治",
+        "en": "Dynamic to Time Division",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.choice_to_dp.basic",
+      "translations": {
+        "zh-Hans": "选择问题转DP状态",
+        "en": "Choice to DP State",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.matching_to_flow.basic",
+      "translations": {
+        "zh-Hans": "匹配问题转流",
+        "en": "Matching to Flow",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.feasibility_to_sat.basic",
+      "translations": {
+        "zh-Hans": "可行性转2-SAT",
+        "en": "Feasibility to 2-SAT",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_algorithm.basic",
+      "translations": {
+        "zh-Hans": "数据范围反推算法",
+        "en": "Data Range to Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.counterexample.basic",
+      "translations": {
+        "zh-Hans": "反例构造",
+        "en": "Counterexample Construction",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.boundary.basic",
+      "translations": {
+        "zh-Hans": "特判与边界构造",
+        "en": "Special Case and Boundary",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.modeling.interactive.basic",
+      "translations": {
+        "zh-Hans": "交互题策略",
+        "en": "Interactive Problem Strategy",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.lagrange_interpolation",
+      "translations": {
+        "zh-Hans": "拉格朗日插值",
+        "en": "Lagrange Interpolation",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.berlekamp_massey",
+      "translations": {
+        "zh-Hans": "Berlekamp-Massey",
+        "en": "Berlekamp-Massey Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree.centroid_decomposition_applications",
+      "translations": {
+        "zh-Hans": "点分治应用",
+        "en": "Centroid Decomposition Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geometry.convex_hull.dynamic",
+      "translations": {
+        "zh-Hans": "动态凸包",
+        "en": "Dynamic Convex Hull",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.hash.2d",
+      "translations": {
+        "zh-Hans": "二维哈希",
+        "en": "2D Rolling Hash",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.hash.collision",
+      "translations": {
+        "zh-Hans": "哈希冲突处理",
+        "en": "Hash Collision Strategy",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.min_cost_flow.applications",
+      "translations": {
+        "zh-Hans": "最小费用流应用",
+        "en": "Min Cost Flow Applications",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.bitmask_optimization",
+      "translations": {
+        "zh-Hans": "状态压缩DP优化",
+        "en": "Bitmask DP Optimization",
+        "needs_native_review": true
+      }
+    }
+  ]
+}

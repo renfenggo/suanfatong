@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "title": "Stage3F Batch1 Added Items Review",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T13:00:00.000Z",
+    "batch_id": "stage3f_batch1",
+    "main_graph_modified": false,
+    "patch_not_applied": true,
+    "stage3f_batch2_not_started": true,
+    "total_reviewed": 20,
+    "approve_count": 20,
+    "c_count": 19,
+    "b_count": 1,
+    "a_count": 0,
+    "problem_pattern_sync_count": 3,
+    "merge_or_collapse_count": 2,
+    "dependency_fix_count": 0,
+    "recommend_stage3f_batch1_fix_lite": true,
+    "recommend_continue_stage3f_batch2": false
+  },
+  "statistics": {
+    "review_result_distribution": {
+      "approve": 20
+    },
+    "priority_distribution": {
+      "C": 19,
+      "B": 1,
+      "A": 0
+    },
+    "series_summary": {
+      "DP优化": {
+        "total": 1,
+        "C": 1,
+        "B": 0
+      },
+      "Dominance Counting": {
+        "total": 1,
+        "C": 0,
+        "B": 1
+      },
+      "Merge Sort Tree": {
+        "total": 3,
+        "C": 3,
+        "B": 0
+      },
+      "字符串结构": {
+        "total": 3,
+        "C": 3,
+        "B": 0
+      },
+      "数位DP": {
+        "total": 2,
+        "C": 2,
+        "B": 0
+      },
+      "树DP": {
+        "total": 5,
+        "C": 5,
+        "B": 0
+      },
+      "轮廓DP": {
+        "total": 2,
+        "C": 2,
+        "B": 0
+      },
+      "高级数学": {
+        "total": 3,
+        "C": 3,
+        "B": 0
+      }
+    }
+  },
+  "reviewed_items": [
+    {
+      "id": "3.13.182",
+      "name": "Multidimensional: Dominance Counting",
+      "en_name": "Multidimensional: Dominance Counting",
+      "section_id": "3.13",
+      "series": "Dominance Counting",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "B",
+      "need_manual_review": false,
+      "item_type": "modeling_pattern",
+      "issues": [
+        "与 CDQ 分治 (3.13.181) 功能重叠，建议标注 modeling_pattern 类型"
+      ],
+      "reason": "Dominance Counting 是多维偏序计数问题模式，适合 modeling_pattern 类型，保留 B 级优先以供 Review"
+    },
+    {
+      "id": "3.13.183",
+      "name": "Merge Sort Tree: Memory Optimization",
+      "en_name": "Merge Sort Tree: Memory Optimization",
+      "section_id": "3.13",
+      "series": "Merge Sort Tree",
+      "direct_pre": [
+        "3.7.2",
+        "1.3.1"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "reason": "Merge Sort Tree 内存优化变体，implementation_variant，降为 C"
+    },
+    {
+      "id": "3.13.184",
+      "name": "Merge Sort Tree: Offline Inversion",
+      "en_name": "Merge Sort Tree: Offline Inversion",
+      "section_id": "3.13",
+      "series": "Merge Sort Tree",
+      "direct_pre": [
+        "3.7.2",
+        "1.3.1"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "application_case",
+      "issues": [],
+      "reason": "Merge Sort Tree 离线求逆序数应用，application_case，降为 C"
+    },
+    {
+      "id": "3.13.185",
+      "name": "Merge Sort Tree: Persistent Variant",
+      "en_name": "Merge Sort Tree: Persistent Variant",
+      "section_id": "3.13",
+      "series": "Merge Sort Tree",
+      "direct_pre": [
+        "3.7.2",
+        "1.3.1",
+        "3.11.1"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "与 Persistent Array (3.13.9) 有概念重叠，建议在描述中说明区分"
+      ],
+      "reason": "Merge Sort Tree 可持久化变体，implementation_variant，降为 C"
+    },
+    {
+      "id": "2.8.134",
+      "name": "复杂数位DP",
+      "en_name": "Complex Digit DP",
+      "section_id": "2.8",
+      "series": "数位DP",
+      "direct_pre": [
+        "2.8.110",
+        "2.8.20"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [],
+      "reason": "复杂数位DP是数位DP的高级扩展，核心概念，降为 C"
+    },
+    {
+      "id": "2.8.135",
+      "name": "换根DP",
+      "en_name": "Tree DP: Rerooting",
+      "section_id": "2.8",
+      "series": "树DP",
+      "direct_pre": [
+        "2.8.27",
+        "2.8.104"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [],
+      "reason": "换根DP是竞赛高频树DP技巧，核心概念，降为 C"
+    },
+    {
+      "id": "2.8.136",
+      "name": "轮廓DP基础",
+      "en_name": "Profile DP Basic",
+      "section_id": "2.8",
+      "series": "轮廓DP",
+      "direct_pre": [
+        "2.8.114",
+        "2.8.41"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [
+        "与已有状压DP节点的边界需在描述中说明"
+      ],
+      "reason": "轮廓DP基础是状压DP的扩展方向，核心概念，降为 C"
+    },
+    {
+      "id": "2.8.137",
+      "name": "插头DP基础",
+      "en_name": "Plug DP Basic",
+      "section_id": "2.8",
+      "series": "轮廓DP",
+      "direct_pre": [
+        "2.8.119",
+        "2.8.114"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [],
+      "reason": "插头DP是轮廓DP的经典应用，核心概念，降为 C"
+    },
+    {
+      "id": "3.8.9",
+      "name": "后缀数组SA-IS算法",
+      "en_name": "Suffix Array SA-IS Algorithm",
+      "section_id": "3.8",
+      "series": "字符串结构",
+      "direct_pre": [
+        "3.8.3"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "SA-IS 是后缀数组的具体构造算法，属于 implementation_variant，需有 direct_pre 指向后缀数组"
+      ],
+      "reason": "SA-IS 是后缀数组的线性时间构造算法变体，implementation_variant，降为 C"
+    },
+    {
+      "id": "3.8.10",
+      "name": "广义SAM构建",
+      "en_name": "Generalized SAM Construction",
+      "section_id": "3.8",
+      "series": "字符串结构",
+      "direct_pre": [
+        "3.8.4"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [],
+      "reason": "广义 SAM 构建是多串 SAM 的重要扩展，核心概念，降为 C"
+    },
+    {
+      "id": "3.8.11",
+      "name": "后缀树Ukkonen算法",
+      "en_name": "Suffix Tree Ukkonen Algorithm",
+      "section_id": "3.8",
+      "series": "字符串结构",
+      "direct_pre": [
+        "3.8.7",
+        "3.8.8"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "后缀树 Ukkonen 算法实现复杂，需确认 visibility 为 expert"
+      ],
+      "reason": "后缀树 Ukkonen 算法是高级字符串结构构建方法，implementation_variant，降为 C"
+    },
+    {
+      "id": "2.18.9",
+      "name": "斜率优化高级",
+      "en_name": "Slope Optimization Advanced",
+      "section_id": "2.18",
+      "series": "DP优化",
+      "direct_pre": [
+        "2.8.98",
+        "2.18.4"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "reason": "斜率优化高级是 DP 优化技巧的深入讲解，implementation_variant，降为 C"
+    },
+    {
+      "id": "2.17.20",
+      "name": "Berlekamp-Massey算法",
+      "en_name": "Berlekamp-Massey Algorithm",
+      "section_id": "2.17",
+      "series": "高级数学",
+      "direct_pre": [
+        "2.17.11"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "theorem_or_property",
+      "issues": [
+        "建议同步 problem_patterns（线性递推最小多项式求解模式）"
+      ],
+      "reason": "Berlekamp-Massey 算法是线性递推最小多项式求解定理性算法，theorem_or_property，降为 C"
+    },
+    {
+      "id": "4.3.32",
+      "name": "扩展Lucas定理",
+      "en_name": "Extended Lucas Theorem",
+      "section_id": "4.3",
+      "series": "高级数学",
+      "direct_pre": [
+        "4.3.15",
+        "4.3.21"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "theorem_or_property",
+      "issues": [],
+      "reason": "扩展 Lucas 定理处理模非素数情况，与已有 Lucas 区分明确，theorem_or_property，降为 C"
+    },
+    {
+      "id": "4.9.3",
+      "name": "Min_25筛",
+      "en_name": "Min_25 Sieve",
+      "section_id": "4.9",
+      "series": "高级数学",
+      "direct_pre": [
+        "4.9.1",
+        "4.9.2"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "theorem_or_property",
+      "issues": [
+        "Min_25 筛实现复杂，建议同步 problem_patterns（积性函数前缀和）"
+      ],
+      "reason": "Min_25 筛是高级数论筛法，theorem_or_property，降为 C"
+    },
+    {
+      "id": "2.8.138",
+      "name": "数位DP基础",
+      "en_name": "Digit DP Basic",
+      "section_id": "2.8",
+      "series": "数位DP",
+      "direct_pre": [
+        "2.8.20",
+        "2.8.110"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "learning_granularity",
+      "issues": [
+        "名称与已有数位DP节点高度相似（近重复），需确认语义边界是否清晰"
+      ],
+      "reason": "数位DP基础作为学习粒度节点，可保留但需确认与已有数位DP的区分，降为 C"
+    },
+    {
+      "id": "2.8.139",
+      "name": "树DP基础",
+      "en_name": "Tree DP Basic",
+      "section_id": "2.8",
+      "series": "树DP",
+      "direct_pre": [
+        "2.8.27"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "learning_granularity",
+      "issues": [
+        "名称与已有树形DP节点高度相似，需确认区分"
+      ],
+      "reason": "树DP基础作为学习粒度节点，可保留但需确认与已有树形DP的区分，降为 C"
+    },
+    {
+      "id": "2.8.140",
+      "name": "树的直径DP",
+      "en_name": "Tree DP: Diameter",
+      "section_id": "2.8",
+      "series": "树DP",
+      "direct_pre": [
+        "2.8.27",
+        "2.8.105"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "application_case",
+      "issues": [
+        "与已有树的直径节点有重叠风险，需确认节点是否包含DP解法"
+      ],
+      "reason": "树的直径DP是树的直径的DP解法，与已有树的直径节点区分明确，降为 C"
+    },
+    {
+      "id": "2.8.141",
+      "name": "树的重心DP",
+      "en_name": "Tree DP: Centroid",
+      "section_id": "2.8",
+      "series": "树DP",
+      "direct_pre": [
+        "2.8.27"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "application_case",
+      "issues": [
+        "与已有树的重心节点有重叠风险，需确认节点是否包含DP解法"
+      ],
+      "reason": "树的重心DP是树的重心的DP解法，与已有树的重心节点区分明确，降为 C"
+    },
+    {
+      "id": "2.8.142",
+      "name": "拓扑排序DP",
+      "en_name": "DAG DP: Topological Ordering",
+      "section_id": "2.8",
+      "series": "树DP",
+      "direct_pre": [
+        "2.8.23",
+        "2.8.95"
+      ],
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "application_case",
+      "issues": [],
+      "reason": "拓扑排序DP是DAG上的递推模式，与拓扑排序区分明确，降为 C"
+    }
+  ]
+}

@@ -1,0 +1,4798 @@
+[
+  {
+    "pattern_id": "pat.two_sum",
+    "name": "两数之和模式",
+    "en_name": "Two Sum Pattern",
+    "category": "Interview Patterns",
+    "description": "两数之和模式用于识别并求解Two Sum Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "补数查询",
+      "返回两个下标或两元素",
+      "一次扫描即可确认答案"
+    ],
+    "required_items": [
+      "3.2.5",
+      "2.5.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把 a+b=target 改写为 target-a 的存在性查询",
+      "排序后用相向双指针"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n log n) after sorting"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 1"
+    ],
+    "i18n_key": "pattern.two_sum",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.prefix_sum_hashmap",
+    "name": "前缀和 + 哈希表",
+    "en_name": "Prefix Sum + HashMap",
+    "category": "Interview Patterns",
+    "description": "前缀和 + 哈希表用于识别并求解Prefix Sum + HashMap类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "子数组和等于 K",
+      "需要统计区间和出现次数",
+      "负数使滑窗失效"
+    ],
+    "required_items": [
+      "2.4.1",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "sum[l..r]=pre[r]-pre[l-1]",
+      "把目标区间转换为历史前缀计数"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 560"
+    ],
+    "i18n_key": "pattern.prefix_sum_hashmap",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.sliding_window_fixed_size",
+    "name": "定长滑动窗口",
+    "en_name": "Sliding Window Fixed Size",
+    "category": "Interview Patterns",
+    "description": "定长滑动窗口用于识别并求解Sliding Window Fixed Size类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "窗口长度固定为 k",
+      "连续子数组/子串统计",
+      "每次移入一个移出一个"
+    ],
+    "required_items": [
+      "2.5.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "维护窗口增量而非重算",
+      "窗口内计数、和、最大值可替换为专门结构"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(k) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 643"
+    ],
+    "i18n_key": "pattern.sliding_window_fixed_size",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.sliding_window_variable_size",
+    "name": "变长滑动窗口",
+    "en_name": "Sliding Window Variable Size",
+    "category": "Interview Patterns",
+    "description": "变长滑动窗口用于识别并求解Sliding Window Variable Size类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "最长/最短满足条件的连续段",
+      "条件随右端扩张单调变化",
+      "需要移动左端恢复合法"
+    ],
+    "required_items": [
+      "2.5.4",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "右扩左缩",
+      "用计数表维护窗口合法性"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(alphabet) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 3",
+      "LeetCode 76"
+    ],
+    "i18n_key": "pattern.sliding_window_variable_size",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.fast_slow_pointers",
+    "name": "快慢指针",
+    "en_name": "Fast and Slow Pointers",
+    "category": "Interview Patterns",
+    "description": "快慢指针用于识别并求解Fast and Slow Pointers类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "链表成环",
+      "找中点",
+      "原地处理链式结构"
+    ],
+    "required_items": [
+      "2.5.12",
+      "2.5.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "一指针每次两步一指针一步",
+      "相遇点转化为环入口"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(1) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 141",
+      "LeetCode 142"
+    ],
+    "i18n_key": "pattern.fast_slow_pointers",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.monotonic_stack_next_greater",
+    "name": "单调栈求下一个更大元素",
+    "en_name": "Monotonic Stack Next Greater",
+    "category": "Interview Patterns",
+    "description": "单调栈求下一个更大元素用于识别并求解Monotonic Stack Next Greater类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "下一个更大/更小元素",
+      "每个元素只出入栈一次",
+      "需要最近支配关系"
+    ],
+    "required_items": [
+      "3.2.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "维护单调递减或递增栈",
+      "环形数组复制或取模扫描"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 496",
+      "LeetCode 739"
+    ],
+    "i18n_key": "pattern.monotonic_stack_next_greater",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.top_k_frequent",
+    "name": "高频 Top K",
+    "en_name": "Top K Frequent",
+    "category": "Interview Patterns",
+    "description": "高频 Top K用于识别并求解Top K Frequent类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "统计频率后取前 k",
+      "不需要全排序",
+      "数据规模大但 k 较小"
+    ],
+    "required_items": [
+      "3.2.5",
+      "3.2.6"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "哈希计数 + 小根堆",
+      "桶排序按频率分层"
+    ],
+    "typical_complexities": [
+      "O(n log k)",
+      "O(n) bucket"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 347"
+    ],
+    "i18n_key": "pattern.top_k_frequent",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.k_way_merge",
+    "name": "K 路归并",
+    "en_name": "K-way Merge",
+    "category": "Interview Patterns",
+    "description": "K 路归并用于识别并求解K-way Merge类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多个有序数组/链表",
+      "每次取当前最小候选",
+      "需要合并或第 k 小"
+    ],
+    "required_items": [
+      "3.2.6"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "小根堆保存每一路头部",
+      "把二维有序矩阵视作多路流"
+    ],
+    "typical_complexities": [
+      "O(n log k)",
+      "O(k) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 23",
+      "LeetCode 373"
+    ],
+    "i18n_key": "pattern.k_way_merge",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.binary_search_on_answer",
+    "name": "答案二分",
+    "en_name": "Binary Search on Answer",
+    "category": "Interview Patterns",
+    "description": "答案二分用于识别并求解Binary Search on Answer类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "求最小可行值或最大可行值",
+      "存在单调判定函数",
+      "直接构造答案困难"
+    ],
+    "required_items": [
+      "2.3.6"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把优化问题转为判定问题",
+      "设计 feasible(x)"
+    ],
+    "typical_complexities": [
+      "O(log V * check)",
+      "O(check) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 875",
+      "LeetCode 410"
+    ],
+    "i18n_key": "pattern.binary_search_on_answer",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.merge_intervals",
+    "name": "区间合并",
+    "en_name": "Merge Intervals Pattern",
+    "category": "Interview Patterns",
+    "description": "区间合并用于识别并求解Merge Intervals Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "区间重叠",
+      "需要合并覆盖范围",
+      "按左端点排序后线性扫描"
+    ],
+    "required_items": [
+      "2.2.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "排序后维护当前右端点",
+      "半开/闭区间边界统一"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) output"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 56"
+    ],
+    "i18n_key": "pattern.merge_intervals",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.interval_sweep_events",
+    "name": "区间事件扫描",
+    "en_name": "Interval Sweep Events",
+    "category": "Interview Patterns",
+    "description": "区间事件扫描用于识别并求解Interval Sweep Events类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "会议室/重叠数",
+      "区间端点事件",
+      "统计同时活跃对象"
+    ],
+    "required_items": [
+      "2.2.1",
+      "4.7.42"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "拆成进入/离开事件",
+      "同坐标事件定义先后顺序"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 253"
+    ],
+    "i18n_key": "pattern.interval_sweep_events",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.subarray_product_window",
+    "name": "乘积约束窗口",
+    "en_name": "Subarray Product Window",
+    "category": "Interview Patterns",
+    "description": "乘积约束窗口用于识别并求解Subarray Product Window类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "正数数组乘积约束",
+      "乘积随右端扩张单调",
+      "统计连续子数组个数"
+    ],
+    "required_items": [
+      "2.5.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "窗口合法时一次贡献 r-l+1",
+      "注意 0/1 和阈值边界"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(1) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 713"
+    ],
+    "i18n_key": "pattern.subarray_product_window",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.palindrome_expand",
+    "name": "中心扩展回文",
+    "en_name": "Palindrome Center Expansion",
+    "category": "Interview Patterns",
+    "description": "中心扩展回文用于识别并求解Palindrome Center Expansion类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "回文子串",
+      "中心可以是点或缝",
+      "需要枚举所有中心"
+    ],
+    "required_items": [
+      "2.5.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "奇偶中心统一处理",
+      "向两侧扩展直到失配"
+    ],
+    "typical_complexities": [
+      "O(n^2)",
+      "O(1) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 5",
+      "LeetCode 647"
+    ],
+    "i18n_key": "pattern.palindrome_expand",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.linked_list_reverse",
+    "name": "链表原地反转",
+    "en_name": "Linked List In-place Reverse",
+    "category": "Interview Patterns",
+    "description": "链表原地反转用于识别并求解Linked List In-place Reverse类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "反转链表或区间",
+      "只能使用常数额外空间",
+      "指针重连顺序敏感"
+    ],
+    "required_items": [
+      "2.1.2"
+    ],
+    "related_items": [
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "prev-cur-next 三指针",
+      "虚拟头节点处理区间反转"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(1) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 206",
+      "LeetCode 92"
+    ],
+    "i18n_key": "pattern.linked_list_reverse",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.tree_level_order",
+    "name": "树的层序遍历",
+    "en_name": "Tree Level Order Pattern",
+    "category": "Interview Patterns",
+    "description": "树的层序遍历用于识别并求解Tree Level Order Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "按层输出二叉树/图",
+      "最短层数",
+      "需要队列边界"
+    ],
+    "required_items": [
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "队列按层分批",
+      "记录 depth 或当前层大小"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(width) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 102"
+    ],
+    "i18n_key": "pattern.tree_level_order",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.valid_parentheses_stack",
+    "name": "括号匹配栈",
+    "en_name": "Valid Parentheses Stack",
+    "category": "Interview Patterns",
+    "description": "括号匹配栈用于识别并求解Valid Parentheses Stack类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "括号成对匹配",
+      "最近未匹配左括号",
+      "嵌套结构合法性"
+    ],
+    "required_items": [
+      "3.2.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "遇左入栈遇右匹配",
+      "哨兵简化空栈边界"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 20"
+    ],
+    "i18n_key": "pattern.valid_parentheses_stack",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.hash_dedup_seen",
+    "name": "哈希去重与已访问集合",
+    "en_name": "Hash Set Seen Pattern",
+    "category": "Interview Patterns",
+    "description": "哈希去重与已访问集合用于识别并求解Hash Set Seen Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "检查重复",
+      "状态是否访问过",
+      "需要 O(1) 期望查询"
+    ],
+    "required_items": [
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把线性查找换成集合查询",
+      "状态序列化为 key"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 217"
+    ],
+    "i18n_key": "pattern.hash_dedup_seen",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.matrix_spiral_simulation",
+    "name": "矩阵边界模拟",
+    "en_name": "Matrix Boundary Simulation",
+    "category": "Interview Patterns",
+    "description": "矩阵边界模拟用于识别并求解Matrix Boundary Simulation类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "螺旋/方向移动",
+      "边界逐步收缩",
+      "实现细节多于算法难度"
+    ],
+    "required_items": [
+      "2.1.2"
+    ],
+    "related_items": [
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "维护上下左右边界",
+      "方向数组统一转向"
+    ],
+    "typical_complexities": [
+      "O(mn)",
+      "O(1) extra"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 54"
+    ],
+    "i18n_key": "pattern.matrix_spiral_simulation",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.backtracking_combinations",
+    "name": "组合回溯",
+    "en_name": "Backtracking Combinations",
+    "category": "Interview Patterns",
+    "description": "组合回溯用于识别并求解Backtracking Combinations类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "列出所有组合/子集",
+      "需要撤销选择",
+      "可通过剩余数量剪枝"
+    ],
+    "required_items": [
+      "2.7.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "路径 + start 下标",
+      "选择/不选择递归"
+    ],
+    "typical_complexities": [
+      "O(C(n,k))",
+      "O(n) stack"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 77",
+      "LeetCode 78"
+    ],
+    "i18n_key": "pattern.backtracking_combinations",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.permutation_used_array",
+    "name": "排列回溯 used 数组",
+    "en_name": "Permutation Used Array",
+    "category": "Interview Patterns",
+    "description": "排列回溯 used 数组用于识别并求解Permutation Used Array类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "枚举排列",
+      "每个元素使用一次",
+      "有重复元素需去重"
+    ],
+    "required_items": [
+      "2.7.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "used 数组标记",
+      "排序后跳过同层重复"
+    ],
+    "typical_complexities": [
+      "O(n!)",
+      "O(n) stack"
+    ],
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "audience": [
+      "software_engineer_interview",
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 46",
+      "LeetCode 47"
+    ],
+    "i18n_key": "pattern.permutation_used_array",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.island_problems",
+    "name": "岛屿问题",
+    "en_name": "Island Problems",
+    "category": "Graph/Search Patterns",
+    "description": "岛屿问题用于识别并求解Island Problems类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "网格连通块",
+      "四/八方向扩展",
+      "陆地水域二值状态"
+    ],
+    "required_items": [
+      "2.7.1",
+      "2.7.2",
+      "2.9.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "网格转图",
+      "DFS/BFS 染色或 DSU 合并"
+    ],
+    "typical_complexities": [
+      "O(nm)",
+      "O(nm) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 200",
+      "LeetCode 695"
+    ],
+    "i18n_key": "pattern.island_problems",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.word_ladder",
+    "name": "单词接龙",
+    "en_name": "Word Ladder",
+    "category": "Graph/Search Patterns",
+    "description": "单词接龙用于识别并求解Word Ladder类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "单词一步变换",
+      "求最短变换次数",
+      "隐式图边数巨大"
+    ],
+    "required_items": [
+      "2.7.2",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "通配桶建边",
+      "双向 BFS 降低搜索量"
+    ],
+    "typical_complexities": [
+      "O(NL^2)",
+      "O(NL) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 127"
+    ],
+    "i18n_key": "pattern.word_ladder",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.course_schedule",
+    "name": "课程表依赖",
+    "en_name": "Course Schedule",
+    "category": "Graph/Search Patterns",
+    "description": "课程表依赖用于识别并求解Course Schedule类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "先修关系",
+      "有向环检测",
+      "判断是否存在合法学习顺序"
+    ],
+    "required_items": [
+      "2.9.3",
+      "2.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "建 DAG 后拓扑排序",
+      "DFS 三色标记检测环"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "core",
+    "example_problem_refs": [
+      "LeetCode 207",
+      "LeetCode 210"
+    ],
+    "i18n_key": "pattern.course_schedule",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.bipartite_coloring",
+    "name": "二分图染色",
+    "en_name": "Bipartite Coloring Pattern",
+    "category": "Graph/Search Patterns",
+    "description": "二分图染色用于识别并求解Bipartite Coloring Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "相邻点必须异色",
+      "冲突约束",
+      "判断可二分"
+    ],
+    "required_items": [
+      "2.7.2",
+      "2.9.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "BFS/DFS 染两色",
+      "约束图中同/异关系拆分"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 785"
+    ],
+    "i18n_key": "pattern.bipartite_coloring",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.multi_source_bfs",
+    "name": "多源 BFS",
+    "en_name": "Multi-source BFS",
+    "category": "Graph/Search Patterns",
+    "description": "多源 BFS用于识别并求解Multi-source BFS类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多个起点同时扩散",
+      "求最近源距离",
+      "网格最短时间"
+    ],
+    "required_items": [
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把所有源点初始入队",
+      "层数即扩散轮次"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 994",
+      "LeetCode 542"
+    ],
+    "i18n_key": "pattern.multi_source_bfs",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.zero_one_bfs",
+    "name": "0-1 BFS 模式",
+    "en_name": "0-1 BFS Pattern",
+    "category": "Graph/Search Patterns",
+    "description": "0-1 BFS 模式用于识别并求解0-1 BFS Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "边权只有 0/1",
+      "普通 BFS 不够但 Dijkstra 过重",
+      "需要双端队列"
+    ],
+    "required_items": [
+      "2.13.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "0 权边 push_front",
+      "1 权边 push_back"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Codeforces 0-1 BFS tasks"
+    ],
+    "i18n_key": "pattern.zero_one_bfs",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.state_compressed_bfs",
+    "name": "状态压缩 BFS",
+    "en_name": "State-compressed BFS",
+    "category": "Graph/Search Patterns",
+    "description": "状态压缩 BFS用于识别并求解State-compressed BFS类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态包含位置和已收集集合",
+      "最短步数",
+      "状态数为 n*2^k"
+    ],
+    "required_items": [
+      "2.7.2",
+      "2.11.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把集合编码为 bitmask",
+      "visited[position][mask]"
+    ],
+    "typical_complexities": [
+      "O(n 2^k)",
+      "O(n 2^k) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 847"
+    ],
+    "i18n_key": "pattern.state_compressed_bfs",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.topological_longest_path_dag",
+    "name": "DAG 拓扑 DP",
+    "en_name": "DAG Topological DP",
+    "category": "Graph/Search Patterns",
+    "description": "DAG 拓扑 DP用于识别并求解DAG Topological DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "有向无环图上的最优值",
+      "依赖顺序明确",
+      "点/边状态沿拓扑传播"
+    ],
+    "required_items": [
+      "2.9.3",
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "拓扑序后转移",
+      "入度队列处理依赖"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Longest Path in DAG"
+    ],
+    "i18n_key": "pattern.topological_longest_path_dag",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.connected_components",
+    "name": "连通块分解",
+    "en_name": "Connected Components Pattern",
+    "category": "Graph/Search Patterns",
+    "description": "连通块分解用于识别并求解Connected Components Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "统计连通块数量或大小",
+      "无向图/网格",
+      "访问过的点不重复处理"
+    ],
+    "required_items": [
+      "2.7.1",
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "DFS/BFS 染色",
+      "组件 id 映射"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Building Roads"
+    ],
+    "i18n_key": "pattern.connected_components",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.cycle_detection_undirected",
+    "name": "无向图判环",
+    "en_name": "Undirected Cycle Detection",
+    "category": "Graph/Search Patterns",
+    "description": "无向图判环用于识别并求解Undirected Cycle Detection类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "无向边逐步加入",
+      "出现回边或同集合",
+      "判断是否成环"
+    ],
+    "required_items": [
+      "2.7.1",
+      "3.4.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "DFS 记录父节点",
+      "DSU 合并前检查连通性"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(E alpha V)"
+    ],
+    "tracks": [
+      "interview",
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 684"
+    ],
+    "i18n_key": "pattern.cycle_detection_undirected",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.shortest_path_modeling",
+    "name": "最短路建模",
+    "en_name": "Shortest Path Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "最短路建模用于识别并求解Shortest Path Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态转移代价可加",
+      "求最少操作/最小费用",
+      "局部选择依赖路径"
+    ],
+    "required_items": [
+      "2.13.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "把状态作为点操作作为边",
+      "边权表达操作成本"
+    ],
+    "typical_complexities": [
+      "O(E log V)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Shortest Routes"
+    ],
+    "i18n_key": "pattern.shortest_path_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.difference_constraints_modeling",
+    "name": "差分约束建模",
+    "en_name": "Difference Constraints Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "差分约束建模用于识别并求解Difference Constraints Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "不等式形如 x_j - x_i <= c",
+      "需要判断可行或求界",
+      "约束系统可转最短路"
+    ],
+    "required_items": [
+      "2.21.39",
+      "2.13.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "变量建点约束建边",
+      "超级源连接所有变量"
+    ],
+    "typical_complexities": [
+      "O(VE) Bellman-Ford",
+      "O(E log V) in special cases"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "POJ 3169"
+    ],
+    "i18n_key": "pattern.difference_constraints_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    },
+    "synced_from_stage3b": [
+      "cand.graph.graph_modeling.difference_constraints"
+    ]
+  },
+  {
+    "pattern_id": "pat.flow_modeling",
+    "name": "网络流建模",
+    "en_name": "Flow Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "网络流建模用于识别并求解Flow Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "容量限制",
+      "供需匹配",
+      "割或最大可行流"
+    ],
+    "required_items": [
+      "2.16.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "源汇建模",
+      "容量表达选择次数或资源上限"
+    ],
+    "typical_complexities": [
+      "O(flow * E)",
+      "Dinic O(V^2E) worst-case"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "expert",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Download Speed"
+    ],
+    "i18n_key": "pattern.flow_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.two_sat_modeling",
+    "name": "2-SAT 建模",
+    "en_name": "2-SAT Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "2-SAT 建模用于识别并求解2-SAT Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "布尔选择且每条约束含两个文字",
+      "满足性判断",
+      "互斥/至少一个条件"
+    ],
+    "required_items": [
+      "2.9.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "蕴含图",
+      "强连通分量判断 x 与非 x"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Giant Pizza"
+    ],
+    "i18n_key": "pattern.two_sat_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.bipartite_matching_modeling",
+    "name": "二分图匹配建模",
+    "en_name": "Bipartite Matching Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "二分图匹配建模用于识别并求解Bipartite Matching Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "左右两类对象配对",
+      "每个对象最多匹配一次",
+      "最大匹配或完美匹配"
+    ],
+    "required_items": [
+      "2.16.3",
+      "2.9.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "左右部建点",
+      "匹配边容量为 1"
+    ],
+    "typical_complexities": [
+      "O(E sqrt V) Hopcroft-Karp",
+      "Flow alternative"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 1820"
+    ],
+    "i18n_key": "pattern.bipartite_matching_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.min_cut_selection",
+    "name": "最小割选择建模",
+    "en_name": "Minimum Cut Selection Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "最小割选择建模用于识别并求解Minimum Cut Selection Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "二元选择带收益/惩罚",
+      "选择间有依赖或冲突",
+      "目标可转割代价"
+    ],
+    "required_items": [
+      "2.16.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "正收益连源负收益连汇",
+      "冲突用大容量边"
+    ],
+    "typical_complexities": [
+      "O(maxflow)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Project Selection"
+    ],
+    "i18n_key": "pattern.min_cut_selection",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.project_selection_closure",
+    "name": "最大权闭合子图",
+    "en_name": "Maximum Closure Project Selection",
+    "category": "Graph Modeling Patterns",
+    "description": "最大权闭合子图用于识别并求解Maximum Closure Project Selection类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "选择项目会强制选择依赖项",
+      "收益可正可负",
+      "求最大总收益"
+    ],
+    "required_items": [
+      "2.21.29",
+      "2.16.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "正权连源负权连汇",
+      "依赖边设 INF"
+    ],
+    "typical_complexities": [
+      "O(maxflow)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Project Selection"
+    ],
+    "i18n_key": "pattern.project_selection_closure",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    },
+    "synced_from_stage3b": [
+      "cand.graph.closure_model.project_selection"
+    ]
+  },
+  {
+    "pattern_id": "pat.min_cost_flow_assignment",
+    "name": "费用流分配建模",
+    "en_name": "Min-cost Flow Assignment Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "费用流分配建模用于识别并求解Min-cost Flow Assignment Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "既有容量又有单位成本",
+      "求最小成本匹配/运输",
+      "多源多汇供需"
+    ],
+    "required_items": [
+      "2.16.5",
+      "2.16.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "源到供给点、需求点到汇",
+      "费用挂在选择边上"
+    ],
+    "typical_complexities": [
+      "O(F * shortest_path)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "expert",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Assignment with Costs"
+    ],
+    "i18n_key": "pattern.min_cost_flow_assignment",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.dag_dependency_modeling",
+    "name": "DAG 依赖建模",
+    "en_name": "DAG Dependency Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "DAG 依赖建模用于识别并求解DAG Dependency Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "任务依赖",
+      "必须先完成前置条件",
+      "无环时可按顺序处理"
+    ],
+    "required_items": [
+      "2.9.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "依赖建边",
+      "拓扑序驱动 DP 或模拟"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Course Schedule variants"
+    ],
+    "i18n_key": "pattern.dag_dependency_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.grid_graph_modeling",
+    "name": "网格图建模",
+    "en_name": "Grid Graph Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "网格图建模用于识别并求解Grid Graph Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "二维地图移动",
+      "障碍/代价/方向",
+      "坐标即状态"
+    ],
+    "required_items": [
+      "2.7.1",
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "坐标编码为点",
+      "方向数组生成邻边"
+    ],
+    "typical_complexities": [
+      "O(nm)",
+      "O(nm) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Labyrinth"
+    ],
+    "i18n_key": "pattern.grid_graph_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.time_expanded_graph",
+    "name": "时间展开图建模",
+    "en_name": "Time-expanded Graph Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "时间展开图建模用于识别并求解Time-expanded Graph Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态随时间变化",
+      "等待或周期限制",
+      "同一位置不同时间不可等价"
+    ],
+    "required_items": [
+      "2.13.1",
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "状态扩展为 (node,time mod period)",
+      "加等待边"
+    ],
+    "typical_complexities": [
+      "O(T(V+E))",
+      "O(TV) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Periodic graph tasks"
+    ],
+    "i18n_key": "pattern.time_expanded_graph",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.layered_graph_shortest_path",
+    "name": "分层图最短路",
+    "en_name": "Layered Graph Shortest Path",
+    "category": "Graph Modeling Patterns",
+    "description": "分层图最短路用于识别并求解Layered Graph Shortest Path类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "允许使用 k 次特殊操作",
+      "状态包含已用次数",
+      "每层表示一种资源使用量"
+    ],
+    "required_items": [
+      "2.13.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "复制 k+1 层图",
+      "普通边同层特殊边跨层"
+    ],
+    "typical_complexities": [
+      "O(kE log kV)",
+      "O(kV) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Discounted shortest path"
+    ],
+    "i18n_key": "pattern.layered_graph_shortest_path",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.complement_graph_modeling",
+    "name": "补图搜索建模",
+    "en_name": "Complement Graph Search Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "补图搜索建模用于识别并求解Complement Graph Search Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "边很多但缺边更关键",
+      "需要在补图上连通/最短路",
+      "直接建补图过大"
+    ],
+    "required_items": [
+      "2.7.2",
+      "2.9.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "维护未访问集合",
+      "按原图邻接过滤可达点"
+    ],
+    "typical_complexities": [
+      "O(V+E) with sets",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Complement BFS tasks"
+    ],
+    "i18n_key": "pattern.complement_graph_modeling",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.game_graph_retrograde",
+    "name": "博弈图逆推",
+    "en_name": "Game Graph Retrograde Modeling",
+    "category": "Graph Modeling Patterns",
+    "description": "博弈图逆推用于识别并求解Game Graph Retrograde Modeling类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态胜负由后继决定",
+      "有终止状态",
+      "可能存在平局/环"
+    ],
+    "required_items": [
+      "2.9.3",
+      "2.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "反图从终止态逆推",
+      "出度计数判断必败"
+    ],
+    "typical_complexities": [
+      "O(V+E)",
+      "O(V+E) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "AtCoder game graph"
+    ],
+    "i18n_key": "pattern.game_graph_retrograde",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.knapsack_dp",
+    "name": "背包 DP 模式",
+    "en_name": "Knapsack DP Pattern",
+    "category": "DP Patterns",
+    "description": "背包 DP 模式用于识别并求解Knapsack DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "容量限制",
+      "物品选择",
+      "最大价值/方案数"
+    ],
+    "required_items": [
+      "2.8.7"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "倒序枚举容量处理 0/1",
+      "正序处理完全背包"
+    ],
+    "typical_complexities": [
+      "O(nW)",
+      "O(W) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Luogu P1048"
+    ],
+    "i18n_key": "pattern.knapsack_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.complete_knapsack_dp",
+    "name": "完全背包 DP",
+    "en_name": "Complete Knapsack DP",
+    "category": "DP Patterns",
+    "description": "完全背包 DP用于识别并求解Complete Knapsack DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "每种物品可无限取",
+      "容量维度",
+      "顺序枚举允许重复使用"
+    ],
+    "required_items": [
+      "2.8.8",
+      "2.8.7"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "容量正序转移",
+      "组合/排列由循环顺序决定"
+    ],
+    "typical_complexities": [
+      "O(nW)",
+      "O(W) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 322"
+    ],
+    "i18n_key": "pattern.complete_knapsack_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.multiple_knapsack_binary_split",
+    "name": "多重背包二进制拆分",
+    "en_name": "Multiple Knapsack Binary Split",
+    "category": "DP Patterns",
+    "description": "多重背包二进制拆分用于识别并求解Multiple Knapsack Binary Split类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "每个物品数量有限",
+      "直接展开过大",
+      "数量可拆成 1,2,4,..."
+    ],
+    "required_items": [
+      "2.8.9",
+      "2.8.7"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "二进制分组为若干 0/1 物品",
+      "再套 0/1 背包"
+    ],
+    "typical_complexities": [
+      "O(W sum log c_i)",
+      "O(W) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Luogu P1776"
+    ],
+    "i18n_key": "pattern.multiple_knapsack_binary_split",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.interval_dp",
+    "name": "区间 DP 模式",
+    "en_name": "Interval DP Pattern",
+    "category": "DP Patterns",
+    "description": "区间 DP 模式用于识别并求解Interval DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态是连续区间",
+      "枚举断点合并左右区间",
+      "区间长度从小到大"
+    ],
+    "required_items": [
+      "2.8.12"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "按长度递推",
+      "dp[l][r] 枚举 k"
+    ],
+    "typical_complexities": [
+      "O(n^3)",
+      "O(n^2) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Stone Merge"
+    ],
+    "i18n_key": "pattern.interval_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.tree_dp",
+    "name": "树形 DP 模式",
+    "en_name": "Tree DP Pattern",
+    "category": "DP Patterns",
+    "description": "树形 DP 模式用于识别并求解Tree DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "状态依赖子树",
+      "父子关系天然无环",
+      "需要后序合并"
+    ],
+    "required_items": [
+      "2.8.13",
+      "2.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "DFS 后序转移",
+      "换根处理全树答案"
+    ],
+    "typical_complexities": [
+      "O(n * state)",
+      "O(n * state) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Tree Diameter DP"
+    ],
+    "i18n_key": "pattern.tree_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.digit_dp",
+    "name": "数位 DP 模式",
+    "en_name": "Digit DP Pattern",
+    "category": "DP Patterns",
+    "description": "数位 DP 模式用于识别并求解Digit DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "统计区间 [0,N] 内数字性质",
+      "有上界 tight 限制",
+      "按位构造"
+    ],
+    "required_items": [
+      "2.8.21"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "solve(R)-solve(L-1)",
+      "状态包含 pos/tight/leading/属性"
+    ],
+    "typical_complexities": [
+      "O(d * states * 10)",
+      "O(d * states) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Digit Sum Count"
+    ],
+    "i18n_key": "pattern.digit_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.automaton_dp",
+    "name": "自动机 DP 模式",
+    "en_name": "Automaton DP Pattern",
+    "category": "DP Patterns",
+    "description": "自动机 DP 模式用于识别并求解Automaton DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "字符串约束包含禁用/目标模式",
+      "状态需记匹配前缀",
+      "转移按字符"
+    ],
+    "required_items": [
+      "2.10.2",
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "KMP/AC 自动机作为状态机",
+      "dp[pos][state]"
+    ],
+    "typical_complexities": [
+      "O(n * states * alphabet)",
+      "O(states) rolling"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "No forbidden substring"
+    ],
+    "i18n_key": "pattern.automaton_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.bitmask_dp",
+    "name": "状压 DP 模式",
+    "en_name": "Bitmask DP Pattern",
+    "category": "DP Patterns",
+    "description": "状压 DP 模式用于识别并求解Bitmask DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "集合规模小",
+      "状态是已选子集",
+      "枚举子集转移"
+    ],
+    "required_items": [
+      "2.8.20",
+      "2.11.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "mask 表示集合",
+      "枚举子集 sub=(sub-1)&mask"
+    ],
+    "typical_complexities": [
+      "O(n2^n)",
+      "O(2^n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "TSP DP"
+    ],
+    "i18n_key": "pattern.bitmask_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.linear_dp_sequence",
+    "name": "序列线性 DP",
+    "en_name": "Linear Sequence DP",
+    "category": "DP Patterns",
+    "description": "序列线性 DP用于识别并求解Linear Sequence DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "只依赖前若干位置",
+      "序列最优值",
+      "可滚动数组"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "定义 dp[i] 为前缀答案",
+      "压缩固定窗口依赖"
+    ],
+    "typical_complexities": [
+      "O(n * transition)",
+      "O(1) to O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "House Robber"
+    ],
+    "i18n_key": "pattern.linear_dp_sequence",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.lis_dp",
+    "name": "最长递增子序列模式",
+    "en_name": "LIS Pattern",
+    "category": "DP Patterns",
+    "description": "最长递增子序列模式用于识别并求解LIS Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "严格/非严格递增子序列",
+      "可选 O(n^2) 或贪心二分",
+      "需要长度或恢复路径"
+    ],
+    "required_items": [
+      "2.3.6",
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "tails 数组维护最小结尾",
+      "lower_bound/upper_bound 区分边界"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 300"
+    ],
+    "i18n_key": "pattern.lis_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.lcs_dp",
+    "name": "最长公共子序列模式",
+    "en_name": "LCS Pattern",
+    "category": "DP Patterns",
+    "description": "最长公共子序列模式用于识别并求解LCS Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "两个序列匹配",
+      "可跳过字符",
+      "状态为两个前缀"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "dp[i][j] 表示前缀最优",
+      "匹配时从左上转移"
+    ],
+    "typical_complexities": [
+      "O(nm)",
+      "O(min(n,m)) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 1143"
+    ],
+    "i18n_key": "pattern.lcs_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.edit_distance_dp",
+    "name": "编辑距离 DP",
+    "en_name": "Edit Distance DP",
+    "category": "DP Patterns",
+    "description": "编辑距离 DP用于识别并求解Edit Distance DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "插入删除替换代价",
+      "两个字符串转化",
+      "前缀状态"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "dp[i][j] 表示转换前缀",
+      "三种操作取最小"
+    ],
+    "typical_complexities": [
+      "O(nm)",
+      "O(min(n,m)) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 72"
+    ],
+    "i18n_key": "pattern.edit_distance_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.probability_dp",
+    "name": "概率 DP 模式",
+    "en_name": "Probability DP Pattern",
+    "category": "DP Patterns",
+    "description": "概率 DP 模式用于识别并求解Probability DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "求期望/概率",
+      "状态转移带概率权重",
+      "答案为加权和"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "把选择概率写入转移",
+      "期望用方程或拓扑顺序"
+    ],
+    "typical_complexities": [
+      "O(states * transitions)",
+      "O(states) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "AtCoder DP I"
+    ],
+    "i18n_key": "pattern.probability_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.expectation_dp",
+    "name": "期望 DP 模式",
+    "en_name": "Expectation DP Pattern",
+    "category": "DP Patterns",
+    "description": "期望 DP 模式用于识别并求解Expectation DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "求平均步数/期望收益",
+      "状态可能自环",
+      "需要列方程或逆推"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "E[state]=1+sum pE[next]",
+      "按可消元顺序处理"
+    ],
+    "typical_complexities": [
+      "O(states * transitions)",
+      "May require linear solve"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "AtCoder DP J"
+    ],
+    "i18n_key": "pattern.expectation_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.profile_dp",
+    "name": "轮廓线 DP",
+    "en_name": "Profile DP Pattern",
+    "category": "DP Patterns",
+    "description": "轮廓线 DP用于识别并求解Profile DP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "网格按行/列铺设",
+      "只需记当前轮廓状态",
+      "宽度较小"
+    ],
+    "required_items": [
+      "2.8.20"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "逐格推进 mask",
+      "滚动哈希表存合法轮廓"
+    ],
+    "typical_complexities": [
+      "O(nm * states)",
+      "O(states) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Domino tiling"
+    ],
+    "i18n_key": "pattern.profile_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.divide_conquer_dp_optimization",
+    "name": "分治 DP 优化",
+    "en_name": "Divide and Conquer DP Optimization",
+    "category": "DP Patterns",
+    "description": "分治 DP 优化用于识别并求解Divide and Conquer DP Optimization类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "转移 argmin 单调",
+      "dp[i][j]=min dp[i-1][k]+cost",
+      "朴素 O(kn^2) 过慢"
+    ],
+    "required_items": [
+      "2.1.5",
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "递归求一层 dp",
+      "用最优决策区间剪枝"
+    ],
+    "typical_complexities": [
+      "O(k n log n)",
+      "O(n) per layer"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Divide Conquer Optimization"
+    ],
+    "i18n_key": "pattern.divide_conquer_dp_optimization",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.monotone_queue_dp",
+    "name": "单调队列 DP 优化",
+    "en_name": "Monotone Queue DP Optimization",
+    "category": "DP Patterns",
+    "description": "单调队列 DP 优化用于识别并求解Monotone Queue DP Optimization类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "转移窗口有限",
+      "取区间最大/最小",
+      "需要线性优化"
+    ],
+    "required_items": [
+      "2.5.4",
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "把候选值入单调队列",
+      "过期下标出队"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(window) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_dp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Sliding window DP"
+    ],
+    "i18n_key": "pattern.monotone_queue_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.segment_tree_range_update",
+    "name": "线段树区间更新",
+    "en_name": "Segment Tree Range Update Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "线段树区间更新用于识别并求解Segment Tree Range Update Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "区间修改区间查询",
+      "多次在线操作",
+      "需要 lazy 标记"
+    ],
+    "required_items": [
+      "3.7.2",
+      "3.7.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "懒标记下传",
+      "节点维护聚合值"
+    ],
+    "typical_complexities": [
+      "O(log n) per operation",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Range Add Range Sum"
+    ],
+    "i18n_key": "pattern.segment_tree_range_update",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.dsu_connectivity",
+    "name": "并查集连通性",
+    "en_name": "DSU Connectivity Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "并查集连通性用于识别并求解DSU Connectivity Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "动态加边",
+      "查询是否同连通块",
+      "无需删除边"
+    ],
+    "required_items": [
+      "3.4.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "路径压缩 + 按秩合并",
+      "边加入时合并集合"
+    ],
+    "typical_complexities": [
+      "O(alpha n) amortized",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 684"
+    ],
+    "i18n_key": "pattern.dsu_connectivity",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.fenwick_prefix_maintenance",
+    "name": "树状数组前缀维护",
+    "en_name": "Fenwick Prefix Maintenance",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "树状数组前缀维护用于识别并求解Fenwick Prefix Maintenance类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "点更新前缀和",
+      "区间和查询",
+      "索引可离散化"
+    ],
+    "required_items": [
+      "3.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "lowbit 跳转",
+      "差分树状数组支持区间加"
+    ],
+    "typical_complexities": [
+      "O(log n) per operation",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Dynamic Range Sum Queries"
+    ],
+    "i18n_key": "pattern.fenwick_prefix_maintenance",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.monotonic_queue_window_max",
+    "name": "单调队列窗口最值",
+    "en_name": "Monotonic Queue Window Maximum",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "单调队列窗口最值用于识别并求解Monotonic Queue Window Maximum类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "滑动窗口最大/最小值",
+      "窗口端点单调右移",
+      "每个元素最多进出一次"
+    ],
+    "required_items": [
+      "2.5.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "队列存候选下标",
+      "队尾弹出劣候选"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(k) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 239"
+    ],
+    "i18n_key": "pattern.monotonic_queue_window_max",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.order_statistic_maintenance",
+    "name": "动态第 k 小维护",
+    "en_name": "Order Statistic Maintenance",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "动态第 k 小维护用于识别并求解Order Statistic Maintenance类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "动态插入删除",
+      "查询第 k 小/排名",
+      "值域可离散化"
+    ],
+    "required_items": [
+      "3.7.2",
+      "3.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "频率树上二分",
+      "坐标压缩后维护计数"
+    ],
+    "typical_complexities": [
+      "O(log n) per operation",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "K-th order statistic"
+    ],
+    "i18n_key": "pattern.order_statistic_maintenance",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.range_mode_offline",
+    "name": "区间众数离线维护",
+    "en_name": "Range Mode Offline Maintenance",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "区间众数离线维护用于识别并求解Range Mode Offline Maintenance类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多次区间查询",
+      "在线结构困难",
+      "允许重排查询"
+    ],
+    "required_items": [
+      "2.1.8",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "按块排序查询",
+      "移动端点维护计数"
+    ],
+    "typical_complexities": [
+      "O((n+q) sqrt n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Mo's Algorithm mode"
+    ],
+    "i18n_key": "pattern.range_mode_offline",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.rollback_dsu",
+    "name": "可撤销并查集",
+    "en_name": "Rollback DSU Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "可撤销并查集用于识别并求解Rollback DSU Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "离线动态连通性",
+      "需要撤销合并",
+      "通常不用路径压缩"
+    ],
+    "required_items": [
+      "3.4.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "栈记录修改",
+      "递归分治时间段"
+    ],
+    "typical_complexities": [
+      "O(log q * alpha n) per edge interval",
+      "O(n+q) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Dynamic Connectivity Offline"
+    ],
+    "i18n_key": "pattern.rollback_dsu",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.persistent_segment_tree_kth",
+    "name": "主席树第 k 小",
+    "en_name": "Persistent Segment Tree K-th",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "主席树第 k 小用于识别并求解Persistent Segment Tree K-th类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "静态区间第 k 小",
+      "历史版本前缀",
+      "查询用版本相减"
+    ],
+    "required_items": [
+      "3.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "每个前缀建一棵持久化权值树",
+      "离散化值域"
+    ],
+    "typical_complexities": [
+      "O(log n) per query",
+      "O(n log n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Luogu P3834"
+    ],
+    "i18n_key": "pattern.persistent_segment_tree_kth",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.lazy_tag_composition",
+    "name": "懒标记组合",
+    "en_name": "Lazy Tag Composition Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "懒标记组合用于识别并求解Lazy Tag Composition Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "区间赋值/加法/乘法混合",
+      "标记顺序影响结果",
+      "需要封装 tag compose"
+    ],
+    "required_items": [
+      "3.7.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "定义标记作用函数",
+      "下传时先组合后应用"
+    ],
+    "typical_complexities": [
+      "O(log n) per operation",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Range affine update"
+    ],
+    "i18n_key": "pattern.lazy_tag_composition",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.sparse_table_idempotent",
+    "name": "ST 表幂等查询",
+    "en_name": "Sparse Table Idempotent Query",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "ST 表幂等查询用于识别并求解Sparse Table Idempotent Query类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "静态区间最值/gcd",
+      "无修改",
+      "查询可由两个重叠块合并"
+    ],
+    "required_items": [
+      "2.1.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "预处理 2^k 区间",
+      "幂等运算 O(1) 查询"
+    ],
+    "typical_complexities": [
+      "O(n log n) build, O(1) query",
+      "O(n log n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "RMQ"
+    ],
+    "i18n_key": "pattern.sparse_table_idempotent",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.heap_lazy_deletion",
+    "name": "堆懒删除",
+    "en_name": "Heap Lazy Deletion",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "堆懒删除用于识别并求解Heap Lazy Deletion类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "堆不支持任意删除",
+      "需要维护窗口或动态集合最值",
+      "删除操作可延迟"
+    ],
+    "required_items": [
+      "3.2.6",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "删除表记录待删次数",
+      "堆顶无效时循环弹出"
+    ],
+    "typical_complexities": [
+      "O(log n) amortized",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Sliding Median variants"
+    ],
+    "i18n_key": "pattern.heap_lazy_deletion",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.trie_prefix_query",
+    "name": "Trie 前缀查询",
+    "en_name": "Trie Prefix Query Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "Trie 前缀查询用于识别并求解Trie Prefix Query Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "大量字符串前缀查询",
+      "字典树共享前缀",
+      "需要插入/查找/计数"
+    ],
+    "required_items": [
+      "2.10.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "节点边表示字符",
+      "终止标记和前缀计数"
+    ],
+    "typical_complexities": [
+      "O(total characters)",
+      "O(nodes * alphabet)"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 208"
+    ],
+    "i18n_key": "pattern.trie_prefix_query",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.coordinate_compression",
+    "name": "坐标离散化维护",
+    "en_name": "Coordinate Compression Pattern",
+    "category": "Data Structure Maintenance Patterns",
+    "description": "坐标离散化维护用于识别并求解Coordinate Compression Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "值域很大但出现值少",
+      "需要数组/树状数组下标",
+      "只关心相对顺序"
+    ],
+    "required_items": [
+      "2.2.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "排序去重映射 rank",
+      "保留原值用于反查"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Range query with large coordinates"
+    ],
+    "i18n_key": "pattern.coordinate_compression",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.tree_path_query",
+    "name": "树上路径查询",
+    "en_name": "Tree Path Query Pattern",
+    "category": "Tree Query Patterns",
+    "description": "树上路径查询用于识别并求解Tree Path Query Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "树上两点路径",
+      "路径聚合/修改",
+      "需要拆成若干链区间"
+    ],
+    "required_items": [
+      "2.14.2",
+      "2.14.4",
+      "3.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "LCA 拆路径",
+      "重链剖分映射到线段树"
+    ],
+    "typical_complexities": [
+      "O(log^2 n) per query",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "QTREE"
+    ],
+    "i18n_key": "pattern.tree_path_query",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.lca_binary_lifting",
+    "name": "LCA 倍增",
+    "en_name": "LCA Binary Lifting Pattern",
+    "category": "Tree Query Patterns",
+    "description": "LCA 倍增用于识别并求解LCA Binary Lifting Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多次最近公共祖先查询",
+      "静态树",
+      "需要向上跳祖先"
+    ],
+    "required_items": [
+      "2.14.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "预处理 up[v][k]",
+      "先齐深度再同步上跳"
+    ],
+    "typical_complexities": [
+      "O(n log n) build, O(log n) query",
+      "O(n log n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Company Queries II"
+    ],
+    "i18n_key": "pattern.lca_binary_lifting",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.rerooting_tree_dp",
+    "name": "换根 DP",
+    "en_name": "Rerooting Tree DP",
+    "category": "Tree Query Patterns",
+    "description": "换根 DP用于识别并求解Rerooting Tree DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "每个点作为根都要求答案",
+      "子树答案需换到邻居",
+      "全树贡献可局部重算"
+    ],
+    "required_items": [
+      "2.8.13"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "先下行求子树",
+      "再上行传父侧贡献"
+    ],
+    "typical_complexities": [
+      "O(n * state)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Tree distances"
+    ],
+    "i18n_key": "pattern.rerooting_tree_dp",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.virtual_tree_pattern",
+    "name": "虚树建模",
+    "en_name": "Virtual Tree Pattern",
+    "category": "Tree Query Patterns",
+    "description": "虚树建模用于识别并求解Virtual Tree Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "每次只关心少量关键点",
+      "原树很大查询多",
+      "需要压缩相关路径"
+    ],
+    "required_items": [
+      "2.14.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "按 DFS 序排序关键点",
+      "加入相邻 LCA 后用栈建树"
+    ],
+    "typical_complexities": [
+      "O(k log k)",
+      "O(k) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Virtual tree problems"
+    ],
+    "i18n_key": "pattern.virtual_tree_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.subtree_query_euler",
+    "name": "子树查询欧拉序",
+    "en_name": "Subtree Query Euler Tour",
+    "category": "Tree Query Patterns",
+    "description": "子树查询欧拉序用于识别并求解Subtree Query Euler Tour类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "子树对应连续区间",
+      "需要子树加/查",
+      "静态树"
+    ],
+    "required_items": [
+      "2.7.1",
+      "3.7.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "DFS 记录 tin/tout",
+      "在线性序列上用 BIT/线段树"
+    ],
+    "typical_complexities": [
+      "O(log n) per query",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "CSES Subtree Queries"
+    ],
+    "i18n_key": "pattern.subtree_query_euler",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.centroid_decomposition_query",
+    "name": "点分治查询",
+    "en_name": "Centroid Decomposition Query",
+    "category": "Tree Query Patterns",
+    "description": "点分治查询用于识别并求解Centroid Decomposition Query类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "树上距离约束",
+      "动态点更新和最近点查询",
+      "需要分治祖先链"
+    ],
+    "required_items": [
+      "2.1.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "递归找重心",
+      "每个点记录到分治祖先距离"
+    ],
+    "typical_complexities": [
+      "O(log n) update/query",
+      "O(n log n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Dynamic nearest marked node"
+    ],
+    "i18n_key": "pattern.centroid_decomposition_query",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.kmp_string_matching",
+    "name": "KMP 字符串匹配",
+    "en_name": "KMP String Matching",
+    "category": "String Matching Patterns",
+    "description": "KMP 字符串匹配用于识别并求解KMP String Matching类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "单模式串匹配",
+      "需要线性时间",
+      "失配后利用前后缀"
+    ],
+    "required_items": [
+      "2.10.3",
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "构造 prefix function",
+      "文本扫描时按失配边跳转"
+    ],
+    "typical_complexities": [
+      "O(n+m)",
+      "O(m) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 28"
+    ],
+    "i18n_key": "pattern.kmp_string_matching",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.rabin_karp_hash",
+    "name": "滚动哈希匹配",
+    "en_name": "Rabin-Karp Rolling Hash",
+    "category": "String Matching Patterns",
+    "description": "滚动哈希匹配用于识别并求解Rabin-Karp Rolling Hash类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "子串相等查询",
+      "多次比较",
+      "可接受低概率碰撞或双哈希"
+    ],
+    "required_items": [
+      "2.10.2",
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "前缀哈希 O(1) 取子串",
+      "双模数降低碰撞"
+    ],
+    "typical_complexities": [
+      "O(n+m)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "String hashing tasks"
+    ],
+    "i18n_key": "pattern.rabin_karp_hash",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.trie_multi_pattern",
+    "name": "Trie 多模式前缀匹配",
+    "en_name": "Trie Multi-pattern Prefix Matching",
+    "category": "String Matching Patterns",
+    "description": "Trie 多模式前缀匹配用于识别并求解Trie Multi-pattern Prefix Matching类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多个模式串共享前缀",
+      "查询前缀存在性",
+      "在线插入查找"
+    ],
+    "required_items": [
+      "2.10.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "字典树节点存通过次数",
+      "按字符逐层走"
+    ],
+    "typical_complexities": [
+      "O(total characters)",
+      "O(nodes) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Word Dictionary"
+    ],
+    "i18n_key": "pattern.trie_multi_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.aho_corasick_matching",
+    "name": "AC 自动机多模式匹配",
+    "en_name": "Aho-Corasick Multi-pattern Matching",
+    "category": "String Matching Patterns",
+    "description": "AC 自动机多模式匹配用于识别并求解Aho-Corasick Multi-pattern Matching类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "大量模式串同时匹配",
+      "需要所有出现位置/计数",
+      "模式间有前缀关系"
+    ],
+    "required_items": [
+      "2.10.4",
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "Trie + failure 链",
+      "BFS 构建自动机转移"
+    ],
+    "typical_complexities": [
+      "O(text + total pattern length + matches)",
+      "O(nodes * alphabet)"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Multi-pattern matching"
+    ],
+    "i18n_key": "pattern.aho_corasick_matching",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.z_algorithm_pattern",
+    "name": "Z 算法匹配",
+    "en_name": "Z Algorithm Pattern",
+    "category": "String Matching Patterns",
+    "description": "Z 算法匹配用于识别并求解Z Algorithm Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "需要每个位置与前缀 LCP",
+      "模式匹配可拼接 pattern#text",
+      "线性维护 Z-box"
+    ],
+    "required_items": [
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "维护 [l,r] 匹配区间",
+      "Z 值达到模式长度即匹配"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Z-function tasks"
+    ],
+    "i18n_key": "pattern.z_algorithm_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.suffix_array_lcp_query",
+    "name": "后缀数组 + LCP",
+    "en_name": "Suffix Array + LCP Pattern",
+    "category": "String Matching Patterns",
+    "description": "后缀数组 + LCP用于识别并求解Suffix Array + LCP Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "全局子串排序",
+      "最长重复子串",
+      "多次 LCP 查询"
+    ],
+    "required_items": [
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "后缀排序后相邻比较",
+      "LCP 上建 RMQ"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Longest repeated substring"
+    ],
+    "i18n_key": "pattern.suffix_array_lcp_query",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.manacher_palindrome",
+    "name": "Manacher 回文",
+    "en_name": "Manacher Palindrome Pattern",
+    "category": "String Matching Patterns",
+    "description": "Manacher 回文用于识别并求解Manacher Palindrome Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "所有回文半径",
+      "最长回文子串",
+      "需要线性时间"
+    ],
+    "required_items": [
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "插入分隔符统一奇偶",
+      "利用当前最右回文镜像"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 5 optimized"
+    ],
+    "i18n_key": "pattern.manacher_palindrome",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.string_dp_wildcard",
+    "name": "通配符匹配 DP",
+    "en_name": "Wildcard String Matching DP",
+    "category": "String Matching Patterns",
+    "description": "通配符匹配 DP用于识别并求解Wildcard String Matching DP类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "模式含 ? 或 *",
+      "字符匹配和空串转移",
+      "两个前缀状态"
+    ],
+    "required_items": [
+      "2.8.3",
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "dp[i][j] 表示前缀匹配",
+      "* 可匹配空或扩展"
+    ],
+    "typical_complexities": [
+      "O(nm)",
+      "O(m) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_string"
+    ],
+    "audience": [
+      "middle_school_oi",
+      "university_icpc"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "LeetCode 44"
+    ],
+    "i18n_key": "pattern.string_dp_wildcard",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.offline_query_pattern",
+    "name": "离线查询模式",
+    "en_name": "Offline Query Pattern",
+    "category": "Competitive Modeling Patterns",
+    "description": "离线查询模式用于识别并求解Offline Query Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "查询可重排",
+      "按阈值/时间排序更容易",
+      "答案不依赖原处理顺序"
+    ],
+    "required_items": [
+      "2.1.8",
+      "2.2.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "排序事件和查询",
+      "边扫边维护数据结构"
+    ],
+    "typical_complexities": [
+      "O((n+q) log n)",
+      "Depends on structure"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "KQUERY"
+    ],
+    "i18n_key": "pattern.offline_query_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.sweep_line_pattern",
+    "name": "扫描线模式",
+    "en_name": "Sweep Line Pattern",
+    "category": "Competitive Modeling Patterns",
+    "description": "扫描线模式用于识别并求解Sweep Line Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "几何/区间事件按坐标发生",
+      "维护当前活跃集合",
+      "求面积/交点/重叠"
+    ],
+    "required_items": [
+      "4.7.42",
+      "3.7.2"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "端点转事件",
+      "用线段树维护覆盖长度"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Rectangle Union Area"
+    ],
+    "i18n_key": "pattern.sweep_line_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.meet_in_the_middle",
+    "name": "折半搜索",
+    "en_name": "Meet-in-the-middle",
+    "category": "Competitive Modeling Patterns",
+    "description": "折半搜索用于识别并求解Meet-in-the-middle类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "n 约 30-40",
+      "全枚举 2^n 过大",
+      "拆成两半可合并"
+    ],
+    "required_items": [
+      "2.1.1",
+      "2.3.6"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "枚举左右半集合",
+      "排序后二分或双指针合并"
+    ],
+    "typical_complexities": [
+      "O(2^(n/2) log 2^(n/2))",
+      "O(2^(n/2)) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Subset Sum n=40"
+    ],
+    "i18n_key": "pattern.meet_in_the_middle",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.constructive_invariant",
+    "name": "构造题不变量",
+    "en_name": "Constructive Invariant Pattern",
+    "category": "Competitive Modeling Patterns",
+    "description": "构造题不变量用于识别并求解Constructive Invariant Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "要求输出任意方案",
+      "存在性依赖不变量",
+      "需要保持某种性质"
+    ],
+    "required_items": [
+      "2.1.7"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "寻找奇偶/和/连通性不变量",
+      "从小规模构造扩展"
+    ],
+    "typical_complexities": [
+      "Problem dependent",
+      "Usually O(n log n) or O(n)"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Codeforces constructive"
+    ],
+    "i18n_key": "pattern.constructive_invariant",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.greedy_exchange_argument",
+    "name": "贪心交换论证",
+    "en_name": "Greedy Exchange Argument",
+    "category": "Competitive Modeling Patterns",
+    "description": "贪心交换论证用于识别并求解Greedy Exchange Argument类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "局部选择看似最优",
+      "需要证明排序或选择规则",
+      "可通过交换改善"
+    ],
+    "required_items": [
+      "2.2.1"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "排序后相邻交换证明",
+      "反证最早不同位置"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(1) to O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Activity Selection"
+    ],
+    "i18n_key": "pattern.greedy_exchange_argument",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.binary_lifting_state_jump",
+    "name": "倍增状态跳转",
+    "en_name": "Binary Lifting State Jump",
+    "category": "Competitive Modeling Patterns",
+    "description": "倍增状态跳转用于识别并求解Binary Lifting State Jump类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "重复应用同一转移很多次",
+      "k 很大",
+      "转移函数可组合"
+    ],
+    "required_items": [
+      "2.1.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "预处理 jump[state][p]",
+      "按二进制位跳转"
+    ],
+    "typical_complexities": [
+      "O(n log K) build, O(log K) query",
+      "O(n log K) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Functional graph jumps"
+    ],
+    "i18n_key": "pattern.binary_lifting_state_jump",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.modular_counting_pattern",
+    "name": "取模计数模式",
+    "en_name": "Modular Counting Pattern",
+    "category": "Competitive Modeling Patterns",
+    "description": "取模计数模式用于识别并求解Modular Counting Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "答案很大只需模数",
+      "组合/路径计数",
+      "转移中保持取模"
+    ],
+    "required_items": [
+      "2.8.3"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1"
+    ],
+    "common_transforms": [
+      "每次加乘后取模",
+      "预处理阶乘逆元"
+    ],
+    "typical_complexities": [
+      "O(states)",
+      "O(states) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Counting paths modulo"
+    ],
+    "i18n_key": "pattern.modular_counting_pattern",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.inclusion_exclusion_counting",
+    "name": "容斥计数",
+    "en_name": "Inclusion-Exclusion Counting",
+    "category": "Competitive Modeling Patterns",
+    "description": "容斥计数用于识别并求解Inclusion-Exclusion Counting类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "至少/至多条件交叠",
+      "直接计数重复",
+      "集合数量小"
+    ],
+    "required_items": [
+      "2.1.1",
+      "2.11.4"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "按子集奇偶加减",
+      "把限制转成违反条件集合"
+    ],
+    "typical_complexities": [
+      "O(2^k * work)",
+      "O(1) to O(2^k)"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Derangements variants"
+    ],
+    "i18n_key": "pattern.inclusion_exclusion_counting",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.coordinate_sweep_compression",
+    "name": "离散化扫描",
+    "en_name": "Compressed Coordinate Sweep",
+    "category": "Competitive Modeling Patterns",
+    "description": "离散化扫描用于识别并求解Compressed Coordinate Sweep类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "坐标范围巨大",
+      "事件数有限",
+      "相邻事件之间答案不变"
+    ],
+    "required_items": [
+      "2.2.1",
+      "4.7.42"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "离散化端点",
+      "按压缩坐标维护覆盖"
+    ],
+    "typical_complexities": [
+      "O(n log n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Large coordinate intervals"
+    ],
+    "i18n_key": "pattern.coordinate_sweep_compression",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.divide_conquer_offline",
+    "name": "整体二分",
+    "en_name": "Parallel Binary Search Pattern",
+    "category": "Competitive Modeling Patterns",
+    "description": "整体二分用于识别并求解Parallel Binary Search Pattern类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "多个查询都在找最早/最小答案",
+      "判定可离线批量处理",
+      "答案范围可二分"
+    ],
+    "required_items": [
+      "2.3.6",
+      "2.1.8"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "查询按 mid 分组",
+      "递归答案区间并增量维护"
+    ],
+    "typical_complexities": [
+      "O((n+q) log V * update)",
+      "Depends on maintainer"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Meteors problem"
+    ],
+    "i18n_key": "pattern.divide_conquer_offline",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": true,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  },
+  {
+    "pattern_id": "pat.randomized_hash_check",
+    "name": "随机哈希判等",
+    "en_name": "Randomized Hash Check",
+    "category": "Competitive Modeling Patterns",
+    "description": "随机哈希判等用于识别并求解Randomized Hash Check类问题，强调题面信号、状态/结构抽象和可复用的复杂度边界。",
+    "recognition_signals": [
+      "复杂结构等价难判",
+      "可用随机权重压缩状态",
+      "低概率误判可接受"
+    ],
+    "required_items": [
+      "3.2.5"
+    ],
+    "related_items": [
+      "2.1.2",
+      "2.7.1",
+      "2.8.3"
+    ],
+    "common_transforms": [
+      "给元素随机权值",
+      "集合/多重集合用和或 xor 摘要"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n) space"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "noi"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [
+      "Probabilistic equality check"
+    ],
+    "i18n_key": "pattern.randomized_hash_check",
+    "source": "patterns_batch1_thread3",
+    "review_status": {
+      "need_manual_review": false,
+      "review_reason": "第一批题型模式，需后续补充多语言原生表述和平台题单映射。"
+    }
+  }
+]

@@ -1,0 +1,466 @@
+{
+  "meta": {
+    "title": "Stage3F 候选池重建规划",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T12:10:00.000Z",
+    "main_graph_modified": false,
+    "item_count": 1641,
+    "section_count": 65
+  },
+  "stage3e_summary": {
+    "total_new_nodes": 159,
+    "item_count_change": "1482→1641",
+    "batches_merged": {
+      "batch1": 30,
+      "batch2": 30,
+      "batch3": 30,
+      "batch4": 30,
+      "batch5_smaller15": 15,
+      "batch6_fallback24": 24
+    },
+    "remaining_safe_candidate": {
+      "candidate_id": "cand.ds.multidimensional.dominance_counting",
+      "name": "Multidimensional: Dominance Counting",
+      "section": "3.13",
+      "risk": "green",
+      "action": "carry_over_to_stage3f"
+    },
+    "stage3e_should_stop": true,
+    "reason": "aggressive_pool+reserve_pool已基本耗尽，剩余候选名称均已存在于主图谱中"
+  },
+  "reserve_pool_analysis": {
+    "total_original": 30,
+    "already_merged_by_candidate_id": 11,
+    "name_covered_by_graph": 15,
+    "still_usable": 4,
+    "merged_details": [
+      {
+        "candidate_id": "cand.graph.closure_model.binary_decision_model",
+        "name": "最大权闭合子图：Binary Decision Model",
+        "existing_item_id": "2.21.70",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.maximum_weight_closure",
+        "name": "最大权闭合子图：Maximum Weight Closure",
+        "existing_item_id": "2.21.71",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+        "name": "Bitset Linear Basis: Basis On Tree",
+        "existing_item_id": "3.13.173",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+        "name": "Dynamic Tree: Cut Link Connectivity",
+        "existing_item_id": "3.13.174",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+        "name": "Dynamic Tree: Dynamic Lca",
+        "existing_item_id": "3.13.175",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+        "name": "Dynamic Tree: Path Lazy Tag",
+        "existing_item_id": "3.13.176",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+        "name": "Dynamic Tree: Reroot Query",
+        "existing_item_id": "3.13.177",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+        "name": "Dynamic Tree: Virtual Subtree Aggregate",
+        "existing_item_id": "3.13.178",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+        "name": "Merge Sort Tree: 2d Dominance",
+        "existing_item_id": "3.13.179",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+        "name": "Multidimensional: Bitset Rectangle Query",
+        "existing_item_id": "3.13.180",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+        "name": "Multidimensional: Cdq Divide Conquer",
+        "existing_item_id": "3.13.181",
+        "status": "wait_for_stage3e_result"
+      }
+    ],
+    "covered_details": [
+      {
+        "candidate_id": "cand.graph.flow_bounds.demands",
+        "name": "上下界网络流：Demands",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+        "name": "匹配与覆盖：Weighted General Matching",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+        "name": "上下界网络流：Minimum Flow",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+        "name": "匹配与覆盖：Tutte Matrix",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+        "name": "上下界网络流：Edge Lower Bound Transform",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+        "name": "上下界网络流：Maximum Flow",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3g"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+        "name": "上下界网络流：Min Cost Circulation",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3g"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.node_demand",
+        "name": "上下界网络流：Node Demand",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3g"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+        "name": "上下界网络流：Bounded Bipartite Matching",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.konig_theorem",
+        "name": "匹配与覆盖：Konig Theorem",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.stable_marriage",
+        "name": "匹配与覆盖：Stable Marriage",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+        "name": "匹配与覆盖：Minimum Path Cover",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+        "name": "匹配与覆盖：Dilworth Theorem",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+        "name": "匹配与覆盖：Blossom Algorithm",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3f"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+        "name": "图论建模：Difference Constraints",
+        "reason": "名称已在图谱中 (YES)",
+        "status": "reserve_for_stage3g"
+      }
+    ],
+    "usable_details": [
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+        "name": "Merge Sort Tree: Memory Optimization",
+        "section": "3.13",
+        "risk": "green",
+        "action": "add_new",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+        "name": "Merge Sort Tree: Offline Inversion",
+        "section": "3.13",
+        "risk": "green",
+        "action": "add_new",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+        "name": "Merge Sort Tree: Persistent Variant",
+        "section": "3.13",
+        "risk": "green",
+        "action": "add_new",
+        "status": "wait_for_stage3e_result"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.dominance_counting",
+        "name": "Multidimensional: Dominance Counting",
+        "section": "3.13",
+        "risk": "green",
+        "action": "add_new",
+        "status": "wait_for_stage3e_result"
+      }
+    ]
+  },
+  "external_pool_analysis": {
+    "batch1_codex": {
+      "total": 340,
+      "name_in_graph": 284,
+      "alias_conflict": 10,
+      "clean_for_stage3f": 46,
+      "section_distribution": {
+        "2.21": 25,
+        "3.13": 21
+      },
+      "risk_distribution": {
+        "medium": 30,
+        "low": 16
+      }
+    },
+    "batch2_string_math_dp": {
+      "total": 83,
+      "name_in_graph": 4,
+      "clean_for_stage3f": 79,
+      "section_distribution": {
+        "advanced_algorithm": 79
+      },
+      "risk_distribution": {
+        "medium": 68,
+        "low": 11
+      }
+    }
+  },
+  "stage3f_pool_summary": {
+    "total_candidates": 130,
+    "by_source": {
+      "stage3e_v2_remaining": 1,
+      "unknown": 4,
+      "external_batch1_codex": 46,
+      "external_batch2_string_math_dp": 79
+    },
+    "by_section": {
+      "3.13": 26,
+      "2.21": 25,
+      "advanced_algorithm": 79
+    },
+    "by_risk": {
+      "green": 5,
+      "medium": 98,
+      "low": 27
+    }
+  },
+  "first_batch_suggestion": {
+    "recommended_count": 20,
+    "recommended_approach": "aggressive_mode_with_lower_capacity",
+    "note_stage3e_aggressive_depleted": true,
+    "note_new_sections_available": "高级算法/字符串/数学/DP (advanced_algorithm)",
+    "note_batch2_pool_available": "83个候选(79个名称不在图谱中)",
+    "suggested_candidates": [
+      {
+        "rank": 1,
+        "candidate_id": "cand.ds.multidimensional.dominance_counting",
+        "name": "Multidimensional: Dominance Counting",
+        "section": "3.13",
+        "risk": "green",
+        "source": "stage3e_v2_remaining"
+      },
+      {
+        "rank": 2,
+        "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+        "name": "Merge Sort Tree: Memory Optimization",
+        "section": "3.13",
+        "risk": "green",
+        "source": ""
+      },
+      {
+        "rank": 3,
+        "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+        "name": "Merge Sort Tree: Offline Inversion",
+        "section": "3.13",
+        "risk": "green",
+        "source": ""
+      },
+      {
+        "rank": 4,
+        "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+        "name": "Merge Sort Tree: Persistent Variant",
+        "section": "3.13",
+        "risk": "green",
+        "source": ""
+      },
+      {
+        "rank": 5,
+        "candidate_id": "cand.ds.multidimensional.dominance_counting",
+        "name": "Multidimensional: Dominance Counting",
+        "section": "3.13",
+        "risk": "green",
+        "source": ""
+      },
+      {
+        "rank": 6,
+        "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+        "name": "位集与线性基：Rollback Linear Basis",
+        "section": "3.13",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 7,
+        "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+        "name": "位集与线性基：Maximum Xor Query",
+        "section": "3.13",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 8,
+        "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+        "name": "位集与线性基：Rank Over Gf2",
+        "section": "3.13",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 9,
+        "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+        "name": "位集与线性基：Basis With Deletion",
+        "section": "3.13",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 10,
+        "candidate_id": "cand.graph.scc_dag.dag_reachability",
+        "name": "强连通分量 DAG：Dag Reachability",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 11,
+        "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+        "name": "动态图连通性：Divide And Conquer On Time",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 12,
+        "candidate_id": "cand.graph.scc_dag.dominating_components",
+        "name": "强连通分量 DAG：Dominating Components",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 13,
+        "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+        "name": "动态图连通性：Edge Interval Model",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 14,
+        "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+        "name": "强连通分量 DAG：Minimum Edges To Strong",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 15,
+        "candidate_id": "cand.graph.global_min_cut.minimum_cut_modeling",
+        "name": "全局最小割：Minimum Cut Modeling",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 16,
+        "candidate_id": "cand.graph.scc_dag.scc_dp",
+        "name": "强连通分量 DAG：Scc Dp",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 17,
+        "candidate_id": "cand.graph.dynamic_connectivity.dynamic_bridge",
+        "name": "动态图连通性：Dynamic Bridge",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 18,
+        "candidate_id": "cand.graph.scc_dag.component_topo_order",
+        "name": "强连通分量 DAG：Component Topo Order",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 19,
+        "candidate_id": "cand.graph.dynamic_connectivity.dynamic_biconnectivity",
+        "name": "动态图连通性：Dynamic Biconnectivity",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      },
+      {
+        "rank": 20,
+        "candidate_id": "cand.graph.dynamic_connectivity.connectivity_snapshots",
+        "name": "动态图连通性：Connectivity Snapshots",
+        "section": "2.21",
+        "risk": "low",
+        "source": "external_batch1_codex"
+      }
+    ],
+    "recommended_next_action": "先完成Stage3F候选池标准化(含高级算法section解析)，再启动Batch1"
+  },
+  "recommendations": {
+    "stage3e_should_stop": true,
+    "stage3f_needs_pool_rebuild": true,
+    "dominance_counting_enters_stage3f": true,
+    "first_batch_size": 20,
+    "continue_aggressive_mode": true,
+    "aggressive_mode_modification": "降低单批容量(建议20)，启用新section路由，排除reserve_pool已覆盖候选",
+    "main_graph_modified": false,
+    "next_steps": [
+      "1. 确认Stage3E正式完成(1641 nodes)",
+      "2. 将dominance_counting加入Stage3F候选池",
+      "3. 解析External Batch2(字符串/数学/DP)的section目标",
+      "4. 创建外部候选池到主图谱section的完整映射",
+      "5. 对advanced_algorithm候选做section归属分析",
+      "6. 生成Stage3F Batch1候选计划(20个)",
+      "7. 执行动态预审(严格重复守卫)"
+    ]
+  }
+}

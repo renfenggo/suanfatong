@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T07:46:32.178314+00:00",
+    "total_template_nodes": 32,
+    "parent_groups": 7,
+    "decisions": 32,
+    "main_graph_modified": false
+  },
+  "decisions": [
+    {
+      "item_id": "2.8.202",
+      "name": "凸包维护 DP的边界压缩 (凸包维护 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.202",
+      "target_parent_name": "凸包维护 DP",
+      "suggested_new_name": "凸包维护 DP",
+      "suggested_direct_pre": [
+        "2.8.1",
+        "4.7.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.209",
+      "name": "凸包维护 DP的可合并状态 (凸包维护 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.202",
+      "target_parent_name": "凸包维护 DP",
+      "suggested_new_name": "凸包维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 凸包维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.210",
+      "name": "凸包维护 DP的在线转移 (凸包维护 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.202",
+      "target_parent_name": "凸包维护 DP",
+      "suggested_new_name": "凸包维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 凸包维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.211",
+      "name": "凸包维护 DP的离线转移 (凸包维护 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.202",
+      "target_parent_name": "凸包维护 DP",
+      "suggested_new_name": "凸包维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 凸包维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.212",
+      "name": "凸包维护 DP的分段决策 (凸包维护 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.202",
+      "target_parent_name": "凸包维护 DP",
+      "suggested_new_name": "凸包维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 凸包维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.203",
+      "name": "分治转移 DP的边界压缩 (分治转移 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.203",
+      "target_parent_name": "分治转移 DP",
+      "suggested_new_name": "分治转移 DP",
+      "suggested_direct_pre": [
+        "2.1.1",
+        "2.8.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.219",
+      "name": "分治转移 DP的可合并状态 (分治转移 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.203",
+      "target_parent_name": "分治转移 DP",
+      "suggested_new_name": "分治转移 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 分治转移 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.220",
+      "name": "分治转移 DP的在线转移 (分治转移 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.203",
+      "target_parent_name": "分治转移 DP",
+      "suggested_new_name": "分治转移 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 分治转移 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.221",
+      "name": "分治转移 DP的离线转移 (分治转移 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.203",
+      "target_parent_name": "分治转移 DP",
+      "suggested_new_name": "分治转移 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 分治转移 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.222",
+      "name": "分治转移 DP的分段决策 (分治转移 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.203",
+      "target_parent_name": "分治转移 DP",
+      "suggested_new_name": "分治转移 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 分治转移 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.207",
+      "name": "前缀最值 DP的边界压缩 (前缀最值 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.207",
+      "target_parent_name": "前缀最值 DP",
+      "suggested_new_name": "前缀最值 DP",
+      "suggested_direct_pre": [
+        "2.8.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.235",
+      "name": "前缀最值 DP的可合并状态 (前缀最值 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.207",
+      "target_parent_name": "前缀最值 DP",
+      "suggested_new_name": "前缀最值 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 前缀最值 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.236",
+      "name": "前缀最值 DP的在线转移 (前缀最值 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.207",
+      "target_parent_name": "前缀最值 DP",
+      "suggested_new_name": "前缀最值 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 前缀最值 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.237",
+      "name": "前缀最值 DP的离线转移 (前缀最值 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.207",
+      "target_parent_name": "前缀最值 DP",
+      "suggested_new_name": "前缀最值 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 前缀最值 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.238",
+      "name": "前缀最值 DP的分段决策 (前缀最值 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.207",
+      "target_parent_name": "前缀最值 DP",
+      "suggested_new_name": "前缀最值 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 前缀最值 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.208",
+      "name": "后缀最值 DP的边界压缩 (后缀最值 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.208",
+      "target_parent_name": "后缀最值 DP",
+      "suggested_new_name": "后缀最值 DP",
+      "suggested_direct_pre": [
+        "2.10.1",
+        "2.8.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 2 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.239",
+      "name": "后缀最值 DP的可合并状态 (后缀最值 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.208",
+      "target_parent_name": "后缀最值 DP",
+      "suggested_new_name": "后缀最值 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 后缀最值 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.206",
+      "name": "堆维护 DP的边界压缩 (堆维护 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.206",
+      "target_parent_name": "堆维护 DP",
+      "suggested_new_name": "堆维护 DP",
+      "suggested_direct_pre": [
+        "1.5.1",
+        "2.8.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.231",
+      "name": "堆维护 DP的可合并状态 (堆维护 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.206",
+      "target_parent_name": "堆维护 DP",
+      "suggested_new_name": "堆维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 堆维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.232",
+      "name": "堆维护 DP的在线转移 (堆维护 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.206",
+      "target_parent_name": "堆维护 DP",
+      "suggested_new_name": "堆维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 堆维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.233",
+      "name": "堆维护 DP的离线转移 (堆维护 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.206",
+      "target_parent_name": "堆维护 DP",
+      "suggested_new_name": "堆维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 堆维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.234",
+      "name": "堆维护 DP的分段决策 (堆维护 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.206",
+      "target_parent_name": "堆维护 DP",
+      "suggested_new_name": "堆维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 堆维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.205",
+      "name": "线段树维护 DP的边界压缩 (线段树维护 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.205",
+      "target_parent_name": "线段树维护 DP",
+      "suggested_new_name": "线段树维护 DP",
+      "suggested_direct_pre": [
+        "2.8.1",
+        "3.7.2",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.227",
+      "name": "线段树维护 DP的可合并状态 (线段树维护 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.205",
+      "target_parent_name": "线段树维护 DP",
+      "suggested_new_name": "线段树维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 线段树维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.228",
+      "name": "线段树维护 DP的在线转移 (线段树维护 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.205",
+      "target_parent_name": "线段树维护 DP",
+      "suggested_new_name": "线段树维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 线段树维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.229",
+      "name": "线段树维护 DP的离线转移 (线段树维护 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.205",
+      "target_parent_name": "线段树维护 DP",
+      "suggested_new_name": "线段树维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 线段树维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.230",
+      "name": "线段树维护 DP的分段决策 (线段树维护 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.205",
+      "target_parent_name": "线段树维护 DP",
+      "suggested_new_name": "线段树维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 线段树维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.204",
+      "name": "队列维护 DP的边界压缩 (队列维护 DP Boundary Compression)",
+      "decision": "keep_with_dependency_shrink",
+      "target_parent_item_id": "2.8.204",
+      "target_parent_name": "队列维护 DP",
+      "suggested_new_name": "队列维护 DP",
+      "suggested_direct_pre": [
+        "1.4.1",
+        "2.8.1",
+        "2.8.2"
+      ],
+      "reason": "Keep as merged parent for 5 template sub-nodes with reduced direct_pre"
+    },
+    {
+      "item_id": "2.8.223",
+      "name": "队列维护 DP的可合并状态 (队列维护 DP Mergeable States)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.204",
+      "target_parent_name": "队列维护 DP",
+      "suggested_new_name": "队列维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 队列维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.224",
+      "name": "队列维护 DP的在线转移 (队列维护 DP Online Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.204",
+      "target_parent_name": "队列维护 DP",
+      "suggested_new_name": "队列维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 队列维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.225",
+      "name": "队列维护 DP的离线转移 (队列维护 DP Offline Transition)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.204",
+      "target_parent_name": "队列维护 DP",
+      "suggested_new_name": "队列维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 队列维护 DP (over-split sub-node)"
+    },
+    {
+      "item_id": "2.8.226",
+      "name": "队列维护 DP的分段决策 (队列维护 DP Segmented Decision)",
+      "decision": "merge_into_parent",
+      "target_parent_item_id": "2.8.204",
+      "target_parent_name": "队列维护 DP",
+      "suggested_new_name": "队列维护 DP",
+      "suggested_direct_pre": [],
+      "reason": "Merge into 队列维护 DP (over-split sub-node)"
+    }
+  ]
+}

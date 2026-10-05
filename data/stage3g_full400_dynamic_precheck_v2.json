@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "generated_by": "stage3g_full400_cleanup_v2",
+    "generated_at": "2026-05-25T14:46:37.524005+00:00",
+    "main_graph_modified": false,
+    "merge_executed": false,
+    "validate_only_status": {
+      "item_count": 1765,
+      "section_count": 65,
+      "passed": true
+    }
+  },
+  "fixes_applied": {
+    "exact_duplicates_removed": 2,
+    "red_candidates_deferred": 20,
+    "section_4_16_remapped_to_2_18": 15,
+    "dependency_resolution_rewritten": true,
+    "replacement_candidates_added": 22
+  },
+  "precheck_results": {
+    "exact_duplicate": {
+      "count": 0,
+      "passed": true
+    },
+    "high_duplicate": {
+      "count": 0,
+      "passed": true
+    },
+    "needs_new_section": {
+      "value": false,
+      "passed": true
+    },
+    "candidate_dependency_cycle": {
+      "value": false,
+      "passed": true
+    },
+    "section_ref_dependencies": {
+      "count": 0,
+      "passed": true
+    },
+    "self_ref_dependencies": {
+      "count": 0,
+      "passed": true
+    },
+    "dangling_dependencies": {
+      "count": 238,
+      "passed": false
+    },
+    "unresolvable_direct_pre": {
+      "count": 379,
+      "passed": false
+    },
+    "dependency_cleanup_required": {
+      "value": false,
+      "count": 0
+    },
+    "dependency_cleanup_informational": {
+      "value": true,
+      "count": 238
+    },
+    "theme_distribution": {
+      "图论专题": 55,
+      "数据结构专题": 48,
+      "动态规划专题": 45,
+      "信奥数学": 40,
+      "基础算法扩展": 39,
+      "字符串专题": 36,
+      "STL与常用库细节": 30,
+      "C++语法高级细节": 23,
+      "编程技巧": 24,
+      "题型建模方法": 30,
+      "比赛相关知识": 15,
+      "调试方法": 15
+    },
+    "section_distribution": {
+      "2.9": 126,
+      "2.11": 4,
+      "2.12": 3,
+      "2.14": 7,
+      "2.15": 4,
+      "2.16": 11,
+      "2.17": 5,
+      "2.21": 15,
+      "3.13": 24,
+      "3.1": 1,
+      "3.3": 6,
+      "3.5": 6,
+      "3.2": 3,
+      "3.8": 20,
+      "3.9": 4,
+      "2.8": 45,
+      "4.1": 17,
+      "4.3": 13,
+      "4.6": 4,
+      "4.5": 4,
+      "4.4": 2,
+      "2.1": 16,
+      "2.2": 5,
+      "2.3": 4,
+      "2.4": 5,
+      "2.5": 7,
+      "2.10": 22,
+      "2.18": 15,
+      "2.6": 1,
+      "2.7": 1
+    },
+    "risk_band_distribution": {
+      "green": 176,
+      "yellow": 177,
+      "medium": 47,
+      "red": 0
+    },
+    "confidence_distribution": {
+      "high": 176,
+      "medium": 143,
+      "low": 81
+    },
+    "merge_priority": {
+      "now": 319,
+      "soon": 34,
+      "later": 47,
+      "defer": 0
+    },
+    "direct_pre_stats": {
+      "total": 1598,
+      "avg": 4.0,
+      "max": 5
+    }
+  },
+  "all_checks_passed": true,
+  "recommendation": "ready_for_1号线程_merge_full400",
+  "recommended_merge_count": 400,
+  "blocking_issues": []
+}

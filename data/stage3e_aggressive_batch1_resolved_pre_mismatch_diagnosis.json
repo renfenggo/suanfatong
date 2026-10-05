@@ -1,0 +1,206 @@
+{
+  "description": "Stage3E-Aggressive Batch1 Resolved Pre Mismatch Diagnosis",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+
+  "current_graph_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "json_parsable": true,
+    "backup_status": "backup_exists_but_restore_failed",
+    "notes": "备份文件存在，但恢复操作可能失败，当前主图谱仍包含修复后的 direct_pre"
+  },
+
+  "simulation_results": {
+    "total_fixes_needed": 10,
+    "nodes_with_direct_pre_changes": 10,
+    "nodes_with_resolved_pre_mismatches": 10,
+    "nodes_with_downstream_impact": 0,
+    "notes": "实际验证报告显示 10 个节点有 resolved_pre mismatch"
+  },
+
+  "actual_validation_findings": {
+    "resolved_pre_mismatches": [
+      {
+        "item_id": "2.21.81",
+        "expected_count": 24,
+        "actual_count": 22,
+        "missing_count": 2,
+        "current_direct_pre": ["4.5.2", "2.13.10", "2.21.77", "2.21.78"]
+      },
+      {
+        "item_id": "2.21.88",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.89",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.90",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.91",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.92",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.93",
+        "expected_count": 26,
+        "actual_count": 22,
+        "missing_count": 4,
+        "current_direct_pre": ["2.13.10", "3.4.1", "2.21.44"]
+      },
+      {
+        "item_id": "2.21.96",
+        "expected_count": 37,
+        "actual_count": 33,
+        "missing_count": 4,
+        "current_direct_pre": ["2.21.67", "2.16.12", "2.21.45"]
+      },
+      {
+        "item_id": "2.21.97",
+        "expected_count": 37,
+        "actual_count": 33,
+        "missing_count": 4,
+        "current_direct_pre": ["2.21.67", "2.16.12", "2.21.45"]
+      },
+      {
+        "item_id": "2.21.98",
+        "expected_count": 37,
+        "actual_count": 33,
+        "missing_count": 4,
+        "current_direct_pre": ["2.21.67", "2.16.12", "2.21.45"]
+      }
+    ],
+    "total_mismatched_nodes": 10,
+    "total_missing_dependencies": 38,
+    "status": "当前主图谱包含修复后的 direct_pre，但 resolved_pre 未同步更新"
+  },
+
+  "root_cause_analysis": {
+    "main_cause": "Direct_pre was updated (added 2.21.44, 2.21.45, 2.21.77, 2.21.78) but resolved_pre was not recalculated",
+    "affected_node_types": [
+      "Dynamic MST series (6 nodes)",
+      "Global Min-Cut series (3 nodes)",
+      "Directed MST series (1 node)"
+    ],
+    "dependency_chain_impact": "New direct_pre nodes (2.21.44, 2.21.45, 2.21.77, 2.21.78) have their own resolved_pre dependencies that need to propagate to the affected nodes",
+    "validation_logic": "Strict validation compares stored resolved_pre with recalculated resolved_pre from updated direct_pre"
+  },
+
+  "detailed_analysis_by_series": {
+    "dynamic_mst": {
+      "series_name": "Dynamic MST",
+      "affected_nodes": ["2.21.88", "2.21.89", "2.21.90", "2.21.91", "2.21.92", "2.21.93"],
+      "node_count": 6,
+      "added_dependency": "2.21.44",
+      "missing_count_per_node": 4,
+      "total_missing": 24,
+      "reason": "2.21.44 (Dynamic MST: Offline Updates) brings additional MST and data structure dependencies"
+    },
+    "global_min_cut": {
+      "series_name": "Global Min-Cut",
+      "affected_nodes": ["2.21.96", "2.21.97", "2.21.98"],
+      "node_count": 3,
+      "added_dependency": "2.21.45",
+      "missing_count_per_node": 4,
+      "total_missing": 12,
+      "reason": "2.21.45 (Global Min-Cut: Gomory Hu Tree) brings additional min-cut and flow dependencies"
+    },
+    "directed_mst": {
+      "series_name": "Directed MST",
+      "affected_nodes": ["2.21.81"],
+      "node_count": 1,
+      "added_dependency": ["2.21.77", "2.21.78"],
+      "missing_count_per_node": 2,
+      "total_missing": 2,
+      "reason": "2.21.77 (Maximum Arborescence) and 2.21.78 (Minimum Arborescence) bring additional MST dependencies"
+    }
+  },
+
+  "downstream_impact": {
+    "affected_nodes": [],
+    "total_downstream_nodes": 0,
+    "reason": "The 10 affected nodes are Batch1 new additions with no existing downstream dependencies"
+  },
+
+  "nodes_need_resolved_pre_recalculation": [
+    "2.21.81",
+    "2.21.88",
+    "2.21.89",
+    "2.21.90",
+    "2.21.91",
+    "2.21.92",
+    "2.21.93",
+    "2.21.96",
+    "2.21.97",
+    "2.21.98"
+  ],
+
+  "recommended_fix_approach": {
+    "step1": "Do NOT rollback - direct_pre fixes are correct and desired",
+    "step2": "Recalculate resolved_pre for all 10 affected nodes using official calculation logic",
+    "step3": "No downstream node updates needed (no downstream dependencies)",
+    "step4": "Run validate-only to confirm no mismatches",
+    "recommended_script": "recompute_resolved_pre_for_stage3e_batch1.py",
+    "priority": "high",
+    "important_note": "当前主图谱的 direct_pre 修复是正确的，问题仅在于 resolved_pre 未同步更新"
+  },
+
+  "validation_results": {
+    "can_proceed_with_fix": true,
+    "requires_resolved_pre_update": true,
+    "expected_mismatch_count_after_proper_fix": 0,
+    "risk_level": "low",
+    "reason": "Affected nodes are new additions, no impact on existing graph structure"
+  },
+
+  "did_not_modify_main_graph": true,
+
+  "current_state_confirmation": {
+    "backup_file_exists": true,
+    "backup_file_correct": true,
+    "current_file_contains_fixed_direct_pre": true,
+    "current_resolved_pre_needs_update": true,
+    "validate_only_result": "failed - 10 resolved_pre mismatches found",
+    "recommendation": "Do not rollback, fix resolved_pre only"
+  },
+
+  "summary": {
+    "total_items_requiring_fix": 10,
+    "total_missing_dependencies": 38,
+    "average_missing_per_node": 3.8,
+    "fix_complexity": "low",
+    "estimated_fix_time": "few seconds",
+    "requires_manual_intervention": false,
+    "current_state": "Direct_pre fixed, resolved_pre needs update"
+  },
+
+  "next_steps": {
+    "immediate": "Create recompute_resolved_pre_for_stage3e_batch1.py script",
+    "short_term": "Run the script to fix the 10 affected nodes' resolved_pre only",
+    "validation": "Run validate-only to confirm fixes",
+    "follow_up": "If validation passes, Stage3E-Aggressive Batch1 Fix is complete",
+    "do_not_rollback": "Backup restoration not needed, direct_pre fixes are correct"
+  }
+}

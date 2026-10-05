@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "title": "Stage3E Batch5 smaller_15 Review 检查清单",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:00:00.000Z",
+    "batch_id": "stage3e_batch5_smaller15",
+    "expected_new_items": 15,
+    "expected_section": "3.13",
+    "expected_item_count_after_merge": 1617,
+    "template_only": true,
+    "main_graph_modified": false,
+    "note": "本检查清单为 Review 模板，待 Batch5 Merge 成功后执行"
+  },
+  "checklist": {
+    "pre_review": {
+      "title": "Review 前检查",
+      "items": [
+        {
+          "id": "pre_01",
+          "check": "确认 validate-only passed",
+          "expected": "passed = true",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_02",
+          "check": "确认 item_count = 1617",
+          "expected": "1602 + 15 = 1617",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_03",
+          "check": "确认 section_count 仍为 65",
+          "expected": "65（无新 section）",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_04",
+          "check": "确认 resolved_pre_mismatches = []",
+          "expected": "0",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_05",
+          "check": "确认 product_metadata_validation.passed = true",
+          "expected": "true",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_06",
+          "check": "确认 report_matches_json = true",
+          "expected": "true",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_07",
+          "check": "确认新增 candidate 没有 section id 依赖",
+          "expected": "0 section refs",
+          "priority": "P1"
+        },
+        {
+          "id": "pre_08",
+          "check": "确认新增 candidate 与已合并 batch1~4 无重复",
+          "expected": "无重复",
+          "priority": "P1"
+        }
+      ]
+    },
+    "per_item_checks": {
+      "title": "逐节点检查维度",
+      "items": [
+        {
+          "id": "item_01",
+          "check": "是否适合作为 knowledge_item",
+          "options": ["keep", "needs_review", "reject"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_02",
+          "check": "是否是 implementation_variant",
+          "options": ["core_concept", "implementation_variant", "modeling_pattern", "application_case", "theorem_or_property", "unclear"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_03",
+          "check": "是否存在过度拆分",
+          "options": ["ok", "borderline", "over_split"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_04",
+          "check": "是否与已有 3.7 / 3.10 / 3.13 节点重复",
+          "options": ["no_overlap", "partial_overlap", "duplicate"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_05",
+          "check": "direct_pre 是否合理",
+          "options": ["ok", "too_few", "too_broad", "wrong"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_06",
+          "check": "是否应进入 problem_patterns",
+          "options": ["keep_in_knowledge", "sync_to_patterns", "unclear"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_07",
+          "check": "parent_concept 是否明确",
+          "options": ["clear", "weak", "missing"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_08",
+          "check": "learning_path_policy 建议",
+          "options": ["core", "advanced_only", "encyclopedia_only"],
+          "priority": "P2"
+        },
+        {
+          "id": "item_09",
+          "check": "review_priority 建议",
+          "options": ["A", "B", "C"],
+          "priority": "P2"
+        }
+      ]
+    },
+    "series_specific_checks": {
+      "title": "系列专项检查",
+      "series": [
+        {
+          "name": "高级并查集 (Undo Stack)",
+          "checks": [
+            {
+              "id": "series_undo_01",
+              "check": "与已有 3.4.1（基本并查集）的区分度是否足够",
+              "expected": "Undo Stack 是并查集高级扩展，支持撤销操作",
+              "priority": "P1"
+            },
+            {
+              "id": "series_undo_02",
+              "check": "Undo 操作在竞赛中的出现频率是否足够支撑独立节点",
+              "expected": "ICPC/NOI 均有出现，属于高级技巧",
+              "priority": "P1"
+            },
+            {
+              "id": "series_undo_03",
+              "check": "是否应标记为 advanced_only",
+              "expected": "recommend advanced_only",
+              "priority": "P2"
+            }
+          ]
+        },
+        {
+          "name": "可并堆 (5 variants)",
+          "checks": [
+            {
+              "id": "series_heap_01",
+              "check": "Binomial / Fibonacci / Leftist / Pairing / Skew Heap 是否各有独立教育价值",
+              "expected": "各有不同实现思路和复杂度保证",
+              "priority": "P0"
+            },
+            {
+              "id": "series_heap_02",
+              "check": "是否有部分节点可降级为 C 级复查",
+              "expected": "Fibonacci（实现复杂、竞赛罕见）可考虑 C 级",
+              "priority": "P1"
+            },
+            {
+              "id": "series_heap_03",
+              "check": "Fibonacci Heap 的实现复杂度与竞赛实用性是否匹配",
+              "expected": "Fibonacci Heap 理论重要但竞赛使用率低",
+              "priority": "P1"
+            },
+            {
+              "id": "series_heap_04",
+              "check": "Skew Heap 与 Leftist Heap 是否过于相似需合并",
+              "expected": "两者实现不同（左偏vs斜），各自有优势场景",
+              "priority": "P2"
+            },
+            {
+              "id": "series_heap_05",
+              "check": "所有节点的 direct_pre（3.2.3 双端队列）是否合适",
+              "expected": "3.2.3 是堆前置，但 Heap/3.2.1 可能更准确",
+              "priority": "P2"
+            }
+          ]
+        },
+        {
+          "name": "李超线段树 (4 variants)",
+          "checks": [
+            {
+              "id": "series_li_01",
+              "check": "4 个变体的区分度是否足够",
+              "expected": "Dynamic / Coordinate Compressed / Persistent / Segment Insertion 各有不同场景",
+              "priority": "P0"
+            },
+            {
+              "id": "series_li_02",
+              "check": "Persistent Li Chao 是否与 problem_patterns sync 冲突",
+              "expected": "确认 sync_triage 中无 Persistent Li Chao 记录",
+              "priority": "P1"
+            },
+            {
+              "id": "series_li_03",
+              "check": "Coordinate Compressed 与 Dynamic 是否可合并",
+              "expected": "两者不同：CC 需要预知范围，Dynamic 不需要",
+              "priority": "P1"
+            },
+            {
+              "id": "series_li_04",
+              "check": "所有变体的 direct_pre（2.8.28 斜率优化, 3.7.2 线段树）是否合适",
+              "expected": "两个前置都是必要的",
+              "priority": "P2"
+            }
+          ]
+        },
+        {
+          "name": "Segment Tree Beats (3 variants)",
+          "checks": [
+            {
+              "id": "series_beats_01",
+              "check": "Historical Maximum / Range Add Max / Range Chmin 的核心价值",
+              "expected": "三者分别是 Beats 的三大核心操作",
+              "priority": "P0"
+            },
+            {
+              "id": "series_beats_02",
+              "check": "区间取 min 变体 1 是否过于具体",
+              "expected": "Range Chmin 是 Beats 基础操作，不是过度拆分",
+              "priority": "P1"
+            },
+            {
+              "id": "series_beats_03",
+              "check": "是否应增加 Beats 核心概念说明",
+              "expected": "可补充 amortized analysis 说明",
+              "priority": "P2"
+            }
+          ]
+        },
+        {
+          "name": "线段树变体 (2 variants)",
+          "checks": [
+            {
+              "id": "series_segvar_01",
+              "check": "Dynamic Segment Tree 与 3.7.2 线段树的区分度",
+              "expected": "DynaSeg 支持动态开点，适合区间大/稀疏场景",
+              "priority": "P1"
+            },
+            {
+              "id": "series_segvar_02",
+              "check": "GCD Segment Tree 是否重复（已有类似线段树节点）",
+              "expected": "3.7.2 是通用线段树，GCD 是具体应用变体",
+              "priority": "P1"
+            }
+          ]
+        }
+      ]
+    },
+    "output_checklist": {
+      "title": "Review 输出文件检查",
+      "items": [
+        {
+          "id": "out_01",
+          "file": "data/stage3e_batch5_smaller15_added_items_review.json",
+          "expected_content": "15个新增节点的逐项审查结论，含 review_decision / quality_grade / review_action / dependency_issue",
+          "priority": "P0"
+        },
+        {
+          "id": "out_02",
+          "file": "docs/stage3e_batch5_smaller15_added_items_review_report.md",
+          "expected_content": "Review 完整报告，含质量分布、Top 列表、依赖分析",
+          "priority": "P0"
+        },
+        {
+          "id": "out_03",
+          "file": "data/stage3e_batch5_smaller15_review_status_patch_preview.json",
+          "expected_content": "review_status 补丁预览，标记需降级/升级的节点",
+          "priority": "P1"
+        },
+        {
+          "id": "out_04",
+          "file": "data/stage3e_batch5_smaller15_dependency_fix_candidates.json",
+          "expected_content": "依赖修复候选列表",
+          "priority": "P2"
+        },
+        {
+          "id": "out_05",
+          "file": "data/stage3e_batch5_smaller15_problem_pattern_sync_candidates.json",
+          "expected_content": "应同步到 problem_patterns 的候选列表",
+          "priority": "P1"
+        },
+        {
+          "id": "out_06",
+          "file": "data/stage3e_batch5_smaller15_merge_or_collapse_candidates.json",
+          "expected_content": "应合并或折叠到父节点的候选（如果有）",
+          "priority": "P2"
+        }
+      ]
+    },
+    "post_review_validation": {
+      "title": "Review 后验证",
+      "items": [
+        {
+          "id": "post_01",
+          "check": "validate-only passed",
+          "expected": "passed = true",
+          "priority": "P0"
+        },
+        {
+          "id": "post_02",
+          "check": "所有新增节点已标记 review_decision",
+          "expected": "15/15",
+          "priority": "P0"
+        },
+        {
+          "id": "post_03",
+          "check": "无 unreviewed high risk 节点残留",
+          "expected": "0",
+          "priority": "P0"
+        },
+        {
+          "id": "post_04",
+          "check": "确认主图谱未修改（Review 阶段无 direct_pre 变更）",
+          "expected": "true",
+          "priority": "P1"
+        },
+        {
+          "id": "post_05",
+          "check": "parent_concept 全部 clear 或已标注 weak",
+          "expected": "全部 clear 或已记录",
+          "priority": "P1"
+        }
+      ]
+    }
+  }
+}

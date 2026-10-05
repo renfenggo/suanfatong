@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Full40 Review Checklist",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T18:00:00.000Z",
+    "batch_id": "stage3f_batch3_full40",
+    "main_graph_modified": false,
+    "review_not_yet_executed": true,
+    "total_candidates": 40,
+    "expected_item_count": 1717,
+    "expected_section_count": 65,
+    "dependency_cleanup_completed": true,
+    "cleaned_candidate_count": 11
+  },
+  "pre_review_checks": [
+    {"check_id": "prc_01", "description": "item_count == 1717", "expected_value": 1717, "critical": true},
+    {"check_id": "prc_02", "description": "section_count == 65", "expected_value": 65, "critical": true},
+    {"check_id": "prc_03", "description": "validate-only passed == true", "expected_value": true, "critical": true},
+    {"check_id": "prc_04", "description": "resolved_pre_mismatches == []", "expected_value": [], "critical": true},
+    {"check_id": "prc_05", "description": "dangling_refs == []", "expected_value": [], "critical": true},
+    {"check_id": "prc_06", "description": "direct_pre_cycle == null", "expected_value": null, "critical": true},
+    {"check_id": "prc_07", "description": "product_metadata_validation.passed == true", "expected_value": true, "critical": true},
+    {"check_id": "prc_08", "description": "新增节点数 == 40", "expected_value": 40, "critical": true}
+  ],
+  "per_item_checks": [
+    {"check_id": "pic_01", "description": "是否适合作为 knowledge_item（有百科/教学/竞赛价值）", "output_field": "item_type", "options": ["core_concept", "implementation_variant", "modeling_pattern", "application_case", "theorem_or_property", "unclear"]},
+    {"check_id": "pic_02", "description": "item_type 分类细化", "output_field": "item_type_refinement"},
+    {"check_id": "pic_03", "description": "是否与已有基础节点重复或过度拆分", "output_field": "over_split_risk", "options": ["low", "medium", "high"]},
+    {"check_id": "pic_04", "description": "是否属于高级变体而非重复基础概念", "output_field": "distinction_from_base"},
+    {"check_id": "pic_05", "description": "direct_pre / cleaned_direct_pre 是否过少或过泛", "output_field": "dependency_quality", "options": ["adequate", "too_general", "too_few", "missing_core"]},
+    {"check_id": "pic_06", "description": "parent_concept 是否明确", "output_field": "parent_concept_clarity", "options": ["clear", "unclear", "missing"]},
+    {"check_id": "pic_07", "description": "是否应同步 problem_patterns（建模/题型识别价值）", "output_field": "sync_to_patterns", "options": ["yes", "no"]},
+    {"check_id": "pic_08", "description": "learning_path_policy 是否合理（visibility/tracks）", "output_field": "learning_path_adequacy", "options": ["appropriate", "needs_review"]},
+    {"check_id": "pic_09", "description": "是否可以降为 C（review_priority B→C）", "output_field": "suggested_priority", "options": ["C", "B", "A"]},
+    {"check_id": "pic_10", "description": "是否需要保留 B/A 人工复查", "output_field": "need_manual_review_remaining", "options": [true, false]}
+  ],
+  "series_specific_checks": [
+    {
+      "series": "DP 高级专题 (2.8)",
+      "candidates": ["cand.dp.dag.longest_path", "cand.dp.state_compression.basic", "cand.dp.state_compression.traveling", "cand.dp.subset.basic", "cand.dp.subset.enumeration", "cand.dp.automaton.basic", "cand.dp.automaton.matrix", "cand.dp.probability.basic"],
+      "checks": [
+        "DAG最长路DP：与已有 2.8.14 'DAG 上 DP' 的区分——已有节点是否已覆盖最长路？需检查",
+        "状态压缩DP基础 vs 已有'状态压缩'节点：是否为基础概念重复",
+        "旅行商问题DP：典型的TSP问题DP，建议 application_case",
+        "子集DP基础/子集枚举优化：两个节点是否层次分明（基础 vs 优化技巧），或应合并",
+        "自动机DP基础/自动机矩阵DP：自动机DP两个节点是否独立，direct_pre 是否指向 2.8 AC自动机相关节点",
+        "概率DP基础：是否适合降 C"
+      ]
+    },
+    {
+      "series": "字符串算法 (2.10)",
+      "candidates": ["cand.string.border_tree.structure", "cand.string.manacher.algorithm", "cand.string.boyer_moore.algorithm", "cand.string.rabin_karp.algorithm", "cand.string.string_matching.kmp"],
+      "checks": [
+        "★ KMP算法详解：与已有 2.10.2 'KMP' 节点高度重复风险，建议 needs_merge_or_collapse",
+        "Border树结构：Border树与KMP的失配树(2.10.16)的关系——是否有重复",
+        "Manacher算法：独立算法，确认图谱中尚无专门Manacher节点",
+        "Boyer-Moore算法：经典字符串匹配算法，确认图谱中尚无",
+        "Rabin-Karp算法：滚动哈希匹配，确认图谱中尚无（哈希已有但匹配算法可能缺）"
+      ]
+    },
+    {
+      "series": "数论基础 (4.1 / 4.9)",
+      "candidates": ["cand.math.quadratic_residue.legendre_symbol", "cand.math.quadratic_residue.tonelli_shanks", "cand.math.crt.extended", "cand.math.crt.garner", "cand.math.euler_function.applications", "cand.math.sieve.du_jiao", "cand.math.group_theory.burnside", "cand.math.group_theory.polya"],
+      "checks": [
+        "Legendre符号 / Tonelli-Shanks算法：二次剩余两个关联算法，dependency (Legendre -> Tonelli-Shanks) 是否完整",
+        "扩展中国剩余定理：与已有CRT节点的关系——是否独立节点已存在",
+        "Garner算法：Garner与扩展CRT的边界划分",
+        "欧拉函数应用：与已有'欧拉函数'节点的关系，确认属于应用扩展而非重复",
+        "杜教筛：高级数论筛法，确认已有筛选法是否覆盖",
+        "Burnside引理 / Polya计数定理：组合计数群论应用，确认图谱中尚无"
+      ]
+    },
+    {
+      "series": "DP优化 (2.18)",
+      "candidates": ["cand.dp.optimization.slope.basic", "cand.dp.optimization.divide_conquer", "cand.dp.optimization.knuth", "cand.dp.optimization.wqs_binary"],
+      "checks": [
+        "★ 斜率优化基础：与 Batch1 已有 2.18.9 '斜率优化高级' 的关系——基础 vs 高级是否重叠",
+        "分治DP优化：确认已有DP优化节点是否覆盖，direct_pre 应指向基础DP",
+        "Knuth优化：四边形不等式优化，独立优化技巧",
+        "WQS二分优化：独立优化技巧，确认图谱中尚无"
+      ]
+    },
+    {
+      "series": "高级图论扩展 (2.21) — Dependency Cleanup 重点",
+      "candidates": ["cand.graph.scc_dag.dag_reachability", "cand.graph.dynamic_connectivity.divide_and_conquer_on_time", "cand.graph.scc_dag.dominating_components", "cand.graph.dynamic_connectivity.edge_interval_model", "cand.graph.scc_dag.minimum_edges_to_strong"],
+      "checks": [
+        "cleaned_direct_pre = 2.15.1(SCC基础) + 2.9.7(DAG判定) + 2.15.10(缩点)：是否准确",
+        "SCC DAG系列 3 个节点（Dag Reachability / Dominating Components / Minimum Edges To Strong）是否过度拆分",
+        "动态图连通性 2 个节点（Divide And Conquer On Time / Edge Interval Model）是否维度正交",
+        "rel 指向 2.21.32 / 2.21.36 / 2.21.49 是否合理",
+        "确认新增节点与已有 2.21.32 / 2.21.36 等不重复"
+      ]
+    },
+    {
+      "series": "高级数据结构扩展 (3.13) — Dependency Cleanup 重点",
+      "candidates": ["cand.ds.bitset_linear_basis.rollback_linear_basis", "cand.ds.bitset_linear_basis.maximum_xor_query", "cand.ds.bitset_linear_basis.rank_over_gf2", "cand.ds.bitset_linear_basis.basis_with_deletion", "cand.ds.segment_tree_variants.split", "cand.ds.dsu_advanced.parity"],
+      "checks": [
+        "cleaned_direct_pre: 2.18.3(线性基) + 2.17.6/2.17.8 + 3.13.49：是否准确",
+        "线性基 4 个节点（Rollback / Max Xor Query / Rank Over Gf2 / Basis With Deletion）是否过度拆分",
+        "每个线性基变体是否有独立教育价值",
+        "线段树变体 Split：3.7.22 已有'线段树分裂'，确认是否重复",
+        "高级并查集 Parity：与 3.4.4 '带权并查集' 的边界是否清晰"
+      ]
+    },
+    {
+      "series": "线性代数与插值 (2.17)",
+      "candidates": ["cand.math.polynomial.fwt", "cand.math.polynomial.subset_convolution"],
+      "checks": [
+        "FWT：快速沃尔什变换是独立变换算法，确认图谱中尚无",
+        "子集卷积：FWT的应用扩展，dependency = FWT，两个节点是否正交",
+        "建议 item_type = core_concept（独立变换算法）"
+      ]
+    },
+    {
+      "series": "字符串结构 (3.8)",
+      "candidates": ["cand.string.lyndon_decomposition.basic", "cand.string.runs_repetitions.basic"],
+      "checks": [
+        "Lyndon分解基础：3.8 字符串结构独立主题，确认图谱中尚无",
+        "Runs重复子串分析：高级字符串分析技术，确认与前缀函数/Lyndon的关系",
+        "两个节点是否有 direct_pre 指向 3.8 已有节点",
+        "建议降 C，item_type = core_concept"
+      ]
+    }
+  ],
+  "high_risk_near_duplicates": [
+    {
+      "group": "KMP算法详解 vs 已有 2.10.2 'KMP'",
+      "risk": "high",
+      "candidates_affected": ["cand.string.string_matching.kmp"],
+      "distinction_criteria": "KMP算法详解可能包含更全面的讲解（next数组、构建过程、复杂度分析），但已有'KMP'节点(2.10.2)已覆盖基础。重点确认已有节点范围。",
+      "resolution": "如果已有完整覆盖则标记 needs_merge_or_collapse；如果详解版更全面且与基础KMP有层次区分则保留。"
+    },
+    {
+      "group": "Border树结构 vs 已有 2.10.16 'KMP 的失配树'",
+      "risk": "high",
+      "candidates_affected": ["cand.string.border_tree.structure"],
+      "distinction_criteria": "Border树结构可能与KMP失配树是同一概念的不同名称。失配树(fail tree)的节点表示前缀，Border树的节点可能不同。",
+      "resolution": "需对比内容确认。如果完全相同 -> needs_merge_or_collapse。如果理论角度不同则保留。"
+    },
+    {
+      "group": "斜率优化基础 vs 已有 2.18.9 '斜率优化高级'",
+      "risk": "medium",
+      "candidates_affected": ["cand.dp.optimization.slope.basic"],
+      "distinction_criteria": "Batch1新增的2.18.9是'斜率优化高级'。本候选'斜率优化基础'与其是互补关系（基础+高级），但需确认已有高级节点是否已包含基础介绍。",
+      "resolution": "建议保留但标注relation关系（基础→高级）。如果高级已含基础内容则合并。"
+    }
+  ],
+  "dependency_cleanup_verification": [
+    {
+      "check_id": "dep_01",
+      "description": "11 个候选的 cleaned_direct_pre 是否全部为存在的 item id",
+      "expected": true
+    },
+    {
+      "check_id": "dep_02",
+      "description": "11 个候选的 direct_pre 不含 section id",
+      "expected": true
+    },
+    {
+      "check_id": "dep_03",
+      "description": "11 个候选的 cleaned_direct_pre 是否过泛或过弱",
+      "expected": "adequate"
+    },
+    {
+      "check_id": "dep_04",
+      "description": "11 个候选无依赖环形成",
+      "expected": true
+    }
+  ],
+  "output_files_checklist": [
+    {"file": "data/stage3f_batch3_full40_added_items_review.json", "description": "逐节点 Review 结论（40 个）", "required": true},
+    {"file": "docs/stage3f_batch3_full40_added_items_review_report.md", "description": "Review 完整报告", "required": true},
+    {"file": "data/stage3f_batch3_full40_review_status_patch_preview.json", "description": "review_status patch 预览", "required": true},
+    {"file": "data/stage3f_batch3_full40_dependency_fix_candidates.json", "description": "依赖修复候选（预期 0，dependency cleanup 已完成）", "required": true},
+    {"file": "data/stage3f_batch3_full40_problem_pattern_sync_candidates.json", "description": "建议同步 problem_patterns 的候选", "required": true},
+    {"file": "data/stage3f_batch3_full40_merge_or_collapse_candidates.json", "description": "建议合并/折叠的候选", "required": true}
+  ],
+  "post_review_validation": [
+    {"check_id": "post_01", "description": "主图谱未被修改", "expected": true},
+    {"check_id": "post_02", "description": "patch 未应用（仅生成 preview）", "expected": true},
+    {"check_id": "post_03", "description": "未继续 Stage3F Batch4", "expected": true},
+    {"check_id": "post_04", "description": "review 覆盖率 40/40", "expected": 40},
+    {"check_id": "post_05", "description": "validate-only passed == true", "expected": true}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-09-02T00:00:00+08:00",
+  "source_item_count": 3240,
+  "generated_item_count": 3240,
+  "total_batches": 6,
+  "total_parts": 33,
+  "batch_size": 600,
+  "part_size": 100,
+  "batches": [
+    {
+      "batch": "stage4_batch1",
+      "item_count": 600,
+      "parts": 6,
+      "passed_parts": 6
+    },
+    {
+      "batch": "stage4_batch2",
+      "item_count": 600,
+      "parts": 6,
+      "passed_parts": 6
+    },
+    {
+      "batch": "stage4_batch3",
+      "item_count": 600,
+      "parts": 6,
+      "passed_parts": 6
+    },
+    {
+      "batch": "stage4_batch4",
+      "item_count": 365,
+      "parts": 4,
+      "passed_parts": 4
+    },
+    {
+      "batch": "stage5_hard_batch1",
+      "item_count": 475,
+      "parts": 5,
+      "passed_parts": 5
+    },
+    {
+      "batch": "stage5_hard_batch2",
+      "item_count": 600,
+      "parts": 6,
+      "passed_parts": 6
+    }
+  ],
+  "category_counts": {
+    "算法": 1650,
+    "C++语法": 289,
+    "数据结构": 624,
+    "算法竞赛数学": 554,
+    "C++编程/调试技巧": 123
+  },
+  "validation_passed": true
+}

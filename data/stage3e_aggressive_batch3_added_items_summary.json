@@ -1,0 +1,438 @@
+[
+  {
+    "candidate_id": "cand.ds.offline_framework.time_divide_conquer",
+    "item_id": "3.13.106",
+    "name": "离线数据结构框架：Time Divide Conquer",
+    "en_name": "Offline Data Structure Framework: Time Divide Conquer",
+    "section_id": "3.13",
+    "direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.fat_node_method",
+    "item_id": "3.13.107",
+    "name": "可持久化结构：Fat Node Method",
+    "en_name": "Persistent Data Structure: Fat Node Method",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.13.9"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.path_copying_method",
+    "item_id": "3.13.108",
+    "name": "可持久化结构：Path Copying Method",
+    "en_name": "Persistent Data Structure: Path Copying Method",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.13.9"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.rollback_vs_persistence",
+    "item_id": "3.13.109",
+    "name": "可持久化结构：Rollback Vs Persistence",
+    "en_name": "Persistent Data Structure: Rollback Vs Persistence",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.13.9"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.version_dag",
+    "item_id": "3.13.110",
+    "name": "可持久化结构：Version Dag",
+    "en_name": "Persistent Data Structure: Version Dag",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.13.9"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.cache_friendly_rmq",
+    "item_id": "3.13.111",
+    "name": "高级 RMQ：Cache Friendly Rmq",
+    "en_name": "Advanced RMQ: Cache Friendly Rmq",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.8.1"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.plus_minus_one_rmq",
+    "item_id": "3.13.112",
+    "name": "高级 RMQ：Plus Minus One Rmq",
+    "en_name": "Advanced RMQ: Plus Minus One Rmq",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.8.1"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.range_idempotent_query",
+    "item_id": "3.13.113",
+    "name": "高级 RMQ：Range Idempotent Query",
+    "en_name": "Advanced RMQ: Range Idempotent Query",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.8.1"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.sparse_table_2d",
+    "item_id": "3.13.114",
+    "name": "高级 RMQ：Sparse Table 2D",
+    "en_name": "Advanced RMQ: Sparse Table 2D",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.8.1"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.static_range_mode",
+    "item_id": "3.13.115",
+    "name": "高级 RMQ：Static Range Mode",
+    "en_name": "Advanced RMQ: Static Range Mode",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.8.1"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.order_maintenance",
+    "item_id": "3.13.116",
+    "name": "序列维护结构：Order Maintenance",
+    "en_name": "Sequence Maintenance Structure: Order Maintenance",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.10.1",
+      "3.10.3",
+      "3.10.4",
+      "3.10.2"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.persistent_sequence",
+    "item_id": "3.13.117",
+    "name": "序列维护结构：Persistent Sequence",
+    "en_name": "Sequence Maintenance Structure: Persistent Sequence",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.10.1",
+      "3.10.3",
+      "3.10.4",
+      "3.10.2"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.range_hash_maintenance",
+    "item_id": "3.13.118",
+    "name": "序列维护结构：Range Hash Maintenance",
+    "en_name": "Sequence Maintenance Structure: Range Hash Maintenance",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.10.1",
+      "3.10.3",
+      "3.10.4",
+      "3.10.2"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.sequence_split_merge",
+    "item_id": "3.13.119",
+    "name": "序列维护结构：Sequence Split Merge",
+    "en_name": "Sequence Maintenance Structure: Sequence Split Merge",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.10.1",
+      "3.10.3",
+      "3.10.4",
+      "3.10.2"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.text_editor_model",
+    "item_id": "3.13.120",
+    "name": "序列维护结构：Text Editor Model",
+    "en_name": "Sequence Maintenance Structure: Text Editor Model",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.10.1",
+      "3.10.3",
+      "3.10.4",
+      "3.10.2"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.compressed_trie",
+    "item_id": "3.13.121",
+    "name": "简洁与概率结构：Compressed Trie",
+    "en_name": "Succinct and Probabilistic Structure: Compressed Trie",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.12.2",
+      "1.4.13"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.perfect_hashing",
+    "item_id": "3.13.122",
+    "name": "简洁与概率结构：Perfect Hashing",
+    "en_name": "Succinct and Probabilistic Structure: Perfect Hashing",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.12.2",
+      "1.4.13"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.succinct_bitvector_rank",
+    "item_id": "3.13.123",
+    "name": "简洁与概率结构：Succinct Bitvector Rank",
+    "en_name": "Succinct and Probabilistic Structure: Succinct Bitvector Rank",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.12.2",
+      "1.4.13"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.succinct_select",
+    "item_id": "3.13.124",
+    "name": "简洁与概率结构：Succinct Select",
+    "en_name": "Succinct and Probabilistic Structure: Succinct Select",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.12.2",
+      "1.4.13"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.xor_filter",
+    "item_id": "3.13.125",
+    "name": "简洁与概率结构：Xor Filter",
+    "en_name": "Succinct and Probabilistic Structure: Xor Filter",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.12.2",
+      "1.4.13"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.dynamic_centroid",
+    "item_id": "3.13.126",
+    "name": "树分治维护：Dynamic Centroid",
+    "en_name": "Tree Decomposition Data Structure: Dynamic Centroid",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.6.4",
+      "3.6.2",
+      "3.6.1",
+      "3.6.3",
+      "2.21.65"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.subtree_query_flatten",
+    "item_id": "3.13.127",
+    "name": "树分治维护：Subtree Query Flatten",
+    "en_name": "Tree Decomposition Data Structure: Subtree Query Flatten",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.6.4",
+      "3.6.2",
+      "3.6.1",
+      "3.6.3",
+      "2.21.65"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.tree_distance_aggregate",
+    "item_id": "3.13.128",
+    "name": "树分治维护：Tree Distance Aggregate",
+    "en_name": "Tree Decomposition Data Structure: Tree Distance Aggregate",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.6.4",
+      "3.6.2",
+      "3.6.1",
+      "3.6.3",
+      "2.21.65"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.tree_path_kth",
+    "item_id": "3.13.129",
+    "name": "树分治维护：Tree Path Kth",
+    "en_name": "Tree Decomposition Data Structure: Tree Path Kth",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.6.4",
+      "3.6.2",
+      "3.6.1",
+      "3.6.3",
+      "2.21.65"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.virtual_tree_plus_hld",
+    "item_id": "3.13.130",
+    "name": "树分治维护：Virtual Tree Plus Hld",
+    "en_name": "Tree Decomposition Data Structure: Virtual Tree Plus Hld",
+    "section_id": "3.13",
+    "direct_pre": [
+      "3.6.4",
+      "3.6.2",
+      "3.6.1",
+      "3.6.3",
+      "2.21.65"
+    ],
+    "used_cleaned_dependency": true,
+    "risk_band": "green",
+    "review_priority": "B"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+    "item_id": "2.21.124",
+    "name": "上下界网络流：Bounded Bipartite Matching",
+    "en_name": "Flow with Lower Bounds: Bounded Bipartite Matching",
+    "section_id": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.12"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "yellow",
+    "review_priority": "A"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.demands",
+    "item_id": "2.21.125",
+    "name": "上下界网络流：Demands",
+    "en_name": "Flow with Lower Bounds: Demands",
+    "section_id": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.12"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "yellow",
+    "review_priority": "A"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+    "item_id": "2.21.126",
+    "name": "上下界网络流：Edge Lower Bound Transform",
+    "en_name": "Flow with Lower Bounds: Edge Lower Bound Transform",
+    "section_id": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.12"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "yellow",
+    "review_priority": "A"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+    "item_id": "2.21.127",
+    "name": "上下界网络流：Maximum Flow",
+    "en_name": "Flow with Lower Bounds: Maximum Flow",
+    "section_id": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.12"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "yellow",
+    "review_priority": "A"
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+    "item_id": "2.21.128",
+    "name": "上下界网络流：Min Cost Circulation",
+    "en_name": "Flow with Lower Bounds: Min Cost Circulation",
+    "section_id": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.12"
+    ],
+    "used_cleaned_dependency": false,
+    "risk_band": "yellow",
+    "review_priority": "A"
+  }
+]

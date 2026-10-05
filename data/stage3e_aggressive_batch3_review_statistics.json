@@ -1,0 +1,179 @@
+{
+  "total_items": 30,
+  "approve": 11,
+  "downgrade_to_c": 11,
+  "keep_b": 0,
+  "keep_a": 5,
+  "needs_dependency_fix": 0,
+  "move_to_problem_patterns": 0,
+  "needs_merge_or_collapse": 14,
+  "series_analysis": {
+    "离线数据结构框架系列": [
+      {
+        "item_id": "3.13.106",
+        "name": "离线数据结构框架：Time Divide Conquer",
+        "analysis": "离线数据结构框架，依赖合理"
+      }
+    ],
+    "可持久化数据结构系列": [
+      {
+        "item_id": "3.13.107",
+        "name": "可持久化结构：Fat Node Method",
+        "analysis": "可持久化数据结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.108",
+        "name": "可持久化结构：Path Copying Method",
+        "analysis": "可持久化数据结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.109",
+        "name": "可持久化结构：Rollback Vs Persistence",
+        "analysis": "可持久化数据结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.110",
+        "name": "可持久化结构：Version Dag",
+        "analysis": "可持久化数据结构系列，可能存在过度拆分"
+      }
+    ],
+    "RMQ / 序列维护系列": [
+      {
+        "item_id": "3.13.111",
+        "name": "高级 RMQ：Cache Friendly Rmq",
+        "analysis": "高级 RMQ 系列，可能过度拆分"
+      },
+      {
+        "item_id": "3.13.112",
+        "name": "高级 RMQ：Plus Minus One Rmq",
+        "analysis": "高级 RMQ 系列，可能过度拆分"
+      },
+      {
+        "item_id": "3.13.113",
+        "name": "高级 RMQ：Range Idempotent Query",
+        "analysis": "高级 RMQ 系列，可能过度拆分"
+      },
+      {
+        "item_id": "3.13.114",
+        "name": "高级 RMQ：Sparse Table 2D",
+        "analysis": "高级 RMQ 系列，可能过度拆分"
+      },
+      {
+        "item_id": "3.13.115",
+        "name": "高级 RMQ：Static Range Mode",
+        "analysis": "高级 RMQ 系列，可能过度拆分"
+      }
+    ],
+    "序列维护结构系列": [
+      {
+        "item_id": "3.13.116",
+        "name": "序列维护结构：Order Maintenance",
+        "analysis": "序列维护结构系列，依赖清洗后的平衡树"
+      },
+      {
+        "item_id": "3.13.117",
+        "name": "序列维护结构：Persistent Sequence",
+        "analysis": "序列维护结构系列，依赖清洗后的平衡树"
+      },
+      {
+        "item_id": "3.13.118",
+        "name": "序列维护结构：Range Hash Maintenance",
+        "analysis": "序列维护结构系列，依赖清洗后的平衡树"
+      },
+      {
+        "item_id": "3.13.119",
+        "name": "序列维护结构：Sequence Split Merge",
+        "analysis": "序列维护结构系列，依赖清洗后的平衡树"
+      },
+      {
+        "item_id": "3.13.120",
+        "name": "序列维护结构：Text Editor Model",
+        "analysis": "序列维护结构系列，依赖清洗后的平衡树"
+      }
+    ],
+    "简洁与概率结构系列": [
+      {
+        "item_id": "3.13.121",
+        "name": "简洁与概率结构：Compressed Trie",
+        "analysis": "简洁与概率结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.122",
+        "name": "简洁与概率结构：Perfect Hashing",
+        "analysis": "简洁与概率结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.123",
+        "name": "简洁与概率结构：Succinct Bitvector Rank",
+        "analysis": "简洁与概率结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.124",
+        "name": "简洁与概率结构：Succinct Select",
+        "analysis": "简洁与概率结构系列，可能存在过度拆分"
+      },
+      {
+        "item_id": "3.13.125",
+        "name": "简洁与概率结构：Xor Filter",
+        "analysis": "简洁与概率结构系列，可能存在过度拆分"
+      }
+    ],
+    "树分治 / 树上数据结构系列": [
+      {
+        "item_id": "3.13.126",
+        "name": "树分治维护：Dynamic Centroid",
+        "analysis": "树分治维护系列，依赖清洗后的树结构基础"
+      },
+      {
+        "item_id": "3.13.127",
+        "name": "树分治维护：Subtree Query Flatten",
+        "analysis": "树分治维护系列，依赖清洗后的树结构基础"
+      },
+      {
+        "item_id": "3.13.128",
+        "name": "树分治维护：Tree Distance Aggregate",
+        "analysis": "树分治维护系列，依赖清洗后的树结构基础"
+      },
+      {
+        "item_id": "3.13.129",
+        "name": "树分治维护：Tree Path Kth",
+        "analysis": "树分治维护系列，依赖清洗后的树结构基础"
+      },
+      {
+        "item_id": "3.13.130",
+        "name": "树分治维护：Virtual Tree Plus Hld",
+        "analysis": "树分治维护系列，依赖清洗后的树结构基础"
+      }
+    ],
+    "上下界网络流系列": [
+      {
+        "item_id": "2.21.124",
+        "name": "上下界网络流：Bounded Bipartite Matching",
+        "analysis": "上下界网络流系列更像知识点而非建模题型"
+      },
+      {
+        "item_id": "2.21.125",
+        "name": "上下界网络流：Demands",
+        "analysis": "上下界网络流系列更像知识点而非建模题型"
+      },
+      {
+        "item_id": "2.21.126",
+        "name": "上下界网络流：Edge Lower Bound Transform",
+        "analysis": "上下界网络流系列更像知识点而非建模题型"
+      },
+      {
+        "item_id": "2.21.127",
+        "name": "上下界网络流：Maximum Flow",
+        "analysis": "上下界网络流系列更像知识点而非建模题型"
+      },
+      {
+        "item_id": "2.21.128",
+        "name": "上下界网络流：Min Cost Circulation",
+        "analysis": "上下界网络流系列更像知识点而非建模题型"
+      }
+    ]
+  },
+  "suggested_batch3_fix": true,
+  "suggested_continue_batch4": true,
+  "suggested_batch4_approach": "same_as_batch3_with_improvements"
+}

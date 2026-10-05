@@ -1,0 +1,15 @@
+{
+  "item_count": 1617,
+  "expected_item_count": 1617,
+  "section_count": 65,
+  "expected_section_count": 65,
+  "duplicate_item_ids": [],
+  "dangling_refs": [],
+  "direct_pre_cycle": null,
+  "resolved_pre_mismatches": [],
+  "product_metadata_validation": {
+    "passed": true
+  },
+  "report_matches_json": true,
+  "passed": true
+}

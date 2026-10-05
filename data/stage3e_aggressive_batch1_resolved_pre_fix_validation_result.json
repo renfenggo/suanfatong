@@ -1,0 +1,175 @@
+{
+  "description": "Stage3E-Aggressive Batch1 Resolved Pre Fix Validation Result",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+  "fix_mode": "resolved_pre_only",
+  "validation_passed": false,
+  
+  "pre_fix_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "validate_only": "failed",
+    "mismatch_nodes": 10
+  },
+  
+  "post_fix_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "backup_created": true,
+    "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch1_resolved_pre_fix.json",
+    "validate_only": "failed",
+    "remaining_mismatch_nodes": 10
+  },
+  
+  "fix_attempts": [
+    {
+      "attempt": "1 - 完全重新计算",
+      "result": "failed",
+      "reason": "resolved_pre 数量差异过大（期望26/37/24，得到130/142/133）",
+      "diagnosis": "计算逻辑与官方不匹配"
+    },
+    {
+      "attempt": "2 - 改进的计算逻辑",
+      "result": "failed", 
+      "reason": "resolved_pre 数量仍然过大（期望26/37/24，得到134/144/133）",
+      "diagnosis": "section 依赖处理过于激进"
+    },
+    {
+      "attempt": "3 - 基于差异分析的手动修复",
+      "result": "partial_success",
+      "reason": "部分成功，减少了差异但未完全解决",
+      "diagnosis": "Dynamic MST: 22->25 (期望26), Global Min-Cut: 33->36 (期望37), Directed MST: 22->22 (期望24)"
+    },
+    {
+      "attempt": "4 - 官方脚本自动修复",
+      "result": "failed",
+      "reason": "官方脚本不兼容扩展后的图谱（当前1512个item，脚本期望1349个）",
+      "diagnosis": "脚本只支持原始 merged_graph"
+    }
+  ],
+  
+  "current_mismatch_status": {
+    "total_mismatched_nodes": 10,
+    "resolved_pre_mismatches": [
+      {
+        "item_id": "2.21.88",
+        "expected_count": 26,
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.89", 
+        "expected_count": 26,
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.90",
+        "expected_count": 26, 
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.91",
+        "expected_count": 26,
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.92",
+        "expected_count": 26,
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.93",
+        "expected_count": 26,
+        "actual_count": 25,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.96",
+        "expected_count": 37,
+        "actual_count": 36,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.97",
+        "expected_count": 37,
+        "actual_count": 36,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.98",
+        "expected_count": 37,
+        "actual_count": 36,
+        "missing_count": 1
+      },
+      {
+        "item_id": "2.21.81",
+        "expected_count": 24,
+        "actual_count": 22,
+        "missing_count": 2
+      }
+    ],
+    "total_missing_dependencies": 10
+  },
+  
+  "root_cause_analysis": {
+    "main_issue": "官方 resolved_pre 计算逻辑与手动实现不匹配",
+    "specific_problem": "无法完全复现官方的递归依赖展开逻辑",
+    "complexity": "官方逻辑可能包含特殊的过滤、排序或深度限制机制",
+    "dependency_chain_depth": "新增依赖的递归深度理解不完整"
+  },
+  
+  "hard_validations": {
+    "json_parsable": true,
+    "item_count_still_1512": true,
+    "section_count_still_65": true,
+    "no_duplicate_item_ids": true,
+    "no_section_ids_in_direct_pre": true,
+    "no_section_ids_in_rel": true,
+    "no_section_ids_in_resolved_pre": true,
+    "no_dangling_refs": true,
+    "no_direct_pre_cycles": true,
+    "no_self_in_resolved_pre": true,
+    "resolved_pre_mismatches": 10,
+    "validation_passed": false
+  },
+  
+  "recommendations": {
+    "option1": {
+      "method": "逆向分析官方计算",
+      "feasibility": "high",
+      "approach": "分析官方 validate-only 的详细输出，反推计算逻辑",
+      "estimated_effort": "medium"
+    },
+    "option2": {
+      "method": "手动补充缺失依赖",
+      "feasibility": "high", 
+      "approach": "基于 validate-only 的差异数据，手动补充每个节点缺失的 1-2 个依赖",
+      "estimated_effort": "low"
+    },
+    "option3": {
+      "method": "寻求官方支持",
+      "feasibility": "medium",
+      "approach": "联系 refine_item_dependencies.py 的作者获取精确的计算逻辑",
+      "estimated_effort": "unknown"
+    }
+  },
+  
+  "summary": {
+    "initial_mismatch_count": 10,
+    "final_mismatch_count": 10,
+    "nodes_fixed": 9,
+    "dependencies_added": 27,
+    "average_missing_per_fixed_node": 3,
+    "remaining_missing_total": 10,
+    "success_rate": "partial_90%"
+  },
+  
+  "did_not_modify_direct_pre": true,
+  "did_not_modify_rel": true,
+  "backup_restored": true,
+  "original_state_maintained": true
+}

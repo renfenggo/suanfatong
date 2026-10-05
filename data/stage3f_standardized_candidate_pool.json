@@ -1,0 +1,3084 @@
+{
+  "meta": {
+    "title": "Stage3F 标准化候选池",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T12:30:00.000Z",
+    "main_graph_modified": false,
+    "total_candidates": 129,
+    "eligible_count": 129,
+    "excluded_duplicate_count": 298
+  },
+  "summary": {
+    "by_source": {
+      "carry_over": 1,
+      "external_b1": 46,
+      "external_b2": 79,
+      "reserve_pool": 3
+    },
+    "by_section": {
+      "2.10": 15,
+      "2.17": 3,
+      "2.18": 7,
+      "2.21": 25,
+      "2.8": 23,
+      "3.13": 25,
+      "3.8": 8,
+      "4.1": 9,
+      "4.3": 3,
+      "4.4": 2,
+      "4.5": 2,
+      "4.9": 7
+    },
+    "by_risk": {
+      "green": 31,
+      "medium": 3,
+      "yellow": 95
+    },
+    "eligible_count": 129
+  },
+  "excluded_candidates": {
+    "duplicate_or_overlap": [
+      {
+        "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+        "name": "Lengauer-Tarjan 支配树算法",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.construction",
+        "name": "虚树构建",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.construction",
+        "name": "Block-Cut Tree 构建",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus.algorithm_and_properties",
+        "name": "仙人掌图算法",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.chordal_graph.mcs",
+        "name": "弦图与完美消除序列 MCS",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.tournament_graph.hamilton_path",
+        "name": "竞赛图哈密顿路",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.min_arborescence.chu_liu",
+        "name": "朱刘算法求最小树形图",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.gomory_hu_tree.construction",
+        "name": "Gomory-Hu 树构建",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+        "name": "Stoer-Wagner 全局最小割",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.min_mean_cycle.karp",
+        "name": "Karp 最小平均环",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.general_matching.blossom.raw",
+        "name": "一般图最大匹配带花树算法",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.tutte_matrix.matching",
+        "name": "Tutte 矩阵与一般图匹配检测",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_intersection.basic",
+        "name": "拟阵交基础",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+        "name": "离线动态连通性（线段树分治）",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.bridge_tree.construction",
+        "name": "Bridge Tree 构建",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.functional_graph.analysis",
+        "name": "函数图分析",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.max_density_subgraph.fractional",
+        "name": "最大密度子图（分数规划）",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+        "name": "有上下界网络流可行流",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dual_graph.planar",
+        "name": "平面图对偶图转换",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+        "name": "最小链覆盖与 Dilworth 定理",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.general_matching_weighted.blossom",
+        "name": "一般图最大权匹配（带权带花树）",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.steiner_tree.dp",
+        "name": "最小斯坦纳树 DP",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+        "name": "支配树：Control-Flow Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+        "name": "圆方树：Articulation Construction",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+        "name": "仙人掌图：Cycle Decomposition",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+        "name": "动态图连通性：Offline Deletion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+        "name": "动态最小生成树：Replacement Edge",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+        "name": "上下界网络流：Feasible Circulation",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.project_selection",
+        "name": "最大权闭合子图：Project Selection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+        "name": "匹配与覆盖：Blossom Algorithm",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.chordal_graph",
+        "name": "特殊图：Chordal Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+        "name": "图论建模：Difference Constraints",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+        "name": "有向生成树：Chu Liu Edmonds",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.scc_dag.condensation_applications",
+        "name": "强连通分量 DAG：Condensation Applications",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+        "name": "拟阵图论：Graphic Matroid",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.dual_graph",
+        "name": "平面图：Dual Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.semidominator",
+        "name": "支配树：Semidominator",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.stack_construction",
+        "name": "虚树：Stack Construction",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.biconnected_component",
+        "name": "圆方树：Biconnected Component",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.shortest_path",
+        "name": "仙人掌图：Shortest Path",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_connectivity.segment_tree_over_time",
+        "name": "动态图连通性：Segment Tree Over Time",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.offline_updates",
+        "name": "动态最小生成树：Offline Updates",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.demands",
+        "name": "上下界网络流：Demands",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.gomory_hu_tree",
+        "name": "全局最小割：Gomory Hu Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.profit_dependency",
+        "name": "最大权闭合子图：Profit Dependency",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+        "name": "匹配与覆盖：Weighted General Matching",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.maximum_cardinality_search",
+        "name": "特殊图：Maximum Cardinality Search",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.2_sat_modeling",
+        "name": "图论建模：2 Sat Modeling",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.contracted_cycle",
+        "name": "有向生成树：Contracted Cycle",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.scc_dag.source_sink_count",
+        "name": "强连通分量 DAG：Source Sink Count",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.matroid_intersection",
+        "name": "拟阵图论：Matroid Intersection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.euler_formula",
+        "name": "平面图：Euler Formula",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.immediate_dominator",
+        "name": "支配树：Immediate Dominator",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.tree_dp",
+        "name": "虚树：树形 DP",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.path_query",
+        "name": "圆方树：Path Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.tree_conversion",
+        "name": "仙人掌图：Tree Conversion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_connectivity.rollback_dsu",
+        "name": "动态图连通性：Rollback Dsu",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.link_cut_tree_approach",
+        "name": "动态最小生成树：Link Cut Tree Approach",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+        "name": "上下界网络流：Minimum Flow",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.cut_tree_query",
+        "name": "全局最小割：Cut Tree Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.maximum_weight_closure",
+        "name": "最大权闭合子图：Maximum Weight Closure",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+        "name": "匹配与覆盖：Tutte Matrix",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.tournament_graph",
+        "name": "特殊图：Tournament Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.layered_graph",
+        "name": "图论建模：Layered Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.rooted_arborescence",
+        "name": "有向生成树：Rooted Arborescence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.matroid_parity",
+        "name": "拟阵图论：Matroid Parity",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.planar_separator",
+        "name": "平面图：Planar Separator",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.dominance_frontier",
+        "name": "支配树：Dominance Frontier",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.multi_key_query",
+        "name": "虚树：Multi-Key Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.tree_dp",
+        "name": "圆方树：树形 DP",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.dynamic_programming",
+        "name": "仙人掌图：Dynamic Programming",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.divide_conquer_approach",
+        "name": "动态最小生成树：Divide Conquer Approach",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+        "name": "上下界网络流：Maximum Flow",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.undirected_min_cut",
+        "name": "全局最小割：Undirected Min Cut",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.minimum_cut_transform",
+        "name": "最大权闭合子图：Minimum Cut Transform",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.hall_theorem",
+        "name": "匹配与覆盖：Hall Theorem",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.functional_graph",
+        "name": "特殊图：Functional Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.state_graph",
+        "name": "图论建模：State Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.minimum_arborescence",
+        "name": "有向生成树：Minimum Arborescence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.basis_exchange",
+        "name": "拟阵图论：Basis Exchange",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.face_traversal",
+        "name": "平面图：Face Traversal",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.dominator_tree_dp",
+        "name": "支配树：Dominator Tree Dp",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.distance_compression",
+        "name": "虚树：Distance Compression",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.connectivity_query",
+        "name": "圆方树：Connectivity Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.minimum_cut",
+        "name": "仙人掌图：Minimum Cut",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.sensitivity_analysis",
+        "name": "动态最小生成树：Sensitivity Analysis",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+        "name": "上下界网络流：Min Cost Circulation",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.pair_min_cut",
+        "name": "全局最小割：Pair Min Cut",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.prerequisite_graph",
+        "name": "最大权闭合子图：Prerequisite Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.konig_theorem",
+        "name": "匹配与覆盖：Konig Theorem",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.planar_dual_graph",
+        "name": "特殊图：Planar Dual Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.shortest_path_potentials",
+        "name": "图论建模：Shortest Path Potentials",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.maximum_arborescence",
+        "name": "有向生成树：Maximum Arborescence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.weighted_matroid_intersection",
+        "name": "拟阵图论：Weighted Matroid Intersection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.dual_shortest_path",
+        "name": "平面图：Dual Shortest Path",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.path_dominator_query",
+        "name": "支配树：Path Dominator Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.edge_weight_compression",
+        "name": "虚树：Edge Weight Compression",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.bridge_interaction",
+        "name": "圆方树：Bridge Interaction",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.diameter",
+        "name": "仙人掌图：Diameter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.edge_deletion",
+        "name": "动态最小生成树：Edge Deletion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+        "name": "上下界网络流：Edge Lower Bound Transform",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.open_pit_mining_model",
+        "name": "最大权闭合子图：Open Pit Mining Model",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+        "name": "匹配与覆盖：Minimum Path Cover",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.interval_graph",
+        "name": "特殊图：Interval Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.k_shortest_paths",
+        "name": "图论建模：K Shortest Paths",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.branching_theorem",
+        "name": "有向生成树：Branching Theorem",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.time_expanded_graph",
+        "name": "高级最短路：Time Expanded Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.spanning_tree_matroid",
+        "name": "拟阵图论：Spanning Tree Matroid",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.planar_min_cut",
+        "name": "平面图：Planar Min Cut",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.dag_dominator",
+        "name": "支配树：Dag Dominator",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.subtree_aggregation",
+        "name": "虚树：Subtree Aggregation",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.weighted_variant",
+        "name": "圆方树：Weighted Variant",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.path_counting",
+        "name": "仙人掌图：Path Counting",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.edge_insertion",
+        "name": "动态最小生成树：Edge Insertion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.node_demand",
+        "name": "上下界网络流：Node Demand",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.sparsification",
+        "name": "全局最小割：Sparsification",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.task_selection",
+        "name": "最大权闭合子图：Task Selection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+        "name": "匹配与覆盖：Dilworth Theorem",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.bipartite_complement",
+        "name": "特殊图：Bipartite Complement",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.minimum_mean_cycle",
+        "name": "图论建模：Minimum Mean Cycle",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.weighted_directed_mst",
+        "name": "有向生成树：Weighted Directed Mst",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.partition_matroid",
+        "name": "拟阵图论：Partition Matroid",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.online_query",
+        "name": "支配树：Online Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.colored_points",
+        "name": "虚树：Colored Points",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.distance_on_block_cut_tree",
+        "name": "圆方树：Distance On Block Cut Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.edge_cactus",
+        "name": "仙人掌图：Edge Cactus",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.batch_recomputation",
+        "name": "动态最小生成树：Batch Recomputation",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+        "name": "上下界网络流：Bounded Bipartite Matching",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.recursive_contraction",
+        "name": "全局最小割：Recursive Contraction",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.closure_model.binary_decision_model",
+        "name": "最大权闭合子图：Binary Decision Model",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.stable_marriage",
+        "name": "匹配与覆盖：Stable Marriage",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.special_graph.condensation_dag",
+        "name": "特殊图：Condensation Dag",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.steiner_tree",
+        "name": "图论建模：Steiner Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.directed_mst.super_root_model",
+        "name": "有向生成树：Super Root Model",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.scc_dag.implication_graph",
+        "name": "强连通分量 DAG：Implication Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matroid_graph.transversal_matroid",
+        "name": "拟阵图论：Transversal Matroid",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.planar_graph.outerplanar_graph",
+        "name": "平面图：Outerplanar Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dominator_tree.bridge_relation",
+        "name": "支配树：Bridge Relation",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.virtual_tree.minimum_connection",
+        "name": "虚树：Minimum Connection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.block_cut_tree.offline_query",
+        "name": "圆方树：Offline Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.cactus_graph.vertex_cactus",
+        "name": "仙人掌图：Vertex Cactus",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.dynamic_mst.certificate_graph",
+        "name": "动态最小生成树：Certificate Graph",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.project_selection",
+        "name": "上下界网络流：Project Selection",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.global_min_cut.random_contraction",
+        "name": "全局最小割：Random Contraction",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.matroid_matching",
+        "name": "匹配与覆盖：Matroid Matching",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_variants.merge",
+        "name": "线段树变体：Merge",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.static",
+        "name": "李超线段树：Static",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_kth",
+        "name": "小波树：区间第 k 小",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.range_count",
+        "name": "归并排序树：Range Count",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dsu_advanced.rollback",
+        "name": "高级并查集：回滚版",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.implicit_treap",
+        "name": "高级平衡树：Implicit Treap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+        "name": "动态树结构：Euler Tour Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+        "name": "高级 RMQ：Disjoint Sparse Table",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.kd_tree",
+        "name": "多维数据结构：Kd Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.leftist_heap",
+        "name": "可并堆：Leftist Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+        "name": "位集与线性基：Bitset Convolution",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+        "name": "离线数据结构框架：Cdq With Fenwick",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.rope_editing",
+        "name": "序列维护结构：Rope Editing",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+        "name": "简洁与概率结构：Bloom Filter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.persistent_array",
+        "name": "可持久化结构：Persistent Array",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+        "name": "树分治维护：Centroid Decomposition Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.dynamic",
+        "name": "李超线段树：动态版",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_rank",
+        "name": "小波树：Range Rank",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+        "name": "归并排序树：Range Kth With Binary Search",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dsu_advanced.persistent",
+        "name": "高级并查集：可持久化版",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.fhq_split_merge",
+        "name": "高级平衡树：Fhq Split Merge",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.top_tree",
+        "name": "动态树结构：Top Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+        "name": "高级 RMQ：Sqrt Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.2d_fenwick",
+        "name": "多维数据结构：2D Fenwick",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.pairing_heap",
+        "name": "可并堆：Pairing Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+        "name": "位集与线性基：Bitset Knapsack",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.overall_binary_search",
+        "name": "离线数据结构框架：Overall Binary Search",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+        "name": "序列维护结构：Piece Table Editing",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+        "name": "简洁与概率结构：Counting Bloom Filter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+        "name": "可持久化结构：Persistent Stack Queue",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+        "name": "树分治维护：Centroid Update",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+        "name": "Segment Tree Beats：Range Modulo",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_variants.dynamic_segment_tree",
+        "name": "线段树变体：Dynamic Segment Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.segment_insertion",
+        "name": "李超线段树：Segment Insertion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_quantile",
+        "name": "小波树：Range Quantile",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+        "name": "归并排序树：Fractional Cascading",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.persistent_treap",
+        "name": "高级平衡树：Persistent Treap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+        "name": "动态树结构：Link Cut Path Aggregate",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+        "name": "高级 RMQ：Cartesian Tree Rmq",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.3d_fenwick",
+        "name": "多维数据结构：3D Fenwick",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.binomial_heap",
+        "name": "可并堆：Binomial Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+        "name": "位集与线性基：Persistent Linear Basis",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+        "name": "离线数据结构框架：Divide Conquer Optimization",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+        "name": "序列维护结构：Gap Buffer Concept",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+        "name": "简洁与概率结构：Quotient Filter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+        "name": "可持久化结构：Persistent Fenwick",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+        "name": "树分治维护：Hld Segment Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.range_add_max",
+        "name": "Segment Tree Beats：Range Add Max",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+        "name": "李超线段树：Maximum Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_predecessor",
+        "name": "小波树：Range Predecessor",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+        "name": "归并排序树：Range Predecessor",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.splay_sequence",
+        "name": "高级平衡树：Splay Sequence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+        "name": "动态树结构：Link Cut Subtree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.fischer_heun",
+        "name": "高级 RMQ：Fischer Heun",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.range_tree",
+        "name": "多维数据结构：Range Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.fibonacci_heap",
+        "name": "可并堆：Fibonacci Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.range_xor_basis",
+        "name": "位集与线性基：Range Xor Basis",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.mo_algorithm_with_updates",
+        "name": "离线数据结构框架：Mo Algorithm With Updates",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.implicit_splay_reverse",
+        "name": "序列维护结构：Implicit Splay Reverse",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.skip_list",
+        "name": "简洁与概率结构：Skip List",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.persistent_segment_tree_kth",
+        "name": "可持久化结构：Persistent Segment Tree Kth",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.dsu_on_tree_color",
+        "name": "树分治维护：Dsu On Tree Color",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.historical_maximum",
+        "name": "Segment Tree Beats：Historical Maximum",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+        "name": "李超线段树：Minimum Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_successor",
+        "name": "小波树：Range Successor",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.range_successor",
+        "name": "归并排序树：Range Successor",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.order_statistic_tree",
+        "name": "高级平衡树：Order Statistic Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.dynamic_tree_diameter",
+        "name": "动态树结构：Dynamic Tree Diameter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.blocked_rmq",
+        "name": "高级 RMQ：Blocked Rmq",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.offline_2d_point_counting",
+        "name": "多维数据结构：Offline 2D Point Counting",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.skew_heap",
+        "name": "可并堆：Skew Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.linear_basis_merge",
+        "name": "位集与线性基：Linear Basis Merge",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.rollback_block_decomposition",
+        "name": "离线数据结构框架：Rollback Block Decomposition",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.implicit_treap_lazy_tags",
+        "name": "序列维护结构：Implicit Treap Lazy Tags",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.persistent_union_find",
+        "name": "可持久化结构：Persistent Union Find",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.small_large_subtree",
+        "name": "树分治维护：Small Large Subtree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+        "name": "Segment Tree Beats：Second Maximum Invariant",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.on_tree",
+        "name": "李超线段树：On Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_frequency",
+        "name": "小波树：Range Frequency",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.point_update",
+        "name": "归并排序树：Point Update",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.rope",
+        "name": "高级平衡树：Rope",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+        "name": "动态树结构：Dynamic Lca",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.plus_minus_one_rmq",
+        "name": "高级 RMQ：Plus Minus One Rmq",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+        "name": "多维数据结构：Cdq Divide Conquer",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+        "name": "可并堆：Double Ended Priority Queue",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.offline_rectangle_add",
+        "name": "离线数据结构框架：Offline Rectangle Add",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.range_hash_maintenance",
+        "name": "序列维护结构：Range Hash Maintenance",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.succinct_bitvector_rank",
+        "name": "简洁与概率结构：Succinct Bitvector Rank",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.fat_node_method",
+        "name": "可持久化结构：Fat Node Method",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.virtual_tree_plus_hld",
+        "name": "树分治维护：Virtual Tree Plus Hld",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+        "name": "Segment Tree Beats：Range Min Max Sum",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.persistent",
+        "name": "李超线段树：可持久化版",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.compressed_alphabet",
+        "name": "小波树：Compressed Alphabet",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+        "name": "归并排序树：Persistent Variant",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dsu_advanced.dsu_on_tree",
+        "name": "高级并查集：Dsu On Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.piece_table",
+        "name": "高级平衡树：Piece Table",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+        "name": "动态树结构：Reroot Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.range_idempotent_query",
+        "name": "高级 RMQ：Range Idempotent Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.parallel_binary_search",
+        "name": "多维数据结构：Parallel Binary Search",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+        "name": "可并堆：Persistent Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+        "name": "位集与线性基：Basis On Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.offline_range_mex",
+        "name": "离线数据结构框架：Offline Range Mex",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.sequence_split_merge",
+        "name": "序列维护结构：Sequence Split Merge",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.succinct_select",
+        "name": "简洁与概率结构：Succinct Select",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.path_copying_method",
+        "name": "可持久化结构：Path Copying Method",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.tree_path_kth",
+        "name": "树分治维护：Tree Path Kth",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+        "name": "Segment Tree Beats：Beats Proof",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.rollback",
+        "name": "李超线段树：回滚版",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.dynamic_variant",
+        "name": "小波树：Dynamic Variant",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+        "name": "归并排序树：Offline Inversion",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.scapegoat_tree",
+        "name": "高级平衡树：Scapegoat Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+        "name": "动态树结构：Cut Link Connectivity",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.static_range_mode",
+        "name": "高级 RMQ：Static Range Mode",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+        "name": "多维数据结构：Bitset Rectangle Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+        "name": "可并堆：Lazy Deletion Heap",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.time_divide_conquer",
+        "name": "离线数据结构框架：Time Divide Conquer",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.order_maintenance",
+        "name": "序列维护结构：Order Maintenance",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.compressed_trie",
+        "name": "简洁与概率结构：Compressed Trie",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.version_dag",
+        "name": "可持久化结构：Version Dag",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.subtree_query_flatten",
+        "name": "树分治维护：Subtree Query Flatten",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+        "name": "Segment Tree Beats：Beats With Assignment",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_variants.gcd_segment_tree",
+        "name": "线段树变体：Gcd Segment Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.coordinate_compressed",
+        "name": "李超线段树：Coordinate Compressed",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.wavelet_matrix",
+        "name": "小波树：Wavelet Matrix",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+        "name": "归并排序树：2D Dominance",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dsu_advanced.undo_stack",
+        "name": "高级并查集：Undo Stack",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.join_based_tree",
+        "name": "高级平衡树：Join Based Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+        "name": "动态树结构：Path Lazy Tag",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.sparse_table_2d",
+        "name": "高级 RMQ：Sparse Table 2D",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.orthogonal_range_query",
+        "name": "多维数据结构：Orthogonal Range Query",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+        "name": "可并堆：Meldable Priority Queue",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.parallel_check_framework",
+        "name": "离线数据结构框架：Parallel Check Framework",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.persistent_sequence",
+        "name": "序列维护结构：Persistent Sequence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.perfect_hashing",
+        "name": "简洁与概率结构：Perfect Hashing",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.persistent_structure.rollback_vs_persistence",
+        "name": "可持久化结构：Rollback Vs Persistence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.dynamic_centroid",
+        "name": "树分治维护：Dynamic Centroid",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+        "name": "Segment Tree Beats：Beats Amortized Analysis",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.offline_rectangle_query",
+        "name": "小波树：Offline Rectangle Query",
+        "reason": "别名已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+        "name": "归并排序树：Memory Optimization",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.balanced_tree_advanced.lazy_reversible_sequence",
+        "name": "高级平衡树：Lazy Reversible Sequence",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+        "name": "动态树结构：Virtual Subtree Aggregate",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.rmq_sparse.cache_friendly_rmq",
+        "name": "高级 RMQ：Cache Friendly Rmq",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.multidimensional.dominance_counting",
+        "name": "多维数据结构：Dominance Counting",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+        "name": "可并堆：Heap With Decrease Key",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.offline_framework.event_sweep_with_tree",
+        "name": "离线数据结构框架：Event Sweep With Tree",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.sequence_structure.text_editor_model",
+        "name": "序列维护结构：Text Editor Model",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.succinct_probabilistic.xor_filter",
+        "name": "简洁与概率结构：Xor Filter",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.tree_decomposition_ds.tree_distance_aggregate",
+        "name": "树分治维护：Tree Distance Aggregate",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_beats.range_chmin.codex1",
+        "name": "Segment Tree Beats：区间取 min 变体 1",
+        "reason": "名称已在图谱中"
+      },
+      {
+        "candidate_id": "cand.math.crt.basic",
+        "name": "中国剩余定理",
+        "reason": "名称\"中国剩余定理\"已存在于主图谱"
+      },
+      {
+        "candidate_id": "cand.math.polynomial.lagrange",
+        "name": "拉格朗日插值",
+        "reason": "名称\"拉格朗日插值\"已存在于主图谱"
+      },
+      {
+        "candidate_id": "cand.math.generating_function.ordinary",
+        "name": "普通生成函数",
+        "reason": "名称\"普通生成函数\"已存在于主图谱"
+      },
+      {
+        "candidate_id": "cand.math.generating_function.exponential",
+        "name": "指数生成函数",
+        "reason": "名称\"指数生成函数\"已存在于主图谱"
+      }
+    ],
+    "high_risk": []
+  },
+  "candidates": [
+    {
+      "candidate_id": "cand.ds.multidimensional.dominance_counting",
+      "name": "Multidimensional: Dominance Counting",
+      "source": "carry_over",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "Stage3E v2 第25个候选，因fallback_24截断未合并，作为carry-over"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+      "name": "Merge Sort Tree: Memory Optimization",
+      "source": "reserve_pool",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "Reserve pool 中可用候选中名称不在图谱中"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+      "name": "Merge Sort Tree: Offline Inversion",
+      "source": "reserve_pool",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "Reserve pool 中可用候选中名称不在图谱中"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+      "name": "Merge Sort Tree: Persistent Variant",
+      "source": "reserve_pool",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "Reserve pool 中可用候选中名称不在图谱中"
+    },
+    {
+      "candidate_id": "cand.graph.hall_theorem.applications",
+      "name": "Hall 定理及应用",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.two_sat.modeling_techniques",
+      "name": "2-SAT 建模技巧",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling.raw",
+      "name": "差分约束系统建模",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.max_weight_closure.problem",
+      "name": "最大权闭合子图",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.johnson_potentials",
+      "name": "高级最短路：Johnson Potentials",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.yen_k_shortest",
+      "name": "高级最短路：Yen K Shortest",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.eppstein_k_shortest",
+      "name": "高级最短路：Eppstein K Shortest",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.replacement_paths",
+      "name": "高级最短路：Replacement Paths",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.resource_constrained",
+      "name": "高级最短路：Resource Constrained",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.fully_dynamic_overview",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.global_min_cut.minimum_cut_modeling",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.scc_dp",
+      "name": "强连通分量 DAG：Scc Dp",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.dynamic_bridge",
+      "name": "动态图连通性：Dynamic Bridge",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.component_topo_order",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.min_cost_path_cover",
+      "name": "高级最短路：Min Cost Path Cover",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.embedding_basics",
+      "name": "平面图：Embedding Basics",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.dynamic_biconnectivity",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.zero_one_bfs_modeling",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.connectivity_snapshots",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.graph.closure_model.penalty_modeling",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "source": "external_b1",
+      "suggested_section": "2.21",
+      "section_name": "高级图论扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级图论扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.split",
+      "name": "线段树变体：Split",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.parity",
+      "name": "高级并查集：Parity",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.persistent_segment_tree",
+      "name": "线段树变体：Persistent Segment Tree",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.distance",
+      "name": "高级并查集：Distance",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.two_dimensional_segment_tree",
+      "name": "线段树变体：Two Dimensional Segment Tree",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.weighted",
+      "name": "高级并查集：Weighted",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.van_emde_boas_overview",
+      "name": "简洁与概率结构：Van Emde Boas Overview",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.segment_tree_of_vectors",
+      "name": "线段树变体：Segment Tree Of Vectors",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.small_to_large",
+      "name": "高级并查集：Small To Large",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+      "name": "位集与线性基：Rollback Linear Basis",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.segment_tree_over_time",
+      "name": "线段树变体：Segment Tree Over Time",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.range_assign_lazy",
+      "name": "线段树变体：Range Assign Lazy",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.offline_dynamic_connectivity",
+      "name": "高级并查集：Offline Dynamic Connectivity",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+      "name": "位集与线性基：Maximum Xor Query",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+      "name": "位集与线性基：Rank Over Gf2",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.matrix_segment_tree",
+      "name": "线段树变体：Matrix Segment Tree",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.cht_comparison",
+      "name": "李超线段树：Cht Comparison",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.component_aggregate",
+      "name": "高级并查集：Component Aggregate",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+      "name": "位集与线性基：Basis With Deletion",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=low"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.retroactive_overview",
+      "name": "可持久化结构：Retroactive Overview",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.merge.codex1",
+      "name": "线段树变体：Merge 变体 1",
+      "source": "external_b1",
+      "suggested_section": "3.13",
+      "section_name": "高级数据结构扩展",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B1 Codex, section=高级数据结构扩展, risk=medium"
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.basic",
+      "name": "Z算法基础",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.pattern_matching",
+      "name": "Z算法模式匹配应用",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.ex_kmp.basic",
+      "name": "扩展KMP算法基础",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.kmp_automaton.basic",
+      "name": "KMP自动机基础",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.ac_automaton.applications",
+      "name": "AC自动机高级应用",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.ac_failure_tree.analysis",
+      "name": "AC自动机失败树分析",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.suffix_array.sa_is",
+      "name": "后缀数组SA-IS算法",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.lcp_rmq.optimization",
+      "name": "LCP RMQ优化",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.generalized_sam.construction",
+      "name": "广义SAM构建",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.sam_parent_tree.structure",
+      "name": "SAM父树结构",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.eertree.construction",
+      "name": "回文树Eertree构建",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.suffix_tree.ukkonen",
+      "name": "后缀树Ukkonen算法",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.lyndon_decomposition.basic",
+      "name": "Lyndon分解基础",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.duval_algorithm.minimal_rotation",
+      "name": "Duval算法最小表示",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "medium",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.runs_repetitions.basic",
+      "name": "Runs重复子串分析",
+      "source": "external_b2",
+      "suggested_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.border_tree.structure",
+      "name": "Border树结构",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.hashing.2d_rolling_hash",
+      "name": "二维滚动哈希",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "medium",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.hashing.collision_strategy",
+      "name": "哈希碰撞处理策略",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "medium",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.manacher.algorithm",
+      "name": "Manacher算法",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.boyer_moore.algorithm",
+      "name": "Boyer-Moore算法",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.rabin_karp.algorithm",
+      "name": "Rabin-Karp算法",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.string_matching.kmp",
+      "name": "KMP算法详解",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.string.string_matching.sunday",
+      "name": "Sunday算法",
+      "source": "external_b2",
+      "suggested_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "medium",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=medium"
+    },
+    {
+      "candidate_id": "cand.math.prime_testing.miller_rabin",
+      "name": "Miller-Rabin素数测试",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.prime_factorization.pollard_rho",
+      "name": "Pollard Rho分解",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.primitive_root.basic",
+      "name": "原根基础",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.bsgs",
+      "name": "BSGS离散对数",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.exbsgs",
+      "name": "扩展BSGS",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.legendre_symbol",
+      "name": "Legendre符号",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+      "name": "Tonelli-Shanks算法",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.dirichlet_convolution.basic",
+      "name": "狄利克雷卷积基础",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.mobius_inversion.applications",
+      "name": "莫比乌斯反演应用",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.euler_function.applications",
+      "name": "欧拉函数应用",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.sieve.du_jiao",
+      "name": "杜教筛",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.sieve.min_25",
+      "name": "Min_25筛",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.lucas",
+      "name": "Lucas定理",
+      "source": "external_b2",
+      "suggested_section": "4.3",
+      "section_name": "计数与组合",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.exlucas",
+      "name": "扩展Lucas定理",
+      "source": "external_b2",
+      "suggested_section": "4.3",
+      "section_name": "计数与组合",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.catalan",
+      "name": "Catalan数",
+      "source": "external_b2",
+      "suggested_section": "4.3",
+      "section_name": "计数与组合",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.crt.extended",
+      "name": "扩展中国剩余定理",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.crt.garner",
+      "name": "Garner算法",
+      "source": "external_b2",
+      "suggested_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fwt",
+      "name": "快速沃尔什变换",
+      "source": "external_b2",
+      "suggested_section": "2.17",
+      "section_name": "线性代数与插值专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.subset_convolution",
+      "name": "子集卷积",
+      "source": "external_b2",
+      "suggested_section": "2.17",
+      "section_name": "线性代数与插值专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.berlekamp_massey",
+      "name": "Berlekamp-Massey算法",
+      "source": "external_b2",
+      "suggested_section": "2.17",
+      "section_name": "线性代数与插值专题",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.linear_recurrence.basic",
+      "name": "线性递推基础",
+      "source": "external_b2",
+      "suggested_section": "4.4",
+      "section_name": "离散数学基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "medium",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=medium"
+    },
+    {
+      "candidate_id": "cand.math.linear_recurrence.kitamasa",
+      "name": "Kitamasa算法",
+      "source": "external_b2",
+      "suggested_section": "4.4",
+      "section_name": "离散数学基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "medium",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=medium"
+    },
+    {
+      "candidate_id": "cand.math.group_theory.burnside",
+      "name": "Burnside引理",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.group_theory.polya",
+      "name": "Polya计数定理",
+      "source": "external_b2",
+      "suggested_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.graph.matrix_tree",
+      "name": "矩阵树定理",
+      "source": "external_b2",
+      "suggested_section": "4.5",
+      "section_name": "图与树的数学基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.math.graph.gaussian_elimination_gf2",
+      "name": "GF(2)上的高斯消元",
+      "source": "external_b2",
+      "suggested_section": "4.5",
+      "section_name": "图与树的数学基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.digit.basic",
+      "name": "数位DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.digit.complex",
+      "name": "复杂数位DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.tree.basic",
+      "name": "树DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.tree.diameter",
+      "name": "树的直径DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.tree.centroid",
+      "name": "树的重心DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.tree.rerooting",
+      "name": "换根DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.dag.topological",
+      "name": "拓扑排序DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.dag.longest_path",
+      "name": "DAG最长路DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.state_compression.basic",
+      "name": "状态压缩DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.state_compression.traveling",
+      "name": "旅行商问题DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.subset.basic",
+      "name": "子集DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.subset.enumeration",
+      "name": "子集枚举优化",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.profile.basic",
+      "name": "轮廓DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.profile.plug",
+      "name": "插头DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.automaton.basic",
+      "name": "自动机DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.automaton.matrix",
+      "name": "自动机矩阵DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.probability.basic",
+      "name": "概率DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.probability.expectation",
+      "name": "期望DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.probability.markov",
+      "name": "马尔可夫链DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.game.basic",
+      "name": "博弈DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.game.grundy",
+      "name": "Grundy数DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue",
+      "name": "单调队列优化",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue_sliding",
+      "name": "滑动窗口DP",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.slope.basic",
+      "name": "斜率优化基础",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.slope.advanced",
+      "name": "斜率优化高级",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "green",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.divide_conquer",
+      "name": "分治DP优化",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.knuth",
+      "name": "Knuth优化",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.wqs_binary",
+      "name": "WQS二分优化",
+      "source": "external_b2",
+      "suggested_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.matrix.basic",
+      "name": "矩阵DP基础",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    },
+    {
+      "candidate_id": "cand.dp.matrix.fast_power",
+      "name": "矩阵快速幂DP",
+      "source": "external_b2",
+      "suggested_section": "2.8",
+      "section_name": "动态规划",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "possible_duplicate_or_overlap": false,
+      "stage3f_status": "eligible",
+      "reason": "External B2 mapping confidence=high"
+    }
+  ]
+}

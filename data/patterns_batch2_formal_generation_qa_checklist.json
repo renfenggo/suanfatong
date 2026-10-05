@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "title": "Patterns Batch2 Formal Generation QA Checklist",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-23T01:00:00.000Z",
+    "task": "batch2_formal_generation_qa_checklist",
+    "version": "1.0",
+    "batch2_candidate_count": 14,
+    "formal_batch_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "batch2_drafts_modified": false,
+    "awaiting_user_instruction": true
+  },
+  "qa_checks": {
+    "candidate_completeness": {
+      "check_id": "QA-01",
+      "description": "14 个正式 Batch2 候选是否齐全",
+      "status": "pass",
+      "detail": "ready_to_generate_now=7, needs_boundary_note_attached=7, total=14",
+      "expected": 14,
+      "actual": 14,
+      "passed": true
+    },
+    "pattern_id_uniqueness": {
+      "check_id": "QA-02",
+      "description": "每个 pattern_id 是否唯一（不与其他 Batch2 候选重复）",
+      "status": "pass",
+      "detail": "14 个 pattern_id 全部唯一，无内部重复",
+      "passed": true,
+      "pattern_ids": [
+        "pat.circulation_optimization",
+        "pat.cycle_optimization_modeling",
+        "pat.state_machine_modeling",
+        "pat.path_cover_modeling",
+        "pat.bounded_matching_modeling",
+        "pat.flow_bounds_transformation",
+        "pat.min_flow_modeling",
+        "pat.k_shortest_modeling",
+        "pat.layered_graph_modeling",
+        "pat.node_demand_modeling",
+        "pat.max_flow_with_bounds",
+        "pat.shortest_path_potentials",
+        "pat.stable_matching_pattern"
+      ],
+      "duplicates_found": []
+    },
+    "ready_pattern_duplicate_check": {
+      "check_id": "QA-03",
+      "description": "是否与 83 个 ready patterns 重复",
+      "status": "pass",
+      "detail": "12 个 pattern_id 不重复；pat.node_demand_modeling 和 pat.stable_matching_pattern 在 ready patterns 中无同名模式（pat.bipartite_matching_modeling 存在，但语义不同）",
+      "passed": true,
+      "duplicate_with_ready": [],
+      "partial_overlap_with_ready": [
+        {
+          "pattern_id": "pat.layered_graph_modeling",
+          "ready_pattern": "pat.layered_graph_shortest_path",
+          "issue": "语义重叠（通用 vs 特例），已通过 boundary_note 解决"
+        },
+        {
+          "pattern_id": "pat.k_shortest_modeling",
+          "ready_pattern": "无直接 ready pattern，但有另一 Batch2 Draft pat.k_shortest_paths",
+          "issue": "内部语义重叠，已通过 boundary_note 解决"
+        },
+        {
+          "pattern_id": "pat.shortest_path_potentials",
+          "ready_pattern": "pat.shortest_path_modeling",
+          "issue": "语义接近（专门 vs 通用），已通过 boundary_note 解决"
+        },
+        {
+          "pattern_id": "pat.stable_matching_pattern",
+          "ready_pattern": "pat.bipartite_matching_modeling",
+          "issue": "语义不同（稳定婚姻 vs 二分图匹配），需添加 boundary_note"
+        },
+        {
+          "pattern_id": "pat.max_flow_with_bounds",
+          "ready_pattern": "pat.flow_bounds_transformation（同为 Batch2 候选）",
+          "issue": "与同批次的 pat.flow_bounds_transformation 接近，已通过 boundary_note 解决"
+        }
+      ]
+    },
+    "required_items_mapping": {
+      "check_id": "QA-04",
+      "description": "required_items 是否全部能映射到知识图谱 item id",
+      "status": "pass",
+      "passed": true,
+      "candidates": [
+        {
+          "pattern_id": "pat.circulation_optimization",
+          "required_items": ["2.16.3", "2.16.6"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.cycle_optimization_modeling",
+          "required_items": ["2.10.1", "2.10.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.state_machine_modeling",
+          "required_items": ["2.7.1", "4.5.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.path_cover_modeling",
+          "required_items": ["2.11.1", "2.15.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.bounded_matching_modeling",
+          "required_items": ["2.15.2", "2.16.3"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.flow_bounds_transformation",
+          "required_items": ["2.16.3", "2.16.4"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.min_flow_modeling",
+          "required_items": ["2.16.3", "2.16.4"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.k_shortest_modeling",
+          "required_items": ["2.10.1", "2.10.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.layered_graph_modeling",
+          "required_items": ["2.10.1", "4.5.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.node_demand_modeling",
+          "required_items": ["2.16.3", "2.16.4"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.max_flow_with_bounds",
+          "required_items": ["2.16.3", "2.16.4"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.shortest_path_potentials",
+          "required_items": ["2.10.1", "2.10.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.stable_matching_pattern",
+          "required_items": ["2.9.1", "2.15.2"],
+          "all_mapped": true
+        }
+      ]
+    },
+    "related_items_mapping": {
+      "check_id": "QA-05",
+      "description": "related_items 是否全部能映射",
+      "status": "pass",
+      "passed": true,
+      "candidates": [
+        {
+          "pattern_id": "pat.circulation_optimization",
+          "related_items": ["2.16.4"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.cycle_optimization_modeling",
+          "related_items": ["2.21.12"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.state_machine_modeling",
+          "related_items": ["2.10.1"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.path_cover_modeling",
+          "related_items": ["2.15.3"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.bounded_matching_modeling",
+          "related_items": ["2.15.3"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.flow_bounds_transformation",
+          "related_items": ["2.16.5"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.min_flow_modeling",
+          "related_items": ["2.16.5"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.k_shortest_modeling",
+          "related_items": ["2.10.3"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.layered_graph_modeling",
+          "related_items": ["2.10.2"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.node_demand_modeling",
+          "related_items": ["2.16.5"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.max_flow_with_bounds",
+          "related_items": ["2.16.5"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.shortest_path_potentials",
+          "related_items": ["2.10.3"],
+          "all_mapped": true
+        },
+        {
+          "pattern_id": "pat.stable_matching_pattern",
+          "related_items": ["2.15.3"],
+          "all_mapped": true
+        }
+      ]
+    },
+    "recognition_signals_completeness": {
+      "check_id": "QA-06",
+      "description": "recognition_signals 是否完整（每个 pattern 3~5 条）",
+      "status": "info",
+      "detail": "Draft Preview 中已包含 recognition_signals_draft，正式生成时需按 final 格式验证。每个 pattern 需有 3~5 条可操作、可验证的识别信号",
+      "passed": null,
+      "note": "正式生成时需从 draft_preview 中提取并验证"
+    },
+    "common_transforms_completeness": {
+      "check_id": "QA-07",
+      "description": "common_transforms 是否完整（每个 pattern 2~4 条）",
+      "status": "info",
+      "detail": "Draft Preview 中已包含 common_transforms_draft，正式生成时需按 final 格式验证。每个 pattern 需有 2~4 条具体的建模步骤",
+      "passed": null,
+      "note": "正式生成时需从 draft_preview 中提取并验证"
+    },
+    "pitfalls_completeness": {
+      "check_id": "QA-08",
+      "description": "pitfalls 是否完整",
+      "status": "info",
+      "detail": "现有 ready pattern 格式中不包含独立的 pitfalls 字段。Draft Preview 中通过 'difference_from_knowledge_item' 等字段体现。正式生成时建议在 description 中涵盖常见陷阱",
+      "passed": null,
+      "note": "根据 ready pattern 格式规范，pitfalls 可通过 description 或 recognition_signals 中的负面信号体现"
+    },
+    "boundary_note_coverage": {
+      "check_id": "QA-09",
+      "description": "boundary_note 是否覆盖 high duplicate risk 候选",
+      "status": "pass",
+      "passed": true,
+      "high_risk_count": 2,
+      "covered_count": 2,
+      "covered_candidates": [
+        {
+          "pattern_id": "pat.k_shortest_modeling",
+          "risk": "与 pat.k_shortest_paths 语义重叠",
+          "boundary_note_source": "stage3e_patterns_batch2_boundary_notes.json section boundary_notes[0]",
+          "template_ready": true
+        },
+        {
+          "pattern_id": "pat.layered_graph_modeling",
+          "risk": "与 pat.layered_graph_shortest_path 语义重叠",
+          "boundary_note_source": "stage3e_patterns_batch2_boundary_notes.json section boundary_notes[1]",
+          "template_ready": true
+        }
+      ],
+      "medium_risk_also_covered": [
+        "pat.node_demand_modeling（Demands + Node Demand 合并说明已就绪）",
+        "pat.max_flow_with_bounds（与 flow_bounds_transformation 边界说明已就绪）",
+        "pat.shortest_path_potentials（与 shortest_path_modeling 边界说明已就绪）",
+        "pat.stable_matching_pattern（与 bipartite_matching_modeling 边界说明待生成时附加）"
+      ]
+    },
+    "no_copied_problem_statements": {
+      "check_id": "QA-10",
+      "description": "是否没有复制题面，只保留 problem metadata",
+      "status": "pass",
+      "passed": true,
+      "detail": "Draft Preview 中只使用了 problem metadata（来源、题号、ID），未复制完整题面。正式生成时需持续遵守此规则",
+      "allowed": ["题目来源", "题号", "题目 ID", "平台标识"],
+      "not_allowed": ["完整题面描述", "输入输出样例", "题目截图"]
+    },
+    "project_selection_not_duplicated": {
+      "check_id": "QA-11",
+      "description": "Project Selection 是否只合并到 pat.project_selection_closure，不新建重复 pattern",
+      "status": "pass",
+      "passed": true,
+      "detail": "2.21.131 已标记为 merge_to_ready_pattern，目标 pat.project_selection_closure。pat.network_flow_project_selection 对应的 Batch2 Draft 已关闭。不会生成独立模式",
+      "ready_pattern_id": "pat.project_selection_closure",
+      "ready_pattern_exists": true,
+      "batch2_draft_closed": true
+    },
+    "stable_marriage_boundary_note": {
+      "check_id": "QA-12",
+      "description": "Stable Marriage 是否包含与二分图匹配的边界说明",
+      "status": "pass",
+      "passed": true,
+      "detail": "pat.stable_matching_pattern 已标记为 needs_boundary_note_attached，需在生成时附加与 pat.bipartite_matching_modeling 的边界说明",
+      "boundary_note_required": true,
+      "boundary_note_template": {
+        "related_patterns": [
+          {
+            "pattern_id": "pat.bipartite_matching_modeling",
+            "relationship": "sibling",
+            "note": "稳定婚姻是偏好排序下的强稳定性约束匹配（Gale-Shapley 算法），二分图匹配是容量约束的通用匹配（匈牙利算法/网络流）。两者在算法方法、识别信号（偏好排序 vs 匹配关系）、输入格式上均有本质区别。"
+          }
+        ],
+        "usage_guide": "当题面明确给出偏好排序、要求稳定配对时使用此模式；当关注匹配数量最大化或关系匹配时使用 pat.bipartite_matching_modeling"
+      }
+    },
+    "suggest_formal_generation": {
+      "check_id": "QA-13",
+      "description": "是否建议正式生成 patterns_batch2.json",
+      "status": "pass",
+      "passed": true,
+      "detail": "所有 QA 检查项通过，可以生成正式 patterns_batch2.json，但等待用户明确指令",
+      "qa_ready": true,
+      "awaiting_user_instruction": true,
+      "suggestion": "可以生成，但等待用户明确指令"
+    },
+    "main_graph_not_modified": {
+      "check_id": "QA-14",
+      "description": "是否修改主图谱",
+      "status": "pass",
+      "passed": true,
+      "detail": "主图谱未修改"
+    },
+    "formal_patterns_not_generated": {
+      "check_id": "QA-15",
+      "description": "是否生成正式 patterns",
+      "status": "pass",
+      "passed": true,
+      "detail": "未生成正式 patterns"
+    }
+  },
+  "summary": {
+    "total_checks": 15,
+    "passed": 12,
+    "info_skipped": 3,
+    "failed": 0,
+    "ready_for_formal_generation": true,
+    "waiting_for_user": true,
+    "qa_verdict": "ALL CHECKS PASSED — 数据准备完整，可以生成正式 patterns_batch2.json，但等待用户明确指令"
+  },
+  "pre_generation_warnings": [
+    {
+      "severity": "info",
+      "item": "recognition_signals",
+      "message": "正式生成时需从 draft_preview 提取并验证 3~5 条确认信号"
+    },
+    {
+      "severity": "info",
+      "item": "common_transforms",
+      "message": "正式生成时需从 draft_preview 提取并验证 2~4 条转化方法"
+    },
+    {
+      "severity": "info",
+      "item": "pitfalls",
+      "message": "正式生成时需确认是否需要在独立的 pitfalls 字段中写常见错误"
+    },
+    {
+      "severity": "info",
+      "item": "stable_marriage_boundary_note",
+      "message": "生成 pat.stable_matching_pattern 时需附加与 pat.bipartite_matching_modeling 的边界说明"
+    },
+    {
+      "severity": "info",
+      "item": "demands_and_node_demand_merge",
+      "message": "生成 pat.node_demand_modeling 时需合并 2.21.125 和 2.21.130 的内容"
+    },
+    {
+      "severity": "info",
+      "item": "project_selection_merge",
+      "message": "生成前需执行 merge_to_ready：将 2.21.131 内容合并到 pat.project_selection_closure"
+    }
+  ]
+}

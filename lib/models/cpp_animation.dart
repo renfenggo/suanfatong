@@ -17,7 +17,7 @@ class CppAnimationVariable {
 class CppAnimationContainer {
   final String name;
   final String type;
-  final List<String> values;
+  final List<dynamic> values;
   final int activeIndex;
   final String note;
 
@@ -33,11 +33,34 @@ class CppAnimationContainer {
     return CppAnimationContainer(
       name: json['name'] as String? ?? '',
       type: json['type'] as String? ?? '',
-      values:
-          (json['values'] as List?)?.whereType<String>().toList() ?? const [],
+      values: (json['values'] as List?)?.toList() ?? const [],
       activeIndex: json['activeIndex'] as int? ?? -1,
       note: json['note'] as String? ?? '',
     );
+  }
+
+  bool get isMatrix => type == 'matrix';
+
+  List<String> get flatValues {
+    if (!isMatrix) {
+      return values.map((value) => value.toString()).toList();
+    }
+    return values
+        .expand(
+          (row) =>
+              row is List
+                  ? row.map((value) => value.toString())
+                  : [row.toString()],
+        )
+        .toList();
+  }
+
+  List<List<String>> get matrixValues {
+    if (!isMatrix) return const [];
+    return values
+        .whereType<List>()
+        .map((row) => row.map((value) => value.toString()).toList())
+        .toList();
   }
 }
 

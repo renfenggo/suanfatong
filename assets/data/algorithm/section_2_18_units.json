@@ -1,0 +1,356 @@
+{
+  "sectionId": "2.18",
+  "sectionName": "综合高级技巧专题",
+  "units": [
+    {
+      "itemId": "2.18.1",
+      "title": "高精度加减乘",
+      "learningGoal": "掌握高精度整数的存储方式，实现加减乘运算并处理进位/借位",
+      "explanation": "高精度运算用于处理超出 long long 范围的大整数（如 1000 位数）。\n\n存储方式：\n用数组/字符串存储，低位在数组前面（方便进位）。\n例如 12345 → [5, 4, 3, 2, 1]\n\n加法：\n1. 对齐长度，从低位开始加\n2. 进位：sum = a[i] + b[i] + carry\n3. carry = sum / 10, result[i] = sum % 10\n时间复杂度 O(max(n, m))\n\n减法：\n1. 确保被减数 >= 减数（若 a < b，则 a = a - b，最后取负）\n2. 从低位开始减\n3. 借位：if (a[i] < b[i]) { a[i+1]--; a[i] += 10; }\n4. 去除前导零\n时间复杂度 O(max(n, m))\n\n乘法（高精度 × 整数）：\n1. 用每一位乘以整数\n2. 进位：carry += a[i] × b\n3. a[i] = carry % 10, carry /= 10\n时间复杂度 O(n)\n\n乘法（高精度 × 高精度）：\n1. 初始化结果数组 result[n+m]\n2. result[i+j] += a[i] × b[j]\n3. 统一进位\n时间复杂度 O(n×m)\n\n应用：\n- 大数阶乘\n- 大数组合数\n- 斐波那契数列大数\n- RSA 算法中的大数运算",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <algorithm>\n#include <vector>\nusing namespace std;\n\nvector<int> add(vector<int> a, vector<int> b) {\n    int carry = 0;\n    vector<int> c;\n    int n = max(a.size(), b.size());\n    for (int i = 0; i < n || carry; i++) {\n        if (i < a.size()) carry += a[i];\n        if (i < b.size()) carry += b[i];\n        c.push_back(carry % 10);\n        carry /= 10;\n    }\n    return c;\n}\n\nvector<int> sub(vector<int> a, vector<int> b) {\n    int carry = 0;\n    vector<int> c;\n    int n = a.size();\n    for (int i = 0; i < n; i++) {\n        carry += a[i] - (i < b.size() ? b[i] : 0);\n        c.push_back((carry + 10) % 10);\n        carry = carry < 0 ? -1 : 0;\n    }\n    while (c.size() > 1 && c.back() == 0) c.pop_back();\n    return c;\n}\n\nvector<int> mul(vector<int> a, int b) {\n    long long carry = 0;\n    vector<int> c;\n    for (int i = 0; i < a.size() || carry; i++) {\n        if (i < a.size()) carry += a[i] * b;\n        c.push_back(carry % 10);\n        carry /= 10;\n    }\n    return c;\n}\n\nvector<int> mul(vector<int> a, vector<int> b) {\n    vector<int> c(a.size() + b.size(), 0);\n    for (int i = 0; i < a.size(); i++) {\n        for (int j = 0; j < b.size(); j++) {\n            c[i + j] += a[i] * b[j];\n        }\n    }\n    int carry = 0;\n    for (int i = 0; i < c.size(); i++) {\n        carry += c[i];\n        c[i] = carry % 10;\n        carry /= 10;\n    }\n    while (c.size() > 1 && c.back() == 0) c.pop_back();\n    return c;\n}\n\nint main() {\n    vector<int> a = {3, 2, 1};\n    vector<int> b = {5, 4};\n    \n    auto c = add(a, b);\n    for (int i = c.size() - 1; i >= 0; i--) cout << c[i];\n    cout << endl;\n    \n    auto d = mul(a, b);\n    for (int i = d.size() - 1; i >= 0; i--) cout << d[i];\n    cout << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "存储方式：低位在前，如 12345 → [5, 4, 3, 2, 1]",
+        "加法：逐位相加，carry = sum / 10",
+        "减法：需要借位，确保 a >= b",
+        "乘法：result[i+j] += a[i] × b[j]，统一进位"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记去除前导零",
+          "description": "减法后结果可能有前导零，如 100 - 99 = 001。",
+          "fix": "while (c.size() > 1 && c.back() == 0) c.pop_back(); 去除前导零。"
+        },
+        {
+          "title": "进位处理不当",
+          "description": "乘法时进位可能超过一位（如 9 × 9 = 81 + carry）。",
+          "fix": "用 long long 存储 carry，统一进位：carry /= 10。"
+        },
+        {
+          "title": "字符串转数组方向错误",
+          "description": "高位在前会导致进位处理复杂。",
+          "fix": "字符串反转，低位在前：reverse(s.begin(), s.end());"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 123456789 × 987654321 的高精度乘法结果。",
+        "hint": "两个高精度数相乘，用 result[i+j] += a[i] × b[j]。",
+        "expectedIdea": "121932631112635269"
+      },
+      "quiz": [
+        {
+          "question": "高精度乘法（高精度 × 高精度）的时间复杂度是？",
+          "options": [
+            "O(n + m)",
+            "O(n × m)",
+            "O(n log m)",
+            "O(2ⁿ)"
+          ],
+          "answerIndex": 1,
+          "explanation": "高精度 × 高精度需要双层循环，每位相乘，时间复杂度 O(n × m)。"
+        },
+        {
+          "question": "高精度加法中，为什么低位在数组前面？",
+          "options": [
+            "方便输出",
+            "方便进位处理",
+            "节省空间",
+            "没有原因"
+          ],
+          "answerIndex": 1,
+          "explanation": "低位在前面，进位时可以直接向数组后面添加元素，不用移动所有位。"
+        },
+        {
+          "question": "高精度减法如何处理借位？",
+          "options": [
+            "直接相减",
+            "从下一位借 1，当前位加 10",
+            "取绝对值",
+            "忽略借位"
+          ],
+          "answerIndex": 1,
+          "explanation": "if (a[i] < b[i]) { a[i+1]--; a[i] += 10; } 从下一位借 1。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.18.2",
+      "title": "FFT / NTT",
+      "learningGoal": "理解 FFT 的离散傅里叶变换原理，掌握 O(n log n) 多项式乘法实现",
+      "explanation": "FFT（快速傅里叶变换）和 NTT（快速数论变换）用于高效计算多项式乘法，时间复杂度 O(n log n)。\n\n多项式乘法：\n朴素算法：O(n²)，逐位相乘\nFFT/NTT：O(n log n)，利用分治和单位根\n\nFFT（快速傅里叶变换）：\n1. 原理：将多项式从系数表示转换到点值表示\n2. 分治：递归地将多项式按奇偶下标分组\n3. 利用单位根性质加速计算\n4. IFFT（逆变换）：FFT 的逆过程，最后除以 n\n\n核心步骤：\n1. 补齐到 2^k\n2. 按位反转重排（蝶形运算）\n3. 分治合并（蝶形运算）\n4. IFFT 还原系数\n\nNTT（快速数论变换）：\n- 原理与 FFT 相同，但使用模运算\n- 使用原根代替单位根\n- 要求模数 N = k × 2^n + 1\n- 常用模数：998244353 (47 × 2^21 + 1)\n- 998244353 的原根：3\n\n应用：\n- 高精度乘法（分治优化）\n- 多项式卷积\n- 字符串匹配\n- 大数运算加速",
+      "exampleCode": "#include <iostream>\n#include <complex>\n#include <cmath>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nconst double PI = acos(-1.0);\ntypedef complex<double> cd;\n\nvoid fft(vector<cd>& a, bool invert) {\n    int n = a.size();\n    for (int i = 1, j = 0; i < n; i++) {\n        int bit = n >> 1;\n        for (; j & bit; bit >>= 1) j ^= bit;\n        j ^= bit;\n        if (i < j) swap(a[i], a[j]);\n    }\n    for (int len = 2; len <= n; len <<= 1) {\n        double ang = 2 * PI / len * (invert ? -1 : 1);\n        cd wlen(cos(ang), sin(ang));\n        for (int i = 0; i < n; i += len) {\n            cd w(1);\n            for (int j = 0; j < len / 2; j++) {\n                cd u = a[i + j], v = a[i + j + len / 2] * w;\n                a[i + j] = u + v;\n                a[i + j + len / 2] = u - v;\n                w *= wlen;\n            }\n        }\n    }\n    if (invert) {\n        for (cd& x : a) x /= n;\n    }\n}\n\nvector<int> multiply(vector<int> a, vector<int> b) {\n    vector<cd> fa(a.begin(), a.end()), fb(b.begin(), b.end());\n    int n = 1;\n    while (n < a.size() + b.size()) n <<= 1;\n    fa.resize(n); fb.resize(n);\n    fft(fa, false); fft(fb, false);\n    for (int i = 0; i < n; i++) fa[i] *= fb[i];\n    fft(fa, true);\n    vector<int> result(n);\n    for (int i = 0; i < n; i++) result[i] = round(fa[i].real());\n    return result;\n}\n\nint main() {\n    vector<int> a = {1, 2, 3};\n    vector<int> b = {4, 5, 6};\n    \n    auto c = multiply(a, b);\n    for (int x : c) cout << x << \" \";\n    cout << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "补齐到 2^k：n = 1; while (n < len) n <<= 1;",
+        "按位反转：i 和 j 对应的二进制位反转",
+        "蝶形运算：a[i] = u + v, a[i+len/2] = u - v",
+        "IFFT：FFT 后每个值除以 n"
+      ],
+      "commonMistakes": [
+        {
+          "title": "补齐长度不够",
+          "description": "FFT 要求长度为 2 的幂，且要能容纳 a+b 的结果。",
+          "fix": "while (n < a.size() + b.size()) n <<= 1; 确保足够。"
+        },
+        {
+          "title": "IFFT 忘记除以 n",
+          "description": "FFT 的逆变换需要每个值除以 n 才能还原系数。",
+          "fix": "for (cd& x : a) x /= n; IFFT 时除以 n。"
+        },
+        {
+          "title": "NTT 模数选择错误",
+          "description": "NTT 要求模数形式为 k × 2^n + 1。",
+          "fix": "使用常用模数 998244353 (47 × 2^21 + 1) 或 1004535809。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 FFT 计算多项式 (1 + 2x + 3x²) × (4 + 5x + 6x²)。",
+        "hint": "将系数放入数组，补齐到 2^k，FFT 后相乘，IFFT 还原。",
+        "expectedIdea": "4 + 13x + 28x² + 27x³ + 18x⁴"
+      },
+      "quiz": [
+        {
+          "question": "FFT 的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n²)",
+            "O(n log n)",
+            "O(2ⁿ)"
+          ],
+          "answerIndex": 2,
+          "explanation": "FFT 利用分治，每次问题规模减半，总层数 log n，每层 O(n)，总时间 O(n log n)。"
+        },
+        {
+          "question": "FFT 中为什么要按位反转重排？",
+          "options": [
+            "减少内存",
+            "方便分治合并",
+            "加速运算",
+            "没有原因"
+          ],
+          "answerIndex": 1,
+          "explanation": "按位反转后，奇偶下标的元素相邻，方便分治合并（蝶形运算）。"
+        },
+        {
+          "question": "NTT 与 FFT 的主要区别是？",
+          "options": [
+            "时间复杂度不同",
+            "NTT 使用模运算，FFT 使用浮点数",
+            "NTT 只能用于整数",
+            "FFT 更快"
+          ],
+          "answerIndex": 1,
+          "explanation": "NTT 使用模运算和原根，FFT 使用浮点数和单位根，避免了浮点误差。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.18.3",
+      "title": "线性基",
+      "learningGoal": "理解线性基的概念，掌握异或空间的最大线性无关子集构造方法",
+      "explanation": "线性基用于处理异或相关问题，将一组数映射到一个极小的等价集合。\n\n问题背景：\n给定 n 个数，求它们的异或能表示的最大值、异或和的方案数等。\n\n核心概念：\n1. 线性基：一组数的最大线性无关子集（异或意义下）\n2. 线性基性质：\n   - 原集合中的任意数都可以用线性基表示\n   - 线性基中的数线性无关（任意子集异或和 ≠ 0）\n   - 线性基的大小不超过 60（二进制位数）\n\n构造方法：\n对于每个数 x，从高位到低位尝试插入：\nfor (i = 60; i >= 0; i--) {\n    if (!(x >> i)) continue;\n    if (b[i]) x ^= b[i];\n    else { b[i] = x; break; }\n}\n\n应用：\n1. 求异或最大值：贪心选高位\n2. 求异或最小值：线性基的最小非零值\n3. 求异或第 k 小：构造矩阵，k-1 的二进制对应\n4. 判断是否可以异或得到 x：用线性基消元\n\n竞赛提示：\n- 线性基大小最多 60（long long）\n- 时间复杂度 O(n × 60)\n- 可插入、删除、查询",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MAXB = 60;\nlong long b[MAXB + 5];\n\nvoid insert(long long x) {\n    for (int i = MAXB; i >= 0; i--) {\n        if (!(x >> i)) continue;\n        if (b[i]) x ^= b[i];\n        else { b[i] = x; return; }\n    }\n}\n\nlong long getMax() {\n    long long ans = 0;\n    for (int i = MAXB; i >= 0; i--) {\n        ans = max(ans, ans ^ b[i]);\n    }\n    return ans;\n}\n\nlong long getMin() {\n    for (int i = 0; i <= MAXB; i++) {\n        if (b[i]) return b[i];\n    }\n    return 0;\n}\n\nbool check(long long x) {\n    for (int i = MAXB; i >= 0; i--) {\n        x = min(x, x ^ b[i]);\n    }\n    return x == 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        long long x;\n        cin >> x;\n        insert(x);\n    }\n    \n    cout << \"Max XOR: \" << getMax() << endl;\n    cout << \"Min XOR: \" << getMin() << endl;\n    \n    long long x;\n    cin >> x;\n    cout << \"Can represent \" << x << \": \" << check(x) << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "线性基 b[i] 表示第 i 位为 1 的基底",
+        "插入：从高位到低位，与 b[i] 异或消元",
+        "最大异或：贪心选高位，ans = max(ans, ans ^ b[i])",
+        "最小异或：最小的 b[i]"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记从高位到低位处理",
+          "description": "如果从低位开始，可能导致无法正确消元。",
+          "fix": "for (int i = MAXB; i >= 0; i--) 从最高位开始。"
+        },
+        {
+          "title": "第 k 小忘记 k--",
+          "description": "第 k 小需要 k-1，因为线性基按顺序排列。",
+          "fix": "k-- 后用二进制位选择对应的基底。"
+        },
+        {
+          "title": "忘记处理 0",
+          "description": "如果原数中有 0，需要特殊处理。",
+          "fix": "插入时统计 0 的个数，第 k 小时考虑 0。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定数列 [1, 2, 3, 4, 5]，求它们能异或得到的最大值。",
+        "hint": "构造线性基，贪心选高位求最大异或。",
+        "expectedIdea": "7"
+      },
+      "quiz": [
+        {
+          "question": "线性基的大小最多是？",
+          "options": [
+            "32",
+            "60",
+            "64",
+            "n（输入数量）"
+          ],
+          "answerIndex": 1,
+          "explanation": "long long 有 60 位，线性基每位最多一个，最多 60 个。"
+        },
+        {
+          "question": "线性基的主要应用是？",
+          "options": [
+            "字符串匹配",
+            "异或相关问题",
+            "图论最短路",
+            "排序"
+          ],
+          "answerIndex": 1,
+          "explanation": "线性基用于处理异或最大值、最小值、第 k 小等问题。"
+        },
+        {
+          "question": "求异或最大值的策略是？",
+          "options": [
+            "选最小值",
+            "贪心选高位",
+            "随机选择",
+            "选第一个"
+          ],
+          "answerIndex": 1,
+          "explanation": "贪心策略：从高位到低位，ans = max(ans, ans ^ b[i])。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.18.4",
+      "title": "CDQ 分治",
+      "learningGoal": "理解 CDQ 分治的思想，掌握处理偏序问题的 O(n log² n) 算法",
+      "explanation": "CDQ 分治是一种特殊的分治算法，主要用于处理时间序列和偏序问题。\n\n核心思想：\n将时间序列分成左右两部分，递归处理左边，然后处理左边对右边的影响。\n\n适用场景：\n1. 离线查询（带时间戳）\n2. 三维偏序（3D partial order）\n3. 动态维护数据结构\n4. 区间修改、区间查询\n\n算法流程：\n1. 按时间分治：[l, r] 分成 [l, mid] 和 [mid+1, r]\n2. 递归处理左边\n3. 处理左边对右边的贡献（CDQ 核心）\n4. 递归处理右边\n\n时间复杂度：\n- T(n) = 2T(n/2) + O(n log n)\n- T(n) = O(n log² n)\n\n三维偏序（CDQ 经典应用）：\n问题：求每个点的祖先中比它小的点数\n步骤：\n1. 第一维：CDQ 分治\n2. 第二维：排序\n3. 第三维：树状数组\n\n应用：\n1. 动态逆序对\n2. 区间修改、单点查询\n3. 单点修改、区间查询\n4. 三维偏序问题\n\n竞赛提示：\n- 时间复杂度 O(n log² n)，比树套树常数小\n- 适用于离线查询\n- 需要按时间分治",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nconst int N = 100005;\n\nstruct Node {\n    int x, y, z, id;\n} a[N], tmp[N];\n\nint ans[N], bit[N];\n\nint lowbit(int x) {\n    return x & -x;\n}\n\nvoid add(int x, int v) {\n    for (; x < N; x += lowbit(x)) bit[x] += v;\n}\n\nint query(int x) {\n    int res = 0;\n    for (; x > 0; x -= lowbit(x)) res += bit[x];\n    return res;\n}\n\nbool cmpx(const Node& a, const Node& b) {\n    return a.x < b.x || (a.x == b.x && a.y < b.y);\n}\n\nbool cmpy(const Node& a, const Node& b) {\n    return a.y < b.y;\n}\n\nvoid cdq(int l, int r) {\n    if (l == r) return;\n    int mid = (l + r) >> 1;\n    cdq(l, mid);\n    \n    sort(a + l, a + mid + 1, cmpy);\n    sort(a + mid + 1, a + r + 1, cmpy);\n    \n    for (int i = mid + 1, j = l; i <= r; i++) {\n        while (j <= mid && a[j].y <= a[i].y) {\n            add(a[j].z, 1);\n            j++;\n        }\n        ans[a[i].id] += query(a[i].z);\n    }\n    \n    for (int i = l; i <= mid; i++) {\n        add(a[i].z, -1);\n    }\n    \n    cdq(mid + 1, r);\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 1; i <= n; i++) {\n        cin >> a[i].x >> a[i].y >> a[i].z;\n        a[i].id = i;\n    }\n    \n    sort(a + 1, a + n + 1, cmpx);\n    cdq(1, n);\n    \n    for (int i = 1; i <= n; i++) {\n        cout << ans[i] << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "CDQ 分治：按时间分治，递归处理左右",
+        "排序：第二维排序后用树状数组统计第三维",
+        "贡献：左边对右边的贡献通过树状数组累加",
+        "清理：递归返回前清理树状数组"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记清理树状数组",
+          "description": "每次递归后需要清空树状数组，否则会影响后续计算。",
+          "fix": "for (int i = l; i <= mid; i++) add(a[i].z, -1);"
+        },
+        {
+          "title": "排序顺序错误",
+          "description": "CDQ 分治后需要按第二维重新排序。",
+          "fix": "sort(a + l, a + mid + 1, cmpy); sort(a + mid + 1, a + r + 1, cmpy);"
+        },
+        {
+          "title": "贡献方向错误",
+          "description": "应该计算左边对右边的贡献，不是右边对左边。",
+          "fix": "for (int i = mid + 1; i <= r; i++) ans[a[i].id] += query(a[i].z);"
+        }
+      ],
+      "practice": {
+        "prompt": "用 CDQ 分治求三维偏序问题。",
+        "hint": "第一维 CDQ 分治，第二维排序，第三维树状数组。",
+        "expectedIdea": "CDQ 分治处理三维偏序，时间复杂度 O(n log² n)。"
+      },
+      "quiz": [
+        {
+          "question": "CDQ 分治的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n log n)",
+            "O(n log² n)",
+            "O(n²)"
+          ],
+          "answerIndex": 2,
+          "explanation": "CDQ 分治 T(n) = 2T(n/2) + O(n log n)，总时间 O(n log² n)。"
+        },
+        {
+          "question": "CDQ 分治主要适用于什么问题？",
+          "options": [
+            "在线查询",
+            "离线查询、偏序问题",
+            "图论最短路",
+            "字符串匹配"
+          ],
+          "answerIndex": 1,
+          "explanation": "CDQ 分治主要用于离线查询和偏序问题（如三维偏序）。"
+        },
+        {
+          "question": "CDQ 分治的核心是？",
+          "options": [
+            "贪心策略",
+            "动态规划",
+            "左边对右边的贡献",
+            "随机化"
+          ],
+          "answerIndex": 2,
+          "explanation": "CDQ 分治的核心是处理左边对右边的贡献，通过树状数组统计。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.18.5",
+      "title": "整体二分",
+      "learningGoal": "理解整体二分的思想，掌握处理多查询问题的 O((n+m) log MAX) 算法",
+      "explanation": "整体二分是一种离线算法，用于同时回答多个查询，比单独二分更高效。\n\n核心思想：\n将所有查询和修改一起二分，用数据结构维护答案。\n\n适用场景：\n1. 多个查询，查询位置不同\n2. 每次查询可以通过二分确定答案\n3. 修改和查询可以一起处理\n\n算法流程：\n1. 设定二分范围 [l, r]\n2. 将所有操作分成三组：\n   - 已确定答案的（跳过）\n   - 可能落在 [l, mid] 的\n   - 可能落在 [mid+1, r] 的\n3. 用数据结构处理 [l, mid] 的贡献\n4. 递归处理左边和右边\n\n时间复杂度：\n- T(n) = 2T(n/2) + O((n+m) log n)\n- T(n) = O((n+m) log² n)\n\n应用：\n1. 动态区间第 k 小\n2. 带修改的第 k 小\n3. K-th Number\n4. 查询答案在值域中的位置\n\n竞赛提示：\n- 离线算法，适用于多查询\n- 比单独二分更高效\n- 需要维护数据结构（如树状数组）",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\n\nstruct Query {\n    int type, l, r, k, id;\n} q[N], q1[N], q2[N];\n\nint bit[N], ans[N];\nint a[N], b[N];\n\nint lowbit(int x) {\n    return x & -x;\n}\n\nvoid add(int x, int v) {\n    for (; x < N; x += lowbit(x)) bit[x] += v;\n}\n\nint query(int x) {\n    int res = 0;\n    for (; x > 0; x -= lowbit(x)) res += bit[x];\n    return res;\n}\n\nvoid solve(int l, int r, int ql, int qr) {\n    if (ql > qr) return;\n    if (l == r) {\n        for (int i = ql; i <= qr; i++) {\n            if (q[i].type == 2) {\n                ans[q[i].id] = l;\n            }\n        }\n        return;\n    }\n    \n    int mid = (l + r) >> 1;\n    int cnt1 = 0, cnt2 = 0;\n    \n    for (int i = ql; i <= qr; i++) {\n        if (q[i].type == 1) {\n            if (q[i].l <= mid) {\n                add(q[i].id, q[i].k);\n                q1[++cnt1] = q[i];\n            } else {\n                q2[++cnt2] = q[i];\n            }\n        } else {\n            int sum = query(q[i].r) - query(q[i].l - 1);\n            if (sum >= q[i].k) {\n                q1[++cnt1] = q[i];\n            } else {\n                q[i].k -= sum;\n                q2[++cnt2] = q[i];\n            }\n        }\n    }\n    \n    for (int i = 1; i <= cnt1; i++) {\n        if (q1[i].type == 1) {\n            add(q1[i].id, -q1[i].k);\n        }\n    }\n    \n    for (int i = 1; i <= cnt1; i++) q[ql + i - 1] = q1[i];\n    for (int i = 1; i <= cnt2; i++) q[ql + cnt1 + i - 1] = q2[i];\n    \n    solve(l, mid, ql, ql + cnt1 - 1);\n    solve(mid + 1, r, ql + cnt1, qr);\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    \n    for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n        b[i] = a[i];\n    }\n    \n    sort(b + 1, b + n + 1);\n    int len = unique(b + 1, b + n + 1) - b - 1;\n    \n    int qcnt = 0;\n    for (int i = 1; i <= n; i++) {\n        int pos = lower_bound(b + 1, b + len + 1, a[i]) - b;\n        q[++qcnt] = {1, pos, 0, 1, i};\n    }\n    \n    for (int i = 1; i <= m; i++) {\n        int l, r, k;\n        cin >> l >> r >> k;\n        q[++qcnt] = {2, l, r, k, i};\n    }\n    \n    solve(1, len, 1, qcnt);\n    \n    for (int i = 1; i <= m; i++) {\n        cout << b[ans[i]] << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "整体二分：将所有操作一起二分",
+        "分组：操作分成 q1（左边）和 q2（右边）",
+        "贡献：用树状数组处理左边的贡献",
+        "清理：递归后清理树状数组"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记清理树状数组",
+          "description": "每次递归后需要清空树状数组，否则会影响后续计算。",
+          "fix": "for (int i = 1; i <= cnt1; i++) if (q1[i].type == 1) add(q1[i].id, -q1[i].k);"
+        },
+        {
+          "title": "q[i].k 没有更新",
+          "description": "查询落在右边时，需要更新 k = k - sum。",
+          "fix": "q[i].k -= sum; 更新查询的 k 值。"
+        },
+        {
+          "title": "操作顺序错误",
+          "description": "应该先处理操作，再处理查询。",
+          "fix": "for (int i = ql; i <= qr; i++) 先处理 type==1 的操作。"
+        }
+      ],
+      "practice": {
+        "prompt": "用整体二分求静态区间第 k 小。",
+        "hint": "将所有操作一起二分，用树状数组统计贡献。",
+        "expectedIdea": "整体二分处理静态区间第 k 小，时间复杂度 O((n+m) log² n)。"
+      },
+      "quiz": [
+        {
+          "question": "整体二分的时间复杂度是？",
+          "options": [
+            "O((n+m) log n)",
+            "O((n+m) log² n)",
+            "O(n²)",
+            "O(n log n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "整体二分 T(n) = 2T(n/2) + O((n+m) log n)，总时间 O((n+m) log² n)。"
+        },
+        {
+          "question": "整体二分主要适用于什么问题？",
+          "options": [
+            "在线查询",
+            "离线多查询、答案可二分",
+            "图论最短路",
+            "字符串匹配"
+          ],
+          "answerIndex": 1,
+          "explanation": "整体二分主要用于离线多查询问题，且每个查询的答案可以通过二分确定。"
+        },
+        {
+          "question": "整体二分与单独二分的区别是？",
+          "options": [
+            "时间复杂度相同",
+            "整体二分同时处理所有查询，更高效",
+            "单独二分更快",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "整体二分将所有操作一起处理，避免了重复计算，比单独二分更高效。"
+        }
+      ]
+    }
+  ]
+}

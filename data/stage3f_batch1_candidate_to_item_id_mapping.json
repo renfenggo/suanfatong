@@ -1,0 +1,162 @@
+[
+  {
+    "candidate_id": "cand.ds.multidimensional.dominance_counting",
+    "item_id": "3.13.182",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+    "item_id": "3.13.183",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+    "item_id": "3.13.184",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+    "item_id": "3.13.185",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.digit.complex",
+    "item_id": "2.8.134",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.tree.rerooting",
+    "item_id": "2.8.135",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.profile.basic",
+    "item_id": "2.8.136",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.profile.plug",
+    "item_id": "2.8.137",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.string.suffix_array.sa_is",
+    "item_id": "3.8.9",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.string.generalized_sam.construction",
+    "item_id": "3.8.10",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.string.suffix_tree.ukkonen",
+    "item_id": "3.8.11",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.slope.advanced",
+    "item_id": "2.18.9",
+    "section_id": "2.18",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.math.polynomial.berlekamp_massey",
+    "item_id": "2.17.20",
+    "section_id": "2.17",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.exlucas",
+    "item_id": "4.3.32",
+    "section_id": "4.3",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.math.sieve.min_25",
+    "item_id": "4.9.3",
+    "section_id": "4.9",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.digit.basic",
+    "item_id": "2.8.138",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.tree.basic",
+    "item_id": "2.8.139",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.tree.diameter",
+    "item_id": "2.8.140",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.tree.centroid",
+    "item_id": "2.8.141",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.dp.dag.topological",
+    "item_id": "2.8.142",
+    "section_id": "2.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch1",
+    "risk_band": "green"
+  }
+]

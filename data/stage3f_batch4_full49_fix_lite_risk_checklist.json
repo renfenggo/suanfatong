@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Stage3F Batch4 full_49 Fix Lite Risk Checklist",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T19:00:00.000Z",
+    "batch_id": "stage3f_batch4_full49",
+    "main_graph_modified": false,
+    "fix_lite_not_yet_executed": true,
+    "current_item_count": 1765,
+    "current_section_count": 65,
+    "validate_only_passed": true
+  },
+  "risk_checks": [
+    {
+      "risk_id": "risk_01",
+      "category": "branch_selection",
+      "description": "未正确选择三分支（A/B/C）决策路径",
+      "check_during_fix_lite": "执行前必须读取 dependency_fix_candidates.json 和 merge_or_collapse_candidates.json，根据内容判断走哪条分支",
+      "risk_if_triggered": "走错分支可能导致：B 场景遗漏 duplicate resolution，C 场景遗漏 dependency fix",
+      "verification_method": "在执行报告开头明确写出选择了哪条分支及其原因",
+      "expected_state": "分支路径与 Review 结果一致"
+    },
+    {
+      "risk_id": "risk_02",
+      "category": "review_scope",
+      "description": "Fix Lite 处理了非 Batch4 新增节点",
+      "check_during_fix_lite": "只处理 49 个 Batch4 新增节点的 review_status。旧节点不能碰。",
+      "risk_if_triggered": "修改旧节点 review_status 会导致已稳定的优先级分布变化",
+      "verification_method": "建立白名单：只修改 49 个新增 item_id 的 review_status",
+      "expected_state": "只修改 Batch4 新增的 49 个节点，旧节点不变"
+    },
+    {
+      "risk_id": "risk_03",
+      "category": "old_node_modification",
+      "description": "误修改旧节点 resolved_pre / direct_pre / rel",
+      "check_during_fix_lite": "Fix Lite 只允许修改 review_status，不允许修改 direct_pre、resolved_pre、rel",
+      "risk_if_triggered": "修改依赖链会导致 validation 失败",
+      "verification_method": "代码中只写入 review_status 字段，不对 direct_pre/resolved_pre/rel 做任何写操作",
+      "expected_state": "旧节点和新节点的依赖字段全部不变"
+    },
+    {
+      "risk_id": "risk_04",
+      "category": "problem_pattern_sync",
+      "description": "误处理了 problem_pattern_sync_candidates",
+      "check_during_fix_lite": "如果 problem_pattern_sync_candidates 非空，只记录不处理。Fix Lite 不处理同步。",
+      "risk_if_triggered": "同步到 problem_patterns 超出了 Fix Lite 的范围",
+      "verification_method": "报告中注明 problem_pattern_sync_candidates 数量，标记为未处理",
+      "expected_state": "problem_pattern_sync_candidates 被记录但未处理"
+    },
+    {
+      "risk_id": "risk_05",
+      "category": "duplicate_prune_order",
+      "description": "分支 B 场景中未先执行 Duplicate Resolution 就做 Fix Lite",
+      "check_during_fix_lite": "如果走分支 B（merge_or_collapse_candidates 非空），必须先执行 Duplicate Prune 再回到 Fix Lite",
+      "risk_if_triggered": "先做 Fix Lite 再删重复节点会导致 review_status 被浪费地设置到将被删除的节点上",
+      "verification_method": "检查 merge_or_collapse_candidates 是否为空。如果非空，先走 Duplicate Prune 流程",
+      "expected_state": "merge_or_collapse_candidates 为空，或已先完成 Duplicate Prune"
+    },
+    {
+      "risk_id": "risk_06",
+      "category": "validation_baseline",
+      "description": "Duplicate Prune 后未更新 validation_baseline",
+      "check_during_fix_lite": "如果在分支 B 中删除了节点，必须更新 validation_baseline.item_count",
+      "risk_if_triggered": "baseline 与实际 item_count 不一致导致 validate-only 失败",
+      "verification_method": "写入图谱前检查 validation_baseline.item_count 是否等于实际 item_count",
+      "expected_state": "validation_baseline.item_count = 实际 item_count"
+    },
+    {
+      "risk_id": "risk_07",
+      "category": "report_matches_json",
+      "description": "report_matches_json 失败",
+      "check_during_fix_lite": "validate-only 前必须基于当前图谱重新生成 item_dependency_refinement_report.md",
+      "risk_if_triggered": "旧报告统计数与图谱不一致",
+      "verification_method": "validate-only 后检查 report_matches_json 字段",
+      "expected_state": "report_matches_json = true"
+    },
+    {
+      "risk_id": "risk_08",
+      "category": "batch5_prevention",
+      "description": "Fix Lite 完成后误继续 Stage3F Batch5",
+      "check_during_fix_lite": "Fix Lite 完成后应停止，生成报告，等待指令",
+      "risk_if_triggered": "Batch5 在 Batch4 未完成时启动",
+      "verification_method": "脚本末尾没有 Batch5 触发逻辑",
+      "expected_state": "Fix Lite 完成后停止"
+    },
+    {
+      "risk_id": "risk_09",
+      "category": "failed_restore",
+      "description": "validate-only 失败后未恢复备份",
+      "check_during_fix_lite": "任何 validate-only 失败必须立即恢复备份",
+      "risk_if_triggered": "留下半成品图谱，后续操作基于错误状态",
+      "verification_method": "失败时自动恢复备份并输出失败日志",
+      "expected_state": "失败时图谱回滚到 Fix Lite 前状态"
+    },
+    {
+      "risk_id": "risk_10",
+      "category": "deleted_node_touch",
+      "description": "尝试修改已通过 Duplicate Prune 删除的节点",
+      "check_during_fix_lite": "如果之前已执行过 Duplicate Prune，确保 Fix Lite 不处理已删除节点",
+      "risk_if_triggered": "操作不存在的节点导致 KeyError",
+      "verification_method": "在打补丁前确认节点存在于图谱中",
+      "expected_state": "只处理实际存在于图谱中的新增节点"
+    }
+  ]
+}

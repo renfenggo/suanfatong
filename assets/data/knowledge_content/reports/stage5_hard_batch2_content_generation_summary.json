@@ -1,0 +1,113 @@
+{
+  "task": "stage5_hard_batch2_content_generation",
+  "timestamp": "2026-05-27 22:32:08",
+  "generation_summary": {
+    "old_content_count": 2640,
+    "new_content_count": 600,
+    "final_content_count": 3240,
+    "new_parts_count": 6,
+    "parts": [
+      {
+        "filename": "stage5_hard_batch2_part_001.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_001.json",
+        "item_count": 100,
+        "start_index": 2640,
+        "end_index": 2739,
+        "batch": "stage5_hard_batch2",
+        "part": 1,
+        "global_part": 28,
+        "status": "generated",
+        "errors": []
+      },
+      {
+        "filename": "stage5_hard_batch2_part_002.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_002.json",
+        "item_count": 100,
+        "start_index": 2740,
+        "end_index": 2839,
+        "batch": "stage5_hard_batch2",
+        "part": 2,
+        "global_part": 29,
+        "status": "generated",
+        "errors": []
+      },
+      {
+        "filename": "stage5_hard_batch2_part_003.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_003.json",
+        "item_count": 100,
+        "start_index": 2840,
+        "end_index": 2939,
+        "batch": "stage5_hard_batch2",
+        "part": 3,
+        "global_part": 30,
+        "status": "generated",
+        "errors": []
+      },
+      {
+        "filename": "stage5_hard_batch2_part_004.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_004.json",
+        "item_count": 100,
+        "start_index": 2940,
+        "end_index": 3039,
+        "batch": "stage5_hard_batch2",
+        "part": 4,
+        "global_part": 31,
+        "status": "generated",
+        "errors": []
+      },
+      {
+        "filename": "stage5_hard_batch2_part_005.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_005.json",
+        "item_count": 100,
+        "start_index": 3040,
+        "end_index": 3139,
+        "batch": "stage5_hard_batch2",
+        "part": 5,
+        "global_part": 32,
+        "status": "generated",
+        "errors": []
+      },
+      {
+        "filename": "stage5_hard_batch2_part_006.json",
+        "path": "assets/data/knowledge_content/items/stage5_hard_batch2_part_006.json",
+        "item_count": 100,
+        "start_index": 3140,
+        "end_index": 3239,
+        "batch": "stage5_hard_batch2",
+        "part": 6,
+        "global_part": 33,
+        "status": "generated",
+        "errors": []
+      }
+    ]
+  },
+  "validation": {
+    "io_v4_4_item_count": 3240,
+    "content_index_covers": 3240,
+    "missing_items": [],
+    "duplicate_items": [],
+    "invalid_json_files": [],
+    "incomplete_items_count": 0,
+    "incomplete_items_sample": [],
+    "placeholder_text_count": 0,
+    "quiz_missing_count": 0,
+    "animation_plan_missing_count": 0,
+    "practice_tasks_missing_count": 0,
+    "unlock_check_missing_count": 0,
+    "validation_passed": true,
+    "old_content_count": 2640,
+    "new_content_count": 600,
+    "final_content_count": 3240,
+    "new_parts_count": 6,
+    "old_parts_overwritten": false,
+    "main_graph_modified": false,
+    "io_v4_4_modified": false,
+    "frontend_code_modified": false,
+    "batch3_continued": false,
+    "recommend_frontend_validation": true
+  },
+  "generation_issues": {},
+  "data_modified": false,
+  "frontend_code_modified": false,
+  "batch3_continued": false
+}

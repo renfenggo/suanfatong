@@ -569,33 +569,6 @@
       "order": 63
     },
     {
-      "animationId": "cpp_dfs_grid_island",
-      "itemId": "2.7.3",
-      "title": "网格 DFS 岛屿搜索",
-      "description": "演示在二维网格上用 DFS 搜索岛屿的过程：标记连通块、扩展四方向",
-      "assetPath": "assets/data/cpp/animations/dfs_grid_island.json",
-      "type": "state_steps",
-      "order": 94
-    },
-    {
-      "animationId": "cpp_backtrack_permutation",
-      "itemId": "2.7.6",
-      "title": "回溯枚举排列",
-      "description": "演示回溯法枚举排列的过程：做选择、递归、撤销选择",
-      "assetPath": "assets/data/cpp/animations/backtrack_permutation.json",
-      "type": "state_steps",
-      "order": 95
-    },
-    {
-      "animationId": "cpp_memoization_fib",
-      "itemId": "2.7.8",
-      "title": "记忆化搜索斐波那契",
-      "description": "演示记忆化搜索计算斐波那契数列的过程：DFS + memo 避免重复计算",
-      "assetPath": "assets/data/cpp/animations/memoization_fib.json",
-      "type": "state_steps",
-      "order": 96
-    },
-    {
       "animationId": "cpp_dp_fib",
       "itemId": "2.8.1",
       "title": "DP 思想：斐波那契",
@@ -866,6 +839,33 @@
       "order": 93
     },
     {
+      "animationId": "cpp_dfs_grid_island",
+      "itemId": "2.7.3",
+      "title": "网格 DFS 岛屿搜索",
+      "description": "演示在二维网格上用 DFS 搜索岛屿的过程：标记连通块、扩展四方向",
+      "assetPath": "assets/data/cpp/animations/dfs_grid_island.json",
+      "type": "state_steps",
+      "order": 94
+    },
+    {
+      "animationId": "cpp_backtrack_permutation",
+      "itemId": "2.7.6",
+      "title": "回溯枚举排列",
+      "description": "演示回溯法枚举排列的过程：做选择、递归、撤销选择",
+      "assetPath": "assets/data/cpp/animations/backtrack_permutation.json",
+      "type": "state_steps",
+      "order": 95
+    },
+    {
+      "animationId": "cpp_memoization_fib",
+      "itemId": "2.7.8",
+      "title": "记忆化搜索斐波那契",
+      "description": "演示记忆化搜索计算斐波那契数列的过程：DFS + memo 避免重复计算",
+      "assetPath": "assets/data/cpp/animations/memoization_fib.json",
+      "type": "state_steps",
+      "order": 96
+    },
+    {
       "animationId": "cpp_dp_house_robber",
       "itemId": "2.5.2",
       "title": "线性 DP：打家劫舍",
@@ -945,6 +945,96 @@
       "assetPath": "assets/data/cpp/animations/greedy_regret.json",
       "type": "state_steps",
       "order": 105
+    },
+    {
+      "animationId": "cpp_dfs_graph_traversal",
+      "itemId": "2.7.16",
+      "title": "图的遍历：DFS",
+      "description": "演示 DFS 在无向图上的深度优先遍历过程：使用栈（递归调用栈），展示访问顺序、回溯和 visited 标记",
+      "assetPath": "assets/data/cpp/animations/dfs_graph_traversal.json",
+      "type": "state_steps",
+      "order": 106
+    },
+    {
+      "animationId": "cpp_bfs_graph_traversal",
+      "itemId": "2.7.17",
+      "title": "图的遍历：BFS",
+      "description": "演示 BFS 在无向图上的广度优先遍历过程：使用队列，按层扩展，展示 visited 标记和逐层遍历特性",
+      "assetPath": "assets/data/cpp/animations/bfs_graph_traversal.json",
+      "type": "state_steps",
+      "order": 107
+    },
+    {
+      "animationId": "cpp_prefix_sum_1d",
+      "itemId": "2.4.17",
+      "title": "前缀和 (一维)",
+      "description": "演示一维前缀和数组的逐步构建过程，以及如何用 prefix[r+1] - prefix[l] 在 O(1) 时间内求区间和",
+      "assetPath": "assets/data/cpp/animations/prefix_sum_1d.json",
+      "type": "state_steps",
+      "order": 108
+    },
+    {
+      "animationId": "cpp_prefix_sum_2d",
+      "itemId": "2.4.18",
+      "title": "前缀和 (二维)",
+      "description": "演示二维前缀和的构建过程，以及如何用容斥原理在 O(1) 时间内查询子矩阵的和",
+      "assetPath": "assets/data/cpp/animations/prefix_sum_2d.json",
+      "type": "state_steps",
+      "order": 109
+    },
+    {
+      "animationId": "cpp_dfs_backtrack",
+      "itemId": "5.5.5",
+      "title": "DFS 回溯恢复现场",
+      "description": "演示DFS回溯算法中的状态管理和现场恢复：全排列生成",
+      "assetPath": "assets/data/cpp/animations/dfs_backtrack.json",
+      "type": "state_steps",
+      "order": 110
+    },
+    {
+      "animationId": "cpp_greedy_activity_selection_proof",
+      "itemId": "2.4.1",
+      "title": "贪心算法：活动选择问题",
+      "description": "演示贪心算法的正确性证明：活动选择问题，选择尽可能多的不重叠活动",
+      "assetPath": "assets/data/cpp/animations/greedy_activity_selection_proof.json",
+      "type": "state_steps",
+      "order": 111
+    },
+    {
+      "animationId": "cpp_merge_sort",
+      "itemId": "2.2.4",
+      "title": "归并排序",
+      "description": "演示归并排序的分治思想：递归分解 + 有序合并",
+      "assetPath": "assets/data/cpp/animations/merge_sort.json",
+      "type": "state_steps",
+      "order": 112
+    },
+    {
+      "animationId": "cpp_priority_queue_heap",
+      "itemId": "1.10.8",
+      "title": "priority_queue 默认大根堆",
+      "description": "演示优先队列（大根堆）的插入、删除和堆调整过程",
+      "assetPath": "assets/data/cpp/animations/priority_queue_heap.json",
+      "type": "state_steps",
+      "order": 113
+    },
+    {
+      "animationId": "cpp_recursion_basic",
+      "itemId": "2.7.1",
+      "title": "递归基础",
+      "description": "演示递归函数的执行过程：函数调用栈、参数传递、返回值",
+      "assetPath": "assets/data/cpp/animations/recursion_basic.json",
+      "type": "state_steps",
+      "order": 114
+    },
+    {
+      "animationId": "cpp_topological_sort",
+      "itemId": "2.6.4",
+      "title": "拓扑排序",
+      "description": "演示拓扑排序的 Kahn 算法：入度减法 + 队列处理",
+      "assetPath": "assets/data/cpp/animations/topological_sort.json",
+      "type": "state_steps",
+      "order": 115
     }
   ]
 }

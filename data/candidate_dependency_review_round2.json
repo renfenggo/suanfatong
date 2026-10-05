@@ -1,0 +1,1375 @@
+{
+  "total_candidates": 115,
+  "validation_result": {
+    "has_section_id_dependencies": false,
+    "has_dangling_references": false,
+    "has_cycles": false,
+    "empty_direct_pre_count": 0,
+    "invalid_dependencies": [],
+    "cycle_info": []
+  },
+  "candidate_dependency_details": [
+    {
+      "candidate_id": "cand.graph.dominator_tree.applications",
+      "direct_pre_suggestion": [
+        "cand.graph.dominator_tree.lengauer_tarjan"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.offline",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "cand.ds.rollback_dsu"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.euler_tour_tree",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "cand.ds.implicit_treap"
+      ],
+      "rel_suggestion": [
+        "2.16.2",
+        "cand.graph.dynamic_connectivity.offline"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.directed_mst.zhu_liu",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.gomory_hu_tree.basic",
+      "direct_pre_suggestion": [
+        "2.18.1",
+        "2.18.2"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.6"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.global_min_cut.stoer_wagner",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "cand.graph.gomory_hu_tree.basic"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.karp",
+      "direct_pre_suggestion": [
+        "2.13.2",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.hartmann_orlin",
+      "direct_pre_suggestion": [
+        "cand.graph.minimum_mean_cycle.karp"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.blossom",
+      "direct_pre_suggestion": [
+        "2.18.1",
+        "2.18.2"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.6"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.weighted",
+      "direct_pre_suggestion": [
+        "cand.graph.general_matching.blossom"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.6"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.graph.matroid.basics",
+      "direct_pre_suggestion": [
+        "2.18.1",
+        "2.18.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "cand.graph.matroid.intersection"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.matroid.intersection",
+      "direct_pre_suggestion": [
+        "cand.graph.matroid.basics"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.6"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.graph.functional_graph.advanced",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.sat2.modeling_variants",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.4"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling",
+      "direct_pre_suggestion": [
+        "2.13.2",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.bridge_tree.applications",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.applications",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmin",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.segment_tree_beats.range_chmax"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmax",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.segment_tree_beats.range_chmin"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_add",
+      "direct_pre_suggestion": [
+        "cand.ds.segment_tree_beats.range_chmin"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.minimum",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.li_chao_tree.maximum"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.maximum",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.li_chao_tree.minimum"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.segment",
+      "direct_pre_suggestion": [
+        "cand.ds.li_chao_tree.minimum"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.wavelet_matrix"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.matrix",
+      "direct_pre_suggestion": [
+        "cand.ds.wavelet_tree.basic"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.wavelet_tree.basic"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.sqrt_tree.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.disjoint_sparse_table.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.rollback_dsu.basic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.16.4",
+        "cand.graph.dynamic_connectivity.offline"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.persistent_dsu.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.rollback_dsu"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_segment_tree.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.implicit_treap.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.order_statistic_tree.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "2.15.5"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.fenwick_tree_2d.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.segment_tree_2d"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_2d.basic",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2"
+      ],
+      "rel_suggestion": [
+        "2.15.4",
+        "cand.ds.fenwick_tree_2d"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.dsu_on_tree.basic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.16.4",
+        "2.13.6"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.small_to_large.basic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.16.4",
+        "cand.ds.dsu_on_tree"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.ex_kmp.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.kmp_automaton.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.ac_automaton.applications",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.ac_failure_tree.basic",
+      "direct_pre_suggestion": [
+        "cand.string.ac_automaton.applications"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.string.suffix_array.sais",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.lcp_rmq.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.generalized_sam.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.sam_parent_tree.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.eertree.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.suffix_tree.ukkonen",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.lyndon_decomposition.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.duval_algorithm.basic",
+      "direct_pre_suggestion": [
+        "cand.string.lyndon_decomposition.basic"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.string.runs.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.border_tree.basic",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.primality_test.miller_rabin",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.factorization.pollard_rho",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.primitive_root.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.bsgs",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.exbsgs",
+      "direct_pre_suggestion": [
+        "cand.math.discrete_log.bsgs"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.dirichlet_conv.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.du_jiao_sieve.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.min_25_sieve.basic",
+      "direct_pre_suggestion": [
+        "cand.math.du_jiao_sieve.basic"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.math.lucas.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.3.1"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.lucas.extended",
+      "direct_pre_suggestion": [
+        "cand.math.lucas.basic"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.math.crt.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.crt.extended",
+      "direct_pre_suggestion": [
+        "cand.math.crt.basic"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.math.crt.garner",
+      "direct_pre_suggestion": [
+        "cand.math.crt.basic"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.1.3"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.math.fwt.basic",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.rotating_calipers.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.half_plane_intersection.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.sweep_line.geometry",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.segment_intersection.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "cand.geometry.sweep_line.geometry"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.point_in_polygon.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.convex_polygon_queries.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.minkowski_sum.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.smallest_enclosing_circle.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.lattice_geometry.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "4.2.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.pick_theorem.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "cand.geometry.lattice_geometry.basic"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.two_sum",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.prefix_sum_hashmap",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.fast_slow_pointers",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.9.2"
+      ],
+      "rel_suggestion": [
+        "2.9.4",
+        "2.7.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.linked_list_reversal",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.9.2"
+      ],
+      "rel_suggestion": [
+        "2.9.4",
+        "2.7.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.merge_intervals",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.meeting_rooms",
+      "direct_pre_suggestion": [
+        "cand.interview.pattern.merge_intervals"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.interview.pattern.top_k_frequent",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.k_way_merge",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.monotonic_stack",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2"
+      ],
+      "rel_suggestion": [
+        "2.8.4",
+        "2.7.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_fixed",
+      "direct_pre_suggestion": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.8.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_variable",
+      "direct_pre_suggestion": [
+        "cand.interview.pattern.sliding_window_fixed"
+      ],
+      "rel_suggestion": [
+        "2.7.4",
+        "2.8.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.interview.pattern.binary_search_answer",
+      "direct_pre_suggestion": [
+        "2.6.1",
+        "2.6.2"
+      ],
+      "rel_suggestion": [
+        "2.6.4",
+        "2.7.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.island_problems",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.9.2"
+      ],
+      "rel_suggestion": [
+        "2.9.4",
+        "2.7.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.word_ladder",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.9.2"
+      ],
+      "rel_suggestion": [
+        "2.9.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.interview.pattern.course_schedule",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.state_as_graph.basic",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.operation_as_edge.basic",
+      "direct_pre_suggestion": [
+        "cand.modeling.state_as_graph.basic"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.9.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.modeling.constraint_as_graph.basic",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.minmax_to_binary.basic",
+      "direct_pre_suggestion": [
+        "2.6.1",
+        "2.6.2"
+      ],
+      "rel_suggestion": [
+        "2.6.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_sweep.basic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.tree_path_to_lca.basic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.16.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.multiple_to_offline.basic",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.9.2"
+      ],
+      "rel_suggestion": [
+        "2.9.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.dynamic_to_divide.basic",
+      "direct_pre_suggestion": [
+        "cand.modeling.multiple_to_offline.basic"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.16.1"
+      ],
+      "pre_count": 1
+    },
+    {
+      "candidate_id": "cand.modeling.choice_to_dp.basic",
+      "direct_pre_suggestion": [
+        "2.11.1",
+        "2.11.2"
+      ],
+      "rel_suggestion": [
+        "2.11.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.matching_to_flow.basic",
+      "direct_pre_suggestion": [
+        "2.18.1",
+        "2.18.2"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.feasibility_to_sat.basic",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.6",
+        "2.18.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_algorithm.basic",
+      "direct_pre_suggestion": [
+        "2.1.1",
+        "2.1.2"
+      ],
+      "rel_suggestion": [
+        "2.1.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.counterexample.basic",
+      "direct_pre_suggestion": [
+        "2.1.1",
+        "2.1.2"
+      ],
+      "rel_suggestion": [
+        "2.1.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.boundary.basic",
+      "direct_pre_suggestion": [
+        "2.1.1",
+        "2.1.2"
+      ],
+      "rel_suggestion": [
+        "2.1.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.modeling.interactive.basic",
+      "direct_pre_suggestion": [
+        "2.1.1",
+        "2.1.2"
+      ],
+      "rel_suggestion": [
+        "2.1.4",
+        "2.9.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.polynomial.lagrange_interpolation",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.math.polynomial.berlekamp_massey",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.ds.tree.centroid_decomposition_applications",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.16.2"
+      ],
+      "rel_suggestion": [
+        "2.16.4",
+        "2.13.6"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.geometry.convex_hull.dynamic",
+      "direct_pre_suggestion": [
+        "3.10.1",
+        "3.10.2"
+      ],
+      "rel_suggestion": [
+        "3.10.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.hash.2d",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "2.15.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.string.hash.collision",
+      "direct_pre_suggestion": [
+        "3.12.1",
+        "3.12.2"
+      ],
+      "rel_suggestion": [
+        "3.12.4",
+        "4.1.1"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.graph.min_cost_flow.applications",
+      "direct_pre_suggestion": [
+        "2.18.1",
+        "2.18.2"
+      ],
+      "rel_suggestion": [
+        "2.18.3",
+        "2.13.6"
+      ],
+      "pre_count": 2
+    },
+    {
+      "candidate_id": "cand.dp.advanced.bitmask_optimization",
+      "direct_pre_suggestion": [
+        "2.11.1",
+        "2.11.2"
+      ],
+      "rel_suggestion": [
+        "2.11.4",
+        "2.13.1"
+      ],
+      "pre_count": 2
+    }
+  ]
+}

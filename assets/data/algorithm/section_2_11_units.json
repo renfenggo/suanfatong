@@ -1,0 +1,384 @@
+{
+  "sectionId": "2.11",
+  "sectionName": "位运算与状态压缩",
+  "units": [
+    {
+      "itemId": "2.11.1",
+      "title": "二进制表示",
+      "learningGoal": "理解整数的二进制表示，掌握位运算的基本操作和常见技巧",
+      "explanation": "二进制表示：整数在计算机中以二进制形式存储，理解二进制是位运算和状态压缩的基础。\n\n基本概念：\n- 每个二进制位（bit）代表 0 或 1\n- 8 个 bit 组成 1 个字节（byte）\n- C++ 中 int 通常 4 字节（32 位），long long 8 字节（64 位）\n\n常用位运算：\n- &（按位与）：x & y，两位都为 1 结果为 1\n- |（按位或）：x | y，任一位为 1 结果为 1\n- ^（按位异或）：x ^ y，两位不同结果为 1\n- ~（按位取反）：~x，0 变 1，1 变 0\n- <<（左移）：x << k，x * 2^k\n- >>（右移）：x >> k，x / 2^k（算术右移，负数补 1）\n\n常见技巧：\n- 判断奇偶：x & 1 == 1 为奇数\n- 判断第 k 位：(x >> k) & 1\n- 设置第 k 位为 1：x | (1 << k)\n- 设置第 k 位为 0：x & ~(1 << k)\n- 判断是否为 2 的幂：x & (x-1) == 0",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int x;\n    cin >> x;\n    cout << \"第 3 位: \" << ((x >> 2) & 1) << endl;\n    cout << \"设置第 3 位为 1: \" << (x | (1 << 2)) << endl;\n    cout << \"设置第 3 位为 0: \" << (x & ~(1 << 2)) << endl;\n    cout << \"二进制: \";\n    for (int i = 31; i >= 0; i--) cout << ((x >> i) & 1);\n    cout << endl;\n    cout << \"是否为 2 的幂: \" << (x > 0 && (x & (x - 1)) == 0) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        ">> k 右移 k 位",
+        "& 取位，| 设置位，~ 取反",
+        "x & (x-1) == 0 判断 2 的幂",
+        "输出二进制逐位检查"
+      ],
+      "commonMistakes": [
+        {
+          "title": "左移溢出",
+          "description": "1 << 32 在 32 位 int 中未定义（左移位数 >= 类型宽度）。",
+          "fix": "用 1LL << 32 或确保 k < 32。"
+        },
+        {
+          "title": "优先级错误",
+          "description": "x >> 2 & 1 实际是 x >> (2 & 1)，应加括号。",
+          "fix": "(x >> 2) & 1，明确运算顺序。"
+        }
+      ],
+      "practice": {
+        "prompt": "将十进制数 10 转换为二进制输出。",
+        "hint": "从高位到低位逐位检查。",
+        "expectedIdea": "1010"
+      },
+      "quiz": [
+        {
+          "question": "表达式 (x & 1) 的值是？",
+          "options": [
+            "x 的最高位",
+            "x 的最低位",
+            "x 的符号位",
+            "x / 2"
+          ],
+          "answerIndex": 1,
+          "explanation": "x & 1 取 x 的最后一位（最低位），用于判断奇偶。"
+        },
+        {
+          "question": "1 << 10 的值是？",
+          "options": [
+            "10",
+            "100",
+            "1024",
+            "2048"
+          ],
+          "answerIndex": 2,
+          "explanation": "1 << 10 = 2^10 = 1024。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.2",
+      "title": "位掩码",
+      "learningGoal": "理解位掩码概念，掌握用二进制位表示集合和状态的方法",
+      "explanation": "位掩码：用二进制的每一位表示一个开关、选项或集合中的元素，实现高效的集合操作。\n\n基本概念：\n- 一个 64 位整数可以表示最多 64 个元素的存在/不存在\n- 第 i 位为 1 表示元素 i 存在（或选项开启）\n- 第 i 位为 0 表示元素 i 不存在（或选项关闭）\n\n常见操作：\n- 添加元素 i：mask | (1 << i)\n- 删除元素 i：mask & ~(1 << i)\n- 判断元素 i 是否存在：(mask >> i) & 1\n- 翻转元素 i：mask ^ (1 << i)\n- 清空所有元素：mask = 0\n- 全部元素：mask = (1 << n) - 1\n\n集合运算：\n- 交集：a & b\n- 并集：a | b\n- 差集（a - b）：a & ~b\n- 对称差：a ^ b\n- 子集判断：(a & b) == a 或 a | b == b\n\n应用场景：\n- 状态压缩 DP（如旅行商问题 TSP）\n- 权限系统（读/写/执行权限）\n- 游戏中的状态标志（无敌、隐身等）\n- 稀疏集合的高效存储",
+      "exampleCode": "#include <iostream>\n#include <bitset>\nusing namespace std;\n\nint main() {\n    int S = 0;\n    S |= (1 << 2); S |= (1 << 5); S |= (1 << 7);\n    cout << \"集合 S: \" << S << endl;\n    cout << \"元素 3 存在? \" << ((S >> 3) & 1) << endl;\n    cout << \"元素 5 存在? \" << ((S >> 5) & 1) << endl;\n    S &= ~(1 << 5);\n    cout << \"删除元素 5 后: \" << S << endl;\n    int T = (1 << 1) | (1 << 3) | (1 << 5);\n    cout << \"并集 S|T: \" << (S | T) << endl;\n    cout << \"交集 S&T: \" << (S & T) << endl;\n    for (int i = 0; i < 10; i++)\n        if ((S >> i) & 1) cout << i << \" \";\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "mask | (1<<i) 添加元素",
+        "mask & ~(1<<i) 删除元素",
+        "(mask>>i) & 1 检查元素",
+        "& 交集, | 并集, ^ 对称差"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆位编号和位位置",
+          "description": "第 i 个元素对应第 i 位（从 0 开始），不是第 i-1 位。",
+          "fix": "元素 0 对应 1<<0，元素 i 对应 1<<i。"
+        },
+        {
+          "title": "忘记取反",
+          "description": "删除元素时 mask & (1 << i) 会把其他位也清空。",
+          "fix": "删除用 mask & ~(1 << i)，~ 取反再与。"
+        }
+      ],
+      "practice": {
+        "prompt": "用位掩码表示集合 {1, 3, 5}，然后删除元素 3。",
+        "hint": "mask = (1<<1)|(1<<3)|(1<<5)，删除用 mask & ~(1<<3)。",
+        "expectedIdea": "mask = 42 (101010)，删除后 mask = 34 (100010)"
+      },
+      "quiz": [
+        {
+          "question": "用位掩码表示集合 {0, 2, 4}，mask 的值是？",
+          "options": [
+            "15",
+            "21",
+            "42",
+            "56"
+          ],
+          "answerIndex": 1,
+          "explanation": "(1<<0) + (1<<2) + (1<<4) = 1 + 4 + 16 = 21 (二进制 10101)。"
+        },
+        {
+          "question": "两个集合的对称差（只在其中一个集合的元素）用什么运算？",
+          "options": [
+            "a & b",
+            "a | b",
+            "a ^ b",
+            "a & ~b"
+          ],
+          "answerIndex": 2,
+          "explanation": "^ 异或运算得到只在 a 或只在 b 的元素，即对称差。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.3",
+      "title": "子集枚举",
+      "learningGoal": "掌握枚举集合所有子集的方法，理解 2^n 的子集数量和遍历技巧",
+      "explanation": "子集枚举：遍历一个集合的所有子集，每个元素有选/不选两种状态，共 2^n 个子集。\n\n方法 1：二进制枚举\n- for (int mask = 0; mask < (1 << n); mask++)\n- mask 的第 i 位为 1 表示选第 i 个元素\n- 输出子集时检查每一位是否为 1\n\n方法 2：DFS 回溯\n- void dfs(int pos, int chosen)\n- 到达 pos == n 时输出当前选中的元素\n- 每次选择 pos（chosen + a[pos]）或不选择 pos\n\n方法 3：枚举子集的子集（子集枚举优化）\n- for (int s = mask; s; s = (s - 1) & mask)\n- 枚举 mask 的所有非空子集\n- 用于状态压缩 DP 中枚举子集\n\n时间复杂度：\n- 所有子集：O(n * 2^n)\n- 子集的子集：O(3^n)\n\n应用：\n- 状态压缩 DP 预处理\n- 子集和问题\n- 暴力搜索剪枝",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n = 3, a[] = {1, 2, 3};\n    cout << \"所有子集:\" << endl;\n    for (int mask = 0; mask < (1 << n); mask++) {\n        for (int i = 0; i < n; i++)\n            if ((mask >> i) & 1) cout << a[i] << \" \";\n        cout << endl;\n    }\n    cout << \"子集的子集 (mask=5=101):\" << endl;\n    int mask = 5;\n    for (int s = mask; s; s = (s - 1) & mask) {\n        for (int i = 0; i < n; i++)\n            if ((s >> i) & 1) cout << a[i] << \" \";\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "mask 从 0 到 2^n-1 枚举所有子集",
+        "(s-1) & mask 枚举子集的子集",
+        "检查第 i 位： (mask >> i) & 1",
+        "时间 O(n*2^n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "上界写错",
+          "description": "for (int mask = 0; mask <= (1 << n); mask++) 会多循环一次。",
+          "fix": "子集数量是 2^n，上界是 (1 << n)，不包括。"
+        },
+        {
+          "title": "子集的子集循环条件",
+          "description": "for (int s = mask; s >= 0; s = (s - 1) & mask) 会死循环。",
+          "fix": "条件是 s，当 s=0 时自动停止（不枚举空集）。"
+        }
+      ],
+      "practice": {
+        "prompt": "枚举集合 {1, 2, 3} 的所有非空子集。",
+        "hint": "mask 从 1 到 2^n-1。",
+        "expectedIdea": "7 个子集"
+      },
+      "quiz": [
+        {
+          "question": "n 个元素的集合有多少个子集？",
+          "options": [
+            "n",
+            "2^n",
+            "n^2",
+            "n!"
+          ],
+          "answerIndex": 1,
+          "explanation": "每个元素有选/不选两种状态，共 2^n 个子集（包括空集）。"
+        },
+        {
+          "question": "枚举子集的子集的时间复杂度是？",
+          "options": [
+            "O(n^2)",
+            "O(n * 2^n)",
+            "O(3^n)",
+            "O(2^n)"
+          ],
+          "answerIndex": 2,
+          "explanation": "每个元素有三种状态（只在原集、只在子集、都在），共 3^n 种。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.4",
+      "title": "状态压缩",
+      "learningGoal": "理解状态压缩 DP 的核心思想，掌握用二进制表示复杂状态的方法",
+      "explanation": "状态压缩：将复杂的状态用二进制整数表示，大幅减少 DP 状态数和空间占用。\n\n核心思想：\n当状态的某些维度取值范围很小（0/1、小范围离散值）时，可以用二进制位压缩。\n例如：n 个物品选/不选的状态可以表示为一个 n 位整数。\n\n适用场景：\n- 元素数量 ≤ 20（状态数 2^n ≤ 10^6）\n- 每个元素的状态简单（0/1 或小范围）\n- 状态转移可以通过位运算高效完成\n\n经典问题：\n1. 旅行商问题（TSP）：dp[mask][i] 表示访问集合 mask 且当前在 i 的最小花费\n2. 棋盘放棋子：dp[mask] 表示第 mask 列是否可行\n3. 集合覆盖：dp[mask] 表示覆盖集合 mask 的最小代价\n\n状态转移技巧：\n- 预处理合法状态\n- 用 & 判断状态兼容\n- 用 | 合并状态\n- 枚举子集进行转移\n\n时间复杂度：O(n * 2^n)\n空间复杂度：O(n * 2^n)",
+      "exampleCode": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 4, dist[4][4] = {{0,2,3,1},{2,0,4,5},{3,4,0,6},{1,5,6,0}};\n    const int INF = 1e9;\n    int dp[1 << 4][4];\n    for (int mask = 0; mask < (1 << n); mask++)\n        for (int i = 0; i < n; i++) dp[mask][i] = INF;\n    dp[1][0] = 0;\n    for (int mask = 1; mask < (1 << n); mask++) {\n        for (int i = 0; i < n; i++) {\n            if (!(mask & (1 << i))) continue;\n            for (int j = 0; j < n; j++) {\n                if (mask & (1 << j)) continue;\n                dp[mask | (1 << j)][j] = min(dp[mask | (1 << j)][j], dp[mask][i] + dist[i][j]);\n            }\n        }\n    }\n    int ans = INF;\n    for (int i = 1; i < n; i++) ans = min(ans, dp[(1 << n) - 1][i] + dist[i][0]);\n    cout << ans << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "dp[mask][i] 表示访问集合 mask 且当前在 i",
+        "从状态 mask 转移到 mask | (1<<j)",
+        "& 判断是否已访问某城市",
+        "最终回到起点 0"
+      ],
+      "commonMistakes": [
+        {
+          "title": "数组开太大",
+          "description": "n=20 时 2^20 约 10^6，dp[n][2^n] 可能 MLE。",
+          "fix": "评估 n 的范围，必要时用滚动数组优化空间。"
+        },
+        {
+          "title": "初始状态设置错误",
+          "description": "TSP 中应从单个城市开始，不是从空集开始。",
+          "fix": "dp[1][0] = 0（从城市 0 出发），其他设为 INF。"
+        }
+      ],
+      "practice": {
+        "prompt": "n 个点的旅行商问题，求最小花费（n ≤ 16）。",
+        "hint": "状态压缩 DP，dp[mask][i] 表示访问 mask 且当前在 i。",
+        "expectedIdea": "O(n^2 * 2^n) 状态压缩 DP"
+      },
+      "quiz": [
+        {
+          "question": "状态压缩 DP 适用于什么规模的问题？",
+          "options": [
+            "n ≤ 10",
+            "n ≤ 20",
+            "n ≤ 100",
+            "任意 n"
+          ],
+          "answerIndex": 1,
+          "explanation": "2^n 状态数，n ≤ 20 时 2^n ≤ 10^6 可接受。"
+        },
+        {
+          "question": "TSP 问题中 dp[mask][i] 的含义是？",
+          "options": [
+            "访问 i 的最小花费",
+            "访问集合 mask 的最小花费",
+            "访问集合 mask 且当前在 i 的最小花费",
+            "从 i 出发的最小花费"
+          ],
+          "answerIndex": 2,
+          "explanation": "状态包括已访问的城市集合和当前位置，用于计算转移。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.5",
+      "title": "异或性质",
+      "learningGoal": "掌握异或运算的基本性质和常见应用（找出现一次的数、异或前缀和）",
+      "explanation": "异或（XOR，^）：按位异或运算，两位不同结果为 1，相同结果为 0。\n\n基本性质：\n1. 交换律：a ^ b = b ^ a\n2. 结合律：(a ^ b) ^ c = a ^ (b ^ c)\n3. 自反性：a ^ a = 0\n4. 零元素：a ^ 0 = a\n5. 重要推论：a ^ b = c → a ^ c = b → b ^ c = a\n\n常见应用：\n1. 找出现一次的数：所有数异或，成对出现异或为 0\n2. 找两个出现一次的数：异或后找不同位分组\n3. 异或前缀和：xor[i] = xor[i-1] ^ a[i]，区间异或 = xor[r] ^ xor[l-1]\n4. 交换两个变量：a ^= b; b ^= a; a ^= b;\n5. 检查异或：哈希校验、CRC\n\n找两个不同数：\n- 先整体异或得 s\n- 找 s 中任一个为 1 的位 k\n- 按第 k 位是否为 1 分组\n- 每组分别异或得到两个数",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, a[100005], xorSum = 0, a1 = 0, a2 = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) { cin >> a[i]; xorSum ^= a[i]; }\n    int k = 0;\n    while ((xorSum >> k) & 1 == 0) k++;\n    for (int i = 0; i < n; i++) {\n        if ((a[i] >> k) & 1) a1 ^= a[i];\n        else a2 ^= a[i];\n    }\n    cout << a1 << \" \" << a2 << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "异或性质：a^a=0, a^0=a",
+        "找不同位 k 分组",
+        "每组异或得到一个目标数",
+        "时间 O(n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "循环异或时初始值错误",
+          "description": "找单个数时初始值应为 0，不是第一个元素。",
+          "fix": "int ans = 0; for (int x : a) ans ^= x;"
+        },
+        {
+          "title": "分组条件写错",
+          "description": "分组应按 s（异或结果）的某一位，不是随机位。",
+          "fix": "先找 s 中为 1 的位，按该位分组保证两个目标在不同组。"
+        }
+      ],
+      "practice": {
+        "prompt": "数组中除了两个数出现一次，其他都出现两次，找出这两个数。",
+        "hint": "先整体异或，再按某一位分组。",
+        "expectedIdea": "O(n) 找两个数"
+      },
+      "quiz": [
+        {
+          "question": "异或的性质中，a ^ a 等于？",
+          "options": [
+            "a",
+            "0",
+            "1",
+            "-a"
+          ],
+          "answerIndex": 1,
+          "explanation": "a ^ a 的每一位都是 0 或 0、1 或 1，结果为 0。"
+        },
+        {
+          "question": "如何用异或交换两个变量 a 和 b？",
+          "options": [
+            "a = b; b = a;",
+            "a ^= b; b ^= a; a ^= b;",
+            "a ^ b = a; b ^ a = b;",
+            "需要临时变量，无法用异或"
+          ],
+          "answerIndex": 1,
+          "explanation": "三步异或交换：a^=b, b^=a, a^=b。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.6",
+      "title": "lowbit 应用",
+      "learningGoal": "掌握 lowbit 的定义和计算，了解其在子集枚举和树状数组中的应用",
+      "explanation": "lowbit(x)：x 的二进制表示中最低位的 1 所在位的值。\n\n定义：lowbit(x) = 2^k，其中 k 是 x 二进制中最低的 1 的位置\n例如：lowbit(12) = lowbit(1100) = 4 (0100)\n\n计算方法：lowbit(x) = x & (-x)\n原理：-x = ~x + 1，补码变换后 lowbit 位置不变，高位全部不同，& 后只剩 lowbit\n\n常见应用：\n1. 判断是否为 2 的幂：lowbit(x) == x\n2. 枚举子集的子集：for (int s = mask; s; s -= lowbit(s))\n3. 树状数组（BIT）：lowbit 控制区间长度\n4. 快速计数 1 的个数：while (x) { x -= lowbit(x); cnt++; }\n5. 集合运算：添加/删除/枚举元素\n\nlowbit 在树状数组中的作用：\n- c[i] 维护区间 [i - lowbit(i) + 1, i]\n- 更新时沿 lowbit 跳：i += lowbit(i)\n- 查询时沿 lowbit 跳：i -= lowbit(i)\n\n时间复杂度：O(log n)（树状数组操作）",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint lowbit(int x) {\n    return x & (-x);\n}\n\nint main() {\n    int mask = 10;  // 1010\n    cout << \"lowbit(10) = \" << lowbit(10) << endl;\n    cout << \"子集的子集:\" << endl;\n    for (int s = mask; s; s -= lowbit(s)) {\n        int p = lowbit(s) >> 1;\n        while (p) p >>= 1, cout << 0;\n        for (int i = s; i; i -= lowbit(i)) cout << 1;\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "lowbit(x) = x & (-x)",
+        "枚举子集：s -= lowbit(s)",
+        "每次去掉一个 1",
+        "时间与 1 的个数成正比"
+      ],
+      "commonMistakes": [
+        {
+          "title": "lowbit 计算错误",
+          "description": "lowbit(0) 应该是 0，但 0 & -0 也是 0，无问题。",
+          "fix": "使用前检查 x != 0，或处理 x=0 的情况。"
+        },
+        {
+          "title": "枚举方向错误",
+          "description": "枚举子集用 s -= lowbit(s)，不是 s + lowbit(s)。",
+          "fix": "每次去掉最低位的 1，得到下一个子集。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 lowbit 方法枚举 mask 的所有非空子集。",
+        "hint": "for (int s = mask; s; s -= lowbit(s))。",
+        "expectedIdea": "O(popcount(mask)) 枚举子集"
+      },
+      "quiz": [
+        {
+          "question": "lowbit(12) 的值是？",
+          "options": [
+            "2",
+            "4",
+            "8",
+            "12"
+          ],
+          "answerIndex": 1,
+          "explanation": "12 = 1100，最低位的 1 在第 2 位（从0开始），lowbit = 4 = 0100。"
+        },
+        {
+          "question": "lowbit 在树状数组中用于？",
+          "options": [
+            "计算平均值",
+            "确定区间长度",
+            "排序数组",
+            "哈希"
+          ],
+          "answerIndex": 1,
+          "explanation": "树状数组中 lowbit(i) 确定节点 i 维护的区间长度。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.11.7",
+      "title": "SOS DP",
+      "learningGoal": "掌握 SOS（Sum Over Subsets）DP 的原理和实现，高效计算所有子集的聚合值",
+      "explanation": "SOS DP（Sum Over Subsets DP）：高效计算每个子集的某种聚合值，如子集和、子集 AND、子集 OR 等。\n\n核心思想：\n给定函数 f[mask]，计算 g[mask] = sum{f[s] | s 是 mask 的子集}\n直接暴力是 O(n * 2^n)，SOS DP 优化到 O(n * 2^n)\n\n算法流程（FMT - Fast Möbius Transform）：\nfor (int i = 0; i < n; i++)\n    for (int mask = 0; mask < (1 << n); mask++)\n        if (mask & (1 << i))\n            dp[mask] += dp[mask ^ (1 << i)];\n\n原理：每轮考虑第 i 位，让所有包含第 i 位的 mask 从不包含第 i 位的子集继承。\n\n应用：\n1. 子集和：g[mask] = sum{f[s] | s ⊆ mask}\n2. 子集 OR：g[mask] = OR{f[s] | s ⊆ mask}\n3. 子集 AND：g[mask] = AND{f[s] | s ⊆ mask}\n4. 快速莫比乌斯变换（FMT）和卷积\n\n时间复杂度：O(n * 2^n)\n空间复杂度：O(2^n)",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 3;\n    int f[1 << 3] = {1, 2, 3, 4, 5, 6, 7, 8};\n    int dp[1 << 3];\n    for (int mask = 0; mask < (1 << n); mask++) dp[mask] = f[mask];\n    for (int i = 0; i < n; i++) {\n        for (int mask = 0; mask < (1 << n); mask++) {\n            if (mask & (1 << i)) dp[mask] += dp[mask ^ (1 << i)];\n        }\n    }\n    for (int mask = 0; mask < (1 << n); mask++)\n        cout << mask << \": \" << dp[mask] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "dp[mask] 初始化为 f[mask]",
+        "每轮处理第 i 位",
+        "mask 包含第 i 位时从不包含的子集继承",
+        "时间 O(n*2^n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "方向错误",
+          "description": "要计算子集和，继承方向是 dp[mask] += dp[mask ^ (1<<i)]。",
+          "fix": "子集 DP 是从去掉第 i 位继承，超集 DP 反过来。"
+        },
+        {
+          "title": "i 的范围错误",
+          "description": "i 应该从 0 到 n-1，不是 1 到 n。",
+          "fix": "for (int i = 0; i < n; i++)，对应第 i 位的处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 f[mask]，求每个 mask 的子集和 g[mask]。",
+        "hint": "SOS DP 模板。",
+        "expectedIdea": "O(n*2^n) 填表"
+      },
+      "quiz": [
+        {
+          "question": "SOS DP 的时间复杂度是？",
+          "options": [
+            "O(2^n)",
+            "O(n * 2^n)",
+            "O(n^2 * 2^n)",
+            "O(n + 2^n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "n 轮外层循环，每轮 2^n 个状态，共 O(n * 2^n)。"
+        },
+        {
+          "question": "SOS DP 中 dp[mask] 包含？",
+          "options": [
+            "mask 的超集的 f 值",
+            "mask 的子集的 f 值",
+            "mask 自身的 f 值",
+            "所有状态的 f 值"
+          ],
+          "answerIndex": 1,
+          "explanation": "SOS DP 计算 g[mask] = sum{f[s] | s ⊆ mask}，即子集和。"
+        }
+      ]
+    }
+  ]
+}

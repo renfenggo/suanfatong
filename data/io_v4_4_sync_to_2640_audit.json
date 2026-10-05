@@ -1,0 +1,26 @@
+{
+  "audit_type": "io_v4_4_sync_to_2640",
+  "generated_at": "2026-05-26T16:44:10.000Z",
+  "pre_sync_item_count": 2165,
+  "post_sync_item_count": 2640,
+  "section_count": 65,
+  "checks": {
+    "item_count_2640": true,
+    "section_count_65": true,
+    "old_2165_all_present": true,
+    "old_2165_missing_count": 0,
+    "stage5_475_all_present": true,
+    "stage5_475_missing_count": 0,
+    "removed_25_not_exported": true,
+    "keeper_7_exported": true,
+    "dangling_refs_zero": true,
+    "direct_pre_no_section_refs": true,
+    "no_duplicates": true,
+    "field_compatibility": true,
+    "json_parse_valid": true
+  },
+  "overall_passed": true,
+  "main_graph_modified": false,
+  "frontend_code_modified": false,
+  "backup_file": "assets/data/knowledge/io_v4_4_before_sync_to_2640.json"
+}

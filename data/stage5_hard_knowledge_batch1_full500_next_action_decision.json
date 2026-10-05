@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T07:46:32.178314+00:00",
+    "main_graph_modified": false
+  },
+  "next_action": {
+    "branch": "B",
+    "branch_label": "合并+缩减 — 需要先执行节点合并，再执行 direct_pre shrink",
+    "reason": "存在 25 个需合并节点",
+    "shrink_plan_count": 275,
+    "merge_decisions_count": 32,
+    "keep_count": 7,
+    "merge_into_parent_count": 25,
+    "delete_count": 0,
+    "manual_review_count": 0
+  }
+}

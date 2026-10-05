@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 fallback_24 Added Items Summary",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T11:05:20.000Z",
+    "batch_id": "stage3e_batch6_fallback24",
+    "main_graph_modified": true,
+    "total_added": 24,
+    "item_count_before": 1617,
+    "item_count_after": 1641,
+    "source": "v2_fallback_24",
+    "excluded_merged": 6,
+    "excluded_duplicate": 3
+  },
+  "section_distribution": {
+    "3.13": 24
+  },
+  "added_items": [
+    {
+      "item_id": "3.13.158",
+      "candidate_id": "cand.ds.li_chao_tree.on_tree",
+      "name": "李超线段树：On Tree",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.8.28",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.159",
+      "candidate_id": "cand.ds.li_chao_tree.rollback",
+      "name": "李超线段树：回滚版",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.8.28",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.160",
+      "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+      "name": "可并堆：Lazy Deletion Heap",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.2.3"
+      ]
+    },
+    {
+      "item_id": "3.13.161",
+      "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+      "name": "可并堆：Persistent Heap",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.2.3"
+      ]
+    },
+    {
+      "item_id": "3.13.162",
+      "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+      "name": "Segment Tree Beats：Range Min Max Sum",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.163",
+      "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+      "name": "可并堆：Heap With Decrease Key",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.2.3"
+      ]
+    },
+    {
+      "item_id": "3.13.164",
+      "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+      "name": "可并堆：Double Ended Priority Queue",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.2.3"
+      ]
+    },
+    {
+      "item_id": "3.13.165",
+      "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+      "name": "Segment Tree Beats：Range Modulo",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.166",
+      "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+      "name": "李超线段树：Maximum Query",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.8.28",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.167",
+      "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+      "name": "李超线段树：Minimum Query",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.8.28",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.168",
+      "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+      "name": "Segment Tree Beats：Beats Amortized Analysis",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.169",
+      "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+      "name": "Segment Tree Beats：Beats Proof",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.170",
+      "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+      "name": "可并堆：Meldable Priority Queue",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.2.3"
+      ]
+    },
+    {
+      "item_id": "3.13.171",
+      "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+      "name": "Segment Tree Beats：Beats With Assignment",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.172",
+      "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+      "name": "Segment Tree Beats：Second Maximum Invariant",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.173",
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+      "name": "Bitset Linear Basis: Basis On Tree",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.8.25",
+        "3.2.1"
+      ]
+    },
+    {
+      "item_id": "3.13.174",
+      "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+      "name": "Dynamic Tree: Cut Link Connectivity",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.4",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.175",
+      "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+      "name": "Dynamic Tree: Dynamic Lca",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.4"
+      ]
+    },
+    {
+      "item_id": "3.13.176",
+      "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+      "name": "Dynamic Tree: Path Lazy Tag",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.4",
+        "3.7.3"
+      ]
+    },
+    {
+      "item_id": "3.13.177",
+      "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+      "name": "Dynamic Tree: Reroot Query",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.4"
+      ]
+    },
+    {
+      "item_id": "3.13.178",
+      "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+      "name": "Dynamic Tree: Virtual Subtree Aggregate",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.4"
+      ]
+    },
+    {
+      "item_id": "3.13.179",
+      "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+      "name": "Merge Sort Tree: 2d Dominance",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "1.3.1"
+      ]
+    },
+    {
+      "item_id": "3.13.180",
+      "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+      "name": "Multidimensional: Bitset Rectangle Query",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ]
+    },
+    {
+      "item_id": "3.13.181",
+      "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+      "name": "Multidimensional: Cdq Divide Conquer",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ]
+    }
+  ]
+}

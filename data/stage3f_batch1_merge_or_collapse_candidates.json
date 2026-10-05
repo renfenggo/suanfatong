@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Stage3F Batch1 Merge or Collapse Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T13:00:00.000Z",
+    "main_graph_modified": false,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "item_id": "2.8.138",
+      "name": "数位DP基础",
+      "reason": "与主图谱中已有相似节点名称，但作为学习粒度节点可保留，建议在描述中标注与基础节点的关系",
+      "risk": "low",
+      "verdict": "keep_as_learning_granularity"
+    },
+    {
+      "item_id": "2.8.139",
+      "name": "树DP基础",
+      "reason": "与主图谱中已有相似节点名称，但作为学习粒度节点可保留，建议在描述中标注与基础节点的关系",
+      "risk": "low",
+      "verdict": "keep_as_learning_granularity"
+    }
+  ],
+  "recommendation": "以上候选均为 low risk 的学习粒度节点，建议保留但不排除未来合并"
+}

@@ -1,0 +1,286 @@
+{
+  "animationId": "cpp_topological_sort",
+  "itemId": "2.6.4",
+  "title": "拓扑排序",
+  "description": "演示拓扑排序的 Kahn 算法：入度减法 + 队列处理",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": -1, "note": "有向无环图"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "计算入度：每个节点的入边数",
+      "description": "入度 = 指向该节点的边数。节点0入度0，节点1入度1，节点2入度1，节点3入度2，节点4入度1",
+      "codeLine": "indeg[0]=0, indeg[1]=1, indeg[2]=1, indeg[3]=2, indeg[4]=1",
+      "highlights": ["indeg"],
+      "state": {
+        "variables": [
+          {"name": "indeg[0]", "value": "0", "note": "无入边"},
+          {"name": "indeg[1]", "value": "1", "note": "1条入边 0→1"},
+          {"name": "indeg[2]", "value": "1", "note": "1条入边 0→2"},
+          {"name": "indeg[3]", "value": "2", "note": "2条入边 1→3,2→3"},
+          {"name": "indeg[4]", "value": "1", "note": "1条入边 3→4"}
+        ],
+        "containers": [
+          {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": -1, "note": "入度标记完成"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "初始：入度为0的节点入队",
+      "description": "将所有入度为0的节点加入队列。这里只有节点0入度为0",
+      "codeLine": "queue.push(0);  // indeg[0]=0",
+      "highlights": ["queue.push(0)"],
+      "state": {
+        "variables": [
+          {"name": "队列", "value": "[0]", "note": "初始状态"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["0"], "activeIndex": 0, "note": "队首"},
+          {"name": "结果", "type": "int[]", "values": [], "activeIndex": -1, "note": "拓扑排序结果"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "取出队首 0，加入结果",
+      "description": "从队列中取出节点0，将其加入拓扑排序结果",
+      "codeLine": "int u = q.front(); q.pop(); result.push_back(u);",
+      "highlights": ["q.front()", "result.push_back"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "0", "note": "已处理"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": [], "activeIndex": -1, "note": "空"},
+          {"name": "结果", "type": "int[]", "values": ["0"], "activeIndex": 0, "note": "0就位"}
+        ],
+        "output": "0"
+      }
+    },
+    {
+      "step": 4,
+      "title": "遍历0的邻接节点：1和2",
+      "description": "节点0指向节点1和2。对每个邻接节点，将其入度减1",
+      "codeLine": "for v in adj[u]: indeg[v]--",
+      "highlights": ["indeg[v]--"],
+      "state": {
+        "variables": [
+          {"name": "indeg[1]", "value": "0", "note": "1-1=0"},
+          {"name": "indeg[2]", "value": "0", "note": "1-1=0"}
+        ],
+        "containers": [
+          {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": 0, "note": "处理0的邻居"}
+        ],
+        "output": "0"
+      }
+    },
+    {
+      "step": 5,
+      "title": "入度减为0的节点入队：1和2",
+      "description": "节点1和2的入度都变为0，加入队列",
+      "codeLine": "if (indeg[v] == 0) q.push(v);",
+      "highlights": ["indeg[v] == 0"],
+      "state": {
+        "variables": [
+          {"name": "队列", "value": "[1, 2]", "note": "1和2入队"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["1", "2"], "activeIndex": 0, "note": "队首1"},
+          {"name": "结果", "type": "int[]", "values": ["0"], "activeIndex": 0, "note": "0就位"}
+        ],
+        "output": "0"
+      }
+    },
+    {
+      "step": 6,
+      "title": "取出队首 1，加入结果",
+      "description": "从队列中取出节点1，加入结果",
+      "codeLine": "u = q.front(); q.pop(); result.push_back(u);",
+      "highlights": ["1"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "1", "note": "已处理"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["2"], "activeIndex": 0, "note": "剩余2"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1"], "activeIndex": 1, "note": "1就位"}
+        ],
+        "output": "0 1"
+      }
+    },
+    {
+      "step": 7,
+      "title": "遍历1的邻接节点：3",
+      "description": "节点1指向节点3。将节点3的入度减1，从2变为1",
+      "codeLine": "indeg[3]--  // 2-1=1",
+      "highlights": ["indeg[3]"],
+      "state": {
+        "variables": [
+          {"name": "indeg[3]", "value": "1", "note": "2-1=1，还没到0"}
+        ],
+        "containers": [
+          {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": 1, "note": "处理1的邻居"}
+        ],
+        "output": "0 1"
+      }
+    },
+    {
+      "step": 8,
+      "title": "节点3入度不为0，不入队",
+      "description": "节点3的入度为1，不是0，所以不能入队",
+      "codeLine": "indeg[3]=1，不满足 ==0",
+      "highlights": ["不满足 ==0"],
+      "state": {
+        "variables": [
+          {"name": "队列", "value": "[2]", "note": "只有2"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["2"], "activeIndex": 0, "note": "只有2"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1"], "activeIndex": 1, "note": "0,1就位"}
+        ],
+        "output": "0 1"
+      }
+    },
+    {
+      "step": 9,
+      "title": "取出队首 2，加入结果",
+      "description": "从队列中取出节点2，加入结果",
+      "codeLine": "u = q.front(); q.pop(); result.push_back(u);",
+      "highlights": ["2"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "2", "note": "已处理"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": [], "activeIndex": -1, "note": "空"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1", "2"], "activeIndex": 2, "note": "2就位"}
+        ],
+        "output": "0 1 2"
+      }
+    },
+    {
+      "step": 10,
+      "title": "遍历2的邻接节点：3",
+      "description": "节点2指向节点3。将节点3的入度减1，从1变为0",
+      "codeLine": "indeg[3]--  // 1-1=0",
+      "highlights": ["indeg[3]"],
+      "state": {
+        "variables": [
+          {"name": "indeg[3]", "value": "0", "note": "1-1=0，现在可以入队"}
+        ],
+        "containers": [
+          {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": 2, "note": "处理2的邻居"}
+        ],
+        "output": "0 1 2"
+      }
+    },
+    {
+      "step": 11,
+      "title": "节点3入度变为0，入队",
+      "description": "节点3的入度为0，加入队列",
+      "codeLine": "if (indeg[3] == 0) q.push(3);",
+      "highlights": ["q.push(3)"],
+      "state": {
+        "variables": [
+          {"name": "队列", "value": "[3]", "note": "3入队"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["3"], "activeIndex": 0, "note": "队首3"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1", "2"], "activeIndex": 2, "note": "0,1,2就位"}
+        ],
+        "output": "0 1 2"
+      }
+    },
+    {
+      "step": 12,
+      "title": "取出队首 3，加入结果",
+      "description": "从队列中取出节点3，加入结果",
+      "codeLine": "u = q.front(); q.pop(); result.push_back(u);",
+      "highlights": ["3"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "3", "note": "已处理"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": [], "activeIndex": -1, "note": "空"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1", "2", "3"], "activeIndex": 3, "note": "3就位"}
+        ],
+        "output": "0 1 2 3"
+      }
+    },
+    {
+      "step": 13,
+      "title": "遍历3的邻接节点：4",
+      "description": "节点3指向节点4。将节点4的入度减1，从1变为0",
+      "codeLine": "indeg[4]--  // 1-1=0",
+      "highlights": ["indeg[4]"],
+      "state": {
+        "variables": [
+          {"name": "indeg[4]", "value": "0", "note": "1-1=0"}
+        ],
+        "containers": [
+          {"name": "邻接表", "type": "graph", "nodes": ["0", "1", "2", "3", "4"], "edges": ["0→1", "0→2", "1→3", "2→3", "3→4"], "activeNode": 3, "note": "处理3的邻居"}
+        ],
+        "output": "0 1 2 3"
+      }
+    },
+    {
+      "step": 14,
+      "title": "节点4入队",
+      "description": "节点4的入度为0，加入队列",
+      "codeLine": "if (indeg[4] == 0) q.push(4);",
+      "highlights": ["q.push(4)"],
+      "state": {
+        "variables": [
+          {"name": "队列", "value": "[4]", "note": "4入队"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": ["4"], "activeIndex": 0, "note": "最后节点"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1", "2", "3"], "activeIndex": 3, "note": "0,1,2,3就位"}
+        ],
+        "output": "0 1 2 3"
+      }
+    },
+    {
+      "step": 15,
+      "title": "取出队首 4，加入结果",
+      "description": "从队列中取出节点4，加入结果",
+      "codeLine": "u = q.front(); q.pop(); result.push_back(u);",
+      "highlights": ["4"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "4", "note": "已处理"}
+        ],
+        "containers": [
+          {"name": "队列", "type": "int[]", "values": [], "activeIndex": -1, "note": "空"},
+          {"name": "结果", "type": "int[]", "values": ["0", "1", "2", "3", "4"], "activeIndex": 4, "note": "完成"}
+        ],
+        "output": "0 1 2 3 4"
+      }
+    },
+    {
+      "step": 16,
+      "title": "拓扑排序完成",
+      "description": "所有节点都已处理完毕，队列为空。拓扑排序结果：[0,1,2,3,4]",
+      "codeLine": "while (!q.empty())  // 循环结束",
+      "highlights": ["完成"],
+      "state": {
+        "variables": [
+          {"name": "结果验证", "value": "正确", "note": "满足拓扑序"}
+        ],
+        "containers": [
+          {"name": "拓扑序", "type": "int[]", "values": ["0", "1", "2", "3", "4"], "activeIndex": 4, "note": "唯一解"}
+        ],
+        "output": "0 1 2 3 4"
+      }
+    }
+  ]
+}

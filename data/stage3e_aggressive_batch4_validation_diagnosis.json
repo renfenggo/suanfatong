@@ -1,0 +1,586 @@
+{
+  "batch_id": "stage3e_aggressive_batch4",
+  "diagnosis_date": "2026-05-23T10:08:03.870705",
+  "current_status": "validation_failed",
+  "task1_resolved_pre_mismatches": {
+    "mismatches": [
+      {
+        "item_id": "2.21.141",
+        "name": "匹配与覆盖：Matroid Matching",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.136",
+        "name": "图论建模：State Graph",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "3.13.132",
+        "name": "高级平衡树：Implicit Treap",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "3.13.137",
+        "name": "高级平衡树：Piece Table",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "3.13.133",
+        "name": "高级平衡树：Join Based Tree",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.139",
+        "name": "匹配与覆盖：Hall Theorem",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.137",
+        "name": "图论建模：Steiner Tree",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "3.13.139",
+        "name": "高级平衡树：Scapegoat Tree",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.132",
+        "name": "图论建模：K Shortest Paths",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.138",
+        "name": "匹配与覆盖：Dilworth Theorem",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "3.13.135",
+        "name": "高级平衡树：Order Statistic Tree",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.135",
+        "name": "图论建模：Shortest Path Potentials",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.134",
+        "name": "图论建模：Minimum Mean Cycle",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "3.13.142",
+        "name": "高级并查集：可持久化版",
+        "expected_len": 13,
+        "actual_len": 13,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.1.3",
+          "1.3.10",
+          "1.2.1",
+          "4.1.1",
+          "1.3.6"
+        ]
+      },
+      {
+        "item_id": "2.21.130",
+        "name": "上下界网络流：Node Demand",
+        "expected_len": 25,
+        "actual_len": 25,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.1.3",
+          "1.3.10",
+          "1.2.1",
+          "4.1.1",
+          "1.3.6"
+        ]
+      },
+      {
+        "item_id": "3.13.141",
+        "name": "高级并查集：Dsu On Tree",
+        "expected_len": 13,
+        "actual_len": 13,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.1.3",
+          "1.3.10",
+          "1.2.1",
+          "4.1.1",
+          "1.3.6"
+        ]
+      },
+      {
+        "item_id": "3.13.131",
+        "name": "高级平衡树：Fhq Split Merge",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "3.13.140",
+        "name": "高级平衡树：Splay Sequence",
+        "expected_len": 26,
+        "actual_len": 26,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "3.13.134",
+        "name": "高级平衡树：Lazy Reversible Sequence",
+        "expected_len": 26,
+        "actual_len": 26,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.146",
+        "name": "高级最短路：Time Expanded Graph",
+        "expected_len": 31,
+        "actual_len": 31,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.131",
+        "name": "上下界网络流：Project Selection",
+        "expected_len": 25,
+        "actual_len": 25,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.1.3",
+          "1.3.10",
+          "1.2.1",
+          "4.1.1",
+          "1.3.6"
+        ]
+      },
+      {
+        "item_id": "3.13.138",
+        "name": "高级平衡树：Rope",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.129",
+        "name": "上下界网络流：Minimum Flow",
+        "expected_len": 25,
+        "actual_len": 25,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.1.3",
+          "1.3.10",
+          "1.2.1",
+          "4.1.1",
+          "1.3.6"
+        ]
+      },
+      {
+        "item_id": "2.21.143",
+        "name": "匹配与覆盖：Stable Marriage",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.140",
+        "name": "匹配与覆盖：Konig Theorem",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.145",
+        "name": "匹配与覆盖：Weighted General Matching",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.144",
+        "name": "匹配与覆盖：Tutte Matrix",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "3.13.136",
+        "name": "高级平衡树：Persistent Treap",
+        "expected_len": 27,
+        "actual_len": 27,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "3.6.1",
+          "3.6.3",
+          "1.1.3",
+          "1.3.10",
+          "1.2.1"
+        ]
+      },
+      {
+        "item_id": "2.21.142",
+        "name": "匹配与覆盖：Minimum Path Cover",
+        "expected_len": 28,
+        "actual_len": 28,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      },
+      {
+        "item_id": "2.21.133",
+        "name": "图论建模：Layered Graph",
+        "expected_len": 30,
+        "actual_len": 30,
+        "same_length": true,
+        "same_set": true,
+        "same_order": true,
+        "is_batch4_new_node": true,
+        "resolved_pre_sample": [
+          "1.3.10",
+          "1.4.3",
+          "1.4.4",
+          "1.5.6",
+          "1.6.1"
+        ]
+      }
+    ],
+    "summary": {
+      "total_mismatches": 30,
+      "all_same_length": true,
+      "all_batch4_new_nodes": true,
+      "involves_old_nodes": false,
+      "diagnosis": "set_order_issue"
+    }
+  },
+  "task2_product_metadata": {
+    "total_items": 1602,
+    "all_items_have_en_name": true,
+    "missing_en_name_count": 0,
+    "all_items_have_tracks": true,
+    "missing_tracks_count": 0,
+    "invalid_tracks_count": 0,
+    "all_items_have_audience": true,
+    "missing_audience_count": 0,
+    "invalid_audience_count": 0,
+    "all_items_have_visibility": true,
+    "missing_visibility_count": 0,
+    "invalid_visibility_count": 0,
+    "all_items_have_learning_path_policy": true,
+    "missing_learning_path_policy_count": 0,
+    "missing_learning_path_policy_batch4": 0,
+    "missing_learning_path_policy_old": 0,
+    "invalid_unlock_mode_count": 366,
+    "all_items_have_localization_status": true,
+    "missing_localization_status_count": 0,
+    "all_items_have_content_status": true,
+    "missing_content_status_count": 0,
+    "validation_passed": true,
+    "primary_failure_reason": "other_metadata_issue",
+    "involves_batch4_nodes": false,
+    "involves_old_nodes": false,
+    "batch4_missing_lpp_items": [],
+    "old_missing_lpp_count": 0
+  },
+  "task3_rollback_decision": {
+    "current_item_count": 1602,
+    "validation_passed": false,
+    "should_treat_as_success": false,
+    "can_fix_in_place": true,
+    "should_restore_backup": false,
+    "recommended_next_action": "fix_in_place_and_revalidate",
+    "reasons_for_in_place_fix": [
+      "resolved_pre_mismatches 只是数量相同的情况，可能是验证脚本逻辑问题",
+      "resolved_pre_mismatches 只涉及 Batch4 新增节点，未污染旧节点"
+    ],
+    "reasons_for_rollback": [],
+    "diagnosis_summary": {
+      "resolved_pre_issue": "length_equal_only_new_nodes",
+      "product_metadata_issue": "mixed_or_old_nodes",
+      "overall_risk": "low"
+    }
+  },
+  "task4_no_fix_instruction": {
+    "diagnosis_only": true,
+    "no_modifications": true,
+    "no_batch5": true,
+    "no_batch4_review": true,
+    "next_step": "wait_for_further_instructions_based_on_diagnosis"
+  },
+  "overall_diagnosis": {
+    "can_proceed": false,
+    "requires_rollback": false,
+    "can_be_fixed_in_place": true,
+    "recommended_action": "fix_in_place_and_revalidate"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Stage3F Batch1 Problem Pattern Sync Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T13:00:00.000Z",
+    "main_graph_modified": false,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "item_id": "3.13.182",
+      "name": "Multidimensional: Dominance Counting",
+      "reason": "Dominance Counting 是多维偏序计数模式，适合作为 problem_pattern 同步，与 CDQ 分治配合使用",
+      "suggested_pattern_type": "counting_pattern"
+    },
+    {
+      "item_id": "2.17.20",
+      "name": "Berlekamp-Massey算法",
+      "reason": "BM 算法常用于线性递推求解题模式，适合同步为 problem_pattern",
+      "suggested_pattern_type": "algorithmic_pattern"
+    },
+    {
+      "item_id": "4.9.3",
+      "name": "Min_25筛",
+      "reason": "Min_25 筛是积性函数前缀和的经典求解模式，适合同步为 problem_pattern",
+      "suggested_pattern_type": "counting_pattern"
+    }
+  ],
+  "recommendation": "建议在 Stage3F Batch1 Fix Lite 中同步以上候选到 problem_patterns 库"
+}

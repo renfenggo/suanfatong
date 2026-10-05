@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Rollback Plan",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T15:24:53.000Z",
+    "backup_path": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2.json",
+    "merge_applied": true
+  },
+  "rollback_steps": [
+    "Copy-Item backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2.json merged_knowledge_graph_item_dependencies_refined.json"
+  ],
+  "added_item_ids": [
+    "2.10.29",
+    "2.10.30",
+    "2.10.31",
+    "2.10.32",
+    "2.10.33",
+    "2.10.34",
+    "2.18.10",
+    "2.18.11",
+    "3.8.12",
+    "3.8.13",
+    "3.8.14",
+    "4.1.30",
+    "4.1.31",
+    "4.1.32",
+    "4.1.33",
+    "4.1.34",
+    "4.3.33",
+    "4.3.34",
+    "4.9.4",
+    "4.9.5"
+  ]
+}

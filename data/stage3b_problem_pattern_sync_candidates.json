@@ -1,0 +1,38 @@
+[
+  {
+    "source_item_id": "2.21.29",
+    "source_candidate_id": "cand.graph.closure_model.project_selection",
+    "name": "最大权闭合子图：Project Selection",
+    "en_name": "Maximum Closure: Project Selection",
+    "suggested_pattern_id": "pat.graph_closure_model_project_selection",
+    "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern.",
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "status": "sync_candidate_only"
+  },
+  {
+    "source_item_id": "2.21.39",
+    "source_candidate_id": "cand.graph.graph_modeling.difference_constraints",
+    "name": "图论建模：Difference Constraints",
+    "en_name": "Graph Modeling: Difference Constraints",
+    "suggested_pattern_id": "pat.graph_graph_modeling_difference_constraints",
+    "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern.",
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi"
+    ],
+    "status": "sync_candidate_only"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Stage3E Batch5 smaller_15 Problem Pattern Sync Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:25:00.000Z",
+    "main_graph_modified": false
+  },
+  "summary": {
+    "total_candidates": 0,
+    "note": "Batch5 15 个节点均为 implementation_variant / core_concept 类型，以具体算法实现为核心，无明显题型识别/训练套路特征，不推荐同步到 problem_patterns"
+  },
+  "candidates": []
+}

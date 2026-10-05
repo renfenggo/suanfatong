@@ -1,0 +1,572 @@
+{
+  "high_priority": [
+    {
+      "itemId": "5.4.10",
+      "title": "排序后去重",
+      "category": "cpp",
+      "score": 9,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握 sort + unique 去重的标准写法"
+    },
+    {
+      "itemId": "2.4.2",
+      "title": "贪心正确性证明",
+      "category": "algorithm",
+      "score": 9,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握贪心正确性的三种证明方法：交换论证、反证法、归纳法"
+    },
+    {
+      "itemId": "2.7.1",
+      "title": "递归基础",
+      "category": "algorithm",
+      "score": 9,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解递归函数的原理，掌握递归边界、参数含义和调用栈，能写出正确的递归函数"
+    },
+    {
+      "itemId": "3.12.3",
+      "title": "莫队算法",
+      "category": "algorithm",
+      "score": 9,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握莫队算法的原理，理解分块排序优化离线查询的思想，实现标准莫队算法"
+    },
+    {
+      "itemId": "5.3.4",
+      "title": "正序 / 倒序遍历",
+      "category": "cpp",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握正序和倒序遍历数组的写法"
+    },
+    {
+      "itemId": "2.2.4",
+      "title": "归并排序",
+      "category": "algorithm",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解归并排序的分治思想和 O(n log n) 复杂度"
+    },
+    {
+      "itemId": "2.6.4",
+      "title": "拓扑排序",
+      "category": "algorithm",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解拓扑排序的原理和应用场景"
+    },
+    {
+      "itemId": "2.9.6",
+      "title": "拓扑排序",
+      "category": "algorithm",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解拓扑排序的概念和前提（DAG），掌握 Kahn 算法和 DFS 方法实现拓扑排序"
+    },
+    {
+      "itemId": "3.9.6",
+      "title": "拓扑排序",
+      "category": "algorithm",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握拓扑排序的概念和 Kahn 算法（BFS 版）的实现，理解 DAG 的判定方法，能够用入度数组和队列完成拓扑排序"
+    },
+    {
+      "itemId": "4.4.9",
+      "title": "递推与递归证明",
+      "category": "math",
+      "score": 8,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解递推关系的概念，能用递推和数学方法证明数列或递归算法的正确性"
+    },
+    {
+      "itemId": "1.10.8",
+      "title": "priority_queue 默认大根堆",
+      "category": "cpp",
+      "score": 7,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解 priority_queue 默认是大根堆（最大值优先），学会创建小根堆"
+    },
+    {
+      "itemId": "3.9.3",
+      "title": "链式前向星",
+      "category": "algorithm",
+      "score": 7,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握链式前向星（数组模拟链表存边）的原理和实现，理解 head、to、nxt、w 数组的作用，能够用 addEdge 函数完成建图"
+    },
+    {
+      "itemId": "4.7.16",
+      "title": "多边形面积",
+      "category": "math",
+      "score": 7,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握用叉积（鞋带公式）计算多边形面积的方法，理解公式的推导"
+    },
+    {
+      "itemId": "5.5.5",
+      "title": "DFS 回溯恢复现场",
+      "category": "cpp",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解 DFS 回溯时恢复状态的重要性"
+    },
+    {
+      "itemId": "2.1.4",
+      "title": "递归",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解递归思想，学会将大问题分解为同类小问题"
+    },
+    {
+      "itemId": "2.1.5",
+      "title": "分治",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解分治思想，学会将问题分解、独立求解、合并结果"
+    },
+    {
+      "itemId": "2.1.8",
+      "title": "离线思想",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及基础概念"
+      ],
+      "learning_goal": "理解离线思想，学会把询问按特定顺序处理以降低复杂度"
+    },
+    {
+      "itemId": "2.1.10",
+      "title": "随机化基础",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "常见错误涉及过程性问题",
+        "学习目标涉及理解过程",
+        "标题涉及基础概念"
+      ],
+      "learning_goal": "理解随机化算法思想，学会利用随机性设计和分析算法"
+    },
+    {
+      "itemId": "2.14.7",
+      "title": "点分治",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解点分治的思想，掌握重心分解和合并子问题答案的方法"
+    },
+    {
+      "itemId": "2.14.8",
+      "title": "边分治",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解边分治的思想，掌握重心边分解和合并子问题答案的方法"
+    },
+    {
+      "itemId": "2.18.4",
+      "title": "CDQ 分治",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解 CDQ 分治的思想，掌握处理偏序问题的 O(n log² n) 算法"
+    },
+    {
+      "itemId": "2.2.2",
+      "title": "选择排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解选择排序的原理，每次选最小元素放到前面"
+    },
+    {
+      "itemId": "2.2.3",
+      "title": "插入排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解插入排序原理，学会将元素逐个插入已排序序列"
+    },
+    {
+      "itemId": "2.2.6",
+      "title": "堆排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解堆排序的原理，掌握堆的维护和排序过程"
+    },
+    {
+      "itemId": "2.2.7",
+      "title": "计数排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解计数排序的原理，掌握非比较排序的基本思想"
+    },
+    {
+      "itemId": "2.2.8",
+      "title": "桶排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解桶排序的原理和分桶思想，了解其适用场景"
+    },
+    {
+      "itemId": "2.2.9",
+      "title": "基数排序",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解基数排序按位排序的思想，掌握 LSD 基数排序的实现"
+    },
+    {
+      "itemId": "2.4.10",
+      "title": "图论贪心",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "理解图论中经典贪心算法：Kruskal、Prim、Dijkstra 的贪心思想"
+    },
+    {
+      "itemId": "2.4.11",
+      "title": "树上贪心",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握树结构上的贪心策略，理解自底向上和自顶向下贪心的区别"
+    },
+    {
+      "itemId": "2.4.12",
+      "title": "数学贪心",
+      "category": "algorithm",
+      "score": 6,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "掌握利用数学性质进行贪心选择的方法，理解贪心成立的数学条件"
+    }
+  ],
+  "medium_priority": [
+    {
+      "itemId": "1.1.7",
+      "title": "return 0",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解 return 0 的含义，知道 main 函数返回值的意义"
+    },
+    {
+      "itemId": "1.10.9",
+      "title": "getline 被前一个换行影响",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解 cin 和 getline 混用时的换行符残留问题，学会正确处理"
+    },
+    {
+      "itemId": "1.2.9",
+      "title": "getline 读取整行",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握 getline 的用法，能读取包含空格的整行字符串"
+    },
+    {
+      "itemId": "1.3.11",
+      "title": "变量初始化",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握变量初始化的多种方式，理解未初始化的风险"
+    },
+    {
+      "itemId": "1.3.14",
+      "title": "局部变量",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解局部变量的特点，掌握其生命周期"
+    },
+    {
+      "itemId": "1.4.2",
+      "title": "赋值运算符",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握基本赋值 = 和复合赋值运算符 +=、-=、*=、/=、%= 的用法"
+    },
+    {
+      "itemId": "1.4.5",
+      "title": "自增自减",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握 ++ 和 -- 的前置与后置用法，理解两者在表达式中的区别"
+    },
+    {
+      "itemId": "1.4.11",
+      "title": "括号改变顺序",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握使用括号显式控制运算顺序，养成用括号提高代码可读性的习惯"
+    },
+    {
+      "itemId": "1.6.2",
+      "title": "二维数组",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解二维数组的概念，学会用二维数组存储表格型数据"
+    },
+    {
+      "itemId": "1.6.3",
+      "title": "多维数组",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解三维及更高维数组的概念，了解其声明和访问方式"
+    },
+    {
+      "itemId": "1.6.4",
+      "title": "数组初始化",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握数组的多种初始化方式，包括完全初始化、部分初始化和默认初始化"
+    },
+    {
+      "itemId": "1.6.8",
+      "title": "memset",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "学会使用 memset 快速填充数组，理解其工作原理和适用场景"
+    },
+    {
+      "itemId": "1.6.10",
+      "title": "字符串读入",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握用 cin 和 getline 读取字符串的不同方式"
+    },
+    {
+      "itemId": "1.6.11",
+      "title": "字符串遍历",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "学会用循环遍历字符串中的每个字符，进行逐字符处理"
+    },
+    {
+      "itemId": "1.6.14",
+      "title": "常见字符串操作",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握 string 的常用成员函数：find、substr、insert、erase 等"
+    },
+    {
+      "itemId": "1.6.16",
+      "title": "string 与字符数组区别",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "理解 string 和字符数组的区别，能在合适场景选择使用"
+    },
+    {
+      "itemId": "1.6.17",
+      "title": "getline 与 cin 区别",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "深入理解 getline 和 cin >> 读取字符串的区别，掌握混合使用的技巧"
+    },
+    {
+      "itemId": "1.7.13",
+      "title": "解引用",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握解引用运算符 * 的用法，学会通过指针读写变量的值"
+    },
+    {
+      "itemId": "1.8.4",
+      "title": "结构体排序",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "标题涉及高优先级算法概念"
+      ],
+      "learning_goal": "学会按结构体成员排序"
+    },
+    {
+      "itemId": "1.8.12",
+      "title": "deque",
+      "category": "cpp",
+      "score": 4,
+      "reasons": [
+        "学习目标涉及理解过程",
+        "练习提示涉及分步操作"
+      ],
+      "learning_goal": "掌握双端队列 deque 的基本用法"
+    }
+  ],
+  "total_high_priority": 94,
+  "total_medium_priority": 59,
+  "total_needs_animation": 425
+}

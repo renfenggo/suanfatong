@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 静态候选计划",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T13:20:00.000Z",
+    "main_graph_modified": false,
+    "batch2_formally_generated": false,
+    "dynamic_precheck_not_yet_run": true,
+    "recommended_next_step": "run_dynamic_precheck_before_merge",
+    "standard_pool_total": 129,
+    "batch1_used": 20,
+    "batch2_selected": 20
+  },
+  "summary": {
+    "by_source": {
+      "external_b2": 20
+    },
+    "by_section": {
+      "2.10": 6,
+      "2.18": 2,
+      "3.8": 3,
+      "4.1": 5,
+      "4.3": 2,
+      "4.9": 2
+    },
+    "by_risk": {
+      "yellow": 20
+    },
+    "potential_dependency_cleanup_count": 20,
+    "potential_problem_pattern_sync_count": 0
+  },
+  "candidates": [
+    {
+      "candidate_id": "cand.string.z_algorithm.basic",
+      "name": "Z算法基础",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.pattern_matching",
+      "name": "Z算法模式匹配应用",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.ex_kmp.basic",
+      "name": "扩展KMP算法基础",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.kmp_automaton.basic",
+      "name": "KMP自动机基础",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.ac_automaton.applications",
+      "name": "AC自动机高级应用",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.ac_failure_tree.analysis",
+      "name": "AC自动机失败树分析",
+      "source": "external_b2",
+      "target_section": "2.10",
+      "section_name": "字符串算法",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.10 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.prime_testing.miller_rabin",
+      "name": "Miller-Rabin素数测试",
+      "source": "external_b2",
+      "target_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.1 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.prime_factorization.pollard_rho",
+      "name": "Pollard Rho分解",
+      "source": "external_b2",
+      "target_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.1 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.primitive_root.basic",
+      "name": "原根基础",
+      "source": "external_b2",
+      "target_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.1 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.bsgs",
+      "name": "BSGS离散对数",
+      "source": "external_b2",
+      "target_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.1 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.exbsgs",
+      "name": "扩展BSGS",
+      "source": "external_b2",
+      "target_section": "4.1",
+      "section_name": "整数与数论基础",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.1 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.lcp_rmq.optimization",
+      "name": "LCP RMQ优化",
+      "source": "external_b2",
+      "target_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 3.8 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.sam_parent_tree.structure",
+      "name": "SAM父树结构",
+      "source": "external_b2",
+      "target_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 3.8 yellow候选"
+    },
+    {
+      "candidate_id": "cand.string.eertree.construction",
+      "name": "回文树Eertree构建",
+      "source": "external_b2",
+      "target_section": "3.8",
+      "section_name": "字符串结构",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 3.8 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.lucas",
+      "name": "Lucas定理",
+      "source": "external_b2",
+      "target_section": "4.3",
+      "section_name": "计数与组合",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.3 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.catalan",
+      "name": "Catalan数",
+      "source": "external_b2",
+      "target_section": "4.3",
+      "section_name": "计数与组合",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.3 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.dirichlet_convolution.basic",
+      "name": "狄利克雷卷积基础",
+      "source": "external_b2",
+      "target_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.9 yellow候选"
+    },
+    {
+      "candidate_id": "cand.math.mobius_inversion.applications",
+      "name": "莫比乌斯反演应用",
+      "source": "external_b2",
+      "target_section": "4.9",
+      "section_name": "高级数学与群论",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 4.9 yellow候选"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue",
+      "name": "单调队列优化",
+      "source": "external_b2",
+      "target_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.18 yellow候选"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue_sliding",
+      "name": "滑动窗口DP",
+      "source": "external_b2",
+      "target_section": "2.18",
+      "section_name": "综合高级技巧专题",
+      "risk_band": "yellow",
+      "mapping_confidence": "high",
+      "selection_status": "selected",
+      "exclude_reason": "",
+      "static_risk_flags": [],
+      "selection_reason": "优先external_b2 2.18 yellow候选"
+    }
+  ],
+  "excluded_candidates_preview": [
+    {
+      "candidate_id": "cand.graph.hall_theorem.applications",
+      "name": "Hall 定理及应用",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.two_sat.modeling_techniques",
+      "name": "2-SAT 建模技巧",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling.raw",
+      "name": "差分约束系统建模",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.max_weight_closure.problem",
+      "name": "最大权闭合子图",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.johnson_potentials",
+      "name": "高级最短路：Johnson Potentials",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.yen_k_shortest",
+      "name": "高级最短路：Yen K Shortest",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.eppstein_k_shortest",
+      "name": "高级最短路：Eppstein K Shortest",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.replacement_paths",
+      "name": "高级最短路：Replacement Paths",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.resource_constrained",
+      "name": "高级最短路：Resource Constrained",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.fully_dynamic_overview",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.global_min_cut.minimum_cut_modeling",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.scc_dp",
+      "name": "强连通分量 DAG：Scc Dp",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.dynamic_bridge",
+      "name": "动态图连通性：Dynamic Bridge",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.component_topo_order",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.min_cost_path_cover",
+      "name": "高级最短路：Min Cost Path Cover",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.embedding_basics",
+      "name": "平面图：Embedding Basics",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.dynamic_biconnectivity",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.zero_one_bfs_modeling",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "section": "2.21",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.connectivity_snapshots",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.graph.closure_model.penalty_modeling",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "section": "2.21",
+      "risk": "green",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.split",
+      "name": "线段树变体：Split",
+      "section": "3.13",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.parity",
+      "name": "高级并查集：Parity",
+      "section": "3.13",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.persistent_segment_tree",
+      "name": "线段树变体：Persistent Segment Tree",
+      "section": "3.13",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.distance",
+      "name": "高级并查集：Distance",
+      "section": "3.13",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.two_dimensional_segment_tree",
+      "name": "线段树变体：Two Dimensional Segment Tree",
+      "section": "3.13",
+      "risk": "yellow",
+      "exclude_reason": "section_capacity_limited"
+    }
+  ],
+  "recommendations": {
+    "next_step": "动态预审 (dynamic precheck)",
+    "expected_merge_count": 20,
+    "potential_dependency_cleanup_needed": true,
+    "potential_problem_pattern_sync": false,
+    "main_graph_modified": false,
+    "batch2_generated": false,
+    "note": "选择策略: B2薄弱区优先(2.10>4.1>3.8>2.8) → B1补充(2.21/3.13)"
+  }
+}

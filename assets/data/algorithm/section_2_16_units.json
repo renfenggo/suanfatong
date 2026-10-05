@@ -1,0 +1,456 @@
+{
+  "sectionId": "2.16",
+  "sectionName": "二分图、匹配与网络流",
+  "units": [
+    {
+      "itemId": "2.16.1",
+      "title": "二分图匹配基础",
+      "learningGoal": "理解二分图、匹配、最大匹配、完美匹配的概念和性质",
+      "explanation": "二分图：顶点集可以分成两个不相交的子集，所有边都连接两个子集之间的顶点。\n\n匹配：边的集合，任意两条边没有公共顶点。\n\n最大匹配：边数最多的匹配。\n\n完美匹配：每个顶点都被匹配覆盖的匹配。\n\n基本概念：\n- 左部集 U，右部集 V\n- 匹配 M：E 的子集，任意两条边无公共端点\n- 匹配边：M 中的边\n- 未匹配边：不在 M 中的边\n- 匹配点：M 中边的端点\n- 未匹配点：不在 M 中边的端点\n\n判定二分图：\n- 二染色法：BFS/DFS 染色，相邻点颜色不同\n- 奇环判断：无奇环的图是二分图\n\n最大匹配下界：\n- Hall 定理：U 的任意子集 S，N(S) >= |S|，则存在完美匹配\n- 最小顶点覆盖 = 最大匹配（König 定理）\n\n时间复杂度：\n- 判定二分图：O(n + m)\n- 求最大匹配：O(nm)（匈牙利算法）\n\n应用：\n1. 任务分配问题\n2. 婚配问题\n3. 人员岗位匹配\n4. 最大匹配基础",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nconst int N = 105;\nvector<int> adj[N];\nint color[N], n, m;\n\nbool isBipartite() {\n    for (int i = 1; i <= n; i++) {\n        if (color[i] == 0) {\n            queue<int> q;\n            q.push(i);\n            color[i] = 1;\n            while (!q.empty()) {\n                int u = q.front(); q.pop();\n                for (int v : adj[u]) {\n                    if (color[v] == 0) {\n                        color[v] = 3 - color[u];\n                        q.push(v);\n                    } else if (color[v] == color[u]) {\n                        return false;\n                    }\n                }\n            }\n        }\n    }\n    return true;\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 1; i <= m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    if (isBipartite()) {\n        cout << \"Bipartite graph\" << endl;\n    } else {\n        cout << \"Not bipartite\" << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "isBipartite(): BFS 二染色法判定二分图",
+        "color[u]: 0 未染色，1 和 2 两种颜色",
+        "time complexity: O(n + m)",
+        "应用场景：最大匹配前置条件"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记初始化颜色",
+          "description": "颜色数组需要初始化为 0，表示未染色。",
+          "fix": "int color[N] = {0}; 或 memset(color, 0, sizeof(color));"
+        },
+        {
+          "title": "BFS 队列处理错误",
+          "description": "BFS 时需要从所有未染色的点开始，因为图可能不连通。",
+          "fix": "for (int i = 1; i <= n; i++) if (color[i] == 0) BFS(i);"
+        },
+        {
+          "title": "颜色判断错误",
+          "description": "相邻点颜色应该不同，判断 color[v] == color[u] 表示冲突。",
+          "fix": "if (color[v] == color[u]) return false;"
+        },
+        {
+          "title": "颜色赋值错误",
+          "description": "新节点颜色应该是 3 - color[u]，而不是 color[u] + 1。",
+          "fix": "color[v] = 3 - color[u]; 保证颜色是 1 或 2。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现二分图判定，输出是否为二分图。",
+        "hint": "BFS/DFS 二染色法，时间复杂度 O(n + m)。",
+        "expectedIdea": "O(n + m) 二分图判定"
+      },
+      "quiz": [
+        {
+          "question": "二分图的定义是？",
+          "options": [
+            "任意两点连通",
+            "可以二染色且无奇环",
+            "所有边权相同",
+            "无环图"
+          ],
+          "answerIndex": 1,
+          "explanation": "二分图可以二染色，且无奇环。"
+        },
+        {
+          "question": "完美匹配的定义是？",
+          "options": [
+            "边数最多的匹配",
+            "每个点都被匹配覆盖",
+            "所有边都在匹配中",
+            "没有未匹配边"
+          ],
+          "answerIndex": 1,
+          "explanation": "完美匹配是每个顶点都被匹配覆盖的匹配。"
+        },
+        {
+          "question": "König 定理是？",
+          "options": [
+            "最大匹配 = 最大流",
+            "最大匹配 = 最小顶点覆盖",
+            "最大流 = 最小割",
+            "最大匹配 = 完美匹配"
+          ],
+          "answerIndex": 1,
+          "explanation": "König 定理：二分图中最大匹配 = 最小顶点覆盖。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.16.2",
+      "title": "匈牙利 / 增广路求二分图最大匹配",
+      "learningGoal": "理解匈牙利算法原理，掌握增广路求二分图最大匹配的实现",
+      "explanation": "匈牙利算法：用增广路求二分图最大匹配的算法。\n\n增广路：起点和终点都是未匹配点，边交替是匹配边和未匹配边。\n\n增广路定理：\n- 存在增广路则匹配可以扩大\n- 不存在增广路则匹配是最大匹配\n- 每次找到增广路，匹配数 + 1\n\n匈牙利算法流程：\n1. 枚举左部集每个点\n2. 尝试为该点找到匹配\n3. 使用 DFS/BFS 寻找增广路\n4. 找到则更新匹配\n5. 找不到则标记失败\n\nBFS 版本（Hopcroft-Karp）：\n- 多路增广，时间复杂度 O(√n × m)\n- 分层图，BFS 找距离，DFS 找匹配\n\n时间复杂度：\n- DFS 版本：O(nm)\n- BFS 版本：O(√n × m)\n\n空间复杂度：O(n + m)\n\n应用：\n1. 任务分配\n2. 婚配问题\n3. 最大流前置算法\n4. 二分图最大匹配",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 105, M = 10005;\nint match[N];\nbool vis[N];\nvector<int> adj[N];\nint n, m, k;\n\nbool dfs(int u) {\n    for (int v : adj[u]) {\n        if (vis[v]) continue;\n        vis[v] = true;\n        if (match[v] == 0 || dfs(match[v])) {\n            match[v] = u;\n            return true;\n        }\n    }\n    return false;\n}\n\nint hungarian() {\n    int ans = 0;\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= m; j++) vis[j] = false;\n        if (dfs(i)) ans++;\n    }\n    return ans;\n}\n\nint main() {\n    cin >> n >> m >> k;\n    for (int i = 1; i <= k; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n    }\n    \n    int ans = hungarian();\n    \n    cout << ans << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "dfs(u): 尝试为 u 找到匹配",
+        "match[v]: v 在匹配中对应的左部点",
+        "vis[v]: 标记 v 是否被访问",
+        "time complexity: O(nm)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "vis 数组未重置",
+          "description": "每次 DFS 前需要重置 vis 数组，避免重复访问。",
+          "fix": "for (int j = 1; j <= m; j++) vis[j] = false;"
+        },
+        {
+          "title": "match 数组未初始化",
+          "description": "match 数组需要初始化为 0，表示未匹配。",
+          "fix": "int match[N] = {0}; 或 memset(match, 0, sizeof(match));"
+        },
+        {
+          "title": "增广路判断错误",
+          "description": "DFS 时需要标记 vis 避免循环，同时判断 match[v] == 0。",
+          "fix": "if (match[v] == 0 || dfs(match[v]))"
+        },
+        {
+          "title": "递归深度过大",
+          "description": "DFS 版本可能递归深度过大，考虑改为 BFS 版本或迭代。",
+          "fix": "使用 Hopcroft-Karp 算法（BFS + DFS）。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现匈牙利算法求二分图最大匹配。",
+        "hint": "DFS 增广路算法，时间复杂度 O(nm)。",
+        "expectedIdea": "O(nm) 匈牙利算法"
+      },
+      "quiz": [
+        {
+          "question": "增广路的定义是？",
+          "options": [
+            "起点和终点都是匹配点",
+            "起点和终点都是未匹配点",
+            "所有边都是匹配边",
+            "所有边都是未匹配边"
+          ],
+          "answerIndex": 1,
+          "explanation": "增广路是起点和终点都是未匹配点，边交替是匹配边和未匹配边。"
+        },
+        {
+          "question": "匈牙利算法的时间复杂度是？",
+          "options": [
+            "O(n + m)",
+            "O(nm)",
+            "O(m log n)",
+            "O(n^2 m)"
+          ],
+          "answerIndex": 1,
+          "explanation": "匈牙利算法（DFS 版本）时间复杂度是 O(nm)。"
+        },
+        {
+          "question": "Hopcroft-Karp 算法的优势是？",
+          "options": [
+            "代码简单",
+            "时间复杂度更好 O(√n × m)",
+            "空间复杂度更低",
+            "无需增广路"
+          ],
+          "answerIndex": 1,
+          "explanation": "Hopcroft-Karp 算法使用多路增广，时间复杂度 O(√n × m)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.16.3",
+      "title": "网络流基础",
+      "learningGoal": "理解网络流的基本概念，掌握流网络、容量、流量、增广路等核心定义",
+      "explanation": "网络流：有向图中从源点到汇点的流。\n\n流网络：\n- G = (V, E)：有向图\n- c(u, v)：边 (u, v) 的容量\n- f(u, v)：边 (u, v) 的流量\n- s：源点\n- t：汇点\n\n流的性质：\n1. 容量限制：0 <= f(u, v) <= c(u, v)\n2. 斜对称：f(u, v) = -f(v, u)\n3. 流量守恒：除 s 和 t 外，每个点流入 = 流出\n\n基本概念：\n- 流量大小 |f|：从 s 流出的总流量\n- 剩余容量 c_f(u, v) = c(u, v) - f(u, v)\n- 剩余网络 G_f：剩余容量 > 0 的边\n- 增广路：剩余网络中 s 到 t 的路径\n- 反向边：容量为 f(u, v)，用于退流\n\n最大流问题：\n- 目标：最大化从 s 到 t 的流量\n- 方法：增广路算法、Dinic 等\n\n最小割问题：\n- 割 (S, T)：S ∪ T = V, S ∩ T = ∅, s ∈ S, t ∈ T\n- 割容量：c(S, T) = Σ_{u∈S, v∈T} c(u, v)\n- 目标：最小化割容量\n\n最大流最小割定理：\n- 最大流 = 最小割\n\n时间复杂度：\n- 增广路算法：O(E × max_flow)\n- Dinic：O(V²E)\n\n应用：\n1. 二分图最大匹配\n2. 最大流问题\n3. 最小割问题\n4. 供应链优化",
+      "exampleCode": "#include <iostream>\n#include <queue>\n#include <vector>\nusing namespace std;\n\nconst int N = 205, M = 5005, INF = 1e9;\nint head[N], to[M], cap[M], nxt[M], tot = 1;\nint n, m, s, t;\n\nvoid addEdge(int u, int v, int w) {\n    to[++tot] = v;\n    cap[tot] = w;\n    nxt[tot] = head[u];\n    head[u] = tot;\n    to[++tot] = u;\n    cap[tot] = 0;\n    nxt[tot] = head[v];\n    head[v] = tot;\n}\n\nint main() {\n    cin >> n >> m >> s >> t;\n    for (int i = 1; i <= m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        addEdge(u, v, w);\n    }\n    \n    cout << \"Network built\" << endl;\n    cout << \"Source: \" << s << \", Sink: \" << t << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "addEdge(u, v, w): 添加边和反向边",
+        "forward edge: cap = w, backward edge: cap = 0",
+        "time complexity: O(m)",
+        "网络流建图基础"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记添加反向边",
+          "description": "网络流需要反向边用于退流，容量为 0。",
+          "fix": "addEdge 函数中同时添加正向边和反向边。"
+        },
+        {
+          "title": "容量和流量混淆",
+          "description": "容量是边能通过的最大流量，流量是实际通过的量。",
+          "fix": "cap[i] - cap[i^1] 得到剩余容量。"
+        },
+        {
+          "title": "源点汇点搞反",
+          "description": "源点是起点，汇点是终点，不能搞反。",
+          "fix": "明确 s 是源点，t 是汇点。"
+        },
+        {
+          "title": "流量守恒理解错误",
+          "description": "除源点汇点外，每个点流入 = 流出。",
+          "fix": "通过反向边确保流量守恒。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现网络流建图，添加边和反向边。",
+        "hint": "使用邻接表存储，同时添加正向边和反向边。",
+        "expectedIdea": "O(m) 网络流建图"
+      },
+      "quiz": [
+        {
+          "question": "网络流的三个基本性质是？",
+          "options": [
+            "容量限制、斜对称、流量守恒",
+            "容量限制、流量守恒、最大流",
+            "斜对称、流量守恒、最小割",
+            "容量限制、最大流、最小割"
+          ],
+          "answerIndex": 0,
+          "explanation": "网络流的三个基本性质：容量限制、斜对称、流量守恒。"
+        },
+        {
+          "question": "增广路是？",
+          "options": [
+            "任意 s 到 t 的路径",
+            "剩余网络中 s 到 t 的路径",
+            "容量最大的路径",
+            "流量最大的路径"
+          ],
+          "answerIndex": 1,
+          "explanation": "增广路是剩余网络中 s 到 t 的路径。"
+        },
+        {
+          "question": "最大流最小割定理是？",
+          "options": [
+            "最大流 = 最大路径",
+            "最大流 = 最小割",
+            "最大流 = 最大容量",
+            "最大流 = 最小容量"
+          ],
+          "answerIndex": 1,
+          "explanation": "最大流最小割定理：最大流 = 最小割。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.16.4",
+      "title": "Ford-Fulkerson / 基础增广路",
+      "learningGoal": "理解Ford-Fulkerson算法原理，掌握增广路求最大流的实现",
+      "explanation": "Ford-Fulkerson 算法：用增广路求最大流的基础算法。\n\n增广路定理：\n- 存在增广路则流可以增大\n- 不存在增广路则流是最大流\n- 每次找到增广路，流量 + 最小剩余容量\n\n算法流程：\n1. 初始化流为 0\n2. DFS/BFS 寻找增广路\n3. 找到则更新流量\n4. 重复直到找不到增广路\n\n时间复杂度：\n- 最坏：O(E × max_flow)\n- 使用 BFS（Edmonds-Karp）：O(VE²)\n- 使用 DFS（整数容量）：O(E × max_flow)\n\n空间复杂度：O(E)\n\n算法局限性：\n1. 最坏情况复杂度高\n2. 浮点数容量可能不收敛\n3. 适合整数容量和小流量\n\n优化：\n1. Edmonds-Karp：BFS 找最短增广路\n2. 容量缩放：按比例增广\n3. Dinic：多路增广，分层图\n\n应用：\n1. 二分图最大匹配\n2. 最大流问题\n3. 最小割问题\n4. 竞赛基础网络流算法",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nconst int N = 205, M = 5005, INF = 1e9;\nint head[N], to[M], cap[M], nxt[M], tot = 1;\nint vis[N], n, m, s, t;\n\nvoid addEdge(int u, int v, int w) {\n    to[++tot] = v; cap[tot] = w; nxt[tot] = head[u]; head[u] = tot;\n    to[++tot] = u; cap[tot] = 0; nxt[tot] = head[v]; head[v] = tot;\n}\n\nint dfs(int u, int flow) {\n    if (u == t) return flow;\n    vis[u] = true;\n    for (int i = head[u]; i; i = nxt[i]) {\n        int v = to[i];\n        if (!vis[v] && cap[i] > 0) {\n            int ret = dfs(v, min(flow, cap[i]));\n            if (ret > 0) {\n                cap[i] -= ret;\n                cap[i ^ 1] += ret;\n                return ret;\n            }\n        }\n    }\n    return 0;\n}\n\nint fordFulkerson() {\n    int ans = 0, flow;\n    while ((flow = dfs(s, INF)) > 0) {\n        ans += flow;\n        for (int i = 1; i <= n; i++) vis[i] = false;\n    }\n    return ans;\n}\n\nint main() {\n    cin >> n >> m >> s >> t;\n    for (int i = 1; i <= m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        addEdge(u, v, w);\n    }\n    \n    int ans = fordFulkerson();\n    \n    cout << ans << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "dfs(u, flow): DFS 寻找增广路",
+        "cap[i]: 剩余容量，cap[i ^ 1]: 反向边容量",
+        "time complexity: O(E × max_flow)",
+        "Ford-Fulkerson 基础算法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "vis 数组未重置",
+          "description": "每次 DFS 前需要重置 vis 数组，避免重复访问。",
+          "fix": "for (int i = 1; i <= n; i++) vis[i] = false;"
+        },
+        {
+          "title": "容量更新错误",
+          "description": "正向边减少容量，反向边增加容量，需要同时更新。",
+          "fix": "cap[i] -= ret; cap[i ^ 1] += ret;"
+        },
+        {
+          "title": "递归深度过大",
+          "description": "DFS 版本可能递归深度过大，考虑改为 BFS 版本或迭代。",
+          "fix": "使用 Edmonds-Karp 算法（BFS 版本）。"
+        },
+        {
+          "title": "流量返回值错误",
+          "description": "DFS 需要返回找到的流量，路径流量 = min(path 上边的容量)。",
+          "fix": "int ret = dfs(v, min(flow, cap[i]));"
+        }
+      ],
+      "practice": {
+        "prompt": "实现 Ford-Fulkerson 算法求最大流。",
+        "hint": "DFS 增广路算法，时间复杂度 O(E × max_flow)。",
+        "expectedIdea": "O(E × max_flow) Ford-Fulkerson"
+      },
+      "quiz": [
+        {
+          "question": "Ford-Fulkerson 算法的时间复杂度是？",
+          "options": [
+            "O(VE²)",
+            "O(E × max_flow)",
+            "O(V²E)",
+            "O(VE log V)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Ford-Fulkerson 算法（DFS 版本）时间复杂度是 O(E × max_flow)。"
+        },
+        {
+          "question": "增广路的定义是？",
+          "options": [
+            "任意 s 到 t 的路径",
+            "剩余网络中 s 到 t 的路径",
+            "容量最大的路径",
+            "边数最少的路径"
+          ],
+          "answerIndex": 1,
+          "explanation": "增广路是剩余网络中 s 到 t 的路径。"
+        },
+        {
+          "question": "Edmonds-Karp 算法的优化是？",
+          "options": [
+            "使用 DFS",
+            "使用 BFS 找最短增广路",
+            "使用容量缩放",
+            "使用分层图"
+          ],
+          "answerIndex": 1,
+          "explanation": "Edmonds-Karp 算法使用 BFS 找最短增广路，时间复杂度 O(VE²)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.16.5",
+      "title": "Dinic",
+      "learningGoal": "理解Dinic算法原理，掌握分层图和多路增广求最大流的实现",
+      "explanation": "Dinic 算法：用分层图和多路增广求最大流的算法。\n\n核心思想：\n1. BFS 构建分层图（每层到源点的最短距离）\n2. DFS 在分层图中多路增广\n3. 重复直到无法增广\n\n分层图：\n- 层级 d[u]：源点到 u 的最短距离（边数）\n- 只从低层到高层移动\n- 保证 DFS 找到最短增广路\n\n多路增广：\n- 一次 DFS 找到多条增广路\n- cur[i]：当前弧优化，避免重复遍历\n- 阻塞流：无法再增广的状态\n\n算法流程：\n1. BFS 构建分层图\n2. 如果汇点不可达，结束\n3. DFS 多路增广\n4. 重复 1-3\n\n时间复杂度：\n- 一般图：O(V²E)\n- 二分图匹配：O(√V E)\n- 单位容量图：O(min(V^(2/3), √E) E)\n\n空间复杂度：O(E)\n\n优化：\n1. 当前弧优化：cur[i] 跳过已遍历的边\n2. 断边优化：cap[i] == 0 时断边\n3. 多路增广：一次 DFS 多次增广\n\n应用：\n1. 二分图最大匹配\n2. 最大流问题\n3. 最小割问题\n4. 竞赛主流网络流算法",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nconst int N = 1005, M = 20005, INF = 1e9;\nint head[N], to[M], cap[M], nxt[M], tot = 1;\nint d[N], cur[N], n, m, s, t;\n\nvoid addEdge(int u, int v, int w) {\n    to[++tot] = v; cap[tot] = w; nxt[tot] = head[u]; head[u] = tot;\n    to[++tot] = u; cap[tot] = 0; nxt[tot] = head[v]; head[v] = tot;\n}\n\nbool bfs() {\n    for (int i = 1; i <= n; i++) d[i] = 0;\n    queue<int> q;\n    q.push(s); d[s] = 1;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int i = head[u]; i; i = nxt[i]) {\n            int v = to[i];\n            if (!d[v] && cap[i] > 0) {\n                d[v] = d[u] + 1;\n                q.push(v);\n            }\n        }\n    }\n    return d[t] > 0;\n}\n\nint dfs(int u, int flow) {\n    if (u == t) return flow;\n    for (int& i = cur[u]; i; i = nxt[i]) {\n        int v = to[i];\n        if (d[v] == d[u] + 1 && cap[i] > 0) {\n            int ret = dfs(v, min(flow, cap[i]));\n            if (ret > 0) {\n                cap[i] -= ret;\n                cap[i ^ 1] += ret;\n                return ret;\n            }\n        }\n    }\n    return 0;\n}\n\nint dinic() {\n    int ans = 0, flow;\n    while (bfs()) {\n        for (int i = 1; i <= n; i++) cur[i] = head[i];\n        while ((flow = dfs(s, INF)) > 0) ans += flow;\n    }\n    return ans;\n}\n\nint main() {\n    cin >> n >> m >> s >> t;\n    for (int i = 1; i <= m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        addEdge(u, v, w);\n    }\n    \n    int ans = dinic();\n    \n    cout << ans << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "bfs(): 构建分层图，d[u] 为层级",
+        "cur[i]: 当前弧优化，避免重复遍历",
+        "time complexity: O(V²E)",
+        "Dinic 竞赛主流算法"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cur 数组未更新",
+          "description": "每次 BFS 后需要更新 cur 数组为 head[i]。",
+          "fix": "for (int i = 1; i <= n; i++) cur[i] = head[i];"
+        },
+        {
+          "title": "分层判断错误",
+          "description": "DFS 时只能从低层到高层，判断 d[v] == d[u] + 1。",
+          "fix": "if (d[v] == d[u] + 1 && cap[i] > 0)"
+        },
+        {
+          "title": "当前弧优化错误",
+          "description": "cur[i] 需要引用，每次更新到下一条边。",
+          "fix": "for (int& i = cur[u]; i; i = nxt[i])"
+        },
+        {
+          "title": "BFS 初始化错误",
+          "description": "d 数组需要初始化为 0，表示未访问。",
+          "fix": "for (int i = 1; i <= n; i++) d[i] = 0;"
+        }
+      ],
+      "practice": {
+        "prompt": "实现 Dinic 算法求最大流。",
+        "hint": "分层图 + 多路增广，时间复杂度 O(V²E)。",
+        "expectedIdea": "O(V²E) Dinic"
+      },
+      "quiz": [
+        {
+          "question": "Dinic 算法的时间复杂度是？",
+          "options": [
+            "O(VE²)",
+            "O(E × max_flow)",
+            "O(V²E)",
+            "O(VE log V)"
+          ],
+          "answerIndex": 2,
+          "explanation": "Dinic 算法时间复杂度是 O(V²E)。"
+        },
+        {
+          "question": "Dinic 的分层图作用是？",
+          "options": [
+            "减少空间复杂度",
+            "保证找到最短增广路",
+            "增加边的数量",
+            "减少递归深度"
+          ],
+          "answerIndex": 1,
+          "explanation": "分层图保证每次找到的增广路都是最短的。"
+        },
+        {
+          "question": "当前弧优化的作用是？",
+          "options": [
+            "减少时间复杂度",
+            "避免重复遍历已阻塞的边",
+            "增加边容量",
+            "优化空间复杂度"
+          ],
+          "answerIndex": 1,
+          "explanation": "当前弧优化避免重复遍历已阻塞的边，提高效率。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.16.6",
+      "title": "最小费用最大流",
+      "learningGoal": "理解最小费用最大流原理，掌握费用流算法的实现",
+      "explanation": "最小费用最大流：在流量最大的前提下，费用最小的流。\n\n每条边有三个属性：\n- 容量 cap：能通过的最大流量\n- 费用 cost：单位流量的费用\n- 流量 flow：实际通过的流量\n\n目标：\n1. 最大化流量：Σ f(s, v) 最大\n2. 最小化费用：Σ f(u, v) × cost(u, v) 最小\n\n算法流程（SPFA / 费用流）：\n1. SPFA 找 s 到 t 的最短路（按费用）\n2. 在最短路上增广\n3. 反向边费用 = -原边费用\n4. 重复直到找不到增广路\n\n时间复杂度：\n- SPFA 版本：O(V × E × max_flow)\n- Dijkstra + 势能优化：O(V × E × log V)\n\n空间复杂度：O(E)\n\n优化：\n1. 势能优化：使用 Dijkstra\n2. 流量限制：提前停止增广\n3. 费用判断：负环检测\n\n应用：\n1. 最小费用运输问题\n2. 分配问题\n3. 供应链优化\n4. 二分图带权匹配",
+      "exampleCode": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nconst int N = 1005, M = 20005, INF = 1e9;\nint head[N], to[M], cap[M], cost[M], nxt[M], tot = 1;\nint dist[N], pre[N], last[N];\nbool vis[N];\nint n, m, s, t, maxflow, mincost;\n\nvoid addEdge(int u, int v, int w, int c) {\n    to[++tot] = v; cap[tot] = w; cost[tot] = c; nxt[tot] = head[u]; head[u] = tot;\n    to[++tot] = u; cap[tot] = 0; cost[tot] = -c; nxt[tot] = head[v]; head[v] = tot;\n}\n\nbool spfa() {\n    for (int i = 1; i <= n; i++) dist[i] = INF, vis[i] = false;\n    queue<int> q;\n    q.push(s); dist[s] = 0; vis[s] = true;\n    while (!q.empty()) {\n        int u = q.front(); q.pop(); vis[u] = false;\n        for (int i = head[u]; i; i = nxt[i]) {\n            int v = to[i];\n            if (cap[i] > 0 && dist[v] > dist[u] + cost[i]) {\n                dist[v] = dist[u] + cost[i];\n                pre[v] = u;\n                last[v] = i;\n                if (!vis[v]) {\n                    vis[v] = true;\n                    q.push(v);\n                }\n            }\n        }\n    }\n    return dist[t] < INF;\n}\n\nvoid mcmf() {\n    while (spfa()) {\n        int flow = INF;\n        for (int i = t; i != s; i = pre[i]) {\n            flow = min(flow, cap[last[i]]);\n        }\n        for (int i = t; i != s; i = pre[i]) {\n            cap[last[i]] -= flow;\n            cap[last[i] ^ 1] += flow;\n        }\n        maxflow += flow;\n        mincost += flow * dist[t];\n    }\n}\n\nint main() {\n    cin >> n >> m >> s >> t;\n    for (int i = 1; i <= m; i++) {\n        int u, v, w, c;\n        cin >> u >> v >> w >> c;\n        addEdge(u, v, w, c);\n    }\n    \n    mcmf();\n    \n    cout << maxflow << \" \" << mincost << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "spfa(): 找 s 到 t 的最短路（按费用）",
+        "pre[v]: 前驱点, last[v]: 前驱边",
+        "time complexity: O(V × E × max_flow)",
+        "最小费用最大流"
+      ],
+      "commonMistakes": [
+        {
+          "title": "反向边费用错误",
+          "description": "反向边的费用应该是原边费用的相反数。",
+          "fix": "to[++tot] = u; cap[tot] = 0; cost[tot] = -c;"
+        },
+        {
+          "title": "dist 数组未初始化",
+          "description": "每次 SPFA 前需要初始化 dist 数组为 INF。",
+          "fix": "for (int i = 1; i <= n; i++) dist[i] = INF;"
+        },
+        {
+          "title": "前驱记录错误",
+          "description": "需要记录前驱点 pre[v] 和前驱边 last[v] 用于增广。",
+          "fix": "pre[v] = u; last[v] = i;"
+        },
+        {
+          "title": "费用计算错误",
+          "description": "每次增广的费用是 flow × dist[t]，不是 dist[t]。",
+          "fix": "mincost += flow * dist[t];"
+        }
+      ],
+      "practice": {
+        "prompt": "实现最小费用最大流算法。",
+        "hint": "SPFA 找最短路增广，时间复杂度 O(V × E × max_flow)。",
+        "expectedIdea": "O(V × E × max_flow) MCMF"
+      },
+      "quiz": [
+        {
+          "question": "最小费用最大流的目标是？",
+          "options": [
+            "最小化费用",
+            "最大化流量",
+            "流量最大前提下费用最小",
+            "费用最小前提下流量最大"
+          ],
+          "answerIndex": 2,
+          "explanation": "最小费用最大流是在流量最大的前提下，费用最小。"
+        },
+        {
+          "question": "最小费用最大流的时间复杂度是？",
+          "options": [
+            "O(V × E)",
+            "O(V × E × max_flow)",
+            "O(V² × E)",
+            "O(E × log V)"
+          ],
+          "answerIndex": 1,
+          "explanation": "最小费用最大流（SPFA 版本）时间复杂度是 O(V × E × max_flow)。"
+        },
+        {
+          "question": "反向边的费用是？",
+          "options": [
+            "0",
+            "原边费用",
+            "原边费用的相反数",
+            "原边费用的绝对值"
+          ],
+          "answerIndex": 2,
+          "explanation": "反向边的费用应该是原边费用的相反数，用于退流。"
+        }
+      ]
+    }
+  ]
+}

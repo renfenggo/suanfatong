@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Stage5-HardKnowledge Batch1 full500 Stable Checkpoint",
+    "generated_at": "2026-05-26T08:20:00.000Z",
+    "checkpoint_type": "stable",
+    "stage": "stage5_hard_batch1_full500",
+    "main_graph_modified": false,
+    "io_v4_4_modified": false,
+    "frontend_code_modified": false,
+    "batch2_started": false
+  },
+  "current_state": {
+    "baseline_item_count": 2165,
+    "item_count": 2640,
+    "section_count": 65,
+    "validate_only_passed": true,
+    "dangling_refs": [],
+    "direct_pre_cycle": null,
+    "direct_pre_section_refs": [],
+    "duplicate_item_ids": [],
+    "resolved_pre_mismatches": [],
+    "product_metadata_validation_passed": true,
+    "merged_total_500_original": 500,
+    "removed_merged_or_collapsed": 25,
+    "keeper_parent_nodes": 7,
+    "net_new_stage5_nodes": 475,
+    "old_2165_nodes_preserved": true,
+    "old_2165_node_count": 2165
+  },
+  "pipeline_history": {
+    "stage5_hard_batch1_full500_merge": {
+      "start_item_count": 2165,
+      "merge_count": 500,
+      "result_item_count": 2665,
+      "algorithm_added": 210,
+      "data_structure_added": 120,
+      "math_added": 170,
+      "sections_affected": ["2.4", "2.6", "2.7", "2.8", "2.9", "2.10", "2.17", "2.20", "3.13", "4.1", "4.3", "4.5", "4.6", "4.7"],
+      "validate_only_passed": true,
+      "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json",
+      "merge_outputs": [
+        "data/stage5_hard_knowledge_batch1_full500_candidate_to_item_id_mapping.json",
+        "data/stage5_hard_knowledge_batch1_full500_added_items_summary.json",
+        "data/stage5_hard_knowledge_batch1_full500_validation_result.json",
+        "data/stage5_hard_knowledge_batch1_full500_rollback_plan.json",
+        "docs/stage5_hard_knowledge_batch1_full500_merge_report.md"
+      ]
+    },
+    "stage5_hard_batch1_full500_branch_b_fix": {
+      "start_item_count": 2665,
+      "merged_or_collapsed": 25,
+      "keepers": 7,
+      "direct_pre_shrunk_nodes": 282,
+      "result_item_count": 2640,
+      "validate_only_passed": true,
+      "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500_branch_b_fix.json",
+      "branch_b_outputs": [
+        "data/stage5_hard_knowledge_batch1_full500_branch_b_applied_patch.json",
+        "data/stage5_hard_knowledge_batch1_full500_branch_b_removed_or_merged_items.json",
+        "data/stage5_hard_knowledge_batch1_full500_branch_b_direct_pre_shrink_applied.json",
+        "data/stage5_hard_knowledge_batch1_full500_branch_b_validation_result.json",
+        "docs/stage5_hard_knowledge_batch1_full500_branch_b_fix_report.md"
+      ]
+    },
+    "stage5_hard_batch1_full500_fix_lite": {
+      "start_item_count": 2640,
+      "nodes_updated": 475,
+      "priority_A": 0,
+      "priority_B": 7,
+      "priority_C": 468,
+      "direct_pre_modified": false,
+      "resolved_pre_modified": false,
+      "rel_modified": false,
+      "old_2165_nodes_modified": false,
+      "result_item_count": 2640,
+      "validate_only_passed": true,
+      "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500_fix_lite.json",
+      "fix_lite_outputs": [
+        "data/stage5_hard_knowledge_batch1_full500_fix_lite_applied_patch.json",
+        "data/stage5_hard_knowledge_batch1_full500_fix_lite_validation_result.json",
+        "docs/stage5_hard_knowledge_batch1_full500_fix_lite_report.md"
+      ]
+    },
+    "stage5_hard_batch1_full500_stable_checkpoint": {
+      "start_item_count": 2640,
+      "result_item_count": 2640,
+      "main_graph_modified": false
+    }
+  },
+  "full_pipeline_summary": {
+    "initial_baseline": 2165,
+    "stage5_hard_batch1_merged": 500,
+    "post_merge_item_count": 2665,
+    "branch_b_removed": 25,
+    "post_branch_b_item_count": 2640,
+    "fix_lite_applied": 475,
+    "post_fix_lite_item_count": 2640,
+    "net_new_nodes": 475,
+    "old_2165_preserved": 2165,
+    "total_cost": 2640
+  },
+  "priority_distribution": {
+    "B": 7,
+    "C": 468,
+    "A": 0
+  },
+  "section_distribution": {
+    "新增节点分布": {
+      "2.4": 23,
+      "2.6": 30,
+      "2.7": 43,
+      "2.8": 38,
+      "2.9": 35,
+      "2.10": 18,
+      "2.17": 24,
+      "2.20": 64,
+      "3.13": 79,
+      "4.1": 39,
+      "4.3": 48,
+      "4.5": 24,
+      "4.6": 20,
+      "4.7": 15
+    },
+    "keeper_7_parents": ["2.8.202", "2.8.203", "2.8.204", "2.8.205", "2.8.206", "2.8.207", "2.8.208"],
+    "removed_25": []
+  },
+  "backup_file_index": {
+    "merge_backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json",
+    "branch_b_backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500_branch_b_fix.json",
+    "fix_lite_backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500_fix_lite.json"
+  },
+  "output_file_index": {
+    "precheck": [
+      "data/stage5_hard_knowledge_batch1_full500_candidate_plan.json",
+      "data/stage5_hard_knowledge_batch1_full500_dynamic_precheck.json",
+      "docs/stage5_hard_knowledge_batch1_full500_precheck_report.md"
+    ],
+    "merge": [
+      "data/stage5_hard_knowledge_batch1_full500_candidate_to_item_id_mapping.json",
+      "data/stage5_hard_knowledge_batch1_full500_added_items_summary.json",
+      "data/stage5_hard_knowledge_batch1_full500_validation_result.json",
+      "data/stage5_hard_knowledge_batch1_full500_rollback_plan.json",
+      "docs/stage5_hard_knowledge_batch1_full500_merge_report.md"
+    ],
+    "review_and_collapse_plan": [
+      "data/stage5_hard_knowledge_batch1_full500_added_items_review.json",
+      "data/stage5_hard_knowledge_batch1_full500_review_status_patch_preview.json",
+      "data/stage5_hard_knowledge_batch1_full500_dependency_fix_candidates.json",
+      "data/stage5_hard_knowledge_batch1_full500_merge_or_collapse_candidates.json",
+      "data/stage5_hard_knowledge_batch1_full500_direct_pre_shrink_plan.json",
+      "data/stage5_hard_knowledge_batch1_full500_direct_pre_shrink_patch_preview.json",
+      "data/stage5_hard_knowledge_batch1_full500_merge_collapse_resolution_plan.json",
+      "data/stage5_hard_knowledge_batch1_full500_next_action_decision.json",
+      "docs/stage5_hard_knowledge_batch1_full500_added_items_review_report.md",
+      "docs/stage5_hard_knowledge_batch1_full500_dependency_and_collapse_plan_report.md",
+      "data/stage5_hard_knowledge_batch1_full500_problem_pattern_sync_candidates.json"
+    ],
+    "branch_b_fix": [
+      "data/stage5_hard_knowledge_batch1_full500_branch_b_applied_patch.json",
+      "data/stage5_hard_knowledge_batch1_full500_branch_b_removed_or_merged_items.json",
+      "data/stage5_hard_knowledge_batch1_full500_branch_b_direct_pre_shrink_applied.json",
+      "data/stage5_hard_knowledge_batch1_full500_branch_b_validation_result.json",
+      "docs/stage5_hard_knowledge_batch1_full500_branch_b_fix_report.md"
+    ],
+    "post_branch_b_review_and_fix_lite": [
+      "data/stage5_hard_knowledge_batch1_full500_post_branch_b_review.json",
+      "data/stage5_hard_knowledge_batch1_full500_post_branch_b_fix_lite_patch_preview.json",
+      "data/stage5_hard_knowledge_batch1_full500_post_branch_b_fix_lite_readiness.json",
+      "docs/stage5_hard_knowledge_batch1_full500_post_branch_b_review_report.md",
+      "data/stage5_hard_knowledge_batch1_full500_fix_lite_applied_patch.json",
+      "data/stage5_hard_knowledge_batch1_full500_fix_lite_validation_result.json",
+      "docs/stage5_hard_knowledge_batch1_full500_fix_lite_report.md"
+    ]
+  },
+  "pending_items": {
+    "io_v4_4_sync_to_2640": {
+      "status": "not_started",
+      "note": "assets/data/knowledge/io_v4_4.json 当前仍为 2165，尚未同步到 2640"
+    },
+    "stage5_content_package_generation": {
+      "status": "not_started",
+      "note": "Stage5 Batch1 新增内容包尚未生成"
+    },
+    "problem_pattern_sync": {
+      "status": "not_started",
+      "note": "problem_pattern_sync_candidates 尚未处理"
+    },
+    "stage5_hard_batch2": {
+      "status": "not_started",
+      "note": "Stage5-HardKnowledge Batch2 尚未启动"
+    },
+    "bridge_ability_candidate_pool": {
+      "status": "not_started",
+      "note": "bridge ability（代码实现 / 解题分析 / 训练管理）正式候选池尚未生成"
+    }
+  },
+  "stability_assessment": {
+    "is_stable": true,
+    "all_validations_passed": true,
+    "no_dangling_refs": true,
+    "no_cycles": true,
+    "no_duplicates": true,
+    "old_nodes_untouched": true,
+    "dependency_fields_unchanged": true,
+    "recommend_next_step": "先同步 io_v4_4.json 到 2640，再执行前端读取验证，之后再考虑 Batch2"
+  }
+}

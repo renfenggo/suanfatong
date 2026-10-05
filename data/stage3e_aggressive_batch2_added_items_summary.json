@@ -1,0 +1,435 @@
+[
+  {
+    "id": "2.21.100",
+    "name": "拟阵图论：Basis Exchange",
+    "en_name": "Matroid in Graphs: Basis Exchange",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.basis_exchange",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.101",
+    "name": "拟阵图论：Matroid Parity",
+    "en_name": "Matroid in Graphs: Matroid Parity",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.matroid_parity",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.102",
+    "name": "拟阵图论：Partition Matroid",
+    "en_name": "Matroid in Graphs: Partition Matroid",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.partition_matroid",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.103",
+    "name": "拟阵图论：Spanning Tree Matroid",
+    "en_name": "Matroid in Graphs: Spanning Tree Matroid",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.spanning_tree_matroid",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.104",
+    "name": "拟阵图论：Transversal Matroid",
+    "en_name": "Matroid in Graphs: Transversal Matroid",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.transversal_matroid",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.105",
+    "name": "拟阵图论：Weighted Matroid Intersection",
+    "en_name": "Matroid in Graphs: Weighted Matroid Intersection",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.matroid_graph.weighted_matroid_intersection",
+    "direct_pre": [
+      "2.6.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 1,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.106",
+    "name": "平面图：Dual Shortest Path",
+    "en_name": "Planar Graph: Dual Shortest Path",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.planar_graph.dual_shortest_path",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.107",
+    "name": "平面图：Face Traversal",
+    "en_name": "Planar Graph: Face Traversal",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.planar_graph.face_traversal",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.108",
+    "name": "平面图：Outerplanar Graph",
+    "en_name": "Planar Graph: Outerplanar Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.planar_graph.outerplanar_graph",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.109",
+    "name": "平面图：Planar Min Cut",
+    "en_name": "Planar Graph: Planar Min Cut",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.planar_graph.planar_min_cut",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.110",
+    "name": "平面图：Planar Separator",
+    "en_name": "Planar Graph: Planar Separator",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.planar_graph.planar_separator",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.111",
+    "name": "强连通分量 DAG：Implication Graph",
+    "en_name": "SCC Condensation DAG: Implication Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.scc_dag.implication_graph",
+    "direct_pre": [
+      "4.5.2",
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 20,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.112",
+    "name": "特殊图：Bipartite Complement",
+    "en_name": "Special Graph: Bipartite Complement",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.bipartite_complement",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.113",
+    "name": "特殊图：Condensation Dag",
+    "en_name": "Special Graph: Condensation Dag",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.condensation_dag",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.114",
+    "name": "特殊图：Functional Graph",
+    "en_name": "Special Graph: Functional Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.functional_graph",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.115",
+    "name": "特殊图：Interval Graph",
+    "en_name": "Special Graph: Interval Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.interval_graph",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.116",
+    "name": "特殊图：Planar Dual Graph",
+    "en_name": "Special Graph: Planar Dual Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.planar_dual_graph",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.117",
+    "name": "特殊图：Tournament Graph",
+    "en_name": "Special Graph: Tournament Graph",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.special_graph.tournament_graph",
+    "direct_pre": [
+      "2.7.1"
+    ],
+    "rel": [],
+    "resolved_pre_count": 19,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.118",
+    "name": "虚树：Colored Points",
+    "en_name": "Virtual Tree: Colored Points",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.colored_points",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.119",
+    "name": "虚树：Distance Compression",
+    "en_name": "Virtual Tree: Distance Compression",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.distance_compression",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.120",
+    "name": "虚树：Edge Weight Compression",
+    "en_name": "Virtual Tree: Edge Weight Compression",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.edge_weight_compression",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.121",
+    "name": "虚树：Minimum Connection",
+    "en_name": "Virtual Tree: Minimum Connection",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.minimum_connection",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.122",
+    "name": "虚树：Multi-Key Query",
+    "en_name": "Virtual Tree: Multi-Key Query",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.multi_key_query",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.123",
+    "name": "虚树：Subtree Aggregation",
+    "en_name": "Virtual Tree: Subtree Aggregation",
+    "parent": "2.21",
+    "candidate_id": "cand.graph.virtual_tree.subtree_aggregation",
+    "direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.100",
+    "name": "多维数据结构：Orthogonal Range Query",
+    "en_name": "Multidimensional Data Structure: Orthogonal Range Query",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.multidimensional.orthogonal_range_query",
+    "direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.101",
+    "name": "多维数据结构：Parallel Binary Search",
+    "en_name": "Multidimensional Data Structure: Parallel Binary Search",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.multidimensional.parallel_binary_search",
+    "direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "rel": [],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.102",
+    "name": "离线数据结构框架：Event Sweep With Tree",
+    "en_name": "Offline Data Structure Framework: Event Sweep With Tree",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.offline_framework.event_sweep_with_tree",
+    "direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "rel": [],
+    "resolved_pre_count": 14,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.103",
+    "name": "离线数据结构框架：Offline Range Mex",
+    "en_name": "Offline Data Structure Framework: Offline Range Mex",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.offline_framework.offline_range_mex",
+    "direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "rel": [],
+    "resolved_pre_count": 14,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.104",
+    "name": "离线数据结构框架：Offline Rectangle Add",
+    "en_name": "Offline Data Structure Framework: Offline Rectangle Add",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.offline_framework.offline_rectangle_add",
+    "direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "rel": [],
+    "resolved_pre_count": 14,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.105",
+    "name": "离线数据结构框架：Parallel Check Framework",
+    "en_name": "Offline Data Structure Framework: Parallel Check Framework",
+    "parent": "3.13",
+    "candidate_id": "cand.ds.offline_framework.parallel_check_framework",
+    "direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "rel": [],
+    "resolved_pre_count": 14,
+    "review_priority": "B",
+    "needs_manual_review": true
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "Stage3F Batch4 full_49 Merge Risk Checklist",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T18:45:00.000Z",
+    "batch_id": "stage3f_batch4_full49",
+    "main_graph_modified": false,
+    "merge_not_yet_executed": true,
+    "note": "本风险清单在 Merge 执行前预生成，执行时需逐项确认。注意：原计划 full50，因候选池仅剩 49 个，改为 full49。",
+    "expected_item_count": 1716,
+    "expected_section_count": 65,
+    "expected_post_merge_item_count": 1765,
+    "expected_post_merge_candidate_count": 49
+  },
+  "pre_merge_input_files": {
+    "required_v2_files": [
+      {
+        "file": "data/stage3f_batch4_full49_dependency_cleanup_plan.json",
+        "exists": false,
+        "critical": true,
+        "description": "Batch4 full49 依赖清洗计划（2号线程生成）"
+      },
+      {
+        "file": "data/stage3f_batch4_full49_candidate_plan_v2.json",
+        "exists": false,
+        "critical": true,
+        "description": "Batch4 full49 候选计划 v2（2号线程生成，含 cleaned_direct_pre）"
+      },
+      {
+        "file": "data/stage3f_batch4_full49_dynamic_precheck_v2.json",
+        "exists": false,
+        "critical": true,
+        "description": "Batch4 full49 动态预审 v2（2号线程生成）"
+      },
+      {
+        "file": "docs/stage3f_batch4_full49_dependency_cleanup_report.md",
+        "exists": false,
+        "critical": false,
+        "description": "Batch4 full49 依赖清洗报告（文档参考）"
+      },
+      {
+        "file": "docs/stage3f_batch4_full49_precheck_report_v2.md",
+        "exists": false,
+        "critical": false,
+        "description": "Batch4 full49 动态预审报告 v2（文档参考）"
+      }
+    ],
+    "all_required_exist": false,
+    "note": "等待 2号线程 Batch4 full49 依赖清洗和动态预审 v2 完成后再执行 Merge。禁止使用 full50 的任何文件。"
+  },
+  "risk_checks": [
+    {
+      "risk_id": "risk_01",
+      "category": "wrong_batch_files",
+      "description": "是否误用 full50 文件",
+      "check_during_merge": "Merge 时只读取 stage3f_batch4_full49_* 文件，不读取任何 stage3f_batch4_full50_* 文件。",
+      "risk_if_triggered": "使用 full50 文件会导致 candidate_id 错乱，候选数误判为 50，实际只有 49 个候选，产生 dangling_refs",
+      "verification_method": "确认加载的 candidate_plan 文件名包含 full49、dynamic_precheck 文件名包含 full49。拒绝所有 full50 文件。",
+      "expected_state": "所有输入文件均为 full49 前缀"
+    },
+    {
+      "risk_id": "risk_02",
+      "category": "wrong_item_count",
+      "description": "是否误把目标 item_count 写成 1766",
+      "check_during_merge": "合并后 item_count = 1716 + 49 = 1765。validation_baseline.item_count 必须设置为 1765。",
+      "risk_if_triggered": "baseline 设置为 1766 会导致 validate-only expected_item_count=1766，与实际 1765 不匹配，passed=false",
+      "verification_method": "写入 validation_baseline 时确认 item_count = 1765。在 validate-only 后确认 expected_item_count = 1765。",
+      "expected_state": "validation_baseline.item_count = 1765"
+    },
+    {
+      "risk_id": "risk_03",
+      "category": "candidate_selection",
+      "description": "是否误合并非 selected_candidates",
+      "check_during_merge": "严格只处理 dynamic_precheck_v2.json 中 selected_candidates 列表内的候选。任何不在列表中的候选不能合并。",
+      "risk_if_triggered": "合并非 selected_candidates 意味着绕过动态预审，可能导致重复节点、依赖环或 section 污染",
+      "verification_method": "在执行 Merge 前，读取 dynamic_precheck_v2.json 的 selected_candidates，只处理该列表中的 candidate_id。建立白名单检查。",
+      "expected_state": "selected_candidates 数量 = 49，且无额外候选被合并"
+    },
+    {
+      "risk_id": "risk_04",
+      "category": "merge_count",
+      "description": "是否超过 recommended_merge_count",
+      "check_during_merge": "selected_candidates 的数量必须严格等于 recommended_merge_count。如果不等，停止并报告。",
+      "risk_if_triggered": "超过 recommended_merge_count 意味着合并了预审未通过的候选，可能包含高风险或重复节点",
+      "verification_method": "在执行 Merge 前，比较 candidate_plan_v2 中 selected 数量与 dynamic_precheck_v2 中 recommended_merge_count。不一致则停止。",
+      "expected_state": "selected_candidates 数量 = recommended_merge_count = 49"
+    },
+    {
+      "risk_id": "risk_05",
+      "category": "duplicate",
+      "description": "是否存在重复候选（excluded_duplicate_or_near_duplicate 非空）",
+      "check_during_merge": "检查 dynamic_precheck_v2.json 中的 excluded_duplicate_or_near_duplicate 列表。如果非空，表示预审发现候选与已有节点重复，必须暂停。",
+      "risk_if_triggered": "合并重复候选导致图谱语义混淆，后续需要 Duplicate Prune 纠正",
+      "verification_method": "读取 dynamic_precheck_v2.json 的 excluded_duplicate_or_near_duplicate 列表，确认其长度为 0。如果不为 0，输出列表内容并暂停。",
+      "expected_state": "excluded_duplicate_or_near_duplicate = []"
+    },
+    {
+      "risk_id": "risk_06",
+      "category": "direct_pre_section_ref",
+      "description": "是否存在 section id 作为 direct_pre",
+      "check_during_merge": "对所有候选的 direct_pre 列表进行遍历，检查是否有条目匹配 section id 模式（两段式，如 \"2.10\"、\"4.1\"）。",
+      "risk_if_triggered": "section id 作为 direct_pre 会导致依赖解析错误，validate-only 时会标记为 section_ref",
+      "verification_method": "使用正则 ^\\d+\\.\\d+$ 匹配 direct_pre 条目（匹配 section id），排除 ^\\d+\\.\\d+\\.\\d+$（item id 三段式）。",
+      "expected_state": "所有 49 个候选的 direct_pre 均为 item id（三段式）"
+    },
+    {
+      "risk_id": "risk_07",
+      "category": "candidate_dependency_cycle",
+      "description": "是否存在候选依赖环（candidate_dependency_cycle）",
+      "check_during_merge": "检查 dynamic_precheck_v2.json 中的 candidate_dependency_cycle 字段。如果为 true，表示候选之间 direct_pre 形成环，必须暂停。",
+      "risk_if_triggered": "候选依赖环会导致 resolved_pre 计算陷入死循环或结果错误",
+      "verification_method": "读取 candidate_dependency_cycle 字段。如果 true，输出环详情并暂停。",
+      "expected_state": "candidate_dependency_cycle = false"
+    },
+    {
+      "risk_id": "risk_08",
+      "category": "old_node_modification",
+      "description": "是否误改旧节点 resolved_pre",
+      "check_during_merge": "在计算 resolved_pre 后，只将结果写入新增的 49 个节点。旧节点的 resolved_pre 必须完全不变。",
+      "risk_if_triggered": "覆盖旧节点 resolved_pre 会导致已稳定的依赖链出现 mismatches，validate-only 失败",
+      "verification_method": "在写入 resolved_pre 前，记录旧节点 resolved_pre 的哈希值，写入后对比确认未变。只允许写入新增的 49 个 item_id。",
+      "expected_state": "旧节点 1716 个的 resolved_pre 全部保持不变"
+    },
+    {
+      "risk_id": "risk_09",
+      "category": "validation_baseline",
+      "description": "是否 validation_baseline 未更新",
+      "check_during_merge": "Merge 完成后，必须将 graph.meta.validation_baseline.item_count 从 1716 更新为 1765。",
+      "risk_if_triggered": "如果 baseline 未更新，validate-only 的 expected_item_count 仍为 1716，与实际 item_count=1765 不匹配，passed=false",
+      "verification_method": "在写入图谱前，确认 validation_baseline.item_count 被设置为 1765。写入后读取确认。",
+      "expected_state": "validation_baseline.item_count = 1765"
+    },
+    {
+      "risk_id": "risk_10",
+      "category": "report_matches_json",
+      "description": "是否 report_matches_json 失败",
+      "check_during_merge": "validate-only 运行前，基于当前图谱数据重新生成 item_dependency_refinement_report.md，确保统计数据与图谱一致。",
+      "risk_if_triggered": "旧报告中 item_count=1716 但新图谱有 1765 项，validate-only 比较统计数字时不匹配，report_matches_json=false",
+      "verification_method": "在 validate-only 前，手动计算当前图谱的统计数字并写入 report 文件。validate-only 运行后检查 report_matches_json 字段。",
+      "expected_state": "report_matches_json = true"
+    },
+    {
+      "risk_id": "risk_11",
+      "category": "rollback_plan",
+      "description": "是否未生成 rollback_plan",
+      "check_during_merge": "Merge 完成后必须生成 rollback_plan.json，包含备份文件路径、删除前 item_count、新增 item_id 列表。",
+      "risk_if_triggered": "没有 rollback_plan，后续需要回滚时无法快速定位备份文件和恢复步骤",
+      "verification_method": "确认 data/stage3f_batch4_full49_rollback_plan.json 已生成。",
+      "expected_state": "rollback_plan.json 存在且包含完整信息"
+    },
+    {
+      "risk_id": "risk_12",
+      "category": "batch5_prevention",
+      "description": "是否误继续 Stage3F Batch5",
+      "check_during_merge": "Merge 完成后不应自动触发 Batch5。必须在 Batch4 全部完成后才考虑 Batch5。",
+      "risk_if_triggered": "Batch5 在 Batch4 未完成时启动，会导致批次混乱和状态不一致",
+      "verification_method": "确认 Merge 脚本末尾没有 Batch5 的触发逻辑。",
+      "expected_state": "Merge 完成后停止，等待下一步指令"
+    }
+  ]
+}

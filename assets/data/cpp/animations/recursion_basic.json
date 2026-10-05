@@ -1,0 +1,210 @@
+{
+  "animationId": "cpp_recursion_basic",
+  "itemId": "2.7.1",
+  "title": "递归基础",
+  "description": "演示递归函数的执行过程：函数调用栈、参数传递、返回值",
+  "initialState": {
+    "variables": [],
+    "containers": [],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "调用 sum(4)",
+      "description": "从 main 函数调用 sum(4)。n=4，不满足终止条件 n==0，继续递归",
+      "codeLine": "int result = sum(4);",
+      "highlights": ["sum(4)"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "等待 4 + sum(3)", "note": "第1层调用"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4)]"], "activeIndex": 1, "note": "栈底→栈顶"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "递归深入 sum(3)",
+      "description": "sum(4) 调用 sum(3)。n=3，继续递归",
+      "codeLine": "sum(4) → 4 + sum(3)",
+      "highlights": ["sum(3)"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待 sum(3)"},
+          {"name": "sum(3)", "value": "等待 3 + sum(2)", "note": "第2层调用"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3)]"], "activeIndex": 2, "note": "栈增长"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "继续递归 sum(2)",
+      "description": "sum(3) 调用 sum(2)。n=2，继续递归",
+      "codeLine": "sum(3) → 3 + sum(2)",
+      "highlights": ["sum(2)"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "3 + ?", "note": "等待中"},
+          {"name": "sum(2)", "value": "等待 2 + sum(1)", "note": "第3层调用"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3), sum(2)]"], "activeIndex": 3, "note": "栈增长"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "继续递归 sum(1)",
+      "description": "sum(2) 调用 sum(1)。n=1，继续递归",
+      "codeLine": "sum(2) → 2 + sum(1)",
+      "highlights": ["sum(1)"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "3 + ?", "note": "等待中"},
+          {"name": "sum(2)", "value": "2 + ?", "note": "等待中"},
+          {"name": "sum(1)", "value": "等待 1 + sum(0)", "note": "第4层调用"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3), sum(2), sum(1)]"], "activeIndex": 4, "note": "栈增长"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "触底：调用 sum(0)",
+      "description": "sum(1) 调用 sum(0)。n=0，满足终止条件，准备返回",
+      "codeLine": "sum(1) → 1 + sum(0)",
+      "highlights": ["sum(0)"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "3 + ?", "note": "等待中"},
+          {"name": "sum(2)", "value": "2 + ?", "note": "等待中"},
+          {"name": "sum(1)", "value": "1 + ?", "note": "等待中"},
+          {"name": "sum(0)", "value": "0", "note": "终止条件！返回0"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3), sum(2), sum(1), sum(0)]"], "activeIndex": 5, "note": "栈最深"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 6,
+      "title": "开始返回：sum(0) 返回 0",
+      "description": "sum(0) 返回 0，函数从栈中弹出。sum(1) 收到返回值，计算 1+0=1",
+      "codeLine": "sum(0) 返回 0",
+      "highlights": ["return 0"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "3 + ?", "note": "等待中"},
+          {"name": "sum(2)", "value": "2 + ?", "note": "等待中"},
+          {"name": "sum(1)", "value": "1", "note": "1 + sum(0) = 1"},
+          {"name": "sum(0)", "value": "已返回", "note": "栈帧销毁"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3), sum(2), sum(1)]"], "activeIndex": 4, "note": "栈减少"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 7,
+      "title": "逐层返回：sum(1) 返回 1",
+      "description": "sum(1) 返回 1，函数从栈中弹出。sum(2) 收到返回值，计算 2+1=3",
+      "codeLine": "sum(1) 返回 1",
+      "highlights": ["return 1"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "3 + ?", "note": "等待中"},
+          {"name": "sum(2)", "value": "3", "note": "2 + sum(1) = 3"},
+          {"name": "sum(1)", "value": "已返回", "note": "栈帧销毁"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3), sum(2)]"], "activeIndex": 3, "note": "栈减少"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 8,
+      "title": "逐层返回：sum(2) 返回 3",
+      "description": "sum(2) 返回 3，函数从栈中弹出。sum(3) 收到返回值，计算 3+3=6",
+      "codeLine": "sum(2) 返回 3",
+      "highlights": ["return 3"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "4 + ?", "note": "等待中"},
+          {"name": "sum(3)", "value": "6", "note": "3 + sum(2) = 6"},
+          {"name": "sum(2)", "value": "已返回", "note": "栈帧销毁"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4), sum(3)]"], "activeIndex": 2, "note": "栈减少"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 9,
+      "title": "逐层返回：sum(3) 返回 6",
+      "description": "sum(3) 返回 6，函数从栈中弹出。sum(4) 收到返回值，计算 4+6=10",
+      "codeLine": "sum(3) 返回 6",
+      "highlights": ["return 6"],
+      "state": {
+        "variables": [
+          {"name": "sum(4)", "value": "10", "note": "4 + sum(3) = 10"},
+          {"name": "sum(3)", "value": "已返回", "note": "栈帧销毁"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main, sum(4)]"], "activeIndex": 1, "note": "栈减少"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 10,
+      "title": "最终返回：sum(4) 返回 10",
+      "description": "sum(4) 返回 10，函数从栈中弹出。main 函数收到最终结果 10",
+      "codeLine": "sum(4) 返回 10",
+      "highlights": ["return 10"],
+      "state": {
+        "variables": [
+          {"name": "result", "value": "10", "note": "最终结果"},
+          {"name": "sum(4)", "value": "已返回", "note": "栈帧销毁"}
+        ],
+        "containers": [
+          {"name": "调用栈", "type": "text", "values": ["[main]"], "activeIndex": 0, "note": "回到初始状态"}
+        ],
+        "output": "10"
+      }
+    },
+    {
+      "step": 11,
+      "title": "递归总结",
+      "description": "递归执行完毕。关键：1) 必须有终止条件 2) 每次递归要缩小问题规模 3) 调用栈深度不能太深",
+      "codeLine": "if (n == 0) return 0;  // 终止条件",
+      "highlights": ["终止条件"],
+      "state": {
+        "variables": [
+          {"name": "递归特点", "value": "自相似结构", "note": "大问题分解为相同结构的小问题"}
+        ],
+        "containers": [
+          {"name": "递归三要素", "type": "text", "values": ["1. 终止条件", "2. 递归步骤", "3. 参数传递"], "activeIndex": -1, "note": "缺一不可"}
+        ],
+        "output": "递归完成！sum(4) = 4+3+2+1+0 = 10"
+      }
+    }
+  ]
+}

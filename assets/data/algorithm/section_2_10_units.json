@@ -1,0 +1,546 @@
+{
+  "sectionId": "2.10",
+  "sectionName": "字符串算法",
+  "units": [
+    {
+      "itemId": "2.10.1",
+      "title": "朴素匹配",
+      "learningGoal": "掌握字符串朴素匹配算法的原理和实现，理解其 O(n*m) 时间复杂度",
+      "explanation": "朴素匹配（暴力匹配）是最基本的字符串匹配算法：在主串中找模式串首次出现的位置。\n\n算法思路：\n1. 枚举主串中每个可能的起始位置 i\n2. 从位置 i 开始，逐个比较主串和模式串的字符\n3. 如果全部匹配成功，返回 i；否则 i++ 继续尝试\n\n时间复杂度：O(n * m)，n 为主串长度，m 为模式串长度\n空间复杂度：O(1)\n\n优点：实现简单，容易理解\n缺点：效率低，最坏情况下每次都要比较 m 个字符\n\n什么时候够用？\n- 数据规模小（n*m <= 10^7）\n- 比赛中的部分分\n- 作为理解更高效算法（KMP）的基础\n\n注意：C++ 的 string::find() 底层也是类似思路，但做了优化。",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string text, pattern;\n    cin >> text >> pattern;\n    int n = text.size(), m = pattern.size();\n    int pos = -1;\n    for (int i = 0; i + m <= n; i++) {\n        bool match = true;\n        for (int j = 0; j < m; j++) {\n            if (text[i + j] != pattern[j]) {\n                match = false;\n                break;\n            }\n        }\n        if (match) { pos = i; break; }\n    }\n    cout << pos << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "枚举主串每个起始位置 i",
+        "逐个字符比较，失配则 break",
+        "全部匹配则找到答案",
+        "时间 O(n*m)，空间 O(1)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "循环上界写错",
+          "description": "i 遍历到 n-1，但 i+m 可能越界访问 text。",
+          "fix": "外层循环条件应为 i + m <= n，即 i <= n - m。"
+        },
+        {
+          "title": "找到后没有 break",
+          "description": "找到第一个匹配位置后继续搜索，浪费时间或覆盖结果。",
+          "fix": "找到匹配后 break 退出外层循环。"
+        }
+      ],
+      "practice": {
+        "prompt": "在主串 \"abcabcabcd\" 中查找模式串 \"abcd\" 的首次出现位置。",
+        "hint": "枚举起始位置，逐个比较。",
+        "expectedIdea": "位置 6"
+      },
+      "quiz": [
+        {
+          "question": "朴素匹配的最坏时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n + m)",
+            "O(n * m)",
+            "O(n^2)"
+          ],
+          "answerIndex": 2,
+          "explanation": "最坏情况下（如 text=\"aaaa...a\", pattern=\"aaa...b\"），每个起始位置都比较 m 次，共 O(n*m)。"
+        },
+        {
+          "question": "朴素匹配在什么情况下效率够用？",
+          "options": [
+            "n 和 m 都很大",
+            "n * m <= 10^7",
+            "数据随机分布",
+            "B 和 C 都对"
+          ],
+          "answerIndex": 3,
+          "explanation": "数据随机时很少出现最坏情况，且 n*m 较小时 O(n*m) 完全可接受。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.10",
+      "title": "最小表示法",
+      "learningGoal": "理解循环同构和最小表示的概念，掌握 O(n) 求最小表示的算法",
+      "explanation": "最小表示法：对于一个循环字符串（首尾相连），求其字典序最小的表示。\n\n循环同构：\n两个字符串如果可以通过循环移位变得相同，则称为循环同构。\n例如 \"bcab\" 和 \"abbc\" 是循环同构的（\"bcab\" 循环移位 3 次得 \"abbc\"）。\n\n最小表示：循环同构的所有串中字典序最小的那个。\n例如 \"bcab\" 的所有循环同构：bcab, cabb, abbc, bbca\n最小表示为 \"abbc\"。\n\nO(n) 算法：\n1. 将字符串复制一份拼到后面：s = s + s\n2. 用两个指针 i 和 j 分别从 0 和 1 开始\n3. 用 k 记录当前匹配长度\n4. 比较 s[i+k] 和 s[j+k]：\n   - 相等：k++\n   - s[i+k] > s[j+k]：i = i + k + 1（i 及其后 k 个都不可能是起点）\n   - s[i+k] < s[j+k]：j = j + k + 1\n   - i == j 时 j++\n5. 结果为 min(i, j)\n\n应用：\n- 判断两个循环串是否同构\n- 环上字符串匹配\n- 同构字符串的标准化",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n    s = s + s;\n    int i = 0, j = 1, k = 0;\n    while (i < n && j < n) {\n        if (s[i + k] == s[j + k]) { k++; if (k == n) break; }\n        else if (s[i + k] > s[j + k]) { i = i + k + 1; if (i <= j) i = j + 1; k = 0; }\n        else { j = j + k + 1; if (j <= i) j = i + 1; k = 0; }\n    }\n    int ans = min(i, j);\n    cout << s.substr(ans, n) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "字符串复制一份拼接",
+        "双指针 i, j 分别尝试作为起点",
+        "k 记录匹配长度",
+        "时间 O(n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "i == j 忘记处理",
+          "description": "i 和 j 指向同一个位置时无法比较。",
+          "fix": "if (i == j) j++，保证两个指针不同。"
+        },
+        {
+          "title": "忘记 k 重置",
+          "description": "跳过之后 k 没有清零，导致后续比较错误。",
+          "fix": "每次跳过后 k = 0，重新开始匹配。"
+        }
+      ],
+      "practice": {
+        "prompt": "求 \"bcab\" 的最小表示。",
+        "hint": "复制拼接后双指针比较。",
+        "expectedIdea": "\"abbc\""
+      },
+      "quiz": [
+        {
+          "question": "最小表示法解决什么问题？",
+          "options": [
+            "最长公共子串",
+            "循环字符串的字典序最小表示",
+            "最长回文子串",
+            "字符串排序"
+          ],
+          "answerIndex": 1,
+          "explanation": "最小表示法求循环同构串中字典序最小的那个。"
+        },
+        {
+          "question": "最小表示法的时间复杂度是？",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(n)",
+            "O(1)"
+          ],
+          "answerIndex": 2,
+          "explanation": "双指针方法中，每次比较后至少有一个指针前进多步，总比较次数不超过 2n。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.2",
+      "title": "KMP",
+      "learningGoal": "理解 KMP 算法的 next 数组原理，掌握 O(n+m) 的字符串匹配实现",
+      "explanation": "KMP（Knuth-Morris-Pratt）算法通过预处理模式串，避免重复比较，将匹配优化到 O(n+m)。\n\n核心思想：失配时不从头开始，而是利用已匹配的信息跳到合适的位置。\n\nnext 数组（也叫失配函数、前缀函数）：\nnext[i] = 模式串 p[0..i] 的最长相等真前后缀长度\n\n例如模式串 \"ABABC\"：\nnext = [0, 0, 1, 2, 0]\n\n构建 next 数组：\n- 用两个指针 i 和 j\n- j 指向当前前缀末尾，i 遍历模式串\n- p[i]==p[j] 则 next[i]=j+1，j++\n- 否则 j 回退到 next[j-1]\n\n匹配过程：\n- i 遍历主串，j 遍历模式串\n- 匹配则 i++, j++\n- 失配则 j = next[j-1]（利用已匹配信息）\n- j == m 则找到匹配\n\n时间复杂度：O(n + m)\n空间复杂度：O(m)",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string text, pattern;\n    cin >> text >> pattern;\n    int n = text.size(), m = pattern.size();\n    int nxt[10005];\n    nxt[0] = 0;\n    for (int i = 1, j = 0; i < m; i++) {\n        while (j > 0 && pattern[i] != pattern[j]) j = nxt[j - 1];\n        if (pattern[i] == pattern[j]) j++;\n        nxt[i] = j;\n    }\n    for (int i = 0, j = 0; i < n; i++) {\n        while (j > 0 && text[i] != pattern[j]) j = nxt[j - 1];\n        if (text[i] == pattern[j]) j++;\n        if (j == m) {\n            cout << i - m + 1 << endl;\n            break;\n        }\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "先构建 next 数组（预处理模式串）",
+        "失配时 j 回退到 nxt[j-1]",
+        "匹配时 i 和 j 同时前进",
+        "时间 O(n+m)，空间 O(m)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "next 数组构建时 j 回退条件写错",
+          "description": "while 条件应该是 j > 0 && p[i] != p[j]，不是 j >= 0。",
+          "fix": "j > 0 防止 j 变成 -1 导致越界。"
+        },
+        {
+          "title": "匹配成功后忘记重置 j",
+          "description": "如果要求所有匹配位置，找到后 j = nxt[j-1] 继续搜索。",
+          "fix": "找所有匹配：if (j == m) { cout << i-m+1; j = nxt[j-1]; }"
+        }
+      ],
+      "practice": {
+        "prompt": "在主串 \"ABABABC\" 中用 KMP 查找模式串 \"ABC\" 的位置。",
+        "hint": "先构建 next 数组，再匹配。",
+        "expectedIdea": "位置 4"
+      },
+      "quiz": [
+        {
+          "question": "KMP 算法的时间复杂度是？",
+          "options": [
+            "O(n * m)",
+            "O(n + m)",
+            "O(n log m)",
+            "O(m)"
+          ],
+          "answerIndex": 1,
+          "explanation": "预处理 next 数组 O(m)，匹配过程 O(n)，总共 O(n+m)。"
+        },
+        {
+          "question": "next[i] 的含义是？",
+          "options": [
+            "模式串前 i 个字符中最大的字符",
+            "p[0..i] 的最长相等真前后缀长度",
+            "模式串第 i 个字符的 ASCII 值",
+            "匹配失败的次数"
+          ],
+          "answerIndex": 1,
+          "explanation": "next[i] 是模式串前 i+1 个字符中，最长相等真前缀和真后缀的长度。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.3",
+      "title": "Z 函数",
+      "learningGoal": "理解 Z 函数（扩展 KMP）的定义和计算方法，掌握 O(n) 的 Z 算法实现",
+      "explanation": "Z 函数：对于字符串 s，z[i] 表示 s[i..] 与 s[0..] 的最长公共前缀长度。\n\n例如 s = \"aabxaab\"：\nz = [7, 1, 0, 0, 3, 1, 0]\n- z[0] = n（约定或特殊处理）\n- z[4] = 3（s[4..]=\"aab\" 与 s[0..]=\"aab...\" 前缀匹配 3 个字符）\n\nZ 算法（O(n)）：\n维护一个 Z-box [l, r]，表示当前已知的右端最远的匹配区间。\n\n对每个 i：\n1. 如果 i <= r，利用已知信息 z[i] 至少为 min(r-i+1, z[i-l])\n2. 然后暴力扩展匹配\n3. 更新 Z-box\n\n应用：\n- 字符串匹配：将模式串 + '#' + 主串拼接，z[i] == m 表示匹配\n- 求字符串的周期\n- 最长公共前缀相关问题\n\n时间复杂度：O(n)\n空间复杂度：O(n)",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n    int z[100005];\n    z[0] = n;\n    int l = 0, r = 0;\n    for (int i = 1; i < n; i++) {\n        if (i <= r) z[i] = min(r - i + 1, z[i - l]);\n        else z[i] = 0;\n        while (i + z[i] < n && s[z[i]] == s[i + z[i]]) z[i]++;\n        if (i + z[i] - 1 > r) { l = i; r = i + z[i] - 1; }\n    }\n    for (int i = 0; i < n; i++) cout << z[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "z[0] = n（整个串与自身的前缀匹配）",
+        "利用 Z-box 加速，避免重复比较",
+        "暴力扩展直到失配",
+        "时间 O(n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "Z-box 更新条件写错",
+          "description": "应该在扩展后检查是否更新了更远的右端点。",
+          "fix": "if (i + z[i] - 1 > r) 才更新 l 和 r。"
+        },
+        {
+          "title": "z[i] 初始值处理错误",
+          "description": "i <= r 时 z[i] 初始值应该是 min(r-i+1, z[i-l])，不是直接用 z[i-l]。",
+          "fix": "z[i] = min(r - i + 1, z[i - l])，因为可能超出 r 的范围。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算字符串 \"aabxaab\" 的 Z 函数值。",
+        "hint": "Z-box 方法逐个计算。",
+        "expectedIdea": "z = [7, 1, 0, 0, 3, 1, 0]"
+      },
+      "quiz": [
+        {
+          "question": "Z 函数 z[i] 的含义是？",
+          "options": [
+            "s[i] 出现的次数",
+            "s[i..] 与 s 的最长公共前缀长度",
+            "s 的最长回文子串",
+            "s[i] 的 ASCII 值"
+          ],
+          "answerIndex": 1,
+          "explanation": "z[i] 是从位置 i 开始的后缀与整个字符串 s 的最长公共前缀长度。"
+        },
+        {
+          "question": "Z 函数用于字符串匹配时，如何构造？",
+          "options": [
+            "直接对主串计算 Z 函数",
+            "模式串 + '#' + 主串，然后找 z[i] == m",
+            "对模式串计算 Z 函数",
+            "排序后二分查找"
+          ],
+          "answerIndex": 1,
+          "explanation": "将 pattern + '#' + text 拼接，z[i] == pattern.length() 表示在位置 i-m-1 处匹配。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.4",
+      "title": "字符串哈希",
+      "learningGoal": "掌握字符串哈希的原理和实现，能用 O(1) 比较子串是否相等",
+      "explanation": "字符串哈希（Rolling Hash）：将字符串映射为一个整数，通过比较哈希值来判断子串是否相等。\n\n基本原理：\n将字符串看作一个 base 进制的数：\nhash(s) = s[0]*base^(n-1) + s[1]*base^(n-2) + ... + s[n-1]\n\n为防止溢出，对一个大质数 MOD 取模。\n常用参数：base = 131 或 137，MOD = 2^64（用 unsigned long long 自然溢出）\n\n前缀哈希：\nh[i] = h[i-1] * base + s[i]\np[i] = base^i（预处理幂次）\n\n子串哈希（O(1)查询）：\nhash(s[l..r]) = h[r] - h[l-1] * p[r-l+1]\n\n应用：\n- O(1) 判断两个子串是否相等\n- 判断字符串是否回文\n- 查找重复子串\n- 双哈希降低冲突概率\n\n时间复杂度：预处理 O(n)，查询 O(1)\n空间复杂度：O(n)",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\ntypedef unsigned long long ull;\nconst ull base = 131;\n\null h[1000005], p[1000005];\n\null getHash(int l, int r) {\n    return h[r] - h[l - 1] * p[r - l + 1];\n}\n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n    s = \" \" + s;\n    p[0] = 1;\n    for (int i = 1; i <= n; i++) {\n        h[i] = h[i - 1] * base + s[i];\n        p[i] = p[i - 1] * base;\n    }\n    int l1, r1, l2, r2;\n    cin >> l1 >> r1 >> l2 >> r2;\n    if (getHash(l1, r1) == getHash(l2, r2)) cout << \"相同\" << endl;\n    else cout << \"不同\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "h[i] 前缀哈希，p[i] base的幂次",
+        "预处理 O(n)，查询子串 O(1)",
+        "子串哈希 = h[r] - h[l-1]*p[r-l+1]",
+        "用 unsigned long long 自然溢出取模"
+      ],
+      "commonMistakes": [
+        {
+          "title": "哈希冲突",
+          "description": "单哈希可能冲突，不同字符串算出相同的哈希值。",
+          "fix": "用双哈希（两组 base 和 MOD）降低冲突概率。"
+        },
+        {
+          "title": "子串哈希公式写错",
+          "description": "忘记乘 p[r-l+1] 导致计算错误。",
+          "fix": "hash(l,r) = h[r] - h[l-1] * p[r-l+1]，注意幂次。"
+        }
+      ],
+      "practice": {
+        "prompt": "判断字符串 s 中子串 s[l1..r1] 和 s[l2..r2] 是否相等。",
+        "hint": "预处理前缀哈希，O(1) 比较子串哈希值。",
+        "expectedIdea": "getHash(l1,r1) == getHash(l2,r2)"
+      },
+      "quiz": [
+        {
+          "question": "字符串哈希查询子串的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(m)"
+          ],
+          "answerIndex": 2,
+          "explanation": "预处理 O(n)，之后每次查询子串哈希只需 O(1) 的减法和乘法。"
+        },
+        {
+          "question": "如何降低哈希冲突的概率？",
+          "options": [
+            "增大 base",
+            "用双哈希（两组不同的 base 和 MOD）",
+            "减小字符串长度",
+            "只比较第一个字符"
+          ],
+          "answerIndex": 1,
+          "explanation": "双哈希用两组参数分别计算，两个哈希值都相同时才认为字符串相同，冲突概率极低。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.5",
+      "title": "Trie",
+      "learningGoal": "理解字典树（Trie）的结构和操作，掌握插入、查找和前缀查询的实现",
+      "explanation": "Trie（字典树/前缀树）：一种树形数据结构，用于高效存储和检索字符串集合。\n\n基本结构：\n- 根节点为空\n- 每条边代表一个字符\n- 从根到某节点的路径对应一个字符串前缀\n- 标记节点表示一个完整字符串的结束\n\n核心操作：\n1. 插入：沿字符路径走，不存在则创建新节点，末尾标记\n2. 查找：沿字符路径走，能走到末尾且被标记则存在\n3. 前缀查询：沿字符路径走，能走完前缀则存在此前缀\n\n实现方式：\n- 数组实现：ch[node][26]，每个节点 26 个子节点\n- 指针实现：更灵活但代码复杂\n\n时间复杂度：插入和查找都是 O(L)，L 为字符串长度\n空间复杂度：O(N*L)，N 为字符串数量\n\n应用：\n- 单词查找/补全\n- 前缀匹配\n- AC 自动机的基础",
+      "exampleCode": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint ch[1000005][26];\nint cnt[1000005];\nint tot = 0;\n\nvoid insert(const string& s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) ch[u][v] = ++tot;\n        u = ch[u][v];\n    }\n    cnt[u]++;\n}\n\nbool find(const string& s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) return false;\n        u = ch[u][v];\n    }\n    return cnt[u] > 0;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string op, s;\n        cin >> op >> s;\n        if (op == \"insert\") insert(s);\n        else cout << (find(s) ? \"Yes\" : \"No\") << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "ch[node][26] 存子节点编号",
+        "cnt[node] 标记单词结束",
+        "插入：沿路径走，没有就创建",
+        "查找：沿路径走，走不到或没标记则不存在"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记标记单词结束",
+          "description": "只建了路径没有在末尾标记，导致 \"ab\" 也能匹配 \"abc\"。",
+          "fix": "插入末尾 cnt[u]++，查找时检查 cnt[u] > 0。"
+        },
+        {
+          "title": "节点数开太小",
+          "description": "所有字符串的字符总数可能很大，数组不够用。",
+          "fix": "数组大小至少为 总字符数 + 1。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现 Trie，支持插入字符串和查询字符串是否存在。",
+        "hint": "ch 数组 + cnt 标记，O(L) 插入和查找。",
+        "expectedIdea": "标准 Trie 模板"
+      },
+      "quiz": [
+        {
+          "question": "Trie 中查找一个长度为 L 的字符串的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(L)",
+            "O(L log n)",
+            "O(26^L)"
+          ],
+          "answerIndex": 1,
+          "explanation": "查找只需沿路径走 L 步，每步 O(1)，总共 O(L)。"
+        },
+        {
+          "question": "Trie 的核心优势是？",
+          "options": [
+            "节省内存",
+            "高效的前缀匹配",
+            "排序字符串",
+            "压缩字符串"
+          ],
+          "answerIndex": 1,
+          "explanation": "Trie 天然支持前缀查询，这是它相比哈希表最大的优势。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.6",
+      "title": "AC 自动机",
+      "learningGoal": "理解 AC 自动机 = Trie + KMP fail 指针，掌握多模式串匹配的实现",
+      "explanation": "AC 自动机（Aho-Corasick）：在主串中同时匹配多个模式串，时间复杂度 O(n + m + z)，n 为主串长度，m 为模式串总长度，z 为匹配数。\n\n核心思想：\nTrie + 失配指针（fail 指针），相当于在 Trie 上做 KMP。\n\n构建步骤：\n1. 将所有模式串插入 Trie\n2. 用 BFS 构建 fail 指针\n3. 在主串上匹配，沿 fail 链收集所有匹配\n\nfail 指针：\n- fail[u] = 节点 u 的最长后缀对应的 Trie 节点\n- 根节点的直接子节点 fail = root\n- BFS 时，fail[ch[u][c]] = ch[fail[u]][c]\n\n匹配过程：\n从 root 开始，逐个读主串字符：\n- 有对应子节点则走过去\n- 否则沿 fail 指针跳\n- 检查当前节点及其 fail 链上的所有匹配\n\n时间复杂度：O(n + m + z)\n空间复杂度：O(m × 字符集大小)",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <queue>\nusing namespace std;\n\nint ch[100005][26], cnt[100005], fail[100005], tot = 0;\n\nvoid insert(const string& s) {\n    int u = 0;\n    for (char c : s) {\n        int v = c - 'a';\n        if (!ch[u][v]) ch[u][v] = ++tot;\n        u = ch[u][v];\n    }\n    cnt[u]++;\n}\n\nvoid build() {\n    queue<int> q;\n    for (int c = 0; c < 26; c++)\n        if (ch[0][c]) q.push(ch[0][c]);\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int c = 0; c < 26; c++) {\n            if (ch[u][c]) {\n                fail[ch[u][c]] = ch[fail[u]][c];\n                q.push(ch[u][c]);\n            } else {\n                ch[u][c] = ch[fail[u]][c];\n            }\n        }\n    }\n}\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) { string s; cin >> s; insert(s); }\n    build();\n    string text;\n    cin >> text;\n    int u = 0, ans = 0;\n    for (char c : text) {\n        u = ch[u][c - 'a'];\n        for (int v = u; v && cnt[v] != -1; v = fail[v]) {\n            ans += cnt[v];\n            cnt[v] = -1;\n        }\n    }\n    cout << ans << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "Trie 存模式串",
+        "BFS 构建 fail 指针",
+        "路径压缩：ch[u][c]=ch[fail[u]][c]",
+        "匹配时沿 fail 链收集结果"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记路径压缩",
+          "description": "不用 ch[u][c]=ch[fail[u]][c] 压缩，匹配时需要 while 循环跳 fail。",
+          "fix": "build 时对空子节点做路径压缩，匹配时直接走 ch 即可。"
+        },
+        {
+          "title": "重复统计匹配",
+          "description": "同一个模式串被多次匹配到，重复计数。",
+          "fix": "统计后 cnt[v] = -1 标记已访问，避免重复。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定多个模式串和主串，统计主串中出现了多少个模式串。",
+        "hint": "AC 自动机：建 Trie + BFS 建 fail + 匹配。",
+        "expectedIdea": "标准 AC 自动机模板"
+      },
+      "quiz": [
+        {
+          "question": "AC 自动机的核心思想是？",
+          "options": [
+            "动态规划",
+            "Trie + KMP 失配指针",
+            "哈希 + 二分",
+            "后缀数组"
+          ],
+          "answerIndex": 1,
+          "explanation": "AC 自动机在 Trie 的基础上加 fail 指针，相当于多模式串的 KMP。"
+        },
+        {
+          "question": "AC 自动机的总时间复杂度是？",
+          "options": [
+            "O(n * m)",
+            "O(n + m + z)",
+            "O(n log m)",
+            "O(m^2)"
+          ],
+          "answerIndex": 1,
+          "explanation": "n 为主串长度，m 为模式串总长，z 为匹配数。线性时间匹配所有模式串。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.7",
+      "title": "后缀数组",
+      "learningGoal": "理解后缀数组 SA 和 LCP 数组的含义，掌握倍增法构造和应用",
+      "explanation": "后缀数组（Suffix Array, SA）：将字符串的所有后缀按字典序排序后，记录排名对应的起始位置。\n\n定义：\n- sa[i] = 排名第 i 的后缀的起始位置\n- rk[i] = 后缀 s[i..] 的排名\n- sa 和 rk 互为反函数：sa[rk[i]] = i\n\nLCP 数组（最长公共前缀）：\n- height[i] = 后缀 sa[i] 和 sa[i-1] 的最长公共前缀长度\n- 利用 H 性质：height[rk[i]] >= height[rk[i-1]] - 1\n- 可以 O(n) 求出所有 height\n\n倍增法构造 SA（O(n log n)）：\n1. 按单个字符排序\n2. 每次长度倍增，用上一次的排名作为关键字排序\n3. 使用基数排序保证稳定性\n\n应用：\n- 求任意两个后缀的 LCP：min(height[rk[a]+1..rk[b]])\n- 求最长重复子串：max(height)\n- 不同子串个数：n*(n+1)/2 - sum(height)\n- 字符串匹配：在 SA 上二分",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint n;\nstring s;\nint sa[100005], rk[100005], tmp[100005];\n\nbool cmp(int a, int b) {\n    if (rk[a] != rk[b]) return rk[a] < rk[b];\n    int ra = a + n/2 < n ? rk[a + n/2] : -1;\n    int rb = b + n/2 < n ? rk[b + n/2] : -1;\n    return ra < rb;\n}\n\nint main() {\n    cin >> s;\n    n = s.size();\n    for (int i = 0; i < n; i++) sa[i] = i;\n    for (int i = 0; i < n; i++) rk[i] = s[i];\n    for (int k = 1; k < n; k *= 2) {\n        sort(sa, sa + n, cmp);\n        tmp[sa[0]] = 0;\n        for (int i = 1; i < n; i++)\n            tmp[sa[i]] = tmp[sa[i-1]] + cmp(sa[i-1], sa[i]);\n        for (int i = 0; i < n; i++) rk[i] = tmp[i];\n    }\n    for (int i = 0; i < n; i++) cout << sa[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "sa[i] 是排名第 i 的后缀起始位置",
+        "倍增排序：长度从 1, 2, 4, ... 到 n",
+        "rk 和 sa 互为反函数",
+        "时间 O(n log^2 n)，基数排序可优化到 O(n log n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "cmp 函数中越界处理",
+          "description": "比较后半部分时 i+k 可能超过 n，需要返回 -1。",
+          "fix": "超出范围的排名设为 -1，确保短后缀排在前面。"
+        },
+        {
+          "title": "height 数组求法错误",
+          "description": "直接暴力比较相邻后缀的 LCP，时间 O(n^2)。",
+          "fix": "利用 H 性质 height[rk[i]] >= height[rk[i-1]]-1，O(n) 求解。"
+        }
+      ],
+      "practice": {
+        "prompt": "求字符串 \"banana\" 的后缀数组。",
+        "hint": "将所有后缀按字典序排序。",
+        "expectedIdea": "sa = [5,3,1,0,4,2]（a,ana,anana,banana,na,nana）"
+      },
+      "quiz": [
+        {
+          "question": "sa[i] 的含义是？",
+          "options": [
+            "后缀 s[i..] 的排名",
+            "排名第 i 的后缀的起始位置",
+            "s[i] 的 ASCII 值",
+            "后缀 i 的长度"
+          ],
+          "answerIndex": 1,
+          "explanation": "sa[i] 表示字典序排名第 i 小的后缀的起始位置。"
+        },
+        {
+          "question": "利用后缀数组求最长重复子串，答案是？",
+          "options": [
+            "sa 的最大值",
+            "height 数组的最大值",
+            "rk 的最大值",
+            "n - sa[0]"
+          ],
+          "answerIndex": 1,
+          "explanation": "height[i] 是相邻排名后缀的 LCP，最长重复子串 = max(height)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.8",
+      "title": "后缀自动机",
+      "learningGoal": "理解 SAM 的 link 和 len 含义，掌握在线构造算法和基本应用",
+      "explanation": "后缀自动机（Suffix Automaton, SAM）：能识别字符串所有子串的最小 DFA。\n\n核心概念：\n- 状态（节点）：每个状态代表一个 endpos 等价类\n- len[v]：该状态能表示的最长子串长度\n- link[v]（后缀链接）：指向 len 更小的父状态\n- trans[v][c]：转移函数\n\n性质：\n- SAM 的状态数 ≤ 2n - 1\n- SAM 的转移数 ≤ 3n - 4\n- 从初始状态出发，所有路径对应的串都是原串的子串\n\n在线构造（O(n)）：\n每次在末尾添加一个字符 c：\n1. 创建新状态 cur，len[cur] = len[last] + 1\n2. 从 last 沿 link 链走，添加到 cur 的转移\n3. 如果遇到已有转移，需要 clone（分裂状态）\n4. 更新 link\n\n应用：\n- 判断子串是否存在：从初始状态沿转移走\n- 不同子串个数：sum(len[v] - len[link[v]])\n- 最长公共子串：两个串的 SAM\n- 最小循串等",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <map>\nusing namespace std;\n\nmap<int, int> ch[200005];\nint len[200005], link[200005];\nint sz, last;\n\nvoid sam_init() {\n    sz = 1; last = 0;\n    len[0] = 0; link[0] = -1;\n}\n\nvoid sam_extend(int c) {\n    int cur = sz++;\n    len[cur] = len[last] + 1;\n    int p = last;\n    while (p != -1 && !ch[p].count(c)) {\n        ch[p][c] = cur;\n        p = link[p];\n    }\n    if (p == -1) link[cur] = 0;\n    else {\n        int q = ch[p][c];\n        if (len[p] + 1 == len[q]) link[cur] = q;\n        else {\n            int clone = sz++;\n            ch[clone] = ch[q];\n            len[clone] = len[p] + 1;\n            link[clone] = link[q];\n            while (p != -1 && ch[p][c] == q) {\n                ch[p][c] = clone;\n                p = link[p];\n            }\n            link[q] = link[cur] = clone;\n        }\n    }\n    last = cur;\n}\n\nint main() {\n    string s;\n    cin >> s;\n    sam_init();\n    for (char c : s) sam_extend(c);\n    long long ans = 0;\n    for (int i = 1; i < sz; i++) ans += len[i] - len[link[i]];\n    cout << ans << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "len[v] 状态能表示的最长子串长度",
+        "link[v] 后缀链接指向父状态",
+        "clone 分裂状态保持正确性",
+        "不同子串数 = sum(len[i]-len[link[i]])"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记 clone",
+          "description": "当 len[p]+1 != len[q] 时，需要 clone 分裂状态。",
+          "fix": "clone 复制 q 的转移和 link，修改 len[clone]=len[p]+1。"
+        },
+        {
+          "title": "link 初始化遗漏",
+          "description": "初始状态的 link 设为 -1，表示没有后缀链接。",
+          "fix": "link[0] = -1，while 循环中检查 p != -1。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定字符串 s，求 s 的不同子串个数。",
+        "hint": "SAM 中每个状态贡献 len[v]-len[link[v]] 个不同子串。",
+        "expectedIdea": "建 SAM，ans = sum(len[i]-len[link[i]])"
+      },
+      "quiz": [
+        {
+          "question": "SAM 的状态数最多是？",
+          "options": [
+            "n",
+            "n^2",
+            "2n - 1",
+            "n log n"
+          ],
+          "answerIndex": 2,
+          "explanation": "长度为 n 的字符串的 SAM 状态数不超过 2n-1。"
+        },
+        {
+          "question": "SAM 中不同子串个数等于？",
+          "options": [
+            "所有 len 之和",
+            "sum(len[v] - len[link[v]])",
+            "状态数",
+            "转移数"
+          ],
+          "answerIndex": 1,
+          "explanation": "每个状态 v 贡献 len[v]-len[link[v]] 个新的不同子串。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.10.9",
+      "title": "Manacher",
+      "learningGoal": "掌握 Manacher 算法求最长回文子串的原理和 O(n) 实现",
+      "explanation": "Manacher 算法：在 O(n) 时间内求出字符串中每个位置为中心的最长回文半径。\n\n核心思想：\n1. 插入分隔符统一奇偶回文：\"abc\" → \"#a#b#c#\"\n2. 维护当前最右回文边界 r 和其中心 c\n3. 利用对称性加速计算\n\n预处理：\n在字符之间插入 '#'（或其他不在原串中的字符），首尾也加 '#'。这样奇数和偶数长度回文统一处理。\n\np 数组：p[i] 表示以 i 为中心的最长回文半径（含中心）\n原串中的回文长度 = p[i] - 1\n\n算法流程：\n对每个位置 i：\n1. 如果 i <= r，利用对称性 p[i] >= min(r - i, p[2*c - i])\n2. 暴力扩展 p[i]\n3. 如果 i + p[i] > r，更新 c = i, r = i + p[i]\n\n时间复杂度：O(n)\n空间复杂度：O(n)\n\n最长回文子串长度 = max(p[i]) - 1",
+      "exampleCode": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint p[200005];\n\nint main() {\n    string s;\n    cin >> s;\n    string t = \"#\";\n    for (char c : s) { t += c; t += \"#\"; }\n    int n = t.size();\n    int c = 0, r = 0, maxLen = 0;\n    for (int i = 0; i < n; i++) {\n        if (i <= r) p[i] = min(r - i, p[2 * c - i]);\n        else p[i] = 0;\n        while (i - p[i] - 1 >= 0 && i + p[i] + 1 < n && t[i - p[i] - 1] == t[i + p[i] + 1])\n            p[i]++;\n        if (i + p[i] > r) { c = i; r = i + p[i]; }\n        maxLen = max(maxLen, p[i]);\n    }\n    cout << maxLen << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "插入 '#' 统一奇偶回文",
+        "p[i] 以 i 为中心的回文半径",
+        "利用对称性加速：p[i] >= min(r-i, p[2*c-i])",
+        "原串回文长度 = p[i] - 1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记插入分隔符",
+          "description": "不插入 '#' 则需要分别处理奇数和偶数回文。",
+          "fix": "统一用 '#' 预处理，简化代码逻辑。"
+        },
+        {
+          "title": "边界越界",
+          "description": "扩展时 i-p[i]-1 或 i+p[i]+1 越界。",
+          "fix": "while 条件中检查下标范围：>= 0 且 < n。"
+        }
+      ],
+      "practice": {
+        "prompt": "求字符串 \"abacabacabb\" 的最长回文子串长度。",
+        "hint": "用 Manacher 算法，预处理后求 max(p[i])-1。",
+        "expectedIdea": "最长回文子串 \"bacabacab\"，长度 9"
+      },
+      "quiz": [
+        {
+          "question": "Manacher 算法的时间复杂度是？",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(n)",
+            "O(1)"
+          ],
+          "answerIndex": 2,
+          "explanation": "Manacher 利用对称性，r 只增不减，总扩展次数不超过 n，所以是 O(n)。"
+        },
+        {
+          "question": "为什么要插入分隔符 '#'？",
+          "options": [
+            "增加字符串长度",
+            "统一奇数和偶数长度回文的处理",
+            "避免哈希冲突",
+            "方便排序"
+          ],
+          "answerIndex": 1,
+          "explanation": "插入 '#' 后，所有回文都以某个位置为中心，无需区分奇偶。"
+        }
+      ]
+    }
+  ]
+}

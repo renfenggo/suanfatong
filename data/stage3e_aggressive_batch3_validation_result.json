@@ -1,0 +1,64 @@
+{
+  "merge_status": "success",
+  "backup_restored": false,
+  "error_details": {
+    "primary_issue": "none",
+    "root_cause": "none",
+    "validation_results": {
+      "item_count": 1572,
+      "section_count": 65,
+      "expected_item_count": 1572,
+      "expected_section_count": 65,
+      "dangling_refs": 0,
+      "direct_pre_cycle": null,
+      "product_metadata_validation": {
+        "passed": true
+      },
+      "resolved_pre_mismatches": 0
+    },
+    "used_cleaned_dependency_plan": true,
+    "cleaned_candidates_count": 10,
+    "direct_pre_section_refs": 0,
+    "only_updated_new_nodes_resolved_pre": true,
+    "old_nodes_resolved_preserved": true,
+    "used_full_graph_for_computation": true
+  },
+  "resolved_pre_mismatch_details": {
+    "total_mismatches": 0,
+    "all_mismatches_are_new_nodes": false,
+    "mismatches_by_section": {
+      "3.13": 0,
+      "2.21": 0
+    }
+  },
+  "key_achievements": {
+    "dependency_cleanup_success": true,
+    "direct_pre_section_refs_eliminated": true,
+    "existing_nodes_preserved": true,
+    "item_count_correct": true,
+    "section_count_correct": true,
+    "no_dangling_refs": true,
+    "no_direct_pre_cycles": true,
+    "product_metadata_passed": true,
+    "resolved_pre_mismatches_zero": true
+  },
+  "root_cause_analysis": {
+    "observation": "验证所有条件都满足，包括 resolved_pre_mismatches = 0",
+    "hypothesis": "使用完整图谱（旧节点+新增30节点）计算 resolved_pre 成功解决了问题",
+    "evidence": "所有 30 个新增节点的 resolved_pre 完全正确",
+    "conclusion": "Batch3 合并完全成功"
+  },
+  "technical_improvements": {
+    "previous_attempts": {
+      "v1": "失败：重新计算了所有节点的 resolved_pre，导致 50 个现有节点 mismatches",
+      "v2": "失败：只更新新增节点，但基于不完整图谱计算 resolved_pre，导致 30 个新增节点 mismatches"
+    },
+    "v3_solution": "先构造完整图谱（旧节点+新增30节点），再计算新增节点 resolved_pre",
+    "result": "完全成功，所有验证通过"
+  },
+  "new_node_dependencies": {
+    "total_dependencies_between_new_nodes": 0,
+    "dependencies": []
+  },
+  "recommendation": "Batch3 合并完全成功，可以继续后续流程"
+}

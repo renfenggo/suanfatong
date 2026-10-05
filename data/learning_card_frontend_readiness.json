@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "generated_at": "2026-09-02T22:19:34.082896",
+    "purpose": "学习卡片前端接入准备审计",
+    "scope": "只读审计，不修改任何现有文件"
+  },
+  "audit_results": {
+    "structure_check": {
+      "total_samples": {
+        "expected": 30,
+        "actual": 30,
+        "pass": true
+      },
+      "section_distribution": {
+        "expected": {
+          "2.8": 10,
+          "3.13": 10,
+          "4.1": 10
+        },
+        "actual": {
+          "2.8": 10,
+          "3.13": 10,
+          "4.1": 10
+        },
+        "pass": true
+      },
+      "missing_item_id": {
+        "count": 0,
+        "items": [],
+        "pass": true
+      },
+      "missing_item_name": {
+        "count": 0,
+        "items": [],
+        "pass": true
+      },
+      "missing_section": {
+        "count": 0,
+        "items": [],
+        "pass": true
+      }
+    },
+    "field_check": {
+      "teaching_fields": {
+        "one_sentence_explanation": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "when_to_use": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "core_intuition": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "minimal_example": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "common_traps": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "practice_entry": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        },
+        "learn_next": {
+          "empty_count": 0,
+          "empty_items": [],
+          "pass": true
+        }
+      },
+      "learning_action": {
+        "missing_count": 0,
+        "missing_items": [],
+        "invalid_count": 0,
+        "invalid_items": [],
+        "pass": true
+      }
+    },
+    "type_check": {
+      "list_fields": {
+        "common_traps": {
+          "error_count": 0,
+          "errors": [],
+          "pass": true
+        },
+        "learn_next": {
+          "error_count": 0,
+          "errors": [],
+          "pass": true
+        },
+        "must_know_before": {
+          "error_count": 0,
+          "errors": [],
+          "pass": true
+        },
+        "nice_to_know": {
+          "error_count": 0,
+          "errors": [],
+          "pass": true
+        }
+      }
+    },
+    "content_check": {
+      "source_fields": {
+        "source_direct_pre": {
+          "missing_count": 0,
+          "missing_items": [],
+          "pass": true
+        },
+        "source_resolved_pre": {
+          "missing_count": 0,
+          "missing_items": [],
+          "pass": true
+        },
+        "source_rel": {
+          "missing_count": 0,
+          "missing_items": [],
+          "pass": true
+        }
+      }
+    }
+  },
+  "validation_results": {
+    "missing_in_main_graph": [],
+    "name_mismatch": [],
+    "section_mismatch": [],
+    "pass": true
+  },
+  "field_mapping": {
+    "item_id": {
+      "frontend_field": "id",
+      "reason": "前端统一使用id作为唯一标识",
+      "type": "string"
+    },
+    "item_name": {
+      "frontend_field": "title",
+      "reason": "前端统一使用title作为显示标题",
+      "type": "string"
+    },
+    "section": {
+      "frontend_field": "section_id",
+      "reason": "前端需要区分章节ID和章节名称",
+      "type": "string"
+    },
+    "one_sentence_explanation": {
+      "frontend_field": "summary",
+      "reason": "一句话解释适合作为摘要显示",
+      "type": "string"
+    },
+    "when_to_use": {
+      "frontend_field": "use_cases",
+      "reason": "应用场景更适合命名为use_cases",
+      "type": "string"
+    },
+    "core_intuition": {
+      "frontend_field": "intuition",
+      "reason": "核心直觉简洁命名",
+      "type": "string"
+    },
+    "minimal_example": {
+      "frontend_field": "example",
+      "reason": "最小例子统一命名为example",
+      "type": "string"
+    },
+    "common_traps": {
+      "frontend_field": "traps",
+      "reason": "常见坑简洁命名",
+      "type": "array"
+    },
+    "practice_entry": {
+      "frontend_field": "practice",
+      "reason": "练习入口简洁命名",
+      "type": "string"
+    },
+    "learn_next": {
+      "frontend_field": "next_items",
+      "reason": "后续学习节点列表",
+      "type": "array"
+    },
+    "must_know_before": {
+      "frontend_field": "required_pre",
+      "reason": "必须前置知识",
+      "type": "array"
+    },
+    "nice_to_know": {
+      "frontend_field": "recommended_pre",
+      "reason": "推荐前置知识",
+      "type": "array"
+    },
+    "learning_action": {
+      "frontend_field": "action_type",
+      "reason": "学习动作类型",
+      "type": "string"
+    }
+  },
+  "frontend_readiness": {
+    "pass_rate": 100.0,
+    "pass_count": 21,
+    "total_count": 21,
+    "can_direct_use": true,
+    "recommend_adapter": true,
+    "recommend_frontend_file": false,
+    "issues": []
+  },
+  "adapter_recommendation": {
+    "adapter_needed": true,
+    "adapter_location": "lib/models/learning_card_adapter.dart",
+    "adapter_functions": [
+      {
+        "name": "adaptLearningCard",
+        "description": "将样板数据字段映射为前端字段",
+        "input": "Map<String, dynamic> sampleData",
+        "output": "LearningCard model"
+      },
+      {
+        "name": "adaptLearningCardList",
+        "description": "批量转换样板数据列表",
+        "input": "List<Map<String, dynamic>> sampleDataList",
+        "output": "List<LearningCard> modelList"
+      }
+    ],
+    "model_definition": {
+      "class_name": "LearningCard",
+      "fields": [
+        {
+          "name": "id",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "sectionId",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "summary",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "useCases",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "intuition",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "example",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "traps",
+          "type": "List<String>",
+          "required": true
+        },
+        {
+          "name": "practice",
+          "type": "String",
+          "required": true
+        },
+        {
+          "name": "nextItems",
+          "type": "List<String>",
+          "required": true
+        },
+        {
+          "name": "requiredPre",
+          "type": "List<Map<String, String>>",
+          "required": false
+        },
+        {
+          "name": "recommendedPre",
+          "type": "List<Map<String, String>>",
+          "required": false
+        },
+        {
+          "name": "actionType",
+          "type": "String",
+          "required": true
+        }
+      ]
+    },
+    "reasons": [
+      "样板数据字段名与前端习惯不一致（item_id vs id）",
+      "前端需要统一的model定义",
+      "adapter层便于后续字段变更",
+      "adapter层可以做数据验证和清洗"
+    ]
+  },
+  "frontend_file_recommendation": {
+    "generate_frontend_file": false,
+    "reasons": [
+      "本轮不建议生成前端样板数据文件",
+      "避免误导为正式数据",
+      "建议先用adapter层读取现有样板JSON",
+      "待MVP验证后再决定是否生成独立前端文件"
+    ],
+    "if_generate": {
+      "file_path": "assets/data/knowledge/learning_card_samples_mvp.json",
+      "content": "已适配前端字段的数据",
+      "note": "仅作为建议，本轮不实际生成"
+    },
+    "next_steps": [
+      "前端实现adapter层",
+      "前端MVP展示30个样板",
+      "用户测试验证",
+      "根据反馈决定是否生成独立前端文件"
+    ]
+  }
+}

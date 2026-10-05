@@ -1,0 +1,139 @@
+{
+  "check_type": "stage5_hard_batch1_content_frontend_readiness",
+  "generated_at": "2026-05-26T19:35:38.000Z",
+  "io_v4_4_items": 2640,
+  "io_v4_4_sections": 65,
+  "content_index_coverage": 2640,
+  "content_index_parts": 27,
+  "actual_content_coverage": 2640,
+  "old_2165_covered": 2165,
+  "stage5_475_covered": 475,
+  "stage5_parts": 5,
+  "stage5_part_sizes": [
+    100,
+    100,
+    100,
+    100,
+    75
+  ],
+  "missing_items_in_content": [],
+  "orphan_items_in_content": [],
+  "invalid_json_files": [],
+  "field_completeness_issues": 0,
+  "quiz_issues": 0,
+  "animation_plan_issues": 0,
+  "practice_tasks_issues": 0,
+  "unlock_check_issues": 0,
+  "placeholder_text_count": 0,
+  "old_spot_check_30": {
+    "sample": 30,
+    "passed": 30
+  },
+  "new_spot_check_50": {
+    "sample": 50,
+    "passed": 50
+  },
+  "content_disk_size_mb": 17.1,
+  "checks": {
+    "io_v4_4_items_2640": true,
+    "content_index_coverage_2640": true,
+    "content_part_coverage_2640": true,
+    "missing_content_empty": true,
+    "orphan_content_empty": true,
+    "old_2165_covered": true,
+    "stage5_475_covered": true,
+    "no_invalid_json": true,
+    "field_issues_zero": true,
+    "quiz_issues_zero": true,
+    "animation_issues_zero": true,
+    "practice_issues_zero": true,
+    "unlock_issues_zero": true,
+    "placeholder_zero": true,
+    "old_spot_check_ok": true,
+    "new_spot_check_ok": true,
+    "stage4_parts_22": true,
+    "stage5_parts_5": true,
+    "index_parts_27": true,
+    "no_disk_orphan_files": true,
+    "no_index_missing_files": true
+  },
+  "checks_passed": 21,
+  "checks_total": 21,
+  "data_passed": true,
+  "content_modified": false,
+  "io_v4_4_modified": false,
+  "main_graph_modified": false,
+  "frontend_code_modified": false,
+  "batch2_continued": false,
+  "flutter_analyze": {
+    "errors": 0,
+    "warnings": 0,
+    "info": 6,
+    "passed": true,
+    "notes": [
+      "6 info-level lints only: 2 unnecessary_string_escapes, 4 avoid_print",
+      "All pre-existing, 0 new issues from content data"
+    ]
+  },
+  "flutter_test": {
+    "total": 263,
+    "passed": 252,
+    "failed": 11,
+    "passed_ratio": 0.958,
+    "notes": [
+      "10 failures: knowledge_graph_test Binding initialization (pre-existing)",
+      "1 failure: mojibake_prevention pubspec description mismatch (pre-existing)",
+      "0 failures related to content data or content packages",
+      "All content-related tests (DP learning, knowledge graph parsing) passed"
+    ]
+  },
+  "flutter_build_web": {
+    "passed": true,
+    "compile_time_ms": 2414,
+    "output": "build/web",
+    "notes": [
+      "flutter build web --release succeeded",
+      "Icon font tree-shaking notice only (non-error)",
+      "io_v4_4.json correctly bundled at 2640 items"
+    ]
+  },
+  "flutter_build_apk": {
+    "passed": true,
+    "compile_time_s": 5.8,
+    "output": "build/app/outputs/flutter-apk/app-debug.apk",
+    "notes": [
+      "flutter build apk --debug succeeded"
+    ]
+  },
+  "content_repository_read_test": {
+    "content_index_loadable": true,
+    "json_parse_valid": true,
+    "all_27_parts_parseable": true,
+    "new_5_parts_load_time_ms": [
+      3,
+      3,
+      4,
+      4,
+      3
+    ],
+    "notes": [
+      "content_index.json correctly maps all 27 parts",
+      "All 5 stage5 part files parse in <5ms each",
+      "No invalid JSON in any part file"
+    ]
+  },
+  "page_display_compatibility": {
+    "knowledge_item_page": "compatible",
+    "quiz_display": "compatible",
+    "animation_plan_display": "compatible",
+    "practice_tasks_display": "compatible",
+    "unlock_check_display": "compatible",
+    "notes": [
+      "All Stage5 content uses same JSON schema as Stage4",
+      "KnowledgeItemPage renders based on io_v4_4.json/knowledge_graph, no schema changes needed",
+      "Quiz/animation/practice fields compatible with existing rendering logic"
+    ]
+  },
+  "overall_frontend_ready": true,
+  "recommend_next": "ready_for_stage5_hard_batch1_full_link_stable_checkpoint"
+}

@@ -1,0 +1,109 @@
+{
+  "formula": {
+    "original_json_items": 592,
+    "exact_matches_merged": 36,
+    "exact_matches_unique_items": 34,
+    "pattern_items_added": 737,
+    "new_section_items_added": 20,
+    "added_items_total": 757,
+    "final_items": 1349,
+    "expression": "592 原节点 + 757 新增节点；36 个 exact_matches 合并进原节点不新增 = 1349"
+  },
+  "pattern_match_split": {
+    "new_item_under_existing_section": 436,
+    "subtopic_of_existing_node": 301
+  },
+  "created_sections": [
+    {
+      "category": "算法",
+      "id": "2.19",
+      "name": "随机化与启发式算法",
+      "level": "L3",
+      "items": 6
+    },
+    {
+      "category": "算法",
+      "id": "2.20",
+      "name": "交互题与构造题技巧",
+      "level": "L3",
+      "items": 3
+    },
+    {
+      "category": "算法",
+      "id": "2.21",
+      "name": "高级图论扩展",
+      "level": "L4",
+      "items": 3
+    },
+    {
+      "category": "算法竞赛数学",
+      "id": "4.9",
+      "name": "高级数学与群论",
+      "level": "L4",
+      "items": 2
+    },
+    {
+      "category": "C++编程/调试技巧",
+      "id": "5.10",
+      "name": "竞赛工程化与优化",
+      "level": "L2",
+      "items": 3
+    },
+    {
+      "category": "C++编程/调试技巧",
+      "id": "5.11",
+      "name": "算法竞赛心理与策略",
+      "level": "L1",
+      "items": 3
+    }
+  ],
+  "manual_review": {
+    "items": 207,
+    "json": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\manual_review_table.json",
+    "csv": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\manual_review_table.csv",
+    "md": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\manual_review_table.md"
+  },
+  "category_distribution": {
+    "算法": {
+      "sections": 21,
+      "items": 567,
+      "original_only_items": 154,
+      "exact_merged_original_items": 15,
+      "docx_added_items": 398
+    },
+    "C++语法": {
+      "sections": 10,
+      "items": 290,
+      "original_only_items": 144,
+      "exact_merged_original_items": 1,
+      "docx_added_items": 145
+    },
+    "数据结构": {
+      "sections": 12,
+      "items": 189,
+      "original_only_items": 62,
+      "exact_merged_original_items": 9,
+      "docx_added_items": 118
+    },
+    "算法竞赛数学": {
+      "sections": 10,
+      "items": 180,
+      "original_only_items": 97,
+      "exact_merged_original_items": 8,
+      "docx_added_items": 75
+    },
+    "C++编程/调试技巧": {
+      "sections": 11,
+      "items": 123,
+      "original_only_items": 101,
+      "exact_merged_original_items": 1,
+      "docx_added_items": 21
+    }
+  },
+  "validation": {
+    "duplicate_section_ids": [],
+    "duplicate_item_ids": [],
+    "dangling_references": [],
+    "section_pre_cycle_nodes": []
+  }
+}

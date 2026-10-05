@@ -1,0 +1,191 @@
+{
+  "input_file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\merged_knowledge_graph.json",
+  "refined_file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\merged_knowledge_graph_item_dependencies_refined.json",
+  "report_file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\item_dependency_refinement_report.md",
+  "low_confidence_file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\low_confidence_dependency_review.json",
+  "item_count": 1421,
+  "section_count": 65,
+  "duplicate_item_ids": [],
+  "dangling_refs": [],
+  "direct_pre_cycle": null,
+  "self_in_resolved_pre": [],
+  "direct_pre_section_refs": 0,
+  "resolved_pre_section_refs": {
+    "count": 0,
+    "refs": []
+  },
+  "rel_section_refs": {
+    "count": 0,
+    "refs": []
+  },
+  "direct_pre_item_ref_ratio": 1.0,
+  "report_matches_json": true,
+  "low_conf_ids_not_in_graph": [],
+  "parent_concept_self_refs": [],
+  "priority_a_count": 18,
+  "priority_b_count": 71,
+  "priority_c_count": 1260,
+  "semantic_refinement": {
+    "parent_self_ref_found": 0,
+    "parent_self_ref_remaining": 0,
+    "a_remaining": 18,
+    "b_remaining": 71,
+    "cross_section_pollution_remaining": 27,
+    "duplicate_groups_found": 0,
+    "duplicate_groups_reviewed": 0
+  },
+  "semantic_validation_issues": [],
+  "priority_a_validation_issues": [],
+  "priority_b_validation_issues": [],
+  "product_metadata_validation": {
+    "all_items_have_en_name": true,
+    "all_items_have_tracks": true,
+    "all_items_have_audience": true,
+    "all_items_have_visibility": true,
+    "all_items_have_learning_path_policy": true,
+    "all_items_have_localization_status": true,
+    "all_items_have_content_status": true,
+    "invalid_tracks": [],
+    "invalid_audience": [],
+    "invalid_visibility": [],
+    "invalid_unlock_mode": [],
+    "path_counts": {
+      "beginner": 364,
+      "interview": 473,
+      "icpc": 1264,
+      "noi": 635
+    },
+    "visibility_counts": {
+      "core": 364,
+      "advanced": 744,
+      "expert": 311,
+      "optional": 2
+    },
+    "track_counts": {
+      "beginner": 804,
+      "csp_j": 265,
+      "csp_s": 359,
+      "noi": 636,
+      "ioi": 4,
+      "icpc": 726,
+      "university_cp": 390,
+      "interview": 592,
+      "advanced_math": 86,
+      "advanced_graph": 55,
+      "advanced_string": 75,
+      "advanced_data_structure": 95,
+      "advanced_dp": 133,
+      "engineering_debug": 129
+    },
+    "audience_counts": {
+      "primary_beginner": 804,
+      "middle_school_oi": 804,
+      "high_school_oi": 632,
+      "university_icpc": 1053,
+      "software_engineer_interview": 589,
+      "advanced_competitive_programmer": 1037
+    },
+    "passed": true
+  },
+  "resolved_pre_mismatches": [],
+  "passed": true,
+  "expected_item_count": 1421,
+  "expected_section_count": 65,
+  "stage3b_checks": {
+    "backup_success": true,
+    "before_item_count": 1349,
+    "after_item_count": 1421,
+    "actual_added_items": 72,
+    "metadata_only_updates": 0,
+    "created_sections": [
+      {
+        "id": "3.13",
+        "name": "高级数据结构扩展",
+        "category": "数据结构"
+      }
+    ],
+    "section_conflicts": [],
+    "subtopic_handling": [
+      {
+        "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+        "item_id": "2.21.36",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "2.9.1",
+          "name": "图论",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+        "item_id": "2.21.37",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "2.16.3",
+          "name": "上下界网络流",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+        "item_id": "2.21.38",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "2.15.1",
+          "name": "匹配与覆盖",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+        "item_id": "2.21.39",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "2.9.1",
+          "name": "图论建模",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.ds.segment_tree_variants.merge",
+        "item_id": "3.13.33",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "3.7.2",
+          "name": "线段树变体",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.ds.li_chao_tree.static",
+        "item_id": "3.13.34",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "2.8.109",
+          "name": "李超线段树",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.ds.wavelet_tree.range_kth",
+        "item_id": "3.13.35",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "3.7.2",
+          "name": "小波树",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      },
+      {
+        "candidate_id": "cand.ds.dsu_advanced.rollback",
+        "item_id": "3.13.36",
+        "handling": "added_as_new_item_with_parent_concept",
+        "parent_concept": {
+          "id": "3.4.1",
+          "name": "高级并查集",
+          "source": "stage3b_candidate_parent_concept"
+        }
+      }
+    ]
+  }
+}

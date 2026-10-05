@@ -1,0 +1,74 @@
+{
+  "batch_id": "stage3f_batch2",
+  "candidate_count": 20,
+  "selected_candidates": [
+    "cand.string.z_algorithm.basic",
+    "cand.string.z_algorithm.pattern_matching",
+    "cand.string.ex_kmp.basic",
+    "cand.string.kmp_automaton.basic",
+    "cand.string.ac_automaton.applications",
+    "cand.string.ac_failure_tree.analysis",
+    "cand.math.prime_testing.miller_rabin",
+    "cand.math.prime_factorization.pollard_rho",
+    "cand.math.primitive_root.basic",
+    "cand.math.discrete_log.bsgs",
+    "cand.math.discrete_log.exbsgs",
+    "cand.string.lcp_rmq.optimization",
+    "cand.string.sam_parent_tree.structure",
+    "cand.string.eertree.construction",
+    "cand.math.combinatorial.lucas",
+    "cand.math.combinatorial.catalan",
+    "cand.math.dirichlet_convolution.basic",
+    "cand.math.mobius_inversion.applications",
+    "cand.dp.optimization.monotone_queue",
+    "cand.dp.optimization.monotone_queue_sliding"
+  ],
+  "excluded_already_merged_candidates": [],
+  "excluded_duplicate_or_near_duplicate": [],
+  "high_risk_candidates": [],
+  "manual_review_candidates": [],
+  "near_duplicate_notes": [
+    {
+      "candidate_id": "cand.math.combinatorial.lucas",
+      "name": "Lucas定理",
+      "similar_graph_items": [
+        "Lucas",
+        "扩展Lucas定理"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue",
+      "name": "单调队列优化",
+      "similar_graph_items": [
+        "单调队列优化 DP",
+        "单调队列优化多重背包",
+        "单调队列"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.monotone_queue_sliding",
+      "name": "滑动窗口DP",
+      "similar_graph_items": [
+        "滑动窗口"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    }
+  ],
+  "needs_new_section": false,
+  "dependency_mapping_risk": [],
+  "section_ref_dependencies": [],
+  "dependency_cleanup_required": false,
+  "candidate_dependency_cycle": false,
+  "section_distribution": {
+    "2.10": 6,
+    "2.18": 2,
+    "3.8": 3,
+    "4.1": 5,
+    "4.3": 2,
+    "4.9": 2
+  },
+  "recommendation": "ready_for_1号线程_merge",
+  "recommended_merge_count": 20
+}

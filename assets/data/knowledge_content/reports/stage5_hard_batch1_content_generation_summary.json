@@ -1,0 +1,41 @@
+{
+  "generation_type": "stage5_hard_batch1_content",
+  "generated_at": "2026-05-26T17:08:18.000Z",
+  "old_content_count": 2165,
+  "new_content_count": 475,
+  "total_content_count": 2640,
+  "new_part_count": 5,
+  "parts": [
+    {
+      "filename": "stage5_hard_batch1_part_001.json",
+      "item_count": 100,
+      "global_part": 23
+    },
+    {
+      "filename": "stage5_hard_batch1_part_002.json",
+      "item_count": 100,
+      "global_part": 24
+    },
+    {
+      "filename": "stage5_hard_batch1_part_003.json",
+      "item_count": 100,
+      "global_part": 25
+    },
+    {
+      "filename": "stage5_hard_batch1_part_004.json",
+      "item_count": 100,
+      "global_part": 26
+    },
+    {
+      "filename": "stage5_hard_batch1_part_005.json",
+      "item_count": 75,
+      "global_part": 27
+    }
+  ],
+  "old_parts_modified": false,
+  "main_graph_modified": false,
+  "io_v4_4_modified": false,
+  "frontend_code_modified": false,
+  "batch2_continued": false,
+  "generation_passed": true
+}

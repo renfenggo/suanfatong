@@ -1,0 +1,11 @@
+[
+  {
+    "source_item_id": "2.21.46",
+    "source_candidate_id": "cand.graph.closure_model.profit_dependency",
+    "name": "最大权闭合子图：Profit Dependency",
+    "en_name": "Maximum Closure: Profit Dependency",
+    "suggested_pattern_id": "pat.graph_closure_model_profit_dependency",
+    "reason": "Keep the knowledge item, but sync this modeling-shaped concept to problem_patterns.",
+    "status": "sync_candidate_only"
+  }
+]

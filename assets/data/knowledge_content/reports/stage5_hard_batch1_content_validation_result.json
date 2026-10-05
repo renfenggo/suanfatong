@@ -1,0 +1,22 @@
+{
+  "validation_type": "stage5_hard_batch1_content",
+  "validated_at": "2026-05-26T17:08:18.000Z",
+  "source_item_count": 2640,
+  "generated_item_count": 475,
+  "covered_item_count": 2640,
+  "missing_items": [],
+  "duplicate_items": [],
+  "invalid_json_files": [],
+  "incomplete_items": [],
+  "placeholder_text_count": 0,
+  "quiz_missing_count": 0,
+  "animation_plan_missing_count": 0,
+  "practice_tasks_missing_count": 0,
+  "unlock_check_missing_count": 0,
+  "validation_passed": true,
+  "old_2165_preserved": 2165,
+  "main_graph_modified": false,
+  "io_v4_4_modified": false,
+  "frontend_code_modified": false,
+  "batch2_continued": false
+}

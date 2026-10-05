@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "title": "动画 MVP Demo 第一批报告",
+  "timestamp": "2026-06-16",
+  "batch": 1,
+  "total_new_animations": 4,
+  "animations": [
+    {
+      "animationId": "cpp_dfs_graph_traversal",
+      "itemId": "2.7.16",
+      "title": "图的遍历：DFS",
+      "file": "assets/data/cpp/animations/dfs_graph_traversal.json",
+      "steps": 7,
+      "manifest_order": 112,
+      "description": "6节点无向图DFS遍历，展示栈、visited、回溯"
+    },
+    {
+      "animationId": "cpp_bfs_graph_traversal",
+      "itemId": "2.7.17",
+      "title": "图的遍历：BFS",
+      "file": "assets/data/cpp/animations/bfs_graph_traversal.json",
+      "steps": 5,
+      "manifest_order": 113,
+      "description": "6节点无向图BFS遍历，展示队列、按层扩展、visited"
+    },
+    {
+      "animationId": "cpp_prefix_sum_1d",
+      "itemId": "2.4.17",
+      "title": "前缀和 (一维)",
+      "file": "assets/data/cpp/animations/prefix_sum_1d.json",
+      "steps": 6,
+      "manifest_order": 114,
+      "description": "一维前缀和构建与O(1)区间查询"
+    },
+    {
+      "animationId": "cpp_prefix_sum_2d",
+      "itemId": "2.4.18",
+      "title": "前缀和 (二维)",
+      "file": "assets/data/cpp/animations/prefix_sum_2d.json",
+      "steps": 7,
+      "manifest_order": 115,
+      "description": "二维前缀和构建与容斥原理O(1)子矩阵查询"
+    }
+  ],
+  "validation": {
+    "total_checks": 152,
+    "passed": 152,
+    "failed": 0,
+    "animationId_unique": true,
+    "manifest_total": 115,
+    "original_animations_preserved": true,
+    "all_json_valid": true,
+    "all_steps_nonempty": true
+  },
+  "files_created": [
+    "assets/data/cpp/animations/dfs_graph_traversal.json",
+    "assets/data/cpp/animations/bfs_graph_traversal.json",
+    "assets/data/cpp/animations/prefix_sum_1d.json",
+    "assets/data/cpp/animations/prefix_sum_2d.json",
+    "tools/validate_animation_mvp_demo.py",
+    "docs/animation_mvp_demo_report.md",
+    "data/animation_mvp_demo_report.json"
+  ],
+  "files_modified": [
+    "assets/data/cpp/animations/cpp_animation_manifest.json"
+  ],
+  "next_steps": [
+    "制作第二批 4 个 Demo 动画",
+    "前端集成测试",
+    "根据渲染反馈调整",
+    "完成剩余 8 个 MVP 动画"
+  ]
+}

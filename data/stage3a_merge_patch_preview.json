@@ -1,0 +1,5006 @@
+{
+  "create_sections_preview": [
+    {
+      "proposed_section_id": "3.13",
+      "name": "高级数据结构扩展",
+      "category_suggestion": "数据结构",
+      "reason": "Section name was not found in the stable graph; preview only."
+    }
+  ],
+  "add_items_preview": [
+    {
+      "id": "2.21.4",
+      "name": "Lengauer-Tarjan 支配树算法",
+      "en_name": "Lengauer-Tarjan Dominator Tree Algorithm",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.5",
+      "name": "Block-Cut Tree 构建",
+      "en_name": "Block-Cut Tree Construction",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_graph"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.block_cut_tree.construction",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.6",
+      "name": "仙人掌图算法",
+      "en_name": "Cactus Graph Algorithms",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_graph"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.cactus.algorithm_and_properties",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.7",
+      "name": "弦图与完美消除序列 MCS",
+      "en_name": "Chordal Graph and Maximum Cardinality Search",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.chordal_graph.mcs",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.8",
+      "name": "竞赛图哈密顿路",
+      "en_name": "Tournament Graph Hamiltonian Path",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L3",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.tournament_graph.hamilton_path",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.9",
+      "name": "朱刘算法求最小树形图",
+      "en_name": "Chu-Liu/Edmonds Algorithm for Minimum Arborescence",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.min_arborescence.chu_liu",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.10",
+      "name": "Gomory-Hu 树构建",
+      "en_name": "Gomory-Hu Tree Construction",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.gomory_hu_tree.construction",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.11",
+      "name": "Stoer-Wagner 全局最小割",
+      "en_name": "Stoer-Wagner Global Min-Cut Algorithm",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.12",
+      "name": "Karp 最小平均环",
+      "en_name": "Karp's Minimum Mean Cycle Algorithm",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.min_mean_cycle.karp",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.13",
+      "name": "一般图最大匹配带花树算法",
+      "en_name": "Blossom Algorithm for General Graph Maximum Matching",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "advanced_graph",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.general_matching.blossom.raw",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.14",
+      "name": "Tutte 矩阵与一般图匹配检测",
+      "en_name": "Tutte Matrix and General Graph Matching Detection",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.tutte_matrix.matching",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.15",
+      "name": "拟阵交基础",
+      "en_name": "Matroid Intersection Basics",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "advanced_graph",
+        "university_cp"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.matroid_intersection.basic",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.16",
+      "name": "Bridge Tree 构建",
+      "en_name": "Bridge Tree Construction",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L3",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.bridge_tree.construction",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.17",
+      "name": "函数图分析",
+      "en_name": "Functional Graph Analysis",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L3",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.functional_graph.analysis",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.18",
+      "name": "最大密度子图（分数规划）",
+      "en_name": "Maximum Density Subgraph via Fractional Programming",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.max_density_subgraph.fractional",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.19",
+      "name": "有上下界网络流可行流",
+      "en_name": "Flow with Lower Bounds: Feasible Flow",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.20",
+      "name": "平面图对偶图转换",
+      "en_name": "Planar Graph Dual Graph Conversion",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.dual_graph.planar",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.21",
+      "name": "最小链覆盖与 Dilworth 定理",
+      "en_name": "Minimum Chain Cover and Dilworth's Theorem",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L3",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.22",
+      "name": "一般图最大权匹配（带权带花树）",
+      "en_name": "Weighted General Graph Matching (Weighted Blossom)",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "advanced_graph",
+        "university_cp",
+        "icpc"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.general_matching_weighted.blossom",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.23",
+      "name": "最小斯坦纳树 DP",
+      "en_name": "Minimum Steiner Tree Dynamic Programming",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.steiner_tree.dp",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.24",
+      "name": "支配树：Control-Flow Graph",
+      "en_name": "Dominator Tree: Control-Flow Graph",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.25",
+      "name": "圆方树：Articulation Construction",
+      "en_name": "Block-Cut Tree: Articulation Construction",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.26",
+      "name": "仙人掌图：Cycle Decomposition",
+      "en_name": "Cactus Graph: Cycle Decomposition",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.27",
+      "name": "动态图连通性：Offline Deletion",
+      "en_name": "Dynamic Connectivity: Offline Deletion",
+      "parent": "2.21",
+      "direct_pre": [
+        "3.4.1",
+        "2.3.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.28",
+      "name": "动态最小生成树：Replacement Edge",
+      "en_name": "Dynamic MST: Replacement Edge",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.29",
+      "name": "最大权闭合子图：Project Selection",
+      "en_name": "Maximum Closure: Project Selection",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.16.3",
+        "2.16.3"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.closure_model.project_selection",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.30",
+      "name": "特殊图：Chordal Graph",
+      "en_name": "Special Graph: Chordal Graph",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.special_graph.chordal_graph",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.31",
+      "name": "有向生成树：Chu Liu Edmonds",
+      "en_name": "Directed MST: Chu Liu Edmonds",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.13.10"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph",
+        "ioi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.32",
+      "name": "强连通分量 DAG：Condensation Applications",
+      "en_name": "SCC Condensation DAG: Condensation Applications",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.scc_dag.condensation_applications",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.33",
+      "name": "拟阵图论：Graphic Matroid",
+      "en_name": "Matroid in Graphs: Graphic Matroid",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.2.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.34",
+      "name": "平面图：Dual Graph",
+      "en_name": "Planar Graph: Dual Graph",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.planar_graph.dual_graph",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.35",
+      "name": "支配树：Semidominator",
+      "en_name": "Dominator Tree: Semidominator",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.dominator_tree.semidominator",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.1",
+      "name": "归并排序树：Range Count",
+      "en_name": "Merge Sort Tree: Range Count",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "2.5.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.merge_sort_tree.range_count",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.2",
+      "name": "动态树结构：Euler Tour Tree",
+      "en_name": "Dynamic Tree Structure: Euler Tour Tree",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.14.7"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.3",
+      "name": "高级 RMQ：Disjoint Sparse Table",
+      "en_name": "Advanced RMQ: Disjoint Sparse Table",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.4",
+      "name": "多维数据结构：Kd Tree",
+      "en_name": "Multidimensional Data Structure: Kd Tree",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.multidimensional.kd_tree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.5",
+      "name": "位集与线性基：Bitset Convolution",
+      "en_name": "Bitset and Linear Basis: Bitset Convolution",
+      "parent": "3.13",
+      "direct_pre": [
+        "1.4.6",
+        "4.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.6",
+      "name": "离线数据结构框架：Cdq With Fenwick",
+      "en_name": "Offline Data Structure Framework: Cdq With Fenwick",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.3.1",
+        "2.3.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "ioi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.7",
+      "name": "序列维护结构：Rope Editing",
+      "en_name": "Sequence Maintenance Structure: Rope Editing",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.6.5"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.sequence_structure.rope_editing",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.8",
+      "name": "简洁与概率结构：Bloom Filter",
+      "en_name": "Succinct and Probabilistic Structure: Bloom Filter",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.2.1",
+        "1.4.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.9",
+      "name": "可持久化结构：Persistent Array",
+      "en_name": "Persistent Data Structure: Persistent Array",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.11.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.persistent_structure.persistent_array",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.10",
+      "name": "树分治维护：Centroid Decomposition Query",
+      "en_name": "Tree Decomposition Data Structure: Centroid Decomposition Query",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.8.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "interview"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": true,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.11",
+      "name": "归并排序树：Range Kth With Binary Search",
+      "en_name": "Merge Sort Tree: Range Kth With Binary Search",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "2.5.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.12",
+      "name": "动态树结构：Top Tree",
+      "en_name": "Dynamic Tree Structure: Top Tree",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.14.7"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.dynamic_tree.top_tree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.13",
+      "name": "高级 RMQ：Sqrt Tree",
+      "en_name": "Advanced RMQ: Sqrt Tree",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "ioi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.14",
+      "name": "多维数据结构：2D Fenwick",
+      "en_name": "Multidimensional Data Structure: 2D Fenwick",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.multidimensional.2d_fenwick",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.15",
+      "name": "位集与线性基：Bitset Knapsack",
+      "en_name": "Bitset and Linear Basis: Bitset Knapsack",
+      "parent": "3.13",
+      "direct_pre": [
+        "1.4.6",
+        "4.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.16",
+      "name": "离线数据结构框架：Overall Binary Search",
+      "en_name": "Offline Data Structure Framework: Overall Binary Search",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.3.1",
+        "2.3.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.offline_framework.overall_binary_search",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.17",
+      "name": "序列维护结构：Piece Table Editing",
+      "en_name": "Sequence Maintenance Structure: Piece Table Editing",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.6.5"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.18",
+      "name": "简洁与概率结构：Counting Bloom Filter",
+      "en_name": "Succinct and Probabilistic Structure: Counting Bloom Filter",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.2.1",
+        "1.4.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.19",
+      "name": "可持久化结构：Persistent Stack Queue",
+      "en_name": "Persistent Data Structure: Persistent Stack Queue",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.11.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.20",
+      "name": "树分治维护：Centroid Update",
+      "en_name": "Tree Decomposition Data Structure: Centroid Update",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.8.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "interview"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": true,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.21",
+      "name": "归并排序树：Fractional Cascading",
+      "en_name": "Merge Sort Tree: Fractional Cascading",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "2.5.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "ioi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.22",
+      "name": "动态树结构：Link Cut Path Aggregate",
+      "en_name": "Dynamic Tree Structure: Link Cut Path Aggregate",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.14.7"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.23",
+      "name": "高级 RMQ：Cartesian Tree Rmq",
+      "en_name": "Advanced RMQ: Cartesian Tree Rmq",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.24",
+      "name": "多维数据结构：3D Fenwick",
+      "en_name": "Multidimensional Data Structure: 3D Fenwick",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.1",
+        "3.7.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.multidimensional.3d_fenwick",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.25",
+      "name": "位集与线性基：Persistent Linear Basis",
+      "en_name": "Bitset and Linear Basis: Persistent Linear Basis",
+      "parent": "3.13",
+      "direct_pre": [
+        "1.4.6",
+        "4.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.26",
+      "name": "离线数据结构框架：Divide Conquer Optimization",
+      "en_name": "Offline Data Structure Framework: Divide Conquer Optimization",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.3.1",
+        "2.3.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.27",
+      "name": "序列维护结构：Gap Buffer Concept",
+      "en_name": "Sequence Maintenance Structure: Gap Buffer Concept",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.6.5"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.28",
+      "name": "简洁与概率结构：Quotient Filter",
+      "en_name": "Succinct and Probabilistic Structure: Quotient Filter",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.2.1",
+        "1.4.6"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.29",
+      "name": "可持久化结构：Persistent Fenwick",
+      "en_name": "Persistent Data Structure: Persistent Fenwick",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.11.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.30",
+      "name": "树分治维护：Hld Segment Tree",
+      "en_name": "Tree Decomposition Data Structure: Hld Segment Tree",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.8.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "interview"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": true,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.31",
+      "name": "归并排序树：Range Predecessor",
+      "en_name": "Merge Sort Tree: Range Predecessor",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "2.5.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.32",
+      "name": "动态树结构：Link Cut Subtree",
+      "en_name": "Dynamic Tree Structure: Link Cut Subtree",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.14.1",
+        "2.14.7"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.36",
+      "name": "离线动态连通性（线段树分治）",
+      "en_name": "Offline Dynamic Connectivity via Segment Tree Divide and Conquer",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.7.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.37",
+      "name": "上下界网络流：Feasible Circulation",
+      "en_name": "Flow with Lower Bounds: Feasible Circulation",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.16.3",
+        "2.16.3"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.38",
+      "name": "匹配与覆盖：Blossom Algorithm",
+      "en_name": "Matching and Cover: Blossom Algorithm",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.15.1",
+        "2.15.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P0"
+      },
+      "source_candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "2.21.39",
+      "name": "图论建模：Difference Constraints",
+      "en_name": "Graph Modeling: Difference Constraints",
+      "parent": "2.21",
+      "direct_pre": [
+        "2.9.1",
+        "2.13.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.33",
+      "name": "线段树变体：Merge",
+      "en_name": "Segment Tree Variants: Merge",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.segment_tree_variants.merge",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.34",
+      "name": "李超线段树：Static",
+      "en_name": "Li Chao Tree: Static",
+      "parent": "3.13",
+      "direct_pre": [
+        "2.8.109",
+        "3.7.2"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.li_chao_tree.static",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.35",
+      "name": "小波树：区间第 k 小",
+      "en_name": "Wavelet Tree: Range Kth",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.7.2",
+        "2.3.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L4",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure",
+        "noi"
+      ],
+      "audience": [
+        "high_school_oi"
+      ],
+      "visibility": "advanced",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "unlock_mode": "optional_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.wavelet_tree.range_kth",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    },
+    {
+      "id": "3.13.36",
+      "name": "高级并查集：回滚版",
+      "en_name": "Advanced DSU: Rollback",
+      "parent": "3.13",
+      "direct_pre": [
+        "3.4.1"
+      ],
+      "resolved_pre": [],
+      "rel": [],
+      "level": "L5",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "expert",
+      "learning_path_policy": {
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": false,
+        "unlock_mode": "expert_branch"
+      },
+      "content_status": {
+        "has_explanation": false,
+        "has_examples": false,
+        "has_code_template": false,
+        "has_visualization": false,
+        "has_practice_refs": false,
+        "content_priority": "P1"
+      },
+      "source_candidate_id": "cand.ds.dsu_advanced.rollback",
+      "preview_note": "resolved_pre intentionally empty in preview; recompute after real merge."
+    }
+  ],
+  "update_rel_preview": [],
+  "candidate_to_item_id_mapping": [
+    {
+      "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+      "proposed_item_id": "2.21.4",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.construction",
+      "proposed_item_id": "2.21.5",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.cactus.algorithm_and_properties",
+      "proposed_item_id": "2.21.6",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.chordal_graph.mcs",
+      "proposed_item_id": "2.21.7",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.tournament_graph.hamilton_path",
+      "proposed_item_id": "2.21.8",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.min_arborescence.chu_liu",
+      "proposed_item_id": "2.21.9",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.gomory_hu_tree.construction",
+      "proposed_item_id": "2.21.10",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+      "proposed_item_id": "2.21.11",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.min_mean_cycle.karp",
+      "proposed_item_id": "2.21.12",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.blossom.raw",
+      "proposed_item_id": "2.21.13",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.tutte_matrix.matching",
+      "proposed_item_id": "2.21.14",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_intersection.basic",
+      "proposed_item_id": "2.21.15",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.bridge_tree.construction",
+      "proposed_item_id": "2.21.16",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.functional_graph.analysis",
+      "proposed_item_id": "2.21.17",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.max_density_subgraph.fractional",
+      "proposed_item_id": "2.21.18",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+      "proposed_item_id": "2.21.19",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.dual_graph.planar",
+      "proposed_item_id": "2.21.20",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+      "proposed_item_id": "2.21.21",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.general_matching_weighted.blossom",
+      "proposed_item_id": "2.21.22",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.steiner_tree.dp",
+      "proposed_item_id": "2.21.23",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+      "proposed_item_id": "2.21.24",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+      "proposed_item_id": "2.21.25",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+      "proposed_item_id": "2.21.26",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+      "proposed_item_id": "2.21.27",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+      "proposed_item_id": "2.21.28",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.closure_model.project_selection",
+      "proposed_item_id": "2.21.29",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.chordal_graph",
+      "proposed_item_id": "2.21.30",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+      "proposed_item_id": "2.21.31",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.condensation_applications",
+      "proposed_item_id": "2.21.32",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+      "proposed_item_id": "2.21.33",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.dual_graph",
+      "proposed_item_id": "2.21.34",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.semidominator",
+      "proposed_item_id": "2.21.35",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_count",
+      "proposed_item_id": "3.13.1",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+      "proposed_item_id": "3.13.2",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+      "proposed_item_id": "3.13.3",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.kd_tree",
+      "proposed_item_id": "3.13.4",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+      "proposed_item_id": "3.13.5",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+      "proposed_item_id": "3.13.6",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.rope_editing",
+      "proposed_item_id": "3.13.7",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+      "proposed_item_id": "3.13.8",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_array",
+      "proposed_item_id": "3.13.9",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+      "proposed_item_id": "3.13.10",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+      "proposed_item_id": "3.13.11",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.top_tree",
+      "proposed_item_id": "3.13.12",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+      "proposed_item_id": "3.13.13",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.2d_fenwick",
+      "proposed_item_id": "3.13.14",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+      "proposed_item_id": "3.13.15",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.overall_binary_search",
+      "proposed_item_id": "3.13.16",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+      "proposed_item_id": "3.13.17",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+      "proposed_item_id": "3.13.18",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+      "proposed_item_id": "3.13.19",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+      "proposed_item_id": "3.13.20",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+      "proposed_item_id": "3.13.21",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+      "proposed_item_id": "3.13.22",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+      "proposed_item_id": "3.13.23",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.3d_fenwick",
+      "proposed_item_id": "3.13.24",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+      "proposed_item_id": "3.13.25",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+      "proposed_item_id": "3.13.26",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+      "proposed_item_id": "3.13.27",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+      "proposed_item_id": "3.13.28",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+      "proposed_item_id": "3.13.29",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+      "proposed_item_id": "3.13.30",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+      "proposed_item_id": "3.13.31",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+      "proposed_item_id": "3.13.32",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_new",
+      "duplicate_risk": "low"
+    },
+    {
+      "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+      "proposed_item_id": "2.21.36",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+      "proposed_item_id": "2.21.37",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "proposed_item_id": "2.21.38",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "proposed_item_id": "2.21.39",
+      "proposed_section_id": "2.21",
+      "section_name": "高级图论扩展",
+      "create_new_section_preview": false,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.merge",
+      "proposed_item_id": "3.13.33",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.static",
+      "proposed_item_id": "3.13.34",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.range_kth",
+      "proposed_item_id": "3.13.35",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.rollback",
+      "proposed_item_id": "3.13.36",
+      "proposed_section_id": "3.13",
+      "section_name": "高级数据结构扩展",
+      "create_new_section_preview": true,
+      "recommended_action": "add_as_subtopic",
+      "duplicate_risk": "medium"
+    }
+  ],
+  "dependency_mapping": [
+    {
+      "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+      "proposed_item_id": "2.21.4",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.construction",
+      "proposed_item_id": "2.21.5",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.cactus.algorithm_and_properties",
+      "proposed_item_id": "2.21.6",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.chordal_graph.mcs",
+      "proposed_item_id": "2.21.7",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.tournament_graph.hamilton_path",
+      "proposed_item_id": "2.21.8",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.min_arborescence.chu_liu",
+      "proposed_item_id": "2.21.9",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.gomory_hu_tree.construction",
+      "proposed_item_id": "2.21.10",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+      "proposed_item_id": "2.21.11",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.min_mean_cycle.karp",
+      "proposed_item_id": "2.21.12",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.blossom.raw",
+      "proposed_item_id": "2.21.13",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.tutte_matrix.matching",
+      "proposed_item_id": "2.21.14",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.matroid_intersection.basic",
+      "proposed_item_id": "2.21.15",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.bridge_tree.construction",
+      "proposed_item_id": "2.21.16",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.functional_graph.analysis",
+      "proposed_item_id": "2.21.17",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.max_density_subgraph.fractional",
+      "proposed_item_id": "2.21.18",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+      "proposed_item_id": "2.21.19",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.dual_graph.planar",
+      "proposed_item_id": "2.21.20",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+      "proposed_item_id": "2.21.21",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.general_matching_weighted.blossom",
+      "proposed_item_id": "2.21.22",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.steiner_tree.dp",
+      "proposed_item_id": "2.21.23",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+      "proposed_item_id": "2.21.24",
+      "direct_pre_name_suggestion": [
+        "Directed Graph",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Directed Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+      "proposed_item_id": "2.21.25",
+      "direct_pre_name_suggestion": [
+        "Undirected Graph",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Undirected Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+      "proposed_item_id": "2.21.26",
+      "direct_pre_name_suggestion": [
+        "Undirected Graph",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Undirected Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+      "proposed_item_id": "2.21.27",
+      "direct_pre_name_suggestion": [
+        "Disjoint Set Union",
+        "Offline Algorithm"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Disjoint Set Union",
+          "mapped_to": "3.4.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Offline Algorithm",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+      "proposed_item_id": "2.21.28",
+      "direct_pre_name_suggestion": [
+        "Minimum Spanning Tree",
+        "Disjoint Set Union"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Minimum Spanning Tree",
+          "mapped_to": "2.13.10",
+          "source": "anchor"
+        },
+        {
+          "name": "Disjoint Set Union",
+          "mapped_to": "3.4.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.closure_model.project_selection",
+      "proposed_item_id": "2.21.29",
+      "direct_pre_name_suggestion": [
+        "Network Flow",
+        "Minimum Cut"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Network Flow",
+          "mapped_to": "2.16.3",
+          "source": "anchor"
+        },
+        {
+          "name": "Minimum Cut",
+          "mapped_to": "2.16.3",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.chordal_graph",
+      "proposed_item_id": "2.21.30",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+      "proposed_item_id": "2.21.31",
+      "direct_pre_name_suggestion": [
+        "Directed Graph",
+        "Minimum Spanning Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Directed Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Minimum Spanning Tree",
+          "mapped_to": "2.13.10",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.condensation_applications",
+      "proposed_item_id": "2.21.32",
+      "direct_pre_name_suggestion": [
+        "Directed Graph",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Directed Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+      "proposed_item_id": "2.21.33",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "Greedy Algorithm"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Greedy Algorithm",
+          "mapped_to": "2.2.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.dual_graph",
+      "proposed_item_id": "2.21.34",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.semidominator",
+      "proposed_item_id": "2.21.35",
+      "direct_pre_name_suggestion": [
+        "Directed Graph",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Directed Graph",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_count",
+      "proposed_item_id": "3.13.1",
+      "direct_pre_name_suggestion": [
+        "Segment Tree",
+        "Binary Search"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        },
+        {
+          "name": "Binary Search",
+          "mapped_to": "2.5.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+      "proposed_item_id": "3.13.2",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Heavy-Light Decomposition"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Heavy-Light Decomposition",
+          "mapped_to": "2.14.7",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+      "proposed_item_id": "3.13.3",
+      "direct_pre_name_suggestion": [
+        "Sparse Table"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Sparse Table",
+          "mapped_to": "2.14.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.kd_tree",
+      "proposed_item_id": "3.13.4",
+      "direct_pre_name_suggestion": [
+        "Fenwick Tree",
+        "Segment Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Fenwick Tree",
+          "mapped_to": "3.7.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+      "proposed_item_id": "3.13.5",
+      "direct_pre_name_suggestion": [
+        "Bit Operations",
+        "Linear Algebra"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        },
+        {
+          "name": "Linear Algebra",
+          "mapped_to": "4.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+      "proposed_item_id": "3.13.6",
+      "direct_pre_name_suggestion": [
+        "Offline Algorithm",
+        "Divide and Conquer"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Offline Algorithm",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Divide and Conquer",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.rope_editing",
+      "proposed_item_id": "3.13.7",
+      "direct_pre_name_suggestion": [
+        "Balanced Binary Search Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Balanced Binary Search Tree",
+          "mapped_to": "3.6.5",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+      "proposed_item_id": "3.13.8",
+      "direct_pre_name_suggestion": [
+        "Hash Table",
+        "Bit Operations"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Hash Table",
+          "mapped_to": "3.2.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_array",
+      "proposed_item_id": "3.13.9",
+      "direct_pre_name_suggestion": [
+        "Persistent Data Structure"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Persistent Data Structure",
+          "mapped_to": "3.11.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+      "proposed_item_id": "3.13.10",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Dynamic Programming"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Dynamic Programming",
+          "mapped_to": "2.8.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+      "proposed_item_id": "3.13.11",
+      "direct_pre_name_suggestion": [
+        "Segment Tree",
+        "Binary Search"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        },
+        {
+          "name": "Binary Search",
+          "mapped_to": "2.5.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.top_tree",
+      "proposed_item_id": "3.13.12",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Heavy-Light Decomposition"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Heavy-Light Decomposition",
+          "mapped_to": "2.14.7",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+      "proposed_item_id": "3.13.13",
+      "direct_pre_name_suggestion": [
+        "Sparse Table"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Sparse Table",
+          "mapped_to": "2.14.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.2d_fenwick",
+      "proposed_item_id": "3.13.14",
+      "direct_pre_name_suggestion": [
+        "Fenwick Tree",
+        "Segment Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Fenwick Tree",
+          "mapped_to": "3.7.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+      "proposed_item_id": "3.13.15",
+      "direct_pre_name_suggestion": [
+        "Bit Operations",
+        "Linear Algebra"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        },
+        {
+          "name": "Linear Algebra",
+          "mapped_to": "4.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.overall_binary_search",
+      "proposed_item_id": "3.13.16",
+      "direct_pre_name_suggestion": [
+        "Offline Algorithm",
+        "Divide and Conquer"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Offline Algorithm",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Divide and Conquer",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+      "proposed_item_id": "3.13.17",
+      "direct_pre_name_suggestion": [
+        "Balanced Binary Search Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Balanced Binary Search Tree",
+          "mapped_to": "3.6.5",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+      "proposed_item_id": "3.13.18",
+      "direct_pre_name_suggestion": [
+        "Hash Table",
+        "Bit Operations"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Hash Table",
+          "mapped_to": "3.2.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+      "proposed_item_id": "3.13.19",
+      "direct_pre_name_suggestion": [
+        "Persistent Data Structure"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Persistent Data Structure",
+          "mapped_to": "3.11.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+      "proposed_item_id": "3.13.20",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Dynamic Programming"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Dynamic Programming",
+          "mapped_to": "2.8.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+      "proposed_item_id": "3.13.21",
+      "direct_pre_name_suggestion": [
+        "Segment Tree",
+        "Binary Search"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        },
+        {
+          "name": "Binary Search",
+          "mapped_to": "2.5.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+      "proposed_item_id": "3.13.22",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Heavy-Light Decomposition"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Heavy-Light Decomposition",
+          "mapped_to": "2.14.7",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+      "proposed_item_id": "3.13.23",
+      "direct_pre_name_suggestion": [
+        "Sparse Table"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Sparse Table",
+          "mapped_to": "2.14.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.3d_fenwick",
+      "proposed_item_id": "3.13.24",
+      "direct_pre_name_suggestion": [
+        "Fenwick Tree",
+        "Segment Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Fenwick Tree",
+          "mapped_to": "3.7.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+      "proposed_item_id": "3.13.25",
+      "direct_pre_name_suggestion": [
+        "Bit Operations",
+        "Linear Algebra"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        },
+        {
+          "name": "Linear Algebra",
+          "mapped_to": "4.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+      "proposed_item_id": "3.13.26",
+      "direct_pre_name_suggestion": [
+        "Offline Algorithm",
+        "Divide and Conquer"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Offline Algorithm",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Divide and Conquer",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+      "proposed_item_id": "3.13.27",
+      "direct_pre_name_suggestion": [
+        "Balanced Binary Search Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Balanced Binary Search Tree",
+          "mapped_to": "3.6.5",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+      "proposed_item_id": "3.13.28",
+      "direct_pre_name_suggestion": [
+        "Hash Table",
+        "Bit Operations"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Hash Table",
+          "mapped_to": "3.2.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Bit Operations",
+          "mapped_to": "1.4.6",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+      "proposed_item_id": "3.13.29",
+      "direct_pre_name_suggestion": [
+        "Persistent Data Structure"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Persistent Data Structure",
+          "mapped_to": "3.11.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+      "proposed_item_id": "3.13.30",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Dynamic Programming"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Dynamic Programming",
+          "mapped_to": "2.8.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+      "proposed_item_id": "3.13.31",
+      "direct_pre_name_suggestion": [
+        "Segment Tree",
+        "Binary Search"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        },
+        {
+          "name": "Binary Search",
+          "mapped_to": "2.5.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+      "proposed_item_id": "3.13.32",
+      "direct_pre_name_suggestion": [
+        "Tree",
+        "Heavy-Light Decomposition"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Tree",
+          "mapped_to": "2.14.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Heavy-Light Decomposition",
+          "mapped_to": "2.14.7",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+      "proposed_item_id": "2.21.36",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "DFS"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "DFS",
+          "mapped_to": "2.7.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+      "proposed_item_id": "2.21.37",
+      "direct_pre_name_suggestion": [
+        "Network Flow",
+        "Maximum Flow"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Network Flow",
+          "mapped_to": "2.16.3",
+          "source": "anchor"
+        },
+        {
+          "name": "Maximum Flow",
+          "mapped_to": "2.16.3",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "proposed_item_id": "2.21.38",
+      "direct_pre_name_suggestion": [
+        "Matching",
+        "Bipartite Matching"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Matching",
+          "mapped_to": "2.15.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Bipartite Matching",
+          "mapped_to": "2.15.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "proposed_item_id": "2.21.39",
+      "direct_pre_name_suggestion": [
+        "Graph Theory",
+        "Shortest Path"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Graph Theory",
+          "mapped_to": "2.9.1",
+          "source": "anchor"
+        },
+        {
+          "name": "Shortest Path",
+          "mapped_to": "2.13.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.merge",
+      "proposed_item_id": "3.13.33",
+      "direct_pre_name_suggestion": [
+        "Segment Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.static",
+      "proposed_item_id": "3.13.34",
+      "direct_pre_name_suggestion": [
+        "Convex Hull Trick",
+        "Segment Tree"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Convex Hull Trick",
+          "mapped_to": "2.8.109",
+          "source": "anchor"
+        },
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.range_kth",
+      "proposed_item_id": "3.13.35",
+      "direct_pre_name_suggestion": [
+        "Segment Tree",
+        "Divide and Conquer"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Segment Tree",
+          "mapped_to": "3.7.2",
+          "source": "anchor"
+        },
+        {
+          "name": "Divide and Conquer",
+          "mapped_to": "2.3.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.rollback",
+      "proposed_item_id": "3.13.36",
+      "direct_pre_name_suggestion": [
+        "Disjoint Set Union"
+      ],
+      "mapped_dependencies": [
+        {
+          "name": "Disjoint Set Union",
+          "mapped_to": "3.4.1",
+          "source": "anchor"
+        }
+      ],
+      "unresolved_dependencies": []
+    }
+  ],
+  "unresolved_dependencies": [],
+  "cycle_check_result": {
+    "has_cycle": false,
+    "note": "Only checks proposed direct_pre among selected stage3a candidates; existing graph was already validated separately."
+  },
+  "duplicate_check_result": {
+    "proposed_id_duplicates": [],
+    "selected_duplicate_risk": {
+      "low": 64,
+      "medium": 8
+    }
+  },
+  "ready_to_merge": true,
+  "main_graph_modified": false
+}

@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Problem Patterns Sync Triage",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T18:00:00.000Z",
+    "batch_id": "stage3f_batch2",
+    "task": "problem_pattern_sync_triage",
+    "version": "1.0",
+    "description": "对 Stage3F Batch2 中标记为 move_to_problem_patterns 的候选进行分级判断，确定是否进入 future patterns batch",
+    "input_files": [
+      "data/stage3f_batch2_problem_pattern_sync_candidates.json",
+      "data/stage3f_batch2_added_items_review.json",
+      "docs/stage3f_batch2_added_items_review_report.md",
+      "data/patterns_v0_1_ready.json",
+      "data/patterns_batch2.json",
+      "data/patterns_dominance_counting_boundary_review.json",
+      "data/patterns_order_statistics_suite_plan.json",
+      "merged_knowledge_graph_item_dependencies_refined.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "triage_summary": {
+    "total_candidates": 1,
+    "create_new_draft_later": 1,
+    "merge_with_existing": 0,
+    "defer": 0,
+    "manual_review": 0,
+    "recommended_for_batch3": true,
+    "recommended_pattern_id": "pat.mobius_inversion_applications",
+    "note": "与已规划 pat.dominance_counting 无冲突，可在同一批次中生成"
+  },
+  "candidates": [
+    {
+      "item_id": "4.9.5",
+      "name": "莫比乌斯反演应用",
+      "en_name": "Mobius Inversion Applications",
+      "series": "狄利克雷卷积/莫比乌斯反演",
+      "knowledge_item_type": "modeling_pattern",
+      "review_priority": "C",
+      "suggested_pattern_id": "pat.mobius_inversion_applications",
+      "priority": "P1",
+      "decision": "create_new_draft_later",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": true,
+      "reason": "莫比乌斯反演应用有明确的题型识别信号（gcd/lcm 计数、因子倍数关系统计、数论容斥转化为莫比乌斯函数求和），与 ready pattern pat.inclusion_exclusion_counting 是特例 vs 通用的关系，不冲突。Item type 已在 added_items_review 中被标记为 modeling_pattern + move_to_problem_patterns，且无 duplicate issue。建议 P1 进入 draft 阶段。",
+      "recognition_signals_assessment": [
+        "gcd(a,b)=k 或 lcm(a,b)=k 计数问题",
+        "统计满足互质条件的数对/数组个数",
+        "倍数的容斥统计可转化为莫比乌斯函数求和",
+        "数论函数卷积后求前缀和的题目",
+        "需多次使用数论分块（整除分块）加速"
+      ],
+      "required_items_assessment": [
+        "4.9.2 (莫比乌斯反演)",
+        "4.9.4 (狄利克雷卷积基础)",
+        "4.1.2 (数论分块/整除分块)",
+        "4.3.

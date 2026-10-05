@@ -1,0 +1,49 @@
+# Stage 3E Aggressive Batch 1 Merge Report
+
+- Backup success: True
+- Backup file: `C:\Users\renfenggo\Documents\trae_projects\suanfatong\backups\merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch1.json`
+- Before item_count: 1482
+- After item_count: 1512
+- Actual added item count: 30
+- Added to 2.21: 30
+- Added to 3.13: 0
+- Created new section: false
+- batch_1 green count: 30
+- batch_1 yellow/red count: 0
+- Dangling refs count: 0
+- direct_pre cycle: None
+- resolved_pre mismatch count: 0
+- validation passed: True
+- Rollback plan generated: true
+
+## Manual Review Needed
+- `2.21.70` Maximum Closure: Binary Decision Model (B)
+- `2.21.71` Maximum Closure: Maximum Weight Closure (B)
+- `2.21.72` Maximum Closure: Minimum Cut Transform (A)
+- `2.21.73` Maximum Closure: Open Pit Mining Model (B)
+- `2.21.74` Maximum Closure: Prerequisite Graph (B)
+- `2.21.75` Maximum Closure: Task Selection (A)
+- `2.21.76` Directed MST: Branching Theorem (B)
+- `2.21.77` Directed MST: Maximum Arborescence (A)
+- `2.21.78` Directed MST: Minimum Arborescence (B)
+- `2.21.79` Directed MST: Rooted Arborescence (B)
+- `2.21.80` Directed MST: Super Root Model (A)
+- `2.21.81` Directed MST: Weighted Directed Mst (B)
+- `2.21.82` Dominator Tree: Bridge Relation (B)
+- `2.21.83` Dominator Tree: Dag Dominator (B)
+- `2.21.84` Dominator Tree: Dominance Frontier (B)
+- `2.21.85` Dominator Tree: Dominator Tree Dp (A)
+- `2.21.86` Dominator Tree: Online Query (A)
+- `2.21.87` Dominator Tree: Path Dominator Query (B)
+- `2.21.88` Dynamic MST: Batch Recomputation (B)
+- `2.21.89` Dynamic MST: Certificate Graph (B)
+- `2.21.90` Dynamic MST: Divide Conquer Approach (A)
+- `2.21.91` Dynamic MST: Edge Deletion (B)
+- `2.21.92` Dynamic MST: Edge Insertion (A)
+- `2.21.93` Dynamic MST: Sensitivity Analysis (B)
+- `2.21.94` Global Min-Cut: Cut Tree Query (A)
+- `2.21.95` Global Min-Cut: Pair Min Cut (B)
+- `2.21.96` Global Min-Cut: Random Contraction (A)
+- `2.21.97` Global Min-Cut: Recursive Contraction (B)
+- `2.21.98` Global Min-Cut: Sparsification (B)
+- `2.21.99` Global Min-Cut: Undirected Min Cut (B)

@@ -1,0 +1,1525 @@
+{
+  "meta": {
+    "title": "Stage3E 1482→1602 P0 行动清单",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-22T23:30:00.000Z",
+    "p0_total": 68,
+    "main_graph_modified": false
+  },
+  "summary": {
+    "p0_total": 68,
+    "parent_concept_weak_missing": 68,
+    "needs_expert_review": 39,
+    "dual_risk_high_priority": 39,
+    "by_series": {
+      "上下界网络流（Flow with Lower Bounds）": 8,
+      "全局最小割（Global Min-Cut）": 6,
+      "其他": 2,
+      "动态最小生成树（Dynamic MST）": 6,
+      "匹配与覆盖": 7,
+      "可持久化结构（Persistent DS）": 4,
+      "图论建模": 6,
+      "平面图（Planar Graph）": 6,
+      "序列维护结构": 5,
+      "有向生成树（Directed MST）": 6,
+      "特殊图（Special Graph）": 5,
+      "高级 RMQ 变体": 5,
+      "高级并查集": 2
+    }
+  },
+  "p0_items": [
+    {
+      "item_id": "2.21.76",
+      "name": "有向生成树：Branching Theorem",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.77",
+      "name": "有向生成树：Maximum Arborescence",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.78",
+      "name": "有向生成树：Minimum Arborescence",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.79",
+      "name": "有向生成树：Rooted Arborescence",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.80",
+      "name": "有向生成树：Super Root Model",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.81",
+      "name": "有向生成树：Weighted Directed Mst",
+      "batch": "batch1",
+      "series": "有向生成树（Directed MST）",
+      "series_id": "directed_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "C",
+      "reason": "有向生成树相关概念或变体"
+    },
+    {
+      "item_id": "2.21.88",
+      "name": "动态最小生成树：Batch Recomputation",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.89",
+      "name": "动态最小生成树：Certificate Graph",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.90",
+      "name": "动态最小生成树：Divide Conquer Approach",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.91",
+      "name": "动态最小生成树：Edge Deletion",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.92",
+      "name": "动态最小生成树：Edge Insertion",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.93",
+      "name": "动态最小生成树：Sensitivity Analysis",
+      "batch": "batch1",
+      "series": "动态最小生成树（Dynamic MST）",
+      "series_id": "dynamic_mst",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.6.4"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "动态MST维护算法变体"
+    },
+    {
+      "item_id": "2.21.94",
+      "name": "全局最小割：Cut Tree Query",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Gomory-Hu割树核心概念"
+    },
+    {
+      "item_id": "2.21.95",
+      "name": "全局最小割：Pair Min Cut",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "全局最小割相关变体"
+    },
+    {
+      "item_id": "2.21.96",
+      "name": "全局最小割：Random Contraction",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "全局最小割相关变体"
+    },
+    {
+      "item_id": "2.21.97",
+      "name": "全局最小割：Recursive Contraction",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "全局最小割相关变体"
+    },
+    {
+      "item_id": "2.21.98",
+      "name": "全局最小割：Sparsification",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "全局最小割相关变体"
+    },
+    {
+      "item_id": "2.21.99",
+      "name": "全局最小割：Undirected Min Cut",
+      "batch": "batch1",
+      "series": "全局最小割（Global Min-Cut）",
+      "series_id": "global_min_cut",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "全局最小割相关变体"
+    },
+    {
+      "item_id": "2.21.106",
+      "name": "平面图：Dual Shortest Path",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "平面图相关算法"
+    },
+    {
+      "item_id": "2.21.107",
+      "name": "平面图：Face Traversal",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "平面图相关算法"
+    },
+    {
+      "item_id": "2.21.108",
+      "name": "平面图：Outerplanar Graph",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "外平面图性质"
+    },
+    {
+      "item_id": "2.21.109",
+      "name": "平面图：Planar Min Cut",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "平面图相关算法"
+    },
+    {
+      "item_id": "2.21.110",
+      "name": "平面图：Planar Separator",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "平面图相关算法"
+    },
+    {
+      "item_id": "2.21.111",
+      "name": "强连通分量 DAG：Implication Graph",
+      "batch": "batch2",
+      "series": "其他",
+      "series_id": "other",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "特殊图类型知识点"
+    },
+    {
+      "item_id": "2.21.112",
+      "name": "特殊图：Bipartite Complement",
+      "batch": "batch2",
+      "series": "特殊图（Special Graph）",
+      "series_id": "special_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "特殊图类型知识点"
+    },
+    {
+      "item_id": "2.21.113",
+      "name": "特殊图：Condensation Dag",
+      "batch": "batch2",
+      "series": "特殊图（Special Graph）",
+      "series_id": "special_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "特殊图类型知识点"
+    },
+    {
+      "item_id": "2.21.114",
+      "name": "特殊图：Functional Graph",
+      "batch": "batch2",
+      "series": "特殊图（Special Graph）",
+      "series_id": "special_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "特殊图类型知识点"
+    },
+    {
+      "item_id": "2.21.115",
+      "name": "特殊图：Interval Graph",
+      "batch": "batch2",
+      "series": "特殊图（Special Graph）",
+      "series_id": "special_graph",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "特殊图类型知识点"
+    },
+    {
+      "item_id": "2.21.116",
+      "name": "特殊图：Planar Dual Graph",
+      "batch": "batch2",
+      "series": "平面图（Planar Graph）",
+      "series_id": "planar_graph",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21",
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "平面图对偶图概念"
+    },
+    {
+      "item_id": "2.21.117",
+      "name": "特殊图：Tournament Graph",
+      "batch": "batch2",
+      "series": "特殊图（Special Graph）",
+      "series_id": "special_graph",
+      "issue_type": [
+        "parent_concept_missing",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "2.21",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "add_parent_concept",
+      "quality_grade": "D",
+      "reason": "无法自动分类，需人工审核"
+    },
+    {
+      "item_id": "3.13.107",
+      "name": "可持久化结构：Fat Node Method",
+      "batch": "batch3",
+      "series": "可持久化结构（Persistent DS）",
+      "series_id": "persistent_ds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.13.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Fat Node可持久化实现方法"
+    },
+    {
+      "item_id": "3.13.108",
+      "name": "可持久化结构：Path Copying Method",
+      "batch": "batch3",
+      "series": "可持久化结构（Persistent DS）",
+      "series_id": "persistent_ds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.13.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Path Copying可持久化实现方法"
+    },
+    {
+      "item_id": "3.13.109",
+      "name": "可持久化结构：Rollback Vs Persistence",
+      "batch": "batch3",
+      "series": "可持久化结构（Persistent DS）",
+      "series_id": "persistent_ds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.13.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "回滚vs持久化建模判断，高频识别信号"
+    },
+    {
+      "item_id": "3.13.110",
+      "name": "可持久化结构：Version Dag",
+      "batch": "batch3",
+      "series": "可持久化结构（Persistent DS）",
+      "series_id": "persistent_ds",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.13.9"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "Version DAG可持久化变体"
+    },
+    {
+      "item_id": "3.13.111",
+      "name": "高级 RMQ：Cache Friendly Rmq",
+      "batch": "batch3",
+      "series": "高级 RMQ 变体",
+      "series_id": "rmq_variants",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.8.1"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "Cache友好的RMQ优化"
+    },
+    {
+      "item_id": "3.13.112",
+      "name": "高级 RMQ：Plus Minus One Rmq",
+      "batch": "batch3",
+      "series": "高级 RMQ 变体",
+      "series_id": "rmq_variants",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.8.1"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "±1 RMQ约束下优化"
+    },
+    {
+      "item_id": "3.13.113",
+      "name": "高级 RMQ：Range Idempotent Query",
+      "batch": "batch3",
+      "series": "高级 RMQ 变体",
+      "series_id": "rmq_variants",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.8.1"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "幂等查询高级RMQ"
+    },
+    {
+      "item_id": "3.13.114",
+      "name": "高级 RMQ：Sparse Table 2D",
+      "batch": "batch3",
+      "series": "高级 RMQ 变体",
+      "series_id": "rmq_variants",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.8.1"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "二维Sparse Table"
+    },
+    {
+      "item_id": "3.13.115",
+      "name": "高级 RMQ：Static Range Mode",
+      "batch": "batch3",
+      "series": "高级 RMQ 变体",
+      "series_id": "rmq_variants",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.8.1"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "静态区间众数查询"
+    },
+    {
+      "item_id": "3.13.116",
+      "name": "序列维护结构：Order Maintenance",
+      "batch": "batch3",
+      "series": "序列维护结构",
+      "series_id": "sequence_structure",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.10"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Order Maintenance序列维护核心"
+    },
+    {
+      "item_id": "3.13.117",
+      "name": "序列维护结构：Persistent Sequence",
+      "batch": "batch3",
+      "series": "序列维护结构",
+      "series_id": "sequence_structure",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.10"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "可持久化序列维护"
+    },
+    {
+      "item_id": "3.13.118",
+      "name": "序列维护结构：Range Hash Maintenance",
+      "batch": "batch3",
+      "series": "序列维护结构",
+      "series_id": "sequence_structure",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.10"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "区间哈希维护"
+    },
+    {
+      "item_id": "3.13.119",
+      "name": "序列维护结构：Sequence Split Merge",
+      "batch": "batch3",
+      "series": "序列维护结构",
+      "series_id": "sequence_structure",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.10"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "序列拆分合并操作"
+    },
+    {
+      "item_id": "3.13.120",
+      "name": "序列维护结构：Text Editor Model",
+      "batch": "batch3",
+      "series": "序列维护结构",
+      "series_id": "sequence_structure",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "3.10"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "文本编辑器模型实现"
+    },
+    {
+      "item_id": "2.21.124",
+      "name": "上下界网络流：Bounded Bipartite Matching",
+      "batch": "batch3",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "带界二分图匹配应用"
+    },
+    {
+      "item_id": "2.21.125",
+      "name": "上下界网络流：Demands",
+      "batch": "batch3",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "上下界网络流核心概念：节点需求"
+    },
+    {
+      "item_id": "2.21.126",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "batch": "batch3",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "上下界网络流变体"
+    },
+    {
+      "item_id": "2.21.127",
+      "name": "上下界网络流：Maximum Flow",
+      "batch": "batch3",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "上下界最大流核心"
+    },
+    {
+      "item_id": "2.21.128",
+      "name": "上下界网络流：Min Cost Circulation",
+      "batch": "batch3",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "最小费用循环流核心"
+    },
+    {
+      "item_id": "2.21.129",
+      "name": "上下界网络流：Minimum Flow",
+      "batch": "batch4",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "上下界最小流核心"
+    },
+    {
+      "item_id": "2.21.130",
+      "name": "上下界网络流：Node Demand",
+      "batch": "batch4",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "上下界网络流核心概念：节点需求"
+    },
+    {
+      "item_id": "2.21.131",
+      "name": "上下界网络流：Project Selection",
+      "batch": "batch4",
+      "series": "上下界网络流（Flow with Lower Bounds）",
+      "series_id": "flow_bounds",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.16.3"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "上下界网络流经典应用"
+    },
+    {
+      "item_id": "2.21.132",
+      "name": "图论建模：K Shortest Paths",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "K短路建模模式"
+    },
+    {
+      "item_id": "2.21.133",
+      "name": "图论建模：Layered Graph",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "分层图建模，经典建模模式"
+    },
+    {
+      "item_id": "2.21.134",
+      "name": "图论建模：Minimum Mean Cycle",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "最小平均环建模模式"
+    },
+    {
+      "item_id": "2.21.135",
+      "name": "图论建模：Shortest Path Potentials",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "最短路径势能理论"
+    },
+    {
+      "item_id": "2.21.136",
+      "name": "图论建模：State Graph",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "状态图建模模式"
+    },
+    {
+      "item_id": "2.21.137",
+      "name": "图论建模：Steiner Tree",
+      "batch": "batch4",
+      "series": "图论建模",
+      "series_id": "graph_modeling",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Steiner树建模，高频竞赛模式"
+    },
+    {
+      "item_id": "2.21.138",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Dilworth定理，图论核心结论"
+    },
+    {
+      "item_id": "2.21.139",
+      "name": "匹配与覆盖：Hall Theorem",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Hall定理，图论核心结论"
+    },
+    {
+      "item_id": "2.21.140",
+      "name": "匹配与覆盖：Konig Theorem",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "Konig定理，二分图核心结论"
+    },
+    {
+      "item_id": "2.21.142",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "最小路径覆盖建模模式"
+    },
+    {
+      "item_id": "2.21.143",
+      "name": "匹配与覆盖：Stable Marriage",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "稳定婚姻是核心匹配算法"
+    },
+    {
+      "item_id": "2.21.144",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "Tutte矩阵匹配判定"
+    },
+    {
+      "item_id": "2.21.145",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "batch": "batch4",
+      "series": "匹配与覆盖",
+      "series_id": "matching_cover",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.21"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "带权一般图匹配核心"
+    },
+    {
+      "item_id": "2.21.146",
+      "name": "高级最短路：Time Expanded Graph",
+      "batch": "batch4",
+      "series": "其他",
+      "series_id": "other",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "2.9"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "时间展开图是高级最短路建模模式"
+    },
+    {
+      "item_id": "3.13.141",
+      "name": "高级并查集：Dsu On Tree",
+      "batch": "batch4",
+      "series": "高级并查集",
+      "series_id": "advanced_dsu",
+      "issue_type": [
+        "parent_concept_weak"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "1.7.2"
+      ],
+      "risk_level": "medium",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "A",
+      "reason": "树上DSU是高级并查集核心变体"
+    },
+    {
+      "item_id": "3.13.142",
+      "name": "高级并查集：可持久化版",
+      "batch": "batch4",
+      "series": "高级并查集",
+      "series_id": "advanced_dsu",
+      "issue_type": [
+        "parent_concept_weak",
+        "needs_expert_review"
+      ],
+      "current_parent_concept": "",
+      "suggested_parent_concept_candidates": [
+        "1.7.2"
+      ],
+      "risk_level": "high",
+      "suggested_next_action": "review_before_batch5",
+      "quality_grade": "B",
+      "reason": "可持久化并查集高级变体"
+    }
+  ],
+  "top_20_priority": [
+    "2.21.117",
+    "2.21.76",
+    "2.21.77",
+    "2.21.78",
+    "2.21.79",
+    "2.21.80",
+    "2.21.81",
+    "2.21.88",
+    "2.21.89",
+    "2.21.90",
+    "2.21.91",
+    "2.21.92",
+    "2.21.93",
+    "2.21.95",
+    "2.21.96",
+    "2.21.97",
+    "2.21.98",
+    "2.21.99",
+    "2.21.106",
+    "2.21.107"
+  ],
+  "series_grouping": {
+    "上下界网络流（Flow with Lower Bounds）": {
+      "count": 8,
+      "parent_weak_count": 8,
+      "expert_review_count": 1,
+      "dual_risk_count": 1,
+      "items": [
+        "2.21.124",
+        "2.21.125",
+        "2.21.126",
+        "2.21.127",
+        "2.21.128",
+        "2.21.129",
+        "2.21.130",
+        "2.21.131"
+      ]
+    },
+    "全局最小割（Global Min-Cut）": {
+      "count": 6,
+      "parent_weak_count": 6,
+      "expert_review_count": 5,
+      "dual_risk_count": 5,
+      "items": [
+        "2.21.94",
+        "2.21.95",
+        "2.21.96",
+        "2.21.97",
+        "2.21.98",
+        "2.21.99"
+      ]
+    },
+    "其他": {
+      "count": 2,
+      "parent_weak_count": 2,
+      "expert_review_count": 1,
+      "dual_risk_count": 1,
+      "items": [
+        "2.21.111",
+        "2.21.146"
+      ]
+    },
+    "动态最小生成树（Dynamic MST）": {
+      "count": 6,
+      "parent_weak_count": 6,
+      "expert_review_count": 6,
+      "dual_risk_count": 6,
+      "items": [
+        "2.21.88",
+        "2.21.89",
+        "2.21.90",
+        "2.21.91",
+        "2.21.92",
+        "2.21.93"
+      ]
+    },
+    "匹配与覆盖": {
+      "count": 7,
+      "parent_weak_count": 7,
+      "expert_review_count": 0,
+      "dual_risk_count": 0,
+      "items": [
+        "2.21.138",
+        "2.21.139",
+        "2.21.140",
+        "2.21.142",
+        "2.21.143",
+        "2.21.144",
+        "2.21.145"
+      ]
+    },
+    "可持久化结构（Persistent DS）": {
+      "count": 4,
+      "parent_weak_count": 4,
+      "expert_review_count": 1,
+      "dual_risk_count": 1,
+      "items": [
+        "3.13.107",
+        "3.13.108",
+        "3.13.109",
+        "3.13.110"
+      ]
+    },
+    "图论建模": {
+      "count": 6,
+      "parent_weak_count": 6,
+      "expert_review_count": 0,
+      "dual_risk_count": 0,
+      "items": [
+        "2.21.132",
+        "2.21.133",
+        "2.21.134",
+        "2.21.135",
+        "2.21.136",
+        "2.21.137"
+      ]
+    },
+    "平面图（Planar Graph）": {
+      "count": 6,
+      "parent_weak_count": 6,
+      "expert_review_count": 5,
+      "dual_risk_count": 5,
+      "items": [
+        "2.21.106",
+        "2.21.107",
+        "2.21.108",
+        "2.21.109",
+        "2.21.110",
+        "2.21.116"
+      ]
+    },
+    "序列维护结构": {
+      "count": 5,
+      "parent_weak_count": 5,
+      "expert_review_count": 4,
+      "dual_risk_count": 4,
+      "items": [
+        "3.13.116",
+        "3.13.117",
+        "3.13.118",
+        "3.13.119",
+        "3.13.120"
+      ]
+    },
+    "有向生成树（Directed MST）": {
+      "count": 6,
+      "parent_weak_count": 6,
+      "expert_review_count": 6,
+      "dual_risk_count": 6,
+      "items": [
+        "2.21.76",
+        "2.21.77",
+        "2.21.78",
+        "2.21.79",
+        "2.21.80",
+        "2.21.81"
+      ]
+    },
+    "特殊图（Special Graph）": {
+      "count": 5,
+      "parent_weak_count": 5,
+      "expert_review_count": 5,
+      "dual_risk_count": 5,
+      "items": [
+        "2.21.112",
+        "2.21.113",
+        "2.21.114",
+        "2.21.115",
+        "2.21.117"
+      ]
+    },
+    "高级 RMQ 变体": {
+      "count": 5,
+      "parent_weak_count": 5,
+      "expert_review_count": 4,
+      "dual_risk_count": 4,
+      "items": [
+        "3.13.111",
+        "3.13.112",
+        "3.13.113",
+        "3.13.114",
+        "3.13.115"
+      ]
+    },
+    "高级并查集": {
+      "count": 2,
+      "parent_weak_count": 2,
+      "expert_review_count": 1,
+      "dual_risk_count": 1,
+      "items": [
+        "3.13.141",
+        "3.13.142"
+      ]
+    }
+  },
+  "batch5_recommendation": {
+    "fix_parent_before_batch5": true,
+    "batch5_mode": "smaller_15",
+    "reason": "共 68 个P0节点需先处理，其中 39 个高风险、68 个父概念弱/缺失、39 个需专家审查"
+  }
+}

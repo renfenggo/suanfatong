@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "I18n Term",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "term_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "pattern_id": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "knowledge_item",
+        "problem_pattern",
+        "ui_term"
+      ]
+    },
+    "translations": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "term_id",
+    "type",
+    "translations"
+  ]
+}

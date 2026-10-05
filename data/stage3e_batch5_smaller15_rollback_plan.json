@@ -1,0 +1,59 @@
+{
+  "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch5_smaller15.json",
+  "backup_timestamp": "2026-05-25 10:21:44",
+  "merge_batch_id": "stage3e_batch5_smaller15",
+  "original_item_count": 1602,
+  "new_item_count": 1617,
+  "item_count_after_merge": 1617,
+  "added_items_count": 15,
+  "added_item_ids": [
+    "3.13.143",
+    "3.13.144",
+    "3.13.145",
+    "3.13.146",
+    "3.13.147",
+    "3.13.148",
+    "3.13.149",
+    "3.13.150",
+    "3.13.151",
+    "3.13.152",
+    "3.13.153",
+    "3.13.154",
+    "3.13.155",
+    "3.13.156",
+    "3.13.157"
+  ],
+  "added_candidate_ids": [
+    "cand.ds.dsu_advanced.undo_stack",
+    "cand.ds.heap_mergeable.binomial_heap",
+    "cand.ds.heap_mergeable.fibonacci_heap",
+    "cand.ds.heap_mergeable.leftist_heap",
+    "cand.ds.heap_mergeable.pairing_heap",
+    "cand.ds.heap_mergeable.skew_heap",
+    "cand.ds.li_chao_tree.coordinate_compressed",
+    "cand.ds.li_chao_tree.dynamic",
+    "cand.ds.li_chao_tree.persistent",
+    "cand.ds.li_chao_tree.segment_insertion",
+    "cand.ds.segment_tree_beats.historical_maximum",
+    "cand.ds.segment_tree_beats.range_add_max",
+    "cand.ds.segment_tree_beats.range_chmin.codex1",
+    "cand.ds.segment_tree_variants.dynamic_segment_tree",
+    "cand.ds.segment_tree_variants.gcd_segment_tree"
+  ],
+  "section_id": "3.13",
+  "rollback_command": "Copy-Item backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch5_smaller15.json merged_knowledge_graph_item_dependencies_refined.json",
+  "validation_passed": true,
+  "validation_status": {
+    "item_count": 1617,
+    "expected_item_count": 1617,
+    "section_count": 65,
+    "passed": true,
+    "dangling_refs_count": 0,
+    "resolved_pre_mismatches_count": 0
+  },
+  "notes": [
+    "恢复到合并前的图谱状态",
+    "不修改任何旧节点 resolved_pre",
+    "不继续 Batch6"
+  ]
+}

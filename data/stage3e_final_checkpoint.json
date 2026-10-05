@@ -1,0 +1,136 @@
+{
+  "checkpoint_info": {
+    "name": "Stage3E Final Checkpoint",
+    "version": "1.0.0",
+    "generated_at": "2026-05-25T12:20:04.000Z",
+    "generated_by": "1号线程 / GLM5",
+    "main_graph_modified": false,
+    "stage3e_status": "formal_completed",
+    "stage3e_iterations": [
+      "Batch1",
+      "Batch2",
+      "Batch3",
+      "Batch4",
+      "Batch5_smaller15",
+      "Batch6_fallback24"
+    ],
+    "baseline_item_count": 1482,
+    "final_item_count": 1641,
+    "total_added": 159,
+    "report_consistency_fix_applied": true,
+    "recommendation": {
+      "continue_batch7": false,
+      "proceed_to_stage3f": true,
+      "dominance_counting_deferred_to_stage3f": true
+    }
+  },
+  "validation_status": {
+    "validation_source": "refine_item_dependencies.py --validate-only --strict (after report consistency fix)",
+    "item_count": 1641,
+    "expected_item_count": 1641,
+    "section_count": 65,
+    "expected_section_count": 65,
+    "dangling_refs": 0,
+    "direct_pre_cycle": null,
+    "resolved_pre_mismatches": 0,
+    "product_metadata_validation_passed": true,
+    "report_matches_json": true,
+    "passed": true
+  },
+  "stage3e_batch_summary": {
+    "baseline_item_count": 1482,
+    "total_added": 159,
+    "final_item_count": 1641,
+    "batches": [
+      {
+        "batch": "Batch1",
+        "added": 30,
+        "sections": [
+          "2.21"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      },
+      {
+        "batch": "Batch2",
+        "added": 30,
+        "sections": [
+          "3.13",
+          "2.21"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      },
+      {
+        "batch": "Batch3",
+        "added": 30,
+        "sections": [
+          "3.13",
+          "2.21"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      },
+      {
+        "batch": "Batch4",
+        "added": 30,
+        "sections": [
+          "3.13",
+          "2.21"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      },
+      {
+        "batch": "Batch5_smaller15",
+        "added": 15,
+        "sections": [
+          "3.13"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      },
+      {
+        "batch": "Batch6_fallback24",
+        "added": 24,
+        "sections": [
+          "3.13"
+        ],
+        "merge": true,
+        "review": true,
+        "fix_lite": true
+      }
+    ],
+    "all_merge_completed": true,
+    "all_review_completed": true,
+    "all_fix_lite_completed": true
+  },
+  "batch7_precheck_summary": {
+    "precheck_file": "data/thread2_stage3e_batch7_full30_dynamic_precheck.json",
+    "precheck_report": "docs/thread2_stage3e_batch7_full30_precheck_report.md",
+    "total_candidates_after_dedup": 96,
+    "safe_candidates": 1,
+    "selected_candidates": [
+      "cand.ds.multidimensional.dominance_counting"
+    ],
+    "excluded_already_merged": 0,
+    "excluded_name_duplicate_or_high_risk": 95,
+    "assessment": "候选池基本耗尽。96个可用候选经严格名称匹配检查后，95个因名称与已合并item重复被排除。唯一安全候选 dominance_counting 暂不单独合并。",
+    "dominance_counting_deferral": "唯一剩余候选，单独合并边际收益低，建议带入 Stage3F 作为 reserve 候选。"
+  },
+  "stage3e_conclusion": {
+    "stage3e_formally_completed": true,
+    "item_count_growth": "1482 -> 1641",
+    "section_count_unchanged": true,
+    "total_items_added": 159,
+    "all_backups_available": true,
+    "no_pending_work": true,
+    "recommendation_continue_batch7": false,
+    "recommendation_proceed_to_stage3f": true
+  }
+}

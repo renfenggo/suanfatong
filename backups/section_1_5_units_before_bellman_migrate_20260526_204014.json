@@ -1,0 +1,479 @@
+{
+  "sectionId": "1.5",
+  "sectionName": "控制结构",
+  "units": [
+    {
+      "itemId": "1.5.1",
+      "title": "if",
+      "learningGoal": "理解 if 语句的基本用法，学会用条件判断控制程序执行",
+      "explanation": "if 语句用于条件判断，当条件为真时执行后面的代码块。\n\nif 语句的基本格式：if (条件) { 语句 }。条件必须用圆括号括起来，代码块用大括号括起来。\n\n条件可以是任何表达式，最终会被判断为真或假。在 C++ 中，非 0 的值表示真，0 表示假。\n\n如果代码块只有一条语句，可以省略大括号。但不建议这样做，因为容易出错，影响代码可读性。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 15;\n    if (age >= 18) {\n        cout << \"你已经成年了\" << endl;\n    }\n    if (age < 18) {\n        cout << \"你还未成年\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "if 后面的条件必须用圆括号括起来",
+        "条件为真时执行花括号内的代码",
+        "在 C++ 中，非 0 为真，0 为假",
+        "即使只有一条语句，也建议使用花括号"
+      ],
+      "commonMistakes": [
+        {
+          "title": "条件忘加括号",
+          "description": "if age >= 18 { } ← 条件没有用括号括起来。",
+          "fix": "必须写成 if (age >= 18) { }。"
+        },
+        {
+          "title": "赋值号当等号",
+          "description": "if (a = 5) { } ← 这是赋值，不是判断相等。",
+          "fix": "判断相等要用两个等号：if (a == 5) { }。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个程序，声明变量 score = 85，如果 score 大于等于 60，输出「及格」。",
+        "hint": "if (score >= 60) { cout << \"及格\" << endl; }",
+        "expectedIdea": "int score = 85;\nif (score >= 60) {\n    cout << \"及格\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "if (5) { } 这个条件判断的结果是什么？",
+          "options": [
+            "条件为假，不执行代码块",
+            "条件为真，执行代码块",
+            "编译错误",
+            "运行时错误"
+          ],
+          "answerIndex": 1,
+          "explanation": "在 C++ 中，非 0 的值（包括 5）都表示真，所以条件为真，会执行代码块。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.2",
+      "title": "if-else",
+      "learningGoal": "掌握 if-else 语句，学会在两种情况之间做选择",
+      "explanation": "if-else 语句提供了二选一的结构：如果条件为真就执行 if 后的代码块，否则执行 else 后的代码块。\n\n基本格式：if (条件) { 代码块1 } else { 代码块2 }。else 不能单独使用，必须和 if 配对。\n\nif-else 保证程序一定会执行其中一个分支，不可能两个都执行，也不可能两个都不执行。\n\nelse 后面可以跟 if，形成链式判断，但要确保逻辑清晰。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 75;\n    if (score >= 60) {\n        cout << \"及格\" << endl;\n    } else {\n        cout << \"不及格\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "else 不能单独使用，必须和 if 配对",
+        "if 和 else 必定执行其中一个",
+        "else 后面也用大括号括住代码块",
+        "良好的缩进能让结构更清晰"
+      ],
+      "commonMistakes": [
+        {
+          "title": "else 后面加条件",
+          "description": "if (a > 0) { } else (a < 0) { } ← else 不能加条件。",
+          "fix": "else 后面不写条件，用 else if 处理第二个条件。"
+        },
+        {
+          "title": "多写了分号",
+          "description": "if (a > 0); { } ← if 后面多了分号，导致代码块无论如何都会执行。",
+          "fix": "去掉分号，让 if 直接跟花括号。"
+        }
+      ],
+      "practice": {
+        "prompt": "判断一个数是奇数还是偶数，输出「奇数」或「偶数」。",
+        "hint": "用 n % 2 判断，余数为 0 是偶数",
+        "expectedIdea": "int n = 7;\nif (n % 2 == 0) {\n    cout << \"偶数\" << endl;\n} else {\n    cout << \"奇数\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "if-else 语句中，两个代码块会怎样执行？",
+          "options": [
+            "两个都会执行",
+            "两个都不会执行",
+            "一定执行其中一个",
+            "根据情况可能都执行，也可能都不执行"
+          ],
+          "answerIndex": 2,
+          "explanation": "if-else 保证一定执行其中一个分支：条件为真执行 if 块，条件为假执行 else 块。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.3",
+      "title": "else if",
+      "learningGoal": "学会使用 else if 处理多条件判断",
+      "explanation": "else if 用于处理多个条件的判断，可以形成多分支结构。\n\n基本格式：if (条件1) { } else if (条件2) { } else { }。从上到下依次判断，一旦某个条件为真就执行对应的代码块，然后跳过后面的判断。\n\n可以有任意数量的 else if，也可以没有 else。但 else 最多只能有一个，放在最后。\n\n条件的判断顺序很重要。更严格或更特殊的条件应该放在前面，否则可能永远无法执行到。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 85;\n    if (score >= 90) {\n        cout << \"优秀\" << endl;\n    } else if (score >= 80) {\n        cout << \"良好\" << endl;\n    } else if (score >= 60) {\n        cout << \"及格\" << endl;\n    } else {\n        cout << \"不及格\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "可以有多个 else if，按顺序判断",
+        "一旦某个条件为真，就不再判断后面的条件",
+        "条件范围不能重叠",
+        "else 是可选的，放在最后处理所有其他情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "条件顺序错误",
+          "description": "if (score >= 60) { } else if (score >= 90) { } ← score >= 90 永远不会被执行。",
+          "fix": "更严格的条件放在前面：先判断 score >= 90，再判断 score >= 60。"
+        },
+        {
+          "title": "逻辑冲突",
+          "description": "if (a > 10) { } else if (a < 10) { } ← a == 10 的情况没有处理。",
+          "fix": "确保所有情况都被覆盖，或者使用 else 处理剩余情况。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 else if 写一个程序，根据 temperature 输出天气状况：\n- >= 30：热\n- 20-29：暖\n- 10-19：凉\n- < 10：冷",
+        "hint": "从高到低判断，用 else if 连接",
+        "expectedIdea": "int temperature = 25;\nif (temperature >= 30) {\n    cout << \"热\" << endl;\n} else if (temperature >= 20) {\n    cout << \"暖\" << endl;\n} else if (temperature >= 10) {\n    cout << \"凉\" << endl;\n} else {\n    cout << \"冷\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "else if 语句的执行顺序是怎样的？",
+          "options": [
+            "从后往前判断",
+            "从上到下依次判断，第一个为真就停止",
+            "同时判断所有条件",
+            "随机判断"
+          ],
+          "answerIndex": 1,
+          "explanation": "else if 从上到下依次判断，一旦某个条件为真就执行对应代码块，不再判断后面的条件。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.4",
+      "title": "嵌套分支",
+      "learningGoal": "理解嵌套的 if 语句，学会处理复杂的条件判断",
+      "explanation": "嵌套分支是在一个 if 或 else 语句中再包含另一个 if 或 else 语句。\n\n嵌套结构：if (条件1) { if (条件2) { } }。可以嵌套多层，但过深的嵌套会让代码难以阅读。\n\n嵌套时要注意缩进，每一层都比上一层多缩进一些，这样能清楚看到嵌套关系。\n\n如果嵌套超过三层，通常考虑用 else if 或者提前返回来简化逻辑。好的代码应该易于理解。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 25;\n    bool hasLicense = true;\n    \n    if (age >= 18) {\n        if (hasLicense) {\n            cout << \"可以开车\" << endl;\n        } else {\n            cout << \"已成年但没有驾照\" << endl;\n        }\n    } else {\n        cout << \"未成年，不能开车\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "嵌套是在一个分支中再包含另一个分支",
+        "通过缩进区分不同的嵌套层次",
+        "嵌套过深会降低代码可读性",
+        "超过三层可以考虑用 else if 重构"
+      ],
+      "commonMistakes": [
+        {
+          "title": "缩进混乱导致逻辑错误",
+          "description": "没有正确缩进，导致看不清哪个 else 属于哪个 if。",
+          "fix": "保持一致的缩进风格，每一层嵌套增加一层缩进。"
+        },
+        {
+          "title": "else 配对错误",
+          "description": "if (a) { if (b) { } } else { } ← 这个 else 属于内层 if，不是外层 if。",
+          "fix": "else 总是和最近的一个未配对的 if 配对，必要时用大括号明确。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个嵌套分支程序，判断用户是否有资格参加比赛：\n- 年龄 >= 12\n- 有家长同意书\n\n两个条件都满足才能参加。",
+        "hint": "外层判断年龄，内层判断家长同意书",
+        "expectedIdea": "int age = 15;\nbool hasPermission = true;\nif (age >= 12) {\n    if (hasPermission) {\n        cout << \"可以参加比赛\" << endl;\n    } else {\n        cout << \"年龄符合，但缺少家长同意书\" << endl;\n    }\n} else {\n    cout << \"年龄不符合要求\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "else 语句和哪个 if 配对？",
+          "options": [
+            "和最外层的 if 配对",
+            "和最近的未配对的 if 配对",
+            "和最内层的 if 配对",
+            "编译器随机选择"
+          ],
+          "answerIndex": 1,
+          "explanation": "else 总是和最近的一个未配对的 if 配对，这是 C++ 的规则。必要时用大括号明确配对关系。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.5",
+      "title": "switch-case",
+      "learningGoal": "掌握 switch-case 语句，学会处理多个固定值的判断",
+      "explanation": "switch-case 是多分支结构，专门用于处理整数或字符类型的固定值判断。\n\n基本格式：switch (变量) { case 值1: 语句; break; case 值2: 语句; break; default: 语句; }。\n\nswitch 后面的表达式必须是整数类型或枚举类型，每个 case 后面是可能的取值。\n\nbreak 用于跳出 switch，如果没有 break，程序会继续执行下一个 case 的代码，这叫做「穿透」。大多数情况下要记得写 break。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int day = 3;\n    switch (day) {\n        case 1:\n            cout << \"星期一\" << endl;\n            break;\n        case 2:\n            cout << \"星期二\" << endl;\n            break;\n        case 3:\n            cout << \"星期三\" << endl;\n            break;\n        default:\n            cout << \"其他星期\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "switch 后面必须是整数或字符类型",
+        "每个 case 对应一个可能的值",
+        "break 用于跳出 switch，防止穿透",
+        "default 处理所有其他情况，可选"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记写 break",
+          "description": "case 1: cout << \"A\"; case 2: cout << \"B\"; ← 当 day = 1 时会输出 AB。",
+          "fix": "每个 case 后面都加上 break，除非有特殊需求需要穿透。"
+        },
+        {
+          "title": "case 后面写范围",
+          "description": "case 1-5: ← case 后面必须是单个值，不能写范围。",
+          "fix": "用 if-else 处理范围判断，或者列出所有可能的值。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 switch-case 实现一个计算器，根据 operator 输出对应的运算：\n- \"+\"：加法\n- \"-\"：减法\n- \"*\"：乘法\n- 其他：未知运算",
+        "hint": "switch (operator) { case '+': ... }",
+        "expectedIdea": "char op = '+';\nswitch (op) {\n    case '+':\n        cout << \"加法\" << endl;\n        break;\n    case '-':\n        cout << \"减法\" << endl;\n        break;\n    case '*':\n        cout << \"乘法\" << endl;\n        break;\n    default:\n        cout << \"未知运算\" << endl;\n}"
+      },
+      "quiz": [
+        {
+          "question": "switch 语句中，break 的作用是什么？",
+          "options": [
+            "结束整个程序",
+            "跳出当前的 case，防止继续执行后面的 case",
+            "跳过 switch 语句",
+            "什么都不做"
+          ],
+          "answerIndex": 1,
+          "explanation": "break 用于跳出 switch 语句，防止程序继续执行下一个 case 的代码。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.6",
+      "title": "for",
+      "learningGoal": "掌握 for 循环，学会处理已知次数的重复操作",
+      "explanation": "for 循环用于重复执行代码，特别适合已知循环次数的情况。\n\n基本格式：for (初始化; 条件; 更新) { 循环体 }。三个部分用分号分隔。\n\n- 初始化：只在循环开始前执行一次，通常用于声明并初始化循环变量\n- 条件：每次循环开始前判断，为真就执行循环体，为假就退出循环\n- 更新：每次循环体执行完后执行，通常用于更新循环变量\n\nfor 循环可以很清晰地表达「从多少开始，到多少结束，每次变化多少」的逻辑。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // 输出 1 到 5\n    for (int i = 1; i <= 5; i++) {\n        cout << i << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "初始化只执行一次",
+        "条件为真时执行循环体",
+        "循环体执行完后执行更新",
+        "三个部分都可以省略，但分号不能省"
+      ],
+      "commonMistakes": [
+        {
+          "title": "条件写错导致死循环",
+          "description": "for (int i = 0; i <= 10; i--) ← 条件永远为真，死循环。",
+          "fix": "检查条件是否正确，确保循环能正常结束。"
+        },
+        {
+          "title": "循环变量作用域问题",
+          "description": "for (int i = 0; i < 5; i++) { } cout << i; ← 循环外不能访问 i。",
+          "fix": "如果需要在循环外使用循环变量，在循环前声明。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 for 循环计算 1 到 100 的和，输出结果。",
+        "hint": "初始化 i = 1，条件 i <= 100，更新 i++，用 sum 累加",
+        "expectedIdea": "int sum = 0;\nfor (int i = 1; i <= 100; i++) {\n    sum = sum + i;\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "for (int i = 0; i < 5; i++) { } 这个循环执行多少次？",
+          "options": [
+            "4 次",
+            "5 次",
+            "6 次",
+            "无限次"
+          ],
+          "answerIndex": 1,
+          "explanation": "i 从 0 开始，每次加 1，条件是 i < 5，所以 i 取值为 0, 1, 2, 3, 4，共 5 次。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.7",
+      "title": "while",
+      "learningGoal": "掌握 while 循环，学会处理不确定次数的重复操作",
+      "explanation": "while 循环在条件为真时重复执行代码，适合不知道循环次数的情况。\n\n基本格式：while (条件) { 循环体 }。每次执行循环体前先判断条件。\n\nwhile 循环的结构比 for 简单，只有条件判断。循环变量的初始化和更新需要在循环体内处理。\n\n如果条件一开始就为假，循环体一次都不会执行。这在某些情况下是有用的特性。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int i = 1;\n    while (i <= 5) {\n        cout << i << \" \";\n        i++;\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "while 后面括号内是条件",
+        "条件为真时执行循环体",
+        "循环体内要更新循环变量，避免死循环",
+        "条件为假时一次都不执行"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记更新循环变量",
+          "description": "int i = 1; while (i <= 5) { cout << i; } ← 忘记 i++，死循环。",
+          "fix": "循环体内记得更新循环变量。"
+        },
+        {
+          "title": "条件恒成立",
+          "description": "while (1) { } 或 while (true) { } ← 条件永远为真，死循环。",
+          "fix": "确保条件能变为假，或者在循环内用 break 退出。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 while 循环统计一个数除以 2 能除多少次，直到这个数变为 0。",
+        "hint": "在循环中用 n = n / 2，计数器 count++",
+        "expectedIdea": "int n = 16;\nint count = 0;\nwhile (n > 0) {\n    n = n / 2;\n    count++;\n}\ncout << count << endl;"
+      },
+      "quiz": [
+        {
+          "question": "while (false) { cout << \"Hi\"; } 这个循环执行多少次？",
+          "options": [
+            "0 次",
+            "1 次",
+            "无限次",
+            "编译错误"
+          ],
+          "answerIndex": 0,
+          "explanation": "while 循环先判断条件，条件为 false 时循环体一次都不会执行。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.8",
+      "title": "do-while",
+      "learningGoal": "掌握 do-while 循环，理解它与 while 的区别",
+      "explanation": "do-while 循环先执行一次循环体，然后再判断条件是否继续。\n\n基本格式：do { 循环体 } while (条件);。注意 while 后面有分号。\n\ndo-while 和 while 的主要区别：do-while 至少执行一次，而 while 可能一次都不执行。\n\n当需要至少执行一次操作时，do-while 是最好的选择。例如：让用户输入数据，直到输入合法为止。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int sum = 0;\n    int n;\n    do {\n        cin >> n;\n        sum = sum + n;\n    } while (n != 0);\n    cout << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "先执行一次循环体，再判断条件",
+        "至少执行一次",
+        "while 后面有分号",
+        "适合需要至少执行一次的情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记分号",
+          "description": "do { } while (条件) ← while 后面缺少分号。",
+          "fix": "记得在 while(条件) 后面加分号。"
+        },
+        {
+          "title": "条件位置放错",
+          "description": "while (条件) do { } ← 条件应该在后面，不是前面。",
+          "fix": "正确格式：do { } while (条件);。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 do-while 循环让用户输入一个正数，直到输入的数确实为正。",
+        "hint": "先 cin >> n，再判断 n > 0",
+        "expectedIdea": "int n;\ndo {\n    cin >> n;\n} while (n <= 0);\ncout << \"输入正确：\" << n << endl;"
+      },
+      "quiz": [
+        {
+          "question": "do-while 循环至少执行几次？",
+          "options": [
+            "0 次",
+            "1 次",
+            "2 次",
+            "由条件决定"
+          ],
+          "answerIndex": 1,
+          "explanation": "do-while 循环先执行循环体，再判断条件，所以至少会执行一次。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.9",
+      "title": "break",
+      "learningGoal": "掌握 break 语句，学会提前退出循环或 switch",
+      "explanation": "break 用于立即退出循环或 switch 语句。\n\n在循环中，break 会跳出当前最内层的循环，继续执行循环后面的代码。\n\n在 switch 中，break 用于结束当前 case，防止继续执行后面的 case。\n\nbreak 只能用在循环和 switch 中，不能用在其他地方。一次 break 只跳出一层，不能一次跳出多层循环。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = 1; i <= 10; i++) {\n        if (i == 6) {\n            break;\n        }\n        cout << i << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "break 立即退出当前循环",
+        "只能跳出当前一层循环",
+        "在 switch 中用于防止穿透",
+        "不能在非循环和 switch 中使用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "break 误用",
+          "description": "在 if 语句中用 break，但 break 不在循环或 switch 中。",
+          "fix": "break 只能在循环或 switch 中使用。"
+        },
+        {
+          "title": "想一次跳出多层循环",
+          "description": "嵌套循环中用 break，只跳出了内层循环，外层还在继续。",
+          "fix": "可以使用标志位或 goto，或者重新设计循环结构。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 for 循环从 1 开始输出数字，当遇到第一个 3 的倍数时就停止输出。",
+        "hint": "用 if 判断 i % 3 == 0，然后 break",
+        "expectedIdea": "for (int i = 1; i <= 10; i++) {\n    if (i % 3 == 0) {\n        break;\n    }\n    cout << i << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "break 语句的作用是？",
+          "options": [
+            "跳过本次循环",
+            "退出当前循环或 switch",
+            "退出整个程序",
+            "什么都不做"
+          ],
+          "answerIndex": 1,
+          "explanation": "break 用于立即退出当前的循环或 switch 语句，继续执行后面的代码。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.10",
+      "title": "continue",
+      "learningGoal": "掌握 continue 语句，学会跳过本次循环",
+      "explanation": "continue 用于跳过本次循环剩余的代码，直接进入下一次循环。\n\n当遇到 continue 时，循环体内 continue 后面的代码不会执行，程序会跳转到循环开头，判断是否进行下一次循环。\n\ncontinue 和 break 的区别：break 退出整个循环，continue 只是跳过本次循环。\n\ncontinue 常用于跳过某些特殊的情况，比如跳过负数、跳过空行等。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = 1; i <= 10; i++) {\n        if (i % 2 == 0) {\n            continue;\n        }\n        cout << i << \" \";\n    }\n    cout << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "continue 跳过本次循环剩余代码",
+        "直接进入下一次循环",
+        "不会退出整个循环",
+        "常用于跳过特定情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "和 break 混淆",
+          "description": "想跳过本次循环但写了 break，结果退出了整个循环。",
+          "fix": "用 continue 跳过本次循环，用 break 退出整个循环。"
+        },
+        {
+          "title": "continue 后面还有代码",
+          "description": "continue 后面的代码永远不会执行。",
+          "fix": "continue 应该是循环体中某个条件分支的最后一条语句，或者放在逻辑上合适的位置。"
+        }
+      ],
+      "practice": {
+        "prompt": "用 for 循环输出 1 到 10 之间的所有奇数，用 continue 跳过偶数。",
+        "hint": "判断 i % 2 == 0 时 continue，否则输出",
+        "expectedIdea": "for (int i = 1; i <= 10; i++) {\n    if (i % 2 == 0) {\n        continue;\n    }\n    cout << i << \" \";\n}"
+      },
+      "quiz": [
+        {
+          "question": "continue 语句的作用是？",
+          "options": [
+            "退出整个循环",
+            "跳过本次循环，进入下一次循环",
+            "结束程序",
+            "跳到程序开头"
+          ],
+          "answerIndex": 1,
+          "explanation": "continue 跳过本次循环剩余的代码，直接进入下一次循环的判断。"
+        }
+      ]
+    },
+    {
+      "itemId": "1.5.11",
+      "title": "死循环与退出条件",
+      "learningGoal": "理解死循环的概念，学会设计正确的循环退出条件",
+      "explanation": "死循环是循环条件永远为真，导致程序无法正常退出的循环。\n\n常见的死循环原因：循环变量没有被更新、条件永远成立、逻辑错误。\n\n例如：while (true) { } 或 for (int i = 0; i < 5; i--) 都是死循环。\n\n退出循环的正确方式：确保循环变量会朝着使条件为假的方向变化，或者在循环体内使用 break 语句提前退出。",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int sum = 0;\n    int n;\n    cin >> n;\n    \n    int i = 1;\n    while (i <= n) {\n        sum = sum + i;\n        i = i + 1;\n    }\n    \n    cout << sum << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "死循环会让程序一直运行，无法退出",
+        "必须确保循环条件能变为假",
+        "循环体内要更新循环变量",
+        "用 break 可以提前退出循环"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记更新循环变量",
+          "description": "int i = 1; while (i <= 10) { sum += i; } ← i 永远不变，死循环。",
+          "fix": "循环体内记得更新循环变量，比如 i++。"
+        },
+        {
+          "title": "条件永远为真",
+          "description": "while (1) { } 或 for (;;) { } ← 条件永远成立，需要用 break 退出。",
+          "fix": "确保循环有明确的退出条件，或者在循环内用 break。"
+        }
+      ],
+      "practice": {
+        "prompt": "写一个 while 循环，计算从 1 加到 n 的和，确保有正确的退出条件。",
+        "hint": "初始化 i = 1，条件 i <= n，循环体内 i++",
+        "expectedIdea": "int n = 10;\nint sum = 0;\nint i = 1;\nwhile (i <= n) {\n    sum = sum + i;\n    i++;\n}\ncout << sum << endl;"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个循环会造成死循环？",
+          "options": [
+            "for (int i = 1; i <= 5; i++) { }",
+            "while (n > 0) { n = n / 2; }",
+            "while (true) { }",
+            "do { } while (false);"
+          ],
+          "answerIndex": 2,
+          "explanation": "while (true) 的条件永远为真，会形成死循环，除非循环体内有 break 语句。"
+        }
+      ]
+    }
+  ]
+}

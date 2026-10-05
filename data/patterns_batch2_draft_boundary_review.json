@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "generated_by": "thread3_batch2_draft_boundary_review",
+    "generated_at": "2026-05-22T18:00:00.000Z",
+    "task": "Batch2_Draft_Boundary_Review",
+    "input_files": [
+      "patterns_batch2_p0_draft_preview.json",
+      "patterns_batch2_p1_draft_preview.json",
+      "patterns_v0_1_ready.json"
+    ],
+    "total_drafts": 22,
+    "total_ready_patterns": 83,
+    "not_formal_batch2": true,
+    "patterns_v0_1_ready_modified": false,
+    "main_graph_modified": false
+  },
+  "statistics": {
+    "total_drafts": 22,
+    "keep_as_new_pattern": 12,
+    "merge_with_existing": 1,
+    "keep_with_boundary_note": 8,
+    "move_to_knowledge_items": 0,
+    "manual_review": 1,
+    "high_similarity_conflicts": 1
+  },
+  "boundary_review_results": [
+    {
+      "draft_pattern_id": "pat.circulation_optimization",
+      "name": "最小费用循环流",
+      "closest_ready_pattern_id": "pat.min_cost_flow_assignment",
+      "closest_ready_pattern_name": "费用流分配建模",
+      "similarity_level": "medium",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "虽然与 pat.min_cost_flow_assignment 都涉及网络流和费用优化，但最小费用循环流专门针对闭环网络和流量守恒条件，具有独特的建模特点。循环流模式更强调闭环结构和流量守恒的约束条件，而费用流分配更侧重于流量分配和费用优化。",
+      "reason": "两个模式虽然都涉及网络流和费用优化，但是针对不同的问题类型。最小费用循环流针对闭环网络中的流量守恒问题，而费用流分配针对一般的流量分配问题。两者的建模方法和约束条件有显著差异，可以保留为独立的模式。"
+    },
+    {
+      "draft_pattern_id": "pat.graph_modeling_diff_constraints",
+      "name": "差分约束系统建模",
+      "closest_ready_pattern_id": "pat.shortest_path_modeling",
+      "closest_ready_pattern_name": "最短路建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "差分约束系统建模专门针对线性不等式约束系统，将不等式转化为图的最短路问题。它与 pat.shortest_path_modeling 的区别在于，差分约束模式强调的是不等式约束到图转化的识别，而最短路建模模式强调的是图结构到最短路问题的转化。两者的识别信号和应用场景不同。",
+      "reason": "差分约束系统建模是专门的建模模式，针对的是不等式约束系统，而不是一般的图问题。它的识别信号（不等式约束）和转化方法（将不等式转化为图边）都很独特，与最短路建模模式有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.layered_graph_modeling",
+      "name": "分层图建模",
+      "closest_ready_pattern_id": "pat.layered_graph_shortest_path",
+      "closest_ready_pattern_name": "分层图最短路",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "分层图建模与现有的 pat.layered_graph_shortest_path 有很高的语义相似度。两者的核心都是多层图结构的应用，但分层图建模更通用，可以应用于最短路、最大流等多种问题类型，而分层图最短路仅限于最短路问题。建议重新审视是否需要这两个模式，或者明确区分它们的适用范围。",
+      "reason": "两个模式都涉及多层图结构，但适用的范围不同。分层图建模更通用，分层图最短路更专门。需要明确区分：分层图建模强调多阶段问题的识别和建模，分层图最短路强调多层图上的最短路求解。建议保留但需要边界说明。"
+    },
+    {
+      "draft_pattern_id": "pat.partial_order_matching",
+      "name": "偏序集匹配",
+      "closest_ready_pattern_id": "pat.bipartite_matching_modeling",
+      "closest_ready_pattern_name": "二分图匹配建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "偏序集匹配专门针对偏序关系和链分解问题，利用 Dilworth 定理将偏序问题转化为二分图匹配。它与 pat.bipartite_matching_modeling 的区别在于，偏序集匹配强调的是偏序关系的识别和转化，而二分图匹配建模强调的是二分图结构的匹配建模。两者的应用场景和识别信号不同。",
+      "reason": "偏序集匹配是专门的建模模式，针对的是偏序关系和链分解问题，而不是一般的二分图匹配问题。它的识别信号（偏序关系、链的分解）和转化方法（Dilworth 定理）都很独特，与二分图匹配建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.state_machine_modeling",
+      "name": "状态图建模",
+      "closest_ready_pattern_id": "pat.shortest_path_modeling",
+      "closest_ready_pattern_name": "最短路建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "状态图建模专门针对系统状态转移问题，将状态机建模为图结构。它与 pat.shortest_path_modeling 的区别在于，状态图建模强调的是状态转移的识别和建模，而最短路建模强调的是图结构到最短路问题的转化。两者的识别信号（状态转移 vs 图边）和应用场景不同。",
+      "reason": "状态图建模是专门的建模模式，针对的是系统状态转移问题，而不是一般的图问题。它的识别信号（状态转移规则）和转化方法（状态到节点）都很独特，与最短路建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.path_cover_modeling",
+      "name": "最小路径覆盖",
+      "closest_ready_pattern_id": "pat.bipartite_matching_modeling",
+      "closest_ready_pattern_name": "二分图匹配建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "最小路径覆盖专门针对路径覆盖问题，将路径覆盖转化为二分图匹配。它与 pat.bipartite_matching_modeling 的区别在于，最小路径覆盖强调的是路径覆盖问题的识别和转化，而二分图匹配建模强调的是二分图结构的匹配建模。两者的应用场景和识别信号不同。",
+      "reason": "最小路径覆盖是专门的建模模式，针对的是路径覆盖问题，而不是一般的二分图匹配问题。它的识别信号（路径覆盖、节点拆分）和转化方法（DAG 到二分图）都很独特，与二分图匹配建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.potential_method_modeling",
+      "name": "势函数法建模",
+      "closest_ready_pattern_id": "pat.shortest_path_modeling",
+      "closest_ready_pattern_name": "最短路建模",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "势函数法建模专门针对负权边最短路问题，通过势函数变换消除负权边。它与 pat.shortest_path_modeling 的区别在于，势函数法建模强调的是负权边问题和势函数变换的识别，而最短路建模模式强调的是一般最短路问题的建模。两者的识别信号不同，势函数法建模更专门化。",
+      "reason": "势函数法建模是专门的建模模式，针对的是负权边问题，而不是一般的图问题。它与最短路建模有一定相似性，但更专门化。建议保留但需要明确区分：势函数法建模专门针对负权边，最短路建模针对一般图的最短路问题。"
+    },
+    {
+      "draft_pattern_id": "pat.k_shortest_modeling",
+      "name": "K短路建模",
+      "closest_ready_pattern_id": "",
+      "closest_ready_pattern_name": "",
+      "similarity_level": "none",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "K短路建模专门针对多路径优化问题，求解前 K 条最短路径。检查发现现有的 ready patterns 中没有专门的 K 短路模式，因此这是一个全新的模式。需要明确与 pat.k_shortest_paths（如果存在的话）的边界，但现在看来这是一个独立且有价值的模式。",
+      "reason": "K短路建模是专门的建模模式，针对的是多路径优化问题。检查现有的 83 个 ready patterns，没有发现专门的 K 短路模式。因此这是一个全新的模式，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.cycle_optimization_modeling",
+      "name": "最小平均环建模",
+      "closest_ready_pattern_id": "pat.shortest_path_modeling",
+      "closest_ready_pattern_name": "最短路建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "最小平均环建模专门针对环的优化问题，将平均环问题转化为最短路问题。它与 pat.shortest_path_modeling 的区别在于，最小平均环建模强调的是环优化问题的识别和转化，而最短路建模模式强调的是路径优化的建模。两者的识别信号（环结构 vs 路径结构）和应用场景不同。",
+      "reason": "最小平均环建模是专门的建模模式，针对的是环优化问题，而不是一般的路径优化问题。它的识别信号（环的权重优化）和转化方法（环到最短路）都很独特，与最短路建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.network_flow_closure",
+      "name": "最大权闭合子图",
+      "closest_ready_pattern_id": "pat.min_cut_selection",
+      "closest_ready_pattern_name": "最小割选择建模",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "最大权闭合子图与 pat.min_cut_selection 都涉及网络流的最小割问题，但最大权闭合子图专门针对资源选择和依赖关系问题，而最小割选择建模更通用。两者的建模重点不同，最大权闭合子图强调的是资源选择的依赖约束，而最小割选择强调的是割的构建和优化。",
+      "reason": "最大权闭合子图是专门的建模模式，针对的是资源选择和依赖关系问题，而最小割选择建模更通用。两者的识别信号和应用场景有重叠但不完全相同。建议保留但需要明确区分：最大权闭合子图专门针对资源选择，最小割选择针对一般的割优化问题。"
+    },
+    {
+      "draft_pattern_id": "pat.network_flow_project_selection",
+      "name": "项目选择建模",
+      "closest_ready_pattern_id": "pat.network_flow_closure",
+      "closest_ready_pattern_name": "最大权闭合子图",
+      "similarity_level": "high",
+      "decision": "merge_with_existing",
+      "boundary_note": "项目选择建模与 pat.network_flow_closure 有很高的语义相似度。两者都是针对资源选择和依赖关系问题，使用网络流的最小割进行求解。项目选择可以看作是最大权闭合子图的一个具体应用，两者的建模方法几乎相同，建议合并为一个模式。",
+      "reason": "项目选择建模与最大权闭合子图在本质上是一样的，都是资源选择和依赖关系问题的建模。项目选择可以看作是最大权闭合子图的一个具体应用，两者的识别信号、转化方法和求解算法都高度相似，建议合并为 pat.network_flow_closure。"
+    },
+    {
+      "draft_pattern_id": "pat.min_flow_modeling",
+      "name": "最小流建模",
+      "closest_ready_pattern_id": "pat.min_cost_flow_assignment",
+      "closest_ready_pattern_name": "费用流分配建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "最小流建模专门针对最小化总流量的网络流问题，而 pat.min_cost_flow_assignment 针对的是最小化总费用的网络流问题。两者的优化目标不同，一个是流量优化，一个是费用优化。最小流建模有独特的识别信号和转化方法，适合保留为独立模式。",
+      "reason": "最小流建模是专门的建模模式，针对的是最小化总流量问题，而不是最小化总费用问题。它的识别信号（最小化流量）和转化方法（最小流到最大流）都很独特，与费用流分配建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.flow_bounds_transformation",
+      "name": "流量边界变换",
+      "closest_ready_pattern_id": "pat.min_cost_flow_assignment",
+      "closest_ready_pattern_name": "费用流分配建模",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "流量边界变换专门针对带上下界的网络流问题，而 pat.min_cost_flow_assignment 针对的是一般的网络流分配问题。流量边界变换更强调边界约束的处理和转化，而费用流分配更强调流量分配和费用优化。两者的识别信号和建模重点不同，建议保留但需要明确区分。",
+      "reason": "流量边界变换是专门的建模模式，针对的是带上下界的网络流问题，而不是一般的网络流分配问题。它与费用流分配建模在方法上有重叠，但针对的问题类型不同。建议保留但需要明确区分：流量边界变换专门针对上下界约束，费用流分配针对一般的分配问题。"
+    },
+    {
+      "draft_pattern_id": "pat.max_flow_with_bounds",
+      "name": "带边界最大流",
+      "closest_ready_pattern_id": "pat.flow_bounds_transformation",
+      "closest_ready_pattern_name": "流量边界变换",
+      "similarity_level": "high",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "带边界最大流与 pat.flow_bounds_transformation 有很高的语义相似度。两者都是针对带上下界的网络流问题，带边界最大流强调的是最大流求解，而流量边界变换强调的是边界变换方法。本质上，带边界最大流可以看作是流量边界变换的一个具体应用。建议明确区分或考虑合并。",
+      "reason": "带边界最大流与流量边界变换在本质上很相似，都是针对带上下界的网络流问题。两者的识别信号和转化方法高度相似，但应用侧重点略有不同。建议保留但需要明确区分：带边界最大流侧重于最大流求解，流量边界变换侧重于边界变换方法。"
+    },
+    {
+      "draft_pattern_id": "pat.node_demand_modeling",
+      "name": "节点需求流建模",
+      "closest_ready_pattern_id": "pat.flow_bounds_transformation",
+      "closest_ready_pattern_name": "流量边界变换",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "节点需求流建模与 pat.flow_bounds_transformation 都涉及复杂的网络流约束，但节点需求流建模专门针对节点流量需求问题，而流量边界变换针对的是边的上下界约束。两者的约束类型不同，一个关注节点，一个关注边。建议保留但需要明确区分。",
+      "reason": "节点需求流建模是专门的建模模式，针对的是节点流量需求问题，而流量边界变换针对的是边的上下界约束问题。两者的约束类型和建模重点不同，建议保留但需要明确区分：节点需求流专门针对节点约束，流量边界变换针对边约束。"
+    },
+    {
+      "draft_pattern_id": "pat.bounded_matching_modeling",
+      "name": "带边界二分图匹配",
+      "closest_ready_pattern_id": "pat.bipartite_matching_modeling",
+      "closest_ready_pattern_name": "二分图匹配建模",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "带边界二分图匹配与 pat.bipartite_matching_modeling 都涉及二分图匹配，但带边界二分图匹配专门针对匹配数量或容量有约束的问题，而二分图匹配建模针对的是一般的匹配问题。带边界二分图匹配更强调匹配边界的处理和转化，而二分图匹配建模更强调匹配的构建和优化。",
+      "reason": "带边界二分图匹配是专门的建模模式，针对的是带匹配边界约束的问题，而不是一般的二分图匹配问题。它与二分图匹配建模在基础上有相似性，但约束条件更复杂。建议保留但需要明确区分：带边界匹配专门针对边界约束，一般匹配针对无约束匹配。"
+    },
+    {
+      "draft_pattern_id": "pat.shortest_path_potentials",
+      "name": "Johnson势函数",
+      "closest_ready_pattern_id": "pat.shortest_path_modeling",
+      "closest_ready_pattern_name": "最短路建模",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "Johnson势函数与 pat.shortest_path_modeling 都涉及最短路问题，但 Johnson势函数专门针对全节点对最短路问题和负权边处理，而最短路建模针对的是一般的最短路问题。Johnson势函数更强调全节点对问题的识别和势函数变换，而最短路建模更强调单源或一般最短路问题的建模。",
+      "reason": "Johnson势函数是专门的建模模式，针对的是全节点对最短路问题和负权边处理，而最短路建模针对的是一般的最短路问题。它与最短路建模有重叠但更专门化。建议保留但需要明确区分：Johnson势函数专门针对全节点对，最短路建模针对一般最短路。"
+    },
+    {
+      "draft_pattern_id": "pat.k_shortest_paths",
+      "name": "Yen K短路",
+      "closest_ready_pattern_id": "pat.k_shortest_modeling",
+      "closest_ready_pattern_name": "K短路建模",
+      "similarity_level": "high",
+      "decision": "manual_review",
+      "boundary_note": "Yen K短路与 pat.k_shortest_modeling 都涉及 K 最短路径问题，有很高的语义重叠。K短路建模强调的是建模和问题识别，Yen K短路强调的是算法实现。这两个模式可能需要合并，或者明确区分建模和算法两个层次。需要专家审核如何处理这种重复。",
+      "reason": "Yen K短路与 K短路建模在本质上处理的是同一种问题类型，两个模式都有很高的语义相似度。K短路建模强调建模和问题识别，Yen K短路强调算法实现。这种重复需要专家审核：是合并为一个模式（涵盖建模和算法），还是明确区分建模和算法两个层次。"
+    },
+    {
+      "draft_pattern_id": "pat.stable_matching_pattern",
+      "name": "稳定婚姻问题",
+      "closest_ready_pattern_id": "pat.bipartite_matching_modeling",
+      "closest_ready_pattern_name": "二分图匹配建模",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "稳定婚姻问题专门针对偏好约束下的稳定匹配问题，利用 Gale-Shapley 算法进行求解。它与 pat.bipartite_matching_modeling 的区别在于，稳定婚姻问题强调的是稳定性和偏好约束，而二分图匹配建模强调的是二分图结构的匹配建模。两者的识别信号（偏好排序 vs 二分图结构）和应用场景不同。",
+      "reason": "稳定婚姻问题是专门的建模模式，针对的是偏好约束下的稳定匹配问题，而不是一般的二分图匹配问题。它的识别信号（偏好排序、稳定性约束）和求解方法（Gale-Shapley 算法）都很独特，与二分图匹配建模有明显区别，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.dag_reachability",
+      "name": "DAG可达性",
+      "closest_ready_pattern_id": "pat.topological_longest_path_dag",
+      "closest_ready_pattern_name": "拓扑最长路径DAG",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "DAG可达性与 pat.topological_longest_path_dag 都涉及 DAG 的处理，但 DAG可达性专门针对可达性查询问题，而拓扑最长路径DAG针对的是最长路径问题。两者的应用场景不同，一个是查询问题，一个是优化问题。建议保留但需要明确区分。",
+      "reason": "DAG可达性是专门的建模模式，针对的是可达性查询问题，而拓扑最长路径DAG针对的是最长路径优化问题。两者在拓扑排序上有重叠，但应用场景和求解目标不同。建议保留但需要明确区分：DAG可达性针对查询，最长路径针对优化。"
+    },
+    {
+      "draft_pattern_id": "pat.scc_applications",
+      "name": "强连通分量应用",
+      "closest_ready_pattern_id": "pat.connected_components",
+      "closest_ready_pattern_name": "连通分量",
+      "similarity_level": "low",
+      "decision": "keep_as_new_pattern",
+      "boundary_note": "强连通分量应用专门针对有向图中的强连通分量问题，而 pat.connected_components 针对的是无向图中的连通分量问题。两者的图结构不同（有向 vs 无向），应用场景也不同。强连通分量应用有独特的识别信号和缩点方法，适合保留为独立模式。",
+      "reason": "强连通分量应用是专门的建模模式，针对的是有向图中的强连通分量问题，而不是无向图中的连通分量问题。两者的图结构和应用场景完全不同，适合保留为独立模式。"
+    },
+    {
+      "draft_pattern_id": "pat.dag_to_strongly_connected",
+      "name": "强连通分量DAG转强连通",
+      "closest_ready_pattern_id": "pat.scc_applications",
+      "closest_ready_pattern_name": "强连通分量应用",
+      "similarity_level": "medium",
+      "decision": "keep_with_boundary_note",
+      "boundary_note": "强连通分量DAG转强连通与 pat.scc_applications 都涉及强连通分量，但强连通分量DAG转强连通专门针对图结构优化问题（DAG 转强连通），而强连通分量应用更通用。两者的应用场景不同，一个是结构优化，一个是应用问题。建议保留但需要明确区分。",
+      "reason": "强连通分量DAG转强连通是专门的建模模式，针对的是图结构优化问题，而强连通分量应用更通用。两者在强连通分量算法上有重叠，但应用场景和求解目标不同。建议保留但需要明确区分：DAG转强连通针对结构优化，应用针对具体问题。"
+    }
+  ],
+  "k_shortest_paths_review": {
+    "conflict_analysis": {
+      "patterns_involved": [
+        "pat.k_shortest_modeling",
+        "pat.k_shortest_paths"
+      ],
+      "similarity_level": "high",
+      "conflict_description": "两个模式都处理 K 最短路径问题，存在高度语义重叠。K短路建模强调问题识别和建模方法，Yen K短路强调算法实现。"
+    },
+    "recommendation": "需要专家审核并决定处理方式。建议有以下几种方案：",
+    "options": [
+      {
+        "option_id": 1,
+        "name": "合并方案",
+        "description": "将两个模式合并为一个统一的 K 短路模式，涵盖建模和算法两个方面。合并后的 pattern_id 可以是 pat.k_shortest_modeling。",
+        "pros": ["消除语义重复", "简化模式结构", "保持模式的一致性"],
+        "cons": ["可能丢失建模与算法的区分", "需要重新整理内容"]
+      },
+      {
+        "option_id": 2,
+        "name": "区分方案",
+        "description": "保留两个模式，但明确区分边界：K短路建模专门针对问题识别和建模方法，Yen K短路专门针对算法实现细节。在两个模式的描述中明确说明彼此的关系和边界。",
+        "pros": ["保持建模和算法的区分", "符合分层设计原则", "便于用户理解"],
+        "cons": ["需要仔细维护边界", "可能引起用户混淆"]
+      },
+      {
+        "option_id": 3,
+        "name": "删除方案",
+        "description": "删除其中一个模式。建议保留 pat.k_shortest_modeling，删除 pat.k_shortest_paths，因为建模模式更符合 pattern 的定位，算法实现更适合放在知识库中。",
+        "pros": ["彻底消除重复", "保持 pattern 的建模定位"],
+        "cons": ["丢失算法实现内容", "需要确认是否需要算法细节"]
+      }
+    ],
+    "recommended_option": 1,
+    "reasoning": "建议采用合并方案，因为：1) 两个模式在本质上处理的是同一种问题类型；2) pattern 应该涵盖问题识别、建模方法和求解算法的完整内容；3) 合并可以消除语义重复，简化模式结构；4) 合并后的模式可以更全面地描述 K 短路问题的各个方面。"
+  },
+  "network_flow_patterns_review": {
+    "patterns_involved": [
+      "pat.network_flow_closure",
+      "pat.network_flow_project_selection",
+      "pat.min_flow_modeling",
+      "pat.flow_bounds_transformation",
+      "pat.max_flow_with_bounds",
+      "pat.node_demand_modeling",
+      "pat.bounded_matching_modeling"
+    ],
+    "summary": "网络流相关的模式有 7 个，内部存在一些语义重叠。特别是 pat.network_flow_project_selection 和 pat.network_flow_closure 有很高的相似度，建议合并。其他模式虽然与现有网络流模式有重叠，但针对的问题类型不同，建议保留但需要明确边界。",
+    "recommendations": [
+      "将 pat.network_flow_project_selection 合并入 pat.network_flow_closure",
+      "明确区分 pat.flow_bounds_transformation 和 pat.max_flow_with_bounds 的边界",
+      "明确区分 pat.min_flow_modeling 和 pat.min_cost_flow_assignment 的边界",
+      "为所有网络流模式提供统一的边界说明"
+    ]
+  },
+  "shortest_path_patterns_review": {
+    "patterns_involved": [
+      "pat.potential_method_modeling",
+      "pat.k_shortest_modeling",
+      "pat.cycle_optimization_modeling",
+      "pat.shortest_path_potentials",
+      "pat.k_shortest_paths"
+    ],
+    "summary": "最短路相关的模式有 5 个，内部存在一些语义重叠。特别是 pat.k_shortest_modeling 和 pat.k_shortest_paths 有很高的相似度，需要专家审核。其他模式虽然与现有最短路模式有重叠，但针对的问题类型不同，建议保留但需要明确边界。",
+    "recommendations": [
+      "处理 pat.k_shortest_modeling 和 pat.k_shortest_paths 的语义重叠（见 K短路审核）",
+      "明确区分 pat.potential_method_modeling 和 pat.shortest_path_modeling 的边界",
+      "明确区分 pat.shortest_path_potentials 和 pat.shortest_path_modeling 的边界",
+      "为所有最短路模式提供统一的边界说明"
+    ]
+  },
+  "graph_modeling_patterns_review": {
+    "patterns_involved": [
+      "pat.graph_modeling_diff_constraints",
+      "pat.layered_graph_modeling",
+      "pat.partial_order_matching",
+      "pat.state_machine_modeling",
+      "pat.path_cover_modeling"
+    ],
+    "summary": "图论建模相关的模式有 5 个，内部语义重叠较少，每个模式针对的问题类型都比较明确。pat.layered_graph_modeling 与现有的 pat.layered_graph_shortest_path 有较高的相似度，需要明确区分。其他模式建议保留。",
+    "recommendations": [
+      "明确区分 pat.layered_graph_modeling 和 pat.layered_graph_shortest_path 的边界",
+      "确认 pat.graph_modeling_diff_constraints 与 pat.shortest_path_modeling 的边界",
+      "为所有图论建模模式提供统一的边界说明"
+    ]
+  }
+}

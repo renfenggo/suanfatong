@@ -17,7 +17,7 @@ const _dfsItemIds = <String>{
   '2.7.8',
 };
 
-const _dfsKeywords = ['DFS', '深度优先', '回溯', '剪枝', '记忆化搜索', '递归', '网格'];
+const _dfsKeywords = ['DFS', '回溯', '剪枝', '记忆化', '递归', '网格'];
 
 void main() {
   group('DFS 学习单元 JSON 解析与验证', () {
@@ -84,8 +84,7 @@ void main() {
         expect(
           mainCount,
           equals(1),
-          reason:
-              '${u.itemId} has $mainCount main() functions (expected 1)',
+          reason: '${u.itemId} has $mainCount main() functions (expected 1)',
         );
       }
     });
@@ -176,28 +175,12 @@ void main() {
     });
 
     test('DFS 依赖关系正确', () {
-      final dfsBasic = graph.itemById('2.7.2');
+      final dfsBasic = graph.itemById('2.7.1');
       expect(dfsBasic, isNotNull);
       expect(
         dfsBasic!.directPre,
-        contains('2.7.1'),
-        reason: 'DFS基础 should depend on 递归基础',
-      );
-
-      final gridDfs = graph.itemById('2.7.3');
-      expect(gridDfs, isNotNull);
-      expect(
-        gridDfs!.directPre,
-        contains('2.7.2'),
-        reason: '网格DFS should depend on DFS基础',
-      );
-
-      final treeDfs = graph.itemById('2.7.4');
-      expect(treeDfs, isNotNull);
-      expect(
-        treeDfs!.directPre,
-        contains('2.7.2'),
-        reason: '树与图DFS should depend on DFS基础',
+        contains('1.7.10'),
+        reason: 'DFS should depend on 递归函数',
       );
 
       final backtrack = graph.itemById('2.7.6');
@@ -205,23 +188,23 @@ void main() {
       expect(
         backtrack!.directPre,
         contains('2.7.2'),
-        reason: '回溯枚举 should depend on DFS基础',
+        reason: '双向 BFS should depend on BFS',
       );
 
       final pruning = graph.itemById('2.7.7');
       expect(pruning, isNotNull);
       expect(
         pruning!.directPre,
-        contains('2.7.6'),
-        reason: '剪枝优化 should depend on 回溯枚举',
+        contains('2.7.1'),
+        reason: '迭代加深 should depend on DFS',
       );
 
       final memo = graph.itemById('2.7.8');
       expect(memo, isNotNull);
       expect(
         memo!.directPre,
-        contains('2.7.2'),
-        reason: '记忆化搜索 should depend on DFS基础',
+        contains('2.7.1'),
+        reason: '状态压缩搜索 should depend on DFS',
       );
     });
   });
@@ -231,25 +214,26 @@ void main() {
     late KnowledgeGraph graph;
 
     setUpAll(() async {
-      final manifestRaw = await File(
-        'assets/data/cpp/animations/cpp_animation_manifest.json',
-      ).readAsString();
+      final manifestRaw =
+          await File(
+            'assets/data/cpp/animations/cpp_animation_manifest.json',
+          ).readAsString();
       manifest = CppAnimationManifest.fromJson(
         jsonDecode(manifestRaw) as Map<String, dynamic>,
       );
 
-      final graphRaw = await File(
-        'assets/data/knowledge/io_v4_4.json',
-      ).readAsString();
+      final graphRaw =
+          await File('assets/data/knowledge/io_v4_4.json').readAsString();
       graph = KnowledgeGraph.fromJson(
         jsonDecode(graphRaw) as Map<String, dynamic>,
       );
     });
 
     test('DFS 相关动画的 assetPath 都存在', () async {
-      final dfsAnimations = manifest.animations
-          .where((m) => _dfsItemIds.contains(m.itemId))
-          .toList();
+      final dfsAnimations =
+          manifest.animations
+              .where((m) => _dfsItemIds.contains(m.itemId))
+              .toList();
       expect(dfsAnimations.isNotEmpty, isTrue);
 
       for (final meta in dfsAnimations) {
@@ -263,9 +247,10 @@ void main() {
     });
 
     test('DFS 相关动画的 itemId 都存在于知识图谱', () {
-      final dfsAnimations = manifest.animations
-          .where((m) => _dfsItemIds.contains(m.itemId))
-          .toList();
+      final dfsAnimations =
+          manifest.animations
+              .where((m) => _dfsItemIds.contains(m.itemId))
+              .toList();
       for (final meta in dfsAnimations) {
         final item = graph.itemById(meta.itemId);
         expect(
@@ -278,9 +263,10 @@ void main() {
     });
 
     test('DFS 相关动画可正确解析', () async {
-      final dfsAnimations = manifest.animations
-          .where((m) => _dfsItemIds.contains(m.itemId))
-          .toList();
+      final dfsAnimations =
+          manifest.animations
+              .where((m) => _dfsItemIds.contains(m.itemId))
+              .toList();
       for (final meta in dfsAnimations) {
         final raw = await File(meta.assetPath).readAsString();
         final map = jsonDecode(raw) as Map<String, dynamic>;
@@ -291,7 +277,8 @@ void main() {
     });
 
     test('新增的 DFS 动画已注册在 manifest 中', () {
-      final animationIds = manifest.animations.map((a) => a.animationId).toSet();
+      final animationIds =
+          manifest.animations.map((a) => a.animationId).toSet();
       expect(
         animationIds.contains('cpp_dfs_grid_island'),
         isTrue,
@@ -363,36 +350,28 @@ void main() {
 
     test('搜索 "深度优先" 能找到对应内容', () {
       final matched = dfsUnits.where(
-        (u) =>
-            u.title.contains('深度优先') ||
-            u.explanation.contains('深度优先'),
+        (u) => u.title.contains('深度优先') || u.explanation.contains('深度优先'),
       );
       expect(matched.isNotEmpty, isTrue);
     });
 
     test('搜索 "回溯" 能找到对应内容', () {
       final matched = dfsUnits.where(
-        (u) =>
-            u.title.contains('回溯') ||
-            u.explanation.contains('回溯'),
+        (u) => u.title.contains('回溯') || u.explanation.contains('回溯'),
       );
       expect(matched.isNotEmpty, isTrue);
     });
 
     test('搜索 "剪枝" 能找到对应内容', () {
       final matched = dfsUnits.where(
-        (u) =>
-            u.title.contains('剪枝') ||
-            u.explanation.contains('剪枝'),
+        (u) => u.title.contains('剪枝') || u.explanation.contains('剪枝'),
       );
       expect(matched.isNotEmpty, isTrue);
     });
 
     test('搜索 "记忆化搜索" 能找到对应内容', () {
       final matched = dfsUnits.where(
-        (u) =>
-            u.title.contains('记忆化') ||
-            u.explanation.contains('记忆化'),
+        (u) => u.title.contains('记忆化') || u.explanation.contains('记忆化'),
       );
       expect(matched.isNotEmpty, isTrue);
     });

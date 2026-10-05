@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "title": "Patterns Batch4 — Formal Generation",
+    "generated_by": "DeepSeek V4 Pro (Thread 3)",
+    "generated_at": "2026-05-26T02:00:00.000Z",
+    "batch": "patterns_batch4",
+    "total_patterns": 7,
+    "source": "Stage3G full400 triage (P1 candidates)",
+    "main_graph_source": "merged_knowledge_graph_item_dependencies_refined.json",
+    "main_graph_item_count": 2165,
+    "main_graph_section_count": 65,
+    "validate_only_passed": true,
+    "main_graph_modified": false,
+    "existing_patterns_modified": false,
+    "note": "pat.meet_in_the_middle excluded — already exists in ready patterns"
+  },
+  "patterns": [
+    {
+      "pattern_id": "pat.parallel_binary_search",
+      "title": "整体二分应用",
+      "en_name": "Parallel Binary Search",
+      "category": "分治/离线查询",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "2.4.52",
+      "description": "整体二分（Parallel Binary Search）是一种离线分治技巧，用于解决多组查询的二分答案判定问题。当每组查询的答案各不相同但判定过程具有共性时，可以将所有查询一起进行值域二分，在每一层分治中统一执行判定，从而将 m 组查询的 O(m·logV) 独立判定合并为 O((m+n)·logV) 的批量判定。",
+      "recognition_signals": [
+        "多组离线查询，每组需要二分答案判定",
+        "判定函数对所有查询有共性（可以在分治过程中共享数据结构）",
+        "答案之间单调性或独立性不强，不适合直接嵌套二分",
+        "典型输入规模：n,m ≤ 10^5, 值域 V ≤ 10^9"
+      ],
+      "common_transforms": [
+        "结构：solve(L,R,queries) — 值域区间为[L,R]的查询集合",
+        "取 mid = (L+R)/2，将所有判定≤mid的查询递归到左区间",
+        "利用可回退数据结构（如BIT with rollback）执行批量判定",
+        "递归到叶子节点时收集每个查询的最终答案"
+      ],
+      "typical_complexities": [
+        "O((n+m)·logV·logN) — BIT 辅助",
+        "O((n+m)·logV) — 不依赖数据结构时"
+      ],
+      "required_items": [
+        "2.4.52"
+      ],
+      "related_items": [
+        "2.1.5",
+        "2.4.1"
+      ],
+      "pitfalls": [
+        "判定函数的设计是关键——必须保证对 mid 的判定能批量完成",
+        "数据结构操作需要支持快速回退（撤销之前分治层的修改）",
+        "与普通二分答案的区别：整体二分是批量处理多组查询的框架",
+        "递归深度为 O(logV)，需注意栈空间"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.binary_search_answer（二分答案判定，P2 候选）**：二分答案判定关注的是单个问题的'判定是否可行'的通用技巧，而整体二分是批量处理多组离线查询的分治框架。整体二分可以看作是二分答案的'批量版本'。\n\n**pat.offline_query_pattern（离线查询模式）**：整体二分是一种特殊的离线查询处理方式（值域分治），与莫队/扫描线等离线技术有本质区别。识别信号不同：整体二分要求判定函数对值域的单调性。",
+      "source_knowledge_items": [
+        "2.4.52"
+      ],
+      "example_problem_refs": [
+        "多组区间第k小查询",
+        "多组二分判定问题批量处理",
+        "动态排名查询"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.matrix_exponentiation_dp",
+      "title": "DP与矩阵乘法优化",
+      "en_name": "DP with Matrix Exponentiation",
+      "category": "DP优化",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "2.8.189",
+      "description": "DP与矩阵乘法优化（DP with Matrix Exponentiation）利用矩阵快速幂将具有线性递推关系的DP状态转移从 O(n) 优化到 O(log n)。其核心思想是将DP的状态转移方程写成矩阵乘法形式，利用矩阵的幂运算快速计算远距离状态。适用于转移维度较小（d ≤ 100）但递推步数极大（N ≤ 10^18）的场景。",
+      "recognition_signals": [
+        "DP状态转移是线性的（下一状态是当前状态的线性组合）",
+        "转移方程可以表示为矩阵乘法形式：dp[i+1] = M · dp[i]",
+        "N 极大（10^12 ~ 10^18），但状态维度较小（d ≤ 100）",
+        "转移矩阵 M 在递推过程中不变（或周期不变）"
+      ],
+      "common_transforms": [
+        "将DP状态转化为向量形式：v_k = [dp[k][0], dp[k][1], ...]",
+        "构造转移矩阵 M 满足 v_{k+1} = M · v_k",
+        "通过矩阵快速幂计算 v_N = M^N · v_0",
+        "对于分段递推（如每段转移不同），分段矩阵幂"
+      ],
+      "typical_complexities": [
+        "O(d^3·logN) — 标准矩阵乘幂",
+        "O(d^2·logN) — 稀疏矩阵优化"
+      ],
+      "required_items": [
+        "2.8.189"
+      ],
+      "related_items": [
+        "2.12.2",
+        "1.7.32"
+      ],
+      "pitfalls": [
+        "转移矩阵构造是核心难点——需将递推式准确转化为矩阵形式",
+        "d>100 时 O(d^3·logN) 可能超时，需考虑快速幂优化或改方法",
+        "注意矩阵乘法中的取模时机（每次乘法后取模）",
+        "初始向量 v_0 的设计要覆盖所有基状态"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.matrix_modeling_pattern（矩阵乘法建模，P2 候选）**：矩阵乘法建模关注的是'如何将问题转化为矩阵运算'这一更广泛的方法论，而本模式聚焦于DP状态转移中的矩阵快速幂优化。两者语义重叠但层次不同——本模式是矩阵建模在DP中的具体应用。\n\n**pat.dp_state_machine（状态机DP）**：状态机DP也可以转化为矩阵形式（状态转移图→邻接矩阵→转移矩阵），但状态机DP的核心是状态图建模，而矩阵快速幂DP的核心是利用矩阵乘法的结合律加速递推。",
+      "source_knowledge_items": [
+        "2.8.189"
+      ],
+      "example_problem_refs": [
+        "斐波那契数列或广义线性递推",
+        "图的k步可达计数（邻接矩阵快速幂）",
+        "DP递推超过10^9步的优化",
+        "分段线性递推问题"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.two_pointer_sliding_window",
+      "title": "双指针/滑动窗口建模",
+      "en_name": "Two Pointer / Sliding Window Modeling",
+      "category": "线性扫描",
+      "difficulty": "intermediate",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "high_school_oi"
+      ],
+      "audience": [
+        "high_school_oi",
+        "university_icpc"
+      ],
+      "visibility": "public",
+      "source_id": "2.9.136",
+      "description": "双指针（Two Pointer）和滑动窗口（Sliding Window）是一类用于线性扫描数组的优化技巧。通过维护两个指针（或一个窗口的左右端点），利用'单调性'使得每个元素只被访问常数次，从而将 O(n^2) 的暴力枚举优化为 O(n)。核心在于发现'当左端点向右移动时，满足条件的右端点不会向左回退'这一性质。",
+      "recognition_signals": [
+        "需要在数组/字符串中找到满足某种条件的连续子区间",
+        "条件具有单调性：扩大区间不会使条件从满足变为不满足（或刚好相反）",
+        "目标是统计个数、求最值或判断可行性",
+        "典型题面：'最长的满足...的子数组'、'和 ≤ S 的最长子区间'"
+      ],
+      "common_transforms": [
+        "维护 left, right 两个指针，初始都在 0",
+        "当条件满足时右移 right，不满足时右移 left",
+        "在每次移动后更新窗口内的状态（如窗口和、频率等）",
+        "对于计数问题，统计以每个位置结尾(或开头)的合法区间数量"
+      ],
+      "typical_complexities": [
+        "O(n) — 每个元素最多被 left 和 right 各访问一次",
+        "O(n·log Σ) — 配合哈希表维护窗口内元素频率"
+      ],
+      "required_items": [
+        "2.9.136"
+      ],
+      "related_items": [
+        "2.5.1",
+        "2.5.4"
+      ],
+      "pitfalls": [
+        "确认单调性成立——不是所有区间问题都满足单调性",
+        "注意窗口收缩时的状态更新顺序（先减后移还是先移后减）",
+        "对于'恰好满足某条件'的问题可能需要两次滑动窗口（先≥后>）",
+        "多个条件的维护（如同时限制和与不同元素数）需选择合适的数据结构"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.prefix_sum_difference_extended（前缀和与差分扩展，P2 候选）**：前缀和与双指针是两种互补的数组处理方式。前缀和适合 O(1) 区间查询，双指针适合在必要时动态调整区间。部分问题两种方法都可解，但双指针在需要扫描时更优。\n\n**pat.greedy_interval_scheduling（贪心区间调度）**：区间调度按右端点排序贪心选择，双指针按左端点递增滑动。两者识别信号不同：区间调度关注'最多互不重叠'，双指针关注'满足条件的连续子区间'。",
+      "source_knowledge_items": [
+        "2.9.136"
+      ],
+      "example_problem_refs": [
+        "最长无重复字符子串",
+        "和不超过S的最长子数组",
+        "统计满足某条件的子区间数量",
+        "最小覆盖子串"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.congruence_shortest_path_modeling",
+      "title": "同余最短路",
+      "en_name": "Congruence Shortest Path Modeling",
+      "category": "数论建模/图论",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_math"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "2.15.19",
+      "description": "同余最短路（Congruence Shortest Path）是一种将数论问题转化为最短路的建模技巧。给定若干数值 a₁, a₂, ..., aₖ，要求判断用它们能拼出某个数或求最小/最大不可表示的数的数量。核心思路：选择最小的 a_i 作为模数 m，按模 m 的余数建图，每个剩余类是一个节点，每次加上一个数 a_j 就相当于从节点 x 走到节点 (x + a_j) mod m，边权为 a_j。跑最短路后得到到达每个剩余类的最小值。",
+      "recognition_signals": [
+        "给定若干整数，要求判断某数能否由它们线性组合表示",
+        "求最小不可表示数 / 最大不可表示数 / 不可表示数的数量",
+        "题面中出现'由...拼成'、'可用...表示'、'组合'等关键词",
+        "典型的'同余类划分'问题（如硬币问题推广）"
+      ],
+      "common_transforms": [
+        "选取最小的给定值 m = min(a_i) 作为模数（值域小用最小的，否则选任意）",
+        "建图：节点 0 ~ m-1 表示模 m 的各个剩余类",
+        "对每个节点 x 和每个数 a_j：连边 x → (x + a_j) mod m，权 = a_j",
+        "以节点 0 为源点跑最短路（Dijkstra 或 SPFA），dist[x] = 到达剩余类 x 的最小值",
+        "通过 dist[] 数组回答各种表示类问题"
+      ],
+      "typical_complexities": [
+        "O(m·k·log m) — Dijkstra + m 节点 k 边",
+        "O(m·k) — SPFA 在特定图中可做到"
+      ],
+      "required_items": [
+        "2.15.19"
+      ],
+      "related_items": [
+        "2.7.2",
+        "4.2.2",
+        "2.13.1"
+      ],
+      "pitfalls": [
+        "模数 m 的选择：取最小的 a_i 可使节点数 m 最小",
+        "m 过大时（>10^5）同余最短路不可行，需改用其他方法（如类欧几里得）",
+        "边缘情况：剩余类 0 的 dist[0] = 0，其余初始化为 INF",
+        "图中的环不造成负权（所有边权为正），Dijkstra 可用"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.shortest_path_modeling（最短路建模）**：最短路建模是通用图论建模框架，同余最短路是其特殊形式——将剩余类作为节点、数值组合作为边。两者的关系是 general vs specialized。\n\n**pat.modular_counting_pattern（取模计数模式）**：取模计数关注的是组合数/排列数计算中的取模运算，同余最短路关注的是数论表示性问题的最短路转化。两者都涉及模运算但应用场景完全不同。",
+      "source_knowledge_items": [
+        "2.15.19"
+      ],
+      "example_problem_refs": [
+        "给若干面额的硬币，求最小不能表示的面额",
+        "跳跃游戏：给定若干步长，求能否跳到某个位置",
+        "Frobenius 硬币问题推广",
+        "模意义下的背包可行性问题"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.max_density_subgraph",
+      "title": "最大密度子图",
+      "en_name": "Maximum Density Subgraph",
+      "category": "网络流建模",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "2.16.39",
+      "description": "最大密度子图（Maximum Density Subgraph）是指在一个无向图中找出子图使得其密度（边数与点数之比）最大。该问题的经典解法是参数搜索+最小割：二分密度 g，对每个 g 构造网络，判定是否存在密度 ≥ g 的子图。核心转化：密度最大 ⇔ 最小化 |E| - g·|V| ⇔ 转化为闭合子图/最小割模型。",
+      "recognition_signals": [
+        "问题要求选出一个子图优化边与点的比率（密度）",
+        "目标函数形式为 f(S) / g(S)，其中分子和分母都在子图 S 上定义",
+        "可以转化为参数搜索（二分密度）并判定可行性",
+        "判定过程可以建模为最小割/最大流问题"
+      ],
+      "common_transforms": [
+        "二分密度 g ∈ [0, m/n]",
+        "对每个 g，目标：是否存在子图 S 满足 |E(S)| - g·|V(S)| ≥ 0",
+        "等价于最大化 |E(S)| - g·|V(S)|，可以转化为权闭合子图",
+        "建图：每个点有负权 -g，每条边有正权 +1（边变为点），求最大权闭合子图",
+        "判定：最大权闭合子图的权 ≥ 0 则可行"
+      ],
+      "typical_complexities": [
+        "O(log(m/n)·flow(n+m, m)) — 二分 + 网络流判定",
+        "O(log precision·maxFlow)"
+      ],
+      "required_items": [
+        "2.16.39"
+      ],
+      "related_items": [
+        "2.13.1",
+        "2.21.1"
+      ],
+      "pitfalls": [
+        "二分精度：一般二分 30-60 次可达到足够精度，或使用分数规划框架",
+        "边转点的建图技巧：每条边作为一个节点，权为 +1，与两端点相连",
+        "与最大权闭合子图的关系——最大密度子图判定是最大权闭合子图的特例",
+        "整数密度场景（如 avg degree）可直接求解不用二分"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.network_flow_modeling（网络流建模）**：最大密度子图是网络流建模的具体应用，其判定依赖最小割模型。两者是 specific vs general 的关系。\n\n**pat.min_cut_selection（最小割选择建模）**：最小割选择建模聚焦于'选择/划分'类问题的网络流转化，最大密度子图的判定步骤确实使用了类似的最小割建模，但密度子图有独特的分母优化结构（参数搜索+密度判定）。",
+      "source_knowledge_items": [
+        "2.16.39"
+      ],
+      "example_problem_refs": [
+        "无向图最大密度子图（密度=边数/点数）",
+        "带点权和边权的最大密度子图推广",
+        "社交网络中的社区发现（高密度子图）"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.mixed_graph_euler_circuit",
+      "title": "混合图欧拉回路",
+      "en_name": "Mixed Graph Eulerian Circuit",
+      "category": "网络流建模",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "2.16.40",
+      "description": "混合图欧拉回路（Mixed Graph Eulerian Circuit）是指在既有有向边又有无向边的混合图中判定是否存在欧拉回路并构造之。核心技巧：先给所有无向边随意定向，然后通过流量平衡修正入度与出度之差，使每个节点的入度=出度。将入度>出度的节点连向源点（需要'导出'流量），入度<出度的节点连向汇点（需要'导入'流量），无向边作为可调节的弧（容量为1，可翻转），跑最大流。",
+      "recognition_signals": [
+        "图中同时存在有向边和无向边",
+        "要求走遍所有边恰好一次（欧拉回路/路径）",
+        "需要判定是否存在这样的回路，或输出具体路径",
+        "建模核心是'给无向边确定方向'使入度=出度"
+      ],
+      "common_transforms": [
+        "先随意给无向边指定一个方向",
+        "计算每个节点的当前度差 d[i] = indeg[i] - outdeg[i]",
+        "将无向边作为可翻转弧建图：cap=1, 正方向可控",
+        "源点→d[i]>0 的节点（超出的入度需要被导出），流 cap=d[i]/2",
+        "d[i]<0 的节点→汇点（缺少的出度需要被导入），流 cap= -d[i]/2",
+        "满流则存在欧拉回路，每条使用的反向弧对应需要翻转方向的无向边"
+      ],
+      "typical_complexities": [
+        "O(m·√n) — Dinic最大流",
+        "构造回路：O(m) — Hierholzer算法"
+      ],
+      "required_items": [
+        "2.16.40"
+      ],
+      "related_items": [
+        "2.13.1",
+        "2.15.1"
+      ],
+      "pitfalls": [
+        "入度出度之差必须为偶数，否则不可能存在欧拉回路",
+        "图必须连通（忽略孤立点），否则不存在欧拉回路",
+        "随意定向后注意无向边变为可调整的容量弧（每条边只能翻转一次）",
+        "满流判定后需要使用DFS恢复实际方向并运行Hierholzer构造回路"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.network_flow_modeling（网络流建模）**：混合图欧拉回路是网络流建模在欧拉回路问题中的具体应用——将无向边的定向问题转化为流量平衡问题。\n\n**pat.euler_path_modeling（欧拉路径建模）**：如果ready patterns中存在欧拉路径相关的模式，混合图欧拉回路是其扩展——处理混合图中的欧拉回路问题。\n\n**pat.circulation_optimization（最小费用循环流，batch2）**：循环流也是流量平衡问题，但关注的是费用优化，而混合图欧拉回路关注的是可行性判定。两者的网络流建模结构相似但优化目标不同。",
+      "source_knowledge_items": [
+        "2.16.40"
+      ],
+      "example_problem_refs": [
+        "混合图欧拉回路判定与构造",
+        "城市街道定向问题（部分街道可双向，要求找到遍历所有街道的回路）",
+        "有向+无向混合图中的欧拉路径问题"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    },
+    {
+      "pattern_id": "pat.generating_function_dp",
+      "title": "生成函数与DP",
+      "en_name": "Generating Functions and DP",
+      "category": "组合数学/多项式",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi",
+        "advanced_math"
+      ],
+      "audience": [
+        "university_icpc",
+        "advanced_competitive_programmer"
+      ],
+      "visibility": "advanced",
+      "source_id": "4.3.43",
+      "description": "生成函数与DP（Generating Functions and DP）利用多项式的代数结构来理解和优化DP状态转移。生成函数将DP中的方案数编码为多项式的系数，使得复杂的状态合并（如背包的合并）转化为多项式乘法（卷积），从而可以借助FFT/NTT加速。此外，生成函数还能帮助推导闭形式表达式。",
+      "recognition_signals": [
+        "DP的转移涉及多重循环的卷积操作（如多重背包合并）",
+        "方案数具有组合意义，可以表示为多项式系数的乘积",
+        "需要高效的卷积计算（FFT/NTT可以将 O(n²) 降为 O(n log n)）",
+        "问题可以转化为'求某个多项式的某项系数'"
+      ],
+      "common_transforms": [
+        "为每个物品/决策构造生成函数：G_i(x) = Σ c_k·x^k（c_k为选择k个的方案数）",
+        "总方案 = Π G_i(x)，乘积的系数即为总方案数",
+        "使用FFT/NTT加速多项式乘法（卷积）",
+        "对于无限物品（如完全背包），利用闭形式（如 1/(1-x^k)）简化"
+      ],
+      "typical_complexities": [
+        "O(MAX·log MAX) — NTT加速卷积",
+        "O(MAX·log² MAX) — 分治NTT合并多个生成函数"
+      ],
+      "required_items": [
+        "4.3.43"
+      ],
+      "related_items": [
+        "2.12.4",
+        "1.7.4"
+      ],
+      "pitfalls": [
+        "生成函数的构造需要明确系数含义——x^k 的系数是'某种计数'",
+        "NTT需要模数为 998244353 等特殊素数，普通模数需CRT合并",
+        "卷积后的数组大小注意上限（可能超过原始MAX）",
+        "生成函数的闭形式推导需要一定的数学功底"
+      ],
+      "boundary_note": "## 边界说明\n\n**pat.combinatorial_counting（组合计数）**：组合计数关注的是排列组合的计数公式和容斥/DP方法，生成函数是一种更高级的计数工具——将组合结构转化为代数结构。两者在背包计数场景有重叠，但生成函数提供了多项式视角和FFT加速的可能。\n\n**pat.knapsack_counting（背包方案数计数，P2 候选）**：背包方案数计数可直接用DP做，也可以用生成函数+卷积。生成函数提供了'当背包容量很大时'的优化路径。",
+      "source_knowledge_items": [
+        "4.3.43"
+      ],
+      "example_problem_refs": [
+        "多重背包方案数统计（卷积加速）",
+        "给定面额的硬币凑出一定金额的方案数",
+        "分拆数（整数划分）问题",
+        "多个生成函数的乘积/乘法逆求系数"
+      ],
+      "batch": "patterns_batch4",
+      "source": "Stage3G full400 triage"
+    }
+  ]
+}

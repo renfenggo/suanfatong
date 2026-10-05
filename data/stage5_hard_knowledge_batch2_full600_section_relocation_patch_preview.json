@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T15:12:10.190861+00:00",
+    "main_graph_modified": false
+  },
+  "total_patches": 27,
+  "patches": [
+    {
+      "old_item_id": "2.1.102",
+      "new_item_id": "3.13.386",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.103",
+      "new_item_id": "3.13.387",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.104",
+      "new_item_id": "3.13.388",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.105",
+      "new_item_id": "3.13.389",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.106",
+      "new_item_id": "3.13.390",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.107",
+      "new_item_id": "3.13.391",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.108",
+      "new_item_id": "3.13.392",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.109",
+      "new_item_id": "3.13.393",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.110",
+      "new_item_id": "3.13.394",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.111",
+      "new_item_id": "3.13.395",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.112",
+      "new_item_id": "3.13.396",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.113",
+      "new_item_id": "3.13.397",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.114",
+      "new_item_id": "3.13.398",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.115",
+      "new_item_id": "3.13.399",
+      "old_section": "2.1",
+      "new_section": "3.13",
+      "new_parent": "3.13",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.117",
+      "new_item_id": "3.7.40",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.118",
+      "new_item_id": "3.7.41",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.119",
+      "new_item_id": "3.7.42",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.120",
+      "new_item_id": "3.7.43",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.121",
+      "new_item_id": "3.7.44",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.122",
+      "new_item_id": "3.7.45",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.123",
+      "new_item_id": "3.7.46",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.124",
+      "new_item_id": "3.7.47",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.125",
+      "new_item_id": "3.7.48",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.126",
+      "new_item_id": "3.7.49",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.127",
+      "new_item_id": "3.7.50",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.128",
+      "new_item_id": "3.7.51",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    },
+    {
+      "old_item_id": "2.1.129",
+      "new_item_id": "3.7.52",
+      "old_section": "2.1",
+      "new_section": "3.7",
+      "new_parent": "3.7",
+      "action": "move_section_and_rename_id"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "rollback_plan_id": "stage3e_aggressive_batch3_retry_v3",
+  "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch3_retry_v3.json",
+  "timestamp": "2026-05-22T21:00:00.000Z",
+  "items_to_rollback": {
+    "section_2_21": [
+      "2.21.124",
+      "2.21.125",
+      "2.21.126",
+      "2.21.127",
+      "2.21.128"
+    ],
+    "section_3_13": [
+      "3.13.106",
+      "3.13.107",
+      "3.13.108",
+      "3.13.109",
+      "3.13.110",
+      "3.13.111",
+      "3.13.112",
+      "3.13.113",
+      "3.13.114",
+      "3.13.115",
+      "3.13.116",
+      "3.13.117",
+      "3.13.118",
+      "3.13.119",
+      "3.13.120",
+      "3.13.121",
+      "3.13.122",
+      "3.13.123",
+      "3.13.124",
+      "3.13.125",
+      "3.13.126",
+      "3.13.127",
+      "3.13.128",
+      "3.13.129",
+      "3.13.130"
+    ]
+  },
+  "rollback_actions": [
+    {
+      "action": "restore_from_backup",
+      "source": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch3_retry_v3.json",
+      "destination": "merged_knowledge_graph_item_dependencies_refined.json",
+      "description": "从备份文件恢复主图谱到合并前状态"
+    },
+    {
+      "action": "verify_item_count",
+      "expected": 1542,
+      "description": "验证恢复后的 item_count 为 1542"
+    },
+    {
+      "action": "verify_section_count",
+      "expected": 65,
+      "description": "验证恢复后的 section_count 为 65"
+    }
+  ],
+  "rollback_status": "not_executed",
+  "restore_item_count": 1542,
+  "restore_section_count": 65,
+  "merge_success": true
+}

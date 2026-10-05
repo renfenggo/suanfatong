@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Stage3E Batch5 smaller_15 候选选择计划",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:00:00.000Z",
+    "main_graph_modified": false,
+    "original_batch5_count": 30,
+    "selected_count": 15
+  },
+  "selection_criteria": [
+    "所有候选均为 yellow 风险等级，无 red/high risk",
+    "优先选择教育价值高的核心算法变体",
+    "保持系列分布均衡，避免同一系列过多",
+    "避免选择已标记为 problem_patterns 优先同步的候选",
+    "所有 candidate 的 direct_pre 均为具体 item id，无 section 引用",
+    "无 high duplicate risk 候选"
+  ],
+  "selected_candidates": [
+    {
+      "candidate_id": "cand.ds.dsu_advanced.undo_stack",
+      "name": "高级并查集：Undo Stack",
+      "series": "高级并查集",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.binomial_heap",
+      "name": "可并堆：Binomial Heap",
+      "series": "可并堆",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.fibonacci_heap",
+      "name": "可并堆：Fibonacci Heap",
+      "series": "可并堆",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.leftist_heap",
+      "name": "可并堆：Leftist Heap",
+      "series": "可并堆",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.pairing_heap",
+      "name": "可并堆：Pairing Heap",
+      "series": "可并堆",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.skew_heap",
+      "name": "可并堆：Skew Heap",
+      "series": "可并堆",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.coordinate_compressed",
+      "name": "李超线段树：Coordinate Compressed",
+      "series": "李超线段树",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.dynamic",
+      "name": "李超线段树：动态版",
+      "series": "李超线段树",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.persistent",
+      "name": "李超线段树：可持久化版",
+      "series": "李超线段树",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.segment_insertion",
+      "name": "李超线段树：Segment Insertion",
+      "series": "李超线段树",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.historical_maximum",
+      "name": "Segment Tree Beats：Historical Maximum",
+      "series": "Segment Tree Beats",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_add_max",
+      "name": "Segment Tree Beats：Range Add Max",
+      "series": "Segment Tree Beats",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmin.codex1",
+      "name": "Segment Tree Beats：区间取 min 变体 1",
+      "series": "Segment Tree Beats",
+      "edu_score": 8,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.dynamic_segment_tree",
+      "name": "线段树变体：Dynamic Segment Tree",
+      "series": "线段树变体",
+      "edu_score": 7,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.gcd_segment_tree",
+      "name": "线段树变体：Gcd Segment Tree",
+      "series": "线段树变体",
+      "edu_score": 7,
+      "reason": "核心算法变体，有独立竞赛教育价值"
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+      "name": "可并堆：Double Ended Priority Queue",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+      "name": "可并堆：Heap With Decrease Key",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+      "name": "可并堆：Lazy Deletion Heap",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+      "name": "可并堆：Meldable Priority Queue",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+      "name": "可并堆：Persistent Heap",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+      "name": "李超线段树：Maximum Query",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+      "name": "李超线段树：Minimum Query",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.on_tree",
+      "name": "李超线段树：On Tree",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.rollback",
+      "name": "李超线段树：回滚版",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+      "name": "Segment Tree Beats：Beats Amortized Analysis",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+      "name": "Segment Tree Beats：Beats Proof",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+      "name": "Segment Tree Beats：Beats With Assignment",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+      "name": "Segment Tree Beats：Range Min Max Sum",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+      "name": "Segment Tree Beats：Range Modulo",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+      "name": "Segment Tree Beats：Second Maximum Invariant",
+      "reason": "同系列中教育区分度相对较低或非核心变体"
+    }
+  ]
+}

@@ -1,0 +1,2055 @@
+{
+  "generated_at": "2026-05-22",
+  "pattern_count": 99,
+  "missing_required_item_pattern_count": 0,
+  "missing_related_item_pattern_count": 0,
+  "required_items_problem_count": 0,
+  "generic_related_items_pattern_count": 69,
+  "reviews": [
+    {
+      "pattern_id": "pat.two_sum",
+      "name": "两数之和模式",
+      "en_name": "Two Sum Pattern",
+      "required_items": [
+        "3.2.5",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.prefix_sum_hashmap",
+      "name": "前缀和 + 哈希表",
+      "en_name": "Prefix Sum + HashMap",
+      "required_items": [
+        "2.4.1",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.sliding_window_fixed_size",
+      "name": "定长滑动窗口",
+      "en_name": "Sliding Window Fixed Size",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.sliding_window_variable_size",
+      "name": "变长滑动窗口",
+      "en_name": "Sliding Window Variable Size",
+      "required_items": [
+        "2.5.4",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.fast_slow_pointers",
+      "name": "快慢指针",
+      "en_name": "Fast and Slow Pointers",
+      "required_items": [
+        "2.5.12",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.monotonic_stack_next_greater",
+      "name": "单调栈求下一个更大元素",
+      "en_name": "Monotonic Stack Next Greater",
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.top_k_frequent",
+      "name": "高频 Top K",
+      "en_name": "Top K Frequent",
+      "required_items": [
+        "3.2.5",
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.k_way_merge",
+      "name": "K 路归并",
+      "en_name": "K-way Merge",
+      "required_items": [
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.binary_search_on_answer",
+      "name": "答案二分",
+      "en_name": "Binary Search on Answer",
+      "required_items": [
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.merge_intervals",
+      "name": "区间合并",
+      "en_name": "Merge Intervals Pattern",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.interval_sweep_events",
+      "name": "区间事件扫描",
+      "en_name": "Interval Sweep Events",
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.subarray_product_window",
+      "name": "乘积约束窗口",
+      "en_name": "Subarray Product Window",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.palindrome_expand",
+      "name": "中心扩展回文",
+      "en_name": "Palindrome Center Expansion",
+      "required_items": [
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.linked_list_reverse",
+      "name": "链表原地反转",
+      "en_name": "Linked List In-place Reverse",
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.tree_level_order",
+      "name": "树的层序遍历",
+      "en_name": "Tree Level Order Pattern",
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.valid_parentheses_stack",
+      "name": "括号匹配栈",
+      "en_name": "Valid Parentheses Stack",
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.hash_dedup_seen",
+      "name": "哈希去重与已访问集合",
+      "en_name": "Hash Set Seen Pattern",
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.matrix_spiral_simulation",
+      "name": "矩阵边界模拟",
+      "en_name": "Matrix Boundary Simulation",
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.backtracking_combinations",
+      "name": "组合回溯",
+      "en_name": "Backtracking Combinations",
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.permutation_used_array",
+      "name": "排列回溯 used 数组",
+      "en_name": "Permutation Used Array",
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.island_problems",
+      "name": "岛屿问题",
+      "en_name": "Island Problems",
+      "required_items": [
+        "2.7.1",
+        "2.7.2",
+        "2.9.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 3,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.word_ladder",
+      "name": "单词接龙",
+      "en_name": "Word Ladder",
+      "required_items": [
+        "2.7.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.course_schedule",
+      "name": "课程表依赖",
+      "en_name": "Course Schedule",
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.bipartite_coloring",
+      "name": "二分图染色",
+      "en_name": "Bipartite Coloring Pattern",
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.multi_source_bfs",
+      "name": "多源 BFS",
+      "en_name": "Multi-source BFS",
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.zero_one_bfs",
+      "name": "0-1 BFS 模式",
+      "en_name": "0-1 BFS Pattern",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.state_compressed_bfs",
+      "name": "状态压缩 BFS",
+      "en_name": "State-compressed BFS",
+      "required_items": [
+        "2.7.2",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.topological_longest_path_dag",
+      "name": "DAG 拓扑 DP",
+      "en_name": "DAG Topological DP",
+      "required_items": [
+        "2.9.3",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.connected_components",
+      "name": "连通块分解",
+      "en_name": "Connected Components Pattern",
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.cycle_detection_undirected",
+      "name": "无向图判环",
+      "en_name": "Undirected Cycle Detection",
+      "required_items": [
+        "2.7.1",
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "approve",
+      "issues": []
+    },
+    {
+      "pattern_id": "pat.shortest_path_modeling",
+      "name": "最短路建模",
+      "en_name": "Shortest Path Modeling",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.difference_constraints_modeling",
+      "name": "差分约束建模",
+      "en_name": "Difference Constraints Modeling",
+      "required_items": [
+        "2.21.39",
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.flow_modeling",
+      "name": "网络流建模",
+      "en_name": "Flow Modeling",
+      "required_items": [
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.two_sat_modeling",
+      "name": "2-SAT 建模",
+      "en_name": "2-SAT Modeling",
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.bipartite_matching_modeling",
+      "name": "二分图匹配建模",
+      "en_name": "Bipartite Matching Modeling",
+      "required_items": [
+        "2.16.3",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.min_cut_selection",
+      "name": "最小割选择建模",
+      "en_name": "Minimum Cut Selection Modeling",
+      "required_items": [
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.project_selection_closure",
+      "name": "最大权闭合子图",
+      "en_name": "Maximum Closure Project Selection",
+      "required_items": [
+        "2.21.29",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.min_cost_flow_assignment",
+      "name": "费用流分配建模",
+      "en_name": "Min-cost Flow Assignment Modeling",
+      "required_items": [
+        "2.16.5",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.dag_dependency_modeling",
+      "name": "DAG 依赖建模",
+      "en_name": "DAG Dependency Modeling",
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.grid_graph_modeling",
+      "name": "网格图建模",
+      "en_name": "Grid Graph Modeling",
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.time_expanded_graph",
+      "name": "时间展开图建模",
+      "en_name": "Time-expanded Graph Modeling",
+      "required_items": [
+        "2.13.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.layered_graph_shortest_path",
+      "name": "分层图最短路",
+      "en_name": "Layered Graph Shortest Path",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.complement_graph_modeling",
+      "name": "补图搜索建模",
+      "en_name": "Complement Graph Search Modeling",
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.game_graph_retrograde",
+      "name": "博弈图逆推",
+      "en_name": "Game Graph Retrograde Modeling",
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.knapsack_dp",
+      "name": "背包 DP 模式",
+      "en_name": "Knapsack DP Pattern",
+      "required_items": [
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.complete_knapsack_dp",
+      "name": "完全背包 DP",
+      "en_name": "Complete Knapsack DP",
+      "required_items": [
+        "2.8.8",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.multiple_knapsack_binary_split",
+      "name": "多重背包二进制拆分",
+      "en_name": "Multiple Knapsack Binary Split",
+      "required_items": [
+        "2.8.9",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.interval_dp",
+      "name": "区间 DP 模式",
+      "en_name": "Interval DP Pattern",
+      "required_items": [
+        "2.8.12"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.tree_dp",
+      "name": "树形 DP 模式",
+      "en_name": "Tree DP Pattern",
+      "required_items": [
+        "2.8.13",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.digit_dp",
+      "name": "数位 DP 模式",
+      "en_name": "Digit DP Pattern",
+      "required_items": [
+        "2.8.21"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.automaton_dp",
+      "name": "自动机 DP 模式",
+      "en_name": "Automaton DP Pattern",
+      "required_items": [
+        "2.10.2",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.bitmask_dp",
+      "name": "状压 DP 模式",
+      "en_name": "Bitmask DP Pattern",
+      "required_items": [
+        "2.8.20",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.linear_dp_sequence",
+      "name": "序列线性 DP",
+      "en_name": "Linear Sequence DP",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.lis_dp",
+      "name": "最长递增子序列模式",
+      "en_name": "LIS Pattern",
+      "required_items": [
+        "2.3.6",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.lcs_dp",
+      "name": "最长公共子序列模式",
+      "en_name": "LCS Pattern",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.edit_distance_dp",
+      "name": "编辑距离 DP",
+      "en_name": "Edit Distance DP",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.probability_dp",
+      "name": "概率 DP 模式",
+      "en_name": "Probability DP Pattern",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.expectation_dp",
+      "name": "期望 DP 模式",
+      "en_name": "Expectation DP Pattern",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.profile_dp",
+      "name": "轮廓线 DP",
+      "en_name": "Profile DP Pattern",
+      "required_items": [
+        "2.8.20"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.divide_conquer_dp_optimization",
+      "name": "分治 DP 优化",
+      "en_name": "Divide and Conquer DP Optimization",
+      "required_items": [
+        "2.1.5",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.monotone_queue_dp",
+      "name": "单调队列 DP 优化",
+      "en_name": "Monotone Queue DP Optimization",
+      "required_items": [
+        "2.5.4",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.segment_tree_range_update",
+      "name": "线段树区间更新",
+      "en_name": "Segment Tree Range Update Pattern",
+      "required_items": [
+        "3.7.2",
+        "3.7.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.dsu_connectivity",
+      "name": "并查集连通性",
+      "en_name": "DSU Connectivity Pattern",
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.fenwick_prefix_maintenance",
+      "name": "树状数组前缀维护",
+      "en_name": "Fenwick Prefix Maintenance",
+      "required_items": [
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.monotonic_queue_window_max",
+      "name": "单调队列窗口最值",
+      "en_name": "Monotonic Queue Window Maximum",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.order_statistic_maintenance",
+      "name": "动态第 k 小维护",
+      "en_name": "Order Statistic Maintenance",
+      "required_items": [
+        "3.7.2",
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.range_mode_offline",
+      "name": "区间众数离线维护",
+      "en_name": "Range Mode Offline Maintenance",
+      "required_items": [
+        "2.1.8",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.rollback_dsu",
+      "name": "可撤销并查集",
+      "en_name": "Rollback DSU Pattern",
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.persistent_segment_tree_kth",
+      "name": "主席树第 k 小",
+      "en_name": "Persistent Segment Tree K-th",
+      "required_items": [
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.lazy_tag_composition",
+      "name": "懒标记组合",
+      "en_name": "Lazy Tag Composition Pattern",
+      "required_items": [
+        "3.7.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.sparse_table_idempotent",
+      "name": "ST 表幂等查询",
+      "en_name": "Sparse Table Idempotent Query",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.heap_lazy_deletion",
+      "name": "堆懒删除",
+      "en_name": "Heap Lazy Deletion",
+      "required_items": [
+        "3.2.6",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.trie_prefix_query",
+      "name": "Trie 前缀查询",
+      "en_name": "Trie Prefix Query Pattern",
+      "required_items": [
+        "2.10.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.coordinate_compression",
+      "name": "坐标离散化维护",
+      "en_name": "Coordinate Compression Pattern",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.tree_path_query",
+      "name": "树上路径查询",
+      "en_name": "Tree Path Query Pattern",
+      "required_items": [
+        "2.14.2",
+        "2.14.4",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 3,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.lca_binary_lifting",
+      "name": "LCA 倍增",
+      "en_name": "LCA Binary Lifting Pattern",
+      "required_items": [
+        "2.14.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.rerooting_tree_dp",
+      "name": "换根 DP",
+      "en_name": "Rerooting Tree DP",
+      "required_items": [
+        "2.8.13"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.virtual_tree_pattern",
+      "name": "虚树建模",
+      "en_name": "Virtual Tree Pattern",
+      "required_items": [
+        "2.14.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.subtree_query_euler",
+      "name": "子树查询欧拉序",
+      "en_name": "Subtree Query Euler Tour",
+      "required_items": [
+        "2.7.1",
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.centroid_decomposition_query",
+      "name": "点分治查询",
+      "en_name": "Centroid Decomposition Query",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.kmp_string_matching",
+      "name": "KMP 字符串匹配",
+      "en_name": "KMP String Matching",
+      "required_items": [
+        "2.10.3",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.rabin_karp_hash",
+      "name": "滚动哈希匹配",
+      "en_name": "Rabin-Karp Rolling Hash",
+      "required_items": [
+        "2.10.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.trie_multi_pattern",
+      "name": "Trie 多模式前缀匹配",
+      "en_name": "Trie Multi-pattern Prefix Matching",
+      "required_items": [
+        "2.10.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.aho_corasick_matching",
+      "name": "AC 自动机多模式匹配",
+      "en_name": "Aho-Corasick Multi-pattern Matching",
+      "required_items": [
+        "2.10.4",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.z_algorithm_pattern",
+      "name": "Z 算法匹配",
+      "en_name": "Z Algorithm Pattern",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.suffix_array_lcp_query",
+      "name": "后缀数组 + LCP",
+      "en_name": "Suffix Array + LCP Pattern",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.manacher_palindrome",
+      "name": "Manacher 回文",
+      "en_name": "Manacher Palindrome Pattern",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.string_dp_wildcard",
+      "name": "通配符匹配 DP",
+      "en_name": "Wildcard String Matching DP",
+      "required_items": [
+        "2.8.3",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.offline_query_pattern",
+      "name": "离线查询模式",
+      "en_name": "Offline Query Pattern",
+      "required_items": [
+        "2.1.8",
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.sweep_line_pattern",
+      "name": "扫描线模式",
+      "en_name": "Sweep Line Pattern",
+      "required_items": [
+        "4.7.42",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.meet_in_the_middle",
+      "name": "折半搜索",
+      "en_name": "Meet-in-the-middle",
+      "required_items": [
+        "2.1.1",
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.constructive_invariant",
+      "name": "构造题不变量",
+      "en_name": "Constructive Invariant Pattern",
+      "required_items": [
+        "2.1.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.greedy_exchange_argument",
+      "name": "贪心交换论证",
+      "en_name": "Greedy Exchange Argument",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.binary_lifting_state_jump",
+      "name": "倍增状态跳转",
+      "en_name": "Binary Lifting State Jump",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.modular_counting_pattern",
+      "name": "取模计数模式",
+      "en_name": "Modular Counting Pattern",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 2,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.inclusion_exclusion_counting",
+      "name": "容斥计数",
+      "en_name": "Inclusion-Exclusion Counting",
+      "required_items": [
+        "2.1.1",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.coordinate_sweep_compression",
+      "name": "离散化扫描",
+      "en_name": "Compressed Coordinate Sweep",
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.divide_conquer_offline",
+      "name": "整体二分",
+      "en_name": "Parallel Binary Search Pattern",
+      "required_items": [
+        "2.3.6",
+        "2.1.8"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 2,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    },
+    {
+      "pattern_id": "pat.randomized_hash_check",
+      "name": "随机哈希判等",
+      "en_name": "Randomized Hash Check",
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "missing_required_items": [],
+      "missing_related_items": [],
+      "required_item_count": 1,
+      "related_item_count": 3,
+      "review_result": "needs_fix",
+      "issues": [
+        "generic related_items include simulation; consider replacing with domain-specific neighbors in fix phase"
+      ]
+    }
+  ]
+}

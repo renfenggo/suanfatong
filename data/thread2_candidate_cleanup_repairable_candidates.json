@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "generated_by": "thread2_candidate_cleanup",
+    "generated_at": "2026-05-22T12:00:00.000Z",
+    "task": "repairable_candidates",
+    "main_graph_modified": false,
+    "validate_only_passed": true
+  },
+  "summary": {
+    "total_repairable_candidates": 15,
+    "dependency_fix": 5,
+    "parent_concept_fix": 3,
+    "section_fix": 2,
+    "duplicate_risk_downgrade": 3,
+    "metadata_fix": 2
+  },
+  "repairable_candidates": [
+    {
+      "candidate_id": "cand.graph.flow_bounds.demands",
+      "name": "上下界网络流：Demands",
+      "en_name": "Flow with Lower Bounds: Demands",
+      "repair_type": "dependency_fix",
+      "suggested_fix": "将依赖项'Network Flow'映射到'2.16.3'，'Minimum Cut'映射到'2.21.67'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "en_name": "Matching and Cover: Weighted General Matching",
+      "repair_type": "dependency_fix",
+      "suggested_fix": "将依赖项'Matching'映射到'2.15.2'，'Bipartite Matching'映射到'2.15.3'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+      "name": "上下界网络流：Minimum Flow",
+      "en_name": "Flow with Lower Bounds: Minimum Flow",
+      "repair_type": "dependency_fix",
+      "suggested_fix": "将依赖项'Network Flow'映射到'2.16.3'，'Maximum Flow'映射到'2.16.5'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "en_name": "Matching and Cover: Tutte Matrix",
+      "repair_type": "dependency_fix",
+      "suggested_fix": "将依赖项'Matching'映射到'2.15.2'，'Blossom Algorithm'映射到'2.21.13'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "en_name": "Flow with Lower Bounds: Edge Lower Bound Transform",
+      "repair_type": "dependency_fix",
+      "suggested_fix": "将依赖项'Network Flow'映射到'2.16.3'，'Feasible Circulation'映射到'2.21.19'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+      "name": "上下界网络流：Maximum Flow",
+      "en_name": "Flow with Lower Bounds: Maximum Flow",
+      "repair_type": "parent_concept_fix",
+      "suggested_fix": "建议作为'2.21.19'（有上下界网络流可行流）的子话题",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3G"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+      "name": "上下界网络流：Min Cost Circulation",
+      "en_name": "Flow with Lower Bounds: Min Cost Circulation",
+      "repair_type": "parent_concept_fix",
+      "suggested_fix": "建议作为'2.16.6'（最小费用最大流）的扩展子话题",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3G"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.node_demand",
+      "name": "上下界网络流：Node Demand",
+      "en_name": "Flow with Lower Bounds: Node Demand",
+      "repair_type": "parent_concept_fix",
+      "suggested_fix": "建议作为'2.21.19'（有上下界网络流可行流）的子话题",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3G"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+      "name": "上下界网络流：Bounded Bipartite Matching",
+      "en_name": "Flow with Lower Bounds: Bounded Bipartite Matching",
+      "repair_type": "section_fix",
+      "suggested_fix": "建议移动到2.15（匹配）章节，而不是2.21（高级图论扩展）",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "en_name": "Matching and Cover: Konig Theorem",
+      "repair_type": "section_fix",
+      "suggested_fix": "建议移动到2.15（匹配）章节，作为2.15.2（二分图匹配）的扩展",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "en_name": "Matching and Cover: Stable Marriage",
+      "repair_type": "duplicate_risk_downgrade",
+      "suggested_fix": "与现有2.15.3（最大匹配）有一定重叠，但作为独立的稳定婚姻问题仍有价值，建议从medium降为low风险",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "en_name": "Matching and Cover: Minimum Path Cover",
+      "repair_type": "duplicate_risk_downgrade",
+      "suggested_fix": "与2.15.3（最大匹配）有应用关系，但作为DAG路径覆盖算法有独立价值",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "en_name": "Matching and Cover: Dilworth Theorem",
+      "repair_type": "duplicate_risk_downgrade",
+      "suggested_fix": "与2.21.21（最小链覆盖与Dilworth定理）有概念重叠，但作为匹配理论有独立价值",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "name": "匹配与覆盖：Blossom Algorithm",
+      "en_name": "Matching and Cover: Blossom Algorithm",
+      "repair_type": "metadata_fix",
+      "suggested_fix": "补充难度级别为'expert'，添加中文别名'带花树算法'",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3F"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "name": "图论建模：Difference Constraints",
+      "en_name": "Graph Modeling: Difference Constraints",
+      "repair_type": "metadata_fix",
+      "suggested_fix": "补充难度级别为'intermediate'，添加更多建模示例",
+      "can_enter_future_merge_after_fix": true,
+      "recommended_stage": "Stage3G"
+    }
+  ]
+}

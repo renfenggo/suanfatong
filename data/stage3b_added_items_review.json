@@ -1,0 +1,2110 @@
+[
+  {
+    "id": "2.21.4",
+    "name": "Lengauer-Tarjan 支配树算法",
+    "en_name": "Lengauer-Tarjan Dominator Tree Algorithm",
+    "source_candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.5",
+    "name": "Block-Cut Tree 构建",
+    "en_name": "Block-Cut Tree Construction",
+    "source_candidate_id": "cand.graph.block_cut_tree.construction",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.6",
+    "name": "仙人掌图算法",
+    "en_name": "Cactus Graph Algorithms",
+    "source_candidate_id": "cand.graph.cactus.algorithm_and_properties",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.7",
+    "name": "弦图与完美消除序列 MCS",
+    "en_name": "Chordal Graph and Maximum Cardinality Search",
+    "source_candidate_id": "cand.graph.chordal_graph.mcs",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.8",
+    "name": "竞赛图哈密顿路",
+    "en_name": "Tournament Graph Hamiltonian Path",
+    "source_candidate_id": "cand.graph.tournament_graph.hamilton_path",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.9",
+    "name": "朱刘算法求最小树形图",
+    "en_name": "Chu-Liu/Edmonds Algorithm for Minimum Arborescence",
+    "source_candidate_id": "cand.graph.min_arborescence.chu_liu",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.10",
+    "name": "Gomory-Hu 树构建",
+    "en_name": "Gomory-Hu Tree Construction",
+    "source_candidate_id": "cand.graph.gomory_hu_tree.construction",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.11",
+    "name": "Stoer-Wagner 全局最小割",
+    "en_name": "Stoer-Wagner Global Min-Cut Algorithm",
+    "source_candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.12",
+    "name": "Karp 最小平均环",
+    "en_name": "Karp's Minimum Mean Cycle Algorithm",
+    "source_candidate_id": "cand.graph.min_mean_cycle.karp",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.13",
+    "name": "一般图最大匹配带花树算法",
+    "en_name": "Blossom Algorithm for General Graph Maximum Matching",
+    "source_candidate_id": "cand.graph.general_matching.blossom.raw",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Blossom should depend on matching basics."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ],
+      "direct_pre_add": [
+        "2.15.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.14",
+    "name": "Tutte 矩阵与一般图匹配检测",
+    "en_name": "Tutte Matrix and General Graph Matching Detection",
+    "source_candidate_id": "cand.graph.tutte_matrix.matching",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.15",
+    "name": "拟阵交基础",
+    "en_name": "Matroid Intersection Basics",
+    "source_candidate_id": "cand.graph.matroid_intersection.basic",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.16",
+    "name": "Bridge Tree 构建",
+    "en_name": "Bridge Tree Construction",
+    "source_candidate_id": "cand.graph.bridge_tree.construction",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.17",
+    "name": "函数图分析",
+    "en_name": "Functional Graph Analysis",
+    "source_candidate_id": "cand.graph.functional_graph.analysis",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.18",
+    "name": "最大密度子图（分数规划）",
+    "en_name": "Maximum Density Subgraph via Fractional Programming",
+    "source_candidate_id": "cand.graph.max_density_subgraph.fractional",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.19",
+    "name": "有上下界网络流可行流",
+    "en_name": "Flow with Lower Bounds: Feasible Flow",
+    "source_candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Lower-bound flow should depend on Network Flow Basics."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ],
+      "direct_pre_add": [
+        "2.16.3"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.20",
+    "name": "平面图对偶图转换",
+    "en_name": "Planar Graph Dual Graph Conversion",
+    "source_candidate_id": "cand.graph.dual_graph.planar",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.21",
+    "name": "最小链覆盖与 Dilworth 定理",
+    "en_name": "Minimum Chain Cover and Dilworth's Theorem",
+    "source_candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.22",
+    "name": "一般图最大权匹配（带权带花树）",
+    "en_name": "Weighted General Graph Matching (Weighted Blossom)",
+    "source_candidate_id": "cand.graph.general_matching_weighted.blossom",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Blossom should depend on matching basics."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ],
+      "direct_pre_add": [
+        "2.15.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.23",
+    "name": "最小斯坦纳树 DP",
+    "en_name": "Minimum Steiner Tree Dynamic Programming",
+    "source_candidate_id": "cand.graph.steiner_tree.dp",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.24",
+    "name": "支配树：Control-Flow Graph",
+    "en_name": "Dominator Tree: Control-Flow Graph",
+    "source_candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.25",
+    "name": "圆方树：Articulation Construction",
+    "en_name": "Block-Cut Tree: Articulation Construction",
+    "source_candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.26",
+    "name": "仙人掌图：Cycle Decomposition",
+    "en_name": "Cactus Graph: Cycle Decomposition",
+    "source_candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.27",
+    "name": "动态图连通性：Offline Deletion",
+    "en_name": "Dynamic Connectivity: Offline Deletion",
+    "source_candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Dynamic connectivity should mention DSU and segment-tree-over-time style prerequisites."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [],
+      "direct_pre_add": [
+        "3.4.1",
+        "3.7.2"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.28",
+    "name": "动态最小生成树：Replacement Edge",
+    "en_name": "Dynamic MST: Replacement Edge",
+    "source_candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "2.21.29",
+    "name": "最大权闭合子图：Project Selection",
+    "en_name": "Maximum Closure: Project Selection",
+    "source_candidate_id": "cand.graph.closure_model.project_selection",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "problem_pattern_candidate",
+        "severity": "medium",
+        "detail": "This item is strongly modeling-pattern shaped and should be mirrored or migrated to problem_patterns later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.16.3"
+      ]
+    },
+    "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+  },
+  {
+    "id": "2.21.30",
+    "name": "特殊图：Chordal Graph",
+    "en_name": "Special Graph: Chordal Graph",
+    "source_candidate_id": "cand.graph.special_graph.chordal_graph",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.31",
+    "name": "有向生成树：Chu Liu Edmonds",
+    "en_name": "Directed MST: Chu Liu Edmonds",
+    "source_candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "2.21.32",
+    "name": "强连通分量 DAG：Condensation Applications",
+    "en_name": "SCC Condensation DAG: Condensation Applications",
+    "source_candidate_id": "cand.graph.scc_dag.condensation_applications",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.33",
+    "name": "拟阵图论：Graphic Matroid",
+    "en_name": "Matroid in Graphs: Graphic Matroid",
+    "source_candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "2.21.34",
+    "name": "平面图：Dual Graph",
+    "en_name": "Planar Graph: Dual Graph",
+    "source_candidate_id": "cand.graph.planar_graph.dual_graph",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.35",
+    "name": "支配树：Semidominator",
+    "en_name": "Dominator Tree: Semidominator",
+    "source_candidate_id": "cand.graph.dominator_tree.semidominator",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "3.13.1",
+    "name": "归并排序树：Range Count",
+    "en_name": "Merge Sort Tree: Range Count",
+    "source_candidate_id": "cand.ds.merge_sort_tree.range_count",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.2",
+    "name": "动态树结构：Euler Tour Tree",
+    "en_name": "Dynamic Tree Structure: Euler Tour Tree",
+    "source_candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.3",
+    "name": "高级 RMQ：Disjoint Sparse Table",
+    "en_name": "Advanced RMQ: Disjoint Sparse Table",
+    "source_candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.4",
+    "name": "多维数据结构：Kd Tree",
+    "en_name": "Multidimensional Data Structure: Kd Tree",
+    "source_candidate_id": "cand.ds.multidimensional.kd_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.5",
+    "name": "位集与线性基：Bitset Convolution",
+    "en_name": "Bitset and Linear Basis: Bitset Convolution",
+    "source_candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.6",
+    "name": "离线数据结构框架：Cdq With Fenwick",
+    "en_name": "Offline Data Structure Framework: Cdq With Fenwick",
+    "source_candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.3.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "3.13.7",
+    "name": "序列维护结构：Rope Editing",
+    "en_name": "Sequence Maintenance Structure: Rope Editing",
+    "source_candidate_id": "cand.ds.sequence_structure.rope_editing",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.8",
+    "name": "简洁与概率结构：Bloom Filter",
+    "en_name": "Succinct and Probabilistic Structure: Bloom Filter",
+    "source_candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.9",
+    "name": "可持久化结构：Persistent Array",
+    "en_name": "Persistent Data Structure: Persistent Array",
+    "source_candidate_id": "cand.ds.persistent_structure.persistent_array",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.10",
+    "name": "树分治维护：Centroid Decomposition Query",
+    "en_name": "Tree Decomposition Data Structure: Centroid Decomposition Query",
+    "source_candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.11",
+    "name": "归并排序树：Range Kth With Binary Search",
+    "en_name": "Merge Sort Tree: Range Kth With Binary Search",
+    "source_candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.12",
+    "name": "动态树结构：Top Tree",
+    "en_name": "Dynamic Tree Structure: Top Tree",
+    "source_candidate_id": "cand.ds.dynamic_tree.top_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.13",
+    "name": "高级 RMQ：Sqrt Tree",
+    "en_name": "Advanced RMQ: Sqrt Tree",
+    "source_candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.14",
+    "name": "多维数据结构：2D Fenwick",
+    "en_name": "Multidimensional Data Structure: 2D Fenwick",
+    "source_candidate_id": "cand.ds.multidimensional.2d_fenwick",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.15",
+    "name": "位集与线性基：Bitset Knapsack",
+    "en_name": "Bitset and Linear Basis: Bitset Knapsack",
+    "source_candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.16",
+    "name": "离线数据结构框架：Overall Binary Search",
+    "en_name": "Offline Data Structure Framework: Overall Binary Search",
+    "source_candidate_id": "cand.ds.offline_framework.overall_binary_search",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.3.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "3.13.17",
+    "name": "序列维护结构：Piece Table Editing",
+    "en_name": "Sequence Maintenance Structure: Piece Table Editing",
+    "source_candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.18",
+    "name": "简洁与概率结构：Counting Bloom Filter",
+    "en_name": "Succinct and Probabilistic Structure: Counting Bloom Filter",
+    "source_candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.19",
+    "name": "可持久化结构：Persistent Stack Queue",
+    "en_name": "Persistent Data Structure: Persistent Stack Queue",
+    "source_candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.20",
+    "name": "树分治维护：Centroid Update",
+    "en_name": "Tree Decomposition Data Structure: Centroid Update",
+    "source_candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.21",
+    "name": "归并排序树：Fractional Cascading",
+    "en_name": "Merge Sort Tree: Fractional Cascading",
+    "source_candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.22",
+    "name": "动态树结构：Link Cut Path Aggregate",
+    "en_name": "Dynamic Tree Structure: Link Cut Path Aggregate",
+    "source_candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.23",
+    "name": "高级 RMQ：Cartesian Tree Rmq",
+    "en_name": "Advanced RMQ: Cartesian Tree Rmq",
+    "source_candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.24",
+    "name": "多维数据结构：3D Fenwick",
+    "en_name": "Multidimensional Data Structure: 3D Fenwick",
+    "source_candidate_id": "cand.ds.multidimensional.3d_fenwick",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.25",
+    "name": "位集与线性基：Persistent Linear Basis",
+    "en_name": "Bitset and Linear Basis: Persistent Linear Basis",
+    "source_candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.26",
+    "name": "离线数据结构框架：Divide Conquer Optimization",
+    "en_name": "Offline Data Structure Framework: Divide Conquer Optimization",
+    "source_candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.3.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "3.13.27",
+    "name": "序列维护结构：Gap Buffer Concept",
+    "en_name": "Sequence Maintenance Structure: Gap Buffer Concept",
+    "source_candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.28",
+    "name": "简洁与概率结构：Quotient Filter",
+    "en_name": "Succinct and Probabilistic Structure: Quotient Filter",
+    "source_candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.29",
+    "name": "可持久化结构：Persistent Fenwick",
+    "en_name": "Persistent Data Structure: Persistent Fenwick",
+    "source_candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.30",
+    "name": "树分治维护：Hld Segment Tree",
+    "en_name": "Tree Decomposition Data Structure: Hld Segment Tree",
+    "source_candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.31",
+    "name": "归并排序树：Range Predecessor",
+    "en_name": "Merge Sort Tree: Range Predecessor",
+    "source_candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies are specific enough, section is reasonable, and product metadata is complete."
+  },
+  {
+    "id": "3.13.32",
+    "name": "动态树结构：Link Cut Subtree",
+    "en_name": "Dynamic Tree Structure: Link Cut Subtree",
+    "source_candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "2.21.36",
+    "name": "离线动态连通性（线段树分治）",
+    "en_name": "Offline Dynamic Connectivity via Segment Tree Divide and Conquer",
+    "source_candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "direct_pre_too_generic",
+        "severity": "medium",
+        "detail": "Advanced graph topic only depends on generic Graph DFS / Graph Theory anchors."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Dynamic connectivity should mention DSU and segment-tree-over-time style prerequisites."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Map to a more specific prerequisite such as flow, matching, MST, SCC, LCA, or DSU where applicable."
+      ],
+      "direct_pre_add": [
+        "3.4.1",
+        "3.7.2"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.37",
+    "name": "上下界网络流：Feasible Circulation",
+    "en_name": "Flow with Lower Bounds: Feasible Circulation",
+    "source_candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.16.3"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.38",
+    "name": "匹配与覆盖：Blossom Algorithm",
+    "en_name": "Matching and Cover: Blossom Algorithm",
+    "source_candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "duplicate_direct_pre",
+        "severity": "high",
+        "detail": "direct_pre contains duplicate item ids."
+      },
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+      },
+      "notes": [
+        "Deduplicate direct_pre before lowering review priority."
+      ],
+      "direct_pre": [
+        "2.15.1"
+      ]
+    },
+    "reason": "Prerequisite mapping is safe but too broad or duplicated; fix direct_pre before final risk downgrade."
+  },
+  {
+    "id": "2.21.39",
+    "name": "图论建模：Difference Constraints",
+    "en_name": "Graph Modeling: Difference Constraints",
+    "source_candidate_id": "cand.graph.graph_modeling.difference_constraints",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "A",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      },
+      {
+        "code": "problem_pattern_candidate",
+        "severity": "medium",
+        "detail": "This item is strongly modeling-pattern shaped and should be mirrored or migrated to problem_patterns later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+      },
+      "notes": []
+    },
+    "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+  },
+  {
+    "id": "3.13.33",
+    "name": "线段树变体：Merge",
+    "en_name": "Segment Tree Variants: Merge",
+    "source_candidate_id": "cand.ds.segment_tree_variants.merge",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.34",
+    "name": "李超线段树：Static",
+    "en_name": "Li Chao Tree: Static",
+    "source_candidate_id": "cand.ds.li_chao_tree.static",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.35",
+    "name": "小波树：区间第 k 小",
+    "en_name": "Wavelet Tree: Range Kth",
+    "source_candidate_id": "cand.ds.wavelet_tree.range_kth",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  },
+  {
+    "id": "3.13.36",
+    "name": "高级并查集：回滚版",
+    "en_name": "Advanced DSU: Rollback",
+    "source_candidate_id": "cand.ds.dsu_advanced.rollback",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "rel_empty",
+        "severity": "low",
+        "detail": "rel is empty; acceptable for merge safety, but useful related topics should be added later."
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+      },
+      "notes": []
+    },
+    "reason": "Dependencies and metadata are structurally valid, but the topic is advanced enough to keep a light manual review gate."
+  }
+]

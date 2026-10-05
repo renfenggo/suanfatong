@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Problem Reference",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "problem_ref_id": {
+      "type": "string"
+    },
+    "platform": {
+      "enum": [
+        "CSES",
+        "Codeforces",
+        "AtCoder",
+        "Kattis",
+        "LeetCode",
+        "DMOJ",
+        "USACO",
+        "Luogu",
+        "ICPC_Gym",
+        "HackerRank"
+      ]
+    },
+    "problem_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard",
+        "expert",
+        "unknown"
+      ]
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "beginner",
+          "csp_j",
+          "csp_s",
+          "noi",
+          "ioi",
+          "icpc",
+          "university_cp",
+          "interview",
+          "advanced_math",
+          "advanced_graph",
+          "advanced_string",
+          "advanced_data_structure",
+          "advanced_dp",
+          "engineering_debug"
+        ]
+      }
+    },
+    "linked_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "linked_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "role": {
+      "enum": [
+        "intro",
+        "standard",
+        "classic",
+        "challenge"
+      ]
+    },
+    "language_availability": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "zh-Hans",
+          "en",
+          "ja",
+          "ko",
+          "es",
+          "ru",
+          "fr",
+          "pt",
+          "hi"
+        ]
+      }
+    },
+    "source_language": {
+      "enum": [
+        "zh-Hans",
+        "en",
+        "ja",
+        "ko",
+        "es",
+        "ru",
+        "fr",
+        "pt",
+        "hi"
+      ]
+    },
+    "copyright_policy": {
+      "const": "metadata_only"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "problem_ref_id",
+    "platform",
+    "title",
+    "url",
+    "difficulty",
+    "linked_items",
+    "linked_patterns",
+    "copyright_policy"
+  ]
+}

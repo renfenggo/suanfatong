@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Full40 Problem Patterns Sync Triage",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T19:30:00.000Z",
+    "task": "batch3_full40_problem_patterns_sync_triage",
+    "version": "1.0",
+    "description": "对 Stage3F Batch3 full_40 Review 输出的 2 个 problem_patterns 同步候选进行分级",
+    "input_files": [
+      "data/stage3f_batch3_full40_problem_pattern_sync_candidates.json",
+      "data/stage3f_batch3_full40_added_items_review.json",
+      "docs/stage3f_batch3_full40_added_items_review_report.md",
+      "docs/stage3f_batch3_problem_patterns_sync_triage_template.md",
+      "data/stage3f_batch3_problem_patterns_sync_triage_checklist.json",
+      "data/patterns_v0_1_ready.json",
+      "data/patterns_batch2.json",
+      "data/patterns_backlog_status_after_stage3f_batch2.json",
+      "data/patterns_order_statistics_suite_generation_checklist.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "statistics": {
+    "total_candidates": 2,
+    "create_new_draft_later": 1,
+    "merge_with_existing": 0,
+    "defer": 1,
+    "manual_review": 0
+  },
+  "triage": [
+    {
+      "item_id": "4.9.6",
+      "name": "欧拉函数应用",
+      "suggested_pattern_id": "pat.euler_function_application",
+      "priority": "P1",
+      "decision": "create_new_draft_later",
+      "knowledge_item_type": "modeling_pattern",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": true,
+      "boundary_note_targets": [
+        "pat.inclusion_exclusion_counting",
+        "pat.modular_counting_pattern"
+      ],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "dominance_counting_suite_related": false,
+        "overlap_with_existing": "partial",
+        "overlap_detail": "pat.inclusion_exclusion_counting 涉及容斥原理计数（集合交并），与欧拉函数应用在互质计数场景有交集，但欧拉函数应用的信号更聚焦于 gcd/互质/降幂的数学建模，而非集合容斥。pat.modular_counting_pattern 涉及取模计数，与欧拉降幂的取模简化有交集但不同。两者均不构成覆盖。"
+      },
+      "suitable_as_pattern": true,
+      "suitable_reason": "欧拉函数应用是典型的数论建模模式。具备清晰识别信号（互质计数、gcd 统计、欧拉降幂、阶乘互质部分提取）、固定转化路径（筛法求欧拉函数 + 根据场景使用互质性质/降幂公式/MSU 算法）和明确的复杂度边界。item_type 已标记为 modeling_pattern，Review marked sync_to_problem_patterns=true。",
+      "recommended_timing": "patterns_batch3",
+      "reason": "valid_modeling_pattern"
+    },
+    {
+      "item_id": "3.13.190",
+      "name": "线段树变体：Split",
+      "suggested_pattern_id": "",
+      "priority": "defer",
+      "decision": "defer",
+      "knowledge_item_type": "implementation_variant",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": false,
+      "boundary_note_targets": [],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "dominance_counting_suite_related": false,
+        "overlap_with_existing": "none",
+        "overlap_detail": "已存在 3.7.22（线段树分裂）节点。本节点（3.13.190）是高级数据结构扩展视角的 implementation_variant。"
+      },
+      "suitable_as_pattern": false,
+      "suitable_reason": "线段树 Split 是线段树的一个操作实现变体（implementation_variant），不是 problem_pattern。原因：(1) 无独立的问题识别信号——解题者不会根据题面判断'这是一道线段树 Split 题'，而是将其作为更大解法中的一步；(2) 无多样化的建模转化路径——Split 操作本身固定，不存在多样的建模选择；(3) item_type 在 Review 中已标记为 implementation_variant 而非 modeling_pattern，Review 的 sync_to_problem_patterns 为 false。知识图谱中已存在 3.7.22（线段树分裂）节点。",
+      "recommended_timing": "不生成 pattern。保持为知识图谱算法节点即可。",
+      "reason": "implementation_variant_only"
+    }
+  ],
+  "suite_recommendations": {
+    "number_theory_suite": {
+      "description": "4.9 系列中的积性函数应用模式可组合为小型数论应用模式组",
+      "members": [
+        {
+          "item_id": "4.9.5",
+          "name": "莫比乌斯反演应用",
+          "triage_status": "pending (from batch2, not yet triaged)",
+          "preliminary_note": "review 标记 move_to_problem_patterns，待完成 triage 后可与 4.9.6 统一规划"
+        },
+        {
+          "item_id": "4.9.6",
+          "name": "欧拉函数应用",
+          "triage_status": "create_new_draft_later (this triage)"
+        }
+      ],
+      "batch3_note": "建议在 batch3 中将 4.9.6（欧拉函数应用）与 4.9.5（莫比乌斯反演应用）一起处理。两者同属 4.9 高级数学 section，都是积性函数应用的 modeling_pattern，共享读者群体和前置知识。可考虑生成独立 pattern 但通过 related_items 相互引用，或在 batch3 中分先后生成。"
+    },
+    "dominance_counting_suite_note": "与 Order Statistics / Dominance Query Suite 无关，无冲突。"
+  },
+  "correction_note": {
+    "description": "sync_candidates.json 中 3.13.190 的 suggested_item_type 为 modeling_pattern，但实际 Review 中 item_type 为 implementation_variant、sync_to_problem_patterns 为 false。本 triage 以 Review 数据为准，标记为 defer。",
+    "impact": "无。线段树 Split 不适合作为 problem_pattern。"
+  },
+  "recommendations": {
+    "generate_formal_patterns_now": false,
+    "must_wait_for_stage3f_batch3_review_first": true,
+    "next_steps": [
+      "1. 完成 4.9.5 莫比乌斯反演应用 triage（Batch2 待处理候选）",
+      "2. 整合可选 batch3 候选：(a) Dominance Counting (3.13.182), (b) 欧拉函数应用 (4.9.6), (c) 莫比乌斯反演应用 (4.9.5)",
+      "3. 确认 batch3 最终候选列表",
+      "4. 等待用户指令生成 patterns_batch3.json"
+    ],
+    "main_graph_modified": false,
+    "existing_patterns_modified": false
+  }
+}

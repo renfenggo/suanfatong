@@ -1,0 +1,450 @@
+{
+  "animationId": "cpp_dfs_graph_traversal",
+  "itemId": "2.7.16",
+  "title": "图的遍历：DFS",
+  "description": "用一个 6 个点的小图演示 DFS：先沿一条路走到底，走不动再回退，直到所有能到达的点都访问完。",
+  "expectedLearningPoint": "DFS 的关键不是“随便走”，而是：标记 visited，递归深入第一个未访问邻居，走到底后回溯继续找下一个分支。",
+  "initialState": {
+    "variables": [
+      {
+        "name": "邻接表",
+        "value": "0:{1,2} 1:{3,4} 2:{5}",
+        "note": "示例无向图，只展示 DFS 会走到的树形关系"
+      },
+      {
+        "name": "下一步",
+        "value": "从 0 开始",
+        "note": "先访问起点"
+      }
+    ],
+    "containers": [
+      {
+        "name": "DFS 图",
+        "type": "graph",
+        "values": [
+          {"id": "0", "status": "unvisited"},
+          {"id": "1", "status": "unvisited"},
+          {"id": "2", "status": "unvisited"},
+          {"id": "3", "status": "unvisited"},
+          {"id": "4", "status": "unvisited"},
+          {"id": "5", "status": "unvisited"}
+        ],
+        "activeIndex": -1,
+        "note": "边：0-1, 0-2, 1-3, 1-4, 2-5"
+      },
+      {
+        "name": "visited",
+        "type": "bool[]",
+        "values": ["0", "0", "0", "0", "0", "0"],
+        "activeIndex": -1,
+        "note": "1 表示已经访问过"
+      },
+      {
+        "name": "递归栈",
+        "type": "stack",
+        "values": [],
+        "activeIndex": -1,
+        "note": "栈顶就是当前正在处理的节点"
+      }
+    ],
+    "output": "访问序列："
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "访问起点 0",
+      "description": "进入 dfs(0)，先把 0 标记为已访问。DFS 每到一个新点，第一件事就是 visited[u] = true。",
+      "codeLine": "void dfs(int u) { visited[u] = true; }  // u = 0",
+      "highlights": ["dfs(0)", "visited[0]"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "0", "note": "刚进入 dfs(0)"},
+          {"name": "正在看的边", "value": "还没有", "note": "先标记自己"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "active"},
+              {"id": "1", "status": "unvisited"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "unvisited"},
+              {"id": "4", "status": "unvisited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 0,
+            "note": "红色是当前节点，蓝色是已经访问过的节点"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "0", "0", "0", "0", "0"],
+            "activeIndex": 0,
+            "note": "0 已访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)"],
+            "activeIndex": 0,
+            "note": "当前在 dfs(0)"
+          }
+        ],
+        "output": "访问序列：0"
+      }
+    },
+    {
+      "step": 2,
+      "title": "从 0 深入到 1",
+      "description": "查看 0 的邻居，1 还没访问，于是递归调用 dfs(1)。这就是 DFS 的“先往深处走”。",
+      "codeLine": "for (int v : adj[0]) if (!visited[v]) dfs(v);  // v = 1",
+      "highlights": ["0 -> 1", "dfs(1)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "1", "note": "沿 0 -> 1 深入"},
+          {"name": "正在看的边", "value": "0 -> 1", "note": "1 未访问，所以进入"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "active"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "unvisited"},
+              {"id": "4", "status": "unvisited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 1,
+            "note": "0 已访问，当前来到 1"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "0", "0", "0", "0"],
+            "activeIndex": 1,
+            "note": "1 已访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(1)"],
+            "activeIndex": 1,
+            "note": "栈顶 dfs(1)"
+          }
+        ],
+        "output": "访问序列：0 -> 1"
+      }
+    },
+    {
+      "step": 3,
+      "title": "从 1 深入到 3",
+      "description": "在 dfs(1) 里继续看邻居，3 还没访问，于是进入 dfs(3)。DFS 会一直深入到走不动为止。",
+      "codeLine": "for (int v : adj[1]) if (!visited[v]) dfs(v);  // v = 3",
+      "highlights": ["1 -> 3", "dfs(3)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "3", "note": "沿 1 -> 3 深入"},
+          {"name": "正在看的边", "value": "1 -> 3", "note": "3 未访问，所以进入"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "active"},
+              {"id": "4", "status": "unvisited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 3,
+            "note": "当前路径：0 -> 1 -> 3"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "0", "1", "0", "0"],
+            "activeIndex": 3,
+            "note": "3 已访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(1)", "dfs(3)"],
+            "activeIndex": 2,
+            "note": "栈越深，说明递归越深"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3"
+      }
+    },
+    {
+      "step": 4,
+      "title": "3 走不动，回溯到 1",
+      "description": "3 没有未访问邻居，dfs(3) 结束并返回到 dfs(1)。回溯不是重置 visited，而是退回上一层继续找别的分支。",
+      "codeLine": "// dfs(3) 没有新邻居，return 回 dfs(1)",
+      "highlights": ["return", "回溯"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "1", "note": "从 3 回到 1"},
+          {"name": "回溯原因", "value": "3 没有未访问邻居", "note": "继续检查 1 的其它邻居"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "active"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "unvisited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 1,
+            "note": "3 仍然保持已访问，当前回到 1"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "0", "1", "0", "0"],
+            "activeIndex": 1,
+            "note": "回溯不会把 visited[3] 改回 0"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(1)"],
+            "activeIndex": 1,
+            "note": "dfs(3) 已弹出"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3"
+      }
+    },
+    {
+      "step": 5,
+      "title": "从 1 继续深入到 4",
+      "description": "回到 1 后，继续看 1 的下一个邻居。4 还没访问，于是进入 dfs(4)。",
+      "codeLine": "for (int v : adj[1]) if (!visited[v]) dfs(v);  // v = 4",
+      "highlights": ["1 -> 4", "dfs(4)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "4", "note": "1 的另一个分支"},
+          {"name": "正在看的边", "value": "1 -> 4", "note": "4 未访问，所以进入"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "active"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 4,
+            "note": "当前路径：0 -> 1 -> 4"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "0", "1", "1", "0"],
+            "activeIndex": 4,
+            "note": "4 已访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(1)", "dfs(4)"],
+            "activeIndex": 2,
+            "note": "进入 4 的分支"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3 -> 4"
+      }
+    },
+    {
+      "step": 6,
+      "title": "1 的分支走完，回溯到 0",
+      "description": "4 也走不动，返回到 1。此时 1 的可走分支都处理完了，再返回到 0。",
+      "codeLine": "// dfs(4) return，dfs(1) 也处理完，return 回 dfs(0)",
+      "highlights": ["dfs(1) 完成", "回到 0"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "0", "note": "回到起点继续找分支"},
+          {"name": "回溯原因", "value": "1 的 3、4 都处理完", "note": "检查 0 的下一个邻居"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "active"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "unvisited"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "visited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 0,
+            "note": "左边分支 1-3-4 已完成"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "0", "1", "1", "0"],
+            "activeIndex": 0,
+            "note": "2 和 5 还没访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)"],
+            "activeIndex": 0,
+            "note": "只剩 dfs(0)"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3 -> 4"
+      }
+    },
+    {
+      "step": 7,
+      "title": "从 0 深入到 2",
+      "description": "继续检查 0 的下一个邻居。2 还没访问，于是进入 dfs(2)。",
+      "codeLine": "for (int v : adj[0]) if (!visited[v]) dfs(v);  // v = 2",
+      "highlights": ["0 -> 2", "dfs(2)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "2", "note": "0 的右侧分支"},
+          {"name": "正在看的边", "value": "0 -> 2", "note": "2 未访问，所以进入"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "active"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "visited"},
+              {"id": "5", "status": "unvisited"}
+            ],
+            "activeIndex": 2,
+            "note": "开始访问右侧分支"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "1", "1", "1", "0"],
+            "activeIndex": 2,
+            "note": "2 已访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(2)"],
+            "activeIndex": 1,
+            "note": "进入 dfs(2)"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3 -> 4 -> 2"
+      }
+    },
+    {
+      "step": 8,
+      "title": "从 2 深入到 5",
+      "description": "2 的邻居 5 还没访问，继续深入到 dfs(5)。",
+      "codeLine": "for (int v : adj[2]) if (!visited[v]) dfs(v);  // v = 5",
+      "highlights": ["2 -> 5", "dfs(5)"],
+      "state": {
+        "variables": [
+          {"name": "当前节点", "value": "5", "note": "右侧分支的叶子"},
+          {"name": "正在看的边", "value": "2 -> 5", "note": "5 未访问，所以进入"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "visited"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "visited"},
+              {"id": "5", "status": "active"}
+            ],
+            "activeIndex": 5,
+            "note": "当前路径：0 -> 2 -> 5"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "1", "1", "1", "1"],
+            "activeIndex": 5,
+            "note": "所有节点都已经访问"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": ["dfs(0)", "dfs(2)", "dfs(5)"],
+            "activeIndex": 2,
+            "note": "深入到 5"
+          }
+        ],
+        "output": "访问序列：0 -> 1 -> 3 -> 4 -> 2 -> 5"
+      }
+    },
+    {
+      "step": 9,
+      "title": "全部访问完成",
+      "description": "5 走不动后回溯，2 完成，0 也完成。递归栈清空，DFS 结束。",
+      "codeLine": "// 所有递归调用返回，DFS 结束",
+      "highlights": ["完成", "递归栈清空"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "完成", "note": "所有可达节点都访问过"},
+          {"name": "DFS 序", "value": "0,1,3,4,2,5", "note": "由邻接表顺序决定"}
+        ],
+        "containers": [
+          {
+            "name": "DFS 图",
+            "type": "graph",
+            "values": [
+              {"id": "0", "status": "visited"},
+              {"id": "1", "status": "visited"},
+              {"id": "2", "status": "visited"},
+              {"id": "3", "status": "visited"},
+              {"id": "4", "status": "visited"},
+              {"id": "5", "status": "visited"}
+            ],
+            "activeIndex": -1,
+            "note": "所有节点变蓝，表示都已访问"
+          },
+          {
+            "name": "visited",
+            "type": "bool[]",
+            "values": ["1", "1", "1", "1", "1", "1"],
+            "activeIndex": -1,
+            "note": "全部为 1"
+          },
+          {
+            "name": "递归栈",
+            "type": "stack",
+            "values": [],
+            "activeIndex": -1,
+            "note": "栈空，算法结束"
+          }
+        ],
+        "output": "最终 DFS 访问序列：0 -> 1 -> 3 -> 4 -> 2 -> 5"
+      }
+    }
+  ]
+}

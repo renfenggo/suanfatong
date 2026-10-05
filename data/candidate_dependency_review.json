@@ -1,0 +1,1606 @@
+{
+  "total_candidates": 114,
+  "validation_result": {
+    "has_section_id_dependencies": false,
+    "has_dangling_references": false,
+    "has_cycles": false,
+    "empty_direct_pre_count": 0,
+    "invalid_dependencies": [],
+    "cycle_info": []
+  },
+  "candidate_dependency_details": [
+    {
+      "candidate_id": "cand.graph.k_shortest.yen",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.16.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.eppstein",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.16.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.recursive",
+      "direct_pre_suggestion": [
+        "2.13.1",
+        "2.13.2",
+        "2.13.3"
+      ],
+      "rel_suggestion": [
+        "2.16.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2",
+        "2.15.3"
+      ],
+      "rel_suggestion": [
+        "2.14.1",
+        "3.6.1",
+        "5.5.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.iterative",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2",
+        "2.15.3"
+      ],
+      "rel_suggestion": [
+        "2.14.1",
+        "3.6.1",
+        "5.5.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.application",
+      "direct_pre_suggestion": [
+        "2.15.1",
+        "2.15.2",
+        "2.15.3"
+      ],
+      "rel_suggestion": [
+        "2.14.1",
+        "3.6.1",
+        "5.5.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.virtual_tree",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.14.2",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.8.6",
+        "3.7.1",
+        "3.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.centroid_decomposition",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.14.2",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.8.6",
+        "3.7.1",
+        "3.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.tree_flattening",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.14.2",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.8.6",
+        "3.7.1",
+        "3.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.heavy_light",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.14.2",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.8.6",
+        "3.7.1",
+        "3.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.parallel_binary",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.14.2",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.8.6",
+        "3.7.1",
+        "3.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.dinic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.isap",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.hlpp",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.min_cost",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.lower_upper",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmin",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmax",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_range_add",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.dynamic_persistent",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_merge",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_split",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.7.2",
+        "3.7.3"
+      ],
+      "rel_suggestion": [
+        "3.7.4",
+        "2.8.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.chairman_tree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.7.2",
+        "2.2.10",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.kdtree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.7.2",
+        "2.2.10",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.divide_merge_tree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.7.2",
+        "2.2.10",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.catenary_tree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.7.2",
+        "2.2.10",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.binary_indexed_2d",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.7.2",
+        "2.2.10",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.treap",
+      "direct_pre_suggestion": [
+        "3.6.1",
+        "3.2.1",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "3.10.1",
+        "3.3.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.splay",
+      "direct_pre_suggestion": [
+        "3.6.1",
+        "3.2.1",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "3.10.1",
+        "3.3.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.scapegoat",
+      "direct_pre_suggestion": [
+        "3.6.1",
+        "3.2.1",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "3.10.1",
+        "3.3.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.avl",
+      "direct_pre_suggestion": [
+        "3.6.1",
+        "3.2.1",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "3.10.1",
+        "3.3.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.sbt",
+      "direct_pre_suggestion": [
+        "3.6.1",
+        "3.2.1",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "3.10.1",
+        "3.3.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_array",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "3.8.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_automaton",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "3.8.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_tree",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "3.8.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.lcp_array",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "3.8.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching.manacher",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "2.4.6",
+        "1.6.1"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching.z_algorithm",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "2.4.6",
+        "1.6.1"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching.kmp",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "2.4.6",
+        "1.6.1"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching.rabin_karp",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "2.4.6",
+        "1.6.1"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching.booth",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "2.4.6",
+        "1.6.1"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.1",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory.pollard_rho",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.2.2",
+        "4.1.4"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory.miller_rabin",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.2.2",
+        "4.1.4"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory.discrete_log",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.2.2",
+        "4.1.4"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory.primitive_root",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.2.2",
+        "4.1.4"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory.legendre",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "rel_suggestion": [
+        "4.2.1",
+        "4.2.2",
+        "4.1.4"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.basic.convex_hull",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.2.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.basic.graham_scan",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.2.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.basic.andrew_monotone",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.2.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.basic.rotating_calipers",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.2.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.basic.half_plane_intersection",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.2.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.interview.design.lru_cache",
+      "direct_pre_suggestion": [
+        "3.3.1",
+        "3.2.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.12.1",
+        "5.9.1",
+        "3.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.interview.design.lfu_cache",
+      "direct_pre_suggestion": [
+        "3.3.1",
+        "3.2.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.12.1",
+        "5.9.1",
+        "3.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.interview.design.trie_autocomplete",
+      "direct_pre_suggestion": [
+        "3.3.1",
+        "3.2.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.12.1",
+        "5.9.1",
+        "3.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.interview.design.rate_limiter",
+      "direct_pre_suggestion": [
+        "3.3.1",
+        "3.2.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.12.1",
+        "5.9.1",
+        "3.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.interview.design.consistent_hashing",
+      "direct_pre_suggestion": [
+        "3.3.1",
+        "3.2.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.12.1",
+        "5.9.1",
+        "3.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.contest.modeling.game_theory",
+      "direct_pre_suggestion": [
+        "2.1.7",
+        "2.6.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "2.8.1",
+        "4.6.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.contest.modeling.sg_theorem",
+      "direct_pre_suggestion": [
+        "2.1.7",
+        "2.6.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "2.8.1",
+        "4.6.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.contest.modeling.nim_game",
+      "direct_pre_suggestion": [
+        "2.1.7",
+        "2.6.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "2.8.1",
+        "4.6.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.contest.modeling.simulation_optimization",
+      "direct_pre_suggestion": [
+        "2.1.7",
+        "2.6.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "2.8.1",
+        "4.6.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.contest.modeling.greedy_proof",
+      "direct_pre_suggestion": [
+        "2.1.7",
+        "2.6.1",
+        "4.1.1"
+      ],
+      "rel_suggestion": [
+        "2.8.1",
+        "4.6.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.algo.randomized.simulated_annealing",
+      "direct_pre_suggestion": [
+        "2.1.10",
+        "2.2.5",
+        "2.6.1"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "2.1.9",
+        "4.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.algo.randomized.genetic_algorithm",
+      "direct_pre_suggestion": [
+        "2.1.10",
+        "2.2.5",
+        "2.6.1"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "2.1.9",
+        "4.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.algo.randomized.monte_carlo",
+      "direct_pre_suggestion": [
+        "2.1.10",
+        "2.2.5",
+        "2.6.1"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "2.1.9",
+        "4.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_quickselect",
+      "direct_pre_suggestion": [
+        "2.1.10",
+        "2.2.5",
+        "2.6.1"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "2.1.9",
+        "4.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_prim",
+      "direct_pre_suggestion": [
+        "2.1.10",
+        "2.2.5",
+        "2.6.1"
+      ],
+      "rel_suggestion": [
+        "2.18.1",
+        "2.1.9",
+        "4.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.slope_optimization",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.convex_hull_opt",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.quadrangle_inequality",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.divide_conquer_opt",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.knuth_opt",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.cdq_divide",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.dp.advanced.wqs_binary",
+      "direct_pre_suggestion": [
+        "2.8.1",
+        "2.8.2",
+        "2.3.1"
+      ],
+      "rel_suggestion": [
+        "2.8.3",
+        "4.7.1",
+        "2.4.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.dinic",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.isap",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.edmonds_karp",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.min_cost_flow",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.max_flow_bipartite",
+      "direct_pre_suggestion": [
+        "2.16.1",
+        "2.13.1",
+        "2.13.2"
+      ],
+      "rel_suggestion": [
+        "2.13.3",
+        "2.15.1",
+        "2.18.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.computational.point_in_polygon",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.1.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.computational.line_intersection",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.1.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.computational.area_polygon",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.1.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.computational.circle_intersection",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.1.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.geo.computational.closest_pair",
+      "direct_pre_suggestion": [
+        "4.7.1",
+        "4.7.2",
+        "2.1.1"
+      ],
+      "rel_suggestion": [
+        "4.7.3",
+        "2.5.1",
+        "3.6.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_binary_lifting",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.9.1",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.14.2",
+        "3.7.1",
+        "2.7.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_euler_tour",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.9.1",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.14.2",
+        "3.7.1",
+        "2.7.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_diameter",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.9.1",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.14.2",
+        "3.7.1",
+        "2.7.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_center",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.9.1",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.14.2",
+        "3.7.1",
+        "2.7.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_hash",
+      "direct_pre_suggestion": [
+        "2.14.1",
+        "2.9.1",
+        "3.6.1"
+      ],
+      "rel_suggestion": [
+        "2.14.2",
+        "3.7.1",
+        "2.7.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fft",
+      "direct_pre_suggestion": [
+        "4.2.1",
+        "4.3.1",
+        "2.12.1"
+      ],
+      "rel_suggestion": [
+        "4.8.1",
+        "4.8.2",
+        "2.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.polynomial.ntt",
+      "direct_pre_suggestion": [
+        "4.2.1",
+        "4.3.1",
+        "2.12.1"
+      ],
+      "rel_suggestion": [
+        "4.8.1",
+        "4.8.2",
+        "2.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fwht",
+      "direct_pre_suggestion": [
+        "4.2.1",
+        "4.3.1",
+        "2.12.1"
+      ],
+      "rel_suggestion": [
+        "4.8.1",
+        "4.8.2",
+        "2.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_inv",
+      "direct_pre_suggestion": [
+        "4.2.1",
+        "4.3.1",
+        "2.12.1"
+      ],
+      "rel_suggestion": [
+        "4.8.1",
+        "4.8.2",
+        "2.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_sqrt",
+      "direct_pre_suggestion": [
+        "4.2.1",
+        "4.3.1",
+        "2.12.1"
+      ],
+      "rel_suggestion": [
+        "4.8.1",
+        "4.8.2",
+        "2.8.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.kmp",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.8.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.2",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.aho_corasick",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.8.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.2",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_array",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.8.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.2",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_automaton",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.8.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.2",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.min_string",
+      "direct_pre_suggestion": [
+        "2.10.1",
+        "3.8.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "2.10.2",
+        "3.8.2",
+        "2.2.1"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.euler_totient",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.mobius",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.crt",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.bsgs",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.exgcd",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.lucas",
+      "direct_pre_suggestion": [
+        "4.1.1",
+        "4.1.2",
+        "4.2.1"
+      ],
+      "rel_suggestion": [
+        "4.2.2",
+        "4.3.1",
+        "4.1.3"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.optimization.minimum_spanning_tree",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "rel_suggestion": [
+        "2.13.2",
+        "2.7.1",
+        "2.1.5"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.optimization.kruskal",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "rel_suggestion": [
+        "2.13.2",
+        "2.7.1",
+        "2.1.5"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.optimization.prim",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "rel_suggestion": [
+        "2.13.2",
+        "2.7.1",
+        "2.1.5"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.optimization.topological_sort",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "rel_suggestion": [
+        "2.13.2",
+        "2.7.1",
+        "2.1.5"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.graph.optimization.critical_path",
+      "direct_pre_suggestion": [
+        "2.9.1",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "rel_suggestion": [
+        "2.13.2",
+        "2.7.1",
+        "2.1.5"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_treap",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.11.1",
+        "3.11.2",
+        "3.7.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_bit",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.11.1",
+        "3.11.2",
+        "3.7.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_segment_tree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.11.1",
+        "3.11.2",
+        "3.7.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.11.1",
+        "3.11.2",
+        "3.7.2"
+      ],
+      "pre_count": 3
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.segment_tree_beats",
+      "direct_pre_suggestion": [
+        "3.7.1",
+        "3.6.1",
+        "2.4.6"
+      ],
+      "rel_suggestion": [
+        "3.11.1",
+        "3.11.2",
+        "3.7.2"
+      ],
+      "pre_count": 3
+    }
+  ]
+}

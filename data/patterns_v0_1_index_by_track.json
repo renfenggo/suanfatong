@@ -1,0 +1,2503 @@
+{
+  "generated_at": "2026-05-22",
+  "pattern_count": 83,
+  "tracks": {
+    "advanced_data_structure": [
+      {
+        "pattern_id": "pat.segment_tree_range_update",
+        "name": "线段树区间更新",
+        "en_name": "Segment Tree Range Update Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.dsu_connectivity",
+        "name": "并查集连通性",
+        "en_name": "DSU Connectivity Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.fenwick_prefix_maintenance",
+        "name": "树状数组前缀维护",
+        "en_name": "Fenwick Prefix Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotonic_queue_window_max",
+        "name": "单调队列窗口最值",
+        "en_name": "Monotonic Queue Window Maximum",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.order_statistic_maintenance",
+        "name": "动态第 k 小维护",
+        "en_name": "Order Statistic Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.range_mode_offline",
+        "name": "区间众数离线维护",
+        "en_name": "Range Mode Offline Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rollback_dsu",
+        "name": "可撤销并查集",
+        "en_name": "Rollback DSU Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.lazy_tag_composition",
+        "name": "懒标记组合",
+        "en_name": "Lazy Tag Composition Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.heap_lazy_deletion",
+        "name": "堆懒删除",
+        "en_name": "Heap Lazy Deletion",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_path_query",
+        "name": "树上路径查询",
+        "en_name": "Tree Path Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rerooting_tree_dp",
+        "name": "换根 DP",
+        "en_name": "Rerooting Tree DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.virtual_tree_pattern",
+        "name": "虚树关键点模式",
+        "en_name": "Virtual Tree Key-Node Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.subtree_query_euler",
+        "name": "子树查询欧拉序",
+        "en_name": "Subtree Query Euler Tour",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.centroid_decomposition_query",
+        "name": "点分治查询",
+        "en_name": "Centroid Decomposition Query",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      }
+    ],
+    "advanced_dp": [
+      {
+        "pattern_id": "pat.knapsack_dp",
+        "name": "背包 DP 模式",
+        "en_name": "Knapsack DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.complete_knapsack_dp",
+        "name": "完全背包 DP",
+        "en_name": "Complete Knapsack DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multiple_knapsack_binary_split",
+        "name": "多重背包二进制拆分",
+        "en_name": "Multiple Knapsack Binary Split",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.interval_dp",
+        "name": "区间 DP 模式",
+        "en_name": "Interval DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_dp",
+        "name": "树形 DP 模式",
+        "en_name": "Tree DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.digit_dp",
+        "name": "数位 DP 模式",
+        "en_name": "Digit DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bitmask_dp",
+        "name": "状压 DP 模式",
+        "en_name": "Bitmask DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.linear_dp_sequence",
+        "name": "序列线性 DP",
+        "en_name": "Linear Sequence DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lis_dp",
+        "name": "最长递增子序列模式",
+        "en_name": "LIS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lcs_dp",
+        "name": "最长公共子序列模式",
+        "en_name": "LCS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.edit_distance_dp",
+        "name": "编辑距离 DP",
+        "en_name": "Edit Distance DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.probability_dp",
+        "name": "概率 DP 模式",
+        "en_name": "Probability DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.expectation_dp",
+        "name": "期望 DP 模式",
+        "en_name": "Expectation DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.divide_conquer_dp_optimization",
+        "name": "分治 DP 优化",
+        "en_name": "Divide and Conquer DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotone_queue_dp",
+        "name": "单调队列 DP 优化",
+        "en_name": "Monotone Queue DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      }
+    ],
+    "advanced_graph": [
+      {
+        "pattern_id": "pat.shortest_path_modeling",
+        "name": "最短路建模",
+        "en_name": "Shortest Path Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_matching_modeling",
+        "name": "二分图匹配建模",
+        "en_name": "Bipartite Matching Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cut_selection",
+        "name": "最小割选择建模",
+        "en_name": "Minimum Cut Selection Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cost_flow_assignment",
+        "name": "费用流分配建模",
+        "en_name": "Min-cost Flow Assignment Modeling",
+        "difficulty": "expert",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.dag_dependency_modeling",
+        "name": "DAG 依赖建模",
+        "en_name": "DAG Dependency Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.grid_graph_modeling",
+        "name": "网格图建模",
+        "en_name": "Grid Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.time_expanded_graph",
+        "name": "时间展开图建模",
+        "en_name": "Time-expanded Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.layered_graph_shortest_path",
+        "name": "分层图最短路",
+        "en_name": "Layered Graph Shortest Path",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.complement_graph_modeling",
+        "name": "补图搜索建模",
+        "en_name": "Complement Graph Search Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.game_graph_retrograde",
+        "name": "博弈图逆推",
+        "en_name": "Game Graph Retrograde Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      }
+    ],
+    "advanced_string": [
+      {
+        "pattern_id": "pat.rabin_karp_hash",
+        "name": "滚动哈希匹配",
+        "en_name": "Rabin-Karp Rolling Hash",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.trie_multi_pattern",
+        "name": "Trie 多模式前缀匹配",
+        "en_name": "Trie Multi-pattern Prefix Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.aho_corasick_matching",
+        "name": "AC 自动机多模式匹配",
+        "en_name": "Aho-Corasick Multi-pattern Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.string_dp_wildcard",
+        "name": "通配符匹配 DP",
+        "en_name": "Wildcard String Matching DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      }
+    ],
+    "beginner": [
+      {
+        "pattern_id": "pat.two_sum",
+        "name": "两数之和模式",
+        "en_name": "Two Sum Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.prefix_sum_hashmap",
+        "name": "前缀和 + 哈希表",
+        "en_name": "Prefix Sum + HashMap",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.sliding_window_fixed_size",
+        "name": "定长滑动窗口",
+        "en_name": "Sliding Window Fixed Size",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.sliding_window_variable_size",
+        "name": "变长滑动窗口",
+        "en_name": "Sliding Window Variable Size",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.fast_slow_pointers",
+        "name": "快慢指针",
+        "en_name": "Fast and Slow Pointers",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotonic_stack_next_greater",
+        "name": "单调栈求下一个更大元素",
+        "en_name": "Monotonic Stack Next Greater",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.top_k_frequent",
+        "name": "高频 Top K",
+        "en_name": "Top K Frequent",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.k_way_merge",
+        "name": "K 路归并",
+        "en_name": "K-way Merge",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.binary_search_on_answer",
+        "name": "答案二分",
+        "en_name": "Binary Search on Answer",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.merge_intervals",
+        "name": "区间合并",
+        "en_name": "Merge Intervals Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.interval_sweep_events",
+        "name": "区间事件扫描",
+        "en_name": "Interval Sweep Events",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.subarray_product_window",
+        "name": "乘积约束窗口",
+        "en_name": "Subarray Product Window",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.palindrome_expand",
+        "name": "中心扩展回文",
+        "en_name": "Palindrome Center Expansion",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.linked_list_reverse",
+        "name": "链表原地反转",
+        "en_name": "Linked List In-place Reverse",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_level_order",
+        "name": "树的层序遍历",
+        "en_name": "Tree Level Order Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.valid_parentheses_stack",
+        "name": "括号匹配栈",
+        "en_name": "Valid Parentheses Stack",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.hash_dedup_seen",
+        "name": "哈希去重与已访问集合",
+        "en_name": "Hash Set Seen Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.matrix_spiral_simulation",
+        "name": "矩阵边界模拟",
+        "en_name": "Matrix Boundary Simulation",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.backtracking_combinations",
+        "name": "组合回溯",
+        "en_name": "Backtracking Combinations",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.permutation_used_array",
+        "name": "排列回溯 used 数组",
+        "en_name": "Permutation Used Array",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      }
+    ],
+    "icpc": [
+      {
+        "pattern_id": "pat.island_problems",
+        "name": "岛屿问题",
+        "en_name": "Island Problems",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.word_ladder",
+        "name": "单词接龙",
+        "en_name": "Word Ladder",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.course_schedule",
+        "name": "课程表依赖",
+        "en_name": "Course Schedule",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_coloring",
+        "name": "二分图染色",
+        "en_name": "Bipartite Coloring Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multi_source_bfs",
+        "name": "多源 BFS",
+        "en_name": "Multi-source BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.zero_one_bfs",
+        "name": "0-1 BFS 模式",
+        "en_name": "0-1 BFS Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.state_compressed_bfs",
+        "name": "状态压缩 BFS",
+        "en_name": "State-compressed BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.topological_longest_path_dag",
+        "name": "DAG 拓扑 DP",
+        "en_name": "DAG Topological DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.connected_components",
+        "name": "连通块分解",
+        "en_name": "Connected Components Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.cycle_detection_undirected",
+        "name": "无向图判环",
+        "en_name": "Undirected Cycle Detection",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.shortest_path_modeling",
+        "name": "最短路建模",
+        "en_name": "Shortest Path Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_matching_modeling",
+        "name": "二分图匹配建模",
+        "en_name": "Bipartite Matching Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cut_selection",
+        "name": "最小割选择建模",
+        "en_name": "Minimum Cut Selection Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cost_flow_assignment",
+        "name": "费用流分配建模",
+        "en_name": "Min-cost Flow Assignment Modeling",
+        "difficulty": "expert",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.dag_dependency_modeling",
+        "name": "DAG 依赖建模",
+        "en_name": "DAG Dependency Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.grid_graph_modeling",
+        "name": "网格图建模",
+        "en_name": "Grid Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.time_expanded_graph",
+        "name": "时间展开图建模",
+        "en_name": "Time-expanded Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.layered_graph_shortest_path",
+        "name": "分层图最短路",
+        "en_name": "Layered Graph Shortest Path",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.complement_graph_modeling",
+        "name": "补图搜索建模",
+        "en_name": "Complement Graph Search Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.game_graph_retrograde",
+        "name": "博弈图逆推",
+        "en_name": "Game Graph Retrograde Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.knapsack_dp",
+        "name": "背包 DP 模式",
+        "en_name": "Knapsack DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.complete_knapsack_dp",
+        "name": "完全背包 DP",
+        "en_name": "Complete Knapsack DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multiple_knapsack_binary_split",
+        "name": "多重背包二进制拆分",
+        "en_name": "Multiple Knapsack Binary Split",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.interval_dp",
+        "name": "区间 DP 模式",
+        "en_name": "Interval DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_dp",
+        "name": "树形 DP 模式",
+        "en_name": "Tree DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.digit_dp",
+        "name": "数位 DP 模式",
+        "en_name": "Digit DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bitmask_dp",
+        "name": "状压 DP 模式",
+        "en_name": "Bitmask DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.linear_dp_sequence",
+        "name": "序列线性 DP",
+        "en_name": "Linear Sequence DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lis_dp",
+        "name": "最长递增子序列模式",
+        "en_name": "LIS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lcs_dp",
+        "name": "最长公共子序列模式",
+        "en_name": "LCS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.edit_distance_dp",
+        "name": "编辑距离 DP",
+        "en_name": "Edit Distance DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.probability_dp",
+        "name": "概率 DP 模式",
+        "en_name": "Probability DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.expectation_dp",
+        "name": "期望 DP 模式",
+        "en_name": "Expectation DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.divide_conquer_dp_optimization",
+        "name": "分治 DP 优化",
+        "en_name": "Divide and Conquer DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotone_queue_dp",
+        "name": "单调队列 DP 优化",
+        "en_name": "Monotone Queue DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.segment_tree_range_update",
+        "name": "线段树区间更新",
+        "en_name": "Segment Tree Range Update Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.dsu_connectivity",
+        "name": "并查集连通性",
+        "en_name": "DSU Connectivity Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.fenwick_prefix_maintenance",
+        "name": "树状数组前缀维护",
+        "en_name": "Fenwick Prefix Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotonic_queue_window_max",
+        "name": "单调队列窗口最值",
+        "en_name": "Monotonic Queue Window Maximum",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.order_statistic_maintenance",
+        "name": "动态第 k 小维护",
+        "en_name": "Order Statistic Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.range_mode_offline",
+        "name": "区间众数离线维护",
+        "en_name": "Range Mode Offline Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rollback_dsu",
+        "name": "可撤销并查集",
+        "en_name": "Rollback DSU Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.lazy_tag_composition",
+        "name": "懒标记组合",
+        "en_name": "Lazy Tag Composition Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.heap_lazy_deletion",
+        "name": "堆懒删除",
+        "en_name": "Heap Lazy Deletion",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_path_query",
+        "name": "树上路径查询",
+        "en_name": "Tree Path Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rerooting_tree_dp",
+        "name": "换根 DP",
+        "en_name": "Rerooting Tree DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.virtual_tree_pattern",
+        "name": "虚树关键点模式",
+        "en_name": "Virtual Tree Key-Node Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.subtree_query_euler",
+        "name": "子树查询欧拉序",
+        "en_name": "Subtree Query Euler Tour",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.centroid_decomposition_query",
+        "name": "点分治查询",
+        "en_name": "Centroid Decomposition Query",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rabin_karp_hash",
+        "name": "滚动哈希匹配",
+        "en_name": "Rabin-Karp Rolling Hash",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.trie_multi_pattern",
+        "name": "Trie 多模式前缀匹配",
+        "en_name": "Trie Multi-pattern Prefix Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.aho_corasick_matching",
+        "name": "AC 自动机多模式匹配",
+        "en_name": "Aho-Corasick Multi-pattern Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.string_dp_wildcard",
+        "name": "通配符匹配 DP",
+        "en_name": "Wildcard String Matching DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.offline_query_pattern",
+        "name": "离线查询模式",
+        "en_name": "Offline Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.sweep_line_pattern",
+        "name": "扫描线模式",
+        "en_name": "Sweep Line Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.meet_in_the_middle",
+        "name": "折半搜索",
+        "en_name": "Meet-in-the-middle",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.constructive_invariant",
+        "name": "构造题不变量",
+        "en_name": "Constructive Invariant Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.greedy_exchange_argument",
+        "name": "贪心交换论证",
+        "en_name": "Greedy Exchange Argument",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.binary_lifting_state_jump",
+        "name": "倍增状态跳转",
+        "en_name": "Binary Lifting State Jump",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.modular_counting_pattern",
+        "name": "取模计数模式",
+        "en_name": "Modular Counting Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.inclusion_exclusion_counting",
+        "name": "容斥计数",
+        "en_name": "Inclusion-Exclusion Counting",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.coordinate_sweep_compression",
+        "name": "离散化扫描",
+        "en_name": "Compressed Coordinate Sweep",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.randomized_hash_check",
+        "name": "随机哈希判等",
+        "en_name": "Randomized Hash Check",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      }
+    ],
+    "interview": [
+      {
+        "pattern_id": "pat.two_sum",
+        "name": "两数之和模式",
+        "en_name": "Two Sum Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.prefix_sum_hashmap",
+        "name": "前缀和 + 哈希表",
+        "en_name": "Prefix Sum + HashMap",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.sliding_window_fixed_size",
+        "name": "定长滑动窗口",
+        "en_name": "Sliding Window Fixed Size",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.sliding_window_variable_size",
+        "name": "变长滑动窗口",
+        "en_name": "Sliding Window Variable Size",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.fast_slow_pointers",
+        "name": "快慢指针",
+        "en_name": "Fast and Slow Pointers",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotonic_stack_next_greater",
+        "name": "单调栈求下一个更大元素",
+        "en_name": "Monotonic Stack Next Greater",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.top_k_frequent",
+        "name": "高频 Top K",
+        "en_name": "Top K Frequent",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.k_way_merge",
+        "name": "K 路归并",
+        "en_name": "K-way Merge",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.binary_search_on_answer",
+        "name": "答案二分",
+        "en_name": "Binary Search on Answer",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.merge_intervals",
+        "name": "区间合并",
+        "en_name": "Merge Intervals Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.interval_sweep_events",
+        "name": "区间事件扫描",
+        "en_name": "Interval Sweep Events",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.subarray_product_window",
+        "name": "乘积约束窗口",
+        "en_name": "Subarray Product Window",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.palindrome_expand",
+        "name": "中心扩展回文",
+        "en_name": "Palindrome Center Expansion",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.linked_list_reverse",
+        "name": "链表原地反转",
+        "en_name": "Linked List In-place Reverse",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_level_order",
+        "name": "树的层序遍历",
+        "en_name": "Tree Level Order Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.valid_parentheses_stack",
+        "name": "括号匹配栈",
+        "en_name": "Valid Parentheses Stack",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.hash_dedup_seen",
+        "name": "哈希去重与已访问集合",
+        "en_name": "Hash Set Seen Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.matrix_spiral_simulation",
+        "name": "矩阵边界模拟",
+        "en_name": "Matrix Boundary Simulation",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.backtracking_combinations",
+        "name": "组合回溯",
+        "en_name": "Backtracking Combinations",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.permutation_used_array",
+        "name": "排列回溯 used 数组",
+        "en_name": "Permutation Used Array",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "beginner"
+        ]
+      },
+      {
+        "pattern_id": "pat.island_problems",
+        "name": "岛屿问题",
+        "en_name": "Island Problems",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.word_ladder",
+        "name": "单词接龙",
+        "en_name": "Word Ladder",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.course_schedule",
+        "name": "课程表依赖",
+        "en_name": "Course Schedule",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_coloring",
+        "name": "二分图染色",
+        "en_name": "Bipartite Coloring Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multi_source_bfs",
+        "name": "多源 BFS",
+        "en_name": "Multi-source BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.zero_one_bfs",
+        "name": "0-1 BFS 模式",
+        "en_name": "0-1 BFS Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.state_compressed_bfs",
+        "name": "状态压缩 BFS",
+        "en_name": "State-compressed BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.topological_longest_path_dag",
+        "name": "DAG 拓扑 DP",
+        "en_name": "DAG Topological DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.connected_components",
+        "name": "连通块分解",
+        "en_name": "Connected Components Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.cycle_detection_undirected",
+        "name": "无向图判环",
+        "en_name": "Undirected Cycle Detection",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      }
+    ],
+    "noi": [
+      {
+        "pattern_id": "pat.offline_query_pattern",
+        "name": "离线查询模式",
+        "en_name": "Offline Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.sweep_line_pattern",
+        "name": "扫描线模式",
+        "en_name": "Sweep Line Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.meet_in_the_middle",
+        "name": "折半搜索",
+        "en_name": "Meet-in-the-middle",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.constructive_invariant",
+        "name": "构造题不变量",
+        "en_name": "Constructive Invariant Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.greedy_exchange_argument",
+        "name": "贪心交换论证",
+        "en_name": "Greedy Exchange Argument",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.binary_lifting_state_jump",
+        "name": "倍增状态跳转",
+        "en_name": "Binary Lifting State Jump",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.modular_counting_pattern",
+        "name": "取模计数模式",
+        "en_name": "Modular Counting Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.inclusion_exclusion_counting",
+        "name": "容斥计数",
+        "en_name": "Inclusion-Exclusion Counting",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.coordinate_sweep_compression",
+        "name": "离散化扫描",
+        "en_name": "Compressed Coordinate Sweep",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.randomized_hash_check",
+        "name": "随机哈希判等",
+        "en_name": "Randomized Hash Check",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      }
+    ],
+    "university_cp": [
+      {
+        "pattern_id": "pat.island_problems",
+        "name": "岛屿问题",
+        "en_name": "Island Problems",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.word_ladder",
+        "name": "单词接龙",
+        "en_name": "Word Ladder",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.course_schedule",
+        "name": "课程表依赖",
+        "en_name": "Course Schedule",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_coloring",
+        "name": "二分图染色",
+        "en_name": "Bipartite Coloring Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multi_source_bfs",
+        "name": "多源 BFS",
+        "en_name": "Multi-source BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.zero_one_bfs",
+        "name": "0-1 BFS 模式",
+        "en_name": "0-1 BFS Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.state_compressed_bfs",
+        "name": "状态压缩 BFS",
+        "en_name": "State-compressed BFS",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.topological_longest_path_dag",
+        "name": "DAG 拓扑 DP",
+        "en_name": "DAG Topological DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.connected_components",
+        "name": "连通块分解",
+        "en_name": "Connected Components Pattern",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.cycle_detection_undirected",
+        "name": "无向图判环",
+        "en_name": "Undirected Cycle Detection",
+        "difficulty": "intermediate",
+        "tracks": [
+          "interview",
+          "icpc",
+          "university_cp"
+        ]
+      },
+      {
+        "pattern_id": "pat.shortest_path_modeling",
+        "name": "最短路建模",
+        "en_name": "Shortest Path Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.bipartite_matching_modeling",
+        "name": "二分图匹配建模",
+        "en_name": "Bipartite Matching Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cut_selection",
+        "name": "最小割选择建模",
+        "en_name": "Minimum Cut Selection Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.min_cost_flow_assignment",
+        "name": "费用流分配建模",
+        "en_name": "Min-cost Flow Assignment Modeling",
+        "difficulty": "expert",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.dag_dependency_modeling",
+        "name": "DAG 依赖建模",
+        "en_name": "DAG Dependency Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.grid_graph_modeling",
+        "name": "网格图建模",
+        "en_name": "Grid Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.time_expanded_graph",
+        "name": "时间展开图建模",
+        "en_name": "Time-expanded Graph Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.layered_graph_shortest_path",
+        "name": "分层图最短路",
+        "en_name": "Layered Graph Shortest Path",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.complement_graph_modeling",
+        "name": "补图搜索建模",
+        "en_name": "Complement Graph Search Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.game_graph_retrograde",
+        "name": "博弈图逆推",
+        "en_name": "Game Graph Retrograde Modeling",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_graph"
+        ]
+      },
+      {
+        "pattern_id": "pat.knapsack_dp",
+        "name": "背包 DP 模式",
+        "en_name": "Knapsack DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.complete_knapsack_dp",
+        "name": "完全背包 DP",
+        "en_name": "Complete Knapsack DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.multiple_knapsack_binary_split",
+        "name": "多重背包二进制拆分",
+        "en_name": "Multiple Knapsack Binary Split",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.interval_dp",
+        "name": "区间 DP 模式",
+        "en_name": "Interval DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_dp",
+        "name": "树形 DP 模式",
+        "en_name": "Tree DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.digit_dp",
+        "name": "数位 DP 模式",
+        "en_name": "Digit DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.bitmask_dp",
+        "name": "状压 DP 模式",
+        "en_name": "Bitmask DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.linear_dp_sequence",
+        "name": "序列线性 DP",
+        "en_name": "Linear Sequence DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lis_dp",
+        "name": "最长递增子序列模式",
+        "en_name": "LIS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.lcs_dp",
+        "name": "最长公共子序列模式",
+        "en_name": "LCS Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.edit_distance_dp",
+        "name": "编辑距离 DP",
+        "en_name": "Edit Distance DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.probability_dp",
+        "name": "概率 DP 模式",
+        "en_name": "Probability DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.expectation_dp",
+        "name": "期望 DP 模式",
+        "en_name": "Expectation DP Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.divide_conquer_dp_optimization",
+        "name": "分治 DP 优化",
+        "en_name": "Divide and Conquer DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotone_queue_dp",
+        "name": "单调队列 DP 优化",
+        "en_name": "Monotone Queue DP Optimization",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_dp"
+        ]
+      },
+      {
+        "pattern_id": "pat.segment_tree_range_update",
+        "name": "线段树区间更新",
+        "en_name": "Segment Tree Range Update Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.dsu_connectivity",
+        "name": "并查集连通性",
+        "en_name": "DSU Connectivity Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.fenwick_prefix_maintenance",
+        "name": "树状数组前缀维护",
+        "en_name": "Fenwick Prefix Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.monotonic_queue_window_max",
+        "name": "单调队列窗口最值",
+        "en_name": "Monotonic Queue Window Maximum",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.order_statistic_maintenance",
+        "name": "动态第 k 小维护",
+        "en_name": "Order Statistic Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.range_mode_offline",
+        "name": "区间众数离线维护",
+        "en_name": "Range Mode Offline Maintenance",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rollback_dsu",
+        "name": "可撤销并查集",
+        "en_name": "Rollback DSU Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.lazy_tag_composition",
+        "name": "懒标记组合",
+        "en_name": "Lazy Tag Composition Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.heap_lazy_deletion",
+        "name": "堆懒删除",
+        "en_name": "Heap Lazy Deletion",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.tree_path_query",
+        "name": "树上路径查询",
+        "en_name": "Tree Path Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rerooting_tree_dp",
+        "name": "换根 DP",
+        "en_name": "Rerooting Tree DP",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.virtual_tree_pattern",
+        "name": "虚树关键点模式",
+        "en_name": "Virtual Tree Key-Node Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.subtree_query_euler",
+        "name": "子树查询欧拉序",
+        "en_name": "Subtree Query Euler Tour",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.centroid_decomposition_query",
+        "name": "点分治查询",
+        "en_name": "Centroid Decomposition Query",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_data_structure"
+        ]
+      },
+      {
+        "pattern_id": "pat.rabin_karp_hash",
+        "name": "滚动哈希匹配",
+        "en_name": "Rabin-Karp Rolling Hash",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.trie_multi_pattern",
+        "name": "Trie 多模式前缀匹配",
+        "en_name": "Trie Multi-pattern Prefix Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.aho_corasick_matching",
+        "name": "AC 自动机多模式匹配",
+        "en_name": "Aho-Corasick Multi-pattern Matching",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.string_dp_wildcard",
+        "name": "通配符匹配 DP",
+        "en_name": "Wildcard String Matching DP",
+        "difficulty": "intermediate",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "advanced_string"
+        ]
+      },
+      {
+        "pattern_id": "pat.offline_query_pattern",
+        "name": "离线查询模式",
+        "en_name": "Offline Query Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.sweep_line_pattern",
+        "name": "扫描线模式",
+        "en_name": "Sweep Line Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.meet_in_the_middle",
+        "name": "折半搜索",
+        "en_name": "Meet-in-the-middle",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.constructive_invariant",
+        "name": "构造题不变量",
+        "en_name": "Constructive Invariant Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.greedy_exchange_argument",
+        "name": "贪心交换论证",
+        "en_name": "Greedy Exchange Argument",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.binary_lifting_state_jump",
+        "name": "倍增状态跳转",
+        "en_name": "Binary Lifting State Jump",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.modular_counting_pattern",
+        "name": "取模计数模式",
+        "en_name": "Modular Counting Pattern",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.inclusion_exclusion_counting",
+        "name": "容斥计数",
+        "en_name": "Inclusion-Exclusion Counting",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.coordinate_sweep_compression",
+        "name": "离散化扫描",
+        "en_name": "Compressed Coordinate Sweep",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      },
+      {
+        "pattern_id": "pat.randomized_hash_check",
+        "name": "随机哈希判等",
+        "en_name": "Randomized Hash Check",
+        "difficulty": "advanced",
+        "tracks": [
+          "icpc",
+          "university_cp",
+          "noi"
+        ]
+      }
+    ]
+  }
+}

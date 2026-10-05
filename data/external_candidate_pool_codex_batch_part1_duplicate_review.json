@@ -1,0 +1,4771 @@
+[
+  {
+    "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan.raw",
+    "name": "Lengauer-Tarjan 支配树算法",
+    "en_name": "Lengauer-Tarjan Dominator Tree Algorithm",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "支配树"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.construction",
+    "name": "虚树构建",
+    "en_name": "Virtual Tree Construction",
+    "duplicate_risk": "high",
+    "recommended_action": "merge_with_existing",
+    "possible_duplicate_keywords": [
+      "虚树"
+    ],
+    "evidence": [
+      "exact name/en_name appears in existing graph"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.construction",
+    "name": "Block-Cut Tree 构建",
+    "en_name": "Block-Cut Tree Construction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "圆方树",
+      "Block-Cut Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus.algorithm_and_properties",
+    "name": "仙人掌图算法",
+    "en_name": "Cactus Graph Algorithms",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "仙人掌"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.chordal_graph.mcs",
+    "name": "弦图与完美消除序列 MCS",
+    "en_name": "Chordal Graph and Maximum Cardinality Search",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "弦图"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.tournament_graph.hamilton_path",
+    "name": "竞赛图哈密顿路",
+    "en_name": "Tournament Graph Hamiltonian Path",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "竞赛图"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.min_arborescence.chu_liu",
+    "name": "朱刘算法求最小树形图",
+    "en_name": "Chu-Liu/Edmonds Algorithm for Minimum Arborescence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "最小树形图",
+      "朱刘算法"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.gomory_hu_tree.construction",
+    "name": "Gomory-Hu 树构建",
+    "en_name": "Gomory-Hu Tree Construction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Gomory-Hu"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+    "name": "Stoer-Wagner 全局最小割",
+    "en_name": "Stoer-Wagner Global Min-Cut Algorithm",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "全局最小割"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.min_mean_cycle.karp",
+    "name": "Karp 最小平均环",
+    "en_name": "Karp's Minimum Mean Cycle Algorithm",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "最小平均环"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.general_matching.blossom.raw",
+    "name": "一般图最大匹配带花树算法",
+    "en_name": "Blossom Algorithm for General Graph Maximum Matching",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "带花树",
+      "一般图匹配"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.tutte_matrix.matching",
+    "name": "Tutte 矩阵与一般图匹配检测",
+    "en_name": "Tutte Matrix and General Graph Matching Detection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tutte矩阵"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.hall_theorem.applications",
+    "name": "Hall 定理及应用",
+    "en_name": "Hall's Marriage Theorem and Applications",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Hall定理"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_intersection.basic",
+    "name": "拟阵交基础",
+    "en_name": "Matroid Intersection Basics",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "拟阵",
+      "matroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+    "name": "离线动态连通性（线段树分治）",
+    "en_name": "Offline Dynamic Connectivity via Segment Tree Divide and Conquer",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "动态连通性",
+      "线段树分治"
+    ],
+    "evidence": [
+      "线段树分治"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.bridge_tree.construction",
+    "name": "Bridge Tree 构建",
+    "en_name": "Bridge Tree Construction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "bridge tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.functional_graph.analysis",
+    "name": "函数图分析",
+    "en_name": "Functional Graph Analysis",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "函数图",
+      "functional graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.two_sat.modeling_techniques",
+    "name": "2-SAT 建模技巧",
+    "en_name": "2-SAT Modeling Techniques",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "2-SAT建模"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.difference_constraints.modeling.raw",
+    "name": "差分约束系统建模",
+    "en_name": "Difference Constraints System Modeling",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "差分约束"
+    ],
+    "evidence": [
+      "差分约束"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.max_weight_closure.problem",
+    "name": "最大权闭合子图",
+    "en_name": "Maximum Weight Closure Problem",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "最大权闭合子图"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.max_density_subgraph.fractional",
+    "name": "最大密度子图（分数规划）",
+    "en_name": "Maximum Density Subgraph via Fractional Programming",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "最大密度子图"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+    "name": "有上下界网络流可行流",
+    "en_name": "Flow with Lower Bounds: Feasible Flow",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "上下界网络流"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dual_graph.planar",
+    "name": "平面图对偶图转换",
+    "en_name": "Planar Graph Dual Graph Conversion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "对偶图"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+    "name": "最小链覆盖与 Dilworth 定理",
+    "en_name": "Minimum Chain Cover and Dilworth's Theorem",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dilworth",
+      "最小链覆盖"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.general_matching_weighted.blossom",
+    "name": "一般图最大权匹配（带权带花树）",
+    "en_name": "Weighted General Graph Matching (Weighted Blossom)",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "带权带花树"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.steiner_tree.dp",
+    "name": "最小斯坦纳树 DP",
+    "en_name": "Minimum Steiner Tree Dynamic Programming",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "斯坦纳树"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.control_flow_graph",
+    "name": "支配树：Control-Flow Graph",
+    "en_name": "Dominator Tree: Control-Flow Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Control-Flow Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.articulation_construction",
+    "name": "圆方树：Articulation Construction",
+    "en_name": "Block-Cut Tree: Articulation Construction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Articulation Construction"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.cycle_decomposition",
+    "name": "仙人掌图：Cycle Decomposition",
+    "en_name": "Cactus Graph: Cycle Decomposition",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Cycle Decomposition"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.offline_deletion",
+    "name": "动态图连通性：Offline Deletion",
+    "en_name": "Dynamic Connectivity: Offline Deletion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Offline Deletion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.replacement_edge",
+    "name": "动态最小生成树：Replacement Edge",
+    "en_name": "Dynamic MST: Replacement Edge",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Replacement Edge"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.feasible_circulation",
+    "name": "上下界网络流：Feasible Circulation",
+    "en_name": "Flow with Lower Bounds: Feasible Circulation",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Feasible Circulation"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.project_selection",
+    "name": "最大权闭合子图：Project Selection",
+    "en_name": "Maximum Closure: Project Selection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Project Selection"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+    "name": "匹配与覆盖：Blossom Algorithm",
+    "en_name": "Matching and Cover: Blossom Algorithm",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Blossom Algorithm"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.chordal_graph",
+    "name": "特殊图：Chordal Graph",
+    "en_name": "Special Graph: Chordal Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Chordal Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+    "name": "图论建模：Difference Constraints",
+    "en_name": "Graph Modeling: Difference Constraints",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "Difference Constraints"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.chu_liu_edmonds",
+    "name": "有向生成树：Chu Liu Edmonds",
+    "en_name": "Directed MST: Chu Liu Edmonds",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Chu Liu Edmonds"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.condensation_applications",
+    "name": "强连通分量 DAG：Condensation Applications",
+    "en_name": "SCC Condensation DAG: Condensation Applications",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Condensation Applications"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.johnson_potentials",
+    "name": "高级最短路：Johnson Potentials",
+    "en_name": "Advanced Shortest Path: Johnson Potentials",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Johnson Potentials"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.graphic_matroid",
+    "name": "拟阵图论：Graphic Matroid",
+    "en_name": "Matroid in Graphs: Graphic Matroid",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Graphic Matroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.dual_graph",
+    "name": "平面图：Dual Graph",
+    "en_name": "Planar Graph: Dual Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Dual Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.semidominator",
+    "name": "支配树：Semidominator",
+    "en_name": "Dominator Tree: Semidominator",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Semidominator"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.stack_construction",
+    "name": "虚树：Stack Construction",
+    "en_name": "Virtual Tree: Stack Construction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Stack Construction"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.biconnected_component",
+    "name": "圆方树：Biconnected Component",
+    "en_name": "Block-Cut Tree: Biconnected Component",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Biconnected Component"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.shortest_path",
+    "name": "仙人掌图：Shortest Path",
+    "en_name": "Cactus Graph: Shortest Path",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Shortest Path"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.segment_tree_over_time",
+    "name": "动态图连通性：Segment Tree Over Time",
+    "en_name": "Dynamic Connectivity: Segment Tree Over Time",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Segment Tree Over Time"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.offline_updates",
+    "name": "动态最小生成树：Offline Updates",
+    "en_name": "Dynamic MST: Offline Updates",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Offline Updates"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.demands",
+    "name": "上下界网络流：Demands",
+    "en_name": "Flow with Lower Bounds: Demands",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Demands"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.gomory_hu_tree",
+    "name": "全局最小割：Gomory Hu Tree",
+    "en_name": "Global Min-Cut: Gomory Hu Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Gomory Hu Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.profit_dependency",
+    "name": "最大权闭合子图：Profit Dependency",
+    "en_name": "Maximum Closure: Profit Dependency",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Profit Dependency"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+    "name": "匹配与覆盖：Weighted General Matching",
+    "en_name": "Matching and Cover: Weighted General Matching",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Weighted General Matching"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.maximum_cardinality_search",
+    "name": "特殊图：Maximum Cardinality Search",
+    "en_name": "Special Graph: Maximum Cardinality Search",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Maximum Cardinality Search"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.2_sat_modeling",
+    "name": "图论建模：2 Sat Modeling",
+    "en_name": "Graph Modeling: 2 Sat Modeling",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "2 Sat Modeling"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.contracted_cycle",
+    "name": "有向生成树：Contracted Cycle",
+    "en_name": "Directed MST: Contracted Cycle",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Contracted Cycle"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.source_sink_count",
+    "name": "强连通分量 DAG：Source Sink Count",
+    "en_name": "SCC Condensation DAG: Source Sink Count",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Source Sink Count"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.yen_k_shortest",
+    "name": "高级最短路：Yen K Shortest",
+    "en_name": "Advanced Shortest Path: Yen K Shortest",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Yen K Shortest"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.matroid_intersection",
+    "name": "拟阵图论：Matroid Intersection",
+    "en_name": "Matroid in Graphs: Matroid Intersection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Matroid Intersection"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.euler_formula",
+    "name": "平面图：Euler Formula",
+    "en_name": "Planar Graph: Euler Formula",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Euler Formula"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.immediate_dominator",
+    "name": "支配树：Immediate Dominator",
+    "en_name": "Dominator Tree: Immediate Dominator",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Immediate Dominator"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.tree_dp",
+    "name": "虚树：树形 DP",
+    "en_name": "Virtual Tree: Tree Dp",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Tree Dp"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.path_query",
+    "name": "圆方树：Path Query",
+    "en_name": "Block-Cut Tree: Path Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Path Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.tree_conversion",
+    "name": "仙人掌图：Tree Conversion",
+    "en_name": "Cactus Graph: Tree Conversion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Tree Conversion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.rollback_dsu",
+    "name": "动态图连通性：Rollback Dsu",
+    "en_name": "Dynamic Connectivity: Rollback Dsu",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Rollback Dsu"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.link_cut_tree_approach",
+    "name": "动态最小生成树：Link Cut Tree Approach",
+    "en_name": "Dynamic MST: Link Cut Tree Approach",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Link Cut Tree Approach"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+    "name": "上下界网络流：Minimum Flow",
+    "en_name": "Flow with Lower Bounds: Minimum Flow",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Minimum Flow"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.cut_tree_query",
+    "name": "全局最小割：Cut Tree Query",
+    "en_name": "Global Min-Cut: Cut Tree Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Cut Tree Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.maximum_weight_closure",
+    "name": "最大权闭合子图：Maximum Weight Closure",
+    "en_name": "Maximum Closure: Maximum Weight Closure",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Maximum Weight Closure"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+    "name": "匹配与覆盖：Tutte Matrix",
+    "en_name": "Matching and Cover: Tutte Matrix",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Tutte Matrix"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.tournament_graph",
+    "name": "特殊图：Tournament Graph",
+    "en_name": "Special Graph: Tournament Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Tournament Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.layered_graph",
+    "name": "图论建模：Layered Graph",
+    "en_name": "Graph Modeling: Layered Graph",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "Layered Graph"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.rooted_arborescence",
+    "name": "有向生成树：Rooted Arborescence",
+    "en_name": "Directed MST: Rooted Arborescence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Rooted Arborescence"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.dag_reachability",
+    "name": "强连通分量 DAG：Dag Reachability",
+    "en_name": "SCC Condensation DAG: Dag Reachability",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Dag Reachability"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.eppstein_k_shortest",
+    "name": "高级最短路：Eppstein K Shortest",
+    "en_name": "Advanced Shortest Path: Eppstein K Shortest",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Eppstein K Shortest"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.matroid_parity",
+    "name": "拟阵图论：Matroid Parity",
+    "en_name": "Matroid in Graphs: Matroid Parity",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Matroid Parity"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.planar_separator",
+    "name": "平面图：Planar Separator",
+    "en_name": "Planar Graph: Planar Separator",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Planar Separator"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.dominance_frontier",
+    "name": "支配树：Dominance Frontier",
+    "en_name": "Dominator Tree: Dominance Frontier",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Dominance Frontier"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.multi_key_query",
+    "name": "虚树：Multi-Key Query",
+    "en_name": "Virtual Tree: Multi-Key Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Multi-Key Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.tree_dp",
+    "name": "圆方树：树形 DP",
+    "en_name": "Block-Cut Tree: Tree Dp",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Tree Dp"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.dynamic_programming",
+    "name": "仙人掌图：Dynamic Programming",
+    "en_name": "Cactus Graph: Dynamic Programming",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Dynamic Programming"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+    "name": "动态图连通性：Divide And Conquer On Time",
+    "en_name": "Dynamic Connectivity: Divide And Conquer On Time",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Divide And Conquer On Time"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.divide_conquer_approach",
+    "name": "动态最小生成树：Divide Conquer Approach",
+    "en_name": "Dynamic MST: Divide Conquer Approach",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Divide Conquer Approach"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+    "name": "上下界网络流：Maximum Flow",
+    "en_name": "Flow with Lower Bounds: Maximum Flow",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Maximum Flow"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.undirected_min_cut",
+    "name": "全局最小割：Undirected Min Cut",
+    "en_name": "Global Min-Cut: Undirected Min Cut",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Undirected Min Cut"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.minimum_cut_transform",
+    "name": "最大权闭合子图：Minimum Cut Transform",
+    "en_name": "Maximum Closure: Minimum Cut Transform",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Minimum Cut Transform"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.hall_theorem",
+    "name": "匹配与覆盖：Hall Theorem",
+    "en_name": "Matching and Cover: Hall Theorem",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Hall Theorem"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.functional_graph",
+    "name": "特殊图：Functional Graph",
+    "en_name": "Special Graph: Functional Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Functional Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.state_graph",
+    "name": "图论建模：State Graph",
+    "en_name": "Graph Modeling: State Graph",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "State Graph"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.minimum_arborescence",
+    "name": "有向生成树：Minimum Arborescence",
+    "en_name": "Directed MST: Minimum Arborescence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Minimum Arborescence"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.dominating_components",
+    "name": "强连通分量 DAG：Dominating Components",
+    "en_name": "SCC Condensation DAG: Dominating Components",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Dominating Components"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.replacement_paths",
+    "name": "高级最短路：Replacement Paths",
+    "en_name": "Advanced Shortest Path: Replacement Paths",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Replacement Paths"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.basis_exchange",
+    "name": "拟阵图论：Basis Exchange",
+    "en_name": "Matroid in Graphs: Basis Exchange",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Basis Exchange"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.face_traversal",
+    "name": "平面图：Face Traversal",
+    "en_name": "Planar Graph: Face Traversal",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Face Traversal"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.dominator_tree_dp",
+    "name": "支配树：Dominator Tree Dp",
+    "en_name": "Dominator Tree: Dominator Tree Dp",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Dominator Tree Dp"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.distance_compression",
+    "name": "虚树：Distance Compression",
+    "en_name": "Virtual Tree: Distance Compression",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Distance Compression"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.connectivity_query",
+    "name": "圆方树：Connectivity Query",
+    "en_name": "Block-Cut Tree: Connectivity Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Connectivity Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.minimum_cut",
+    "name": "仙人掌图：Minimum Cut",
+    "en_name": "Cactus Graph: Minimum Cut",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Minimum Cut"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+    "name": "动态图连通性：Edge Interval Model",
+    "en_name": "Dynamic Connectivity: Edge Interval Model",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Edge Interval Model"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.sensitivity_analysis",
+    "name": "动态最小生成树：Sensitivity Analysis",
+    "en_name": "Dynamic MST: Sensitivity Analysis",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Sensitivity Analysis"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+    "name": "上下界网络流：Min Cost Circulation",
+    "en_name": "Flow with Lower Bounds: Min Cost Circulation",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Min Cost Circulation"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.pair_min_cut",
+    "name": "全局最小割：Pair Min Cut",
+    "en_name": "Global Min-Cut: Pair Min Cut",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Pair Min Cut"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.prerequisite_graph",
+    "name": "最大权闭合子图：Prerequisite Graph",
+    "en_name": "Maximum Closure: Prerequisite Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Prerequisite Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.konig_theorem",
+    "name": "匹配与覆盖：Konig Theorem",
+    "en_name": "Matching and Cover: Konig Theorem",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Konig Theorem"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.planar_dual_graph",
+    "name": "特殊图：Planar Dual Graph",
+    "en_name": "Special Graph: Planar Dual Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Planar Dual Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.shortest_path_potentials",
+    "name": "图论建模：Shortest Path Potentials",
+    "en_name": "Graph Modeling: Shortest Path Potentials",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "Shortest Path Potentials"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.maximum_arborescence",
+    "name": "有向生成树：Maximum Arborescence",
+    "en_name": "Directed MST: Maximum Arborescence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Maximum Arborescence"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+    "name": "强连通分量 DAG：Minimum Edges To Strong",
+    "en_name": "SCC Condensation DAG: Minimum Edges To Strong",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Minimum Edges To Strong"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.resource_constrained",
+    "name": "高级最短路：Resource Constrained",
+    "en_name": "Advanced Shortest Path: Resource Constrained",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Resource Constrained"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.weighted_matroid_intersection",
+    "name": "拟阵图论：Weighted Matroid Intersection",
+    "en_name": "Matroid in Graphs: Weighted Matroid Intersection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Weighted Matroid Intersection"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.dual_shortest_path",
+    "name": "平面图：Dual Shortest Path",
+    "en_name": "Planar Graph: Dual Shortest Path",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Dual Shortest Path"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.path_dominator_query",
+    "name": "支配树：Path Dominator Query",
+    "en_name": "Dominator Tree: Path Dominator Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Path Dominator Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.edge_weight_compression",
+    "name": "虚树：Edge Weight Compression",
+    "en_name": "Virtual Tree: Edge Weight Compression",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Edge Weight Compression"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.bridge_interaction",
+    "name": "圆方树：Bridge Interaction",
+    "en_name": "Block-Cut Tree: Bridge Interaction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Bridge Interaction"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.diameter",
+    "name": "仙人掌图：Diameter",
+    "en_name": "Cactus Graph: Diameter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Diameter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.fully_dynamic_overview",
+    "name": "动态图连通性：Fully Dynamic Overview",
+    "en_name": "Dynamic Connectivity: Fully Dynamic Overview",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Fully Dynamic Overview"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.edge_deletion",
+    "name": "动态最小生成树：Edge Deletion",
+    "en_name": "Dynamic MST: Edge Deletion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Edge Deletion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+    "name": "上下界网络流：Edge Lower Bound Transform",
+    "en_name": "Flow with Lower Bounds: Edge Lower Bound Transform",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Edge Lower Bound Transform"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.minimum_cut_modeling",
+    "name": "全局最小割：Minimum Cut Modeling",
+    "en_name": "Global Min-Cut: Minimum Cut Modeling",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Minimum Cut Modeling"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.open_pit_mining_model",
+    "name": "最大权闭合子图：Open Pit Mining Model",
+    "en_name": "Maximum Closure: Open Pit Mining Model",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Open Pit Mining Model"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+    "name": "匹配与覆盖：Minimum Path Cover",
+    "en_name": "Matching and Cover: Minimum Path Cover",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Minimum Path Cover"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.interval_graph",
+    "name": "特殊图：Interval Graph",
+    "en_name": "Special Graph: Interval Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Interval Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.k_shortest_paths",
+    "name": "图论建模：K Shortest Paths",
+    "en_name": "Graph Modeling: K Shortest Paths",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "K Shortest Paths"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.branching_theorem",
+    "name": "有向生成树：Branching Theorem",
+    "en_name": "Directed MST: Branching Theorem",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Branching Theorem"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.scc_dp",
+    "name": "强连通分量 DAG：Scc Dp",
+    "en_name": "SCC Condensation DAG: Scc Dp",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Scc Dp"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.time_expanded_graph",
+    "name": "高级最短路：Time Expanded Graph",
+    "en_name": "Advanced Shortest Path: Time Expanded Graph",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Time Expanded Graph"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.spanning_tree_matroid",
+    "name": "拟阵图论：Spanning Tree Matroid",
+    "en_name": "Matroid in Graphs: Spanning Tree Matroid",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Spanning Tree Matroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.planar_min_cut",
+    "name": "平面图：Planar Min Cut",
+    "en_name": "Planar Graph: Planar Min Cut",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Planar Min Cut"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.dag_dominator",
+    "name": "支配树：Dag Dominator",
+    "en_name": "Dominator Tree: Dag Dominator",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Dag Dominator"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.subtree_aggregation",
+    "name": "虚树：Subtree Aggregation",
+    "en_name": "Virtual Tree: Subtree Aggregation",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Subtree Aggregation"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.weighted_variant",
+    "name": "圆方树：Weighted Variant",
+    "en_name": "Block-Cut Tree: Weighted Variant",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Weighted Variant"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.path_counting",
+    "name": "仙人掌图：Path Counting",
+    "en_name": "Cactus Graph: Path Counting",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Path Counting"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.dynamic_bridge",
+    "name": "动态图连通性：Dynamic Bridge",
+    "en_name": "Dynamic Connectivity: Dynamic Bridge",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Dynamic Bridge"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.edge_insertion",
+    "name": "动态最小生成树：Edge Insertion",
+    "en_name": "Dynamic MST: Edge Insertion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Edge Insertion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.node_demand",
+    "name": "上下界网络流：Node Demand",
+    "en_name": "Flow with Lower Bounds: Node Demand",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Node Demand"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.sparsification",
+    "name": "全局最小割：Sparsification",
+    "en_name": "Global Min-Cut: Sparsification",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Sparsification"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.task_selection",
+    "name": "最大权闭合子图：Task Selection",
+    "en_name": "Maximum Closure: Task Selection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Task Selection"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+    "name": "匹配与覆盖：Dilworth Theorem",
+    "en_name": "Matching and Cover: Dilworth Theorem",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Dilworth Theorem"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.bipartite_complement",
+    "name": "特殊图：Bipartite Complement",
+    "en_name": "Special Graph: Bipartite Complement",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Bipartite Complement"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.minimum_mean_cycle",
+    "name": "图论建模：Minimum Mean Cycle",
+    "en_name": "Graph Modeling: Minimum Mean Cycle",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "Minimum Mean Cycle"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.weighted_directed_mst",
+    "name": "有向生成树：Weighted Directed Mst",
+    "en_name": "Directed MST: Weighted Directed Mst",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Weighted Directed Mst"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.component_topo_order",
+    "name": "强连通分量 DAG：Component Topo Order",
+    "en_name": "SCC Condensation DAG: Component Topo Order",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Component Topo Order"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.min_cost_path_cover",
+    "name": "高级最短路：Min Cost Path Cover",
+    "en_name": "Advanced Shortest Path: Min Cost Path Cover",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Min Cost Path Cover"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.partition_matroid",
+    "name": "拟阵图论：Partition Matroid",
+    "en_name": "Matroid in Graphs: Partition Matroid",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Partition Matroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.embedding_basics",
+    "name": "平面图：Embedding Basics",
+    "en_name": "Planar Graph: Embedding Basics",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Embedding Basics"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.online_query",
+    "name": "支配树：Online Query",
+    "en_name": "Dominator Tree: Online Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Online Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.colored_points",
+    "name": "虚树：Colored Points",
+    "en_name": "Virtual Tree: Colored Points",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Colored Points"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.distance_on_block_cut_tree",
+    "name": "圆方树：Distance On Block Cut Tree",
+    "en_name": "Block-Cut Tree: Distance On Block Cut Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Distance On Block Cut Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.edge_cactus",
+    "name": "仙人掌图：Edge Cactus",
+    "en_name": "Cactus Graph: Edge Cactus",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Edge Cactus"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.dynamic_biconnectivity",
+    "name": "动态图连通性：Dynamic Biconnectivity",
+    "en_name": "Dynamic Connectivity: Dynamic Biconnectivity",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Dynamic Biconnectivity"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.batch_recomputation",
+    "name": "动态最小生成树：Batch Recomputation",
+    "en_name": "Dynamic MST: Batch Recomputation",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Batch Recomputation"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+    "name": "上下界网络流：Bounded Bipartite Matching",
+    "en_name": "Flow with Lower Bounds: Bounded Bipartite Matching",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Bounded Bipartite Matching"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.recursive_contraction",
+    "name": "全局最小割：Recursive Contraction",
+    "en_name": "Global Min-Cut: Recursive Contraction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Recursive Contraction"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.binary_decision_model",
+    "name": "最大权闭合子图：Binary Decision Model",
+    "en_name": "Maximum Closure: Binary Decision Model",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Binary Decision Model"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.stable_marriage",
+    "name": "匹配与覆盖：Stable Marriage",
+    "en_name": "Matching and Cover: Stable Marriage",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Stable Marriage"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.condensation_dag",
+    "name": "特殊图：Condensation Dag",
+    "en_name": "Special Graph: Condensation Dag",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Special Graph",
+      "特殊图",
+      "Condensation Dag"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.graph_modeling.steiner_tree",
+    "name": "图论建模：Steiner Tree",
+    "en_name": "Graph Modeling: Steiner Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Graph Modeling",
+      "图论建模",
+      "Steiner Tree"
+    ],
+    "evidence": [
+      "Graph Modeling"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.super_root_model",
+    "name": "有向生成树：Super Root Model",
+    "en_name": "Directed MST: Super Root Model",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Directed MST",
+      "有向生成树",
+      "Super Root Model"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.implication_graph",
+    "name": "强连通分量 DAG：Implication Graph",
+    "en_name": "SCC Condensation DAG: Implication Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "SCC Condensation DAG",
+      "强连通分量 DAG",
+      "Implication Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.shortest_path_advanced.zero_one_bfs_modeling",
+    "name": "高级最短路：Zero One Bfs Modeling",
+    "en_name": "Advanced Shortest Path: Zero One Bfs Modeling",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Shortest Path",
+      "高级最短路",
+      "Zero One Bfs Modeling"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.transversal_matroid",
+    "name": "拟阵图论：Transversal Matroid",
+    "en_name": "Matroid in Graphs: Transversal Matroid",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Matroid in Graphs",
+      "拟阵图论",
+      "Transversal Matroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.outerplanar_graph",
+    "name": "平面图：Outerplanar Graph",
+    "en_name": "Planar Graph: Outerplanar Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Planar Graph",
+      "平面图",
+      "Outerplanar Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.bridge_relation",
+    "name": "支配树：Bridge Relation",
+    "en_name": "Dominator Tree: Bridge Relation",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dominator Tree",
+      "支配树",
+      "Bridge Relation"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.minimum_connection",
+    "name": "虚树：Minimum Connection",
+    "en_name": "Virtual Tree: Minimum Connection",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Virtual Tree",
+      "虚树",
+      "Minimum Connection"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.offline_query",
+    "name": "圆方树：Offline Query",
+    "en_name": "Block-Cut Tree: Offline Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Block-Cut Tree",
+      "圆方树",
+      "Offline Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.vertex_cactus",
+    "name": "仙人掌图：Vertex Cactus",
+    "en_name": "Cactus Graph: Vertex Cactus",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Cactus Graph",
+      "仙人掌图",
+      "Vertex Cactus"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.connectivity_snapshots",
+    "name": "动态图连通性：Connectivity Snapshots",
+    "en_name": "Dynamic Connectivity: Connectivity Snapshots",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Connectivity",
+      "动态图连通性",
+      "Connectivity Snapshots"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.certificate_graph",
+    "name": "动态最小生成树：Certificate Graph",
+    "en_name": "Dynamic MST: Certificate Graph",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic MST",
+      "动态最小生成树",
+      "Certificate Graph"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.flow_bounds.project_selection",
+    "name": "上下界网络流：Project Selection",
+    "en_name": "Flow with Lower Bounds: Project Selection",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Flow with Lower Bounds",
+      "上下界网络流",
+      "Project Selection"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.random_contraction",
+    "name": "全局最小割：Random Contraction",
+    "en_name": "Global Min-Cut: Random Contraction",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Global Min-Cut",
+      "全局最小割",
+      "Random Contraction"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.penalty_modeling",
+    "name": "最大权闭合子图：Penalty Modeling",
+    "en_name": "Maximum Closure: Penalty Modeling",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Maximum Closure",
+      "最大权闭合子图",
+      "Penalty Modeling"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.graph.matching_cover.matroid_matching",
+    "name": "匹配与覆盖：Matroid Matching",
+    "en_name": "Matching and Cover: Matroid Matching",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Matching and Cover",
+      "匹配与覆盖",
+      "Matroid Matching"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.merge",
+    "name": "线段树变体：Merge",
+    "en_name": "Segment Tree Variants: Merge",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Merge"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.static",
+    "name": "李超线段树：Static",
+    "en_name": "Li Chao Tree: Static",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Static"
+    ],
+    "evidence": [
+      "李超线段树",
+      "Static"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_kth",
+    "name": "小波树：区间第 k 小",
+    "en_name": "Wavelet Tree: Range Kth",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Kth"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_count",
+    "name": "归并排序树：Range Count",
+    "en_name": "Merge Sort Tree: Range Count",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Range Count"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.rollback",
+    "name": "高级并查集：回滚版",
+    "en_name": "Advanced DSU: Rollback",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Rollback"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.implicit_treap",
+    "name": "高级平衡树：Implicit Treap",
+    "en_name": "Advanced Balanced Tree: Implicit Treap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Implicit Treap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.euler_tour_tree",
+    "name": "动态树结构：Euler Tour Tree",
+    "en_name": "Dynamic Tree Structure: Euler Tour Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Euler Tour Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.disjoint_sparse_table",
+    "name": "高级 RMQ：Disjoint Sparse Table",
+    "en_name": "Advanced RMQ: Disjoint Sparse Table",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Disjoint Sparse Table"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.kd_tree",
+    "name": "多维数据结构：Kd Tree",
+    "en_name": "Multidimensional Data Structure: Kd Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Kd Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.leftist_heap",
+    "name": "可并堆：Leftist Heap",
+    "en_name": "Mergeable Heap: Leftist Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Leftist Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.bitset_convolution",
+    "name": "位集与线性基：Bitset Convolution",
+    "en_name": "Bitset and Linear Basis: Bitset Convolution",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Bitset Convolution"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.cdq_with_fenwick",
+    "name": "离线数据结构框架：Cdq With Fenwick",
+    "en_name": "Offline Data Structure Framework: Cdq With Fenwick",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Cdq With Fenwick"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.rope_editing",
+    "name": "序列维护结构：Rope Editing",
+    "en_name": "Sequence Maintenance Structure: Rope Editing",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Rope Editing"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.bloom_filter",
+    "name": "简洁与概率结构：Bloom Filter",
+    "en_name": "Succinct and Probabilistic Structure: Bloom Filter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Bloom Filter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_array",
+    "name": "可持久化结构：Persistent Array",
+    "en_name": "Persistent Data Structure: Persistent Array",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Persistent Array"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.centroid_decomposition_query",
+    "name": "树分治维护：Centroid Decomposition Query",
+    "en_name": "Tree Decomposition Data Structure: Centroid Decomposition Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Centroid Decomposition Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.split",
+    "name": "线段树变体：Split",
+    "en_name": "Segment Tree Variants: Split",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Split"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.dynamic",
+    "name": "李超线段树：动态版",
+    "en_name": "Li Chao Tree: Dynamic",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Dynamic"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_rank",
+    "name": "小波树：Range Rank",
+    "en_name": "Wavelet Tree: Range Rank",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Rank"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_kth_with_binary_search",
+    "name": "归并排序树：Range Kth With Binary Search",
+    "en_name": "Merge Sort Tree: Range Kth With Binary Search",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Range Kth With Binary Search"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.persistent",
+    "name": "高级并查集：可持久化版",
+    "en_name": "Advanced DSU: Persistent",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Persistent"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.fhq_split_merge",
+    "name": "高级平衡树：Fhq Split Merge",
+    "en_name": "Advanced Balanced Tree: Fhq Split Merge",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Fhq Split Merge"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.top_tree",
+    "name": "动态树结构：Top Tree",
+    "en_name": "Dynamic Tree Structure: Top Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Top Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.sqrt_tree",
+    "name": "高级 RMQ：Sqrt Tree",
+    "en_name": "Advanced RMQ: Sqrt Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Sqrt Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.2d_fenwick",
+    "name": "多维数据结构：2D Fenwick",
+    "en_name": "Multidimensional Data Structure: 2D Fenwick",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "2D Fenwick"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.pairing_heap",
+    "name": "可并堆：Pairing Heap",
+    "en_name": "Mergeable Heap: Pairing Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Pairing Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.bitset_knapsack",
+    "name": "位集与线性基：Bitset Knapsack",
+    "en_name": "Bitset and Linear Basis: Bitset Knapsack",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Bitset Knapsack"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.overall_binary_search",
+    "name": "离线数据结构框架：Overall Binary Search",
+    "en_name": "Offline Data Structure Framework: Overall Binary Search",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Overall Binary Search"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.piece_table_editing",
+    "name": "序列维护结构：Piece Table Editing",
+    "en_name": "Sequence Maintenance Structure: Piece Table Editing",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Piece Table Editing"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.counting_bloom_filter",
+    "name": "简洁与概率结构：Counting Bloom Filter",
+    "en_name": "Succinct and Probabilistic Structure: Counting Bloom Filter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Counting Bloom Filter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_stack_queue",
+    "name": "可持久化结构：Persistent Stack Queue",
+    "en_name": "Persistent Data Structure: Persistent Stack Queue",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Persistent Stack Queue"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.centroid_update",
+    "name": "树分治维护：Centroid Update",
+    "en_name": "Tree Decomposition Data Structure: Centroid Update",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Centroid Update"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+    "name": "Segment Tree Beats：Range Modulo",
+    "en_name": "Segment Tree Beats: Range Modulo",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Range Modulo"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.dynamic_segment_tree",
+    "name": "线段树变体：Dynamic Segment Tree",
+    "en_name": "Segment Tree Variants: Dynamic Segment Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Dynamic Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.segment_insertion",
+    "name": "李超线段树：Segment Insertion",
+    "en_name": "Li Chao Tree: Segment Insertion",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Segment Insertion"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_quantile",
+    "name": "小波树：Range Quantile",
+    "en_name": "Wavelet Tree: Range Quantile",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Quantile"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.fractional_cascading",
+    "name": "归并排序树：Fractional Cascading",
+    "en_name": "Merge Sort Tree: Fractional Cascading",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Fractional Cascading"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.parity",
+    "name": "高级并查集：Parity",
+    "en_name": "Advanced DSU: Parity",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Parity"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.persistent_treap",
+    "name": "高级平衡树：Persistent Treap",
+    "en_name": "Advanced Balanced Tree: Persistent Treap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Persistent Treap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.link_cut_path_aggregate",
+    "name": "动态树结构：Link Cut Path Aggregate",
+    "en_name": "Dynamic Tree Structure: Link Cut Path Aggregate",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Link Cut Path Aggregate"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.cartesian_tree_rmq",
+    "name": "高级 RMQ：Cartesian Tree Rmq",
+    "en_name": "Advanced RMQ: Cartesian Tree Rmq",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Cartesian Tree Rmq"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.3d_fenwick",
+    "name": "多维数据结构：3D Fenwick",
+    "en_name": "Multidimensional Data Structure: 3D Fenwick",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "3D Fenwick"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.binomial_heap",
+    "name": "可并堆：Binomial Heap",
+    "en_name": "Mergeable Heap: Binomial Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Binomial Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.persistent_linear_basis",
+    "name": "位集与线性基：Persistent Linear Basis",
+    "en_name": "Bitset and Linear Basis: Persistent Linear Basis",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Persistent Linear Basis"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.divide_conquer_optimization",
+    "name": "离线数据结构框架：Divide Conquer Optimization",
+    "en_name": "Offline Data Structure Framework: Divide Conquer Optimization",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Divide Conquer Optimization"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.gap_buffer_concept",
+    "name": "序列维护结构：Gap Buffer Concept",
+    "en_name": "Sequence Maintenance Structure: Gap Buffer Concept",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Gap Buffer Concept"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.quotient_filter",
+    "name": "简洁与概率结构：Quotient Filter",
+    "en_name": "Succinct and Probabilistic Structure: Quotient Filter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Quotient Filter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_fenwick",
+    "name": "可持久化结构：Persistent Fenwick",
+    "en_name": "Persistent Data Structure: Persistent Fenwick",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Persistent Fenwick"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.hld_segment_tree",
+    "name": "树分治维护：Hld Segment Tree",
+    "en_name": "Tree Decomposition Data Structure: Hld Segment Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Hld Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_add_max",
+    "name": "Segment Tree Beats：Range Add Max",
+    "en_name": "Segment Tree Beats: Range Add Max",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Range Add Max"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.persistent_segment_tree",
+    "name": "线段树变体：Persistent Segment Tree",
+    "en_name": "Segment Tree Variants: Persistent Segment Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Persistent Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+    "name": "李超线段树：Maximum Query",
+    "en_name": "Li Chao Tree: Maximum Query",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Maximum Query"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_predecessor",
+    "name": "小波树：Range Predecessor",
+    "en_name": "Wavelet Tree: Range Predecessor",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Predecessor"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_predecessor",
+    "name": "归并排序树：Range Predecessor",
+    "en_name": "Merge Sort Tree: Range Predecessor",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Range Predecessor"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.distance",
+    "name": "高级并查集：Distance",
+    "en_name": "Advanced DSU: Distance",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Distance"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.splay_sequence",
+    "name": "高级平衡树：Splay Sequence",
+    "en_name": "Advanced Balanced Tree: Splay Sequence",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Splay Sequence"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.link_cut_subtree",
+    "name": "动态树结构：Link Cut Subtree",
+    "en_name": "Dynamic Tree Structure: Link Cut Subtree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Link Cut Subtree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.fischer_heun",
+    "name": "高级 RMQ：Fischer Heun",
+    "en_name": "Advanced RMQ: Fischer Heun",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Fischer Heun"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.range_tree",
+    "name": "多维数据结构：Range Tree",
+    "en_name": "Multidimensional Data Structure: Range Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Range Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.fibonacci_heap",
+    "name": "可并堆：Fibonacci Heap",
+    "en_name": "Mergeable Heap: Fibonacci Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Fibonacci Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.range_xor_basis",
+    "name": "位集与线性基：Range Xor Basis",
+    "en_name": "Bitset and Linear Basis: Range Xor Basis",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Range Xor Basis"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.mo_algorithm_with_updates",
+    "name": "离线数据结构框架：Mo Algorithm With Updates",
+    "en_name": "Offline Data Structure Framework: Mo Algorithm With Updates",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Mo Algorithm With Updates"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.implicit_splay_reverse",
+    "name": "序列维护结构：Implicit Splay Reverse",
+    "en_name": "Sequence Maintenance Structure: Implicit Splay Reverse",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Implicit Splay Reverse"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.skip_list",
+    "name": "简洁与概率结构：Skip List",
+    "en_name": "Succinct and Probabilistic Structure: Skip List",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Skip List"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_segment_tree_kth",
+    "name": "可持久化结构：Persistent Segment Tree Kth",
+    "en_name": "Persistent Data Structure: Persistent Segment Tree Kth",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Persistent Segment Tree Kth"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.dsu_on_tree_color",
+    "name": "树分治维护：Dsu On Tree Color",
+    "en_name": "Tree Decomposition Data Structure: Dsu On Tree Color",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Dsu On Tree Color"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.historical_maximum",
+    "name": "Segment Tree Beats：Historical Maximum",
+    "en_name": "Segment Tree Beats: Historical Maximum",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Historical Maximum"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.two_dimensional_segment_tree",
+    "name": "线段树变体：Two Dimensional Segment Tree",
+    "en_name": "Segment Tree Variants: Two Dimensional Segment Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Two Dimensional Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+    "name": "李超线段树：Minimum Query",
+    "en_name": "Li Chao Tree: Minimum Query",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Minimum Query"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_successor",
+    "name": "小波树：Range Successor",
+    "en_name": "Wavelet Tree: Range Successor",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Successor"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_successor",
+    "name": "归并排序树：Range Successor",
+    "en_name": "Merge Sort Tree: Range Successor",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Range Successor"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.weighted",
+    "name": "高级并查集：Weighted",
+    "en_name": "Advanced DSU: Weighted",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Weighted"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.order_statistic_tree",
+    "name": "高级平衡树：Order Statistic Tree",
+    "en_name": "Advanced Balanced Tree: Order Statistic Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Order Statistic Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.dynamic_tree_diameter",
+    "name": "动态树结构：Dynamic Tree Diameter",
+    "en_name": "Dynamic Tree Structure: Dynamic Tree Diameter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Dynamic Tree Diameter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.blocked_rmq",
+    "name": "高级 RMQ：Blocked Rmq",
+    "en_name": "Advanced RMQ: Blocked Rmq",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Blocked Rmq"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.offline_2d_point_counting",
+    "name": "多维数据结构：Offline 2D Point Counting",
+    "en_name": "Multidimensional Data Structure: Offline 2D Point Counting",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Offline 2D Point Counting"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.skew_heap",
+    "name": "可并堆：Skew Heap",
+    "en_name": "Mergeable Heap: Skew Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Skew Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.linear_basis_merge",
+    "name": "位集与线性基：Linear Basis Merge",
+    "en_name": "Bitset and Linear Basis: Linear Basis Merge",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Linear Basis Merge"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.rollback_block_decomposition",
+    "name": "离线数据结构框架：Rollback Block Decomposition",
+    "en_name": "Offline Data Structure Framework: Rollback Block Decomposition",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Rollback Block Decomposition"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.implicit_treap_lazy_tags",
+    "name": "序列维护结构：Implicit Treap Lazy Tags",
+    "en_name": "Sequence Maintenance Structure: Implicit Treap Lazy Tags",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Implicit Treap Lazy Tags"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.van_emde_boas_overview",
+    "name": "简洁与概率结构：Van Emde Boas Overview",
+    "en_name": "Succinct and Probabilistic Structure: Van Emde Boas Overview",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Van Emde Boas Overview"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_union_find",
+    "name": "可持久化结构：Persistent Union Find",
+    "en_name": "Persistent Data Structure: Persistent Union Find",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Persistent Union Find"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.small_large_subtree",
+    "name": "树分治维护：Small Large Subtree",
+    "en_name": "Tree Decomposition Data Structure: Small Large Subtree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Small Large Subtree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+    "name": "Segment Tree Beats：Second Maximum Invariant",
+    "en_name": "Segment Tree Beats: Second Maximum Invariant",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Second Maximum Invariant"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.segment_tree_of_vectors",
+    "name": "线段树变体：Segment Tree Of Vectors",
+    "en_name": "Segment Tree Variants: Segment Tree Of Vectors",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Segment Tree Of Vectors"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.on_tree",
+    "name": "李超线段树：On Tree",
+    "en_name": "Li Chao Tree: On Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "On Tree"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.range_frequency",
+    "name": "小波树：Range Frequency",
+    "en_name": "Wavelet Tree: Range Frequency",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Range Frequency"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.point_update",
+    "name": "归并排序树：Point Update",
+    "en_name": "Merge Sort Tree: Point Update",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Point Update"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.small_to_large",
+    "name": "高级并查集：Small To Large",
+    "en_name": "Advanced DSU: Small To Large",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Small To Large"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.rope",
+    "name": "高级平衡树：Rope",
+    "en_name": "Advanced Balanced Tree: Rope",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Rope"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+    "name": "动态树结构：Dynamic Lca",
+    "en_name": "Dynamic Tree Structure: Dynamic Lca",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Dynamic Lca"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.plus_minus_one_rmq",
+    "name": "高级 RMQ：Plus Minus One Rmq",
+    "en_name": "Advanced RMQ: Plus Minus One Rmq",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Plus Minus One Rmq"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+    "name": "多维数据结构：Cdq Divide Conquer",
+    "en_name": "Multidimensional Data Structure: Cdq Divide Conquer",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Cdq Divide Conquer"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+    "name": "可并堆：Double Ended Priority Queue",
+    "en_name": "Mergeable Heap: Double Ended Priority Queue",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Double Ended Priority Queue"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+    "name": "位集与线性基：Rollback Linear Basis",
+    "en_name": "Bitset and Linear Basis: Rollback Linear Basis",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Rollback Linear Basis"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.offline_rectangle_add",
+    "name": "离线数据结构框架：Offline Rectangle Add",
+    "en_name": "Offline Data Structure Framework: Offline Rectangle Add",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Offline Rectangle Add"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.range_hash_maintenance",
+    "name": "序列维护结构：Range Hash Maintenance",
+    "en_name": "Sequence Maintenance Structure: Range Hash Maintenance",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Range Hash Maintenance"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.succinct_bitvector_rank",
+    "name": "简洁与概率结构：Succinct Bitvector Rank",
+    "en_name": "Succinct and Probabilistic Structure: Succinct Bitvector Rank",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Succinct Bitvector Rank"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.fat_node_method",
+    "name": "可持久化结构：Fat Node Method",
+    "en_name": "Persistent Data Structure: Fat Node Method",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Fat Node Method"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.virtual_tree_plus_hld",
+    "name": "树分治维护：Virtual Tree Plus Hld",
+    "en_name": "Tree Decomposition Data Structure: Virtual Tree Plus Hld",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Virtual Tree Plus Hld"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+    "name": "Segment Tree Beats：Range Min Max Sum",
+    "en_name": "Segment Tree Beats: Range Min Max Sum",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Range Min Max Sum"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.segment_tree_over_time",
+    "name": "线段树变体：Segment Tree Over Time",
+    "en_name": "Segment Tree Variants: Segment Tree Over Time",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Segment Tree Over Time"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.persistent",
+    "name": "李超线段树：可持久化版",
+    "en_name": "Li Chao Tree: Persistent",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Persistent"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.compressed_alphabet",
+    "name": "小波树：Compressed Alphabet",
+    "en_name": "Wavelet Tree: Compressed Alphabet",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Compressed Alphabet"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+    "name": "归并排序树：Persistent Variant",
+    "en_name": "Merge Sort Tree: Persistent Variant",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Persistent Variant"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.dsu_on_tree",
+    "name": "高级并查集：Dsu On Tree",
+    "en_name": "Advanced DSU: Dsu On Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Dsu On Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.piece_table",
+    "name": "高级平衡树：Piece Table",
+    "en_name": "Advanced Balanced Tree: Piece Table",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Piece Table"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+    "name": "动态树结构：Reroot Query",
+    "en_name": "Dynamic Tree Structure: Reroot Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Reroot Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.range_idempotent_query",
+    "name": "高级 RMQ：Range Idempotent Query",
+    "en_name": "Advanced RMQ: Range Idempotent Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Range Idempotent Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.parallel_binary_search",
+    "name": "多维数据结构：Parallel Binary Search",
+    "en_name": "Multidimensional Data Structure: Parallel Binary Search",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Parallel Binary Search"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+    "name": "可并堆：Persistent Heap",
+    "en_name": "Mergeable Heap: Persistent Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Persistent Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+    "name": "位集与线性基：Basis On Tree",
+    "en_name": "Bitset and Linear Basis: Basis On Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Basis On Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.offline_range_mex",
+    "name": "离线数据结构框架：Offline Range Mex",
+    "en_name": "Offline Data Structure Framework: Offline Range Mex",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Offline Range Mex"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.sequence_split_merge",
+    "name": "序列维护结构：Sequence Split Merge",
+    "en_name": "Sequence Maintenance Structure: Sequence Split Merge",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Sequence Split Merge"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.succinct_select",
+    "name": "简洁与概率结构：Succinct Select",
+    "en_name": "Succinct and Probabilistic Structure: Succinct Select",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Succinct Select"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.path_copying_method",
+    "name": "可持久化结构：Path Copying Method",
+    "en_name": "Persistent Data Structure: Path Copying Method",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Path Copying Method"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.tree_path_kth",
+    "name": "树分治维护：Tree Path Kth",
+    "en_name": "Tree Decomposition Data Structure: Tree Path Kth",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Tree Path Kth"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+    "name": "Segment Tree Beats：Beats Proof",
+    "en_name": "Segment Tree Beats: Beats Proof",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Beats Proof"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.range_assign_lazy",
+    "name": "线段树变体：Range Assign Lazy",
+    "en_name": "Segment Tree Variants: Range Assign Lazy",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Range Assign Lazy"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.rollback",
+    "name": "李超线段树：回滚版",
+    "en_name": "Li Chao Tree: Rollback",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Rollback"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.dynamic_variant",
+    "name": "小波树：Dynamic Variant",
+    "en_name": "Wavelet Tree: Dynamic Variant",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Dynamic Variant"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+    "name": "归并排序树：Offline Inversion",
+    "en_name": "Merge Sort Tree: Offline Inversion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Offline Inversion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.offline_dynamic_connectivity",
+    "name": "高级并查集：Offline Dynamic Connectivity",
+    "en_name": "Advanced DSU: Offline Dynamic Connectivity",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Offline Dynamic Connectivity"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.scapegoat_tree",
+    "name": "高级平衡树：Scapegoat Tree",
+    "en_name": "Advanced Balanced Tree: Scapegoat Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Scapegoat Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+    "name": "动态树结构：Cut Link Connectivity",
+    "en_name": "Dynamic Tree Structure: Cut Link Connectivity",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Cut Link Connectivity"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.static_range_mode",
+    "name": "高级 RMQ：Static Range Mode",
+    "en_name": "Advanced RMQ: Static Range Mode",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Static Range Mode"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+    "name": "多维数据结构：Bitset Rectangle Query",
+    "en_name": "Multidimensional Data Structure: Bitset Rectangle Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Bitset Rectangle Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+    "name": "可并堆：Lazy Deletion Heap",
+    "en_name": "Mergeable Heap: Lazy Deletion Heap",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Lazy Deletion Heap"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+    "name": "位集与线性基：Maximum Xor Query",
+    "en_name": "Bitset and Linear Basis: Maximum Xor Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Maximum Xor Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.time_divide_conquer",
+    "name": "离线数据结构框架：Time Divide Conquer",
+    "en_name": "Offline Data Structure Framework: Time Divide Conquer",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Time Divide Conquer"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.order_maintenance",
+    "name": "序列维护结构：Order Maintenance",
+    "en_name": "Sequence Maintenance Structure: Order Maintenance",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Order Maintenance"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.compressed_trie",
+    "name": "简洁与概率结构：Compressed Trie",
+    "en_name": "Succinct and Probabilistic Structure: Compressed Trie",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Compressed Trie"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.version_dag",
+    "name": "可持久化结构：Version Dag",
+    "en_name": "Persistent Data Structure: Version Dag",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Version Dag"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.subtree_query_flatten",
+    "name": "树分治维护：Subtree Query Flatten",
+    "en_name": "Tree Decomposition Data Structure: Subtree Query Flatten",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Subtree Query Flatten"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+    "name": "Segment Tree Beats：Beats With Assignment",
+    "en_name": "Segment Tree Beats: Beats With Assignment",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Beats With Assignment"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.gcd_segment_tree",
+    "name": "线段树变体：Gcd Segment Tree",
+    "en_name": "Segment Tree Variants: Gcd Segment Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Gcd Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.coordinate_compressed",
+    "name": "李超线段树：Coordinate Compressed",
+    "en_name": "Li Chao Tree: Coordinate Compressed",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Coordinate Compressed"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.wavelet_matrix",
+    "name": "小波树：Wavelet Matrix",
+    "en_name": "Wavelet Tree: Wavelet Matrix",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Wavelet Matrix"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+    "name": "归并排序树：2D Dominance",
+    "en_name": "Merge Sort Tree: 2D Dominance",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "2D Dominance"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.undo_stack",
+    "name": "高级并查集：Undo Stack",
+    "en_name": "Advanced DSU: Undo Stack",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Undo Stack"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.join_based_tree",
+    "name": "高级平衡树：Join Based Tree",
+    "en_name": "Advanced Balanced Tree: Join Based Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Join Based Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+    "name": "动态树结构：Path Lazy Tag",
+    "en_name": "Dynamic Tree Structure: Path Lazy Tag",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Path Lazy Tag"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.sparse_table_2d",
+    "name": "高级 RMQ：Sparse Table 2D",
+    "en_name": "Advanced RMQ: Sparse Table 2D",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Sparse Table 2D"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.orthogonal_range_query",
+    "name": "多维数据结构：Orthogonal Range Query",
+    "en_name": "Multidimensional Data Structure: Orthogonal Range Query",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Orthogonal Range Query"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+    "name": "可并堆：Meldable Priority Queue",
+    "en_name": "Mergeable Heap: Meldable Priority Queue",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Meldable Priority Queue"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+    "name": "位集与线性基：Rank Over Gf2",
+    "en_name": "Bitset and Linear Basis: Rank Over Gf2",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Rank Over Gf2"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.parallel_check_framework",
+    "name": "离线数据结构框架：Parallel Check Framework",
+    "en_name": "Offline Data Structure Framework: Parallel Check Framework",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Parallel Check Framework"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.persistent_sequence",
+    "name": "序列维护结构：Persistent Sequence",
+    "en_name": "Sequence Maintenance Structure: Persistent Sequence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Persistent Sequence"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.perfect_hashing",
+    "name": "简洁与概率结构：Perfect Hashing",
+    "en_name": "Succinct and Probabilistic Structure: Perfect Hashing",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Perfect Hashing"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.rollback_vs_persistence",
+    "name": "可持久化结构：Rollback Vs Persistence",
+    "en_name": "Persistent Data Structure: Rollback Vs Persistence",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Rollback Vs Persistence"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.dynamic_centroid",
+    "name": "树分治维护：Dynamic Centroid",
+    "en_name": "Tree Decomposition Data Structure: Dynamic Centroid",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Dynamic Centroid"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+    "name": "Segment Tree Beats：Beats Amortized Analysis",
+    "en_name": "Segment Tree Beats: Beats Amortized Analysis",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Beats Amortized Analysis"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.matrix_segment_tree",
+    "name": "线段树变体：Matrix Segment Tree",
+    "en_name": "Segment Tree Variants: Matrix Segment Tree",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Matrix Segment Tree"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.cht_comparison",
+    "name": "李超线段树：Cht Comparison",
+    "en_name": "Li Chao Tree: Cht Comparison",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Li Chao Tree",
+      "李超线段树",
+      "Cht Comparison"
+    ],
+    "evidence": [
+      "李超线段树"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.wavelet_tree.offline_rectangle_query",
+    "name": "小波树：Offline Rectangle Query",
+    "en_name": "Wavelet Tree: Offline Rectangle Query",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Wavelet Tree",
+      "小波树",
+      "Offline Rectangle Query"
+    ],
+    "evidence": [
+      "Wavelet Tree"
+    ],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+    "name": "归并排序树：Memory Optimization",
+    "en_name": "Merge Sort Tree: Memory Optimization",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Merge Sort Tree",
+      "归并排序树",
+      "Memory Optimization"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.dsu_advanced.component_aggregate",
+    "name": "高级并查集：Component Aggregate",
+    "en_name": "Advanced DSU: Component Aggregate",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced DSU",
+      "高级并查集",
+      "Component Aggregate"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.balanced_tree_advanced.lazy_reversible_sequence",
+    "name": "高级平衡树：Lazy Reversible Sequence",
+    "en_name": "Advanced Balanced Tree: Lazy Reversible Sequence",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Advanced Balanced Tree",
+      "高级平衡树",
+      "Lazy Reversible Sequence"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+    "name": "动态树结构：Virtual Subtree Aggregate",
+    "en_name": "Dynamic Tree Structure: Virtual Subtree Aggregate",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Dynamic Tree Structure",
+      "动态树结构",
+      "Virtual Subtree Aggregate"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.cache_friendly_rmq",
+    "name": "高级 RMQ：Cache Friendly Rmq",
+    "en_name": "Advanced RMQ: Cache Friendly Rmq",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Advanced RMQ",
+      "高级 RMQ",
+      "Cache Friendly Rmq"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.dominance_counting",
+    "name": "多维数据结构：Dominance Counting",
+    "en_name": "Multidimensional Data Structure: Dominance Counting",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Multidimensional Data Structure",
+      "多维数据结构",
+      "Dominance Counting"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+    "name": "可并堆：Heap With Decrease Key",
+    "en_name": "Mergeable Heap: Heap With Decrease Key",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Mergeable Heap",
+      "可并堆",
+      "Heap With Decrease Key"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+    "name": "位集与线性基：Basis With Deletion",
+    "en_name": "Bitset and Linear Basis: Basis With Deletion",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Bitset and Linear Basis",
+      "位集与线性基",
+      "Basis With Deletion"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.event_sweep_with_tree",
+    "name": "离线数据结构框架：Event Sweep With Tree",
+    "en_name": "Offline Data Structure Framework: Event Sweep With Tree",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Offline Data Structure Framework",
+      "离线数据结构框架",
+      "Event Sweep With Tree"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.text_editor_model",
+    "name": "序列维护结构：Text Editor Model",
+    "en_name": "Sequence Maintenance Structure: Text Editor Model",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Sequence Maintenance Structure",
+      "序列维护结构",
+      "Text Editor Model"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.xor_filter",
+    "name": "简洁与概率结构：Xor Filter",
+    "en_name": "Succinct and Probabilistic Structure: Xor Filter",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Succinct and Probabilistic Structure",
+      "简洁与概率结构",
+      "Xor Filter"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.retroactive_overview",
+    "name": "可持久化结构：Retroactive Overview",
+    "en_name": "Persistent Data Structure: Retroactive Overview",
+    "duplicate_risk": "medium",
+    "recommended_action": "manual_review",
+    "possible_duplicate_keywords": [
+      "Persistent Data Structure",
+      "可持久化结构",
+      "Retroactive Overview"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.tree_distance_aggregate",
+    "name": "树分治维护：Tree Distance Aggregate",
+    "en_name": "Tree Decomposition Data Structure: Tree Distance Aggregate",
+    "duplicate_risk": "low",
+    "recommended_action": "add_new",
+    "possible_duplicate_keywords": [
+      "Tree Decomposition Data Structure",
+      "树分治维护",
+      "Tree Distance Aggregate"
+    ],
+    "evidence": [],
+    "review_required": false
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_chmin.codex1",
+    "name": "Segment Tree Beats：区间取 min 变体 1",
+    "en_name": "Segment Tree Beats: Range Chmin Variant 1",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Beats",
+      "Range Chmin"
+    ],
+    "evidence": [],
+    "review_required": true
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_variants.merge.codex1",
+    "name": "线段树变体：Merge 变体 1",
+    "en_name": "Segment Tree Variants: Merge Variant 1",
+    "duplicate_risk": "medium",
+    "recommended_action": "add_as_subtopic",
+    "possible_duplicate_keywords": [
+      "Segment Tree Variants",
+      "线段树变体",
+      "Merge"
+    ],
+    "evidence": [],
+    "review_required": true
+  }
+]

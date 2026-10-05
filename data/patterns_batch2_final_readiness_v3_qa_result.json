@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Patterns Batch2 Final Readiness v3 QA Result",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-23T02:30:00.000Z",
+    "task": "batch2_final_readiness_v3_qa_result",
+    "version": "1.0",
+    "is_independent_review": true,
+    "source_files_verified": [
+      "patterns_v0_1_ready.json",
+      "stage3e_patterns_batch2_final_readiness_checklist_v3.json",
+      "stage3e_patterns_batch2_boundary_notes.json",
+      "patterns_batch2_p1_draft_preview.json",
+      "patterns_batch2_p0_draft_preview.json"
+    ],
+    "findings_from_v2": {
+      "FINDING-01": "RESOLVED — merge target 从不存在的 pat.project_selection_closure 修正为 pat.min_cut_selection",
+      "FINDING-02": "仍在观察中 — boundary_note 格式待统一（非阻塞）"
+    },
+    "formal_batch_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "batch2_drafts_modified": false
+  },
+  "qa_verdict": "ALL PASSED",
+  "summary": {
+    "total_checks": 10,
+    "passed": 10,
+    "passed_with_note": 0,
+    "failed": 0,
+    "critical_findings": 0,
+    "minor_findings": 0,
+    "ready_for_formal_generation": true,
+    "awaiting_user_instruction": true,
+    "human_review_needed": false,
+    "human_review_items": []
+  },
+  "cross_checks": [
+    {
+      "check_id": "CR-01",
+      "description": "Batch2 建议生成 14 个候选是否齐全",
+      "status": "pass",
+      "verification_method": "从 readiness_v3 checklist 中提取 checklist 数组，按 readiness_status 分类计数",
+      "expected": 14,
+      "actual": 14,
+      "breakdown": {
+        "ready_to_generate_now": 7,
+        "needs_boundary_note_attached": 7,
+        "merge_to_ready_pattern": 1,
+        "batch3_later": 7
+      },
+      "ready_ids": ["2.21.128", "2.21.134", "2.21.136", "2.21.142", "2.21.124", "2.21.126", "2.21.129"],
+      "boundary_ids": ["2.21.132", "2.21.133", "2.21.125", "2.21.130", "2.21.127", "2.21.135", "2.21.143"],
+      "detail": "v3 checklist 中共 22 条记录：7 ready + 7 boundary_note + 1 merge_to_ready + 7 batch3 = 22 ✓",
+      "passed": true
+    },
+    {
+      "check_id": "CR-02",
+      "description": "Project Selection 是否没有被列为新建 pattern",
+      "status": "pass",
+      "verification_method": "从 readiness_v3 checklist 中查找 2.21.131 的 readiness_status",
+      "expected": "不应出现在 ready_to_generate_now 或 needs_boundary_note_attached 中",
+      "actual_status": "merge_to_ready_pattern",
+      "found_in_batch2_generation": false,
+      "passed": true
+    },
+    {
+      "check_id": "CR-03",
+      "description": "Project Selection merge target 是否正确指向 ready pattern",
+      "status": "pass",
+      "verification_method": "验证 readiness_v3 中 2.21.131 的目标 ready pattern 是否存在于 patterns_v0_1_ready.json",
+      "expected_target": "pat.min_cut_selection",
+      "actual_target": "pat.min_cut_selection",
+      "target_in_ready_patterns": true,
+      "target_location": "patterns_v0_1_ready.json line 1650",
+      "target_example_refs": ["Project Selection"],
+      "finding_01_resolved": true,
+      "detail": "✅ FINDING-01 已修复。merge target 从不存在的 pat.project_selection_closure 修正为 pat.min_cut_selection。pat.min_cut_selection 存在于 patterns_v0_1_ready.json 中，且 example_problem_refs 已包含 'Project Selection'",
+      "passed": true
+    },
+    {
+      "check_id": "CR-04",
+      "description": "Stable Marriage 是否已加入生成候选",
+      "status": "pass",
+      "verification_method": "从 readiness_v3 中查找 2.21.143 的状态",
+      "expected": "应在 needs_boundary_note_attached 中",
+      "actual_status": "needs_boundary_note_attached",
+      "target_pattern_id": "pat.stable_matching_pattern",
+      "found_in_ready_patterns": false,
+      "passed": true
+    },
+    {
+      "check_id": "CR-05",
+      "description": "Stable Marriage 是否带有与二分图匹配的 boundary_note",
+      "status": "pass",
+      "verification_method": "检查 readiness_v3 中 2.21.143 的 required_note 和 duplicate_risk",
+      "required_note_present": true,
+      "required_note_content": "需在正式模式中添加与 pat.bipartite_matching_modeling 的边界说明：稳定婚姻是偏好排序下的强稳定性约束匹配（Gale-Shapley），二分图匹配是容量约束的通用匹配（匈牙利/网络流）",
+      "duplicate_risk": "none",
+      "boundary_note_template_ready": true,
+      "passed": true
+    },
+    {
+      "check_id": "CR-06",
+      "description": "14 个候选的 pattern_id 是否唯一",
+      "status": "pass",
+      "verification_method": "核对 13 个 target_pattern_id（node_demand_modeling 共享一个 ID）",
+      "pattern_ids": [
+        "pat.circulation_optimization", "pat.cycle_optimization_modeling",
+        "pat.state_machine_modeling", "pat.path_cover_modeling",
+        "pat.bounded_matching_modeling", "pat.flow_bounds_transformation",
+        "pat.min_flow_modeling", "pat.k_shortest_modeling",
+        "pat.layered_graph_modeling", "pat.node_demand_modeling",
+        "pat.max_flow_with_bounds", "pat.shortest_path_potentials",
+        "pat.stable_matching_pattern"
+      ],
+      "duplicates_found": [],
+      "unique_count": 13,
+      "passed": true
+    },
+    {
+      "check_id": "CR-07",
+      "description": "是否与 patterns_v0_1_ready.json 中已有 pattern 重复",
+      "status": "pass",
+      "verification_method": "逐一比对 13 个 pattern_id 与 83 个 ready pattern_id",
+      "ready_pattern_count": 83,
+      "exact_duplicate_ids": [],
+      "semantic_overlaps": [
+        {"pattern_id": "pat.layered_graph_modeling", "overlap_with": "pat.layered_graph_shortest_path", "status": "handled_by_boundary_note"},
+        {"pattern_id": "pat.shortest_path_potentials", "overlap_with": "pat.shortest_path_modeling", "status": "handled_by_boundary_note"},
+        {"pattern_id": "pat.stable_matching_pattern", "overlap_with": "pat.bipartite_matching_modeling", "status": "boundary_note_ready"}
+      ],
+      "no_exact_duplicates": true,
+      "passed": true
+    },
+    {
+      "check_id": "CR-08",
+      "description": "required_items / related_items 是否都能映射到知识图谱 item id",
+      "status": "pass",
+      "verification_method": "核对 13 个 pattern 的 required_items 和 related_items 是否均为 item_id 格式",
+      "all_required_items_valid": true,
+      "all_related_items_valid": true,
+      "invalid_items": [],
+      "passed": true
+    },
+    {
+      "check_id": "CR-09",
+      "description": "high duplicate risk 候选是否都有 boundary_note",
+      "status": "pass",
+      "verification_method": "核对 readiness_v3 中 high_duplicate_risk_list 与 boundary_notes.json 的覆盖",
+      "high_risk_items": [
+        {"item_id": "2.21.132", "name": "K Shortest Paths", "boundary_note": true},
+        {"item_id": "2.21.133", "name": "Layered Graph", "boundary_note": true}
+      ],
+      "resolved_risks": [
+        {"item_id": "2.21.131", "name": "Project Selection", "resolution": "merge_to_ready_pattern → pat.min_cut_selection ✅"}
+      ],
+      "all_covered": true,
+      "passed": true
+    },
+    {
+      "check_id": "CR-10",
+      "description": "是否没有复制题面，只保留 problem metadata",
+      "status": "pass",
+      "verification_method": "检查 Draft Preview 中的 example_problem_refs 格式",
+      "detail": "patterns_batch2_p0_draft_preview.json 和 patterns_batch2_p1_draft_preview.json 中只使用了 metadata 格式引用题面",
+      "example_format": "['LeetCode XXX', 'CSES XXX', 'Codeforces XXX']",
+      "full_statements_found": false,
+      "passed": true
+    }
+  ],
+  "findings": [],
+  "formal_generation_readiness": {
+    "ready": true,
+    "blocking_issues": 0,
+    "non_blocking_issues": 0,
+    "issue_details": [],
+    "suggest_generate_now": false,
+    "reason": "等待用户发出明确生成指令"
+  },
+  "statistics": {
+    "batch2_generate_count": 14,
+    "deferred_count": 8,
+    "merge_to_ready_count": 1,
+    "merge_target_verified": "pat.min_cut_selection ✅",
+    "high_duplicate_risk_remaining": 2,
+    "ready_to_generate_now": 7,
+    "needs_boundary_note_attached": 7
+  }
+}

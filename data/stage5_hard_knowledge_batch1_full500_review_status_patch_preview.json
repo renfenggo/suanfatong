@@ -1,0 +1,3509 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T07:13:51.655064+00:00",
+    "entry_count": 500,
+    "main_graph_modified": false
+  },
+  "entries": [
+    {
+      "item_id": "2.9.191",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.50",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.80",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.49",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.294",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.80",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.92",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.236",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.9.190",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.43",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.238",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.7.47",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.61",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.236",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.188",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.44",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.174",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.28",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.61",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.27",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.309",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.285",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.85",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.48",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.42",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.206",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.3.89",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.255",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.47",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.46",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.7.50",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.22",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.62",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.21",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.282",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.26",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.233",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.251",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.52",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.23",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.15",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.46",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.47",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.290",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.26",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.86",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.68",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.286",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.185",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.305",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.237",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.252",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.281",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.166",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.63",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.16",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.276",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.80",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.184",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.63",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.69",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.46",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.219",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.20.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.40",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.10",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.41",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.23",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.54",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.47",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.39",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.249",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.238",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.7.53",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.48",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.27",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.292",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.280",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.23",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.55",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.178",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.168",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.177",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.62",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.89",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.61",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.21",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.42",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.26",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.54",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.15",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.49",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.208",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.7.43",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.11",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.11",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.53",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.38",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.55",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.297",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.296",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.90",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.198",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.187",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.54",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.196",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.17",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.82",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.258",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.76",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.295",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.218",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.264",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.74",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.55",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.214",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.19",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.306",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.242",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.88",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.22",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.221",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.6.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.70",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.14",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.231",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.69",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.24",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.7.51",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.54",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.64",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.265",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.207",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.6.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.71",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.39",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.49",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.301",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.95",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.193",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.73",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.256",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.94",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.68",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.46",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.180",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.171",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.212",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.7.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.197",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.84",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.44",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.183",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.275",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.62",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.94",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.39",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.248",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.68",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.260",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.19",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.50",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.192",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.21",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.257",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.40",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.26",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.72",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.283",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.254",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.235",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.1.71",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.274",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.46",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.278",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.64",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.235",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.172",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.232",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.40",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.88",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.9",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.93",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.25",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.64",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.49",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.7",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.224",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.17.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.79",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.6.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.70",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.225",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.4.71",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.175",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.41",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.62",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.70",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.50",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.239",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.10.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.43",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.20",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.234",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.1.69",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.28",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.24",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.81",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.239",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.13",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.71",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.215",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.302",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.51",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.39",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.270",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.12",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.194",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.304",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.244",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.16",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.75",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.81",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.79",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.288",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.40",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.31",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.62",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.63",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.53",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.35",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.229",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.6.28",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.181",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.61",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.73",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.259",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.87",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.74",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.45",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.79",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.240",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.268",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.7.58",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.77",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.72",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.25",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.93",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.25",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.78",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.45",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.83",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.90",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.263",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.70",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.38",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.287",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.5",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.36",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.44",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.228",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.3.67",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.50",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.91",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.51",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.76",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.54",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.4",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.74",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.186",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.38",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.13",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.18",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.48",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.42",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.18",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.7.48",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.303",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.12",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.68",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.72",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.20",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.17",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.247",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.291",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.78",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.20",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.6",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.56",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.167",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.234",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.27",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.293",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.33",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.51",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.227",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.20.49",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.43",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.308",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.83",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.86",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.75",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.266",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.22",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.195",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.64",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.199",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.38",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.44",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.246",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.253",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.220",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.1.84",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.300",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.69",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.73",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.82",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.91",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.213",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.38",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.232",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.17.48",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.28",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.222",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "3.13.271",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.6.23",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.42",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.45",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.179",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.24",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.24",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.71",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.176",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.41",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.202",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.3.57",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.217",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.59",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.272",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.1.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.17.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.169",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.87",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.189",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.52",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.223",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.17.51",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.245",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.25",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.53",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.63",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.14",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.204",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.20.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.289",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.72",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.209",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.10.77",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.279",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.241",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.85",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.7.52",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.18",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.230",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.8.231",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.20.8",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.17.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.37",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.19",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.69",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.81",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.203",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "3.13.298",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.170",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.210",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.8.226",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "3.13.243",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.52",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.73",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.299",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.64",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.173",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.5.30",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.307",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.68",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.9.182",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.60",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.8.237",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.7.34",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.7.40",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.77",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.53",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.205",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "2.4.61",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.32",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.9.200",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.267",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.6.27",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.269",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.7.70",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.3.82",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.6.28",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.273",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.78",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.216",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "A",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.4.65",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.211",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "3.13.284",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.20.39",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "3.13.261",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.250",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.92",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "4.1.63",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.277",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.55",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "2.10.66",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.20.41",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.45",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.8.233",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_merge_or_collapse"
+    },
+    {
+      "item_id": "4.7.55",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.75",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    },
+    {
+      "item_id": "3.13.262",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.10.74",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "2.4.75",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.5.29",
+      "current_review_status": "pending",
+      "suggested_review_status": "C",
+      "suggested_priority": "C",
+      "review_decision": "approve"
+    },
+    {
+      "item_id": "4.3.76",
+      "current_review_status": "pending",
+      "suggested_review_status": "B",
+      "suggested_priority": "B",
+      "review_decision": "needs_dependency_fix"
+    }
+  ]
+}

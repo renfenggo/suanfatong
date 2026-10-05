@@ -1,0 +1,233 @@
+[
+  {
+    "id": "2.21.107",
+    "name": "平面图：Face Traversal",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.108",
+    "name": "平面图：Outerplanar Graph",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.110",
+    "name": "平面图：Planar Separator",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 平面图专题依赖明确，内容边界清晰，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.111",
+    "name": "强连通分量 DAG：Implication Graph",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 强连通分量DAG应用明确，依赖合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.112",
+    "name": "特殊图：Bipartite Complement",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.113",
+    "name": "特殊图：Condensation Dag",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.114",
+    "name": "特殊图：Functional Graph",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.115",
+    "name": "特殊图：Interval Graph",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.117",
+    "name": "特殊图：Tournament Graph",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 特殊图系列概念明确，依赖关系合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.118",
+    "name": "虚树：Colored Points",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.119",
+    "name": "虚树：Distance Compression",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.120",
+    "name": "虚树：Edge Weight Compression",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.121",
+    "name": "虚树：Minimum Connection",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.122",
+    "name": "虚树：Multi-Key Query",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "2.21.123",
+    "name": "虚树：Subtree Aggregation",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.100",
+    "name": "多维数据结构：Orthogonal Range Query",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.101",
+    "name": "多维数据结构：Parallel Binary Search",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 多维数据结构依赖明确，是树结构的高级应用，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.102",
+    "name": "离线数据结构框架：Event Sweep With Tree",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.103",
+    "name": "离线数据结构框架：Offline Range Mex",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.104",
+    "name": "离线数据结构框架：Offline Rectangle Add",
+    "patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_note": "Batch2 Review: 离线数据结构框架主题明确，依赖合理，可以降为C级"
+      }
+    }
+  },
+  {
+    "id": "3.13.105",
+    "name": "离线数据结构框架：Parallel Check Framework",
+    "patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_note": "Batch2 Review: 并行检查框架是复杂技巧，建议保持B级优先级"
+      }
+    }
+  }
+]

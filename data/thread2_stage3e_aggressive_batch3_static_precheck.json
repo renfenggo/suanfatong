@@ -1,0 +1,28 @@
+{
+  "batch_id": "stage3e_aggressive_batch3",
+  "candidate_count": 30,
+  "green_count": 25,
+  "yellow_count": 5,
+  "red_count": 0,
+  "section_distribution": {
+    "3.13": 25,
+    "2.21": 5
+  },
+  "overlap_with_batch1": [],
+  "possible_overlap_with_batch2": [],
+  "manual_review_candidates": [],
+  "problem_pattern_candidates": [],
+  "high_risk_candidates": [],
+  "needs_new_section": false,
+  "candidate_dependency_cycle": false,
+  "recommendation": "static_precheck_only_wait_for_batch2_result",
+  "can_generate_official_merge_advice": false,
+  "meta": {
+    "generated_by": "thread2_stage3e_aggressive_batch3_static_precheck",
+    "generated_at": "2026-05-22T16:00:00.000Z",
+    "task": "batch3_static_precheck",
+    "main_graph_modified": false,
+    "precheck_type": "static_only",
+    "precheck_purpose": "等待Batch2合并结果确认"
+  }
+}

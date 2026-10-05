@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Knowledge Item",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "en_name": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "global_aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "beginner",
+          "csp_j",
+          "csp_s",
+          "noi",
+          "ioi",
+          "icpc",
+          "university_cp",
+          "interview",
+          "advanced_math",
+          "advanced_graph",
+          "advanced_string",
+          "advanced_data_structure",
+          "advanced_dp",
+          "engineering_debug"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "audience": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "primary_beginner",
+          "middle_school_oi",
+          "high_school_oi",
+          "university_icpc",
+          "software_engineer_interview",
+          "advanced_competitive_programmer"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "visibility": {
+      "enum": [
+        "core",
+        "advanced",
+        "expert",
+        "optional"
+      ]
+    },
+    "learning_path_policy": {
+      "type": "object"
+    },
+    "localization_status": {
+      "type": "object"
+    },
+    "content_status": {
+      "type": "object"
+    },
+    "platform_tags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "CSES",
+          "Codeforces",
+          "AtCoder",
+          "Kattis",
+          "LeetCode",
+          "DMOJ",
+          "USACO",
+          "Luogu",
+          "ICPC_Gym",
+          "HackerRank"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "direct_pre": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "resolved_pre": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "rel": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "en_name",
+    "tracks",
+    "audience",
+    "visibility",
+    "learning_path_policy"
+  ]
+}

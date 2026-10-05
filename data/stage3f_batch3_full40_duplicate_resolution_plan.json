@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Full40 Duplicate Resolution Plan",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T18:35:00.000Z",
+    "batch_id": "stage3f_batch3_full40",
+    "main_graph_modified": false,
+    "total_candidates_analyzed": 2,
+    "total_exact_duplicates": 1,
+    "total_high_similarity": 0,
+    "total_medium_similarity": 1,
+    "total_low_similarity": 0,
+    "recommended_delete_count": 1,
+    "recommended_keep_count": 1,
+    "recommended_action": "方案 C: 删除 KMP算法详解(2.10.39), Border树结构(2.10.35)保留并添加 rel"
+  },
+  "pre_analysis_state": {
+    "item_count": 1717,
+    "section_count": 65,
+    "validate_only_passed": true,
+    "resolved_pre_mismatches": 0,
+    "dangling_refs": 0
+  },
+  "candidates": [
+    {
+      "new_item_id": "2.10.39",
+      "new_item_name": "KMP算法详解",
+      "existing_item_candidates": [
+        {
+          "item_id": "2.10.2",
+          "name": "KMP",
+          "section_id": "2.10"
+        }
+      ],
+      "duplicate_level": "exact",
+      "is_new_batch3_item": true,
+      "has_direct_pre_dependents": false,
+      "has_resolved_pre_dependents": false,
+      "has_rel_dependents": false,
+      "safe_to_delete": true,
+      "deletion_would_cause_dangling_refs": false,
+      "if_deleted_item_count_would_be": 1716,
+      "recommended_action": "delete_new_duplicate",
+      "reason": "★★ 与已有 2.10.2(KMP) 高度重复。Review 结论为 needs_merge_or_collapse。全图谱入边检查: 无任何节点 direct_pre / resolved_pre / rel 引用 2.10.39。安全删除, 不会产生 dangling_refs。2.10.2 的 direct_pre=[2.10.1, 1.6.1, 1.6.9] 已覆盖 KMP 前置知识。'KMP算法详解' 的内容应合并到 2.10.2 的文档/notes 中, 不作为独立节点存在。"
+    },
+    {
+      "new_item_id": "2.10.35",
+      "new_item_name": "Border树结构",
+      "existing_item_candidates": [
+        {
+          "item_id": "2.10.16",
+          "name": "KMP的失配树",
+          "section_id": "2.10"
+        }
+      ],
+      "duplicate_level": "medium",
+      "is_new_batch3_item": true,
+      "has_direct_pre_dependents": false,
+      "has_resolved_pre_dependents": false,
+      "has_rel_dependents": false,
+      "safe_to_delete": true,
+      "deletion_would_cause_dangling_refs": false,
+      "if_deleted_item_count_would_be": 1716,
+      "recommended_action": "keep_and_add_rel_later",
+      "reason": "★ 与 2.10.16(KMP的失配树) 高度相关但不同视角。Review 结论为 approve(C), needs_merge_or_collapse=false。全图谱入边检查: 无任何节点引用 2.10.35。Border树(侧重border/周期边界) vs 失配树(侧重fail指针/失配转移) 是同一底层数据结构的不同抽象视角, 有独立教育价值。Review 建议保留并标记 rel 关系。建议保留, 不作删除。后续 Fix Lite 中保持 C 优先级(Review 已 approve), 并建议在 Merge 或后续阶段添加 rel=[2.10.16]。"
+    }
+  ],
+  "deletion_impact": {
+    "items_to_delete": [
+      {
+        "item_id": "2.10.39",
+        "name": "KMP算法详解",
+        "section": "2.10",
+        "direct_pre": ["2.10.1"],
+        "resolved_pre_count": 24,
+        "rel": []
+      }
+    ],
+    "items_to_keep": [
+      {
+        "item_id": "2.10.35",
+        "name": "Border树结构",
+        "section": "2.10",
+        "direct_pre": ["2.10.2", "3.8.1"],
+        "resolved_pre_count": 29,
+        "rel": []
+      }
+    ],
+    "item_count_before": 1717,
+    "item_count_after_deletion": 1716,
+    "section_count_unchanged": 65,
+    "validation_baseline_after_deletion": 1716
+  },
+  "scenarios": {
+    "方案_A_delete_all": {
+      "description": "删除确认重复节点(KMP算法详解), 再 Fix Lite",
+      "delete": ["2.10.39"],
+      "keep": ["2.10.35"],
+      "item_count_after": 1716,
+      "pros": [
+        "明确清理重复节点, 图谱更干净",
+        "2.10.39 无入边依赖, 安全删除",
+        "删除后只操作剩余 39 个新增节点的 review_status"
+      ],
+      "cons": [
+        "Border树结构虽安全但不应删除, 有独立价值",
+        "如果只删除一个, 需要对脚本做精确控制"
+      ],
+      "risk": "低风险。2.10.39 无入边, 删除后 expected_item_count=1716"
+    },
+    "方案_B_keep_all_and_mark_B": {
+      "description": "不删除, 只标记 B/manual_review",
+      "delete": [],
+      "keep": ["2.10.39", "2.10.35"],
+      "item_count_after": 1717,
+      "pros": [
+        "不动图谱结构, 最简单",
+        "2.10.39 可以作为更详细的 KMP 文档节点存在"
+      ],
+      "cons": [
+        "2.10.39 与 2.10.2 高度重复, 保留会造成知识冗余",
+        "用户后续会发现两个 KMP 节点, 造成困惑",
+        "Review 已经明确标记 needs_merge_or_collapse"
+      ],
+      "risk": "中等风险。重复节点保留会导致图谱结构不干净, 后续需再次处理"
+    },
+    "方案_C_delete_KMP_keep_Border": {
+      "description": "只删除 KMP算法详解(2.10.39), Border树结构(2.10.35)保留并标记 rel",
+      "delete": ["2.10.39"],
+      "keep": ["2.10.35"],
+      "item_count_after": 1716,
+      "pros": [
+        "明确清理了真正的重复节点(KMP算法详解)",
+        "Border树结构作为独立概念保留, 后续添加 rel=[2.10.16]",
+        "最符合 Review 结论: 2.10.39=needs_merge_or_collapse, 2.10.35=approve C"
+      ],
+      "cons": [
+        "Border树的 rel 关系需在后续 Merge 或 Review 阶段添加, 不在本批 Fix Lite 范围内"
+      ],
+      "risk": "低风险。精确匹配 Review 结论, 只删除明确重复的节点"
+    },
+    "方案_D_all_manual_review": {
+      "description": "全部人工复查后再处理",
+      "delete": [],
+      "keep": ["2.10.39", "2.10.35"],
+      "item_count_after": 1717,
+      "pros": [
+        "最保守, 等待人工确认"
+      ],
+      "cons": [
+        "延迟 Batch3 完成进度",
+        "2.10.39 的重复问题已经很明确, 等待人工不会改变结论"
+      ],
+      "risk": "低风险但低效率"
+    }
+  },
+  "recommended_scenario": "方案_C",
+  "recommended_scenario_name": "删除 KMP算法详解(2.10.39), Border树结构(2.10.35)保留",
+  "recommendation_reason": "完全匹配 Review 结论: 2.10.39 在 added_items_review.json 中 marked as needs_merge_or_collapse=true, 且全图谱依赖检查无入边引用, 安全删除。2.10.35 在 added_items_review.json 中 marked as approve(C), needs_merge_or_collapse=false, 理应保留。merge_or_collapse_candidates.json 也建议 Border树 '建议保留并标记rel关系, 不合并'。2.10.39 的独有内容(如 next 数组多种构造方法)应合并到 2.10.2 的文档中, 不作为独立节点。",
+  "post_delete_fix_lite_plan": {
+    "item_count_before_fix_lite": 1716,
+    "added_items_remaining": 39,
+    "excluded_item_ids": ["2.10.39"],
+    "excluded_candidate_ids": ["cand.string.string_matching.kmp"],
+    "validation_baseline": {"item_count": 1716, "section_count": 65},
+    "note": "Fix Lite 只处理剩余 39 个新增节点的 review_status。排除 2.10.39"
+  }
+}

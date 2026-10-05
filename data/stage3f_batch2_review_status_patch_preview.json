@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Review Status Patch Preview",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T15:45:00.000Z",
+    "batch_id": "stage3f_batch2",
+    "main_graph_modified": false,
+    "patch_applied": false,
+    "total_patches": 20
+  },
+  "patches": [
+    {
+      "item_id": "2.10.29",
+      "name": "Z算法基础",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.30",
+      "name": "Z算法模式匹配应用",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.31",
+      "name": "扩展KMP算法基础",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.32",
+      "name": "KMP自动机基础",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.33",
+      "name": "AC自动机高级应用",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.34",
+      "name": "AC自动机失败树分析",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.1.30",
+      "name": "Miller-Rabin素数测试",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.1.31",
+      "name": "Pollard Rho分解",
+      "old_review_priority": "",
+      "new_review_priority": "B",
+      "old_need_manual_review": "",
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.1.32",
+      "name": "原根基础",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.1.33",
+      "name": "BSGS离散对数",
+      "old_review_priority": "",
+      "new_review_priority": "B",
+      "old_need_manual_review": "",
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.1.34",
+      "name": "扩展BSGS",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.12",
+      "name": "LCP RMQ优化",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.13",
+      "name": "SAM父树结构",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.14",
+      "name": "回文树Eertree构建",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.3.33",
+      "name": "Lucas定理",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.3.34",
+      "name": "Catalan数",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.9.4",
+      "name": "狄利克雷卷积基础",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.9.5",
+      "name": "莫比乌斯反演应用",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.18.10",
+      "name": "单调队列优化",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.18.11",
+      "name": "滑动窗口DP",
+      "old_review_priority": "",
+      "new_review_priority": "C",
+      "old_need_manual_review": "",
+      "new_need_manual_review": false
+    }
+  ],
+  "stats": {
+    "total_patches": 20,
+    "b_to_c": 0,
+    "empty_to_c": 18,
+    "keep_b": 2,
+    "clear_need_manual_review": 18,
+    "keep_need_manual_review_true": 2
+  },
+  "patch_actions": [
+    "18 items: review_priority '' → 'C', need_manual_review '' → false",
+    "2 items: review_priority '' → 'B', need_manual_review '' → true (Pollard Rho, BSGS)"
+  ],
+  "note": "Patch not applied. Ready for 1号线程 Fix Lite."
+}

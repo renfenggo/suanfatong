@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Stable Checkpoint",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T16:05:00.000Z",
+    "batch_id": "stage3f_batch2",
+    "main_graph_modified": false,
+    "conversation_session": "Stage3F Batch2 Full Pipeline"
+  },
+  "pipeline_summary": {
+    "stage3f_batch2_merge": {
+      "status": "completed",
+      "item_count_before": 1661,
+      "item_count_after": 1681,
+      "candidates_added": 20,
+      "new_sections_created": 0,
+      "validate_only_passed": true,
+      "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2.json"
+    },
+    "stage3f_batch2_duplicate_resolution_plan": {
+      "status": "completed",
+      "duplicates_found": 4,
+      "recommended_scheme": "A",
+      "main_graph_modified": false
+    },
+    "stage3f_batch2_duplicate_prune": {
+      "status": "completed",
+      "removed_count": 4,
+      "removed_ids": ["2.10.31", "4.1.30", "4.3.33", "2.18.10"],
+      "item_count_before": 1681,
+      "item_count_after": 1677,
+      "had_incoming_refs": false,
+      "dangling_refs_created": false,
+      "validate_only_passed": true,
+      "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2_duplicate_prune.json"
+    },
+    "stage3f_batch2_fix_lite": {
+      "status": "completed",
+      "original_new_nodes": 20,
+      "duplicate_prune_removed": 4,
+      "fix_lite_processed": 16,
+      "demoted_to_c": 14,
+      "kept_b": 2,
+      "kept_a": 0,
+      "modified_direct_pre": false,
+      "modified_resolved_pre": false,
+      "modified_rel": false,
+      "added_items": false,
+      "deleted_items": false,
+      "merged_items": false,
+      "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2_fix_lite.json"
+    }
+  },
+  "removed_duplicate_nodes": [
+    {
+      "item_id": "2.10.31",
+      "name": "扩展KMP算法基础",
+      "section_id": "2.10",
+      "duplicate_of": "2.10.17",
+      "duplicate_of_name": "扩展 KMP",
+      "duplicate_level": "exact"
+    },
+    {
+      "item_id": "4.1.30",
+      "name": "Miller-Rabin素数测试",
+      "section_id": "4.1",
+      "duplicate_of": "4.1.18",
+      "duplicate_of_name": "素数判定：Miller-Rabin",
+      "duplicate_level": "exact"
+    },
+    {
+      "item_id": "4.3.33",
+      "name": "Lucas定理",
+      "section_id": "4.3",
+      "duplicate_of": "4.3.15+4.3.21",
+      "duplicate_of_name": "Lucas / 组合数计算：Lucas",
+      "duplicate_level": "high"
+    },
+    {
+      "item_id": "2.18.10",
+      "name": "单调队列优化",
+      "section_id": "2.18",
+      "duplicate_of": "2.8.26",
+      "duplicate_of_name": "单调队列优化 DP",
+      "duplicate_level": "high"
+    }
+  ],
+  "fix_lite_applied_patches": [
+    {"item_id": "2.10.29", "name": "Z算法基础", "old": "B", "new": "C", "manual": false},
+    {"item_id": "2.10.30", "name": "Z算法模式匹配应用", "old": "B", "new": "C", "manual": false},
+    {"item_id": "2.10.32", "name": "KMP自动机基础", "old": "B", "new": "C", "manual": false},
+    {"item_id": "2.10.33", "name": "AC自动机高级应用", "old": "B", "new": "C", "manual": false},
+    {"item_id": "2.10.34", "name": "AC自动机失败树分析", "old": "B", "new": "C", "manual": false},
+    {"item_id": "4.1.31", "name": "Pollard Rho分解", "old": "B", "new": "B", "manual": true},
+    {"item_id": "4.1.32", "name": "原根基础", "old": "B", "new": "C", "manual": false},
+    {"item_id": "4.1.33", "name": "BSGS离散对数", "old": "B", "new": "B", "manual": true},
+    {"item_id": "4.1.34", "name": "扩展BSGS", "old": "B", "new": "C", "manual": false},
+    {"item_id": "3.8.12", "name": "LCP RMQ优化", "old": "B", "new": "C", "manual": false},
+    {"item_id": "3.8.13", "name": "SAM父树结构", "old": "B", "new": "C", "manual": false},
+    {"item_id": "3.8.14", "name": "回文树Eertree构建", "old": "B", "new": "C", "manual": false},
+    {"item_id": "4.3.34", "name": "Catalan数", "old": "B", "new": "C", "manual": false},
+    {"item_id": "4.9.4", "name": "狄利克雷卷积基础", "old": "B", "new": "C", "manual": false},
+    {"item_id": "4.9.5", "name": "莫比乌斯反演应用", "old": "B", "new": "C", "manual": false},
+    {"item_id": "2.18.11", "name": "滑动窗口DP", "old": "B", "new": "C", "manual": false}
+  ],
+  "review_results": {
+    "total_reviewed": 20,
+    "approve": 14,
+    "needs_merge_or_collapse": 4,
+    "move_to_problem_patterns": 1,
+    "needs_dependency_fix": 0,
+    "demote_to_c": 16,
+    "keep_b": 2,
+    "keep_a": 0
+  },
+  "graph_state": {
+    "item_count": 1677,
+    "section_count": 65,
+    "expected_item_count": 1677,
+    "expected_section_count": 65,
+    "duplicate_item_ids": [],
+    "dangling_refs": [],
+    "direct_pre_cycle": null,
+    "self_in_resolved_pre": [],
+    "direct_pre_section_refs": 0,
+    "direct_pre_item_ref_ratio": 1.0,
+    "resolved_pre_mismatches": [],
+    "product_metadata_validation": {
+      "passed": true,
+      "all_items_have_en_name": true,
+      "all_items_have_tracks": true,
+      "all_items_have_audience": true,
+      "all_items_have_visibility": true,
+      "all_items_have_learning_path_policy": true,
+      "all_items_have_localization_status": true,
+      "all_items_have_content_status": true
+    },
+    "report_matches_json": true,
+    "passed": true
+  },
+  "review_findings": {
+    "dependency_fix_candidates": {
+      "empty": true,
+      "count": 0,
+      "status": "no dependency issues found"
+    },
+    "problem_pattern_sync_candidates": {
+      "empty": false,
+      "count": 1,
+      "items": ["4.9.5 莫比乌斯反演应用"],
+      "status": "not processed during Fix Lite (only recorded), pending manual sync to problem_patterns library"
+    },
+    "merge_or_collapse_candidates": {
+      "empty": false,
+      "original_count": 4,
+      "status": "resolved via Duplicate Prune (Scheme A): all 4 duplicate nodes deleted"
+    }
+  },
+  "backup_files": [
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2_duplicate_prune.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch2_fix_lite.json"
+  ],
+  "output_files": {
+    "merge": [
+      "data/stage3f_batch2_candidate_to_item_id_mapping.json",
+      "data/stage3f_batch2_added_items_summary.json",
+      "data/stage3f_batch2_validation_result.json",
+      "data/stage3f_batch2_rollback_plan.json",
+      "docs/stage3f_batch2_merge_report.md"
+    ],
+    "duplicate_resolution": [
+      "data/stage3f_batch2_duplicate_resolution_plan.json",
+      "docs/stage3f_batch2_duplicate_resolution_plan_report.md"
+    ],
+    "duplicate_prune": [
+      "data/stage3f_batch2_duplicate_prune_applied_patch.json",
+      "data/stage3f_batch2_duplicate_prune_validation_result.json",
+      "data/stage3f_batch2_duplicate_prune_removed_items.json",
+      "docs/stage3f_batch2_duplicate_prune_report.md"
+    ],
+    "fix_lite": [
+      "data/stage3f_batch2_fix_lite_applied_patch.json",
+      "data/stage3f_batch2_fix_lite_validation_result.json",
+      "docs/stage3f_batch2_fix_lite_report.md"
+    ],
+    "stage3f_batch2_complete": [
+      "data/stage3f_batch2_stable_checkpoint.json"
+    ]
+  },
+  "recommendation_for_batch3": "available_to_proceed",
+  "recommendation_detail": "Stage3F Batch2 pipeline is fully complete and stable. Batch3 can proceed once 2号线程 completes static candidate planning and dynamic precheck. Remaining items: problem_pattern_sync for 4.9.5 (non-blocking, can be handled separately)."
+}

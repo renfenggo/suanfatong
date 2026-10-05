@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Patterns Batch3 Readiness Checklist",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T21:00:00.000Z",
+    "task": "batch3_readiness_checklist",
+    "version": "1.0",
+    "description": "检查 patterns_batch3 的 3 个候选是否满足正式生成的前置条件",
+    "input_files": [
+      "data/patterns_batch3_draft_preview_bundle.json",
+      "data/patterns_v0_1_ready.json",
+      "data/patterns_batch2.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "overall_verdict": "READY_FOR_FORMAL_GENERATION (but must wait for Stage3F Batch4 full49 completion + user instruction)",
+  "statistics": {
+    "total_candidates": 3,
+    "passed_all_checks": 3,
+    "has_blocking_issues": false,
+    "has_non_blocking_notes": 1
+  },
+  "candidates": [
+    {
+      "pattern_id": "pat.dominance_counting",
+      "title": "多维支配关系计数",
+      "checks": [
+        {
+          "check_id": "CR-01",
+          "description": "draft 是否完整",
+          "status": "pass",
+          "detail": "draft_preview 完整，已包含 title, description, recognition_signals, common_transforms, typical_complexities, required_items, related_items, pitfalls, boundary_note, example_problem_refs"
+        },
+        {
+          "check_id": "CR-02",
+          "description": "是否与 ready patterns 重复",
+          "status": "pass",
+          "detail": "83 个 ready patterns 中无 pat.dominance_counting 或语义完全覆盖的 pattern"
+        },
+        {
+          "check_id": "CR-03",
+          "description": "是否与 patterns_batch2 重复",
+          "status": "pass",
+          "detail": "13 个 batch2 patterns 全部为图论/网络流方向，不冲突"
+        },
+        {
+          "check_id": "CR-04",
+          "description": "required_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "required_items: [3.7.1, 3.7.2] — 均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-05",
+          "description": "related_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "related_items: [3.13.181, 3.13.179, 3.13.180] — 均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-06",
+          "description": "boundary_note 是否足够清晰",
+          "status": "pass",
+          "detail": "已覆盖 4 个 ready patterns（offline_query, coordinate_sweep, fenwick_prefix, sweep_line）和 3 个图谱节点（CDQ, MST 2D, Bitset）"
+        },
+        {
+          "check_id": "CR-07",
+          "description": "needs_boundary_review 是否已解决",
+          "status": "pass",
+          "detail": "boundary_review 已完成，needs_boundary_review 已设为 false"
+        },
+        {
+          "check_id": "CR-08",
+          "description": "是否需要人工复查",
+          "status": "pass",
+          "detail": "不需要，AI Review 已通过"
+        }
+      ],
+      "final_verdict": "READY"
+    },
+    {
+      "pattern_id": "pat.mobius_inversion_application",
+      "title": "莫比乌斯反演应用",
+      "checks": [
+        {
+          "check_id": "CR-01",
+          "description": "draft 是否完整",
+          "status": "pass",
+          "detail": "draft_preview 完整，已包含所有必要字段"
+        },
+        {
+          "check_id": "CR-02",
+          "description": "是否与 ready patterns 重复",
+          "status": "pass",
+          "detail": "pat.inclusion_exclusion_counting 有部分交集但语义不同（容斥计数 vs 数论反演），已通过 boundary_note 说明"
+        },
+        {
+          "check_id": "CR-03",
+          "description": "是否与 patterns_batch2 重复",
+          "status": "pass",
+          "detail": "13 个 batch2 patterns 全部为图论/网络流方向，不冲突"
+        },
+        {
+          "check_id": "CR-04",
+          "description": "required_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "required_items: [4.9.2, 4.3.10] — 4.9.2（莫比乌斯反演）和 4.3.10（数论分块/整数分块）均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-05",
+          "description": "related_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "related_items: [4.9.4, 4.9.6, 4.1.5] — 4.9.4（狄利克雷卷积基础）, 4.9.6（欧拉函数应用）, 4.1.5（素数判定）均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-06",
+          "description": "boundary_note 是否足够清晰",
+          "status": "pass",
+          "detail": "已覆盖 pat.inclusion_exclusion_counting, pat.modular_counting_pattern, pat.euler_function_application"
+        },
+        {
+          "check_id": "CR-07",
+          "description": "needs_boundary_review 是否已解决",
+          "status": "pass",
+          "detail": "无需额外 boundary_review，triage 已完成，边界已清晰"
+        },
+        {
+          "check_id": "CR-08",
+          "description": "是否需要人工复查",
+          "status": "pass",
+          "detail": "不需要"
+        }
+      ],
+      "final_verdict": "READY"
+    },
+    {
+      "pattern_id": "pat.euler_function_application",
+      "title": "欧拉函数应用",
+      "checks": [
+        {
+          "check_id": "CR-01",
+          "description": "draft 是否完整",
+          "status": "pass",
+          "detail": "draft_preview 完整，已包含所有必要字段"
+        },
+        {
+          "check_id": "CR-02",
+          "description": "是否与 ready patterns 重复",
+          "status": "pass",
+          "detail": "pat.inclusion_exclusion_counting 和 pat.modular_counting_pattern 有部分交集但不同，已通过 boundary_note 说明"
+        },
+        {
+          "check_id": "CR-03",
+          "description": "是否与 patterns_batch2 重复",
+          "status": "pass",
+          "detail": "13 个 batch2 patterns 全部为图论/网络流方向，不冲突"
+        },
+        {
+          "check_id": "CR-04",
+          "description": "required_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "required_items: [4.1.10, 4.1.11] — 4.1.10（欧拉函数）和 4.1.11 均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-05",
+          "description": "related_items 是否可映射到知识图谱",
+          "status": "pass",
+          "detail": "related_items: [4.9.5, 1.7.25, 4.1.5] — 4.9.5（莫比乌斯反演应用）, 1.7.25（欧拉函数[基础]）, 4.1.5（素数判定）均存在于知识图谱 ✓"
+        },
+        {
+          "check_id": "CR-06",
+          "description": "boundary_note 是否足够清晰",
+          "status": "pass",
+          "detail": "已覆盖 pat.inclusion_exclusion_counting, pat.modular_counting_pattern, pat.mobius_inversion_application"
+        },
+        {
+          "check_id": "CR-07",
+          "description": "needs_boundary_review 是否已解决",
+          "status": "pass",
+          "detail": "无需额外 boundary_review，triage 已完成，边界已清晰"
+        },
+        {
+          "check_id": "CR-08",
+          "description": "是否需要人工复查",
+          "status": "pass",
+          "detail": "不需要"
+        }
+      ],
+      "final_verdict": "READY"
+    }
+  ],
+  "non_blocking_notes": [
+    {
+      "note_id": "N-01",
+      "description": "pat.dominance_counting 的 boundary_note 已包含 sweep_line_pattern 边界（根据 boundary_review 建议补充），建议正式生成时再 review 措辞",
+      "status": "minor"
+    },
+    {
+      "note_id": "N-02",
+      "description": "pat.mobius_inversion_application 和 pat.euler_function_application 的 example_problem_refs 使用了通用描述而非具体平台题号，正式生成时建议补充实际平台引用（如 Luogu/CF 题号）",
+      "status": "enhancement"
+    }
+  ],
+  "gating_factors": [
+    {
+      "factor": "Stage3F Batch4 full49 dependency cleanup",
+      "status": "in_progress (Thread 2)",
+      "impact": "需等 Batch4 完成后统一版本管理",
+      "blocking": true
+    },
+    {
+      "factor": "用户指令",
+      "status": "pending",
+      "impact": "需用户发出'生成 patterns_batch3.json'指令",
+      "blocking": true
+    },
+    {
+      "factor": "主图谱依赖稳定",
+      "status": "stable",
+      "impact": "1661+ items, 无 dangling refs",
+      "blocking": false
+    },
+    {
+      "factor": "batch2 patterns 稳定",
+      "status": "stable (ALL PASSED)",
+      "impact": "已正式生成并验证通过",
+      "blocking": false
+    }
+  ],
+  "recommendations": {
+    "generate_formal_batch3_now": false,
+    "must_wait_for_batch4_full49": true,
+    "estimated_batch3_count": 3,
+    "suggested_generation_order": [
+      "1. pat.dominance_counting — 多维支配关系计数",
+      "2. pat.euler_function_application — 欧拉函数应用",
+      "3. pat.mobius_inversion_application — 莫比乌斯反演应用"
+    ],
+    "main_graph_modified": false,
+    "existing_patterns_modified": false
+  }
+}

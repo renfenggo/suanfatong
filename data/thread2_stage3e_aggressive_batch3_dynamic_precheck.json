@@ -1,0 +1,35 @@
+{
+  "batch_id": "stage3e_aggressive_batch3",
+  "candidate_count": 30,
+  "already_merged_in_batch1_or_batch2": [],
+  "invalid_candidates": [],
+  "high_risk_candidates": [],
+  "manual_review_candidates": [],
+  "problem_pattern_candidates": [],
+  "needs_new_section": false,
+  "dependency_mapping_risk": [],
+  "candidate_dependency_cycle": false,
+  "section_distribution": {
+    "2.21": 5,
+    "3.13": 25
+  },
+  "recommendation": "ready_for_1号线程_merge",
+  "recommended_merge_count": 30,
+  "meta": {
+    "generated_by": "thread2_stage3e_aggressive_batch3_dynamic_precheck",
+    "generated_at": "2026-05-22T17:00:00.000Z",
+    "task": "batch3_dynamic_precheck",
+    "main_graph_modified": false,
+    "precheck_type": "dynamic_based_on_latest_graph",
+    "precheck_purpose": "基于最新主图谱的动态预审"
+  },
+  "main_graph_status": {
+    "item_count": 1542,
+    "section_count": 65,
+    "validate_only_core_passed": true,
+    "resolved_pre_mismatches": 0,
+    "dangling_refs": 0,
+    "direct_pre_cycle": null,
+    "product_metadata_validation_passed": true
+  }
+}

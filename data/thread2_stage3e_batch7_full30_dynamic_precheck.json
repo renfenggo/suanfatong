@@ -1,0 +1,506 @@
+{
+  "batch_id": "stage3e_batch7_full30",
+  "candidate_count": 1,
+  "selected_candidates": [
+    "cand.ds.multidimensional.dominance_counting"
+  ],
+  "excluded_already_merged_candidates": [],
+  "excluded_duplicate_or_near_duplicate": [
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.fhq_split_merge",
+      "name": "高级平衡树：Fhq Split Merge",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.implicit_treap",
+      "name": "高级平衡树：Implicit Treap",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.join_based_tree",
+      "name": "高级平衡树：Join Based Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.lazy_reversible_sequence",
+      "name": "高级平衡树：Lazy Reversible Sequence",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.order_statistic_tree",
+      "name": "高级平衡树：Order Statistic Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.persistent_treap",
+      "name": "高级平衡树：Persistent Treap",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.piece_table",
+      "name": "高级平衡树：Piece Table",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.rope",
+      "name": "高级平衡树：Rope",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.scapegoat_tree",
+      "name": "高级平衡树：Scapegoat Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.splay_sequence",
+      "name": "高级平衡树：Splay Sequence",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.dsu_on_tree",
+      "name": "高级并查集：Dsu On Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.persistent",
+      "name": "高级并查集：可持久化版",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+      "name": "Merge Sort Tree: Memory Optimization",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+      "name": "Merge Sort Tree: Offline Inversion",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+      "name": "Merge Sort Tree: Persistent Variant",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.orthogonal_range_query",
+      "name": "多维数据结构：Orthogonal Range Query",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.multidimensional.parallel_binary_search",
+      "name": "多维数据结构：Parallel Binary Search",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.event_sweep_with_tree",
+      "name": "离线数据结构框架：Event Sweep With Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.offline_range_mex",
+      "name": "离线数据结构框架：Offline Range Mex",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.offline_rectangle_add",
+      "name": "离线数据结构框架：Offline Rectangle Add",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.parallel_check_framework",
+      "name": "离线数据结构框架：Parallel Check Framework",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.offline_framework.time_divide_conquer",
+      "name": "离线数据结构框架：Time Divide Conquer",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.fat_node_method",
+      "name": "可持久化结构：Fat Node Method",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.path_copying_method",
+      "name": "可持久化结构：Path Copying Method",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.rollback_vs_persistence",
+      "name": "可持久化结构：Rollback Vs Persistence",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_structure.version_dag",
+      "name": "可持久化结构：Version Dag",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.cache_friendly_rmq",
+      "name": "高级 RMQ：Cache Friendly Rmq",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.plus_minus_one_rmq",
+      "name": "高级 RMQ：Plus Minus One Rmq",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.range_idempotent_query",
+      "name": "高级 RMQ：Range Idempotent Query",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.sparse_table_2d",
+      "name": "高级 RMQ：Sparse Table 2D",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.rmq_sparse.static_range_mode",
+      "name": "高级 RMQ：Static Range Mode",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.order_maintenance",
+      "name": "序列维护结构：Order Maintenance",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.persistent_sequence",
+      "name": "序列维护结构：Persistent Sequence",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.range_hash_maintenance",
+      "name": "序列维护结构：Range Hash Maintenance",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.sequence_split_merge",
+      "name": "序列维护结构：Sequence Split Merge",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.sequence_structure.text_editor_model",
+      "name": "序列维护结构：Text Editor Model",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.compressed_trie",
+      "name": "简洁与概率结构：Compressed Trie",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.perfect_hashing",
+      "name": "简洁与概率结构：Perfect Hashing",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.succinct_bitvector_rank",
+      "name": "简洁与概率结构：Succinct Bitvector Rank",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.succinct_select",
+      "name": "简洁与概率结构：Succinct Select",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.succinct_probabilistic.xor_filter",
+      "name": "简洁与概率结构：Xor Filter",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.dynamic_centroid",
+      "name": "树分治维护：Dynamic Centroid",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.subtree_query_flatten",
+      "name": "树分治维护：Subtree Query Flatten",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.tree_distance_aggregate",
+      "name": "树分治维护：Tree Distance Aggregate",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.tree_path_kth",
+      "name": "树分治维护：Tree Path Kth",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.ds.tree_decomposition_ds.virtual_tree_plus_hld",
+      "name": "树分治维护：Virtual Tree Plus Hld",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+      "name": "上下界网络流：Bounded Bipartite Matching",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.demands",
+      "name": "上下界网络流：Demands",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+      "name": "上下界网络流：Maximum Flow",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+      "name": "上下界网络流：Min Cost Circulation",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+      "name": "上下界网络流：Minimum Flow",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.node_demand",
+      "name": "上下界网络流：Node Demand",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.project_selection",
+      "name": "上下界网络流：Project Selection",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "name": "图论建模：Difference Constraints",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.k_shortest_paths",
+      "name": "图论建模：K Shortest Paths",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.layered_graph",
+      "name": "图论建模：Layered Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.minimum_mean_cycle",
+      "name": "图论建模：Minimum Mean Cycle",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.shortest_path_potentials",
+      "name": "图论建模：Shortest Path Potentials",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.state_graph",
+      "name": "图论建模：State Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.steiner_tree",
+      "name": "图论建模：Steiner Tree",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "name": "匹配与覆盖：Blossom Algorithm",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.hall_theorem",
+      "name": "匹配与覆盖：Hall Theorem",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.matroid_matching",
+      "name": "匹配与覆盖：Matroid Matching",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.basis_exchange",
+      "name": "拟阵图论：Basis Exchange",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.matroid_parity",
+      "name": "拟阵图论：Matroid Parity",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.partition_matroid",
+      "name": "拟阵图论：Partition Matroid",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.spanning_tree_matroid",
+      "name": "拟阵图论：Spanning Tree Matroid",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.transversal_matroid",
+      "name": "拟阵图论：Transversal Matroid",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.matroid_graph.weighted_matroid_intersection",
+      "name": "拟阵图论：Weighted Matroid Intersection",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.dual_shortest_path",
+      "name": "平面图：Dual Shortest Path",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.face_traversal",
+      "name": "平面图：Face Traversal",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.outerplanar_graph",
+      "name": "平面图：Outerplanar Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.planar_min_cut",
+      "name": "平面图：Planar Min Cut",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.planar_graph.planar_separator",
+      "name": "平面图：Planar Separator",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.implication_graph",
+      "name": "强连通分量 DAG：Implication Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.time_expanded_graph",
+      "name": "高级最短路：Time Expanded Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.bipartite_complement",
+      "name": "特殊图：Bipartite Complement",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.condensation_dag",
+      "name": "特殊图：Condensation Dag",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.functional_graph",
+      "name": "特殊图：Functional Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.interval_graph",
+      "name": "特殊图：Interval Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.planar_dual_graph",
+      "name": "特殊图：Planar Dual Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.special_graph.tournament_graph",
+      "name": "特殊图：Tournament Graph",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.colored_points",
+      "name": "虚树：Colored Points",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.distance_compression",
+      "name": "虚树：Distance Compression",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.edge_weight_compression",
+      "name": "虚树：Edge Weight Compression",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.minimum_connection",
+      "name": "虚树：Minimum Connection",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.multi_key_query",
+      "name": "虚树：Multi-Key Query",
+      "reason": "名称精确匹配图谱已有item"
+    },
+    {
+      "candidate_id": "cand.graph.virtual_tree.subtree_aggregation",
+      "name": "虚树：Subtree Aggregation",
+      "reason": "名称精确匹配图谱已有item"
+    }
+  ],
+  "fallback_candidates": {
+    "fallback_24": [
+      "cand.ds.multidimensional.dominance_counting"
+    ],
+    "fallback_20": [
+      "cand.ds.multidimensional.dominance_counting"
+    ]
+  },
+  "high_risk_candidates": [],
+  "manual_review_candidates": [],
+  "problem_pattern_candidates": [],
+  "needs_new_section": false,
+  "dependency_mapping_risk": [],
+  "section_ref_dependencies": [],
+  "dependency_cleanup_required": false,
+  "candidate_dependency_cycle": false,
+  "section_distribution": {
+    "3.13": 1
+  },
+  "recommendation": "use_fallback_20",
+  "recommended_merge_count": 1
+}

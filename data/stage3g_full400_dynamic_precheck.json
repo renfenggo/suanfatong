@@ -1,0 +1,316 @@
+{
+  "meta": {
+    "generated_by": "stage3g_full400_audit",
+    "generated_at": "2026-05-25T14:28:25.093841+00:00",
+    "main_graph_modified": false,
+    "merge_executed": false,
+    "validate_only_status": {
+      "item_count": 1765,
+      "section_count": 65,
+      "passed": true
+    }
+  },
+  "precheck_results": {
+    "exact_duplicate": {
+      "count": 2,
+      "passed": false,
+      "items": [
+        {
+          "candidate_id": "cand.ds.整体二分",
+          "name": "整体二分",
+          "type": "exact_name_match",
+          "matched_ids": [
+            "2.18.5"
+          ]
+        },
+        {
+          "candidate_id": "cand.ds.笛卡尔树",
+          "name": "笛卡尔树",
+          "type": "exact_name_match",
+          "matched_ids": [
+            "3.6.6"
+          ]
+        }
+      ]
+    },
+    "high_duplicate": {
+      "count": 0,
+      "passed": true,
+      "items": []
+    },
+    "needs_new_section": {
+      "value": true,
+      "passed": false
+    },
+    "candidate_dependency_cycle": {
+      "value": false,
+      "passed": true,
+      "cycle_nodes": []
+    },
+    "section_ref_dependencies": {
+      "count": 0,
+      "passed": true
+    },
+    "self_ref_dependencies": {
+      "count": 1,
+      "passed": false
+    },
+    "dangling_dependencies": {
+      "count": 272,
+      "passed": false
+    },
+    "unresolvable_direct_pre": {
+      "count": 457,
+      "passed": false
+    },
+    "dependency_cleanup_required": {
+      "value": true,
+      "count": 272
+    },
+    "red_candidates": {
+      "count": 20,
+      "passed": false,
+      "note": "red候选应暂缓或人工复核"
+    },
+    "theme_distribution": {
+      "图论专题": 55,
+      "数据结构专题": 50,
+      "动态规划专题": 45,
+      "信奥数学": 40,
+      "基础算法扩展": 35,
+      "字符串专题": 35,
+      "STL与常用库细节": 30,
+      "C++语法高级细节": 25,
+      "编程技巧": 25,
+      "题型建模方法": 30,
+      "比赛相关知识": 15,
+      "调试方法": 15
+    },
+    "section_distribution": {
+      "2.9": 129,
+      "2.11": 4,
+      "2.12": 3,
+      "2.14": 7,
+      "2.15": 4,
+      "2.16": 9,
+      "2.17": 5,
+      "2.21": 17,
+      "3.13": 26,
+      "3.1": 1,
+      "3.3": 7,
+      "3.5": 5,
+      "3.2": 4,
+      "3.8": 21,
+      "3.9": 2,
+      "2.8": 45,
+      "4.1": 16,
+      "4.3": 15,
+      "4.6": 4,
+      "4.5": 3,
+      "4.4": 2,
+      "2.1": 17,
+      "2.2": 4,
+      "2.3": 3,
+      "2.4": 4,
+      "2.5": 7,
+      "2.10": 21,
+      "4.16": 15
+    },
+    "risk_band_distribution": {
+      "green": 165,
+      "yellow": 168,
+      "medium": 47,
+      "red": 20
+    },
+    "confidence_distribution": {
+      "high": 165,
+      "medium": 132,
+      "low": 103
+    },
+    "merge_priority_distribution": {
+      "now": 165,
+      "soon": 132,
+      "later": 47,
+      "defer": 56
+    },
+    "direct_pre_stats": {
+      "total": 1598,
+      "avg": 4.0,
+      "max": 5
+    }
+  },
+  "all_checks_passed": false,
+  "recommendation": "needs_cleanup_before_full400_merge",
+  "recommended_merge_count": 363,
+  "blocking_issues": [
+    "exact_duplicate_count=2",
+    "needs_new_section=true",
+    "self_ref_dependencies=1",
+    "dangling_refs=272",
+    "red_candidates=20 (建议暂缓)"
+  ],
+  "suggested_fixes": [
+    {
+      "issue": "exact_duplicate",
+      "candidate_id": "cand.ds.整体二分",
+      "candidate_name": "整体二分",
+      "existing_item_ids": [
+        "2.18.5"
+      ],
+      "action": "remove_from_pool",
+      "note": "候选 \"整体二分\" 与已有节点重复，应从候选池移除"
+    },
+    {
+      "issue": "exact_duplicate",
+      "candidate_id": "cand.ds.笛卡尔树",
+      "candidate_name": "笛卡尔树",
+      "existing_item_ids": [
+        "3.6.6"
+      ],
+      "action": "remove_from_pool",
+      "note": "候选 \"笛卡尔树\" 与已有节点重复，应从候选池移除"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试基础_gdb入门",
+      "candidate_name": "调试基础：GDB入门",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试基础_gdb进阶命令",
+      "candidate_name": "调试基础：GDB进阶命令",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试基础_print调试法",
+      "candidate_name": "调试基础：print调试法",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试基础_静态分析",
+      "candidate_name": "调试基础：静态分析",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试技巧_二分定位bug",
+      "candidate_name": "调试技巧：二分定位bug",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试技巧_复原测试法",
+      "candidate_name": "调试技巧：复原测试法",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试技巧_断言辅助调试",
+      "candidate_name": "调试技巧：断言辅助调试",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试技巧_边界测试",
+      "candidate_name": "调试技巧：边界测试",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试技巧_随机测试",
+      "candidate_name": "调试技巧：随机测试",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试场景_re_运行时错误_排查",
+      "candidate_name": "调试场景：RE(运行时错误)排查",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试场景_tle_超时_优化",
+      "candidate_name": "调试场景：TLE(超时)优化",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试场景_wa_答案错误_排查",
+      "candidate_name": "调试场景：WA(答案错误)排查",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试场景_mle_内存超限_排查",
+      "candidate_name": "调试场景：MLE(内存超限)排查",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试工具_valgrind内存检测",
+      "candidate_name": "调试工具：Valgrind内存检测",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "needs_new_section",
+      "candidate_id": "cand.debug.调试工具_addresssanitizer",
+      "candidate_name": "调试工具：AddressSanitizer",
+      "target_section": "4.16",
+      "action": "reassign_section",
+      "suggested_section": "2.9",
+      "note": "Section 4.16 不存在，建议重新分配到 2.9 (C++与STL) 或其他已有 section"
+    },
+    {
+      "issue": "self_reference",
+      "candidate_id": "cand.ds.笛卡尔树",
+      "candidate_name": "笛卡尔树",
+      "action": "remove_self_from_pre",
+      "note": "direct_pre_name_suggestion 中包含自身，需移除"
+    }
+  ]
+}

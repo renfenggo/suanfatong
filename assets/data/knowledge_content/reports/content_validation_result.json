@@ -1,0 +1,15 @@
+{
+  "source_item_count": 3240,
+  "generated_item_count": 3240,
+  "missing_items": [],
+  "duplicate_items": [],
+  "invalid_json_files": [],
+  "incomplete_items": [],
+  "placeholder_text_count": 0,
+  "validation_passed": true,
+  "parts_checked": 33,
+  "actual_items_in_parts": 3240,
+  "stage4_items": 2165,
+  "stage5_hard_batch1_items": 475,
+  "stage5_hard_batch2_items": 600
+}

@@ -1,0 +1,270 @@
+{
+  "fix_time": "2026-06-16",
+  "target_ids": [
+    "2.1.95",
+    "2.1.96",
+    "2.1.97",
+    "2.1.98",
+    "2.1.99",
+    "2.1.100",
+    "2.1.101"
+  ],
+  "from_section_id": "2.1",
+  "to_section_id": "3.13",
+  "to_section_name": "高级数据结构扩展",
+  "moved_main": [
+    {
+      "id": "2.1.98",
+      "name": "可持久化线段树的区间修改模型 (可持久化线段树 Range Update Model)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.99",
+      "name": "可持久化线段树的区间查询模型 (可持久化线段树 Range Query Model)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.96",
+      "name": "可持久化线段树的合并操作 (可持久化线段树 Merge Operation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.95",
+      "name": "可持久化线段树的节点语义 (可持久化线段树 Node Semantics)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.97",
+      "name": "可持久化线段树的分裂操作 (可持久化线段树 Split Operation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.100",
+      "name": "可持久化线段树的持久化版本关系 (可持久化线段树 Persistent Version Relation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.101",
+      "name": "可持久化线段树的动态空间复杂度 (可持久化线段树 Dynamic Space Complexity)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    }
+  ],
+  "moved_frontend": [
+    {
+      "id": "2.1.98",
+      "name": "可持久化线段树的区间修改模型 (可持久化线段树 Range Update Model)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.99",
+      "name": "可持久化线段树的区间查询模型 (可持久化线段树 Range Query Model)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.96",
+      "name": "可持久化线段树的合并操作 (可持久化线段树 Merge Operation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.95",
+      "name": "可持久化线段树的节点语义 (可持久化线段树 Node Semantics)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.97",
+      "name": "可持久化线段树的分裂操作 (可持久化线段树 Split Operation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.100",
+      "name": "可持久化线段树的持久化版本关系 (可持久化线段树 Persistent Version Relation)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    },
+    {
+      "id": "2.1.101",
+      "name": "可持久化线段树的动态空间复杂度 (可持久化线段树 Dynamic Space Complexity)",
+      "old_section_id": "2.1",
+      "old_section_name": "基础算法思想",
+      "new_section_id": "3.13",
+      "new_section_name": "高级数据结构扩展",
+      "old_parent": "2.1",
+      "new_parent": "3.13"
+    }
+  ],
+  "files_modified": [
+    "merged_knowledge_graph_item_dependencies_refined.json",
+    "assets\\data\\knowledge\\io_v4_4.json",
+    "assets/data/knowledge_content/items/stage5_hard_batch2_part_001.json"
+  ],
+  "content_index_changed": true,
+  "content_index_has_section_field": true,
+  "content_index_part_file": "assets/data/knowledge_content/items/stage5_hard_batch2_part_001.json",
+  "content_index_synced_fields": ["section_id", "section_name"],
+  "verification": {
+    "main_item_count": 3240,
+    "frontend_item_count": 3240,
+    "content_index_source_item_count": 3240,
+    "main_frontend_same_ids": true,
+    "content_covers_all": true,
+    "batch2_content_covered": true,
+    "batch2_id_count": 600,
+    "target_nodes_section": {
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.96": "3.13",
+      "2.1.95": "3.13",
+      "2.1.97": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "target_nodes_section_frontend": {
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.96": "3.13",
+      "2.1.95": "3.13",
+      "2.1.97": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "target_nodes_section_content": {
+      "2.1.95": "3.13",
+      "2.1.96": "3.13",
+      "2.1.97": "3.13",
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "pre_fields_check": {
+      "2.1.98": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.99": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.96": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.95": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.97": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.100": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      },
+      "2.1.101": {
+        "direct_pre_present": true,
+        "rel_present": true,
+        "resolved_pre_present": true
+      }
+    }
+  },
+  "batch2_stats_before_fix": {
+    "section_major_category": {
+      "算法": 330,
+      "数据结构": 103,
+      "数学": 167
+    },
+    "item_category": {
+      "数据结构": 145,
+      "算法": 255,
+      "数学": 200
+    }
+  },
+  "batch2_stats_after_fix": {
+    "section_major_category": {
+      "算法": 323,
+      "数据结构": 110,
+      "数学": 167
+    },
+    "item_category": {
+      "数据结构": 145,
+      "算法": 255,
+      "数学": 200
+    },
+    "frontend_section_major_category": {
+      "算法": 323,
+      "数据结构": 110,
+      "数学": 167
+    }
+  }
+}

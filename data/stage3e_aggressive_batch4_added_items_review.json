@@ -1,0 +1,381 @@
+{
+  "review_info": {
+    "batch_id": "stage3e_aggressive_batch4_review",
+    "review_date": "2026-05-23T11:12:38.598334",
+    "total_nodes_reviewed": 30,
+    "no_graph_modification": true,
+    "read_only_mode": true
+  },
+  "review_results": [
+    {
+      "id": "2.21.129",
+      "name": "上下界网络流：Minimum Flow",
+      "series": "2.21",
+      "review_result": "needs_dependency_fix",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [
+        "网络流依赖可能缺少关键前置"
+      ],
+      "suggested_patch": {},
+      "reason": "网络流专题需要检查依赖完整性"
+    },
+    {
+      "id": "2.21.130",
+      "name": "上下界网络流：Node Demand",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.131",
+      "name": "上下界网络流：Project Selection",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.132",
+      "name": "图论建模：K Shortest Paths",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.133",
+      "name": "图论建模：Layered Graph",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级图建模专题，边界需抽查确认"
+    },
+    {
+      "id": "2.21.134",
+      "name": "图论建模：Minimum Mean Cycle",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.135",
+      "name": "图论建模：Shortest Path Potentials",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级图建模专题，边界需抽查确认"
+    },
+    {
+      "id": "2.21.136",
+      "name": "图论建模：State Graph",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级图建模专题，边界需抽查确认"
+    },
+    {
+      "id": "2.21.137",
+      "name": "图论建模：Steiner Tree",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级图建模专题，边界需抽查确认"
+    },
+    {
+      "id": "2.21.138",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.139",
+      "name": "匹配与覆盖：Hall Theorem",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.140",
+      "name": "匹配与覆盖：Konig Theorem",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.141",
+      "name": "匹配与覆盖：Matroid Matching",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "匹配/覆盖专题需要检查依赖完整性"
+    },
+    {
+      "id": "2.21.142",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "匹配/覆盖专题需要检查依赖完整性"
+    },
+    {
+      "id": "2.21.143",
+      "name": "匹配与覆盖：Stable Marriage",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.144",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "2.21.145",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "series": "2.21",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "匹配/覆盖专题需要检查依赖完整性"
+    },
+    {
+      "id": "2.21.146",
+      "name": "高级最短路：Time Expanded Graph",
+      "series": "2.21",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "图论高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "3.13.131",
+      "name": "高级平衡树：Fhq Split Merge",
+      "series": "3.13",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "数据结构高级专题，依赖和metadata都合理"
+    },
+    {
+      "id": "3.13.132",
+      "name": "高级平衡树：Implicit Treap",
+      "series": "3.13",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级平衡树专题，依赖明确合理"
+    },
+    {
+      "id": "3.13.133",
+      "name": "高级平衡树：Join Based Tree",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.134",
+      "name": "高级平衡树：Lazy Reversible Sequence",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.135",
+      "name": "高级平衡树：Order Statistic Tree",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.136",
+      "name": "高级平衡树：Persistent Treap",
+      "series": "3.13",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级平衡树专题，依赖明确合理"
+    },
+    {
+      "id": "3.13.137",
+      "name": "高级平衡树：Piece Table",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.138",
+      "name": "高级平衡树：Rope",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.139",
+      "name": "高级平衡树：Scapegoat Tree",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.140",
+      "name": "高级平衡树：Splay Sequence",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "高级数据结构，需要确认实现细节和边界"
+    },
+    {
+      "id": "3.13.141",
+      "name": "高级并查集：Dsu On Tree",
+      "series": "3.13",
+      "review_result": "keep_manual_review",
+      "new_review_priority": "B",
+      "need_manual_review": true,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "需要检查前置DSU知识"
+    },
+    {
+      "id": "3.13.142",
+      "name": "高级并查集：可持久化版",
+      "series": "3.13",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "issues": [],
+      "suggested_patch": {},
+      "reason": "数据结构高级专题，依赖和metadata都合理"
+    }
+  ],
+  "statistics": {
+    "approve": 14,
+    "keep_manual_review": 15,
+    "needs_dependency_fix": 1,
+    "降为C数量": 14,
+    "保留B数量": 16,
+    "保留A数量": 0,
+    "需要依赖修复数量": 1,
+    "建议同步到problem_patterns数量": 0,
+    "needs_merge_or_collapse数量": 0
+  },
+  "series_review": {
+    "2.21_series": {
+      "total": 18,
+      "approve": 10,
+      "keep_manual_review": 7,
+      "needs_dependency_fix": 1,
+      "conclusion": "2.21系列图论高级专题，大部分依赖合理，可降级为C，少量需要依赖修复"
+    },
+    "3.13_series": {
+      "total": 12,
+      "approve": 4,
+      "keep_manual_review": 8,
+      "needs_dependency_fix": 0,
+      "conclusion": "3.13系列数据结构高级专题，实现细节复杂，建议保留B级人工审核"
+    }
+  },
+  "recommendations": {
+    "should_enter_batch4_fix_lite": true,
+    "should_continue_batch5": false,
+    "batch4_review_complete": true,
+    "next_steps": [
+      "不修改主图谱",
+      "不继续Batch5",
+      "可选择进入Batch4 Fix Lite修复依赖问题",
+      "或接受当前状态，依赖修复可后续处理"
+    ]
+  }
+}

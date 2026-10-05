@@ -1,0 +1,355 @@
+{
+  "meta": {
+    "title": "Stage3F Batch4 Full49 Added Items Summary",
+    "generated_at": "2026-05-25T17:52:35.700489",
+    "batch_id": "stage3f_batch4_full49",
+    "total_added": 49,
+    "item_count_before": 1716,
+    "item_count_after": 1765
+  },
+  "items": [
+    {
+      "id": "2.21.152",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.153",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.154",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.155",
+      "name": "动态图连通性：Dynamic Bridge",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.156",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.157",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.158",
+      "name": "强连通分量 DAG：Scc Dp",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "green"
+    },
+    {
+      "id": "2.21.159",
+      "name": "差分约束系统建模",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.160",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.161",
+      "name": "Hall 定理及应用",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.162",
+      "name": "最大权闭合子图",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.163",
+      "name": "平面图：Embedding Basics",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.164",
+      "name": "高级最短路：Eppstein K Shortest",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.165",
+      "name": "高级最短路：Johnson Potentials",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.166",
+      "name": "高级最短路：Min Cost Path Cover",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.167",
+      "name": "高级最短路：Replacement Paths",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.168",
+      "name": "高级最短路：Resource Constrained",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.169",
+      "name": "高级最短路：Yen K Shortest",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.170",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.21.171",
+      "name": "2-SAT 建模技巧",
+      "target_section": "2.21",
+      "direct_pre_count": 113,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.192",
+      "name": "高级并查集：Component Aggregate",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.193",
+      "name": "高级并查集：Distance",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.194",
+      "name": "高级并查集：Offline Dynamic Connectivity",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.195",
+      "name": "高级并查集：Small To Large",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.196",
+      "name": "高级并查集：Weighted",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.197",
+      "name": "李超线段树：Cht Comparison",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.198",
+      "name": "可持久化结构：Retroactive Overview",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.199",
+      "name": "线段树变体：Matrix Segment Tree",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.200",
+      "name": "线段树变体：Merge 变体 1",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.201",
+      "name": "线段树变体：Persistent Segment Tree",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.202",
+      "name": "线段树变体：Range Assign Lazy",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.203",
+      "name": "线段树变体：Segment Tree Of Vectors",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.204",
+      "name": "线段树变体：Segment Tree Over Time",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.205",
+      "name": "线段树变体：Two Dimensional Segment Tree",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "3.13.206",
+      "name": "简洁与概率结构：Van Emde Boas Overview",
+      "target_section": "3.13",
+      "direct_pre_count": 0,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.151",
+      "name": "博弈DP基础",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.152",
+      "name": "Grundy数DP",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.153",
+      "name": "矩阵DP基础",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.154",
+      "name": "矩阵快速幂DP",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.155",
+      "name": "期望DP",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.8.156",
+      "name": "马尔可夫链DP",
+      "target_section": "2.8",
+      "direct_pre_count": 202,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "4.5.17",
+      "name": "GF(2)上的高斯消元",
+      "target_section": "4.5",
+      "direct_pre_count": 152,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "4.5.18",
+      "name": "矩阵树定理",
+      "target_section": "4.5",
+      "direct_pre_count": 152,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.10.39",
+      "name": "Sunday算法",
+      "target_section": "2.10",
+      "direct_pre_count": 218,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "4.4.15",
+      "name": "线性递推基础",
+      "target_section": "4.4",
+      "direct_pre_count": 88,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "4.4.16",
+      "name": "Kitamasa算法",
+      "target_section": "4.4",
+      "direct_pre_count": 88,
+      "risk_band": "yellow"
+    },
+    {
+      "id": "2.10.40",
+      "name": "Duval算法最小表示",
+      "target_section": "2.10",
+      "direct_pre_count": 218,
+      "risk_band": "medium"
+    },
+    {
+      "id": "2.10.41",
+      "name": "二维滚动哈希",
+      "target_section": "2.10",
+      "direct_pre_count": 218,
+      "risk_band": "medium"
+    },
+    {
+      "id": "2.10.42",
+      "name": "哈希碰撞处理策略",
+      "target_section": "2.10",
+      "direct_pre_count": 218,
+      "risk_band": "medium"
+    }
+  ]
+}

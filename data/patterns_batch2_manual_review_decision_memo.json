@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "title": "Patterns Batch2 Manual Review Decision Memo",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-22T23:59:00.000Z",
+    "task": "manual_review_decision_memo",
+    "total_candidates": 2,
+    "project_selection_decision": "merge_into_project_selection_closure",
+    "stable_marriage_decision": "keep_as_pattern",
+    "formal_batch_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "batch2_drafts_modified": false
+  },
+  "statistics": {
+    "total_review_candidates": 2,
+    "recommended_enter_batch2": 1,
+    "recommended_merge_to_ready": 1,
+    "recommended_defer": 0,
+    "high_duplicate_risk_count": 1,
+    "can_generate_formal_batch2": false,
+    "awaiting_user_confirmation": true
+  },
+  "decisions": [
+    {
+      "item_id": "2.21.131",
+      "name": "上下界网络流：Project Selection",
+      "candidate_pattern_id": "pat.network_flow_project_selection",
+      "existing_ready_pattern": "pat.project_selection_closure",
+      "decision_options": [
+        {
+          "option": "merge_into_project_selection_closure",
+          "description": "合并到已有的 pat.project_selection_closure（最大权闭合子图），知识库候选内容作为该模式的补充素材",
+          "pros": [
+            "不增加模式总数，保持知识体系精简",
+            "消除语义重叠——Project Selection 在本质上就是最大权闭合子图的一个应用实例",
+            "ready pattern pat.project_selection_closure 已将 Project Selection 列为 example_problem_ref",
+            "避免与 pat.project_selection_closure 和 pat.min_cut_selection 同时产生边界混淆",
+            "符合边界审查的推荐意见"
+          ],
+          "cons": [
+            "失去 'Project Selection' 这个直观的名称",
+            "初学者可能不熟悉 '闭合子图' 术语而错过模式"
+          ],
+          "required_boundary_note": "不需要独立边界说明，项目选择内容融入 pat.project_selection_closure 的 description 和 example_problem_refs"
+        },
+        {
+          "option": "keep_as_separate_pattern",
+          "description": "保留为独立模式 pat.network_flow_project_selection，与 pat.project_selection_closure 并列",
+          "pros": [
+            "名称直观，易于竞赛选手快速识别",
+            "可以写更具体的项目选择场景识别信号"
+          ],
+          "cons": [
+            "增加模式总数",
+            "与 pat.project_selection_closure 语义高度重叠（本质相同）",
+            "导致用户混淆：如何在两个模式中选择",
+            "边界审查已明确建议合并，保留需要推翻边界审查结论"
+          ],
+          "required_boundary_note": "如果保留，必须在两个模式的 description 中互相引用并明确边界，但生成成本高"
+        },
+        {
+          "option": "merge_into_min_cut_selection",
+          "description": "合并到 pat.min_cut_selection（最小割选择建模），项目选择作为最小割建模的一个应用场景",
+          "pros": [
+            "不增加模式总数",
+            "与最小割选择建模的语义更接近（二元选择+收益/惩罚）"
+          ],
+          "cons": [
+            "pat.min_cut_selection 更通用，不专门针对闭包子图结构",
+            "失去与最大权闭合子图的直接关联",
+            "与 pat.project_selection_closure 竞争覆盖范围"
+          ],
+          "required_boundary_note": "需要在 pat.min_cut_selection 中说明项目选择是其一个应用特例"
+        }
+      ],
+      "recommended_decision": "merge_into_project_selection_closure",
+      "recommended_decision_pros": [
+        "ready pattern pat.project_selection_closure 已存在，且已引用 Project Selection 作为示例",
+        "语义上项目选择就是最大权闭合子图的直接应用",
+        "合并后 pat.network_flow_project_selection 对应的 Batch2 Draft 不再需要生成",
+        "pat.project_selection_closure 的 synced_from_stage3b 已包含 cand.graph.closure_model.project_selection",
+        "不影响 Batch2 其他 13 个候选的生成"
+      ],
+      "recommended_decision_cons": [
+        "需要确认 pat.project_selection_closure 的 review_status.need_manual_review 是否需要从 true 改为 false"
+      ],
+      "boundary_note_if_keep": "不适用（推荐合并，不保留独立模式）",
+      "action_if_merge": [
+        "将 2.21.131 知识库候选的内容和题面参考补充到 pat.project_selection_closure 的 description 和 example_problem_refs",
+        "更新 pat.project_selection_closure 的 review_status（如适用）",
+        "放弃 pat.network_flow_project_selection 对应的 Batch2 Draft 的正式生成",
+        "在 Batch2 正式生成时跳过此候选"
+      ],
+      "action_if_drop": "不适用（推荐合并而非丢弃）",
+      "final_recommendation": "合并到 pat.project_selection_closure，不生成 pat.network_flow_project_selection",
+      "reason": "ready pattern pat.project_selection_closure 已经存在，描述为'最大权闭合子图'，且已引用 Project Selection 作为 example_problem_ref。Project Selection 建模在本质上就是最大权闭合子图的一个应用特例。边界审查也建议合并。创建独立的 pat.network_flow_project_selection 不仅会造成与 ready pattern 的严重语义重叠，还会增加用户的模式选择成本。推荐关闭对应的 Batch2 Draft，将候选内容 merge into ready pattern。"
+    },
+    {
+      "item_id": "2.21.143",
+      "name": "匹配与覆盖：Stable Marriage",
+      "candidate_pattern_id": "pat.stable_matching_pattern",
+      "existing_ready_pattern": "无（pat.bipartite_matching_modeling 语义不同）",
+      "decision_options": [
+        {
+          "option": "keep_as_pattern",
+          "description": "保留为独立模式 pat.stable_matching_pattern，合并知识库候选和 Batch2 Draft 后生成",
+          "pros": [
+            "Gale-Shapley 算法具有独特性，与一般二分图匹配区别明显",
+            "偏好排序+稳定性约束的识别信号独特清晰",
+            "国内外教材和竞赛训练中稳定婚姻是经典内容",
+            "作为独立模式与二分图匹配建模形成互补",
+            "在算法设计、社会选择理论等领域有广泛的应用场景"
+          ],
+          "cons": [
+            "在 OI/ACM 竞赛中出现频率相对较低",
+            "模式变体有限，主要用于学习 Gale-Shapley 算法",
+            "可能更适合作为知识点而非题型模式"
+          ],
+          "required_boundary_note": "需要在模式中说明与 pat.bipartite_matching_modeling 的边界：稳定婚姻是强稳定性约束的特殊匹配，二分图匹配是容量约束的通用匹配"
+        },
+        {
+          "option": "move_to_knowledge_item",
+          "description": "移动到知识库作为核心知识点，不作为独立 pattern，放弃 Batch2 Draft",
+          "pros": [
+            "不增加模式总数",
+            "保留 Gale-Shapley 算法内容",
+            "减少模式管理成本"
+          ],
+          "cons": [
+            "不能训练 pattern 识别能力",
+            "用户可能在需要时找不到此模式",
+            "失去模式体系的完整覆盖",
+            "Gale-Shapley 算法的独特性未充分利用"
+          ],
+          "required_boundary_note": "不适用"
+        },
+        {
+          "option": "merge_into_bipartite_matching",
+          "description": "作为 pat.bipartite_matching_modeling 的一个特例，在该模式中提及",
+          "pros": [
+            "不增加新模式",
+            "在匹配建模中提供偏好匹配的上下文"
+          ],
+          "cons": [
+            "稳定婚姻的特殊性被淡化",
+            "Gale-Shapley 算法细节可能丢失",
+            "偏好排序和稳定性约束与一般二分图匹配差异大",
+            "混合在二分图匹配中可能导致用户混淆"
+          ],
+          "required_boundary_note": "如果合并，需在 pat.bipartite_matching_modeling 中单列一节说明偏好匹配场景"
+        }
+      ],
+      "recommended_decision": "keep_as_pattern",
+      "recommended_decision_pros": [
+        "稳定婚姻有完全不同于二分图匹配的算法（Gale-Shapley vs Hopcroft-Karp）",
+        "识别信号（偏好排序、稳定性、一对一配对）清晰独特",
+        "独立模式可以完整覆盖 Gale-Shapley 算法和变体（不稳定对、最优策略等）",
+        "作为独立模式与二分图匹配建模形成互补覆盖",
+        "Boundary 审查未发现与 ready pattern 的重复风险"
+      ],
+      "recommended_decision_cons": [
+        "竞赛频率较低，需要关注长期使用数据",
+        "如果后续发现使用率低，可降级为 knowledge_item"
+      ],
+      "boundary_note_if_keep": "需在 pat.stable_matching_pattern 的 description 或 boundary_note 中说明与 pat.bipartite_matching_modeling 的边界：稳定婚姻是强稳定性约束的特殊二分图匹配，适用场景为偏好排序和稳定性要求，而非一般的容量约束匹配",
+      "action_if_merge": "不适用（推荐保留）",
+      "action_if_drop": "如果未来需降级：将 pat.stable_matching_pattern 的内容迁移到知识库中对应知识点，在 pat.bipartite_matching_modeling 的 related_items 中引用",
+      "final_recommendation": "保留为独立模式 pat.stable_matching_pattern，进入 Batch2 正式生成",
+      "reason": "稳定婚姻问题具有独特的 Gale-Shapley 算法和稳定性约束概念，与 pat.bipartite_matching_modeling 在算法方法、识别信号和适用场景上均有本质区别。虽然竞赛频率不算最高，但作为经典匹配算法模式，在体系完整性上有重要价值。建议保留为独立模式，进入 Batch2 正式生成，并在模式描述中明确与二分图匹配建模的边界。"
+    }
+  ]
+}

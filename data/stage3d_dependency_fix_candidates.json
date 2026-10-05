@@ -1,0 +1,110 @@
+[
+  {
+    "id": "3.13.55",
+    "en_name": "Bitset and Linear Basis: Basis On Tree",
+    "source_candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 2.14.1."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "2.14.1"
+      ]
+    }
+  },
+  {
+    "id": "3.13.57",
+    "en_name": "Dynamic Tree Structure: Dynamic Lca",
+    "source_candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 2.14.2."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "2.14.2"
+      ]
+    }
+  },
+  {
+    "id": "3.13.58",
+    "en_name": "Dynamic Tree Structure: Path Lazy Tag",
+    "source_candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 3.7.2."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "3.7.2"
+      ]
+    }
+  },
+  {
+    "id": "3.13.65",
+    "en_name": "Multidimensional Data Structure: Bitset Rectangle Query",
+    "source_candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 1.8.20."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "1.8.20"
+      ]
+    }
+  },
+  {
+    "id": "2.21.62",
+    "en_name": "Block-Cut Tree: Tree Dp",
+    "source_candidate_id": "cand.graph.block_cut_tree.tree_dp",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 2.8.1."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "2.8.1"
+      ]
+    }
+  },
+  {
+    "id": "2.21.67",
+    "en_name": "Cactus Graph: Minimum Cut",
+    "source_candidate_id": "cand.graph.cactus_graph.minimum_cut",
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Should also depend on 2.16.3."
+      }
+    ],
+    "suggested_patch": {
+      "notes": [],
+      "direct_pre_add": [
+        "2.16.3"
+      ]
+    }
+  }
+]

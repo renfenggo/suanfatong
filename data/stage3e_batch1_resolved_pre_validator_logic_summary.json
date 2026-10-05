@@ -1,0 +1,215 @@
+{
+  "description": "Stage3E-Batch1 Resolved Pre Validator Logic Analysis",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+  "analysis_mode": "read_only",
+
+  "current_state": {
+    "item_count": 1512,
+    "section_count": 65,
+    "mismatch_count": 10,
+    "did_not_modify_main_graph": true
+  },
+
+  "official_functions": {
+    "resolved_pre_calculation": {
+      "function_name": "compute_resolved",
+      "location": "refine_item_dependencies.py line 1336",
+      "signature": "def compute_resolved(edges, item_ids):"
+    },
+    "mismatch_validation": {
+      "function_name": "validate_resolved_closure",
+      "location": "refine_item_dependencies.py line 1954",
+      "signature": "def validate_resolved_closure(graph):"
+    },
+    "helper_functions": {
+      "unique": "def unique(seq): line 127 - maintains first occurrence order",
+      "recompute_resolved_pre": "def recompute_resolved_pre(graph): line 1357 - orchestrates recalculation"
+    }
+  },
+
+  "official_logic_analysis": {
+    "computation_algorithm": {
+      "method": "recursive + memoization",
+      "cycle_detection": "visiting set to detect cycles during recursion",
+      "order_preservation": "maintains first occurrence order via unique()",
+      "self_exclusion": "if x != node condition"
+    },
+    "resolved_pre_composition": {
+      "includes": ["direct_pre dependencies", "recursive ancestors of direct_pre"],
+      "excludes": ["section dependencies", "self-reference"],
+      "handling_section_deps": "filters section IDs: if d in item_by_id"
+    },
+    "dependency_expansion": {
+      "expansion_order": "deep-first - expand deps first, then add dep itself",
+      "logic": "out.extend(resolve(dep)); out.append(dep)",
+      "uniqueness": "unique([x for x in out if x != node])"
+    },
+    "sorting": {
+      "explicit_sorting": false,
+      "order_rule": "first occurrence order preserved",
+      "characteristics": "depth-first order, maintaining recursion sequence"
+    }
+  },
+
+  "unique_function_logic": {
+    "implementation": "out, seen = [], set(); for item in seq: if item and item not in seen: seen.add(item); out.append(item)",
+    "order_preservation": "maintains first occurrence order",
+    "empty_filtering": "if item condition filters out empty strings",
+    "output": "list of unique items in order of first appearance"
+  },
+
+  "validation_logic": {
+    "expected_generation": "expected = compute_resolved(edges, set(item_by_id))",
+    "comparison": "actual != exp",
+    "mismatch_format": "{\"id\": item_id, \"expected_count\": len(exp), \"actual_count\": len(actual)}",
+    "expected_resolved_pre_output": "NOT_GENERATED - only count comparison provided"
+  },
+
+  "previous_failure_analysis": {
+    "attempt1_full_recalculation": {
+      "approach": "BFS with section dependencies + sorting",
+      "result": "failed",
+      "expected_vs_actual": "26 vs 130, 37 vs 142, 24 vs 130",
+      "root_cause": "included section dependencies, used sorting, wrong algorithm"
+    },
+    "attempt2_improved_logic": {
+      "approach": "improved section handling + sorting", 
+      "result": "failed",
+      "expected_vs_actual": "26 vs 134, 37 vs 144, 24 vs 133",
+      "root_cause": "still included section dependencies, used sorting"
+    },
+    "attempt3_manual_analysis": {
+      "approach": "manual dependency analysis + targeted additions",
+      "result": "partial_success",
+      "expected_vs_actual": "26 vs 25, 37 vs 36, 24 vs 22",
+      "root_cause": "incomplete dependency expansion, wrong order"
+    },
+    "attempt4_expected_resolved_pre": {
+      "approach": "attempted to use validation expected data",
+      "result": "failed",
+      "expected_vs_actual": "N/A - no expected_resolved_pre available",
+      "root_cause": "validation system only provides counts, not lists"
+    }
+  },
+
+  "root_causes_of_failures": {
+    "primary_cause": "included section dependencies when official logic excludes them",
+    "secondary_causes": [
+      "used explicit sorting when official preserves first occurrence order",
+      "wrong recursion order - should expand deps first then add dep",
+      "BFS instead of DFS approach",
+      "did not use memoization causing different computation paths"
+    ]
+  },
+
+  "key_differences": {
+    "section_dependencies": {
+      "my_implementation": "included section dependencies",
+      "official_logic": "excluded: if d in item_by_id filter"
+    },
+    "sorting": {
+      "my_implementation": "sorted(result)",
+      "official_logic": "no sorting - unique() preserves first occurrence"
+    },
+    "expansion_order": {
+      "my_implementation": "add dep first then expand",
+      "official_logic": "expand dep first then add: out.extend(resolve(dep)); out.append(dep)"
+    },
+    "algorithm": {
+      "my_implementation": "BFS with queue",
+      "official_logic": "DFS with memoization"
+    }
+  },
+
+  "recommended_fix_approach": {
+    "option1_copy_official_function": {
+      "feasibility": "high",
+      "method": "copy compute_resolved, unique functions exactly as written",
+      "advantages": "exact match with validation logic, guaranteed success",
+      "steps": [
+        "create temporary script with copied official functions",
+        "apply only to 10 mismatched nodes",
+        "compare results with expected counts",
+        "apply if matches"
+      ]
+    },
+    "option2_import_official_functions": {
+      "feasibility": "medium",
+      "method": "import from refine_item_dependencies if possible",
+      "advantages": "maintains single source of truth",
+      "steps": [
+        "test if module can be imported without running main",
+        "import compute_resolved, unique functions",
+        "apply to mismatched nodes",
+        "verify results"
+      ],
+      "risks": "may not work due to script structure"
+    },
+    "option3_manual_implementation": {
+      "feasibility": "medium",
+      "method": "rewrite following exact official logic",
+      "advantages": "no dependency on external files",
+      "requirements": [
+        "DFS recursion with memoization",
+        "expand deps first then add dep",
+        "use unique() exactly as written",
+        "exclude section dependencies",
+        "preserve first occurrence order"
+      ]
+    }
+  },
+
+  "target_nodes_for_fix": [
+    "2.21.81",
+    "2.21.88", 
+    "2.21.89",
+    "2.21.90",
+    "2.21.91",
+    "2.21.92",
+    "2.21.93",
+    "2.21.96",
+    "2.21.97",
+    "2.21.98"
+  ],
+
+  "validation_strategy": {
+    "pre_fix": "run validate-only to confirm 10 mismatches",
+    "post_fix": "run validate-only to confirm 0 mismatches",
+    "expected_results": {
+      "item_count": 1512,
+      "section_count": 65,
+      "resolved_pre_mismatches": 0,
+      "validation_passed": true
+    }
+  },
+
+  "success_probability": {
+    "option1_copy_official": "very_high",
+    "option2_import": "high",
+    "option3_manual": "high",
+    "manual_dependency_analysis": "medium"
+  },
+
+  "estimated_effort": {
+    "option1": "very_low - straightforward copy-paste",
+    "option2": "low - import and test",
+    "option3": "low - rewrite following specs"
+  },
+
+  "compliance_with_restrictions": {
+    "did_not_modify_main_graph": true,
+    "did_not_modify_dependency_validation_result": true,
+    "did_not_modify_item_dependency_refinement_report": true,
+    "did_not_modify_refine_item_dependencies": true,
+    "read_only_analysis": true,
+    "only_output_reports": true
+  },
+
+  "recommendation": {
+    "selected_approach": "option1_copy_official_function",
+    "next_phase": "v4-Step2 - apply official logic to fix 10 mismatched nodes",
+    "confidence": "very_high",
+    "expected_outcome": "should achieve 0 mismatches"
+  }
+}

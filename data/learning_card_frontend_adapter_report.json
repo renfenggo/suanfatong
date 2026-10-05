@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "generated_at": "2026-06-16T13:00:00+08:00",
+    "updated_at": "2026-06-16T13:30:00+08:00",
+    "purpose": "学习卡片 Adapter 实现报告",
+    "scope": "前端 adapter 和 model 实现，不修改页面 UI"
+  },
+  "implementation": {
+    "model": {
+      "file": "lib/models/learning_card.dart",
+      "fields_count": 13,
+      "fields": [
+        "id",
+        "title",
+        "sectionId",
+        "summary",
+        "useCases",
+        "intuition",
+        "example",
+        "traps",
+        "practice",
+        "nextItems",
+        "requiredPre",
+        "recommendedPre",
+        "actionType"
+      ],
+      "methods": [
+        "fromJson",
+        "toJson",
+        "isValid",
+        "isComplete",
+        "getActionTypeDescription",
+        "copyWith"
+      ]
+    },
+    "service": {
+      "file": "lib/services/learning_card_service.dart",
+      "methods_count": 18,
+      "methods": [
+        "loadSamples",
+        "getAllCards",
+        "getCardById",
+        "getCardsBySection",
+        "getTotalCount",
+        "getSectionDistribution",
+        "existsCard",
+        "existsSection",
+        "getAllSectionIds",
+        "clearCache",
+        "reloadSamples",
+        "getStatistics",
+        "getCardsByIds",
+        "searchCardsByTitle",
+        "searchCardsBySummary",
+        "getCardsByActionType",
+        "getCompleteCards",
+        "getValidCards"
+      ],
+      "features": [
+        "优先从assets加载",
+        "失败则从本地文件加载",
+        "字段缺失时给安全默认值",
+        "单条样板异常不影响整个页面",
+        "缓存机制",
+        "异常处理"
+      ]
+    },
+    "test": {
+      "file": "test/learning_card_service_test.dart",
+      "tests_count": 42,
+      "tests_passed": 42,
+      "tests_failed": 0,
+      "test_groups": {
+        "model_tests": 6,
+        "service_tests": 21,
+        "field_validation_tests": 11,
+        "asset_loading_tests": 4
+      }
+    }
+  },
+  "verification": {
+    "sample_count": {
+      "expected": 30,
+      "actual": 30,
+      "pass": true
+    },
+    "section_distribution": {
+      "2.8": {
+        "expected": 10,
+        "actual": 10,
+        "pass": true
+      },
+      "3.13": {
+        "expected": 10,
+        "actual": 10,
+        "pass": true
+      },
+      "4.1": {
+        "expected": 10,
+        "actual": 10,
+        "pass": true
+      }
+    },
+    "field_validation": {
+      "id": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "title": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "sectionId": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "summary": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "useCases": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "intuition": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "example": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "traps": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "practice": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "nextItems": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      },
+      "actionType": {
+        "non_empty_count": 30,
+        "total_count": 30,
+        "pass": true
+      }
+    },
+    "query_capability": {
+      "by_item_id": {
+        "pass": true,
+        "examples": [
+          "getCardById('2.8.208') returns correct card",
+          "getCardById('non-existent') returns null"
+        ]
+      },
+      "by_section_id": {
+        "pass": true,
+        "examples": [
+          "getCardsBySection('2.8') returns 10 cards",
+          "getCardsBySection('3.13') returns 10 cards",
+          "getCardsBySection('4.1') returns 10 cards",
+          "getCardsBySection('non-existent') returns empty list"
+        ]
+      }
+    }
+  },
+  "field_mapping": {
+    "item_id": {
+      "model_field": "id",
+      "type": "String",
+      "default_value": ""
+    },
+    "item_name": {
+      "model_field": "title",
+      "type": "String",
+      "default_value": ""
+    },
+    "section": {
+      "model_field": "sectionId",
+      "type": "String",
+      "default_value": ""
+    },
+    "one_sentence_explanation": {
+      "model_field": "summary",
+      "type": "String",
+      "default_value": ""
+    },
+    "when_to_use": {
+      "model_field": "useCases",
+      "type": "String",
+      "default_value": ""
+    },
+    "core_intuition": {
+      "model_field": "intuition",
+      "type": "String",
+      "default_value": ""
+    },
+    "minimal_example": {
+      "model_field": "example",
+      "type": "String",
+      "default_value": ""
+    },
+    "common_traps": {
+      "model_field": "traps",
+      "type": "List<String>",
+      "default_value": []
+    },
+    "practice_entry": {
+      "model_field": "practice",
+      "type": "String",
+      "default_value": ""
+    },
+    "learn_next": {
+      "model_field": "nextItems",
+      "type": "List<String>",
+      "default_value": []
+    },
+    "must_know_before": {
+      "model_field": "requiredPre",
+      "type": "List<Map<String, String>>",
+      "default_value": []
+    },
+    "nice_to_know": {
+      "model_field": "recommendedPre",
+      "type": "List<Map<String, String>>",
+      "default_value": []
+    },
+    "learning_action": {
+      "model_field": "actionType",
+      "type": "String",
+      "default_value": "read"
+    }
+  },
+  "files": {
+    "created": [
+      "lib/models/learning_card.dart",
+      "lib/services/learning_card_service.dart",
+      "test/learning_card_service_test.dart",
+      "docs/learning_card_frontend_adapter_report.md",
+      "data/learning_card_frontend_adapter_report.json"
+    ],
+    "not_modified": [
+      "merged_knowledge_graph_item_dependencies_refined.json",
+      "assets/data/knowledge/io_v4_4.json",
+      "assets/data/knowledge_content/content_index.json",
+      "assets/data/knowledge_content/items/*",
+      "data/learning_card_samples.json",
+      "现有页面UI文件"
+    ]
+  },
+  "next_steps": {
+    "immediate": [
+      "前端页面UI实现",
+      "MVP展示30个样板"
+    ],
+    "follow_up": [
+      "根据MVP展示效果决定是否扩大样板范围",
+      "根据用户反馈决定是否优化字段设计",
+      "根据需求决定是否批量生成更多学习卡片"
+    ]
+  },
+  "asset_correction": {
+    "correction_time": "2026-06-16T13:30:00+08:00",
+    "problem": {
+      "description": "LearningCardService asset路径与实际文件位置不一致",
+      "details": [
+        "原asset路径: assets/data/learning_card_samples.json",
+        "实际文件位置: data/learning_card_samples.json",
+        "pubspec.yaml未声明asset",
+        "真机环境无法稳定加载"
+      ]
+    },
+    "corrections": [
+      {
+        "file": "lib/services/learning_card_service.dart",
+        "change": "_assetsDataPath从'assets/data/learning_card_samples.json'改为'data/learning_card_samples.json'",
+        "result": "asset路径与实际文件位置一致"
+      },
+      {
+        "file": "pubspec.yaml",
+        "change": "在flutter.assets中添加- data/learning_card_samples.json",
+        "result": "Flutter asset系统正确识别样板文件"
+      },
+      {
+        "file": "test/learning_card_service_test.dart",
+        "change": "新增Asset Loading Tests测试组（4个测试）",
+        "result": "验证asset加载能力"
+      }
+    ],
+    "verification": {
+      "tests_count": 42,
+      "tests_passed": 42,
+      "tests_failed": 0,
+      "asset_loading_verified": true,
+      "root_bundle_load_success": true,
+      "no_file_fallback_dependency": true,
+      "section_distribution_correct": true
+    },
+    "impact": {
+      "positive": [
+        "真机环境稳定加载学习卡片数据",
+        "Flutter asset系统正确识别样板文件",
+        "减少对dart:io的依赖，提升跨平台兼容性",
+        "测试覆盖更全面，验证asset加载能力"
+      ],
+      "negative": []
+    },
+    "files_modified": [
+      "lib/services/learning_card_service.dart",
+      "pubspec.yaml",
+      "test/learning_card_service_test.dart",
+      "docs/learning_card_frontend_adapter_report.md",
+      "data/learning_card_frontend_adapter_report.json"
+    ],
+    "files_not_modified": [
+      "merged_knowledge_graph_item_dependencies_refined.json",
+      "assets/data/knowledge/io_v4_4.json",
+      "assets/data/knowledge_content/content_index.json",
+      "assets/data/knowledge_content/items/*",
+      "data/learning_card_samples.json",
+      "现有页面UI文件"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Patterns Batch3 & Batch4 Generation Summary",
+    "generated_by": "DeepSeek V4 Pro (Thread 3)",
+    "generated_at": "2026-05-26T02:00:00.000Z",
+    "task": "patterns_batch3_batch4_generation",
+    "version": "1.0",
+    "plan": "plan_b",
+    "main_graph_modified": false,
+    "existing_patterns_modified": false
+  },
+  "summary": {
+    "total_generated": 10,
+    "batch3_count": 3,
+    "batch4_count": 7,
+    "batch3_patterns": [
+      "pat.dominance_counting",
+      "pat.mobius_inversion_application",
+      "pat.euler_function_application"
+    ],
+    "batch4_patterns": [
+      "pat.parallel_binary_search",
+      "pat.matrix_exponentiation_dp",
+      "pat.two_pointer_sliding_window",
+      "pat.congruence_shortest_path_modeling",
+      "pat.max_density_subgraph",
+      "pat.mixed_graph_euler_circuit",
+      "pat.generating_function_dp"
+    ],
+    "excluded_from_batch4": "pat.meet_in_the_middle (already in ready patterns)",
+    "p2_pending_count": 9,
+    "p2_patterns": [
+      "pat.binary_search_answer",
+      "pat.interval_scheduling_extended",
+      "pat.interval_point_selection",
+      "pat.dp_on_automaton",
+      "pat.knapsack_counting",
+      "pat.super_source_sink_modeling",
+      "pat.difference_constraints_advanced",
+      "pat.binary_lifting_pattern",
+      "pat.prefix_sum_difference_extended"
+    ],
+    "merge_with_existing_count": 9,
+    "defer_count": 65
+  },
+  "batch3_sources": [
+    {
+      "pattern_id": "pat.dominance_counting",
+      "source": "Stage3F Batch1 (3.13.182)"
+    },
+    {
+      "pattern_id": "pat.mobius_inversion_application",
+      "source": "Stage3F Batch2 (4.9.5)"
+    },
+    {
+      "pattern_id": "pat.euler_function_application",
+      "source": "Stage3F Batch3 (4.9.6)"
+    }
+  ],
+  "batch4_sources": [
+    {
+      "pattern_id": "pat.parallel_binary_search",
+      "source": "Stage3G full400 triage (2.4.52)"
+    },
+    {
+      "pattern_id": "pat.matrix_exponentiation_dp",
+      "source": "Stage3G full400 triage (2.8.189)"
+    },
+    {
+      "pattern_id": "pat.two_pointer_sliding_window",
+      "source": "Stage3G full400 triage (2.9.136)"
+    },
+    {
+      "pattern_id": "pat.congruence_shortest_path_modeling",
+      "source": "Stage3G full400 triage (2.15.19)"
+    },
+    {
+      "pattern_id": "pat.max_density_subgraph",
+      "source": "Stage3G full400 triage (2.16.39)"
+    },
+    {
+      "pattern_id": "pat.mixed_graph_euler_circuit",
+      "source": "Stage3G full400 triage (2.16.40)"
+    },
+    {
+      "pattern_id": "pat.generating_function_dp",
+      "source": "Stage3G full400 triage (4.3.43)"
+    }
+  ]
+}

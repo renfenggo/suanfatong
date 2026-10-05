@@ -1,0 +1,25 @@
+{
+  "handoff_count": 34,
+  "plan_count": 34,
+  "missing_candidate_ids": [],
+  "duplicate_candidate_ids": [],
+  "invalid_decision_records": [],
+  "invalid_priority_records": [],
+  "decision_distribution": {
+    "accept_for_batch2": 22,
+    "merge_with_existing_pattern": 2,
+    "reject": 1,
+    "keep_manual_review": 7,
+    "move_to_knowledge_items": 2
+  },
+  "decision_total": 34,
+  "priority_distribution": {
+    "P0": 9,
+    "P1": 21,
+    "P2": 4
+  },
+  "priority_total": 34,
+  "is_complete": true,
+  "generated_batch2": false,
+  "modified_main_graph": false
+}

@@ -1,0 +1,22 @@
+{
+  "rollback_enabled": true,
+  "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json",
+  "rollback_steps": [
+    "1. Copy backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json -> merged_knowledge_graph_item_dependencies_refined.json",
+    "2. Verify item_count returns to 2165",
+    "3. Verify section_count returns to 65",
+    "4. Delete all output files from this merge",
+    "5. Run validate-only to confirm integrity"
+  ],
+  "current_state": {
+    "item_count": 2665,
+    "section_count": 65,
+    "graph_path": "merged_knowledge_graph_item_dependencies_refined.json"
+  },
+  "rollback_target": {
+    "item_count": 2165,
+    "section_count": 65,
+    "backup_path": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json"
+  },
+  "command": "copy \"backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch1_full500.json\" \"merged_knowledge_graph_item_dependencies_refined.json\" /Y"
+}

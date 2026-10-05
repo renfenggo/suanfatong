@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 fallback_24 Merge or Collapse Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T11:10:00.000Z",
+    "main_graph_modified": false
+  },
+  "summary": {
+    "total_candidates": 0,
+    "note": "24 个节点各有独立的教育价值或实现区别，不推荐合并/折叠。Beats Amortized Analysis 和 Proof 已改 theorem_or_property 保留。可并堆变体虽有重叠但各有侧重(懒删除/可持久化/decrease-key/双端/抽象接口)。"
+  },
+  "candidates": []
+}

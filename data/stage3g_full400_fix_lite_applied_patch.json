@@ -1,0 +1,4813 @@
+{
+  "meta": {
+    "title": "Stage3G Full400 Fix Lite Applied Patch",
+    "generated_at": "2026-05-25T23:24:14.315995",
+    "batch_id": "stage3g_full400_fix_lite",
+    "total_patches_applied": 400,
+    "review_status_summary": {
+      "C": 400
+    }
+  },
+  "applied": [
+    {
+      "item_id": "2.1.65",
+      "name": "分治进阶：CDQ分治",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.66",
+      "name": "分治进阶：点分治",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.67",
+      "name": "分治进阶：分治FFT",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.68",
+      "name": "分治进阶：分治NTT",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.69",
+      "name": "倍增进阶：ST表上倍增",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.70",
+      "name": "倍增进阶：树上倍增进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.71",
+      "name": "随机化算法：模拟退火",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.72",
+      "name": "随机化算法：随机增量",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.73",
+      "name": "随机化算法：Treap随机化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.74",
+      "name": "随机化算法：随机哈希",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.75",
+      "name": "递归进阶：尾递归优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.76",
+      "name": "递归进阶：递归转迭代",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.77",
+      "name": "递推进阶：线性递推(特征方程)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.78",
+      "name": "递推进阶：BM算法(递推检测)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.79",
+      "name": "递推进阶：常系数线性递推优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.1.80",
+      "name": "随机化算法：随机排列",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.2.23",
+      "name": "二分进阶：二分答案判定",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.2.24",
+      "name": "二分进阶：三分法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.2.25",
+      "name": "二分进阶：实数二分精度处理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.2.26",
+      "name": "二分进阶：答案判定技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.2.27",
+      "name": "排序进阶：逆序对计算(归并)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.3.26",
+      "name": "贪心进阶：反悔贪心",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.3.27",
+      "name": "贪心进阶：交换论证法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.3.28",
+      "name": "贪心进阶：区间调度进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.3.29",
+      "name": "二分进阶：开区间与闭区间二分",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.4.48",
+      "name": "排序进阶：基数排序",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.4.49",
+      "name": "排序进阶：计数排序",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.4.50",
+      "name": "排序进阶：拓扑排序(计数排序应用)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.4.51",
+      "name": "排序进阶：外部排序",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.4.52",
+      "name": "分治进阶：整体二分应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.17",
+      "name": "搜索进阶：双向搜索",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.18",
+      "name": "搜索进阶：迭代加深搜索(IDA*)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.19",
+      "name": "搜索进阶：A*算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.20",
+      "name": "搜索进阶：DLX精确覆盖",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.21",
+      "name": "搜索进阶：剪枝技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.22",
+      "name": "搜索进阶：双向BFS优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.5.23",
+      "name": "搜索进阶：DFS序与回溯",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.6.10",
+      "name": "贪心进阶：区间选点问题",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.7.28",
+      "name": "搜索进阶：哈希优化BFS",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.157",
+      "name": "DP优化：决策单调性(四边形不等式)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.158",
+      "name": "DP优化：WQS二分(带权二分)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.159",
+      "name": "DP优化：斜率优化进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.160",
+      "name": "DP优化：Li Chao线段树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.161",
+      "name": "DP优化：Knuth优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.162",
+      "name": "数位DP进阶：数位DP与自动机",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.163",
+      "name": "数位DP进阶：数位DP(sum/product约束)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.164",
+      "name": "区间DP进阶：环上区间DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.165",
+      "name": "区间DP进阶：区间DP与四边形不等式",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.166",
+      "name": "树形DP进阶：换根DP(二次扫描)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.167",
+      "name": "树形DP进阶：树形背包",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.168",
+      "name": "树形DP进阶：树形DP与直径",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.169",
+      "name": "状压DP进阶：高维前缀和(SOS DP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.170",
+      "name": "状压DP进阶：插头DP(轮廓线)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.171",
+      "name": "状压DP进阶：DP套DP(自动机DP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.172",
+      "name": "概率DP进阶：期望DP与高斯消元",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.173",
+      "name": "计数DP：卡特兰数DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.174",
+      "name": "计数DP：斯特林数",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.175",
+      "name": "计数DP：容斥DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.176",
+      "name": "计数DP：Burnside引理与Polya计数",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.177",
+      "name": "DP进阶：DP与自动机(KMP自动机DP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.178",
+      "name": "DP进阶：DP与AC自动机",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.179",
+      "name": "DP进阶：DP与SAM",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.180",
+      "name": "博弈DP进阶：不平等博弈",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.181",
+      "name": "博弈DP进阶：Multi-SG",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.182",
+      "name": "博弈DP进阶：Every-SG",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.183",
+      "name": "DP进阶：DP状态压缩与记忆化搜索",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.184",
+      "name": "DP进阶：DP状态设计技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.185",
+      "name": "DP进阶：高维DP降维",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.186",
+      "name": "单调队列优化DP进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.187",
+      "name": "数据结构优化DP进阶：线段树优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.188",
+      "name": "数据结构优化DP进阶：树状数组优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.189",
+      "name": "DP进阶：DP与矩阵乘法优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.190",
+      "name": "环形DP进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.191",
+      "name": "双状态DP进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.192",
+      "name": "DP进阶：后效性处理(高斯消元DP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.193",
+      "name": "DP进阶：插头DP进阶(多回路)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.194",
+      "name": "DP进阶：旅行商问题(TSP)状压DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.195",
+      "name": "DP进阶：DAG上DP进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.196",
+      "name": "DP进阶：凸优化技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.197",
+      "name": "DP进阶：插头DP(轮廓线DP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.198",
+      "name": "DP进阶：状态压缩子集枚举优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.199",
+      "name": "DP进阶：双调DP(双调路径)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.200",
+      "name": "DP建模：背包总方案数",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.8.201",
+      "name": "DP建模：高维DP降维",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.40",
+      "name": "图论建模：超级源点与超级汇点",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.41",
+      "name": "图论建模：分层图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.42",
+      "name": "图论建模：差分约束进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.43",
+      "name": "图论建模：状态压缩图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.44",
+      "name": "STL容器：deque底层实现",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.45",
+      "name": "STL容器：priority_queue底层(堆)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.46",
+      "name": "STL容器：set/multiset/map底层(红黑树)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.47",
+      "name": "STL容器：unordered_set/map底层(哈希表)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.48",
+      "name": "STL容器：bitset使用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.49",
+      "name": "STL容器：array/forward_list",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.50",
+      "name": "STL算法：sort底层(introspect)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.51",
+      "name": "STL算法：nth_element原理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.52",
+      "name": "STL算法：lower_bound/upper_bound底层",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.53",
+      "name": "STL算法：next_permutation原理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.54",
+      "name": "STL算法：merge/inplace_merge",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.55",
+      "name": "STL算法：unique/remove/erase惯用法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.56",
+      "name": "STL函数对象：lambda表达式进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.57",
+      "name": "STL函数对象：function/bind",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.58",
+      "name": "STL函数对象：仿函数与比较器",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.59",
+      "name": "STL迭代器：迭代器类型",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.60",
+      "name": "STL迭代器：istream_iterator/ostream_iterator",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.61",
+      "name": "STL迭代器：back_inserter/inserter",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.62",
+      "name": "STL工具：pair/tuple",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.63",
+      "name": "STL工具：optional/variant/any(C++17)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.64",
+      "name": "STL工具：string_view(C++17)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.65",
+      "name": "STL算法：partial_sort/stable_sort",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.66",
+      "name": "STL算法：minmax_element/accumulate",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.67",
+      "name": "STL算法：iota/fill_n/generate",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.68",
+      "name": "STL容器适配器：stack/queue/priority_queue",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.69",
+      "name": "STL算法：copy/transform惯用法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.70",
+      "name": "STL算法：remove_if/partition",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.71",
+      "name": "STL算法：set_union/intersection/difference",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.72",
+      "name": "STL性能：vector扩容机制",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.73",
+      "name": "STL性能：emplace_back vs push_back",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.74",
+      "name": "C++内存模型：栈与堆",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.75",
+      "name": "C++引用：左值/右值引用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.76",
+      "name": "C++11：移动语义与完美转发",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.77",
+      "name": "C++11：auto/decltype类型推导",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.78",
+      "name": "C++11：范围for循环",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.79",
+      "name": "C++11：nullptr与智能指针",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.80",
+      "name": "C++11：override/final/default/delete",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.81",
+      "name": "C++14：泛型lambda/返回值推导",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.82",
+      "name": "C++17：if constexpr",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.83",
+      "name": "C++17：结构化绑定",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.84",
+      "name": "C++17：折叠表达式",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.85",
+      "name": "C++模板：特化与偏特化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.86",
+      "name": "C++模板：SFINAE",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.87",
+      "name": "C++模板：变参模板",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.88",
+      "name": "C++运算符重载：输入输出重载",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.89",
+      "name": "C++运算符重载：类型转换",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.90",
+      "name": "C++异常：异常安全编程",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.91",
+      "name": "C++特性：constexpr与编译期计算",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.92",
+      "name": "C++特性：inline与内联优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.93",
+      "name": "C++特性：volatile/mutable",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.94",
+      "name": "C++编译：头文件与编译单元",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.95",
+      "name": "C++编译：预处理器与宏",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.96",
+      "name": "C++特性：位域与联合体",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.97",
+      "name": "IO优化：快读快写模板",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.98",
+      "name": "IO优化：关闭同步流",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.99",
+      "name": "IO优化：文件读写重定向",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.100",
+      "name": "性能优化：编译优化选项",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.101",
+      "name": "性能优化：内存对齐与缓存",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.102",
+      "name": "性能优化：循环展开与内联",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.103",
+      "name": "性能优化：指针与数组性能差异",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.104",
+      "name": "代码组织：namespace使用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.105",
+      "name": "代码组织：头文件包含与guard",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.106",
+      "name": "代码组织：using与typedef最佳实践",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.107",
+      "name": "调试技巧：assert使用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.108",
+      "name": "调试技巧：静态断言(static_assert)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.109",
+      "name": "调试技巧：条件编译(debug/release)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.110",
+      "name": "代码安全：整数溢出检测",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.111",
+      "name": "代码安全：数组越界检查",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.112",
+      "name": "代码安全：野指针与空指针",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.113",
+      "name": "代码复用：函数化封装",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.114",
+      "name": "代码复用：模板化编程",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.115",
+      "name": "代码复用：常用宏定义",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.116",
+      "name": "代码复用：函数指针与回调",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.117",
+      "name": "时间优化：clock计时",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.118",
+      "name": "STL技巧：reserve预分配",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.119",
+      "name": "STL技巧：swap技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.120",
+      "name": "编码规范：命名规范与注释",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.121",
+      "name": "建模方法：最优化问题建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.122",
+      "name": "建模方法：决策问题建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.123",
+      "name": "建模方法：计数问题建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.124",
+      "name": "建模方法：构造问题建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.125",
+      "name": "建模方法：交互问题建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.126",
+      "name": "建模方法：离线处理建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.127",
+      "name": "建模方法：在线转离线",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.128",
+      "name": "建模方法：分治建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.129",
+      "name": "建模方法：增量处理建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.130",
+      "name": "建模方法：等效转换",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.131",
+      "name": "建模方法：正难则反",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.132",
+      "name": "建模方法：二分答案建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.133",
+      "name": "建模方法：倍增思想",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.134",
+      "name": "建模方法：差分约束建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.135",
+      "name": "建模方法：前缀和与差分扩展",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.136",
+      "name": "建模方法：双指针/滑动窗口建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.137",
+      "name": "建模方法：离散化建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.138",
+      "name": "建模方法：折半搜索(meet-in-the-middle)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.139",
+      "name": "建模方法：状态压缩建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.140",
+      "name": "建模方法：贪心建模证明",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.141",
+      "name": "建模方法：图论建模技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.142",
+      "name": "建模方法：网络流建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.143",
+      "name": "建模方法：博弈论建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.144",
+      "name": "建模方法：矩阵乘法建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.145",
+      "name": "建模方法：概率期望建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.146",
+      "name": "建模方法：组合数学建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.147",
+      "name": "建模方法：数论建模",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.148",
+      "name": "建模方法：数据范围分析",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.149",
+      "name": "建模方法：特殊性质利用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.150",
+      "name": "建模方法：暴力与优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.151",
+      "name": "比赛规则：NOI系列赛制",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.152",
+      "name": "比赛规则：ACM赛制",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.153",
+      "name": "比赛规则：OI与ACM区别",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.154",
+      "name": "比赛策略：时间分配策略",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.155",
+      "name": "比赛策略：题目难度识别",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.156",
+      "name": "比赛策略：暴力与正解权衡",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.157",
+      "name": "比赛策略：部分分策略",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.158",
+      "name": "比赛技巧：对拍调试",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.159",
+      "name": "比赛技巧：批量数据测试",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.160",
+      "name": "比赛技巧：常见陷阱",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.161",
+      "name": "比赛技巧：猜结论与打表",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.162",
+      "name": "比赛心理：压力管理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.163",
+      "name": "比赛心理：复盘总结",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.164",
+      "name": "比赛工具：本地环境配置",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.9.165",
+      "name": "比赛工具：Vim/VS Code竞赛配置",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.15",
+      "name": "LCA进阶：Tarjan离线LCA",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.16",
+      "name": "LCA进阶：LCA与树上差分",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.17",
+      "name": "树论：树的重心进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.18",
+      "name": "树论：树的直径进阶应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.19",
+      "name": "树论：树哈希",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.20",
+      "name": "树论：点分治进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.14.21",
+      "name": "树论：边分治",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.15.18",
+      "name": "最短路进阶：0-1BFS变体",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.15.19",
+      "name": "最短路进阶：同余最短路",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.15.20",
+      "name": "最短路进阶：K短路(A*)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.15.21",
+      "name": "最短路进阶：最小环",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.32",
+      "name": "最大流进阶：Dinic进阶优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.33",
+      "name": "最大流进阶：ISAP算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.34",
+      "name": "最大流进阶：HLPP预流推进",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.35",
+      "name": "费用流进阶：最小费用最大流(Dinic+SPFA)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.36",
+      "name": "费用流进阶：最小费用流(Primal-Dual)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.37",
+      "name": "费用流进阶：上下界费用流",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.38",
+      "name": "最大流建模：最大权闭合子图进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.39",
+      "name": "最大流建模：最大密度子图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.40",
+      "name": "最大流建模：混合图欧拉回路",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.41",
+      "name": "图论建模：网络流动态加边",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.16.42",
+      "name": "图论进阶：二分图最大匹配性质",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.43",
+      "name": "字符串基础进阶：字符串哈希进阶(双哈希)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.44",
+      "name": "字符串基础进阶：滚动哈希",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.45",
+      "name": "字符串基础进阶：Border树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.46",
+      "name": "字符串基础进阶：Z算法(扩展KMP)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.47",
+      "name": "字符串基础进阶：最小表示法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.48",
+      "name": "回文结构：Manacher进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.49",
+      "name": "字符串处理：表达式求值",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.50",
+      "name": "字符串处理：大数处理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.51",
+      "name": "字符串问题：最长公共子串(LCS)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.52",
+      "name": "字符串问题：最长公共子序列(LCS)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.53",
+      "name": "字符串问题：编辑距离",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.54",
+      "name": "字符串问题：最长回文子序列",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.55",
+      "name": "字符串问题：最长重复子串",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.56",
+      "name": "字符串匹配：Rabin-Karp算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.57",
+      "name": "字符串匹配：Shift-Or算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.58",
+      "name": "字符串匹配：BM算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.59",
+      "name": "字符串建模：字符串问题建模技巧",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.60",
+      "name": "字符串技巧：滚动哈希进阶应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.61",
+      "name": "字符串匹配：Finite Automaton",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.62",
+      "name": "字符串DP：最长公共子串后缀数组解法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.63",
+      "name": "字符串技巧：Trie树建图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.10.64",
+      "name": "字符串匹配：Sunday算法优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.11.9",
+      "name": "拓扑排序进阶：字典序拓扑",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.11.10",
+      "name": "拓扑排序进阶：拓扑计数",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.11.11",
+      "name": "欧拉路径进阶：Hierholzer算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.11.12",
+      "name": "欧拉路径进阶：中国邮路问题",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.12.20",
+      "name": "最小生成树进阶：次小生成树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.12.21",
+      "name": "最小生成树进阶：最小瓶颈生成树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.12.22",
+      "name": "最小生成树进阶：生成树计数",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.17.23",
+      "name": "二分图进阶：二分图完美匹配(KM算法)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.17.24",
+      "name": "二分图进阶：一般图匹配(Tutte矩阵)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.17.25",
+      "name": "二分图进阶：稳定婚姻问题",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.17.26",
+      "name": "线性代数进阶：矩阵加速递推",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.17.27",
+      "name": "线性代数进阶：矩阵树定理进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.16",
+      "name": "调试基础：GDB入门",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.17",
+      "name": "调试基础：GDB进阶命令",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.18",
+      "name": "调试基础：print调试法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.19",
+      "name": "调试基础：静态分析",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.20",
+      "name": "调试技巧：二分定位bug",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.21",
+      "name": "调试技巧：复原测试法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.22",
+      "name": "调试技巧：断言辅助调试",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.23",
+      "name": "调试技巧：边界测试",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.24",
+      "name": "调试技巧：随机测试",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.25",
+      "name": "调试场景：RE(运行时错误)排查",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.26",
+      "name": "调试场景：TLE(超时)优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.27",
+      "name": "调试场景：WA(答案错误)排查",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.28",
+      "name": "调试场景：MLE(内存超限)排查",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.29",
+      "name": "调试工具：Valgrind内存检测",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.18.30",
+      "name": "调试工具：AddressSanitizer",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.172",
+      "name": "SCC/DAG进阶：2-SAT方案输出",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.173",
+      "name": "SCC/DAG进阶：DAG最小路径覆盖",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.174",
+      "name": "SCC/DAG进阶：DAG最长反链(Dilworth)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.175",
+      "name": "SCC/DAG进阶：可达性统计(Bitset优化)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.176",
+      "name": "特殊图：竞赛图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.177",
+      "name": "特殊图：弦图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.178",
+      "name": "特殊图：平面图",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.179",
+      "name": "特殊图：仙人掌图进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.180",
+      "name": "图论专题：Steiner树进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.181",
+      "name": "图论专题：最小树形图(朱刘)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.182",
+      "name": "图论专题：最小树形图进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.183",
+      "name": "图论专题：最大密度子图(参数搜索)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.184",
+      "name": "图论专题：Gomory-Hu树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.185",
+      "name": "图论专题：Stoer-Wagner全局最小割",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "2.21.186",
+      "name": "图论专题：离线动态连通性(线段树分治)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.1.12",
+      "name": "并查集进阶：可撤销并查集",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.2.15",
+      "name": "堆进阶：可并堆(左偏树)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.2.16",
+      "name": "堆进阶：配对堆",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.2.17",
+      "name": "最小值栈/队列",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.24",
+      "name": "树状数组进阶：树状数组二分",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.25",
+      "name": "树状数组进阶：多维树状数组",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.26",
+      "name": "ST表进阶：二维ST表",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.27",
+      "name": "分块进阶：莫队算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.28",
+      "name": "分块进阶：块状链表",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.3.29",
+      "name": "分块进阶：分块打表",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.21",
+      "name": "平衡树进阶：FHQ Treap可持久化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.22",
+      "name": "平衡树进阶：Splay区间操作",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.23",
+      "name": "平衡树进阶：Treap实现",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.24",
+      "name": "树链剖分进阶：边权转点权",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.25",
+      "name": "平衡树进阶：WBLT",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.5.26",
+      "name": "数据结构：并查集维护异或关系",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.17",
+      "name": "哈希进阶：布隆过滤器",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.18",
+      "name": "字符串数据结构：后缀数组SA-IS算法",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.19",
+      "name": "字符串数据结构：后缀自动机(SAM)进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.20",
+      "name": "字符串数据结构：广义后缀自动机",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.21",
+      "name": "字符串数据结构：回文自动机(PAM)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.22",
+      "name": "字符串数据结构：后缀树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.23",
+      "name": "字符串匹配进阶：多模式匹配(AC自动机)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.24",
+      "name": "字符串匹配进阶：AC自动机DP进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.25",
+      "name": "字符串匹配进阶：AC自动机(fail树)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.26",
+      "name": "后缀结构进阶：后缀数组应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.27",
+      "name": "后缀结构进阶：后缀数组(height数组)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.28",
+      "name": "后缀结构进阶：后缀自动机(SAM)进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.29",
+      "name": "后缀结构进阶：广义SAM",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.30",
+      "name": "后缀结构进阶：后缀树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.31",
+      "name": "回文结构：回文自动机(PAM)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.32",
+      "name": "Trie进阶：可持久化Trie",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.33",
+      "name": "Trie进阶：0-1 Trie",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.34",
+      "name": "Trie进阶：Trie与AC自动机",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.35",
+      "name": "后缀结构：后缀数组DC3构造",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.8.36",
+      "name": "字符串匹配：Aho-Corasick加强",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.9.7",
+      "name": "图存储进阶：十字链表",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.9.8",
+      "name": "图存储进阶：链式前向星",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.9.9",
+      "name": "数据结构：线段树维护前缀和",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.9.10",
+      "name": "数据结构：树状数组维护区间加区间和",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.207",
+      "name": "动态树：树链剖分(LCT辅助)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.208",
+      "name": "动态树：树上路径并集",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.209",
+      "name": "并查集进阶：可持久化并查集",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.210",
+      "name": "线段树进阶：Segment Tree Beats",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.211",
+      "name": "线段树进阶：线段树分裂合并",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.212",
+      "name": "线段树进阶：线段树分治",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.213",
+      "name": "分块进阶：带修莫队",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.214",
+      "name": "分块进阶：回滚莫队",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.215",
+      "name": "分块进阶：树上莫队",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.216",
+      "name": "K-D Tree",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.217",
+      "name": "K-D Tree进阶：最近邻搜索",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.218",
+      "name": "CDQ分治进阶：三维偏序",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.219",
+      "name": "整体二分进阶：带修改整体二分",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.220",
+      "name": "可持久化进阶：可持久化Trie",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.221",
+      "name": "可持久化进阶：可持久化平衡树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.222",
+      "name": "树链剖分进阶：动态DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.223",
+      "name": "树链剖分进阶：长链剖分",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.224",
+      "name": "Link-Cut Tree进阶：维护子树信息",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.225",
+      "name": "Link-Cut Tree进阶：LCT处理边权",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.226",
+      "name": "Link-Cut Tree进阶：LCT维护最小生成树",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.227",
+      "name": "珂朵莉树(ODT)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.228",
+      "name": "集合进阶：bitset优化",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.229",
+      "name": "集合进阶：压位Trie(二进制Trie)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "3.13.230",
+      "name": "数据结构：Segment Tree Beats 应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.39",
+      "name": "数论进阶：杜教筛",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.40",
+      "name": "数论进阶：Min_25筛",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.41",
+      "name": "数论进阶：二次剩余(Cipolla算法)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.42",
+      "name": "数论进阶：原根与阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.43",
+      "name": "数论进阶：大步小步(BSGS)进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.44",
+      "name": "数论进阶：扩展BSGS(exBSGS)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.45",
+      "name": "数论进阶：中国剩余定理(CRT)进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.46",
+      "name": "数论进阶：扩展CRT(exCRT)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.47",
+      "name": "数论进阶：Pollard-Rho进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.48",
+      "name": "数论进阶：Lucas定理进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.49",
+      "name": "数论进阶：扩展Lucas",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.50",
+      "name": "数论进阶：欧拉函数进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.51",
+      "name": "数论进阶：莫比乌斯反演进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.52",
+      "name": "数论进阶：数论分块(整除分块)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.53",
+      "name": "数论进阶：积性函数线性筛",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.54",
+      "name": "数学进阶：扩展中国剩余定理应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.1.55",
+      "name": "数学进阶：杜教筛",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.35",
+      "name": "多项式：FFT进阶(三次变两次)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.36",
+      "name": "多项式：NTT(数论变换)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.37",
+      "name": "多项式：FNTT(分治NTT)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.38",
+      "name": "多项式：多项式求逆",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.39",
+      "name": "多项式：多项式ln/exp",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.40",
+      "name": "多项式：多项式快速幂",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.41",
+      "name": "多项式：生成函数基础",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.42",
+      "name": "多项式：指数型生成函数(EGF)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.43",
+      "name": "多项式：生成函数与DP",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.44",
+      "name": "组合计数进阶：容斥原理进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.45",
+      "name": "组合计数进阶：反演(莫比乌斯/二项式)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.46",
+      "name": "组合计数进阶：CFS(计数公式系统)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.3.47",
+      "name": "数学进阶：二项式反演",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.4.17",
+      "name": "离散数学：集合论应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.4.18",
+      "name": "离散数学：布尔代数与逻辑",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.5.19",
+      "name": "图论数学：Cayley定理",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.5.20",
+      "name": "图论数学：Kirchhoff矩阵树定理进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.5.21",
+      "name": "线性代数进阶：线性基应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.5.22",
+      "name": "数学进阶：nim积",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.6.14",
+      "name": "概率论进阶：期望线性性应用",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.6.15",
+      "name": "概率论进阶：全期望公式",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.6.16",
+      "name": "概率论进阶：随机化算法(蒙特卡洛)",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    },
+    {
+      "item_id": "4.6.17",
+      "name": "概率论进阶：马尔可夫链进阶",
+      "old_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A"
+      },
+      "new_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C"
+      }
+    }
+  ]
+}

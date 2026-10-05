@@ -1,0 +1,1104 @@
+{
+  "total_candidates": 114,
+  "review_results": [
+    {
+      "candidate_id": "cand.graph.k_shortest.yen",
+      "name": "K 短路 (Yen 算法)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.eppstein",
+      "name": "K 短路 (Eppstein 算法)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.recursive",
+      "name": "K 短路 (递归K短路)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan",
+      "name": "支配树 (Lengauer-Tarjan 算法)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.iterative",
+      "name": "支配树 (迭代支配树)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.application",
+      "name": "支配树 (支配树应用)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.virtual_tree",
+      "name": "虚树构建",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.21.3"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.centroid_decomposition",
+      "name": "点分治",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.14.7"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.tree_flattening",
+      "name": "树链剖分",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.14.4"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.heavy_light",
+      "name": "重链剖分",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.parallel_binary",
+      "name": "并查集维护连通性",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.dinic",
+      "name": "Dinic 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.isap",
+      "name": "ISAP 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.hlpp",
+      "name": "HLPP 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.min_cost",
+      "name": "最小费用最大流",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.16.6"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.lower_upper",
+      "name": "上下界网络流",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmin",
+      "name": "吉司机线段树(区间最小)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmax",
+      "name": "吉司机线段树(区间最大)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_range_add",
+      "name": "吉司机线段树(区间加)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.dynamic_persistent",
+      "name": "动态可持久化线段树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_merge",
+      "name": "线段树合并",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.7.21"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_split",
+      "name": "线段树分裂",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.7.22"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.chairman_tree",
+      "name": "主席树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.kdtree",
+      "name": "KD 树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.divide_merge_tree",
+      "name": "划分树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.catenary_tree",
+      "name": "猫树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.binary_indexed_2d",
+      "name": "二维树状数组",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.treap",
+      "name": "Treap (树堆)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.splay",
+      "name": "Splay Tree (伸展树)",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.scapegoat",
+      "name": "替罪羊树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.avl",
+      "name": "AVL 树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.sbt",
+      "name": "Size Balanced Tree",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_array",
+      "name": "后缀数组",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.7"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_automaton",
+      "name": "后缀自动机",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.8"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_tree",
+      "name": "后缀树",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.8.7"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.lcp_array",
+      "name": "LCP 数组",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.string.matching.manacher",
+      "name": "Manacher 算法",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.22"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching.z_algorithm",
+      "name": "Z 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.string.matching.kmp",
+      "name": "KMP 算法",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.12.5"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching.rabin_karp",
+      "name": "Rabin-Karp 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.string.matching.booth",
+      "name": "Booth 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory.pollard_rho",
+      "name": "Pollard Rho 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory.miller_rabin",
+      "name": "Miller-Rabin 素性测试",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory.discrete_log",
+      "name": "离散对数",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory.primitive_root",
+      "name": "原根",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory.legendre",
+      "name": "勒让德符号",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.basic.convex_hull",
+      "name": "凸包",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.basic.graham_scan",
+      "name": "Graham Scan 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.basic.andrew_monotone",
+      "name": "Andrew 单调链算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.basic.rotating_calipers",
+      "name": "旋转卡壳",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.basic.half_plane_intersection",
+      "name": "半平面交",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "4.7.28"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.interview.design.lru_cache",
+      "name": "LRU 缓存设计",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.interview.design.lfu_cache",
+      "name": "LFU 缓存设计",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.interview.design.trie_autocomplete",
+      "name": "前缀树自动补全",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.interview.design.rate_limiter",
+      "name": "速率限制器",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.interview.design.consistent_hashing",
+      "name": "一致性哈希",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.3.19"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.contest.modeling.game_theory",
+      "name": "博弈论建模",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.contest.modeling.sg_theorem",
+      "name": "SG 定理",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.contest.modeling.nim_game",
+      "name": "Nim 游戏",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.contest.modeling.simulation_optimization",
+      "name": "模拟优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.contest.modeling.greedy_proof",
+      "name": "贪心证明",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.algo.randomized.simulated_annealing",
+      "name": "模拟退火",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.algo.randomized.genetic_algorithm",
+      "name": "遗传算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.algo.randomized.monte_carlo",
+      "name": "蒙特卡洛方法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_quickselect",
+      "name": "随机化快速选择",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_prim",
+      "name": "随机化 Prim 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.slope_optimization",
+      "name": "斜率优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.convex_hull_opt",
+      "name": "凸包优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.quadrangle_inequality",
+      "name": "四边形不等式优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.divide_conquer_opt",
+      "name": "分治优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.knuth_opt",
+      "name": "Knuth 优化",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.cdq_divide",
+      "name": "CDQ 分治",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.18.4"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.wqs_binary",
+      "name": "WQS 二分",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.dinic",
+      "name": "Dinic 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.isap",
+      "name": "ISAP 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.edmonds_karp",
+      "name": "Edmonds-Karp 算法",
+      "is_duplicate": true,
+      "duplicate_type": "similar_name",
+      "matching_item_ids": [
+        "2.16.13"
+      ],
+      "confidence": "medium",
+      "suggestion": "add_as_subtopic"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.min_cost_flow",
+      "name": "最小费用最大流",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.16.6"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.max_flow_bipartite",
+      "name": "最大流二分图匹配",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.computational.point_in_polygon",
+      "name": "点在多边形内判断",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.computational.line_intersection",
+      "name": "线段相交判断",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.computational.area_polygon",
+      "name": "多边形面积计算",
+      "is_duplicate": true,
+      "duplicate_type": "similar_name",
+      "matching_item_ids": [
+        "4.7.30"
+      ],
+      "confidence": "medium",
+      "suggestion": "add_as_subtopic"
+    },
+    {
+      "candidate_id": "cand.geo.computational.circle_intersection",
+      "name": "圆相交判断",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.geo.computational.closest_pair",
+      "name": "最近点对",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_binary_lifting",
+      "name": "LCA 倍增法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_euler_tour",
+      "name": "LCA 欧拉序+RMQ",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_diameter",
+      "name": "树的直径",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.14.1"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_center",
+      "name": "树的中心",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_hash",
+      "name": "树哈希",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.3.14"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fft",
+      "name": "快速傅里叶变换",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.ntt",
+      "name": "数论变换",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fwht",
+      "name": "快速沃尔什变换",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_inv",
+      "name": "多项式求逆",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.17.11"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_sqrt",
+      "name": "多项式开方",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.kmp",
+      "name": "KMP 算法",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.12.5"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.aho_corasick",
+      "name": "AC 自动机",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.6"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_array",
+      "name": "后缀数组",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.7"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_automaton",
+      "name": "后缀自动机",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.8"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.min_string",
+      "name": "最小表示法",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.10.10"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.euler_totient",
+      "name": "欧拉函数",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "1.7.25"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.mobius",
+      "name": "莫比乌斯函数",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "1.7.27"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.crt",
+      "name": "中国剩余定理",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "4.2.9"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.bsgs",
+      "name": "BSGS 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.exgcd",
+      "name": "扩展欧几里得",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "4.1.12"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.lucas",
+      "name": "Lucas 定理",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.optimization.minimum_spanning_tree",
+      "name": "最小生成树",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.13.8"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.optimization.kruskal",
+      "name": "Kruskal 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.optimization.prim",
+      "name": "Prim 算法",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.graph.optimization.topological_sort",
+      "name": "拓扑排序",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "2.9.6"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.graph.optimization.critical_path",
+      "name": "关键路径",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_treap",
+      "name": "可持久化 Treap",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.10.17"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_bit",
+      "name": "可持久化 BIT",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_segment_tree",
+      "name": "可持久化线段树",
+      "is_duplicate": false,
+      "duplicate_type": null,
+      "matching_item_ids": [],
+      "confidence": "low",
+      "suggestion": "add_new"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "name": "动态开点线段树",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.7.4"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.segment_tree_beats",
+      "name": "吉司机线段树",
+      "is_duplicate": true,
+      "duplicate_type": "exact_name",
+      "matching_item_ids": [
+        "3.7.36"
+      ],
+      "confidence": "high",
+      "suggestion": "merge_with_existing"
+    }
+  ],
+  "summary": {
+    "add_new": 80,
+    "merge_with_existing": 32,
+    "add_as_subtopic": 2
+  }
+}

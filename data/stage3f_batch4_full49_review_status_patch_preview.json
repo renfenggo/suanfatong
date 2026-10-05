@@ -1,0 +1,349 @@
+{
+  "batch_id": "stage3f_batch4_full49",
+  "description": "此 patch 仅为预览，未应用。1号线程可在 Fix Lite 阶段决定是否执行。",
+  "main_graph_modified": false,
+  "patches": [
+    {
+      "item_id": "2.10.40",
+      "name": "Duval算法最小表示",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 218,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=218，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.10.41",
+      "name": "二维滚动哈希",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 218,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=218，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.10.42",
+      "name": "哈希碰撞处理策略",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 218,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=218，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.152",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.153",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.154",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.155",
+      "name": "动态图连通性：Dynamic Bridge",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.156",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.157",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.158",
+      "name": "强连通分量 DAG：Scc Dp",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.159",
+      "name": "差分约束系统建模",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.160",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.161",
+      "name": "Hall 定理及应用",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.162",
+      "name": "最大权闭合子图",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.163",
+      "name": "平面图：Embedding Basics",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.164",
+      "name": "高级最短路：Eppstein K Shortest",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.165",
+      "name": "高级最短路：Johnson Potentials",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.166",
+      "name": "高级最短路：Min Cost Path Cover",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.167",
+      "name": "高级最短路：Replacement Paths",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.168",
+      "name": "高级最短路：Resource Constrained",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.169",
+      "name": "高级最短路：Yen K Shortest",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.170",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.21.171",
+      "name": "2-SAT 建模技巧",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 113,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=113，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.151",
+      "name": "博弈DP基础",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.152",
+      "name": "Grundy数DP",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.153",
+      "name": "矩阵DP基础",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.154",
+      "name": "矩阵快速幂DP",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.155",
+      "name": "期望DP",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "2.8.156",
+      "name": "马尔可夫链DP",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 202,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=202，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "4.5.17",
+      "name": "GF(2)上的高斯消元",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 152,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=152，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    },
+    {
+      "item_id": "4.5.18",
+      "name": "矩阵树定理",
+      "review_result": "needs_dependency_fix",
+      "suggested_patch": {
+        "field": "direct_pre",
+        "current_count": 152,
+        "suggested_action": "缩减至必要前置（通常 3-10 个），参考同节已存在节点的 direct_pre 模式",
+        "note": "当前 direct_pre=152，包含全部前置节的所有 item，应仅保留直接依赖的核心概念"
+      }
+    }
+  ],
+  "total_patches": 31
+}

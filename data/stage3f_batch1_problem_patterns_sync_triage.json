@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "Stage3F Batch1 Problem Patterns Sync Triage",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T14:00:00.000Z",
+    "task": "batch1_problem_patterns_sync_triage",
+    "version": "1.0",
+    "description": "对 3 个 problem_patterns 同步候选进行分级，判断是否适合生成 problem_pattern",
+    "input_files": [
+      "data/stage3f_batch1_problem_pattern_sync_candidates.json",
+      "data/stage3f_batch1_added_items_review.json",
+      "docs/stage3f_batch1_added_items_review_report.md",
+      "data/patterns_v0_1_ready.json",
+      "data/patterns_batch2.json",
+      "data/patterns_batch2_validation_result.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "statistics": {
+    "total_candidates": 3,
+    "create_new_draft_later": 1,
+    "merge_with_existing": 0,
+    "defer": 2,
+    "manual_review": 0
+  },
+  "triage": [
+    {
+      "item_id": "3.13.182",
+      "name": "Multidimensional: Dominance Counting",
+      "suggested_pattern_id": "pat.dominance_counting",
+      "priority": "P1",
+      "decision": "create_new_draft_later",
+      "pattern_type": "counting_pattern",
+      "knowledge_item_type": "modeling_pattern",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": true,
+      "boundary_note_targets": [
+        "pat.offline_query_pattern",
+        "pat.coordinate_sweep_compression",
+        "pat.fenwick_prefix_maintenance"
+      ],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "overlap_with_existing": "partial",
+        "overlap_detail": "pat.offline_query_pattern 和 pat.coordinate_sweep_compression 涉及离线处理和坐标压缩，但均未专门覆盖多维偏序计数。Dominance Counting 的核心识别信号（多维支配关系计数、偏序对统计）在现有 patterns 中无对应。"
+      },
+      "suitable_as_pattern": true,
+      "suitable_reason": "Dominance Counting 是典型的多维偏序计数建模模式，item_type 已标注为 modeling_pattern，且是 Stage3F Batch1 中唯一保留 B 级优先级的节点。它具备清晰的识别信号（多维支配关系、偏序统计）、通用转化路径（CDQ 分治、BIT 离线维护）和复杂度边界（O(n log^k n)）。与 CDQ 分治配合使用时形成完整的问题求解框架，适合作为 counting_pattern。",
+      "recommended_timing": "作为下一批 patterns 候选（future batch），与 CDQ 分治、多维数据结构等模式统一规划。",
+      "reason": "valid_modeling_pattern"
+    },
+    {
+      "item_id": "2.17.20",
+      "name": "Berlekamp-Massey算法",
+      "suggested_pattern_id": "",
+      "priority": "P2",
+      "decision": "defer",
+      "pattern_type": "algorithmic_pattern",
+      "knowledge_item_type": "theorem_or_property",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": false,
+      "boundary_note_targets": [],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "overlap_with_existing": "none",
+        "overlap_detail": "现有 patterns 中无线性递推相关模式。但 BM 算法是算法实现节点，而非 problem_pattern。"
+      },
+      "suitable_as_pattern": false,
+      "suitable_reason": "BM 算法本质上是一个算法实现（theorem_or_property），用于求线性递推的最小多项式。虽然存在 '线性递推识别' 的题型信号（给出数列前若干项，求第 n 项），但：\n1. 这类问题的识别信号单一（给出数列前缀，要求递推/预测后续项），不成模式体系\n2. BM 算法只是求解工具，没有多样化的建模转化路径\n3. 已有解题者通常直接使用 BM 模板，无需 pattern 指导\n4. knowledge_item_type 为 theorem_or_property，Review 已降为 C 级\n\n结论：不适合作为 problem_pattern，保持为知识库算法节点即可。",
+      "recommended_timing": "无需生成 pattern。",
+      "reason": "algorithm_only"
+    },
+    {
+      "item_id": "4.9.3",
+      "name": "Min_25筛",
+      "suggested_pattern_id": "",
+      "priority": "P2",
+      "decision": "defer",
+      "pattern_type": "counting_pattern",
+      "knowledge_item_type": "theorem_or_property",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": false,
+      "boundary_note_targets": [],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "overlap_with_existing": "none",
+        "overlap_detail": "现有 patterns 中无积性函数前缀和或数论筛法相关模式。"
+      },
+      "suitable_as_pattern": false,
+      "suitable_reason": "Min_25 筛是高级数论算法，用于求解积性函数前缀和。不适合作为 problem_pattern 的原因：\n1. 知识点极端专门化——仅适用于积性函数前缀和这一特定计算任务\n2. 没有通用的'题型识别信号'——题面不会暗示'请使用 Min_25 筛'，而是直接要求计算函数前缀和\n3. 建模路径单一——只有一种主流实现方式，不存在多样化的建模选择\n4. knowledge_item_type 为 theorem_or_property，Review 已降为 C 级\n\n如果后续出现更通用的'积性函数前缀和大类'(含 Dirichlet 卷积、杜教筛、Min_25 筛等多种方法)，可考虑作为 pattern，但当前知识项仅聚焦于 Min_25 单一算法，不适合。",
+      "recommended_timing": "无需生成 pattern。如后续将多个积性函数求解方法统一建模为 pattern，可重新评估。",
+      "reason": "algorithm_only"
+    }
+  ],
+  "recommendations": {
+    "batch2_related_actions": [],
+    "future_batch_suggestions": [
+      {
+        "candidate": "3.13.182 Dominance Counting",
+        "suggested_batch": "future",
+        "note": "建议与 3.13.181 CDQ Divide Conquer 统一规划，形成多维偏序求解模式套件"
+      }
+    ],
+    "final_verdict": {
+      "suitable_for_pattern": 1,
+      "unsuitable_for_pattern": 2,
+      "generate_formal_patterns_now": false,
+      "main_graph_modified": false
+    }
+  }
+}

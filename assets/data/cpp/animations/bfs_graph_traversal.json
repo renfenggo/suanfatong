@@ -1,0 +1,108 @@
+{
+  "animationId": "cpp_bfs_graph_traversal",
+  "itemId": "2.7.17",
+  "title": "图的遍历：BFS",
+  "description": "演示 BFS 在无向图上的广度优先遍历过程：使用队列，按层扩展，展示 visited 标记和逐层遍历特性",
+  "expectedLearningPoint": "BFS 按层扩展，使用队列实现，先访问的层离起点更近。入队即标记 visited 防止重复入队",
+  "initialState": {
+    "variables": [
+      {"name": "图结构", "value": "6个节点, 边: 0-1, 0-2, 1-3, 1-4, 2-5", "note": "与 DFS 相同的图"}
+    ],
+    "containers": [
+      {"name": "visited", "type": "bool[]", "values": ["0", "0", "0", "0", "0", "0"], "activeIndex": -1, "note": "0=未访问, 1=已访问"},
+      {"name": "队列 Q", "type": "queue", "values": [], "activeIndex": -1, "note": "BFS 用队列"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "起点 0 入队并标记",
+      "description": "BFS 从节点 0 开始。将 0 入队，同时标记 visited[0]=1。注意：BFS 入队时就标记，防止同一节点被多次入队。",
+      "codeLine": "Q.push(0); visited[0] = true;",
+      "highlights": ["Q.push(0)", "visited[0]"],
+      "state": {
+        "variables": [
+          {"name": "当前层", "value": "0", "note": "第 0 层（起点）"},
+          {"name": "访问序", "value": "0", "note": ""}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "0", "0", "0", "0", "0"], "activeIndex": 0, "note": ""},
+          {"name": "队列 Q", "type": "queue", "values": ["0"], "activeIndex": 0, "note": "[0]"}
+        ],
+        "output": "0"
+      }
+    },
+    {
+      "step": 2,
+      "title": "弹出 0，邻居 1 和 2 入队",
+      "description": "弹出队首 0。检查邻居：1 未访问→入队标记，2 未访问→入队标记。这是第 1 层的节点。",
+      "codeLine": "int u = Q.front(); Q.pop();  // u=0",
+      "highlights": ["Q.front()", "Q.pop()", "Q.push(1)", "Q.push(2)"],
+      "state": {
+        "variables": [
+          {"name": "当前层", "value": "1", "note": "第 1 层"},
+          {"name": "访问序", "value": "0 → 1 → 2", "note": "1 和 2 同层"}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "0", "0", "0"], "activeIndex": 2, "note": "1,2 已标记"},
+          {"name": "队列 Q", "type": "queue", "values": ["1", "2"], "activeIndex": 0, "note": "[1, 2]"}
+        ],
+        "output": "0 → 1 → 2"
+      }
+    },
+    {
+      "step": 3,
+      "title": "弹出 1，邻居 3 和 4 入队",
+      "description": "弹出队首 1。邻居 0 已访问（跳过），邻居 3 未访问→入队，邻居 4 未访问→入队。第 2 层节点。",
+      "codeLine": "int u = Q.front(); Q.pop();  // u=1",
+      "highlights": ["Q.front()", "Q.pop()"],
+      "state": {
+        "variables": [
+          {"name": "当前层", "value": "2", "note": "第 2 层"},
+          {"name": "访问序", "value": "0 → 1 → 2 → 3 → 4", "note": "3 和 4 同层"}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "1", "1", "0"], "activeIndex": 4, "note": ""},
+          {"name": "队列 Q", "type": "queue", "values": ["2", "3", "4"], "activeIndex": 0, "note": "[2, 3, 4]"}
+        ],
+        "output": "0 → 1 → 2 → 3 → 4"
+      }
+    },
+    {
+      "step": 4,
+      "title": "弹出 2，邻居 5 入队",
+      "description": "弹出队首 2。邻居 0 已访问（跳过），邻居 5 未访问→入队。第 2 层的最后一个节点。",
+      "codeLine": "int u = Q.front(); Q.pop();  // u=2",
+      "highlights": ["Q.front()", "Q.pop()", "Q.push(5)"],
+      "state": {
+        "variables": [
+          {"name": "当前层", "value": "2", "note": "仍在第 2 层"},
+          {"name": "访问序", "value": "0 → 1 → 2 → 3 → 4 → 5", "note": "5 也属于第 2 层"}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "1", "1", "1"], "activeIndex": 5, "note": "全部标记"},
+          {"name": "队列 Q", "type": "queue", "values": ["3", "4", "5"], "activeIndex": 0, "note": "[3, 4, 5]"}
+        ],
+        "output": "0 → 1 → 2 → 3 → 4 → 5"
+      }
+    },
+    {
+      "step": 5,
+      "title": "弹出 3, 4, 5，BFS 完成",
+      "description": "继续弹出 3、4、5，它们的邻居都已被访问。队列清空，BFS 结束。BFS 按层遍历：层0={0}, 层1={1,2}, 层2={3,4,5}。",
+      "codeLine": "while (!Q.empty()) { ... }  // 队列空，结束",
+      "highlights": ["!Q.empty()"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "完成", "note": "层0={0}, 层1={1,2}, 层2={3,4,5}"}
+        ],
+        "containers": [
+          {"name": "visited", "type": "bool[]", "values": ["1", "1", "1", "1", "1", "1"], "activeIndex": -1, "note": "全部访问"},
+          {"name": "队列 Q", "type": "queue", "values": [], "activeIndex": -1, "note": "队列空，结束"}
+        ],
+        "output": "BFS 序：0 → 1 → 2 → 3 → 4 → 5"
+      }
+    }
+  ]
+}

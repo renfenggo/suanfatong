@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 full_30 候选计划",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:35:00.000Z",
+    "main_graph_modified": false,
+    "target_count": 30,
+    "actual_selected": 30,
+    "source_medium20": 20,
+    "source_supplementary": 10,
+    "batch5_fix_lite_completed": true
+  },
+  "selection_summary": {
+    "total_candidates": 30,
+    "from_medium20": 20,
+    "from_supplementary": 10,
+    "supplementary_breakdown": {
+      "from_wait_for_stage3e_result": 3,
+      "from_reserve_for_stage3f": 7
+    },
+    "section_distribution": {
+      "3.13": 21,
+      "2.15": 2,
+      "2.21": 7
+    },
+    "risk_distribution": {
+      "green": 6,
+      "yellow": 24
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "cand.ds.li_chao_tree.on_tree",
+      "name": "李超线段树：On Tree",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.rollback",
+      "name": "李超线段树：回滚版",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+      "name": "可并堆：Lazy Deletion Heap",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+      "name": "可并堆：Persistent Heap",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+      "name": "Segment Tree Beats：Range Min Max Sum",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+      "name": "可并堆：Heap With Decrease Key",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+      "name": "可并堆：Double Ended Priority Queue",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+      "name": "Segment Tree Beats：Range Modulo",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+      "name": "李超线段树：Maximum Query",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+      "name": "李超线段树：Minimum Query",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+      "name": "Segment Tree Beats：Beats Amortized Analysis",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+      "name": "Segment Tree Beats：Beats Proof",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+      "name": "可并堆：Meldable Priority Queue",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+      "name": "Segment Tree Beats：Beats With Assignment",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+      "name": "Segment Tree Beats：Second Maximum Invariant",
+      "source": "remaining_batch5",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+      "name": "Bitset Linear Basis: Basis On Tree",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+      "name": "Dynamic Tree: Cut Link Connectivity",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+      "name": "Dynamic Tree: Dynamic Lca",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+      "name": "Dynamic Tree: Path Lazy Tag",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+      "name": "Dynamic Tree: Reroot Query",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+      "name": "Dynamic Tree: Virtual Subtree Aggregate",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "source": "stage3f_reserve",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "name": "匹配与覆盖：Blossom Algorithm",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.demands",
+      "name": "上下界网络流：Demands",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "source": "stage3f_reserve",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+      "name": "上下界网络流：Minimum Flow",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "selection_status": "selected",
+      "static_risk_flags": [],
+      "reason": ""
+    }
+  ],
+  "excluded_candidates": [],
+  "supplementary_candidates": [
+    {
+      "candidate_id": "cand.graph.closure_model.binary_decision_model",
+      "name": "最大权闭合子图：Binary Decision Model",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "green",
+      "reason": "wait_for_stage3e_result, green risk, 3.13 section"
+    },
+    {
+      "candidate_id": "cand.graph.closure_model.maximum_weight_closure",
+      "name": "最大权闭合子图：Maximum Weight Closure",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "green",
+      "reason": "wait_for_stage3e_result, green risk, 3.13 section"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+      "name": "Dynamic Tree: Virtual Subtree Aggregate",
+      "source": "stage3f_reserve",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "reason": "wait_for_stage3e_result, green risk, 3.13 section"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "source": "stage3f_reserve",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.blossom_algorithm",
+      "name": "匹配与覆盖：Blossom Algorithm",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.demands",
+      "name": "上下界网络流：Demands",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "source": "stage3f_reserve",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "source": "stage3f_reserve",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "reason": "reserve_for_stage3f, 有独立竞赛/教育价值"
+    }
+  ]
+}

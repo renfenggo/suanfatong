@@ -1,0 +1,199 @@
+{
+  "audit_timestamp": "2026-09-02T22:19:04.710414",
+  "project_root": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong",
+  "practice_entry_audit": {
+    "status": "success",
+    "file_exists": true,
+    "index_info": {
+      "version": "mvp_v1.0",
+      "created_date": "2025-06-16",
+      "total_items": 15,
+      "total_problems": 20,
+      "description": "练习入口 MVP 索引 - 第一批基于现有题目引用种子"
+    },
+    "field_validation": {
+      "total_index_items": 15,
+      "valid_items": 15,
+      "invalid_items": 0,
+      "field_coverage": {
+        "item_id": 15,
+        "title": 15,
+        "section_id": 15,
+        "section_name": 15,
+        "problems": 15
+      }
+    },
+    "coverage_analysis": {
+      "item_coverage": "15/15",
+      "coverage_percentage": 100.0,
+      "unique_item_ids": 15,
+      "platform_diversity": 9,
+      "platform_coverage": {
+        "CSES": 4,
+        "USACO": 1,
+        "HackerRank": 1,
+        "Kattis": 1,
+        "LeetCode": 5,
+        "AtCoder": 3,
+        "Codeforces": 2,
+        "DMOJ": 1,
+        "Luogu": 2
+      },
+      "difficulty_distribution": {
+        "easy": 6,
+        "medium": 11,
+        "unknown": 2,
+        "hard": 1
+      }
+    },
+    "quality_metrics": {
+      "has_description": true,
+      "has_version": true,
+      "has_created_date": true,
+      "field_completeness": 100.0,
+      "url_validity": 100.0,
+      "metadata_complete": true
+    }
+  },
+  "cpp14_template_audit": {
+    "status": "success",
+    "file_exists": true,
+    "index_info": {
+      "version": "mvp_v1.0",
+      "created_date": "2025-06-16",
+      "cpp_standard": "C++14",
+      "total_items": 12,
+      "description": "C++14 模板入口 MVP 索引 - 第一批核心算法模板"
+    },
+    "field_validation": {
+      "total_index_items": 12,
+      "valid_items": 12,
+      "invalid_items": 0,
+      "field_coverage": {
+        "item_id": 12,
+        "title": 12,
+        "section_id": 12,
+        "section_name": 12,
+        "template_type": 12,
+        "difficulty": 12,
+        "complexity": 12,
+        "source_file": 12,
+        "template_info": 12,
+        "code_reference": 12
+      }
+    },
+    "coverage_analysis": {
+      "item_coverage": "12/12",
+      "coverage_percentage": 100.0,
+      "unique_item_ids": 12,
+      "template_type_diversity": 8,
+      "template_types": {
+        "graph_traversal": 2,
+        "range_query": 2,
+        "data_structure": 2,
+        "sorting": 2,
+        "shortest_path": 1,
+        "minimum_spanning_tree": 1,
+        "graph_algorithm": 1,
+        "search_algorithm": 1
+      },
+      "difficulty_levels": {
+        "beginner": 3,
+        "intermediate": 8,
+        "advanced": 1
+      }
+    },
+    "quality_metrics": {
+      "has_description": true,
+      "has_version": true,
+      "has_created_date": true,
+      "cpp_standard_correct": true,
+      "field_completeness": 100.0,
+      "complexity_info_available": 100.0,
+      "source_files_exist": 100.0,
+      "practice_problems_linked": 100.0
+    }
+  },
+  "consistency_checks": {
+    "practice_cpp14_intersection": [],
+    "item_id_consistency": {
+      "practice_items": 15,
+      "cpp14_items": 12,
+      "intersection_count": 0,
+      "intersection_percentage": 0.0
+    },
+    "section_consistency": {
+      "practice_sections": 11,
+      "cpp14_sections": 8,
+      "shared_sections": 5,
+      "section_intersection": [
+        "2.13",
+        "2.4",
+        "2.5",
+        "2.7",
+        "3.4"
+      ]
+    },
+    "coverage_analysis": {
+      "practice_only_items": [
+        "2.13.2",
+        "2.16.3",
+        "2.3.1",
+        "2.4.1",
+        "2.5.1",
+        "2.5.4",
+        "2.7.1",
+        "2.7.2",
+        "2.8.14",
+        "2.8.8",
+        "3.2.6",
+        "3.3.6",
+        "3.4.1",
+        "3.7.1",
+        "3.7.2"
+      ],
+      "cpp14_only_items": [
+        "1.8.41",
+        "2.13.18",
+        "2.13.9",
+        "2.2.15",
+        "2.2.16",
+        "2.4.17",
+        "2.4.18",
+        "2.5.23",
+        "2.7.16",
+        "2.7.17",
+        "3.4.9",
+        "3.6.8"
+      ],
+      "total_unique_items": 27,
+      "practice_coverage": 55.55555555555556,
+      "cpp14_coverage": 44.44444444444444
+    }
+  },
+  "recommendations": [
+    {
+      "category": "general",
+      "priority": "high",
+      "recommendation": "扩展知识点覆盖范围",
+      "action": "按照优先级为更多知识点添加练习入口和 C++14 模板"
+    },
+    {
+      "category": "general",
+      "priority": "medium",
+      "recommendation": "增强元数据完整性",
+      "action": "完善所有索引文件的元数据信息"
+    }
+  ],
+  "overall_assessment": {
+    "practice_entry_status": "success",
+    "cpp14_template_status": "success",
+    "overall_status": "success",
+    "ready_for_integration": true,
+    "total_practice_items": 15,
+    "total_cpp14_items": 12,
+    "total_practice_problems": 20,
+    "intersection_count": 0,
+    "recommendations_count": 2
+  }
+}

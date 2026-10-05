@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "generated_at": "4.1",
+    "main_graph_modified": false
+  },
+  "precheck": {
+    "baseline_item_count": 2640,
+    "selected_candidate_count": 600,
+    "recommendation": "ready_for_1号线程_merge_stage5_hard_batch2_full600",
+    "recommended_merge_count": 600,
+    "dependency_cleanup_required": false,
+    "needs_new_section": false,
+    "candidate_dependency_cycle": false,
+    "excluded_duplicate_or_near_duplicate": [],
+    "excluded_already_merged_candidates": [],
+    "section_ref_dependencies": [],
+    "manual_review_candidates": [],
+    "direct_pre_over_limit_candidates": [],
+    "whole_section_expansion_risk_candidates": []
+  }
+}

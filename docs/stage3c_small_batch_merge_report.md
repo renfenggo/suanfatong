@@ -1,0 +1,56 @@
+# Stage 3C Small Batch Merge Report
+
+- Backup success: True
+- Backup file: `C:\Users\renfenggo\Documents\trae_projects\suanfatong\backups\merged_knowledge_graph_item_dependencies_refined_before_stage3c.json`
+- Before item_count: 1421
+- After item_count: 1457
+- Actual added item count: 36
+- Added to 2.21: 18
+- Added to 3.13: 18
+- Created new section: false
+- Section id conflict result: none
+- add_new merged count: 36
+- add_as_subtopic merged count: 0
+- Dangling refs count: 0
+- direct_pre cycle: None
+- resolved_pre mismatch count: 0
+- validation passed: True
+- Rollback plan generated: true
+
+## Manual Review Needed
+- `2.21.40` Virtual Tree: Stack Construction
+- `2.21.41` Block-Cut Tree: Biconnected Component
+- `2.21.42` Cactus Graph: Shortest Path
+- `2.21.43` Dynamic Connectivity: Segment Tree Over Time
+- `2.21.44` Dynamic MST: Offline Updates
+- `2.21.45` Global Min-Cut: Gomory Hu Tree
+- `2.21.46` Maximum Closure: Profit Dependency
+- `2.21.47` Special Graph: Maximum Cardinality Search
+- `2.21.48` Directed MST: Contracted Cycle
+- `2.21.49` SCC Condensation DAG: Source Sink Count
+- `2.21.50` Matroid in Graphs: Matroid Intersection
+- `2.21.51` Planar Graph: Euler Formula
+- `2.21.52` Dominator Tree: Immediate Dominator
+- `2.21.53` Virtual Tree: Tree Dp
+- `2.21.54` Block-Cut Tree: Path Query
+- `2.21.55` Cactus Graph: Tree Conversion
+- `2.21.56` Dynamic Connectivity: Rollback Dsu
+- `2.21.57` Dynamic MST: Link Cut Tree Approach
+- `3.13.37` Advanced RMQ: Fischer Heun
+- `3.13.38` Multidimensional Data Structure: Range Tree
+- `3.13.39` Bitset and Linear Basis: Range Xor Basis
+- `3.13.40` Offline Data Structure Framework: Mo Algorithm With Updates
+- `3.13.41` Sequence Maintenance Structure: Implicit Splay Reverse
+- `3.13.42` Succinct and Probabilistic Structure: Skip List
+- `3.13.43` Persistent Data Structure: Persistent Segment Tree Kth
+- `3.13.44` Tree Decomposition Data Structure: Dsu On Tree Color
+- `3.13.45` Merge Sort Tree: Range Successor
+- `3.13.46` Dynamic Tree Structure: Dynamic Tree Diameter
+- `3.13.47` Advanced RMQ: Blocked Rmq
+- `3.13.48` Multidimensional Data Structure: Offline 2D Point Counting
+- `3.13.49` Bitset and Linear Basis: Linear Basis Merge
+- `3.13.50` Offline Data Structure Framework: Rollback Block Decomposition
+- `3.13.51` Sequence Maintenance Structure: Implicit Treap Lazy Tags
+- `3.13.52` Persistent Data Structure: Persistent Union Find
+- `3.13.53` Tree Decomposition Data Structure: Small Large Subtree
+- `3.13.54` Merge Sort Tree: Point Update

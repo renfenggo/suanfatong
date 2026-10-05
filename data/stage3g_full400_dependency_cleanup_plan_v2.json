@@ -1,0 +1,5803 @@
+{
+  "meta": {
+    "generated_by": "stage3g_full400_cleanup_v2",
+    "generated_at": "2026-05-25T14:46:37.526111+00:00",
+    "main_graph_modified": false,
+    "merge_executed": false,
+    "dependency_cleanup_required": true,
+    "total_candidates_needing_cleanup": 238
+  },
+  "cleanup_items": [
+    {
+      "candidate_id": "cand.graph.图论建模_超级源点与超级汇点",
+      "name": "图论建模：超级源点与超级汇点",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "超级源点",
+          "score": 0
+        },
+        {
+          "pre_name": "超级汇点",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "超级源点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "超级汇点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.图论建模_分层图",
+      "name": "图论建模：分层图",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "DP状态图",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "DP状态图",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.拓扑排序进阶_拓扑计数",
+      "name": "拓扑排序进阶：拓扑计数",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "组合计数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "组合计数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.最小生成树进阶_最小瓶颈生成树",
+      "name": "最小生成树进阶：最小瓶颈生成树",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "瓶颈",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "瓶颈",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.lca进阶_lca与树上差分",
+      "name": "LCA进阶：LCA与树上差分",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.树论_树哈希",
+      "name": "树论：树哈希",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.树论_点分治进阶",
+      "name": "树论：点分治进阶",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.树论_边分治",
+      "name": "树论：边分治",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.最短路进阶_k短路_a",
+      "name": "最短路进阶：K短路(A*)",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.二分图进阶_稳定婚姻问题",
+      "name": "二分图进阶：稳定婚姻问题",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "GS算法",
+          "score": 0
+        },
+        {
+          "pre_name": "稳定匹配",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "GS算法",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "稳定匹配",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.线性代数进阶_矩阵树定理进阶",
+      "name": "线性代数进阶：矩阵树定理进阶",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Kirchhoff",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Kirchhoff",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_2_sat方案输出",
+      "name": "SCC/DAG进阶：2-SAT方案输出",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "拓扑序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "拓扑序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_dag最小路径覆盖",
+      "name": "SCC/DAG进阶：DAG最小路径覆盖",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "拆点",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "拆点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_dag最长反链_dilworth",
+      "name": "SCC/DAG进阶：DAG最长反链(Dilworth)",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "偏序集",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "偏序集",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_可达性统计_bitset优化",
+      "name": "SCC/DAG进阶：可达性统计(Bitset优化)",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "可达性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "可达性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.动态树_树上路径并集",
+      "name": "动态树：树上路径并集",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.特殊图_平面图",
+      "name": "特殊图：平面图",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "欧拉公式",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "欧拉公式",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_steiner树进阶",
+      "name": "图论专题：Steiner树进阶",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Steiner树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Steiner树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.并查集进阶_可撤销并查集",
+      "name": "并查集进阶：可撤销并查集",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "启发式合并",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "启发式合并",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.线段树进阶_segment_tree_beats",
+      "name": "线段树进阶：Segment Tree Beats",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "区间最值",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "区间最值",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.线段树进阶_线段树分治",
+      "name": "线段树进阶：线段树分治",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "时间维",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "时间维",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.树状数组进阶_多维树状数组",
+      "name": "树状数组进阶：多维树状数组",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "二维偏序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "二维偏序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_fhq_treap可持久化",
+      "name": "平衡树进阶：FHQ Treap可持久化",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "分裂合并",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "分裂合并",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_splay区间操作",
+      "name": "平衡树进阶：Splay区间操作",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "LCT基础",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "LCT基础",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_treap实现",
+      "name": "平衡树进阶：Treap实现",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.堆进阶_可并堆_左偏树",
+      "name": "堆进阶：可并堆(左偏树)",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.堆进阶_配对堆",
+      "name": "堆进阶：配对堆",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        },
+        {
+          "pre_name": "配对标",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "配对标",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_带修莫队",
+      "name": "分块进阶：带修莫队",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "在线修改",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "在线修改",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_树上莫队",
+      "name": "分块进阶：树上莫队",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.k_d_tree",
+      "name": "K-D Tree",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "空间划分",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "空间划分",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.整体二分进阶_带修改整体二分",
+      "name": "整体二分进阶：带修改整体二分",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "单点修改",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "单点修改",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.哈希进阶_布隆过滤器",
+      "name": "哈希进阶：布隆过滤器",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "布隆",
+          "score": 0
+        },
+        {
+          "pre_name": "位图",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "布隆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "位图",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.可持久化进阶_可持久化平衡树",
+      "name": "可持久化进阶：可持久化平衡树",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "分裂合并",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "分裂合并",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_分块打表",
+      "name": "分块进阶：分块打表",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "预处理",
+          "score": 0
+        },
+        {
+          "pre_name": "表",
+          "score": 0
+        },
+        {
+          "pre_name": "空间换时间",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "预处理",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "表",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "空间换时间",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_后缀数组sa_is算法",
+      "name": "字符串数据结构：后缀数组SA-IS算法",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "线性时间",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "线性时间",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.link_cut_tree进阶_维护子树信息",
+      "name": "Link-Cut Tree进阶：维护子树信息",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "虚实链",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "虚实链",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.link_cut_tree进阶_lct维护最小生成树",
+      "name": "Link-Cut Tree进阶：LCT维护最小生成树",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "动态MST",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "动态MST",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_wblt",
+      "name": "平衡树进阶：WBLT",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "WBLT",
+          "score": 0
+        },
+        {
+          "pre_name": "叶加权",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "WBLT",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "叶加权",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.珂朵莉树_odt",
+      "name": "珂朵莉树(ODT)",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "珂朵莉树",
+          "score": 0
+        },
+        {
+          "pre_name": "ODT",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "珂朵莉树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "ODT",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.集合进阶_bitset优化",
+      "name": "集合进阶：bitset优化",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "压位",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "压位",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.ds.集合进阶_压位trie_二进制trie",
+      "name": "集合进阶：压位Trie(二进制Trie)",
+      "theme": "数据结构专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "最大异或对",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "最大异或对",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_wqs二分_带权二分",
+      "name": "DP优化：WQS二分(带权二分)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "凸优化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "凸优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.数位dp进阶_数位dp_sum_product约束",
+      "name": "数位DP进阶：数位DP(sum/product约束)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.区间dp进阶_环上区间dp",
+      "name": "区间DP进阶：环上区间DP",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "破环成链",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "破环成链",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.树形dp进阶_换根dp_二次扫描",
+      "name": "树形DP进阶：换根DP(二次扫描)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "二次扫描",
+          "score": 0
+        },
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "二次扫描",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.树形dp进阶_树形dp与直径",
+      "name": "树形DP进阶：树形DP与直径",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        },
+        {
+          "pre_name": "最远点",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "最远点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_不平等博弈",
+      "name": "博弈DP进阶：不平等博弈",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "不平等博弈",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "不平等博弈",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_multi_sg",
+      "name": "博弈DP进阶：Multi-SG",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Multi-SG",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Multi-SG",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_every_sg",
+      "name": "博弈DP进阶：Every-SG",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Every-SG",
+          "score": 0
+        },
+        {
+          "pre_name": "全子游戏",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Every-SG",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "全子游戏",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.数据结构优化dp进阶_线段树优化",
+      "name": "数据结构优化DP进阶：线段树优化",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "区间最值",
+          "score": 0
+        },
+        {
+          "pre_name": "点修改",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "区间最值",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "点修改",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.环形dp进阶",
+      "name": "环形DP进阶",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "环形DP",
+          "score": 0
+        },
+        {
+          "pre_name": "破环成链",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "环形DP",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "破环成链",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.双状态dp进阶",
+      "name": "双状态DP进阶",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "双状态",
+          "score": 0
+        },
+        {
+          "pre_name": "0/1状态",
+          "score": 0
+        },
+        {
+          "pre_name": "分类讨论",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "双状态",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "0/1状态",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "分类讨论",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_后效性处理_高斯消元dp",
+      "name": "DP进阶：后效性处理(高斯消元DP)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "后效性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "后效性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_插头dp进阶_多回路",
+      "name": "DP进阶：插头DP进阶(多回路)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "多回路",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "多回路",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_凸优化技巧",
+      "name": "DP进阶：凸优化技巧",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "凸优化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "凸优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_插头dp_轮廓线dp",
+      "name": "DP进阶：插头DP(轮廓线DP)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "棋盘",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "棋盘",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_二次剩余_cipolla算法",
+      "name": "数论进阶：二次剩余(Cipolla算法)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "二次剩余",
+          "score": 0
+        },
+        {
+          "pre_name": "Cipolla",
+          "score": 0
+        },
+        {
+          "pre_name": "勒让德符号",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "二次剩余",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "Cipolla",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "勒让德符号",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_原根与阶",
+      "name": "数论进阶：原根与阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "阶",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "阶",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_大步小步_bsgs_进阶",
+      "name": "数论进阶：大步小步(BSGS)进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模方程",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模方程",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_扩展bsgs_exbsgs",
+      "name": "数论进阶：扩展BSGS(exBSGS)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "exBSGS",
+          "score": 0
+        },
+        {
+          "pre_name": "模不互质",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "exBSGS",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "模不互质",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_中国剩余定理_crt_进阶",
+      "name": "数论进阶：中国剩余定理(CRT)进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模方程组",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模方程组",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_扩展crt_excrt",
+      "name": "数论进阶：扩展CRT(exCRT)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模不互质",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模不互质",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.多项式_fft进阶_三次变两次",
+      "name": "多项式：FFT进阶(三次变两次)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "复数",
+          "score": 0
+        },
+        {
+          "pre_name": "DFT",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "复数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "DFT",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.多项式_ntt_数论变换",
+      "name": "多项式：NTT(数论变换)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.多项式_多项式快速幂",
+      "name": "多项式：多项式快速幂",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "ln/exp",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "ln/exp",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.多项式_指数型生成函数_egf",
+      "name": "多项式：指数型生成函数(EGF)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "EGF",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "EGF",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.组合计数进阶_容斥原理进阶",
+      "name": "组合计数进阶：容斥原理进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "组合计数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "组合计数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.组合计数进阶_cfs_计数公式系统",
+      "name": "组合计数进阶：CFS(计数公式系统)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "组合计数",
+          "score": 0
+        },
+        {
+          "pre_name": "CFS",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "组合计数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "CFS",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_全期望公式",
+      "name": "概率论进阶：全期望公式",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "全期望",
+          "score": 0
+        },
+        {
+          "pre_name": "条件期望",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "全期望",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "条件期望",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_随机化算法_蒙特卡洛",
+      "name": "概率论进阶：随机化算法(蒙特卡洛)",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "采样",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "采样",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_马尔可夫链进阶",
+      "name": "概率论进阶：马尔可夫链进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "稳态",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "稳态",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_lucas定理进阶",
+      "name": "数论进阶：Lucas定理进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模素数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模素数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_欧拉函数进阶",
+      "name": "数论进阶：欧拉函数进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "降幂",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "降幂",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_积性函数线性筛",
+      "name": "数论进阶：积性函数线性筛",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "欧拉筛",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "欧拉筛",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.图论数学_cayley定理",
+      "name": "图论数学：Cayley定理",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Cayley",
+          "score": 0
+        },
+        {
+          "pre_name": "完全图",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Cayley",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "完全图",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.图论数学_kirchhoff矩阵树定理进阶",
+      "name": "图论数学：Kirchhoff矩阵树定理进阶",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Kirchhoff",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Kirchhoff",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.线性代数进阶_线性基应用",
+      "name": "线性代数进阶：线性基应用",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "极大独立集",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "极大独立集",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.离散数学_布尔代数与逻辑",
+      "name": "离散数学：布尔代数与逻辑",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "布尔代数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "布尔代数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.分治进阶_点分治",
+      "name": "分治进阶：点分治",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.倍增进阶_st表上倍增",
+      "name": "倍增进阶：ST表上倍增",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "预处理",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "预处理",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.倍增进阶_树上倍增进阶",
+      "name": "倍增进阶：树上倍增进阶",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_三分法",
+      "name": "二分进阶：三分法",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "凸函数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "凸函数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.贪心进阶_反悔贪心",
+      "name": "贪心进阶：反悔贪心",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        },
+        {
+          "pre_name": "后悔",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "后悔",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_基数排序",
+      "name": "排序进阶：基数排序",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "桶",
+          "score": 0
+        },
+        {
+          "pre_name": "稳定排序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "桶",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "稳定排序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_计数排序",
+      "name": "排序进阶：计数排序",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "桶",
+          "score": 0
+        },
+        {
+          "pre_name": "值域",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "桶",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "值域",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_拓扑排序_计数排序应用",
+      "name": "排序进阶：拓扑排序(计数排序应用)",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "桶",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "桶",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_treap随机化",
+      "name": "随机化算法：Treap随机化",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        },
+        {
+          "pre_name": "随机优先级",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "随机优先级",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_a_算法",
+      "name": "搜索进阶：A*算法",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "估价",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "估价",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_dlx精确覆盖",
+      "name": "搜索进阶：DLX精确覆盖",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "DLX",
+          "score": 0
+        },
+        {
+          "pre_name": "精确覆盖",
+          "score": 0
+        },
+        {
+          "pre_name": "舞蹈链",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "DLX",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "精确覆盖",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "舞蹈链",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_剪枝技巧",
+      "name": "搜索进阶：剪枝技巧",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "可行性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "可行性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.递推进阶_线性递推_特征方程",
+      "name": "递推进阶：线性递推(特征方程)",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "特征方程",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "特征方程",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.递推进阶_常系数线性递推优化",
+      "name": "递推进阶：常系数线性递推优化",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "多项式取模",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "多项式取模",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_答案判定技巧",
+      "name": "二分进阶：答案判定技巧",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "验证",
+          "score": 0
+        },
+        {
+          "pre_name": "判定函数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "判定函数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.贪心进阶_区间调度进阶",
+      "name": "贪心进阶：区间调度进阶",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "端点排序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "端点排序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_外部排序",
+      "name": "排序进阶：外部排序",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "磁盘",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "磁盘",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_随机排列",
+      "name": "随机化算法：随机排列",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "随机排列",
+          "score": 0
+        },
+        {
+          "pre_name": "Fisher-Yates",
+          "score": 0
+        },
+        {
+          "pre_name": "洗牌",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "随机排列",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "Fisher-Yates",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "洗牌",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_dfs序与回溯",
+      "name": "搜索进阶：DFS序与回溯",
+      "theme": "基础算法扩展",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_border树",
+      "name": "字符串基础进阶：Border树",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "前缀函数",
+          "score": 0
+        },
+        {
+          "pre_name": "失配链",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "前缀函数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "失配链",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_z算法_扩展kmp",
+      "name": "字符串基础进阶：Z算法(扩展KMP)",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "前缀匹配",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "前缀匹配",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配进阶_ac自动机_fail树",
+      "name": "字符串匹配进阶：AC自动机(fail树)",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "fail树",
+          "score": 0
+        },
+        {
+          "pre_name": "树",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "fail树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "树",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.回文结构_回文自动机_pam",
+      "name": "回文结构：回文自动机(PAM)",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "PAM",
+          "score": 0
+        },
+        {
+          "pre_name": "不同回文",
+          "score": 0
+        },
+        {
+          "pre_name": "回文后缀",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "PAM",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "不同回文",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "回文后缀",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.回文结构_manacher进阶",
+      "name": "回文结构：Manacher进阶",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "中心扩展",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "中心扩展",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串处理_表达式求值",
+      "name": "字符串处理：表达式求值",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "后缀表达式",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "后缀表达式",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串处理_大数处理",
+      "name": "字符串处理：大数处理",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "加法乘法",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "加法乘法",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_编辑距离",
+      "name": "字符串问题：编辑距离",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Levenshtein",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Levenshtein",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_shift_or算法",
+      "name": "字符串匹配：Shift-Or算法",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模糊匹配",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模糊匹配",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_bm算法",
+      "name": "字符串匹配：BM算法",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "坏字符",
+          "score": 0
+        },
+        {
+          "pre_name": "好后缀",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "坏字符",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "好后缀",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.trie进阶_0_1_trie",
+      "name": "Trie进阶：0-1 Trie",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "最大异或",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "最大异或",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.trie进阶_trie与ac自动机",
+      "name": "Trie进阶：Trie与AC自动机",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "失配指针",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "失配指针",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串建模_字符串问题建模技巧",
+      "name": "字符串建模：字符串问题建模技巧",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "问题转化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "问题转化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串技巧_滚动哈希进阶应用",
+      "name": "字符串技巧：滚动哈希进阶应用",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "回文检测",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "回文检测",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_finite_automaton",
+      "name": "字符串匹配：Finite Automaton",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "有限自动机",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "有限自动机",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_aho_corasick加强",
+      "name": "字符串匹配：Aho-Corasick加强",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "自动机优化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "自动机优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_deque底层实现",
+      "name": "STL容器：deque底层实现",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "分段",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "分段",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_priority_queue底层_堆",
+      "name": "STL容器：priority_queue底层(堆)",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        },
+        {
+          "pre_name": "比较器",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "比较器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_unordered_set_map底层_哈希表",
+      "name": "STL容器：unordered_set/map底层(哈希表)",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "桶",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "桶",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_bitset使用",
+      "name": "STL容器：bitset使用",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "布尔",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "布尔",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_array_forward_list",
+      "name": "STL容器：array/forward_list",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "C++11",
+          "score": 0
+        },
+        {
+          "pre_name": "线性容器",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "C++11",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "线性容器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_sort底层_introspect",
+      "name": "STL算法：sort底层(introspect)",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "快排",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "快排",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_nth_element原理",
+      "name": "STL算法：nth_element原理",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "快速选择",
+          "score": 0
+        },
+        {
+          "pre_name": "中位数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "快速选择",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "中位数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_lower_bound_upper_bound底层",
+      "name": "STL算法：lower_bound/upper_bound底层",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "有序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "有序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_merge_inplace_merge",
+      "name": "STL算法：merge/inplace_merge",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "有序",
+          "score": 0
+        },
+        {
+          "pre_name": "原地合并",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "有序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "原地合并",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_unique_remove_erase惯用法",
+      "name": "STL算法：unique/remove/erase惯用法",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "erase",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "erase",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_lambda表达式进阶",
+      "name": "STL函数对象：lambda表达式进阶",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "捕获",
+          "score": 0
+        },
+        {
+          "pre_name": "泛型",
+          "score": 0
+        },
+        {
+          "pre_name": "C++14",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "捕获",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "泛型",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "C++14",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_function_bind",
+      "name": "STL函数对象：function/bind",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "bind",
+          "score": 0
+        },
+        {
+          "pre_name": "函数包装",
+          "score": 0
+        },
+        {
+          "pre_name": "回调",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "bind",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "函数包装",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "回调",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_仿函数与比较器",
+      "name": "STL函数对象：仿函数与比较器",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "比较器",
+          "score": 0
+        },
+        {
+          "pre_name": "operator()",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "比较器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "operator()",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_迭代器类型",
+      "name": "STL迭代器：迭代器类型",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "随机访问",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "随机访问",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_istream_iterator_ostream_iterator",
+      "name": "STL迭代器：istream_iterator/ostream_iterator",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "流",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "流",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_back_inserter_inserter",
+      "name": "STL迭代器：back_inserter/inserter",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "back_inserter",
+          "score": 0
+        },
+        {
+          "pre_name": "inserter",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "back_inserter",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "inserter",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_pair_tuple",
+      "name": "STL工具：pair/tuple",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "tuple",
+          "score": 0
+        },
+        {
+          "pre_name": "结构化绑定",
+          "score": 0
+        },
+        {
+          "pre_name": "C++17",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "tuple",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "结构化绑定",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "C++17",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_optional_variant_any_c_17",
+      "name": "STL工具：optional/variant/any(C++17)",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "optional",
+          "score": 0
+        },
+        {
+          "pre_name": "any",
+          "score": 0
+        },
+        {
+          "pre_name": "C++17",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "optional",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "any",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "C++17",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_string_view_c_17",
+      "name": "STL工具：string_view(C++17)",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "C++17",
+          "score": 0
+        },
+        {
+          "pre_name": "零拷贝",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "C++17",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "零拷贝",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_partial_sort_stable_sort",
+      "name": "STL算法：partial_sort/stable_sort",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "部分排序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "部分排序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_minmax_element_accumulate",
+      "name": "STL算法：minmax_element/accumulate",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "accumulate",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "accumulate",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_iota_fill_n_generate",
+      "name": "STL算法：iota/fill_n/generate",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "iota",
+          "score": 0
+        },
+        {
+          "pre_name": "generate",
+          "score": 0
+        },
+        {
+          "pre_name": "数值生成",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "iota",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "generate",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "数值生成",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl容器适配器_stack_queue_priority_queue",
+      "name": "STL容器适配器：stack/queue/priority_queue",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "适配器",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "适配器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_copy_transform惯用法",
+      "name": "STL算法：copy/transform惯用法",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "复制",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "复制",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_remove_if_partition",
+      "name": "STL算法：remove_if/partition",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "筛选",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "筛选",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_set_union_intersection_difference",
+      "name": "STL算法：set_union/intersection/difference",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "有序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "有序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl性能_vector扩容机制",
+      "name": "STL性能：vector扩容机制",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "扩容",
+          "score": 0
+        },
+        {
+          "pre_name": "摊销",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "扩容",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "摊销",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.stl.stl性能_emplace_back_vs_push_back",
+      "name": "STL性能：emplace_back vs push_back",
+      "theme": "STL与常用库细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "push_back",
+          "score": 0
+        },
+        {
+          "pre_name": "移动语义",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "push_back",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "移动语义",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_内存模型_栈与堆",
+      "name": "C++内存模型：栈与堆",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "堆",
+          "score": 0
+        },
+        {
+          "pre_name": "生命周期",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "堆",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "生命周期",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_引用_左值_右值引用",
+      "name": "C++引用：左值/右值引用",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "左值",
+          "score": 0
+        },
+        {
+          "pre_name": "右值",
+          "score": 0
+        },
+        {
+          "pre_name": "移动语义",
+          "score": 0
+        },
+        {
+          "pre_name": "&&",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "左值",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "右值",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "移动语义",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "&&",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_移动语义与完美转发",
+      "name": "C++11：移动语义与完美转发",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "移动语义",
+          "score": 0
+        },
+        {
+          "pre_name": "std::move",
+          "score": 0
+        },
+        {
+          "pre_name": "完美转发",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "移动语义",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "std::move",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "完美转发",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_auto_decltype类型推导",
+      "name": "C++11：auto/decltype类型推导",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "decltype",
+          "score": 0
+        },
+        {
+          "pre_name": "类型推导",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "decltype",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "类型推导",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_范围for循环",
+      "name": "C++11：范围for循环",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "容器",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "容器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_nullptr与智能指针",
+      "name": "C++11：nullptr与智能指针",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "nullptr",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "nullptr",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_override_final_default_delete",
+      "name": "C++11：override/final/default/delete",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "override",
+          "score": 0
+        },
+        {
+          "pre_name": "final",
+          "score": 0
+        },
+        {
+          "pre_name": "default",
+          "score": 0
+        },
+        {
+          "pre_name": "delete",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "override",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "final",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "default",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "delete",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_14_泛型lambda_返回值推导",
+      "name": "C++14：泛型lambda/返回值推导",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "泛型",
+          "score": 0
+        },
+        {
+          "pre_name": "推导",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "泛型",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "推导",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_if_constexpr",
+      "name": "C++17：if constexpr",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编译期",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编译期",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_结构化绑定",
+      "name": "C++17：结构化绑定",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "结构化绑定",
+          "score": 0
+        },
+        {
+          "pre_name": "tuple",
+          "score": 0
+        },
+        {
+          "pre_name": "解包",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "结构化绑定",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "tuple",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "解包",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_折叠表达式",
+      "name": "C++17：折叠表达式",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "...,",
+          "score": 0
+        },
+        {
+          "pre_name": "化简",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "...,",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "化简",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_模板_特化与偏特化",
+      "name": "C++模板：特化与偏特化",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "特化",
+          "score": 0
+        },
+        {
+          "pre_name": "偏特化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "特化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "偏特化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_模板_变参模板",
+      "name": "C++模板：变参模板",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "...,",
+          "score": 0
+        },
+        {
+          "pre_name": "包展开",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "...,",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "包展开",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_运算符重载_输入输出重载",
+      "name": "C++运算符重载：输入输出重载",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "友元",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "友元",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_运算符重载_类型转换",
+      "name": "C++运算符重载：类型转换",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "explicit",
+          "score": 0
+        },
+        {
+          "pre_name": "转换运算符",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "explicit",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "转换运算符",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_异常_异常安全编程",
+      "name": "C++异常：异常安全编程",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "捕获",
+          "score": 0
+        },
+        {
+          "pre_name": "RAII",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "捕获",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "RAII",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_constexpr与编译期计算",
+      "name": "C++特性：constexpr与编译期计算",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编译期",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编译期",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_inline与内联优化",
+      "name": "C++特性：inline与内联优化",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "ODR",
+          "score": 0
+        },
+        {
+          "pre_name": "链接",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "ODR",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "链接",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_volatile_mutable",
+      "name": "C++特性：volatile/mutable",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "volatile",
+          "score": 0
+        },
+        {
+          "pre_name": "mutable",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "volatile",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "mutable",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_编译_头文件与编译单元",
+      "name": "C++编译：头文件与编译单元",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编译单元",
+          "score": 0
+        },
+        {
+          "pre_name": "链接",
+          "score": 0
+        },
+        {
+          "pre_name": "ODR",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编译单元",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "链接",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "ODR",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_编译_预处理器与宏",
+      "name": "C++编译：预处理器与宏",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "预处理器",
+          "score": 0
+        },
+        {
+          "pre_name": "宏",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "预处理器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "宏",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_位域与联合体",
+      "name": "C++特性：位域与联合体",
+      "theme": "C++语法高级细节",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "位域",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "位域",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.io优化_关闭同步流",
+      "name": "IO优化：关闭同步流",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "ios",
+          "score": 0
+        },
+        {
+          "pre_name": "sync",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "ios",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "sync",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.io优化_文件读写重定向",
+      "name": "IO优化：文件读写重定向",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "文件IO",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "文件IO",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_编译优化选项",
+      "name": "性能优化：编译优化选项",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "O2",
+          "score": 0
+        },
+        {
+          "pre_name": "编译优化",
+          "score": 0
+        },
+        {
+          "pre_name": "g++",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "O2",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "编译优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "g++",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_循环展开与内联",
+      "name": "性能优化：循环展开与内联",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "指令",
+          "score": 0
+        },
+        {
+          "pre_name": "流水线",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "指令",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "流水线",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_namespace使用",
+      "name": "代码组织：namespace使用",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "命名空间",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "命名空间",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_头文件包含与guard",
+      "name": "代码组织：头文件包含与guard",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "头文件保护",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "头文件保护",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_using与typedef最佳实践",
+      "name": "代码组织：using与typedef最佳实践",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "可读性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "可读性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_assert使用",
+      "name": "调试技巧：assert使用",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "验证",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_静态断言_static_assert",
+      "name": "调试技巧：静态断言(static_assert)",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编译期",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编译期",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_条件编译_debug_release",
+      "name": "调试技巧：条件编译(debug/release)",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "DEBUG",
+          "score": 0
+        },
+        {
+          "pre_name": "发布",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "DEBUG",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "发布",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_整数溢出检测",
+      "name": "代码安全：整数溢出检测",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "安全检查",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "安全检查",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_数组越界检查",
+      "name": "代码安全：数组越界检查",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "at()",
+          "score": 0
+        },
+        {
+          "pre_name": "栈破坏",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "at()",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "栈破坏",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_野指针与空指针",
+      "name": "代码安全：野指针与空指针",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "野指针",
+          "score": 0
+        },
+        {
+          "pre_name": "悬垂",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "野指针",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "悬垂",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_函数化封装",
+      "name": "代码复用：函数化封装",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "封装",
+          "score": 0
+        },
+        {
+          "pre_name": "可复用",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "封装",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "可复用",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_模板化编程",
+      "name": "代码复用：模板化编程",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "泛型",
+          "score": 0
+        },
+        {
+          "pre_name": "代码复用",
+          "score": 0
+        },
+        {
+          "pre_name": "类型无关",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "泛型",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "代码复用",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "类型无关",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_常用宏定义",
+      "name": "代码复用：常用宏定义",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "宏",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "宏",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_函数指针与回调",
+      "name": "代码复用：函数指针与回调",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "函数指针",
+          "score": 0
+        },
+        {
+          "pre_name": "回调",
+          "score": 0
+        },
+        {
+          "pre_name": "比较器",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "函数指针",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "回调",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "比较器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.时间优化_clock计时",
+      "name": "时间优化：clock计时",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "clock",
+          "score": 0
+        },
+        {
+          "pre_name": "计时",
+          "score": 0
+        },
+        {
+          "pre_name": "超时检测",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "clock",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "计时",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "超时检测",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.stl技巧_reserve预分配",
+      "name": "STL技巧：reserve预分配",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "预分配",
+          "score": 0
+        },
+        {
+          "pre_name": "效率",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "预分配",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "效率",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.stl技巧_swap技巧",
+      "name": "STL技巧：swap技巧",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "swap",
+          "score": 0
+        },
+        {
+          "pre_name": "shrink_to_fit",
+          "score": 0
+        },
+        {
+          "pre_name": "释放",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "swap",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "shrink_to_fit",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "释放",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.skills.编码规范_命名规范与注释",
+      "name": "编码规范：命名规范与注释",
+      "theme": "编程技巧",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "命名规范",
+          "score": 0
+        },
+        {
+          "pre_name": "可读性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "命名规范",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "可读性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_最优化问题建模",
+      "name": "建模方法：最优化问题建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "最优化",
+          "score": 0
+        },
+        {
+          "pre_name": "目标函数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "最优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "目标函数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_决策问题建模",
+      "name": "建模方法：决策问题建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "可行解",
+          "score": 0
+        },
+        {
+          "pre_name": "验证",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "可行解",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_计数问题建模",
+      "name": "建模方法：计数问题建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "分类讨论",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "分类讨论",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_构造问题建模",
+      "name": "建模方法：构造问题建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "特例",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "特例",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_交互问题建模",
+      "name": "建模方法：交互问题建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "反馈",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "反馈",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_在线转离线",
+      "name": "建模方法：在线转离线",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "预处理",
+          "score": 0
+        },
+        {
+          "pre_name": "批处理",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "预处理",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "批处理",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_等效转换",
+      "name": "建模方法：等效转换",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "简化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "简化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_正难则反",
+      "name": "建模方法：正难则反",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "补集",
+          "score": 0
+        },
+        {
+          "pre_name": "逆向",
+          "score": 0
+        },
+        {
+          "pre_name": "排除",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "补集",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "逆向",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "排除",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_二分答案建模",
+      "name": "建模方法：二分答案建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "验证",
+          "score": 0
+        },
+        {
+          "pre_name": "最优化",
+          "score": 0
+        },
+        {
+          "pre_name": "可行性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "最优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "可行性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_离散化建模",
+      "name": "建模方法：离散化建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "值域",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "值域",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_折半搜索_meet_in_the_middle",
+      "name": "建模方法：折半搜索(meet-in-the-middle)",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "折半搜索",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "折半搜索",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_图论建模技巧",
+      "name": "建模方法：图论建模技巧",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "虚拟节点",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "虚拟节点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_博弈论建模",
+      "name": "建模方法：博弈论建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "公平组合",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "公平组合",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_矩阵乘法建模",
+      "name": "建模方法：矩阵乘法建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "转移矩阵",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "转移矩阵",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_概率期望建模",
+      "name": "建模方法：概率期望建模",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "全概率",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "全概率",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_数据范围分析",
+      "name": "建模方法：数据范围分析",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "算法选择",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "算法选择",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_特殊性质利用",
+      "name": "建模方法：特殊性质利用",
+      "theme": "题型建模方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "特殊性质",
+          "score": 0
+        },
+        {
+          "pre_name": "对称性",
+          "score": 0
+        },
+        {
+          "pre_name": "周期性",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "特殊性质",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "对称性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "周期性",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_noi系列赛制",
+      "name": "比赛规则：NOI系列赛制",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "NOI",
+          "score": 0
+        },
+        {
+          "pre_name": "赛制",
+          "score": 0
+        },
+        {
+          "pre_name": "IOI",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "NOI",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "赛制",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "IOI",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_acm赛制",
+      "name": "比赛规则：ACM赛制",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "ACM",
+          "score": 0
+        },
+        {
+          "pre_name": "ICPC",
+          "score": 0
+        },
+        {
+          "pre_name": "组队",
+          "score": 0
+        },
+        {
+          "pre_name": "罚时",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "ACM",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "ICPC",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "组队",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "罚时",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_oi与acm区别",
+      "name": "比赛规则：OI与ACM区别",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "ACM",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "ACM",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_时间分配策略",
+      "name": "比赛策略：时间分配策略",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "解题顺序",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "解题顺序",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_题目难度识别",
+      "name": "比赛策略：题目难度识别",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "难度评估",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "难度评估",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_暴力与正解权衡",
+      "name": "比赛策略：暴力与正解权衡",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "正解",
+          "score": 0
+        },
+        {
+          "pre_name": "部分分",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "正解",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "部分分",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_部分分策略",
+      "name": "比赛策略：部分分策略",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "部分分",
+          "score": 0
+        },
+        {
+          "pre_name": "子任务",
+          "score": 0
+        },
+        {
+          "pre_name": "特殊性质",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "部分分",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "子任务",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "特殊性质",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_对拍调试",
+      "name": "比赛技巧：对拍调试",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "验证",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_批量数据测试",
+      "name": "比赛技巧：批量数据测试",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "批量测试",
+          "score": 0
+        },
+        {
+          "pre_name": "验证",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "批量测试",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_常见陷阱",
+      "name": "比赛技巧：常见陷阱",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "陷阱",
+          "score": 0
+        },
+        {
+          "pre_name": "特殊值",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "陷阱",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "特殊值",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_猜结论与打表",
+      "name": "比赛技巧：猜结论与打表",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "打表",
+          "score": 0
+        },
+        {
+          "pre_name": "找规律",
+          "score": 0
+        },
+        {
+          "pre_name": "猜想",
+          "score": 0
+        },
+        {
+          "pre_name": "验证",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "打表",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "找规律",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "猜想",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "验证",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛心理_压力管理",
+      "name": "比赛心理：压力管理",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "压力",
+          "score": 0
+        },
+        {
+          "pre_name": "情绪",
+          "score": 0
+        },
+        {
+          "pre_name": "注意力",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "压力",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "情绪",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "注意力",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛心理_复盘总结",
+      "name": "比赛心理：复盘总结",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "复盘",
+          "score": 0
+        },
+        {
+          "pre_name": "错题",
+          "score": 0
+        },
+        {
+          "pre_name": "提高",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "复盘",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "错题",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "提高",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛工具_本地环境配置",
+      "name": "比赛工具：本地环境配置",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "环境",
+          "score": 0
+        },
+        {
+          "pre_name": "配置",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "环境",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "配置",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.contest.比赛工具_vim_vs_code竞赛配置",
+      "name": "比赛工具：Vim/VS Code竞赛配置",
+      "theme": "比赛相关知识",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编辑器",
+          "score": 0
+        },
+        {
+          "pre_name": "Vim",
+          "score": 0
+        },
+        {
+          "pre_name": "VS Code",
+          "score": 0
+        },
+        {
+          "pre_name": "插件",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编辑器",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "Vim",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "VS Code",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "插件",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_gdb入门",
+      "name": "调试基础：GDB入门",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "GDB",
+          "score": 0
+        },
+        {
+          "pre_name": "断点",
+          "score": 0
+        },
+        {
+          "pre_name": "单步",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "GDB",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "断点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "单步",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_gdb进阶命令",
+      "name": "调试基础：GDB进阶命令",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "GDB",
+          "score": 0
+        },
+        {
+          "pre_name": "条件断点",
+          "score": 0
+        },
+        {
+          "pre_name": "观察点",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "GDB",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "条件断点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "观察点",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_print调试法",
+      "name": "调试基础：print调试法",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "信息输出",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "信息输出",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_静态分析",
+      "name": "调试基础：静态分析",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "静态分析",
+          "score": 0
+        },
+        {
+          "pre_name": "代码审查",
+          "score": 0
+        },
+        {
+          "pre_name": "走读",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "静态分析",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "代码审查",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "走读",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_二分定位bug",
+      "name": "调试技巧：二分定位bug",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "bug定位",
+          "score": 0
+        },
+        {
+          "pre_name": "隔离",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "bug定位",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "隔离",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_复原测试法",
+      "name": "调试技巧：复原测试法",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "最小样例",
+          "score": 0
+        },
+        {
+          "pre_name": "测试",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "最小样例",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "测试",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_断言辅助调试",
+      "name": "调试技巧：断言辅助调试",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "前置条件",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "前置条件",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_边界测试",
+      "name": "调试技巧：边界测试",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "空",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "空",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_随机测试",
+      "name": "调试技巧：随机测试",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "随机测试",
+          "score": 0
+        },
+        {
+          "pre_name": "fuzzing",
+          "score": 0
+        },
+        {
+          "pre_name": "压力",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "随机测试",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "fuzzing",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "压力",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_re_运行时错误_排查",
+      "name": "调试场景：RE(运行时错误)排查",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "段错误",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "段错误",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_tle_超时_优化",
+      "name": "调试场景：TLE(超时)优化",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "超时",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "超时",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_wa_答案错误_排查",
+      "name": "调试场景：WA(答案错误)排查",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "答案错误",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "答案错误",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_mle_内存超限_排查",
+      "name": "调试场景：MLE(内存超限)排查",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "内存超限",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "内存超限",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试工具_valgrind内存检测",
+      "name": "调试工具：Valgrind内存检测",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "Valgrind",
+          "score": 0
+        },
+        {
+          "pre_name": "非法访问",
+          "score": 0
+        },
+        {
+          "pre_name": "工具",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "Valgrind",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "非法访问",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "工具",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.debug.调试工具_addresssanitizer",
+      "name": "调试工具：AddressSanitizer",
+      "theme": "调试方法",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "编译选项",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "编译选项",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.dp.dp_bitonic",
+      "name": "DP进阶：双调DP(双调路径)",
+      "theme": "动态规划专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "双调",
+          "score": 0
+        },
+        {
+          "pre_name": "最优化",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "双调",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "最优化",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.graph.graph_flow_dynamic_edges",
+      "name": "图论建模：网络流动态加边",
+      "theme": "图论专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "动态加边",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "动态加边",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.math_excrt_apps",
+      "name": "数学进阶：扩展中国剩余定理应用",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "模数不互质",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "模数不互质",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.math_dujiao_sieve",
+      "name": "数学进阶：杜教筛",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "数论函数",
+          "score": 0
+        },
+        {
+          "pre_name": "提公因数",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "数论函数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "提公因数",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.math.math_nim_product",
+      "name": "数学进阶：nim积",
+      "theme": "信奥数学",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "nim积",
+          "score": 0
+        },
+        {
+          "pre_name": "公平组合",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "nim积",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        },
+        {
+          "pre_name": "公平组合",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.string_lcs_sa",
+      "name": "字符串DP：最长公共子串后缀数组解法",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "连接",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "连接",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand.string.string_sunday_opt",
+      "name": "字符串匹配：Sunday算法优化",
+      "theme": "字符串专题",
+      "issues": [],
+      "unresolved_pre": [
+        {
+          "pre_name": "跳转表",
+          "score": 0
+        }
+      ],
+      "suggested_fixes": [
+        {
+          "pre_name": "跳转表",
+          "action": "manual_fix",
+          "note": "无法自动解析，需人工替换或删除"
+        }
+      ]
+    }
+  ]
+}

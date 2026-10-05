@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Review Checklist",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T13:40:00.000Z",
+    "batch_id": "stage3f_batch2",
+    "main_graph_modified": false,
+    "review_not_yet_executed": true,
+    "total_candidates": 20,
+    "expected_item_count": 1681,
+    "expected_section_count": 65
+  },
+  "pre_review_checks": [
+    {
+      "check_id": "prc_01",
+      "description": "item_count == 1681",
+      "expected_value": 1681,
+      "critical": true
+    },
+    {
+      "check_id": "prc_02",
+      "description": "section_count == 65",
+      "expected_value": 65,
+      "critical": true
+    },
+    {
+      "check_id": "prc_03",
+      "description": "validate-only passed == true",
+      "expected_value": true,
+      "critical": true
+    },
+    {
+      "check_id": "prc_04",
+      "description": "resolved_pre_mismatches == []",
+      "expected_value": [],
+      "critical": true
+    },
+    {
+      "check_id": "prc_05",
+      "description": "dangling_refs == []",
+      "expected_value": [],
+      "critical": true
+    },
+    {
+      "check_id": "prc_06",
+      "description": "direct_pre_cycle == null",
+      "expected_value": null,
+      "critical": true
+    },
+    {
+      "check_id": "prc_07",
+      "description": "product_metadata_validation.passed == true",
+      "expected_value": true,
+      "critical": true
+    },
+    {
+      "check_id": "prc_08",
+      "description": "新增节点数 == 20",
+      "expected_value": 20,
+      "critical": true
+    }
+  ],
+  "per_item_checks": [
+    {
+      "check_id": "pic_01",
+      "description": "是否适合作为 knowledge_item（有百科/教学/竞赛价值）",
+      "output_field": "item_type",
+      "options": ["core_concept", "implementation_variant", "modeling_pattern", "application_case", "theorem_or_property", "unclear"]
+    },
+    {
+      "check_id": "pic_02",
+      "description": "是否是 implementation_variant / theorem_or_property（区分清楚）",
+      "output_field": "item_type_refinement"
+    },
+    {
+      "check_id": "pic_03",
+      "description": "是否与已有基础节点重复或过度拆分",
+      "output_field": "over_split_risk",
+      "options": ["low", "medium", "high"]
+    },
+    {
+      "check_id": "pic_04",
+      "description": "是否属于高级变体而非重复基础概念",
+      "output_field": "distinction_from_base"
+    },
+    {
+      "check_id": "pic_05",
+      "description": "direct_pre 是否过少或过泛（需要更精准的依赖）",
+      "output_field": "dependency_quality",
+      "options": ["adequate", "too_general", "too_few", "missing_core"]
+    },
+    {
+      "check_id": "pic_06",
+      "description": "parent_concept 是否明确",
+      "output_field": "parent_concept_clarity",
+      "options": ["clear", "unclear", "missing"]
+    },
+    {
+      "check_id": "pic_07",
+      "description": "是否应同步 problem_patterns（建模/题型识别价值）",
+      "output_field": "sync_to_patterns",
+      "options": ["yes", "no"]
+    },
+    {
+      "check_id": "pic_08",
+      "description": "learning_path_policy 是否合理（visibility/tracks）",
+      "output_field": "learning_path_adequacy",
+      "options": ["appropriate", "needs_review"]
+    },
+    {
+      "check_id": "pic_09",
+      "description": "是否可以降为 C（review_priority B→C）",
+      "output_field": "suggested_priority",
+      "options": ["C", "B", "A"]
+    },
+    {
+      "check_id": "pic_10",
+      "description": "是否需要保留 B/A 人工复查",
+      "output_field": "need_manual_review_remaining",
+      "options": [true, false]
+    }
+  ],
+  "series_specific_checks": [
+    {
+      "series": "Z算法 (基础+模式匹配)",
+      "candidates": ["cand.string.z_algorithm.basic", "cand.string.z_algorithm.pattern_matching"],
+      "checks": [
+        "Z算法基础是否与已有KMP节点功能重复，还是独立算法",
+        "Z算法模式匹配应用是否应有 direct_pre 指向 Z算法基础",
+        "两者是否应降为 C，item_type = core_concept（独立算法）"
+      ]
+    },
+    {
+      "series": "KMP自动机",
+      "candidates": ["cand.string.kmp_automaton.basic"],
+      "checks": [
+        "与已有KMP节点的关系：是自动机形式化变体还是完全对应",
+        "如果已有KMP已包含自动机构造，建议 needs_merge_or_collapse",
+        "item_type 建议 implementation_variant"
+      ]
+    },
+    {
+      "series": "AC自动机 (高级应用+失败树)",
+      "candidates": ["cand.string.ac_automaton.applications", "cand.string.ac_failure_tree.analysis"],
+      "checks": [
+        "AC自动机高级应用与已有AC自动机节点的关系：是否已有节点覆盖了高级应用",
+        "AC自动机失败树分析：失败树结构是否有独立的理论价值",
+        "确认 direct_pre 指向已有AC自动机节点"
+      ]
+    },
+    {
+      "series": "数论核心 (Miller-Rabin/Pollard Rho/原根/BSGS/扩展BSGS)",
+      "candidates": [
+        "cand.math.prime_testing.miller_rabin",
+        "cand.math.prime_factorization.pollard_rho",
+        "cand.math.primitive_root.basic",
+        "cand.math.discrete_log.bsgs",
+        "cand.math.discrete_log.exbsgs"
+      ],
+      "checks": [
+        "Miller-Rabin 是概率性素数测试，确认已有素数判定节点是否覆盖此算法",
+        "Miller-Rabin 和 Pollard Rho 的依赖关系：两者是配套算法",
+        "原根是否属于 theorem_or_property 类型",
+        "BSGS 和 扩展BSGS 是并列关系（模数互质 vs 不互质），区分明确",
+        "共5个数论核心节点，是否过度拆分？每个有独立教育价值",
+        "建议其中1~2个保留 B（核心概念），其余降 C"
+      ]
+    },
+    {
+      "series": "字符串结构 (LCP RMQ/SAM父树/Eertree)",
+      "candidates": ["cand.string.lcp_rmq.optimization", "cand.string.sam_parent_tree.structure", "cand.string.eertree.construction"],
+      "checks": [
+        "LCP RMQ 优化应确认 direct_pre 指向后缀数组节点",
+        "SAM父树结构的 item_type 建议 theorem_or_property（理论结构而非算法）",
+        "回文树Eertree构建是独立的高级字符串结构，确认不重复",
+        "三个节点维度正交，无过度拆分"
+      ]
+    },
+    {
+      "series": "Lucas定理 / Catalan数",
+      "candidates": ["cand.math.combinatorial.lucas", "cand.math.combinatorial.catalan"],
+      "checks": [
+        "★ Lucas定理 近重复风险：已有'Lucas'节点 + Batch1的'扩展Lucas定理'(4.3.32)",
+        "确认已有Lucas节点是否已完整覆盖Lucas定理",
+        "如果已有Lucas覆盖，Lucas定理 -> needs_merge_or_collapse",
+        "Catalan数：确认已有组合计数节点是否包含Catalan数介绍",
+        "Lucas定理 item_type=theorem_or_property, Catalan数=theorem_or_property"
+      ]
+    },
+    {
+      "series": "高级数学 (狄利克雷卷积/莫比乌斯反演)",
+      "candidates": ["cand.math.dirichlet_convolution.basic", "cand.math.mobius_inversion.applications"],
+      "checks": [
+        "狄利克雷卷积是数论函数基础运算，item_type=theorem_or_property",
+        "莫比乌斯反演应用是否更适合 problem_pattern（题型模式而非知识点）",
+        "莫比乌斯反演应用的 direct_pre 应指向狄利克雷卷积基础",
+        "莫比乌斯反演建议同步到 problem_patterns 库"
+      ]
+    },
+    {
+      "series": "DP优化 (单调队列/滑动窗口)",
+      "candidates": ["cand.dp.optimization.monotone_queue", "cand.dp.optimization.monotone_queue_sliding"],
+      "checks": [
+        "★ 单调队列优化 近重复高风险：已有'单调队列优化DP'节点",
+        "确认已有'单调队列优化DP'节点的范围->如果已覆盖，标记needs_merge_or_collapse",
+        "滑动窗口DP vs 已有'滑动窗口'节点：确认是否包含DP内容",
+        "两个节点 item_type=implementation_variant 或 application_case"
+      ]
+    }
+  ],
+  "high_risk_near_duplicates": [
+    {
+      "group": "Lucas定理 vs 已有Lucas + 扩展Lucas定理",
+      "risk": "high",
+      "candidates_affected": ["cand.math.combinatorial.lucas"],
+      "distinction_criteria": "Lucas定理是组合数模素数的核心定理。已有'Lucas'节点（可能是简写）和Batch1的'扩展Lucas定理'(4.3.32)",
+      "resolution": "如果已有'Lucas'节点已完整覆盖Lucas定理 => needs_merge_or_collapse。如果只是简写则保留并重命名"
+    },
+    {
+      "group": "单调队列优化 vs 已有单调队列优化DP",
+      "risk": "high",
+      "candidates_affected": ["cand.dp.optimization.monotone_queue"],
+      "distinction_criteria": "单调队列优化是DP优化技术。已有'单调队列优化DP'节点",
+      "resolution": "如果已有节点已覆盖全部内容 => needs_merge_or_collapse。如果是不同侧重的独立节点则保留"
+    }
+  ],
+  "output_files_checklist": [
+    {
+      "file": "data/stage3f_batch2_added_items_review.json",
+      "description": "逐节点 Review 结论",
+      "required": true
+    },
+    {
+      "file": "docs/stage3f_batch2_added_items_review_report.md",
+      "description": "Review 完整报告",
+      "required": true
+    },
+    {
+      "file": "data/stage3f_batch2_review_status_patch_preview.json",
+      "description": "review_status patch 预览（B→C + 清除 need_manual_review）",
+      "required": true
+    },
+    {
+      "file": "data/stage3f_batch2_dependency_fix_candidates.json",
+      "description": "依赖修复候选（预期空）",
+      "required": true
+    },
+    {
+      "file": "data/stage3f_batch2_problem_pattern_sync_candidates.json",
+      "description": "建议同步 problem_patterns 的候选（预期 1~2 个：莫比乌斯反演）",
+      "required": true
+    },
+    {
+      "file": "data/stage3f_batch2_merge_or_collapse_candidates.json",
+      "description": "建议合并/折叠的候选（预期 1~2 个：Lucas定理 / 单调队列优化）",
+      "required": true
+    }
+  ],
+  "post_review_validation": [
+    {
+      "check_id": "post_01",
+      "description": "主图谱未被修改",
+      "expected": true
+    },
+    {
+      "check_id": "post_02",
+      "description": "patch 未应用（仅生成 preview）",
+      "expected": true
+    },
+    {
+      "check_id": "post_03",
+      "description": "未继续 Stage3F Batch3",
+      "expected": true
+    },
+    {
+      "check_id": "post_04",
+      "description": "review 覆盖率 20/20",
+      "expected": 20
+    },
+    {
+      "check_id": "post_05",
+      "description": "validate-only passed == true",
+      "expected": true
+    },
+    {
+      "check_id": "post_06",
+      "description": "所有排除候选有明确理由",
+      "expected": true
+    }
+  ]
+}

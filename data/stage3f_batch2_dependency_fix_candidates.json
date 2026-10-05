@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Dependency Fix Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T15:45:00.000Z",
+    "batch_id": "stage3f_batch2",
+    "main_graph_modified": false,
+    "total_candidates": 0
+  },
+  "dependency_fix_candidates": [],
+  "note": "所有 20 个节点的 direct_pre 均为有效的 item id，无 section ref，无依赖问题。不需要依赖修复。"
+}

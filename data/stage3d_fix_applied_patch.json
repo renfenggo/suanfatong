@@ -1,0 +1,583 @@
+[
+  {
+    "id": "2.21.63",
+    "source_candidate_id": "cand.graph.block_cut_tree.weighted_variant",
+    "review_result_before": "keep_manual_review",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.67",
+    "source_candidate_id": "cand.ds.multidimensional.dominance_counting",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48"
+    ],
+    "direct_pre_after": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.67",
+    "source_candidate_id": "cand.graph.cactus_graph.minimum_cut",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1",
+      "2.16.3"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.62",
+    "source_candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "direct_pre_after": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.60",
+    "source_candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "direct_pre_after": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.61",
+    "source_candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+    "review_result_before": "keep_manual_review",
+    "direct_pre_before": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "direct_pre_after": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "A",
+      "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.59",
+    "source_candidate_id": "cand.ds.dynamic_tree.reroot_query",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "direct_pre_after": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.66",
+    "source_candidate_id": "cand.graph.cactus_graph.edge_cactus",
+    "review_result_before": "keep_manual_review",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.55",
+    "source_candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "1.4.13",
+      "4.8.1",
+      "3.13.39"
+    ],
+    "direct_pre_after": [
+      "1.4.13",
+      "4.8.1",
+      "3.13.39",
+      "2.14.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.56",
+    "source_candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "direct_pre_after": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.64",
+    "source_candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "direct_pre_after": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.62",
+    "source_candidate_id": "cand.graph.block_cut_tree.tree_dp",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14",
+      "2.8.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "2.21.60",
+    "source_candidate_id": "cand.graph.block_cut_tree.distance_on_block_cut_tree",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.63",
+    "source_candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+    "review_result_before": "move_to_problem_patterns",
+    "direct_pre_before": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "direct_pre_after": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Keep knowledge item and sync to problem_patterns for modeling/query-pattern review."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.68",
+    "source_candidate_id": "cand.graph.cactus_graph.path_counting",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "2.21.64",
+    "source_candidate_id": "cand.graph.cactus_graph.diameter",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.65",
+    "source_candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48"
+    ],
+    "direct_pre_after": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48",
+      "1.8.20"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "3.13.66",
+    "source_candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48"
+    ],
+    "direct_pre_after": [
+      "3.7.1",
+      "3.7.2",
+      "3.13.48"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.59",
+    "source_candidate_id": "cand.graph.block_cut_tree.connectivity_query",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.57",
+    "source_candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "direct_pre_after": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46",
+      "2.14.2"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.65",
+    "source_candidate_id": "cand.graph.cactus_graph.dynamic_programming",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "2.21.69",
+    "source_candidate_id": "cand.graph.cactus_graph.vertex_cactus",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "direct_pre_after": [
+      "2.21.6",
+      "2.21.42",
+      "2.7.1"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "2.21.58",
+    "source_candidate_id": "cand.graph.block_cut_tree.bridge_interaction",
+    "review_result_before": "approve",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "review_status_after": {
+      "need_manual_review": false,
+      "review_priority": "C",
+      "review_reason": "Stage3D-Fix approved: dependencies and metadata are stable enough for normal cadence."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  },
+  {
+    "id": "3.13.58",
+    "source_candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+    "review_result_before": "needs_dependency_fix",
+    "direct_pre_before": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46"
+    ],
+    "direct_pre_after": [
+      "2.14.1",
+      "2.14.4",
+      "3.13.46",
+      "3.7.2"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Stage3D-Fix applied dependency additions; keep B review for semantic spot-check."
+    },
+    "rel_after": [
+      "3.13.33"
+    ]
+  },
+  {
+    "id": "2.21.61",
+    "source_candidate_id": "cand.graph.block_cut_tree.offline_query",
+    "review_result_before": "move_to_problem_patterns",
+    "direct_pre_before": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "direct_pre_after": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "review_status_after": {
+      "need_manual_review": true,
+      "review_priority": "B",
+      "review_reason": "Keep knowledge item and sync to problem_patterns for modeling/query-pattern review."
+    },
+    "rel_after": [
+      "2.21.4"
+    ]
+  }
+]

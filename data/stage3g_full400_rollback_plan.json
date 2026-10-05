@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "Stage3G Full400 Rollback Plan",
+    "generated_at": "2026-05-25T22:56:20.206224",
+    "batch_id": "stage3g_full400"
+  },
+  "backup_path": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\backups\\merged_knowledge_graph_item_dependencies_refined_before_stage3g_full400.json",
+  "restore_command": "Copy-Item -Path 'backups/merged_knowledge_graph_item_dependencies_refined_before_stage3g_full400.json' -Destination 'merged_knowledge_graph_item_dependencies_refined.json' -Force",
+  "pre_merge_state": {
+    "item_count": 1765,
+    "section_count": 65,
+    "validate_only_passed": true
+  },
+  "merge_state": {
+    "item_count": 2165,
+    "section_count": 65
+  }
+}

@@ -1,0 +1,783 @@
+{
+  "audit_timestamp": "2026-09-02T22:19:34.028898",
+  "project_root": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong",
+  "data_sources": {
+    "main_knowledge_graph": {
+      "status": "success",
+      "file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\merged_knowledge_graph_item_dependencies_refined.json",
+      "schema_info": {
+        "detected_structure": "categories_sections_items",
+        "top_level_keys": [
+          "meta",
+          "categories"
+        ],
+        "categories_count": 5,
+        "sections_count": 65,
+        "items_count": 3240,
+        "structure_path": "categories -> sections -> items"
+      },
+      "total_items": 3240,
+      "field_coverage": {
+        "id": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "name": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "alias": {
+          "coverage": 80.77,
+          "count": 2617,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "parent": {
+          "coverage": 80.77,
+          "count": 2617,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "direct_pre": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "resolved_pre": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "rel": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "level": {
+          "coverage": 85.34,
+          "count": 2765,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "source": {
+          "coverage": 80.77,
+          "count": 2617,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "docx_ids": {
+          "coverage": 41.64,
+          "count": 1349,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "merge_type": {
+          "coverage": 62.25,
+          "count": 2017,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "exact_match_reason": {
+          "coverage": 1.98,
+          "count": 64,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "aliases": {
+          "coverage": 81.48,
+          "count": 2640,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "en_name": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "global_aliases": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "tracks": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list"
+          ]
+        },
+        "audience": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "list",
+            "str"
+          ]
+        },
+        "visibility": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "learning_path_policy": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str",
+            "dict"
+          ]
+        },
+        "localization_status": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str",
+            "dict"
+          ]
+        },
+        "content_status": {
+          "coverage": 100.0,
+          "count": 3240,
+          "total": 3240,
+          "types": [
+            "str",
+            "dict"
+          ]
+        },
+        "platform_tags": {
+          "coverage": 85.34,
+          "count": 2765,
+          "total": 3240,
+          "types": [
+            "list",
+            "dict"
+          ]
+        },
+        "mapping_reason": {
+          "coverage": 23.36,
+          "count": 757,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "parent_concept": {
+          "coverage": 18.95,
+          "count": 614,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "mapping_score": {
+          "coverage": 22.75,
+          "count": 737,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "review_status": {
+          "coverage": 58.36,
+          "count": 1891,
+          "total": 3240,
+          "types": [
+            "str",
+            "dict"
+          ]
+        },
+        "review_priority": {
+          "coverage": 33.18,
+          "count": 1075,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "candidate_id": {
+          "coverage": 33.18,
+          "count": 1075,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "source_tier": {
+          "coverage": 18.52,
+          "count": 600,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "quality_score": {
+          "coverage": 33.18,
+          "count": 1075,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "difficulty": {
+          "coverage": 33.18,
+          "count": 1075,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "category": {
+          "coverage": 18.52,
+          "count": 600,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "subcategory": {
+          "coverage": 33.18,
+          "count": 1075,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "block_id": {
+          "coverage": 18.67,
+          "count": 605,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "block_name": {
+          "coverage": 18.67,
+          "count": 605,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "pickup_group": {
+          "coverage": 18.73,
+          "count": 607,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "pickup_group_name": {
+          "coverage": 18.73,
+          "count": 607,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "pickup_order": {
+          "coverage": 18.73,
+          "count": 607,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "review_note": {
+          "coverage": 2.93,
+          "count": 95,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "need_manual_review": {
+          "coverage": 14.66,
+          "count": 475,
+          "total": 3240,
+          "types": [
+            "bool"
+          ]
+        },
+        "resource_block_id": {
+          "coverage": 0.15,
+          "count": 5,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "resource_block_name": {
+          "coverage": 0.15,
+          "count": 5,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "source_candidate_id": {
+          "coverage": 5.03,
+          "count": 163,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "reason_to_add": {
+          "coverage": 5.03,
+          "count": 163,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "global_relevance": {
+          "coverage": 5.03,
+          "count": 163,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "i18n_seed": {
+          "coverage": 5.03,
+          "count": 163,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "stage3b_fix": {
+          "coverage": 2.22,
+          "count": 72,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "stage3c_fix": {
+          "coverage": 1.11,
+          "count": 36,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "stage3d_whitelist_rank": {
+          "coverage": 0.77,
+          "count": 25,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "stage3d_fix": {
+          "coverage": 0.77,
+          "count": 25,
+          "total": 3240,
+          "types": [
+            "dict"
+          ]
+        },
+        "stage3e_batch": {
+          "coverage": 1.85,
+          "count": 60,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "stage3e_risk_band": {
+          "coverage": 1.85,
+          "count": 60,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "stage3e_rank_in_batch": {
+          "coverage": 1.85,
+          "count": 60,
+          "total": 3240,
+          "types": [
+            "int"
+          ]
+        },
+        "unlock_mode": {
+          "coverage": 1.85,
+          "count": 60,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "stage3e_candidate_id": {
+          "coverage": 0.93,
+          "count": 30,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        },
+        "relocated_from": {
+          "coverage": 0.83,
+          "count": 27,
+          "total": 3240,
+          "types": [
+            "str"
+          ]
+        }
+      },
+      "data_quality": {},
+      "frontend_fields_status": {
+        "section_id": {
+          "actual_field": "parent",
+          "coverage": 80.77,
+          "status": "found"
+        },
+        "name": {
+          "actual_field": "name",
+          "coverage": 100.0,
+          "status": "found"
+        },
+        "level": {
+          "actual_field": "level",
+          "coverage": 85.34,
+          "status": "found"
+        },
+        "pre": {
+          "actual_field": "direct_pre",
+          "coverage": 100.0,
+          "status": "found"
+        },
+        "resolved_pre": {
+          "actual_field": "resolved_pre",
+          "coverage": 100.0,
+          "status": "found"
+        },
+        "rel": {
+          "actual_field": "rel",
+          "coverage": 100.0,
+          "status": "found"
+        }
+      },
+      "dependency_coverage": {
+        "direct_pre": 100.0,
+        "resolved_pre": 100.0,
+        "rel": 100.0
+      }
+    },
+    "frontend_knowledge_graph": {
+      "status": "success",
+      "file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\assets\\data\\knowledge\\io_v4_4.json",
+      "schema_info": {
+        "detected_structure": "categories_sections_items",
+        "top_level_keys": [
+          "meta",
+          "categories"
+        ],
+        "categories_count": 5,
+        "sections_count": 65,
+        "items_count": 3240,
+        "structure_path": "categories -> sections -> items"
+      },
+      "total_items": 3240
+    },
+    "content_index": {
+      "status": "success",
+      "file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\assets\\data\\knowledge_content\\content_index.json",
+      "version": "stage5_hard_batch2_v1",
+      "source_item_count": 3240,
+      "generated_item_count": 3240,
+      "total_parts": 33,
+      "expected_count": 3240
+    }
+  },
+  "schema_detection": {
+    "main_graph": {
+      "detected_structure": "categories_sections_items",
+      "top_level_keys": [
+        "meta",
+        "categories"
+      ],
+      "categories_count": 5,
+      "sections_count": 65,
+      "items_count": 3240,
+      "structure_path": "categories -> sections -> items"
+    }
+  },
+  "field_coverage": {
+    "id": {
+      "status": "ready",
+      "coverage": 100.0,
+      "note": "字段覆盖率良好，可直接使用",
+      "actual_field": "id"
+    },
+    "name": {
+      "status": "ready",
+      "coverage": 100.0,
+      "note": "原始字段名为 name",
+      "actual_field": "name",
+      "source": "direct_field"
+    },
+    "section_id": {
+      "status": "derived_ready",
+      "coverage": 80.77,
+      "note": "可从 categories->sections->items 结构派生，原始字段为 parent",
+      "actual_field": "parent",
+      "source": "structural_derivation"
+    },
+    "level": {
+      "status": "partial",
+      "coverage": 85.34,
+      "note": "原始字段名为 level",
+      "actual_field": "level",
+      "source": "direct_field"
+    },
+    "direct_pre": {
+      "status": "ready",
+      "coverage": 100.0,
+      "note": "字段覆盖率良好，可直接使用",
+      "actual_field": "direct_pre"
+    },
+    "resolved_pre": {
+      "status": "ready",
+      "coverage": 100.0,
+      "note": "原始字段名为 resolved_pre",
+      "actual_field": "resolved_pre",
+      "source": "direct_field"
+    },
+    "rel": {
+      "status": "ready",
+      "coverage": 100.0,
+      "note": "原始字段名为 rel",
+      "actual_field": "rel",
+      "source": "direct_field"
+    }
+  },
+  "frontend_readiness": {
+    "overall_readiness": "ready",
+    "readiness_score": 80.0,
+    "field_readiness": {
+      "id": {
+        "status": "ready",
+        "importance": "critical",
+        "coverage": 100.0
+      },
+      "name": {
+        "status": "ready",
+        "importance": "critical",
+        "coverage": 100.0
+      },
+      "section_id": {
+        "status": "derived_ready",
+        "importance": "high",
+        "derivable": true,
+        "coverage": 80.77
+      },
+      "level": {
+        "status": "partial",
+        "importance": "medium",
+        "coverage": 85.34
+      },
+      "direct_pre": {
+        "status": "ready",
+        "importance": "high",
+        "coverage": 100.0
+      },
+      "resolved_pre": {
+        "status": "ready",
+        "importance": "high",
+        "coverage": 100.0
+      },
+      "rel": {
+        "status": "ready",
+        "importance": "medium",
+        "coverage": 100.0
+      }
+    },
+    "data_gaps": [],
+    "recommendations": [
+      {
+        "priority": "immediate",
+        "action": "可以开始前端MVP开发",
+        "reason": "基础数据就绪度良好，核心字段覆盖充分"
+      }
+    ],
+    "frontend_experience_fields": {
+      "estimated_time": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "medium"
+      },
+      "importance_level": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "medium"
+      },
+      "learning_status": {
+        "status": "missing",
+        "source": "frontend_derived",
+        "importance": "high"
+      },
+      "learning_readiness": {
+        "status": "missing",
+        "source": "frontend_derived",
+        "importance": "high"
+      },
+      "animation_priority": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "low"
+      },
+      "quiz_difficulty": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "low"
+      },
+      "one_sentence_explanation": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "high"
+      },
+      "core_intuition": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "high"
+      },
+      "common_traps": {
+        "status": "missing",
+        "source": "needs_supplement",
+        "importance": "medium"
+      }
+    }
+  },
+  "data_quality_issues": [],
+  "recommendations": [],
+  "final_assessment": {
+    "can_start_structure_mvp": true,
+    "can_start_recommendation_mvp": false,
+    "readiness_score": 80.0,
+    "critical_issues": [],
+    "high_priority_recommendations": [
+      {
+        "priority": "immediate",
+        "action": "可以开始前端MVP开发",
+        "reason": "基础数据就绪度良好，核心字段覆盖充分"
+      }
+    ],
+    "data_quality_score": 100,
+    "suitable_for_structure_mvp": [
+      {
+        "feature": "首页继续学习区域",
+        "reason": "基础图谱结构和ID关系稳定，可以展示学习进度和继续学习入口"
+      },
+      {
+        "feature": "章节页核心/进阶/扩展布局原型",
+        "reason": "章节结构完整，知识点分类清晰，可以实现分层展示"
+      },
+      {
+        "feature": "知识点页结构化展示壳",
+        "reason": "基础字段完整，可以构建知识点的展示框架"
+      },
+      {
+        "feature": "前置知识提示基础版",
+        "reason": "依赖关系字段完整，可以实现基础的前置条件检查"
+      }
+    ],
+    "not_suitable_for_recommendation_mvp": [
+      {
+        "feature": "智能推荐",
+        "reason": "缺少 estimated_time、importance_level 等推荐算法需要的字段"
+      },
+      {
+        "feature": "个性化排序",
+        "reason": "缺少用户行为数据和学习偏好字段"
+      },
+      {
+        "feature": "完整学习卡片内容展示",
+        "reason": "缺少 one_sentence_explanation、core_intuition、common_traps 等体验字段"
+      },
+      {
+        "feature": "大规模动画入口策略",
+        "reason": "缺少 animation_priority 和内容质量评估字段"
+      }
+    ],
+    "recommendation_for_next_steps": [
+      {
+        "step": 1,
+        "action": "开始前端结构 MVP 开发",
+        "focus": "实现首页、章节页、知识点页的结构展示和基础交互",
+        "estimated_duration": "2-3周",
+        "priority": "high"
+      },
+      {
+        "step": 2,
+        "action": "并行补充学习体验字段",
+        "focus": "在开发结构 MVP 的同时，逐步补充 estimated_time、importance_level 等字段",
+        "estimated_duration": "持续进行",
+        "priority": "medium"
+      }
+    ]
+  },
+  "id_consistency": {
+    "status": "success",
+    "consistency_check": {
+      "main_graph_count": 3240,
+      "frontend_graph_count": 3240,
+      "intersection_count": 3240,
+      "consistency_percentage": 100.0,
+      "missing_in_frontend_count": 0,
+      "extra_in_frontend_count": 0
+    },
+    "id_discrepancies": {
+      "missing_in_frontend": [],
+      "extra_in_frontend": []
+    }
+  }
+}

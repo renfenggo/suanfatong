@@ -1,0 +1,162 @@
+[
+  {
+    "candidate_id": "cand.string.z_algorithm.basic",
+    "item_id": "2.10.29",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.z_algorithm.pattern_matching",
+    "item_id": "2.10.30",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.ex_kmp.basic",
+    "item_id": "2.10.31",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.kmp_automaton.basic",
+    "item_id": "2.10.32",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.ac_automaton.applications",
+    "item_id": "2.10.33",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.ac_failure_tree.analysis",
+    "item_id": "2.10.34",
+    "section_id": "2.10",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.prime_testing.miller_rabin",
+    "item_id": "4.1.30",
+    "section_id": "4.1",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.prime_factorization.pollard_rho",
+    "item_id": "4.1.31",
+    "section_id": "4.1",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.primitive_root.basic",
+    "item_id": "4.1.32",
+    "section_id": "4.1",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.discrete_log.bsgs",
+    "item_id": "4.1.33",
+    "section_id": "4.1",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.discrete_log.exbsgs",
+    "item_id": "4.1.34",
+    "section_id": "4.1",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.lcp_rmq.optimization",
+    "item_id": "3.8.12",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.sam_parent_tree.structure",
+    "item_id": "3.8.13",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.string.eertree.construction",
+    "item_id": "3.8.14",
+    "section_id": "3.8",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.lucas",
+    "item_id": "4.3.33",
+    "section_id": "4.3",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.catalan",
+    "item_id": "4.3.34",
+    "section_id": "4.3",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.dirichlet_convolution.basic",
+    "item_id": "4.9.4",
+    "section_id": "4.9",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.math.mobius_inversion.applications",
+    "item_id": "4.9.5",
+    "section_id": "4.9",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.monotone_queue",
+    "item_id": "2.18.10",
+    "section_id": "2.18",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.monotone_queue_sliding",
+    "item_id": "2.18.11",
+    "section_id": "2.18",
+    "handling": "add_new",
+    "batch_id": "stage3f_batch2",
+    "risk_band": "yellow"
+  }
+]

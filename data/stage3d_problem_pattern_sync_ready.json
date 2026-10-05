@@ -1,0 +1,43 @@
+[
+  {
+    "source_item_id": "3.13.63",
+    "source_item_name": "归并排序树：Offline Inversion",
+    "suggested_pattern_id": "pat.ds_merge_sort_tree_offline_inversion",
+    "name": "归并排序树：Offline Inversion",
+    "en_name": "Merge Sort Tree: Offline Inversion",
+    "reason": "Keep the knowledge item but sync this query/modeling use case to problem_patterns.",
+    "required_items": [
+      "3.7.2",
+      "2.3.1",
+      "3.13.45",
+      "3.13.63"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_data_structure",
+      "noi"
+    ],
+    "difficulty": "advanced"
+  },
+  {
+    "source_item_id": "2.21.61",
+    "source_item_name": "圆方树：Offline Query",
+    "suggested_pattern_id": "pat.graph_block_cut_tree_offline_query",
+    "name": "圆方树：Offline Query",
+    "en_name": "Block-Cut Tree: Offline Query",
+    "reason": "Keep the knowledge item but sync this query/modeling use case to problem_patterns.",
+    "required_items": [
+      "2.21.41",
+      "2.15.13",
+      "2.15.14",
+      "2.21.61"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph"
+    ],
+    "difficulty": "advanced"
+  }
+]

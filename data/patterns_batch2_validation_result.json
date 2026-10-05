@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Patterns Batch2 Validation Result",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-23T04:00:00.000Z",
+    "task": "batch2_validation",
+    "version": "1.0",
+    "formal_batch_generated": true,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false
+  },
+  "qa_verdict": "ALL PASSED",
+  "checks": [
+    {
+      "check_id": "V-01",
+      "description": "patterns_batch2 新增 pattern 数量 = 13（7 ready + 6 boundary_note）",
+      "expected": 13,
+      "actual": 13,
+      "detail": "13 patterns generated (7 ready_to_generate_now + 6 needs_boundary_note_attached)",
+      "status": "pass",
+      "note": "14 个知识库候选 -> 13 个 pattern（2.21.125+2.21.130 已合并为 1 个 pat.node_demand_modeling）+ 1 个 merge_to_ready_action"
+    },
+    {
+      "check_id": "V-02",
+      "description": "pattern_id 全部唯一",
+      "expected": true,
+      "actual": true,
+      "detail": "13 ids, 13 unique",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-03",
+      "description": "不与 patterns_v0_1_ready.json 中已有 pattern_id 重复",
+      "expected": true,
+      "actual": true,
+      "detail": "无确切 ID 重复。语义重叠已通过 boundary_note 处理：pat.layered_graph_modeling=handled_by_boundary_note; pat.shortest_path_potentials=handled_by_boundary_note; pat.stable_matching_pattern=handled_by_boundary_note",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-04",
+      "description": "required_items 全部存在于知识图谱 item id",
+      "expected": true,
+      "actual": true,
+      "detail": "10 个 required_items，格式正确，均可映射",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-05",
+      "description": "related_items 全部存在于知识图谱 item id",
+      "expected": true,
+      "actual": true,
+      "detail": "8 个 related_items，格式正确，均可映射",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-06",
+      "description": "boundary_note 覆盖所有需要边界说明的候选",
+      "expected": 6,
+      "actual": 6,
+      "detail": "需要 boundary_note 的 pattern_ids: ['pat.k_shortest_modeling', 'pat.layered_graph_modeling', 'pat.node_demand_modeling', 'pat.max_flow_with_bounds', 'pat.shortest_path_potentials', 'pat.stable_matching_pattern']；实际有 boundary_note 的: ['pat.k_shortest_modeling', 'pat.layered_graph_modeling', 'pat.node_demand_modeling', 'pat.max_flow_with_bounds', 'pat.shortest_path_potentials', 'pat.stable_matching_pattern']",
+      "status": "pass",
+      "missing_boundary_notes": []
+    },
+    {
+      "check_id": "V-07",
+      "description": "Stable Marriage (pat.stable_matching_pattern) 已生成",
+      "expected": true,
+      "actual": true,
+      "detail": "pat.stable_matching_pattern 已生成，已携带与 bipartite_matching_modeling 的 boundary_note",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-08",
+      "description": "Project Selection 未生成独立 pattern，已正确处理为 merge_to_ready_pattern",
+      "expected": true,
+      "actual": true,
+      "detail": "pat.network_flow_project_selection 不在 patterns 中。merge target = pat.min_cut_selection",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-09",
+      "description": "Project Selection merge target = pat.min_cut_selection",
+      "expected": "pat.min_cut_selection",
+      "actual": "pat.min_cut_selection",
+      "detail": "merge action: 2.21.131 -> pat.min_cut_selection",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-10",
+      "description": "没有复制题面（只保存 metadata / example refs）",
+      "expected": true,
+      "actual": true,
+      "detail": "所有 pattern 只包含识别信号、转换方法等抽象描述，无完整题面",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-11",
+      "description": "未修改主图谱",
+      "expected": false,
+      "actual": false,
+      "detail": "merged_knowledge_graph_item_dependencies_refined.json 未修改",
+      "status": "pass"
+    },
+    {
+      "check_id": "V-12",
+      "description": "未修改 patterns_v0_1_ready.json",
+      "expected": false,
+      "actual": false,
+      "detail": "patterns_v0_1_ready.json 未修改",
+      "status": "pass"
+    }
+  ],
+  "summary": {
+    "total_checks": 12,
+    "passed": 12,
+    "failed": 0,
+    "verdict": "ALL PASSED",
+    "total_new_patterns": 13,
+    "merge_to_ready_actions": 1,
+    "stable_marriage_generated": true,
+    "project_selection_correctly_merged": true,
+    "project_selection_merge_target": "pat.min_cut_selection",
+    "formal_batch_generated": true,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false
+  }
+}

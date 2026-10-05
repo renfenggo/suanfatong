@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Stage3E Batch5 smaller_15 Review Status Patch Preview",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:25:00.000Z",
+    "main_graph_modified": false,
+    "patch_applied": false,
+    "note": "此文件仅为 patch 预览，不修改主图谱"
+  },
+  "batch_id": "stage3e_batch5_smaller15",
+  "planned_patches": [
+    {
+      "item_id": "3.13.143",
+      "name": "高级并查集：Undo Stack",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Undo Stack 是并查集的高级扩展，支持回滚操作，在 ICPC/NOI 中有明确应用场景。3.4.1 父概念清晰，resolved_pre=13 依赖充分。作为 implementation_v"
+    },
+    {
+      "item_id": "3.13.144",
+      "name": "可并堆：Binomial Heap",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Binomial Heap 是标准可并堆变体，以二项树森林为结构，跨级合并操作有独立教育价值。direct_pre=3.2.3 合理，resolved_pre=7 充分。不存在过度拆分，可降为 C。"
+    },
+    {
+      "item_id": "3.13.145",
+      "name": "可并堆：Fibonacci Heap",
+      "current_review_priority": "B",
+      "suggested_review_priority": "B",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "keep",
+      "reason": "Fibonacci Heap 的 O(1) amortized decrease-key 在理论上有重要地位，是 Dijkstra/最小生成树优化的理论基础。但竞赛中因实现复杂和常数高而使用频率低。保"
+    },
+    {
+      "item_id": "3.13.146",
+      "name": "可并堆：Leftist Heap",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Leftist Heap 是经典左偏可并堆，O(log n) 合并操作，是竞赛中实际可用的实现。与 Skew Heap 结构不同(左偏 vs 斜)，各有优势场景。direct_pre 合理，可降为 C"
+    },
+    {
+      "item_id": "3.13.147",
+      "name": "可并堆：Pairing Heap",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Pairing Heap 实现简单、常数小，是竞赛中最实用的可并堆之一。经验性能优异，有独立教育价值。无过度拆分风险，可降为 C。"
+    },
+    {
+      "item_id": "3.13.148",
+      "name": "可并堆：Skew Heap",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Skew Heap 是自调整可并堆，实现极简、无需维护额外平衡信息。与 Leftist Heap 结构不同(斜堆无 left/right 区分)，在教育上有独特价值(自调整数据结构的经典实例)。可降为"
+    },
+    {
+      "item_id": "3.13.149",
+      "name": "李超线段树：Coordinate Compressed",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Coordinate Compressed 李超树是解决值域大+可离散化场景的标准变体。与 Dynamic 版有明确区分(需要预知范围 vs 动态开点)。direct_pre(2.8.28, 3.7."
+    },
+    {
+      "item_id": "3.13.150",
+      "name": "李超线段树：动态版",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Dynamic 李超树是核心变体，支持未知范围动态插入线段，是竞赛中最常用的李超树实现。独立教育价值明确，无重复风险，可降为 C。"
+    },
+    {
+      "item_id": "3.13.151",
+      "name": "李超线段树：可持久化版",
+      "current_review_priority": "B",
+      "suggested_review_priority": "B",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "keep",
+      "reason": "Persistent 李超树是高级变体，支持历史版本查询，在特定问题中有不可替代的价值。应用场景相对专精(如时间维度的 DP 优化)。保留 B 级，确认与已有 problem_patterns 无冲突"
+    },
+    {
+      "item_id": "3.13.152",
+      "name": "李超线段树：Segment Insertion",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Segment Insertion 李超树支持区间插入线段而非仅全局直线，是重要的功能扩展。与基本李超树区分明显，赛道分明。direct_pre 合理，可降为 C。"
+    },
+    {
+      "item_id": "3.13.153",
+      "name": "Segment Tree Beats：Historical Maximum",
+      "current_review_priority": "B",
+      "suggested_review_priority": "B",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "keep",
+      "reason": "Historical Maximum 是 Segment Tree Beats 三大核心操作之一，支持高效维护区间历史最大值。Beats 系列在竞赛中定位高级，整体实现复杂度高。保留 B 级确认 am"
+    },
+    {
+      "item_id": "3.13.154",
+      "name": "Segment Tree Beats：Range Add Max",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Range Add Max 是 Beats 的区间加+最大值变体，有清晰的竞赛应用场景。direct_pre(3.7.2, 3.7.3)合理，resolved_pre=18 充分。无过度拆分，可降为 "
+    },
+    {
+      "item_id": "3.13.155",
+      "name": "Segment Tree Beats：区间取 min 变体 1",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Range Chmin 是 Beats 的定义性操作，区间取 min 是 Beats 最基础和核心的功能。变体 1 涵盖了基本实现，不是过度拆分。可降为 C。"
+    },
+    {
+      "item_id": "3.13.156",
+      "name": "线段树变体：Dynamic Segment Tree",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "Dynamic Segment Tree(动态开点线段树)与 3.7.2 静态线段树有本质区别，支持动态扩容和稀疏区间。在竞赛中广泛应用如值域线段树、权值线段树。direct_pre=3.7.2 合理"
+    },
+    {
+      "item_id": "3.13.157",
+      "name": "线段树变体：Gcd Segment Tree",
+      "current_review_priority": "B",
+      "suggested_review_priority": "C",
+      "current_need_manual_review": true,
+      "suggested_need_manual_review": false,
+      "change_type": "downgrade",
+      "reason": "GCD Segment Tree 是线段树的具体应用变体，维护区间 GCD，是竞赛经典题型(区间 GCD 查询+单点/区间修改)。与 3.7.2 通用线段树有明确区分。可降为 C。"
+    }
+  ],
+  "summary": {
+    "total_patches": 15,
+    "downgrade_B_to_C": 12,
+    "keep_B": 3,
+    "remove_manual_review": 15,
+    "keep_manual_review": 0
+  },
+  "recommendation": "建议应用全部 patch，将 review_priority 降级并清除 need_manual_review 标记",
+  "patch_script_preview": "# 以下补丁将在 Batch5 Fix Lite 中应用\n"
+}

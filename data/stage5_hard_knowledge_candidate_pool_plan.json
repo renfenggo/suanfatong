@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "generated_by": "stage5_hard_knowledge_candidate_pool_generator",
+    "generated_at": "2026-05-26T00:51:09.464784+00:00",
+    "baseline_item_count": 2165,
+    "main_graph_modified": false,
+    "merge_executed": false
+  },
+  "target": {
+    "total": 1200,
+    "algo_ds_target": 800,
+    "math_target": 400
+  },
+  "actual": {
+    "total": 138,
+    "algo_ds": 88,
+    "math": 50
+  },
+  "risk_distribution": {
+    "green": 82,
+    "yellow": 52,
+    "medium": 4
+  },
+  "confidence_distribution": {
+    "high": 82,
+    "medium": 52,
+    "low": 4
+  },
+  "section_distribution": {
+    "2.6": 14,
+    "2.20": 12,
+    "2.7": 8,
+    "2.8": 12,
+    "2.9": 9,
+    "2.10": 7,
+    "2.4": 8,
+    "3.13": 10,
+    "2.18": 8,
+    "4.1": 10,
+    "4.3": 8,
+    "4.6": 6,
+    "4.5": 5,
+    "4.7": 7,
+    "2.17": 4,
+    "4.4": 4,
+    "4.0": 6
+  },
+  "sub_category_distribution": {
+    "贪心": 14,
+    "构造": 7,
+    "交互": 5,
+    "搜索": 8,
+    "DP": 12,
+    "图论": 9,
+    "字符串": 7,
+    "根号": 8,
+    "数据结构": 10,
+    "衔接": 8,
+    "数论": 10,
+    "组合": 8,
+    "概率": 6,
+    "博弈": 5,
+    "几何": 7,
+    "线代": 4,
+    "离散": 4,
+    "数学桥梁": 6
+  },
+  "candidate_type_distribution": {
+    "modeling_pattern": 20,
+    "implementation_variant": 29,
+    "application_case": 27,
+    "theorem_or_property": 18,
+    "bridge_concept": 22,
+    "core_concept": 22
+  },
+  "duplicate_risk_stats": {
+    "none": 137,
+    "medium_similarity": 1
+  },
+  "suggested_first_batch": 134,
+  "recommendation": "do_not_merge_directly",
+  "next_steps": "Need more candidates to reach 1200 target. Expand sub-categories with detailed variants."
+}

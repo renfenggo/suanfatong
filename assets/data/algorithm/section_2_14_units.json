@@ -1,0 +1,596 @@
+{
+  "sectionId": "2.14",
+  "sectionName": "树上算法",
+  "units": [
+    {
+      "itemId": "2.14.1",
+      "title": "树的直径",
+      "learningGoal": "理解树的直径的定义，掌握两次 DFS/BFS 求直径的方法和应用场景",
+      "explanation": "树的直径是树上最长简单路径（两个节点间最远距离）。\n\n定义：\n树的直径是树上任意两点之间的最长路径长度。\n\n求法（两次 DFS/BFS）：\n1. 从任意点 u 开始 DFS，找到最远点 v\n2. 从 v 开始 DFS，找到最远点 w\n3. v 到 w 的路径就是树的直径\n\n正确性证明：\n- 第一次 DFS 找到 v 是从 u 出发的最远点\n- 第二次 DFS 找到 w 是从 v 出发的最远点\n- v-w 必定是直径\n\n时间复杂度：O(n)\n空间复杂度：O(n)\n\n应用：\n1. 求树上最长路径\n2. 求树的重心（直径中点附近）\n3. 优化树上问题（如在直径上操作）\n4. 求树的半径\n\n竞赛提示：\n- 树的直径不唯一，可能有多个\n- 对于有边权的树，需要累加权值\n- 也可以用 DP 求直径（一次 DFS）",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nint dist[N], n;\n\nvoid dfs(int u, int fa) {\n    for (int v : adj[u]) {\n        if (v == fa) continue;\n        dist[v] = dist[u] + 1;\n        dfs(v, u);\n    }\n}\n\nint findFarthest(int u) {\n    fill(dist, dist + n + 1, -1);\n    dist[u] = 0;\n    dfs(u, -1);\n    int farthest = u;\n    for (int i = 1; i <= n; i++) {\n        if (dist[i] > dist[farthest]) farthest = i;\n    }\n    return farthest;\n}\n\nint treeDiameter() {\n    int u = findFarthest(1);\n    int v = findFarthest(u);\n    return dist[v];\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n    cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    cout << treeDiameter() << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "findFarthest(u): 从 u 开始 DFS，找到最远点",
+        "treeDiameter(): 两次求最远点，返回直径长度",
+        "时间复杂度 O(n)，两次 DFS",
+        "dist[v] 存储距离，初始为 -1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记清空 dist 数组",
+          "description": "每次 DFS 前需要清空 dist 数组，否则会影响后续计算。",
+          "fix": "fill(dist, dist + n + 1, -1); 或 memset(dist, -1, sizeof(dist));"
+        },
+        {
+          "title": "递归深度过大导致栈溢出",
+          "description": "对于深树，递归 DFS 可能会栈溢出。",
+          "fix": "使用 BFS 或迭代 DFS，或增加栈空间。"
+        },
+        {
+          "title": "边权为 0 时判断错误",
+          "description": "如果边权为 0，dist 初始化为 0 会出错。",
+          "fix": "dist 初始化为 -1 或 INF，判断 vis 数组。"
+        }
+      ],
+      "practice": {
+        "prompt": "求一棵树的直径长度，节点编号 1-n，n-1 条边。",
+        "hint": "从任意点开始 DFS 找最远点，再从最远点开始 DFS 求直径。",
+        "expectedIdea": "两次 DFS，时间复杂度 O(n)，空间复杂度 O(n)。"
+      },
+      "quiz": [
+        {
+          "question": "求树的直径需要几次 DFS/BFS？",
+          "options": [
+            "1 次",
+            "2 次",
+            "3 次",
+            "n 次"
+          ],
+          "answerIndex": 1,
+          "explanation": "求树的直径需要 2 次 DFS/BFS：第一次从任意点找最远点，第二次从最远点找直径。"
+        },
+        {
+          "question": "树的直径的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n²)",
+            "O(n log n)",
+            "O(1)"
+          ],
+          "answerIndex": 0,
+          "explanation": "两次 DFS/BFS，每次 O(n)，总时间复杂度 O(n)。"
+        },
+        {
+          "question": "树的直径一定唯一吗？",
+          "options": [
+            "一定唯一",
+            "不一定唯一",
+            "不可能唯一",
+            "取决于树的大小"
+          ],
+          "answerIndex": 1,
+          "explanation": "树的直径不一定唯一，可能有多条相同长度的最长路径。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.2",
+      "title": "LCA",
+      "learningGoal": "理解 LCA 的定义，掌握求最近公共祖先的方法和应用场景",
+      "explanation": "LCA（Lowest Common Ancestor）是树上两个节点的最近公共祖先。\n\n定义：\n节点 u 和 v 的最近公共祖先是离 u 和 v 最近的共同祖先节点。\n\n性质：\n1. 如果 u 是 v 的祖先，则 LCA(u,v) = u\n2. 如果 u 和 v 都在同一个子树中，则它们的 LCA 也在该子树中\n3. LCA(u,v) = LCA(v,u)\n4. LCA(u,u) = u\n\n求法：\n1. 暴力向上跳：O(n) 每次，总 O(n²)\n2. 倍增法：O(n log n) 预处理，O(log n) 查询\n3. Tarjan 离线算法：O(n + α(n))\n4. RMQ 转 LCA：O(n log n) 预处理，O(1) 查询\n5. 欧拉序 + ST 表：O(n log n) 预处理，O(1) 查询\n\n竞赛常用：倍增法（好写、适用广）\n\n应用：\n1. 求两节点距离：dist(u,v) = depth[u] + depth[v] - 2*depth[LCA(u,v)]\n2. 求路径上的信息（最大值、最小值、和）\n3. 树上差分\n4. 虚树构造\n5. 树链剖分辅助",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <cmath>\nusing namespace std;\n\nconst int N = 100005, LOGN = 20;\nvector<int> adj[N];\nint depth[N], fa[N][LOGN], n;\n\nvoid dfs(int u, int father) {\n    depth[u] = depth[father] + 1;\n    fa[u][0] = father;\n    for (int j = 1; j < LOGN; j++) {\n        fa[u][j] = fa[fa[u][j-1]][j-1];\n    }\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        dfs(v, u);\n    }\n}\n\nint lca(int u, int v) {\n    if (depth[u] < depth[v]) swap(u, v);\n    for (int j = LOGN - 1; j >= 0; j--) {\n        if (depth[u] - (1 << j) >= depth[v]) {\n            u = fa[u][j];\n        }\n    }\n    if (u == v) return u;\n    for (int j = LOGN - 1; j >= 0; j--) {\n        if (fa[u][j] != fa[v][j]) {\n            u = fa[u][j];\n            v = fa[v][j];\n        }\n    }\n    return fa[u][0];\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    depth[0] = -1;\n    dfs(1, 0);\n    \n    int u, v;\n    cin >> u >> v;\n    cout << lca(u, v) << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "fa[u][j] 存储 u 的 2^j 祖先",
+        "dfs() 预处理 depth 和 fa 数组",
+        "lca() 先调到同深度，再一起上跳",
+        "时间复杂度 O(log n) 查询"
+      ],
+      "commonMistakes": [
+        {
+          "title": "LOGN 开得不够大",
+          "description": "如果 LOGN < log2(n)，会导致越界或答案错误。",
+          "fix": "LOGN 通常设为 log2(n) + 5，如 n=1e5 时 LOGN=20。"
+        },
+        {
+          "title": "depth[0] 未初始化",
+          "description": "fa[u][0] 可能是 0，导致 depth[0] 访问错误。",
+          "fix": "depth[0] = -1 或 -INF，避免访问 0 节点。"
+        },
+        {
+          "title": "u 和 v 已经相等后继续跳",
+          "description": "在调到同深度后，如果 u==v 应该直接返回，否则会跳到根上面。",
+          "fix": "先判断 u==v，不相等再一起上跳。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现 LCA 算法，求两节点的最近公共祖先。",
+        "hint": "使用倍增法预处理 fa 数组，查询时先调到同深度再一起跳。",
+        "expectedIdea": "倍增法，预处理 O(n log n)，查询 O(log n)。"
+      },
+      "quiz": [
+        {
+          "question": "倍增法求 LCA 的预处理时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n log n)",
+            "O(log n)",
+            "O(n²)"
+          ],
+          "answerIndex": 1,
+          "explanation": "倍增法预处理需要 O(n log n)，对每个节点预处理 2^0 到 2^{log n} 的祖先。"
+        },
+        {
+          "question": "求树上两节点距离的公式是？",
+          "options": [
+            "depth[u] + depth[v]",
+            "depth[u] - depth[v]",
+            "depth[u] + depth[v] - depth[LCA]",
+            "depth[u] + depth[v] - 2*depth[LCA]"
+          ],
+          "answerIndex": 3,
+          "explanation": "dist(u,v) = depth[u] + depth[v] - 2*depth[LCA(u,v)]，减去到 LCA 的重复路径。"
+        },
+        {
+          "question": "LCA(u,v) = u 的充要条件是？",
+          "options": [
+            "u 和 v 在同一层",
+            "u 是 v 的祖先",
+            "v 是 u 的祖先",
+            "u = v"
+          ],
+          "answerIndex": 1,
+          "explanation": "如果 u 是 v 的祖先，则 u 离 v 最近，所以 LCA(u,v) = u。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.3",
+      "title": "倍增求 LCA",
+      "learningGoal": "深入理解倍增求 LCA 的原理，掌握倍增预处理和查询的具体实现",
+      "explanation": "倍增法求 LCA 是 LCA 的核心算法，利用二进制分解思想快速跳转。\n\n倍增思想：\n预处理每个节点的 2^j 祖先，查询时二进制分解跳转。\n\n核心数组：\n- depth[u]: 节点 u 的深度\n- fa[u][j]: 节点 u 的 2^j 祖先\n\n预处理：\n1. DFS 遍历整棵树，计算 depth[u]\n2. 计算直接父节点：fa[u][0] = father\n3. 计算倍增祖先：fa[u][j] = fa[fa[u][j-1]][j-1]\n\n查询步骤：\n1. 假设 depth[u] >= depth[v]，否则交换\n2. 将 u 跳到与 v 同一层\n3. 如果 u == v，返回 u\n4. 一起向上跳，直到 fa[u][j] == fa[v][j]\n5. 返回 fa[u][0]\n\n时间复杂度：\n- 预处理：O(n log n)\n- 每次查询：O(log n)\n- 空间复杂度：O(n log n)\n\n优化技巧：\n1. LOGN = log2(n) + 5 避免越界\n2. depth[0] = -1 防止访问错误\n3. 先判断 u==v，避免跳到根上面\n4. 从高位到低位跳转（贪心）\n\n竞赛应用：\n1. 单次 LCA 查询\n2. 树上路径问题（距离、最值）\n3. 树链剖分的基础\n4. 结合其他数据结构",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <cmath>\nusing namespace std;\n\nconst int N = 100005, LOGN = 20;\nvector<int> adj[N];\nint depth[N], fa[N][LOGN], n;\n\nvoid dfs(int u, int father) {\n    depth[u] = depth[father] + 1;\n    fa[u][0] = father;\n    for (int j = 1; j < LOGN; j++) {\n        fa[u][j] = fa[fa[u][j-1]][j-1];\n    }\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        dfs(v, u);\n    }\n}\n\nint lca(int u, int v) {\n    if (depth[u] < depth[v]) swap(u, v);\n    int diff = depth[u] - depth[v];\n    for (int j = 0; j < LOGN; j++) {\n        if ((diff >> j) & 1) {\n            u = fa[u][j];\n        }\n    }\n    if (u == v) return u;\n    for (int j = LOGN - 1; j >= 0; j--) {\n        if (fa[u][j] != fa[v][j]) {\n            u = fa[u][j];\n            v = fa[v][j];\n        }\n    }\n    return fa[u][0];\n}\n\nint dist(int u, int v) {\n    return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    depth[0] = -1;\n    dfs(1, 0);\n    \n    int q;\n    cin >> q;\n    while (q--) {\n        int u, v;\n        cin >> u >> v;\n        cout << lca(u, v) << \" \" << dist(u, v) << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "fa[u][j] = fa[fa[u][j-1]][j-1] 是倍增核心递推",
+        "从高位到低位跳转（贪心）",
+        "diff >> j & 1 判断是否跳 2^j 步",
+        "dist(u,v) = depth[u] + depth[v] - 2*depth[LCA]"
+      ],
+      "commonMistakes": [
+        {
+          "title": "LOGN 开得不够大",
+          "description": "如果 LOGN < log2(n)，会导致 fa[u][j] 访问越界。",
+          "fix": "LOGN = log2(n) + 5，n=1e5 时 LOGN=20，n=2e5 时 LOGN=21。"
+        },
+        {
+          "title": "depth[0] 未初始化",
+          "description": "访问 depth[fa[u][j]] 时，fa[u][j] 可能是 0，导致未定义行为。",
+          "fix": "depth[0] = -1，确保不会访问 depth[0]。"
+        },
+        {
+          "title": "跳转顺序错误",
+          "description": "一起跳时如果从低位到高位跳转，可能会跳过头。",
+          "fix": "从高位到低位跳转（LOGN-1 到 0），贪心找到最大可跳步数。"
+        },
+        {
+          "title": "忘记判断 u==v",
+          "description": "调到同深度后，如果 u==v 应该直接返回，否则会继续跳到根上面。",
+          "fix": "在一起跳之前先判断 if (u == v) return u;"
+        }
+      ],
+      "practice": {
+        "prompt": "实现倍增求 LCA，支持多次查询，输出 LCA 和两点距离。",
+        "hint": "预处理 fa 数组，查询时先调到同深度再一起跳。",
+        "expectedIdea": "倍增法，预处理 O(n log n)，查询 O(log n)。"
+      },
+      "quiz": [
+        {
+          "question": "倍增求 LCA 预处理时，fa[u][j] 的递推公式是？",
+          "options": [
+            "fa[u][j] = fa[u][j-1] + 1",
+            "fa[u][j] = fa[fa[u][j-1]][j-1]",
+            "fa[u][j] = fa[u][j-1]",
+            "fa[u][j] = fa[father][j]"
+          ],
+          "answerIndex": 1,
+          "explanation": "fa[u][j] = fa[fa[u][j-1]][j-1]，因为 2^j = 2^{j-1} + 2^{j-1}。"
+        },
+        {
+          "question": "倍增求 LCA 查询时，一起跳的顺序是？",
+          "options": [
+            "从低位到高位",
+            "从高位到低位",
+            "任意顺序",
+            "随机顺序"
+          ],
+          "answerIndex": 1,
+          "explanation": "从高位到低位跳转，贪心找到最大可跳步数，保证不跳过头。"
+        },
+        {
+          "question": "如果 LOGN = 17，n 最大可以是多少？",
+          "options": [
+            "2^17",
+            "2^17 - 1",
+            "2^17 + 1",
+            "2^16"
+          ],
+          "answerIndex": 1,
+          "explanation": "2^17 = 131072，n 最大可以是 2^17 - 1 = 131071，因为节点深度从 0 开始。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.4",
+      "title": "树链剖分",
+      "learningGoal": "理解树链剖分的基本原理，掌握重儿子剖分和线段树维护的实现方法",
+      "explanation": "树链剖分（Heavy-Light Decomposition）是将树分成若干条重链，然后用数据结构维护路径信息。\n\n基本概念：\n- 重儿子：子树大小最大的儿子\n- 轻儿子：其他儿子\n- 重边：连向重儿子的边\n- 轻边：连向轻儿子的边\n- 重链：由重边构成的链\n\n核心数组：\n- sz[u]: 以 u 为根的子树大小\n- son[u]: u 的重儿子\n- fa[u]: u 的父节点\n- dep[u]: u 的深度\n- top[u]: u 所在重链的顶端\n- dfn[u]: u 的 DFS 序\n- rdfn[u]: DFS 序 dfn[u] 对应的节点\n\n预处理步骤（两次 DFS）：\n1. 第一次 DFS：计算 sz、son、fa、dep\n2. 第二次 DFS：计算 top、dfn、rdfn\n\n路径查询（u 到 v）：\n1. 如果 u 和 v 不在同一条重链，深度大的跳到链顶端\n2. 跳到同一条重链后，在线段树上查询区间\n3. 重复直到 u 和 v 在同一条重链\n4. 最后查询 LCA 处的区间\n\n时间复杂度：\n- 预处理：O(n)\n- 每次路径查询/修改：O(log² n)\n- 子树查询/修改：O(log n)\n\n性质：\n1. 每条重链在 DFS 序上是连续的\n2. 任意点到根最多经过 O(log n) 条重链\n3. 任意子树在 DFS 序上是连续的\n\n竞赛应用：\n1. 树上路径查询/修改（最值、和、差分）\n2. 树上子树查询/修改\n3. 结合 LCA 优化\n4. LCT（动态树）的基础",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nint sz[N], son[N], fa[N], dep[N], top[N], dfn[N], rdfn[N];\nint n, cnt;\n\nvoid dfs1(int u, int father, int depth) {\n    sz[u] = 1;\n    fa[u] = father;\n    dep[u] = depth;\n    int max_sz = 0;\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        dfs1(v, u, depth + 1);\n        sz[u] += sz[v];\n        if (sz[v] > max_sz) {\n            max_sz = sz[v];\n            son[u] = v;\n        }\n    }\n}\n\nvoid dfs2(int u, int father, int top_node) {\n    dfn[u] = ++cnt;\n    rdfn[cnt] = u;\n    top[u] = top_node;\n    if (son[u]) dfs2(son[u], u, top_node);\n    for (int v : adj[u]) {\n        if (v == father || v == son[u]) continue;\n        dfs2(v, u, v);\n    }\n}\n\nint queryPath(int u, int v) {\n    int ans = 0;\n    while (top[u] != top[v]) {\n        if (dep[top[u]] < dep[top[v]]) swap(u, v);\n        ans += seg_query(dfn[top[u]], dfn[u]);\n        u = fa[top[u]];\n    }\n    if (dep[u] > dep[v]) swap(u, v);\n    ans += seg_query(dfn[u], dfn[v]);\n    return ans;\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    dfs1(1, 0, 0);\n    dfs2(1, 0, 1);\n    \n    return 0;\n}",
+      "codeNotes": [
+        "dfs1: 第一次 DFS，求 sz、son、fa、dep",
+        "dfs2: 第二次 DFS，求 top、dfn、rdfn",
+        "queryPath: 路径查询，跳到同重链后查区间",
+        "子树查询：[dfn[u], dfn[u] + sz[u] - 1]"
+      ],
+      "commonMistakes": [
+        {
+          "title": "dfs2 中轻儿子从自己开始剖分",
+          "description": "dfs2 轻儿子时，top_node 应设为 v，而不是继续传 top_node。",
+          "fix": "dfs2(v, u, v)，轻儿子开始新的重链。"
+        },
+        {
+          "title": "忘记处理重儿子",
+          "description": "dfs2 中要优先处理重儿子，保证重链连续。",
+          "fix": "if (son[u]) dfs2(son[u], u, top_node); 先处理重儿子。"
+        },
+        {
+          "title": "路径查询时交换判断错误",
+          "description": "while (top[u] != top[v]) 中应比较 top 的深度，而不是 u 和 v 的深度。",
+          "fix": "if (dep[top[u]] < dep[top[v]]) swap(u, v);"
+        },
+        {
+          "title": "子树查询范围错误",
+          "description": "子树在 DFS 序上是连续的，范围是 [dfn[u], dfn[u] + sz[u] - 1]。",
+          "fix": "seg_query(dfn[u], dfn[u] + sz[u] - 1);"
+        }
+      ],
+      "practice": {
+        "prompt": "实现树链剖分，支持路径查询和子树查询。",
+        "hint": "两次 DFS 预处理，路径查询跳到同重链，子树查询查 DFS 序区间。",
+        "expectedIdea": "树链剖分，预处理 O(n)，路径查询 O(log² n)，子树查询 O(log n)。"
+      },
+      "quiz": [
+        {
+          "question": "树链剖分中，任意点到根最多经过几条重链？",
+          "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(√n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "每次跳到链顶端，至少深度减半，所以最多 O(log n) 条重链。"
+        },
+        {
+          "question": "树链剖分子树查询的时间复杂度是？",
+          "options": [
+            "O(log² n)",
+            "O(log n)",
+            "O(n)",
+            "O(1)"
+          ],
+          "answerIndex": 1,
+          "explanation": "子树在 DFS 序上连续，直接查区间，O(log n)。"
+        },
+        {
+          "question": "树链剖分预处理需要几次 DFS？",
+          "options": [
+            "1 次",
+            "2 次",
+            "3 次",
+            "不需要 DFS"
+          ],
+          "answerIndex": 1,
+          "explanation": "第一次 DFS 计算 sz、son、fa、dep，第二次 DFS 计算 top、dfn、rdfn。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.5",
+      "title": "树上差分",
+      "learningGoal": "理解树上差分的原理，掌握点差分和边差分的实现方法",
+      "explanation": "树上差分是差分数组在树上的应用，用于高效处理路径修改和查询。\n\n点差分（差分到节点）：\n- 修改路径 u→v 上所有点权 +k\n- 操作：diff[u] += k, diff[v] += k, diff[lca] -= k, diff[fa[lca]] -= k\n- 前缀和：后序遍历累加子树\n\n边差分（差分到边）：\n- 修改路径 u→v 上所有边权 +k\n- 操作：diff[u] += k, diff[v] += k, diff[lca] -= 2k\n- 前缀和：累加到父节点\n\n原理：\n- 利用 LCA 将路径分成两条：u→lca 和 lca→v\n- 点差分：两条路径的交点 lca 被加了两次，减一次\n- 边差分：两条路径在 lca 处没有边，所以要减 2k\n\n时间复杂度：\n- 修改操作：O(log n)（倍增求 LCA）\n- 查询操作：O(n)（一次 DFS 求前缀和）\n- 总时间复杂度：O(m log n + n)\n\n应用：\n1. 树上路径修改+查询\n2. 树上多条路径的覆盖次数\n3. 树上 k 级祖先\n4. 结合 LCA 优化\n\n竞赛提示：\n1. 点差分和边差分的区别在于是否修改 lca 的父节点\n2. 前缀和时注意方向（后序遍历）\n3. 可以结合树链剖分实现单点修改+区间查询",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005, LOGN = 20;\nvector<int> adj[N];\nint depth[N], fa[N][LOGN], diff[N], ans[N], n;\n\nvoid dfs(int u, int father) {\n    depth[u] = depth[father] + 1;\n    fa[u][0] = father;\n    for (int j = 1; j < LOGN; j++) {\n        fa[u][j] = fa[fa[u][j-1]][j-1];\n    }\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        dfs(v, u);\n    }\n}\n\nint lca(int u, int v) {\n    if (depth[u] < depth[v]) swap(u, v);\n    for (int j = LOGN - 1; j >= 0; j--) {\n        if (depth[u] - (1 << j) >= depth[v]) u = fa[u][j];\n    }\n    if (u == v) return u;\n    for (int j = LOGN - 1; j >= 0; j--) {\n        if (fa[u][j] != fa[v][j]) {\n            u = fa[u][j]; v = fa[v][j];\n        }\n    }\n    return fa[u][0];\n}\n\nvoid addPath(int u, int v, int k) {\n    diff[u] += k;\n    diff[v] += k;\n    int p = lca(u, v);\n    diff[p] -= k;\n    diff[fa[p][0]] -= k;\n}\n\nvoid addEdgePath(int u, int v, int k) {\n    diff[u] += k;\n    diff[v] += k;\n    int p = lca(u, v);\n    diff[p] -= 2 * k;\n}\n\nvoid sumDfs(int u, int father) {\n    ans[u] = diff[u];\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        sumDfs(v, u);\n        ans[u] += ans[v];\n    }\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    depth[0] = -1;\n    dfs(1, 0);\n    \n    int m;\n    cin >> m;\n    while (m--) {\n        int u, v, k;\n        cin >> u >> v >> k;\n        addPath(u, v, k);\n    }\n    \n    sumDfs(1, 0);\n    \n    for (int i = 1; i <= n; i++) {\n        cout << ans[i] << \" \";\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "addPath: 点差分，修改路径上的点权",
+        "addEdgePath: 边差分，修改路径上的边权",
+        "sumDfs: 后序遍历求前缀和",
+        "时间复杂度：修改 O(log n)，查询 O(n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "点差分忘记减 fa[lca]",
+          "description": "点差分中 lca 被加了两次，要减一次，同时 fa[lca] 也要减一次。",
+          "fix": "diff[fa[p][0]] -= k; 点差分要减 lca 的父节点。"
+        },
+        {
+          "title": "边差分忘记减 2k",
+          "description": "边差分中 u→lca 和 lca→v 在 lca 处没有边，所以 diff[lca] -= 2k。",
+          "fix": "diff[p] -= 2 * k; 边差分减 2k，不是 k。"
+        },
+        {
+          "title": "前缀和方向错误",
+          "description": "前缀和时应该后序遍历，子节点累加到父节点，而不是反过来。",
+          "fix": "ans[u] += ans[v]; 子节点累加到父节点。"
+        },
+        {
+          "title": "忘记预处理 fa 数组",
+          "description": "求 LCA 之前需要预处理 fa 数组和 depth 数组。",
+          "fix": "dfs(1, 0); 预处理倍增数组。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现树上差分，支持路径修改和查询，输出每个节点的最终权值。",
+        "hint": "点差分：diff[u]+=k, diff[v]+=k, diff[lca]-=k, diff[fa[lca]]-=k，然后求前缀和。",
+        "expectedIdea": "树上差分，修改 O(log n)，查询 O(n)。"
+      },
+      "quiz": [
+        {
+          "question": "点差分修改路径 u→v，需要操作几个节点？",
+          "options": [
+            "2 个",
+            "3 个",
+            "4 个",
+            "5 个"
+          ],
+          "answerIndex": 2,
+          "explanation": "点差分：diff[u]+=k, diff[v]+=k, diff[lca]-=k, diff[fa[lca]]-=k，共 4 个点。"
+        },
+        {
+          "question": "边差分修改路径 u→v，diff[lca] 需要减多少？",
+          "options": [
+            "k",
+            "2k",
+            "3k",
+            "0"
+          ],
+          "answerIndex": 1,
+          "explanation": "边差分：diff[lca] -= 2k，因为 u→lca 和 lca→v 在 lca 处没有边。"
+        },
+        {
+          "question": "树上差分求前缀和的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n log n)",
+            "O(n²)",
+            "O(log n)"
+          ],
+          "answerIndex": 0,
+          "explanation": "求前缀和只需一次 DFS，O(n)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.6",
+      "title": "换根 DP",
+      "learningGoal": "理解换根 DP 的思想，掌握两次 DFS 求所有子树 DP 值的方法",
+      "explanation": "换根 DP 是通过两次 DFS，分别计算以 1 为根和以每个节点为根的 DP 值。\n\n问题类型：\n求每个节点为根时，其子树的某些性质（最大值、最小值、和、节点数等）。\n\n基本思想：\n1. 第一次 DFS：以 1 为根，计算每个节点的 dp[u]\n2. 第二次 DFS：利用父节点的 dp 值，计算以每个节点为根的 dp 值\n\n状态转移：\n- 第一次 DFS：dp[u] = f(dp[v1], dp[v2], ...)\n- 第二次 DFS：dp[u] = g(dp[fa[u]], dp[other_sons])\n\n模板（求每个子树的最大深度）：\n- 第一次 DFS：dp[u] = max(dp[v]) + 1\n- 第二次 DFS：dp[v] = max(dp[u] + 1, max(dp[other_sons]) + 2)\n\n时间复杂度：\n- 两次 DFS：O(n)\n- 总时间复杂度：O(n)\n\n竞赛应用：\n1. 求每个节点的子树最大深度\n2. 求每个节点的子树节点数\n3. 求每个节点的子树权值和\n4. 求每个节点的子树最值\n5. 求每个节点的子树直径\n\n竞赛提示：\n1. 换根 DP 通常需要维护最大值和次大值\n2. 第二次 DFS 时要注意分类讨论\n3. 可以结合 LCA 优化某些问题\n4. 换根 DP 可以用于求所有点到某点的距离和",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nint dp[N], max1[N], max2[N], n;\n\nvoid dfs1(int u, int father) {\n    max1[u] = 0; max2[u] = 0;\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        dfs1(v, u);\n        int val = max1[v] + 1;\n        if (val > max1[u]) {\n            max2[u] = max1[u];\n            max1[u] = val;\n        } else if (val > max2[u]) {\n            max2[u] = val;\n        }\n    }\n    dp[u] = max1[u];\n}\n\nvoid dfs2(int u, int father, int up) {\n    for (int v : adj[u]) {\n        if (v == father) continue;\n        int val = (max1[v] + 1 == max1[u]) ? max2[u] : max1[u];\n        dfs2(v, u, max(up + 1, val + 1));\n    }\n    dp[u] = max(max1[u], up);\n}\n\nint main() {\n    cin >> n;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    dfs1(1, 0);\n    dfs2(1, 0, 0);\n    \n    for (int i = 1; i <= n; i++) {\n        cout << dp[i] << \" \";\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "dfs1: 第一次 DFS，求 max1[u] 和 max2[u]",
+        "max1[u]: u 的最长链，max2[u]: u 的次长链",
+        "dfs2: 第二次 DFS，从父节点转移下来",
+        "val: 选择次长子节点的最大链，避免重复计算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "第二次 DFS 没有分类讨论",
+          "description": "第二次 DFS 时，如果 v 是长子节点，要用 max2[u]，否则用 max1[u]。",
+          "fix": "int val = (max1[v] + 1 == max1[u]) ? max2[u] : max1[u];"
+        },
+        {
+          "title": "max2 未初始化",
+          "description": "max2[u] 需要初始化为 0，否则可能包含垃圾值。",
+          "fix": "max1[u] = 0; max2[u] = 0; 同时初始化。"
+        },
+        {
+          "title": "忘记更新 max2",
+          "description": "更新 max1[u] 时，旧的 max1[u] 要存到 max2[u] 中。",
+          "fix": "if (val > max1[u]) { max2[u] = max1[u]; max1[u] = val; }"
+        },
+        {
+          "title": "第二次 DFS 的 up 参数错误",
+          "description": "up 参数应该表示从父节点下来的路径长度，初始化为 0。",
+          "fix": "dfs2(1, 0, 0); 根节点的 up 为 0。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现换根 DP，求每个节点子树的最大深度。",
+        "hint": "第一次 DFS 求最长链和次长链，第二次 DFS 从父节点转移下来。",
+        "expectedIdea": "换根 DP，两次 DFS，时间复杂度 O(n)。"
+      },
+      "quiz": [
+        {
+          "question": "换根 DP 需要几次 DFS？",
+          "options": [
+            "1 次",
+            "2 次",
+            "3 次",
+            "n 次"
+          ],
+          "answerIndex": 1,
+          "explanation": "换根 DP 需要两次 DFS：第一次以 1 为根，第二次从父节点转移。"
+        },
+        {
+          "question": "换根 DP 的时间复杂度是？",
+          "options": [
+            "O(n log n)",
+            "O(n)",
+            "O(n²)",
+            "O(log n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "两次 DFS，每次 O(n)，总时间复杂度 O(n)。"
+        },
+        {
+          "question": "换根 DP 通常需要维护哪些值？",
+          "options": [
+            "只维护最大值",
+            "只维护次大值",
+            "最大值和次大值",
+            "所有子节点的值"
+          ],
+          "answerIndex": 2,
+          "explanation": "换根 DP 通常需要维护最大值和次大值，以便第二次 DFS 时转移。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.7",
+      "title": "点分治",
+      "learningGoal": "理解点分治的思想，掌握重心分解和合并子问题答案的方法",
+      "explanation": "点分治（点分治树）是通过选择树的重心作为分治点，递归处理子问题。\n\n基本思想：\n1. 找到树的重心\n2. 计算经过重心的答案\n3. 递归处理所有子树\n4. 合并子问题答案\n\n重心性质：\n1. 重心的最大子树大小 ≤ 总大小的一半\n2. 每次分治后，子树大小至少减半\n3. 最多分治 O(log n) 层\n4. 每层处理时间 O(n)\n\n求重心（DFS）：\n1. 计算每个子树的大小 sz[u]\n2. 最大子树大小 max_sz[u] = max(sz[v], n - sz[u])\n3. 重心 = max_sz 最小的节点\n\n时间复杂度：\n- 求重心：O(n)\n- 每层处理：O(n)\n- 总时间复杂度：O(n log n)\n\n竞赛应用：\n1. 树上距离 ≤ k 的路径数\n2. 树上路径权值和 = k\n3. 树上路径最值问题\n4. 树上连通性问题\n\n竞赛提示：\n1. 点分治需要删除重心，避免重复计算\n2. 每次递归前需要重新计算子树大小\n3. 可以结合容斥原理优化\n4. 点分治树（CDQ分治树）可以用于动态维护",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nint sz[N], max_sz[N], dist[N], n, k;\nbool removed[N];\nint ans = 0, cur_cnt = 0;\n\nvoid calcSize(int u, int fa) {\n    sz[u] = 1;\n    max_sz[u] = 0;\n    for (int v : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        calcSize(v, u);\n        sz[u] += sz[v];\n        max_sz[u] = max(max_sz[u], sz[v]);\n    }\n}\n\nint findCenter(int u, int fa, int tot) {\n    for (int v : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        if (sz[v] > tot / 2) return findCenter(v, u, tot);\n    }\n    return u;\n}\n\nvoid collectDist(int u, int fa, int d, vector<int>& tmp) {\n    tmp.push_back(d);\n    for (int v : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        collectDist(v, u, d + 1, tmp);\n    }\n}\n\nvoid calcAnswer(vector<int>& d, int l, int r) {\n    sort(d.begin(), d.end());\n    int i = 0, j = d.size() - 1;\n    while (i <= j) {\n        if (d[i] + d[j] <= k) {\n            ans += j - i;\n            i++;\n        } else {\n            j--;\n        }\n    }\n}\n\nvoid divide(int u) {\n    calcSize(u, -1);\n    int center = findCenter(u, -1, sz[u]);\n    removed[center] = true;\n    \n    vector<int> all_dists;\n    all_dists.push_back(0);\n    \n    for (int v : adj[center]) {\n        if (removed[v]) continue;\n        vector<int> tmp;\n        collectDist(v, center, 1, tmp);\n        calcAnswer(tmp, 0, tmp.size() - 1);\n        all_dists.insert(all_dists.end(), tmp.begin(), tmp.end());\n    }\n    calcAnswer(all_dists, 0, all_dists.size() - 1);\n    \n    for (int v : adj[center]) {\n        if (!removed[v]) divide(v);\n    }\n}\n\nint main() {\n    cin >> n >> k;\n    for (int i = 1; i < n; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    divide(1);\n    \n    cout << ans << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "calcSize: 计算子树大小和最大子树",
+        "findCenter: 找到重心（最大子树 ≤ 总大小/2）",
+        "collectDist: 收集到重心的所有距离",
+        "divide: 分治递归，删除重心避免重复计算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记删除重心",
+          "description": "递归时需要删除重心，否则子问题会重复计算经过重心的路径。",
+          "fix": "removed[center] = true; 标记重心已删除。"
+        },
+        {
+          "title": "重新计算子树大小",
+          "description": "每次递归前需要重新计算子树大小，因为重心已经被删除。",
+          "fix": "divide(v); 前先调用 calcSize(u, -1);"
+        },
+        {
+          "title": "容斥原理应用错误",
+          "description": "计算答案时需要减去同一子树内的路径，用容斥原理。",
+          "fix": "先计算单个子树的答案，再计算总的，相减得到跨子树的答案。"
+        },
+        {
+          "title": "findCenter 返回错误",
+          "description": "findCenter 需要递归找到最大子树 ≤ 总大小/2 的节点。",
+          "fix": "if (sz[v] > tot / 2) return findCenter(v, u, tot);"
+        }
+      ],
+      "practice": {
+        "prompt": "实现点分治，求树上距离 ≤ k 的路径数。",
+        "hint": "找重心，收集距离，容斥计算，递归子树。",
+        "expectedIdea": "点分治，时间复杂度 O(n log n)。"
+      },
+      "quiz": [
+        {
+          "question": "点分治的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n log n)",
+            "O(n²)",
+            "O(log n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "点分治最多 O(log n) 层，每层处理 O(n)，总时间复杂度 O(n log n)。"
+        },
+        {
+          "question": "重心的最大子树大小 ≤ 总大小的多少？",
+          "options": [
+            "1/3",
+            "1/2",
+            "2/3",
+            "1/4"
+          ],
+          "answerIndex": 1,
+          "explanation": "重心的最大子树大小 ≤ 总大小的一半，保证每次分治后子树大小至少减半。"
+        },
+        {
+          "question": "点分治需要删除重心的原因是？",
+          "options": [
+            "提高时间复杂度",
+            "避免重复计算",
+            "减少空间复杂度",
+            "简化代码"
+          ],
+          "answerIndex": 1,
+          "explanation": "删除重心可以避免子问题重复计算经过重心的路径。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.14.8",
+      "title": "边分治",
+      "learningGoal": "理解边分治的思想，掌握重心边分解和合并子问题答案的方法",
+      "explanation": "边分治是通过选择重心边作为分治边，递归处理子问题。\n\n基本思想：\n1. 找到重心边（使两棵子树大小尽可能平衡）\n2. 计算经过重心边的答案\n3. 递归处理两棵子树\n4. 合并子问题答案\n\n重心边性质：\n1. 重心边将树分成两部分，大小 ≤ 2n/3\n2. 每次分治后，子树大小至少减为 2/3\n3. 最多分治 O(log n) 层\n4. 每层处理时间 O(n)\n\n找重心边（DFS + 枚举）：\n1. DFS 计算每个节点的子树大小\n2. 枚举每条边，计算两边的子树大小\n3. 选择使 max(sz[u], n - sz[u]) 最小的边\n\n时间复杂度：\n- 求重心边：O(n)\n- 每层处理：O(n)\n- 总时间复杂度：O(n log n)\n\n竞赛应用：\n1. 树上路径计数问题\n2. 树上路径权值问题\n3. 树上连通性问题\n4. 动态树查询\n\n竞赛提示：\n1. 边分治需要删除重心边，避免重复计算\n2. 边分治可以转换为点分治，通过虚点\n3. 边分治树可以用于动态维护\n4. 需要维护边权而非点权\n\n与点分治的区别：\n1. 点分治删除点，边分治删除边\n2. 边分治产生两棵子树，点分治产生多棵\n3. 边分治更适合路径问题",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<pair<int, int>> adj[N];\nint sz[N], n, k, ans = 0;\nbool removed[N];\n\nvoid calcSize(int u, int fa) {\n    sz[u] = 1;\n    for (auto [v, w] : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        calcSize(v, u);\n        sz[u] += sz[v];\n    }\n}\n\npair<int, int> findCenterEdge(int u, int fa, int tot) {\n    int best_diff = tot, best_edge = -1;\n    for (auto [v, w] : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        int diff = abs(sz[v] - (tot - sz[v]));\n        if (diff < best_diff) {\n            best_diff = diff;\n            best_edge = v;\n        }\n    }\n    return {u, best_edge};\n}\n\nvoid collectDist(int u, int fa, int d, vector<int>& tmp) {\n    tmp.push_back(d);\n    for (auto [v, w] : adj[u]) {\n        if (v == fa || removed[v]) continue;\n        collectDist(v, u, d + w, tmp);\n    }\n}\n\nvoid calcAnswer(vector<int>& d) {\n    sort(d.begin(), d.end());\n    int i = 0, j = d.size() - 1;\n    while (i <= j) {\n        if (d[i] + d[j] <= k) {\n            ans += j - i;\n            i++;\n        } else {\n            j--;\n        }\n    }\n}\n\nvoid divide(int u) {\n    calcSize(u, -1);\n    auto [cu, cv] = findCenterEdge(u, -1, sz[u]);\n    if (cv == -1) return;\n    \n    removed[cu] = true;\n    removed[cv] = true;\n    \n    vector<int> d1, d2;\n    collectDist(cu, cv, 0, d1);\n    collectDist(cv, cu, 0, d2);\n    \n    vector<int> all;\n    all.insert(all.end(), d1.begin(), d1.end());\n    all.insert(all.end(), d2.begin(), d2.end());\n    calcAnswer(all);\n    \n    removed[cu] = false;\n    removed[cv] = false;\n    \n    divide(cu);\n    divide(cv);\n}\n\nint main() {\n    cin >> n >> k;\n    for (int i = 1; i < n; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        adj[u].push_back({v, w});\n        adj[v].push_back({u, w});\n    }\n    \n    divide(1);\n    \n    cout << ans << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "calcSize: 计算子树大小",
+        "findCenterEdge: 找到重心边（两边大小差最小）",
+        "collectDist: 收集到边的所有距离",
+        "divide: 边分治递归，删除重心边避免重复计算"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记删除重心边的两个端点",
+          "description": "边分治需要删除重心边的两个端点，避免重复计算。",
+          "fix": "removed[cu] = true; removed[cv] = true;"
+        },
+        {
+          "title": "重心边选择错误",
+          "description": "重心边应该使两边大小差最小，而不是选择最大子树。",
+          "fix": "int diff = abs(sz[v] - (tot - sz[v])); 选择 diff 最小的边。"
+        },
+        {
+          "title": "递归前恢复 deleted 标记",
+          "description": "递归前需要恢复 deleted 标记，否则子问题无法正确计算。",
+          "fix": "removed[cu] = false; removed[cv] = false;"
+        },
+        {
+          "title": "边权处理错误",
+          "description": "边分治需要处理边权，而不是点权。",
+          "fix": "collectDist(v, u, d + w, tmp); 累加边权。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现边分治，求树上路径权值和 ≤ k 的路径数。",
+        "hint": "找重心边，收集距离，容斥计算，递归子树。",
+        "expectedIdea": "边分治，时间复杂度 O(n log n)。"
+      },
+      "quiz": [
+        {
+          "question": "边分治的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n log n)",
+            "O(n²)",
+            "O(log n)"
+          ],
+          "answerIndex": 1,
+          "explanation": "边分治最多 O(log n) 层，每层处理 O(n)，总时间复杂度 O(n log n)。"
+        },
+        {
+          "question": "边分治产生几棵子树？",
+          "options": [
+            "1 棵",
+            "2 棵",
+            "3 棵",
+            "取决于点的度数"
+          ],
+          "answerIndex": 1,
+          "explanation": "边分治删除一条边，将树分成两棵子树。"
+        },
+        {
+          "question": "边分治与点分治的主要区别是？",
+          "options": [
+            "时间复杂度不同",
+            "删除的是边而不是点",
+            "空间复杂度不同",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "边分治删除边，点分治删除点，这是两者的主要区别。"
+        }
+      ]
+    }
+  ]
+}

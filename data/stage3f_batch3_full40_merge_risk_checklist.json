@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 full_40 Merge Risk Checklist",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T16:10:00.000Z",
+    "batch_id": "stage3f_batch3_full40",
+    "main_graph_modified": false,
+    "merge_not_yet_executed": true,
+    "note": "本风险清单在 Merge 执行前预生成，执行时需逐项确认",
+    "expected_item_count": 1677,
+    "expected_section_count": 65,
+    "expected_post_merge_item_count": 1717
+  },
+  "pre_merge_input_files": {
+    "required_files": [
+      {
+        "file": "data/stage3f_batch3_full40_candidate_plan.json",
+        "exists": false,
+        "critical": true,
+        "description": "Batch3 full_40 静态候选计划（等待 2号线程生成）"
+      },
+      {
+        "file": "data/stage3f_batch3_full40_dynamic_precheck.json",
+        "exists": false,
+        "critical": true,
+        "description": "Batch3 full_40 动态预审结果（等待 2号线程生成）"
+      },
+      {
+        "file": "docs/stage3f_batch3_full40_precheck_report.md",
+        "exists": false,
+        "critical": false,
+        "description": "Batch3 full_40 动态预审报告（文档参考）"
+      }
+    ],
+    "all_required_exist": false,
+    "note": "等待 2号线程 Batch3 full_40 候选计划和动态预审完成后再执行 Merge"
+  },
+  "risk_checks": [
+    {
+      "risk_id": "risk_01",
+      "category": "candidate_selection",
+      "description": "是否误合并非 selected_candidates",
+      "check_during_merge": "严格只处理 dynamic_precheck.json 中 selected_candidates 列表内的候选。任何不在列表中的候选不能合并。",
+      "risk_if_triggered": "合并非 selected_candidates 意味着绕过动态预审，可能导致重复节点、依赖环或 section 污染",
+      "verification_method": "在执行 Merge 前，读取 dynamic_precheck.json 的 selected_candidates，只处理该列表中的 candidate_id。建立白名单检查。",
+      "expected_state": "selected_candidates 数量 = 40，且无额外候选被合并"
+    },
+    {
+      "risk_id": "risk_02",
+      "category": "merge_count",
+      "description": "是否超过 recommended_merge_count",
+      "check_during_merge": "selected_candidates 的数量必须严格等于 recommended_merge_count。如果不等，停止并报告。",
+      "risk_if_triggered": "超过 recommended_merge_count 意味着合并了预审未通过的候选，可能包含高风险或重复节点",
+      "verification_method": "在执行 Merge 前，比较 candidate_plan 中 selected 数量与 dynamic_precheck 中 recommended_merge_count。不一致则停止。",
+      "expected_state": "selected_candidates 数量 = recommended_merge_count = 40"
+    },
+    {
+      "risk_id": "risk_03",
+      "category": "duplicate",
+      "description": "是否存在重复候选（excluded_duplicate 非空）",
+      "check_during_merge": "检查 dynamic_precheck.json 中的 excluded_duplicate 列表。如果非空，表示预审发现候选与已有节点重复，必须暂停。",
+      "risk_if_triggered": "合并重复候选导致图谱语义混淆，后续需要 Duplicate Prune 纠正",
+      "verification_method": "读取 dynamic_precheck.json 的 excluded_duplicate 列表，确认其长度为 0。如果不为 0，输出列表内容并暂停。",
+      "expected_state": "excluded_duplicate = []"
+    },
+    {
+      "risk_id": "risk_04",
+      "category": "direct_pre_section_ref",
+      "description": "是否存在 section id 作为 direct_pre",
+      "check_during_merge": "对所有候选的 direct_pre 列表进行遍历，检查是否有条目匹配 section id 模式（如 \"2.10\"、\"4.1\" 格式但不含第三段数字）。",
+      "risk_if_triggered": "section id 作为 direct_pre 会导致依赖解析错误，validate-only 时会标记为 section_ref",
+      "verification_method": "使用正则 ^\\d+\\.\\d+$ 匹配 direct_pre 条目，检查是否命中（注意 item id 为 ^\\d+\\.\\d+\\.\\d+$）。section id 只有两段，item id 有三段。",
+      "expected_state": "所有 40 个候选的 direct_pre 均为 item id（三段式）"
+    },
+    {
+      "risk_id": "risk_05",
+      "category": "candidate_dependency_cycle",
+      "description": "是否存在候选依赖环（candidate_dependency_cycle）",
+      "check_during_merge": "检查 dynamic_precheck.json 中的 candidate_dependency_cycle 字段。如果为 true，表示候选之间 direct_pre 形成环，必须暂停。",
+      "risk_if_triggered": "候选依赖环会导致 resolved_pre 计算陷入死循环或结果错误",
+      "verification_method": "读取 candidate_dependency_cycle 字段。如果 true，输出环详情并暂停。",
+      "expected_state": "candidate_dependency_cycle = false"
+    },
+    {
+      "risk_id": "risk_06",
+      "category": "old_node_modification",
+      "description": "是否误改旧节点 resolved_pre",
+      "check_during_merge": "在计算 resolved_pre 后，只将结果写入新增的 40 个节点。旧节点的 resolved_pre 必须完全不变。",
+      "risk_if_triggered": "覆盖旧节点 resolved_pre 会导致已稳定的依赖链出现 mismatches，validate-only 失败",
+      "verification_method": "在写入 resolved_pre 前，记录旧节点 resolved_pre 的哈希值，写入后对比确认未变。或者，在 resolved_pre 写入逻辑中设置白名单：只允许写入新增的 40 个 item_id。",
+      "expected_state": "旧节点 1677 个的 resolved_pre 全部保持不变"
+    },
+    {
+      "risk_id": "risk_07",
+      "category": "validation_baseline",
+      "description": "是否 validation_baseline 未更新",
+      "check_during_merge": "Merge 完成后，必须将 graph.meta.validation_baseline.item_count 从 1677 更新为 1717。",
+      "risk_if_triggered": "如果 baseline 未更新，validate-only 的 expected_item_count 仍为 1677，与实际 item_count=1717 不匹配，passed=false",
+      "verification_method": "在写入图谱前，确认 validation_baseline.item_count 被设置为 1717。可以在写入后读取确认。",
+      "expected_state": "validation_baseline.item_count = 1717"
+    },
+    {
+      "risk_id": "risk_08",
+      "category": "report_matches_json",
+      "description": "是否 report_matches_json 失败",
+      "check_during_merge": "Merge 后 item_dependency_refinement_report.md 中的统计数字必须与 dependency_validation_result.json 匹配。validate-only 会自己检查报告一致性。",
+      "risk_if_triggered": "report_matches_json=false 是 Batch2 Merge 首次失败的原因。报告生成必须在 validate-only 运行之前完成，且统计必须与当前图谱一致。",
+      "verification_method": "在运行 validate-only 前，基于当前图谱内存结构重新生成 report，确保 item_count=1717, section_count=65 等关键数据。不要复用旧报告。",
+      "expected_state": "report_matches_json = true"
+    },
+    {
+      "risk_id": "risk_09",
+      "category": "rollback_plan",
+      "description": "是否未生成 rollback_plan",
+      "check_during_merge": "Merge 完成后（validate-only 通过后），必须生成 rollback_plan 文件，记录回滚所需的所有信息。",
+      "risk_if_triggered": "无 rollback_plan 意味着后续如果出现问题需要回滚时，不知道如何恢复",
+      "verification_method": "检查 data/stage3f_batch3_full40_rollback_plan.json 是否存在，且包含必要的回滚信息（备份文件路径、删除节点列表、validation_baseline 原值等）。",
+      "expected_state": "rollback_plan 已生成且内容完整"
+    },
+    {
+      "risk_id": "risk_10",
+      "category": "batch4_prevention",
+      "description": "是否误继续 Stage3F Batch4",
+      "check_during_merge": "Merge 脚本中不包含任何 Batch4 相关逻辑。Merge 完成后停止，等待用户指令。",
+      "risk_if_triggered": "自动进入 Batch4 可能跳过了 Review 和 Fix Lite 阶段，破坏 pipeline 的完整性",
+      "verification_method": "确认 Merge 脚本中不引用任何 Batch4 相关文件、候选列表或合并逻辑。脚本完成后输出完成信息并退出，不自动进入下一阶段。",
+      "expected_state": "Merge 完成后停止，等待用户指令决定下一步"
+    }
+  ],
+  "pre_merge_guardrails": [
+    {
+      "guardrail_id": "gr_01",
+      "description": "仅处理 selected_candidates 中的候选",
+      "enforcement": "候选白名单"
+    },
+    {
+      "guardrail_id": "gr_02",
+      "description": "selected_candidates 数量必须 = 40",
+      "enforcement": "数量硬校验"
+    },
+    {
+      "guardrail_id": "gr_03",
+      "description": "excluded_duplicate 必须为空",
+      "enforcement": "预审结果校验"
+    },
+    {
+      "guardrail_id": "gr_04",
+      "description": "dependency_cleanup_required 必须为 false",
+      "enforcement": "预审结果校验"
+    },
+    {
+      "guardrail_id": "gr_05",
+      "description": "needs_new_section 必须为 false",
+      "enforcement": "预审结果校验"
+    },
+    {
+      "guardrail_id": "gr_06",
+      "description": "candidate_dependency_cycle 必须为 false",
+      "enforcement": "预审结果校验"
+    },
+    {
+      "guardrail_id": "gr_07",
+      "description": "direct_pre 必须全部为 item id（三段式）",
+      "enforcement": "格式校验"
+    },
+    {
+      "guardrail_id": "gr_08",
+      "description": "旧节点 resolved_pre 完全不动",
+      "enforcement": "写入白名单"
+    },
+    {
+      "guardrail_id": "gr_09",
+      "description": "validation_baseline.item_count = 1717",
+      "enforcement": "基线更新"
+    },
+    {
+      "guardrail_id": "gr_10",
+      "description": "report 必须在 validate-only 前基于当前图谱生成",
+      "enforcement": "执行顺序约束"
+    },
+    {
+      "guardrail_id": "gr_11",
+      "description": "不继续 Stage3F Batch4",
+      "enforcement": "脚本终止"
+    },
+    {
+      "guardrail_id": "gr_12",
+      "description": "validate-only 任一条件不满足 → 恢复备份",
+      "enforcement": "失败回滚"
+    }
+  ],
+  "post_merge_validation_checks": [
+    {
+      "check_id": "val_01",
+      "description": "item_count == 1717",
+      "critical": true
+    },
+    {
+      "check_id": "val_02",
+      "description": "expected_item_count == 1717",
+      "critical": true
+    },
+    {
+      "check_id": "val_03",
+      "description": "section_count == 65",
+      "critical": true
+    },
+    {
+      "check_id": "val_04",
+      "description": "dangling_refs == []",
+      "critical": true
+    },
+    {
+      "check_id": "val_05",
+      "description": "direct_pre_cycle == null",
+      "critical": true
+    },
+    {
+      "check_id": "val_06",
+      "description": "resolved_pre_mismatches == []",
+      "critical": true
+    },
+    {
+      "check_id": "val_07",
+      "description": "product_metadata_validation.passed == true",
+      "critical": true
+    },
+    {
+      "check_id": "val_08",
+      "description": "report_matches_json == true",
+      "critical": true
+    },
+    {
+      "check_id": "val_09",
+      "description": "passed == true",
+      "critical": true
+    },
+    {
+      "check_id": "val_10",
+      "description": "旧节点 resolved_pre 未被修改",
+      "critical": true
+    },
+    {
+      "check_id": "val_11",
+      "description": "rollback_plan 已生成",
+      "critical": true
+    },
+    {
+      "check_id": "val_12",
+      "description": "备份文件已生成",
+      "critical": true
+    }
+  ]
+}

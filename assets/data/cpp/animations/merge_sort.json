@@ -1,0 +1,202 @@
+{
+  "animationId": "cpp_merge_sort",
+  "itemId": "2.2.4",
+  "title": "归并排序",
+  "description": "演示归并排序的分治思想：递归分解 + 有序合并",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "arr", "type": "int[]", "values": ["6", "3", "8", "2", "5", "1"], "activeIndex": -1, "note": "待排序数组"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "递归分解 [6,3,8,2,5,1]",
+      "description": "归并排序采用分治思想：将数组从中间分成两半，分别排序后再合并",
+      "codeLine": "mergeSort(arr, 0, 5)",
+      "highlights": ["mergeSort", "0", "5"],
+      "state": {
+        "variables": [
+          {"name": "mid", "value": "2", "note": "中间位置"}
+        ],
+        "containers": [
+          {"name": "左半部分", "type": "int[]", "values": ["6", "3", "8"], "activeIndex": -1, "note": "arr[0..2]"},
+          {"name": "右半部分", "type": "int[]", "values": ["2", "5", "1"], "activeIndex": -1, "note": "arr[3..5]"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "继续分解 [6,3,8]",
+      "description": "左半部分继续分解：分成 [6] 和 [3,8]",
+      "codeLine": "mergeSort(0,2) → mid=1",
+      "highlights": ["0", "2", "mid=1"],
+      "state": {
+        "variables": [
+          {"name": "递归深度", "value": "2", "note": "第2层递归"}
+        ],
+        "containers": [
+          {"name": "分解中", "type": "text", "values": ["[6,3,8] → [6] + [3,8]"], "activeIndex": -1, "note": "继续分治"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "单个元素有序，开始合并",
+      "description": "单个元素的数组天然有序。现在开始有序合并两个有序数组",
+      "codeLine": "merge([6], [3,8])",
+      "highlights": ["merge"],
+      "state": {
+        "variables": [
+          {"name": "合并过程", "value": "6,3,8", "note": "选择最小元素"}
+        ],
+        "containers": [
+          {"name": "左数组", "type": "int[]", "values": ["6"], "activeIndex": 0, "note": "已排序"},
+          {"name": "右数组", "type": "int[]", "values": ["3", "8"], "activeIndex": 0, "note": "已排序"},
+          {"name": "合并结果", "type": "int[]", "values": ["", "", ""], "activeIndex": -1, "note": "逐步填充"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "比较 6 和 3，3 更小",
+      "description": "比较两个有序数组的首元素，3 < 6，选择 3 放入结果数组",
+      "codeLine": "3 < 6，选 3",
+      "highlights": ["3", "6"],
+      "state": {
+        "variables": [
+          {"name": "当前最小", "value": "3", "note": "来自右数组"}
+        ],
+        "containers": [
+          {"name": "左数组", "type": "int[]", "values": ["6"], "activeIndex": 0, "note": "等待中"},
+          {"name": "右数组", "type": "int[]", "values": ["8"], "activeIndex": 0, "note": "3已取出"},
+          {"name": "合并结果", "type": "int[]", "values": ["3", "", ""], "activeIndex": 0, "note": "3已就位"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "比较 6 和 8，6 更小",
+      "description": "继续比较，6 < 8，选择 6 放入结果数组",
+      "codeLine": "6 < 8，选 6",
+      "highlights": ["6", "8"],
+      "state": {
+        "variables": [
+          {"name": "当前最小", "value": "6", "note": "来自左数组"}
+        ],
+        "containers": [
+          {"name": "左数组", "type": "int[]", "values": [""], "activeIndex": -1, "note": "6已取出"},
+          {"name": "右数组", "type": "int[]", "values": ["8"], "activeIndex": 0, "note": "等待中"},
+          {"name": "合并结果", "type": "int[]", "values": ["3", "6", ""], "activeIndex": 1, "note": "6已就位"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 6,
+      "title": "右数组剩余元素直接追加",
+      "description": "左数组已空，右数组还有元素 8，直接追加到结果末尾",
+      "codeLine": "右数组剩余直接追加",
+      "highlights": ["直接追加"],
+      "state": {
+        "variables": [
+          {"name": "合并完成", "value": "[3,6,8]", "note": "有序数组"}
+        ],
+        "containers": [
+          {"name": "左数组", "type": "int[]", "values": [""], "activeIndex": -1, "note": "空"},
+          {"name": "右数组", "type": "int[]", "values": [""], "activeIndex": -1, "note": "空"},
+          {"name": "合并结果", "type": "int[]", "values": ["3", "6", "8"], "activeIndex": 2, "note": "完成！"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 7,
+      "title": "继续分解右半部分 [2,5,1]",
+      "description": "现在处理右半部分，同样递归分解：[2,5,1] → [2] + [5,1]",
+      "codeLine": "mergeSort(3,5) → mid=4",
+      "highlights": ["3", "5", "mid=4"],
+      "state": {
+        "variables": [
+          {"name": "当前处理", "value": "[2,5,1]", "note": "右半部分"}
+        ],
+        "containers": [
+          {"name": "分解中", "type": "text", "values": ["[2,5,1] → [2] + [5,1]"], "activeIndex": -1, "note": "分治过程"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 8,
+      "title": "继续分解 [5,1]",
+      "description": "[5,1] 继续分解为 [5] 和 [1]",
+      "codeLine": "[5,1] → [5] + [1]",
+      "highlights": ["[5,1]", "[5]", "[1]"],
+      "state": {
+        "variables": [
+          {"name": "递归深度", "value": "3", "note": "最深层"}
+        ],
+        "containers": [
+          {"name": "最底层", "type": "text", "values": ["[5] [1] 都有序"], "activeIndex": -1, "note": "开始合并"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 9,
+      "title": "合并 [5] 和 [1] → [1,5]",
+      "description": "比较 5 和 1，1 更小，结果：[1,5]",
+      "codeLine": "merge([5], [1]) = [1,5]",
+      "highlights": ["[1,5]"],
+      "state": {
+        "variables": [
+          {"name": "右半部分", "value": "[2,1,5]", "note": "部分排序"}
+        ],
+        "containers": [
+          {"name": "状态", "type": "text", "values": ["[2] + [1,5]"], "activeIndex": -1, "note": "准备合并"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 10,
+      "title": "最终合并 [3,6,8] 和 [1,2,5]",
+      "description": "左右两部分都已有序，现在进行最终合并。同时比较两个数组的首元素",
+      "codeLine": "merge([3,6,8], [1,2,5])",
+      "highlights": ["merge", "[3,6,8]", "[1,2,5]"],
+      "state": {
+        "variables": [
+          {"name": "最终合并", "value": "开始", "note": "6个元素"}
+        ],
+        "containers": [
+          {"name": "左", "type": "int[]", "values": ["3", "6", "8"], "activeIndex": 0, "note": "有序"},
+          {"name": "右", "type": "int[]", "values": ["1", "2", "5"], "activeIndex": 0, "note": "有序"},
+          {"name": "最终结果", "type": "int[]", "values": ["", "", "", "", "", ""], "activeIndex": -1, "note": "待填充"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 11,
+      "title": "逐步合并完成",
+      "description": "通过比较和选择，最终合并完成：[1,2,3,5,6,8]",
+      "codeLine": "结果：[1,2,3,5,6,8]",
+      "highlights": ["[1,2,3,5,6,8]"],
+      "state": {
+        "variables": [
+          {"name": "排序完成", "value": "O(n log n)", "note": "时间复杂度"}
+        ],
+        "containers": [
+          {"name": "最终结果", "type": "int[]", "values": ["1", "2", "3", "5", "6", "8"], "activeIndex": 5, "note": "排序完成"}
+        ],
+        "output": "1 2 3 5 6 8"
+      }
+    }
+  ]
+}

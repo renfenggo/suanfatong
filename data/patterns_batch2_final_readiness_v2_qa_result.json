@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "title": "Patterns Batch2 Final Readiness v2 QA Result",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-23T01:30:00.000Z",
+    "task": "batch2_final_readiness_v2_qa_result",
+    "version": "1.0",
+    "is_independent_review": true,
+    "source_files_verified": [
+      "patterns_v0_1_ready.json",
+      "stage3e_patterns_batch2_final_readiness_checklist_v2.json",
+      "stage3e_patterns_batch2_boundary_notes.json",
+      "patterns_batch2_p1_draft_preview.json",
+      "patterns_batch2_p0_draft_preview.json",
+      "patterns_batch1.json"
+    ],
+    "formal_batch_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "batch2_drafts_modified": false
+  },
+  "qa_verdict": "PASSED_WITH_FINDINGS",
+  "summary": {
+    "total_checks": 10,
+    "passed": 8,
+    "passed_with_note": 2,
+    "failed": 0,
+    "critical_findings": 1,
+    "minor_findings": 1,
+    "ready_for_formal_generation": true,
+    "awaiting_user_instruction": true,
+    "human_review_needed": true,
+    "human_review_items": [
+      "HR-01: pat.project_selection_closure 不存在于 patterns_v0_1_ready.json 中。若需要合并 Project Selection，需确认目标 ready pattern 的定位"
+    ]
+  },
+  "cross_checks": [
+    {
+      "check_id": "CR-01",
+      "description": "Batch2 建议生成 14 个候选是否齐全",
+      "status": "pass",
+      "verification_method": "从 readiness_v2 checklist 中提取 checklist 数组，按 readiness_status 分类计数",
+      "expected": 14,
+      "actual": 14,
+      "breakdown": {
+        "ready_to_generate_now": 7,
+        "needs_boundary_note_attached": 7,
+        "merge_to_ready_pattern": 1,
+        "batch3_later": 7
+      },
+      "ready_ids": [
+        "2.21.128", "2.21.134", "2.21.136", "2.21.142",
+        "2.21.124", "2.21.126", "2.21.129"
+      ],
+      "boundary_ids": [
+        "2.21.132", "2.21.133", "2.21.125", "2.21.130",
+        "2.21.127", "2.21.135", "2.21.143"
+      ],
+      "detail": "v2 checklist 中共 22 条记录：7 ready + 7 boundary_note + 1 merge_to_ready + 7 batch3 = 22 ✓",
+      "passed": true
+    },
+    {
+      "check_id": "CR-02",
+      "description": "Project Selection 是否没有被列为新建 pattern",
+      "status": "pass",
+      "verification_method": "从 readiness_v2 checklist 中查找 2.21.131 的 readiness_status",
+      "expected": "不应出现在 ready_to_generate_now 或 needs_boundary_note_attached 中",
+      "actual_status": "merge_to_ready_pattern",
+      "found_in_batch2_generation": false,
+      "passed": true
+    },
+    {
+      "check_id": "CR-03",
+      "description": "Project Selection 是否正确标记为 merge_to_ready_pattern",
+      "status": "pass_with_note",
+      "verification_method": "验证 readiness_v2 中 2.21.131 的目标 ready pattern 是否存在",
+      "expected_target": "pat.project_selection_closure",
+      "actual_target": "pat.project_selection_closure",
+      "target_in_ready_patterns": false,
+      "target_in_batch1": true,
+      "target_file": "patterns_batch1.json（非 patterns_v0_1_ready.json）",
+      "finding": {
+        "severity": "critical",
+        "id": "FINDING-01",
+        "description": "pat.project_selection_closure 不存在于 patterns_v0_1_ready.json（83 个 ready patterns）中",
+        "detail": "独立交叉验证发现：patterns_v0_1_ready.json（83 个 patterns）中不包含 pat.project_selection_closure。该模式仅存在于 patterns_batch1.json（原始 batch1 输出）。前序 QA 检查（ready_pattern_exists: true）有误。实际上 pat.min_cut_selection 已引用 Project Selection 作为 example_problem_ref",
+        "impact": "如果 merge_to_ready 的目标是 patterns_v0_1_ready.json，需要更新目标为 pat.min_cut_selection，或在生成时新建 pat.project_selection_closure",
+        "options": [
+          "方案 A：合并到 pat.min_cut_selection（已在 example_problem_refs 中引用 Project Selection）",
+          "方案 B：确认 pat.project_selection_closure 是否应在正式生成时被加入 ready patterns",
+          "方案 C：保持 merge_to_ready 逻辑，在生成时同时创建 pat.project_selection_closure"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "CR-04",
+      "description": "Stable Marriage 是否已加入生成候选",
+      "status": "pass",
+      "verification_method": "从 readiness_v2 中查找 2.21.143 的状态",
+      "expected": "应在 needs_boundary_note_attached 中",
+      "actual_status": "needs_boundary_note_attached",
+      "target_pattern_id": "pat.stable_matching_pattern",
+      "found_in_ready_patterns": false,
+      "passed": true
+    },
+    {
+      "check_id": "CR-05",
+      "description": "Stable Marriage 是否带有与二分图匹配的 boundary_note",
+      "status": "pass",
+      "verification_method": "检查 readiness_v2 中 2.21.143 的 required_note 和 duplicate_risk",
+      "required_note_present": true,
+      "required_note_content": "需在正式模式中添加与 pat.bipartite_matching_modeling 的边界说明",
+      "duplicate_risk": "none",
+      "boundary_note_template_ready": true,
+      "detail": "2.21.143 的 required_note 已明确要求添加与二分图匹配的边界说明。正式生成时需按模板写入",
+      "passed": true
+    },
+    {
+      "check_id": "CR-06",
+      "description": "14 个候选的 pattern_id 是否唯一",
+      "status": "pass",
+      "verification_method": "核对 13 个 target_pattern_id（node_demand_modeling 共享一个 ID）",
+      "pattern_ids": [
+        "pat.circulation_optimization",
+        "pat.cycle_optimization_modeling",
+        "pat.state_machine_modeling",
+        "pat.path_cover_modeling",
+        "pat.bounded_matching_modeling",
+        "pat.flow_bounds_transformation",
+        "pat.min_flow_modeling",
+        "pat.k_shortest_modeling",
+        "pat.layered_graph_modeling",
+        "pat.node_demand_modeling",
+        "pat.max_flow_with_bounds",
+        "pat.shortest_path_potentials",
+        "pat.stable_matching_pattern"
+      ],
+      "duplicates_found": [],
+      "unique_count": 13,
+      "note": "13 个唯一 ID 分配给了 14 个知识库候选（node_demand_modeling 由 Demands+Node Demand 合并）",
+      "passed": true
+    },
+    {
+      "check_id": "CR-07",
+      "description": "是否与 patterns_v0_1_ready.json 中已有 pattern 重复",
+      "status": "pass_with_note",
+      "verification_method": "逐一比对 13 个 pattern_id 与 83 个 ready pattern_id",
+      "ready_pattern_count": 83,
+      "exact_duplicate_ids": [],
+      "semantic_overlaps": [
+        {
+          "pattern_id": "pat.layered_graph_modeling",
+          "overlap_with": "pat.layered_graph_shortest_path",
+          "relationship": "general_vs_specific",
+          "status": "handled_by_boundary_note"
+        },
+        {
+          "pattern_id": "pat.shortest_path_potentials",
+          "overlap_with": "pat.shortest_path_modeling",
+          "relationship": "specialized_vs_general",
+          "status": "handled_by_boundary_note"
+        },
+        {
+          "pattern_id": "pat.stable_matching_pattern",
+          "overlap_with": "pat.bipartite_matching_modeling",
+          "relationship": "sibling_different_algorithm",
+          "status": "boundary_note_ready",
+          "note": "Gale-Shapley vs 匈牙利算法，本质不同"
+        }
+      ],
+      "no_exact_duplicates": true,
+      "passed": true
+    },
+    {
+      "check_id": "CR-08",
+      "description": "required_items / related_items 是否都能映射到知识图谱 item id",
+      "status": "pass",
+      "verification_method": "核对 13 个 pattern 的 required_items 和 related_items 是否均为 item_id 格式",
+      "all_required_items_valid": true,
+      "all_related_items_valid": true,
+      "invalid_items": [],
+      "detail": "所有 required_items 和 related_items 都使用 x.x.x 或 x.xx.xx 格式，符合知识图谱 item id 规范",
+      "passed": true
+    },
+    {
+      "check_id": "CR-09",
+      "description": "high duplicate risk 候选是否都有 boundary_note",
+      "status": "pass",
+      "verification_method": "核对 readiness_v2 中 high_duplicate_risk_list 与 boundary_notes.json 的覆盖",
+      "high_risk_items": [
+        {
+          "item_id": "2.21.132",
+          "name": "K Shortest Paths",
+          "risk": "与 Batch2 Draft pat.k_shortest_paths 语义重叠",
+          "boundary_note_in_boundary_notes_json": true,
+          "note": "boundary_notes.json section boundary_notes[0] — K短路建模 vs K短路算法"
+        },
+        {
+          "item_id": "2.21.133",
+          "name": "Layered Graph",
+          "risk": "与 ready pattern pat.layered_graph_shortest_path 语义重叠",
+          "boundary_note_in_boundary_notes_json": true,
+          "note": "boundary_notes.json section boundary_notes[1] — 分层图建模 vs 分层图最短路"
+        }
+      ],
+      "resolved_risks": [
+        {
+          "item_id": "2.21.131",
+          "name": "Project Selection",
+          "original_risk": "与 pat.network_flow_closure 高度相似",
+          "resolution": "merge_to_ready_pattern（但目标 pattern 未在 v0.1_ready 中）"
+        }
+      ],
+      "all_covered": true,
+      "passed": true
+    },
+    {
+      "check_id": "CR-10",
+      "description": "是否没有复制题面，只保留 problem metadata",
+      "status": "pass",
+      "verification_method": "检查 Draft Preview 中的 example_problem_refs 格式",
+      "detail": "patterns_batch2_p0_draft_preview.json 和 patterns_batch2_p1_draft_preview.json 中只使用了 metadata 格式引用题面",
+      "example_format": "['LeetCode XXX', 'CSES XXX', 'Codeforces XXX']",
+      "full_statements_found": false,
+      "passed": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "FINDING-01",
+      "severity": "critical",
+      "category": "merge_target_not_found",
+      "title": "pat.project_selection_closure 不在 patterns_v0_1_ready.json 中",
+      "description": "独立交叉验证发现：前序 QA 检查声称 ready_pattern_exists=true，但实际 patterns_v0_1_ready.json（83 个 patterns）中不包含 pat.project_selection_closure。该模式仅存在于 patterns_batch1.json 中",
+      "impact": "如果 merge_to_ready 的目标是 patterns_v0_1_ready.json 中的 ready pattern，需要修正合并目标",
+      "recommended_actions": [
+        "方案 A（推荐）：将 2.21.131 Project Selection 合并到 pat.min_cut_selection（最小割选择建模），其 example_problem_refs 已引用 'Project Selection'",
+        "方案 B：确认 pat.project_selection_closure 应在什么时候被建立为 ready pattern（不属于 Batch2 范围）",
+        "方案 C：如果 pat.project_selection_closure 实际应存在于 ready patterns 中，需确认为什么被 patterns_v0_1_ready.json 排除"
+      ],
+      "related_files": {
+        "expected_in": "patterns_v0_1_ready.json",
+        "found_in": "patterns_batch1.json",
+        "alternative": "pat.min_cut_selection（已引用 Project Selection 作为示例）"
+      }
+    },
+    {
+      "id": "FINDING-02",
+      "severity": "minor",
+      "category": "boundary_note_unified_format",
+      "title": "boundary_note 的字段格式尚未统一",
+      "description": "当前 boundary notes 分散在多个文件中（boundary_notes.json, generation_checklist.json, readiness_v2.json），正式生成时需决定边界说明的最终字段格式",
+      "impact": "不影响生成就绪度，但正式生成时需要确认 boundary_note 在正式 pattern 中的字段位置",
+      "recommended_action": "建议在生成 formal patterns 时，将 boundary_note 作为 pattern 的一个可选字段，参考 generation_template.md 中的格式"
+    }
+  ],
+  "formal_generation_readiness": {
+    "ready": true,
+    "blocking_issues": 0,
+    "non_blocking_issues": 1,
+    "issue_details": [
+      "FINDING-01（非阻塞）：merge 目标 pat.project_selection_closure 的位置需确认，但不影响其他 14 个候选的生成"
+    ],
+    "suggest_generate_now": false,
+    "reason": "等待用户确认 FINDING-01 的处理方案，并发出明确生成指令"
+  },
+  "statistics": {
+    "batch2_generate_count": 14,
+    "deferred_count": 8,
+    "merge_to_ready_count": 1,
+    "high_duplicate_risk_remaining": 2,
+    "ready_to_generate_now": 7,
+    "needs_boundary_note_attached": 7
+  }
+}

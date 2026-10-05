@@ -1,0 +1,477 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T15:12:10.190861+00:00",
+    "baseline_item_count": 3240,
+    "relocation_count": 27,
+    "main_graph_modified": false,
+    "fix_lite_applied": false,
+    "batch3_continued": false
+  },
+  "groups": [
+    {
+      "topic": "主席树",
+      "old_range": "2.1.102-2.1.108",
+      "target_section": "3.13",
+      "new_range": "3.13.386-3.13.392",
+      "count": 7
+    },
+    {
+      "topic": "李超线段树",
+      "old_range": "2.1.109-2.1.115",
+      "target_section": "3.13",
+      "new_range": "3.13.393-3.13.399",
+      "count": 7
+    },
+    {
+      "topic": "吉司机+动态开点线段树",
+      "old_range": "2.1.117-2.1.129",
+      "target_section": "3.7",
+      "new_range": "3.7.40-3.7.52",
+      "count": 13
+    }
+  ],
+  "section_distribution_before": {
+    "2.1": 142,
+    "3.13": 353,
+    "3.7": 39
+  },
+  "section_distribution_after": {
+    "2.1": 115,
+    "3.13": 367,
+    "3.7": 52
+  },
+  "relocations": [
+    {
+      "old_item_id": "2.1.102",
+      "old_name": "主席树的节点语义 (主席树 Node Semantics)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.386",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.103",
+      "old_name": "主席树的合并操作 (主席树 Merge Operation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.387",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.104",
+      "old_name": "主席树的分裂操作 (主席树 Split Operation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.388",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.105",
+      "old_name": "主席树的区间修改模型 (主席树 Range Update Model)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.389",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.106",
+      "old_name": "主席树的区间查询模型 (主席树 Range Query Model)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.390",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.107",
+      "old_name": "主席树的持久化版本关系 (主席树 Persistent Version Relation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.391",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.108",
+      "old_name": "主席树的动态空间复杂度 (主席树 Dynamic Space Complexity)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.392",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "主席树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.109",
+      "old_name": "李超线段树的节点语义 (李超线段树 Node Semantics)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.393",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.110",
+      "old_name": "李超线段树的合并操作 (李超线段树 Merge Operation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.394",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.111",
+      "old_name": "李超线段树的分裂操作 (李超线段树 Split Operation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.395",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.112",
+      "old_name": "李超线段树的区间修改模型 (李超线段树 Range Update Model)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.396",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.113",
+      "old_name": "李超线段树的区间查询模型 (李超线段树 Range Query Model)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.397",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.114",
+      "old_name": "李超线段树的持久化版本关系 (李超线段树 Persistent Version Relation)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.398",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.115",
+      "old_name": "李超线段树的动态空间复杂度 (李超线段树 Dynamic Space Complexity)",
+      "old_section": "2.1",
+      "target_section": "3.13",
+      "target_section_name": "高级数据结构扩展",
+      "new_item_id": "3.13.399",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "李超线段树 应按主题归类至 高级数据结构扩展",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.117",
+      "old_name": "吉司机线段树的合并操作 (吉司机线段树 Merge Operation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.40",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.118",
+      "old_name": "吉司机线段树的分裂操作 (吉司机线段树 Split Operation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.41",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.119",
+      "old_name": "吉司机线段树的区间修改模型 (吉司机线段树 Range Update Model)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.42",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.120",
+      "old_name": "吉司机线段树的区间查询模型 (吉司机线段树 Range Query Model)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.43",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.121",
+      "old_name": "吉司机线段树的持久化版本关系 (吉司机线段树 Persistent Version Relation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.44",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.122",
+      "old_name": "吉司机线段树的动态空间复杂度 (吉司机线段树 Dynamic Space Complexity)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.45",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.123",
+      "old_name": "动态开点线段树的节点语义 (动态开点线段树 Node Semantics)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.46",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.124",
+      "old_name": "动态开点线段树的合并操作 (动态开点线段树 Merge Operation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.47",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.125",
+      "old_name": "动态开点线段树的分裂操作 (动态开点线段树 Split Operation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.48",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.126",
+      "old_name": "动态开点线段树的区间修改模型 (动态开点线段树 Range Update Model)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.49",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.127",
+      "old_name": "动态开点线段树的区间查询模型 (动态开点线段树 Range Query Model)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.50",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.128",
+      "old_name": "动态开点线段树的持久化版本关系 (动态开点线段树 Persistent Version Relation)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.51",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    },
+    {
+      "old_item_id": "2.1.129",
+      "old_name": "动态开点线段树的动态空间复杂度 (动态开点线段树 Dynamic Space Complexity)",
+      "old_section": "2.1",
+      "target_section": "3.7",
+      "target_section_name": "区间维护结构",
+      "new_item_id": "3.7.52",
+      "id_conflict": false,
+      "references_to_update": {
+        "direct_pre": [],
+        "resolved_pre": [],
+        "rel": []
+      },
+      "reason": "吉司机线段树+动态开点线段树 应按主题归类至 区间维护结构",
+      "migration_action": "move_to_target_section"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "title": "Patterns Backlog Status After Stage3F Batch2",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T18:00:00.000Z",
+    "task": "patterns_backlog_status",
+    "version": "1.0",
+    "description": "整理当前 problem_patterns 的完整 backlog 状态——已正式生成、可进入 future batch3、defer 候选、待补充候选",
+    "input_files": [
+      "data/patterns_batch2.json",
+      "data/patterns_batch2_validation_result.json",
+      "data/stage3f_batch1_problem_patterns_sync_triage.json",
+      "data/stage3f_batch2_problem_pattern_sync_candidates.json",
+      "data/stage3f_batch2_added_items_review.json",
+      "data/patterns_batch3_dominance_counting_draft_preview.json",
+      "data/patterns_dominance_counting_boundary_review.json",
+      "data/patterns_order_statistics_suite_generation_checklist.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "snapshot_timestamp": "2026-05-25T18:00:00.000Z",
+  "overall_summary": {
+    "batch1_ready_count": 83,
+    "batch2_generated_count": 13,
+    "batch2_merge_actions": 1,
+    "batch2_validation": "ALL PASSED",
+    "future_batch3_candidates": 1,
+    "pending_triage_from_batch2": 1,
+    "deferred_candidates": 5,
+    "suggest_generate_batch3_now": false,
+    "suggest_wait_for_stage3f_batch3_review": true,
+    "current_stage3_phase": "Stage3F Batch3 full_40 Merge in progress"
+  },
+  "generated_batch2": {
+    "batch_name": "patterns_batch2",
+    "generated_at": "2026-05-23T04:00:00.000Z",
+    "total_new_patterns": 13,
+    "merge_to_ready_actions": 1,
+    "validation_verdict": "ALL PASSED (12/12)",
+    "full_list": [
+      {
+        "pattern_id": "pat.circulation_optimization",
+        "title": "最小费用循环流",
+        "category": "网络流建模",
+        "difficulty": "expert",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.cycle_optimization_modeling",
+        "title": "最小平均环建模",
+        "category": "图论建模",
+        "difficulty": "advanced",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.state_machine_modeling",
+        "title": "状态图建模",
+        "category": "图论建模",
+        "difficulty": "intermediate",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.path_cover_modeling",
+        "title": "最小路径覆盖",
+        "category": "图论建模",
+        "difficulty": "advanced",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.bounded_matching_modeling",
+        "title": "带边界二分图匹配",
+        "category": "网络流建模",
+        "difficulty": "advanced",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.flow_bounds_transformation",
+        "title": "流量边界变换",
+        "category": "网络流建模",
+        "difficulty": "advanced",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.min_flow_modeling",
+        "title": "最小流建模",
+        "category": "网络流建模",
+        "difficulty": "advanced",
+        "group": "ready_to_generate_now"
+      },
+      {
+        "pattern_id": "pat.k_shortest_modeling",
+        "title": "K短路建模",
+        "category": "图论建模",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      },
+      {
+        "pattern_id": "pat.layered_graph_modeling",
+        "title": "分层图建模",
+        "category": "图论建模",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      },
+      {
+        "pattern_id": "pat.node_demand_modeling",
+        "title": "节点需求流建模",
+        "category": "网络流建模",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      },
+      {
+        "pattern_id": "pat.max_flow_with_bounds",
+        "title": "带边界最大流",
+        "category": "网络流建模",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      },
+      {
+        "pattern_id": "pat.shortest_path_potentials",
+        "title": "Johnson势函数",
+        "category": "最短路优化",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      },
+      {
+        "pattern_id": "pat.stable_matching_pattern",
+        "title": "稳定婚姻问题",
+        "category": "匹配算法",
+        "difficulty": "advanced",
+        "group": "needs_boundary_note_attached"
+      }
+    ],
+    "merge_actions": [
+      {
+        "type": "merge_to_ready_pattern",
+        "source": "2.21.131 Project Selection",
+        "target": "pat.min_cut_selection",
+        "reason": "Project Selection 是 pat.min_cut_selection 的经典应用场景，不单独成 pattern"
+      }
+    ]
+  },
+  "future_batch3_candidates": [
+    {
+      "item_id": "3.13.182",
+      "name": "Multidimensional: Dominance Counting",
+      "source_triage": "stage3f_batch1_problem_patterns_sync_triage",
+      "triage_decision": "create_new_draft_later",
+      "priority": "P1",
+      "pattern_type": "modeling_pattern",
+      "suggested_pattern_id": "pat.dominance_counting",
+      "preparation_status": {
+        "draft_preview": "completed (data/patterns_batch3_dominance_counting_draft_preview.json)",
+        "boundary_review": "completed (data/patterns_dominance_counting_boundary_review.json)",
+        "suite_plan": "completed (data/patterns_order_statistics_suite_plan.json)",
+        "generation_checklist": "completed (data/patterns_order_statistics_suite_generation_checklist.json)"
+      },
+      "boundary_verdict": "RETAIN — 建议保留，以 suite 方式生成",
+      "ready_to_generate": true,
+      "gating_factors": [
+        "Stage3F Batch3 Review / Fix Lite 完成",
+        "用户指令生成 patterns_batch3.json"
+      ],
+      "recommended_action": "在 patterns_batch3 中生成正式 pattern。当前 draft 已完整，仅需补充场景对比表。"
+    }
+  ],
+  "pending_triage_candidates": [
+    {
+      "item_id": "4.9.5",
+      "name": "莫比乌斯反演应用",
+      "source_review": "stage3f_batch2_added_items_review",
+      "review_result": "move_to_problem_patterns",
+      "item_type": "modeling_pattern",
+      "known_info": {
+        "direct_pre": ["4.9.2 莫比乌斯反演"],
+        "section": "4.9 狄利克雷卷积/莫比乌斯反演",
+        "level": "L4",
+        "tracks": ["icpc", "advanced_math", "noi"],
+        "review_priority": "C"
+      },
+      "triage_status": "not_yet_triaged",
+      "triage_file": "stage3f_batch2_problem_patterns_sync_triage.json (not yet generated)",
+      "expected_triage_range": "P1 create_new_draft_later | defer | manual_review",
+      "preliminary_note": "待正式 triage。已标记 modeling_pattern 且 review 结果为 move_to_problem_patterns，但需进一步判断：(1) 识别信号是否足够独特；(2) 是否与 ready pattern pat.inclusion_exclusion_counting 有语义重叠；(3) 是否需要 boundary_note。",
+      "recommended_action": "待完成 triage 后确定是否进入 batch3 或 defer"
+    }
+  ],
+  "deferred_candidates": [
+    {
+      "item_id": "2.17.20",
+      "name": "Berlekamp-Massey算法",
+      "source": "stage3f_batch1_problem_patterns_sync_triage",
+      "decision": "defer",
+      "reason": "algorithm_only。BM 算法是 theorem_or_property，识别信号单一，不适合 pattern。",
+      "reassess_condition": "除非出现广义的'线性递推求解模式'统一建模，否则不重新评估"
+    },
+    {
+      "item_id": "4.9.3",
+      "name": "Min_25筛",
+      "source": "stage3f_batch1_problem_patterns_sync_triage",
+      "decision": "defer",
+      "reason": "algorithm_only。Min_25 筛是专门化的数论算法，没有多样化建模路径。已保持为知识图谱算法节点。",
+      "reassess_condition": "如后续将多个积性函数求解方法（Dirichlet 卷积、杜教筛、Min_25 筛）统一建模为 pattern，可重新评估"
+    },
+    {
+      "item_id": "3.13.181",
+      "name": "Multidimensional: Cdq Divide Conquer",
+      "source": "patterns_order_statistics_suite_plan",
+      "decision": "defer",
+      "reason": "core_concept 类型，不适合生成独立 pattern。在 pat.dominance_counting 的 related_items 中引用即可。",
+      "reassess_condition": "仅在 Dominance Counting 生成时作为 related_items 引用，不需单独 pattern"
+    },
+    {
+      "item_id": "3.13.179",
+      "name": "Merge Sort Tree: 2d Dominance",
+      "source": "patterns_order_statistics_suite_plan",
+      "decision": "defer",
+      "reason": "implementation_variant 类型，不适合生成独立 pattern。保持知识图谱数据结构节点。",
+      "reassess_condition": "仅在 Dominance Counting 生成时作为 related_items 或 example_approaches 引用"
+    },
+    {
+      "item_id": "3.13.180",
+      "name": "Multidimensional: Bitset Rectangle Query",
+      "source": "patterns_order_statistics_suite_plan",
+      "decision": "defer",
+      "reason": "implementation_variant 类型，不适合生成独立 pattern。保持知识图谱优化技巧节点。",
+      "reassess_condition": "仅在 Dominance Counting 生成时作为 related_items 引用"
+    }
+  ],
+  "stage3f_batch3_potential_sources": {
+    "description": "Stage3F Batch3 full_40 Merge 完成后，可能产生新的 problem_patterns 候选",
+    "current_status": "in_progress (full_40 Merge)",
+    "expected_yield": "未知，待 merge 完成后从 added_items_review 结果中提取",
+    "estimated_capacity": "按 Batch2 惯例，预计 ~80+ 新增知识项中可能产生少量 problem_pattern 候选"
+  },
+  "recommendations": {
+    "generate_batch3_now": false,
+    "wait_for_stage3f_batch3_review_first": true,
+    "next_actions": [
+      "1. 完成 Stage3F Batch3 full_40 Merge",
+      "2. 完成 Stage3F Batch3 Added Items Review → 标记 move_to_problem_patterns 候选",
+      "3. 完成 Stage3F Batch3 Problem Patterns Sync Triage",
+      "4. 对 4.9.5 莫比乌斯反演应用 完成 triage（若还未完成）",
+      "5. 结合 Batch3 新候选 + Dominance Counting + 莫比乌斯反演应用，统一规划 patterns_batch3",
+      "6. 收到用户指令后生成 patterns_batch3.json"
+    ],
+    "main_graph_modified": false,
+    "existing_patterns_modified": false
+  }
+}

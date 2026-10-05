@@ -1,0 +1,124 @@
+{
+  "animationId": "cpp_prefix_sum_1d",
+  "itemId": "2.4.17",
+  "title": "前缀和 (一维)",
+  "description": "演示一维前缀和数组的逐步构建过程，以及如何用 prefix[r+1] - prefix[l] 在 O(1) 时间内求区间和",
+  "expectedLearningPoint": "前缀和将区间求和从 O(n) 优化到 O(1)，核心公式：sum(l,r) = prefix[r+1] - prefix[l]",
+  "initialState": {
+    "variables": [
+      {"name": "公式", "value": "prefix[i+1] = prefix[i] + a[i]", "note": "递推公式"}
+    ],
+    "containers": [
+      {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": -1, "note": "原始数组 a[0..4]"},
+      {"name": "prefix", "type": "int[]", "values": ["0", "?", "?", "?", "?", "?"], "activeIndex": -1, "note": "前缀和 prefix[0..5]，多一个元素"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "初始化 prefix[0] = 0",
+      "description": "前缀和数组比原数组多一个位置。prefix[0] = 0 作为基准值，表示前 0 个元素的和。",
+      "codeLine": "prefix[0] = 0;  // 前 0 个元素的和 = 0",
+      "highlights": ["prefix[0]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "0", "note": "初始"},
+          {"name": "公式", "value": "prefix[i+1] = prefix[i] + a[i]", "note": ""}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": -1, "note": ""},
+          {"name": "prefix", "type": "int[]", "values": ["0", "?", "?", "?", "?", "?"], "activeIndex": 0, "note": "prefix[0]=0"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "构建 prefix[1] = 0 + 5 = 5",
+      "description": "prefix[1] = prefix[0] + a[0] = 0 + 5 = 5。表示前 1 个元素的和 = a[0] = 5。",
+      "codeLine": "prefix[1] = prefix[0] + a[0];  // 0 + 5 = 5",
+      "highlights": ["prefix[1]", "prefix[0] + a[0]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "0", "note": "处理 a[0]"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": 0, "note": "a[0]=5"},
+          {"name": "prefix", "type": "int[]", "values": ["0", "5", "?", "?", "?", "?"], "activeIndex": 1, "note": "prefix[1]=5"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 3,
+      "title": "构建 prefix[2] = 5 + 3 = 8",
+      "description": "prefix[2] = prefix[1] + a[1] = 5 + 3 = 8。表示前 2 个元素的和 = a[0]+a[1] = 5+3 = 8。",
+      "codeLine": "prefix[2] = prefix[1] + a[1];  // 5 + 3 = 8",
+      "highlights": ["prefix[2]", "prefix[1] + a[1]"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "1", "note": "处理 a[1]"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": 1, "note": "a[1]=3"},
+          {"name": "prefix", "type": "int[]", "values": ["0", "5", "8", "?", "?", "?"], "activeIndex": 2, "note": "prefix[2]=8"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 4,
+      "title": "构建 prefix[3..5]，完成",
+      "description": "继续递推：prefix[3]=8+8=16, prefix[4]=16+1=17, prefix[5]=17+6=23。前缀和数组构建完成。",
+      "codeLine": "for (int i = 0; i < n; i++) prefix[i+1] = prefix[i] + a[i];",
+      "highlights": ["prefix"],
+      "state": {
+        "variables": [
+          {"name": "i", "value": "4", "note": "全部处理完"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": -1, "note": ""},
+          {"name": "prefix", "type": "int[]", "values": ["0", "5", "8", "16", "17", "23"], "activeIndex": 5, "note": "构建完成"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 5,
+      "title": "区间查询：sum(1, 3) = prefix[4] - prefix[1] = 17 - 5 = 12",
+      "description": "求 a[1]+a[2]+a[3] = 3+8+1 = 12。用前缀和 O(1) 查询：sum(l,r) = prefix[r+1] - prefix[l] = prefix[4] - prefix[1] = 17 - 5 = 12。",
+      "codeLine": "int sum = prefix[r+1] - prefix[l];  // l=1, r=3",
+      "highlights": ["prefix[r+1]", "prefix[l]", "prefix[4] - prefix[1]"],
+      "state": {
+        "variables": [
+          {"name": "查询区间", "value": "[1, 3]", "note": "a[1]+a[2]+a[3]"},
+          {"name": "结果", "value": "12", "note": "3+8+1=12, 验证正确"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": 2, "note": "高亮 a[1..3]"},
+          {"name": "prefix", "type": "int[]", "values": ["0", "5", "8", "16", "17", "23"], "activeIndex": -1, "note": "prefix[4]-prefix[1]=12"}
+        ],
+        "output": "sum(1, 3) = 12"
+      }
+    },
+    {
+      "step": 6,
+      "title": "再查：sum(0, 4) = prefix[5] - prefix[0] = 23",
+      "description": "求全部元素和。sum(0,4) = prefix[5] - prefix[0] = 23 - 0 = 23 = 5+3+8+1+6。前缀和的优势在于：无论区间多大，查询都是 O(1)。",
+      "codeLine": "int sum = prefix[5] - prefix[0];  // l=0, r=4",
+      "highlights": ["prefix[5]", "prefix[0]"],
+      "state": {
+        "variables": [
+          {"name": "查询区间", "value": "[0, 4]", "note": "全部元素"},
+          {"name": "结果", "value": "23", "note": "与暴力求和一致"}
+        ],
+        "containers": [
+          {"name": "a", "type": "int[]", "values": ["5", "3", "8", "1", "6"], "activeIndex": -1, "note": "全部高亮"},
+          {"name": "prefix", "type": "int[]", "values": ["0", "5", "8", "16", "17", "23"], "activeIndex": 5, "note": "O(1) 查询任意区间"}
+        ],
+        "output": "sum(0, 4) = 23"
+      }
+    }
+  ]
+}

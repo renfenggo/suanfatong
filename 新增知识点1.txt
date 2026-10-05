@@ -1,0 +1,2541 @@
+我们被要求生成1200-1500个候选知识点，分批输出。首先需要输出 batch_part_1：高级图论 + 高级数据结构。要求候选知识点数量在高级图论：150~200个，高级数据结构：150~200个，两者合计300-400个。这非常多，需要列出大量候选。我们必须按照给定的JSON格式，每个候选包含所有字段。要稳定可读的candidate_id。需要确保不生成太基础的内容，符合扩展方向。需要全面覆盖提示中的重点补充方向A和B。我们准备生成batch_part_1，包含图论和数据结构两部分。
+
+需要生成大量候选，对每个候选，填写完整的JSON对象。尽可能覆盖提到的所有主题。对于每个候选，需要给出名称、英文名称、类别建议、节建议、难度、追踪、受众、可见性、学习路径策略、添加原因、全球相关性、直接前置建议、关联建议、父概念建议、合并风险提示、i18n种子（只提供名称和别名，其他语言需标记审核），内容状态，审核状态。为了避免重复工作，我们可以使用一些模板化的值，但是每个候选的具体名称、理由、前置等需要正确。
+
+我们将输出一个JSON数组，包含300-400个候选。考虑到长度，可以分成多个消息，但根据指示，每批都必须是合法JSON数组。我们先输出所有图论和数据结构候选，可能会超过长度限制。可以分批输出但说明是batch_part_1。最好一次性生成一部分，例如先输出200个图论候选和200个数据结构候选。由于需要数很多，我们可以列举并系统化地生成。
+
+策略：创建一系列候选条目，覆盖高级图论和高级数据结构。对于图论：支配树、Lengauer-Tarjan、虚树、圆方树、仙人掌图、弦图、竞赛图、有向图最小生成树(Zhu-Liu)、Gomory-Hu Tree、Stoer-Wagner、全局最小割、最小平均环、一般图匹配、带花树、Tutte矩阵、Hall定理、拟阵、拟阵交、动态连通性、离线动态连通性、Euler Tour Tree、Bridge Tree、Block-Cut Tree、函数图、2-SAT建模、差分约束建模等。还有其他的如：Link-Cut Tree（可能已经存在）、树链剖分（可能已有）、欧拉回路、网络流、最小费用流、上下界网络流等可能已经存在，避免重复。但题目要求是高级的，这些有可能已经在主图谱中？但提示中说现有1349个知识点，很可能已经包含基础图论，如最短路、生成树、匹配等，但高级的如带花树可能没有。我们可以生成，但要注意潜在重复风险，标记merge_risk_hint。为了安全，可将merge_risk_hint设为medium或low，并给出possible_duplicate_keywords。
+
+对于数据结构：Segment Tree Beats、Li Chao Tree、Merge Sort Tree、Wavelet Tree、Wavelet Matrix、KD-Tree、Cartesian Tree、Sqrt Tree、Disjoint Sparse Table、Rollback DSU、Persistent DSU、Dynamic Segment Tree、Implicit Treap、Order Statistic Tree、Fenwick Tree 2D、Segment Tree 2D、DSU on Tree、Small-to-Large、Centroid Decomposition Applications、Euler Tour Tree、Top Tree等。需要生成这些。
+
+我们需考虑这些候选与现有图谱可能的重复。因为现有1349个知识点可能已经包括一些如"线段树" "树状数组" "Treap" "Splay" "重链剖分" "点分治" "并查集" "Sparse Table"等基础。我们需要生成它们的变体和进阶。所以可以用具体的应用或扩展。例如不是"线段树"，而是"Segment Tree Beats"（区间最值操作）。不是"Treap"，而是"Implicit Treap"（隐式Treap）。这样可以避免直接重复。
+
+关于section_suggestion: 可以建议新节，如"高级图论" "高级数据结构"或具体子节。我们可以使用create_new_section或append_to_existing_section。由于不知道现有section名字，我们可以创造章节。比如 "高级图论"或"高级数据结构"。也可以按照提示中分类 append。建议使用 create_new_section 以表明是新增内容。可以设置 action: "create_new_section"，name 为 "高级图论 - 支配树" 等。但是知识点众多，可以放一个共同的章节，如 "高级图论扩展" 和 "高级数据结构扩展"，用 append_to_existing_section 如果已有"图论"章节。为了安全，设为 create_new_section: "高级图论" 和 "高级数据结构"。
+
+level: 大部分是 L4 或 L5，因为高级。difficulty: advanced 或 expert。
+
+tracks: 可能包括 "advanced_graph", "icpc", "university_cp", "noi", "ioi", "advanced_data_structure" 等。
+
+audience: 主要是 university_icpc, advanced_competitive_programmer, high_school_oi (对于部分NOI)。
+
+visibility: "advanced" 或 "expert"。
+
+learning_path_policy: show_in_icpc_path: true, show_in_noi_path: true (针对国内), unlock_mode: "expert_branch" 或 "optional_branch"。
+
+reason_to_add: 简短阐述。
+
+global_relevance: 标记哪些竞赛相关。
+
+direct_pre_name_suggestion: 列出前置知识点名称，如 "有向图", "DFS", "并查集", "线段树" 等。
+
+rel_name_suggestion: 相关的其他高级知识点。
+
+parent_concept_name_suggestion: 父概念，如 "图论" 或 "数据结构"。
+
+merge_risk_hint: 可能重复的基础概念，如果是新知识，风险低。设置 duplicate_risk: "low", possible_duplicate_keywords: []。如果可能已有类似，标记medium。
+
+i18n_seed: 需要提供英文名称和中文名称，别名。其他语言空但标记needs_native_review: true。
+
+content_status: 尚未有内容，全部 false，content_priority: P1 或 P2。
+
+review_status: need_manual_review: true, review_priority: "A" 或 "B", review_reason: "高级知识点，需确认与现有图谱不冲突"。
+
+我们需要生成约150-200个图论候选，150-200个数据结构候选。列出所有可能的候选名称，保证覆盖。因为还要满足总数1200-1500，所以图论和数据结构各至少150个。我们可以尝试生成约180个图论，180个数据结构。这样合计360个。
+
+列出图论候选清单（英文名作为candidate_id的一部分，中文名作为名称）。按照提示的重点补充方向A，可以覆盖：
+
+支配树 Dominator Tree (Lengauer-Tarjan) -> cand.graph.dominator_tree.lengauer_tarjan
+
+支配树应用：有向图支配关系，最近支配点等。
+
+虚树 Virtual Tree (Auxiliary Tree) -> cand.graph.virtual_tree.construction
+
+虚树 DP
+
+圆方树 Block-Cut Tree 及其应用（点双连通分量树）-> cand.graph.block_cut_tree
+
+仙人掌图 Cactus Graph 性质与算法
+
+仙人掌图上的DP
+
+弦图 Chordal Graph
+
+弦图完美消除序列 Maximum Cardinality Search (MCS)
+
+弦图染色、团
+
+竞赛图 Tournament Graph
+
+竞赛图 Hamilton 路存在性
+
+有向图最小生成树 (Arborescence) Edmonds' algorithm (Chu-Liu/Edmonds) -> cand.graph.min_arborescence.chu_liu
+
+Gomory-Hu 树 (全局最小割树) -> cand.graph.gomory_hu_tree
+
+Stoer-Wagner 全局最小割算法 -> cand.graph.global_min_cut.stoer_wagner
+
+最小平均环 Minimum Mean Cycle (Karp's algorithm) -> cand.graph.min_mean_cycle.karp
+
+一般图匹配（非二分图）-> cand.graph.general_matching
+
+带花树算法 Blossom Algorithm -> cand.graph.blossom_algorithm
+
+Tutte 矩阵与一般图匹配检测
+
+Hall 定理及应用 -> cand.graph.hall_theorem
+
+拟阵 Matroid 基础
+
+拟阵交 Matroid Intersection -> cand.graph.matroid_intersection
+
+动态连通性 (在线) Dynamic Connectivity (Link-Cut Tree 等可能已有，但动态连通性更专门)
+
+离线动态连通性 (线段树分治) -> cand.graph.offline_dynamic_connectivity
+
+Euler Tour Tree (动态树) -> cand.graph.euler_tour_tree
+
+Bridge Tree (桥树，边双连通分量缩点) -> cand.graph.bridge_tree
+
+Block-Cut Tree 构建与查询
+
+函数图 Functional Graph 分析（每个节点出度1的有向图）
+
+2-SAT 建模技巧 -> cand.graph.two_sat.modeling
+
+差分约束系统建模 -> cand.graph.difference_constraints.modeling
+
+平面图性质 Planar Graph (欧拉公式)
+
+平面图对偶图 Dual Graph
+
+网络流扩展：最小割树 (Gomory-Hu) 已包含
+
+最大权闭合子图 Maximum Weight Closure
+
+最大密度子图 Maximum Density Subgraph (分数规划)
+
+上下界网络流 (有源汇可行流，最大流等) -> cand.graph.flow_with_bounds
+
+多源汇网络流
+
+最小费用流负环处理
+
+整数性 Minimum Cost Flow (Successive Shortest Path)
+
+匈牙利算法扩展 (可能已有，但考虑权重)
+
+KM 算法 (二分图最大权匹配) -> 可能已有，但可以加入
+
+稳定婚姻问题 Stable Marriage Problem -> cand.graph.stable_marriage
+
+最小链覆盖 (Dilworth 定理) -> cand.graph.minimum_chain_cover
+
+传递闭包优化 (bitset)
+
+有向图强连通分量 Kosaraju/Tarjan (可能已有基础，但可生成应用：2-SAT 基于 SCC)
+
+双连通分量：点双、边双 (可能已有，但圆方树需要点双)
+
+最近公共祖先 LCA 的 Tarjan 离线算法 (可能已有)
+
+LCA 应用：树上差分 (可能已有)
+
+树上启发式合并 (DSU on tree) 在图论中？归为数据结构? 可放在数据结构。
+
+重心分解 Centroid Decomposition (可能已有，但应用如点分治)
+
+树链剖分 可能已有。
+
+Link-Cut Tree 可能已有。
+
+树哈希 Tree Hashing
+
+Prufer 序列 (可能已有)
+
+欧拉回路 Hierholzer (可能已有)
+
+哈密顿路径/竞赛图性质
+
+图的彩虹匹配 Rainbow Matching
+
+图着色问题（近似）
+
+最大独立集树形/弦图
+
+最小支配集
+
+图的树宽 Treewidth 概念（高级）
+
+图同构问题基础
+
+平面图路径覆盖
+
+最小割集枚举
+
+最小边覆盖 最大匹配关系
+
+团枚举 Bron–Kerbosch algorithm
+
+极大团 Maximum Clique 搜索
+
+最小点覆盖 Kőnig's theorem
+
+最小路径覆盖 二分图
+
+最大反链
+
+无向图最小环 (Floyd 变体)
+
+有向图最小环 (DFS 找环)
+
+有向图 Hamilton 回路 状态压缩DP 可能属于DP
+
+一般图最大权匹配 (带权带花树)
+
+最小斯坦纳树 Steiner Tree DP
+
+最小树形图 已经 Chu-Liu
+
+可持久化并查集 (数据结构)
+
+并查集维护二分图性质 (扩展域)
+
+线段树优化建图
+
+树套树优化建图
+
+倍增优化建图
+
+网络流建模经典问题：二分图匹配、最小割、点覆盖等 (可能已有)
+
+图转换：将点边互换，对偶图
+
+网格图建模
+
+分层图最短路
+
+差分约束求最长路
+
+最大平均值环 (分数规划)
+
+负环检测 (SPFA / Bellman-Ford 变种)
+
+传递闭包 Floyd-Warshall
+
+连通性相关：k-连通性 (Menger 定理)
+
+最小割唯一性
+
+全局最小割 Gomory-Hu 树应用
+
+图收缩 (blossom)
+
+三角形计数
+
+三元环计数 Four-Russian?
+
+四元环计数
+
+子图同构
+
+图形同态
+
+二分图检测 (可能已有)
+
+DAG 最长路，DP
+
+拓扑排序计数
+
+DAG 可达性查询 (bitset)
+
+缩点 SCC Condensation
+
+点/边双连通重构
+
+补图连通性
+
+最短路树
+
+次短路
+
+K短路 (A*)
+
+网络流：Dinic, 当前弧优化 (可能已有)
+
+最高标号预留推送 HLPP (高级)
+
+最小割树 已包括
+
+图染色多项式
+
+随机游走
+
+图谱理论 (Spectral Graph Theory) 邻接矩阵特征值
+
+图的扩张性质
+
+超图基本概念
+
+图的匹配与覆盖关系
+
+Tutte 定理
+
+彼得森图性质
+
+网络流退流
+
+平面图最大流 (对偶最短路)
+
+最小割边数限制
+
+容量缩放算法
+
+有向图欧拉回路
+
+De Bruijn 序列
+
+图的 Cartesian 积
+
+线图 Line Graph
+
+图的内子图
+
+树的重心性质
+
+树的直径 求法 (可能已有)
+
+树上路径交
+
+树同构 (AHU 算法)
+
+带修树上查询 (LCT)
+
+动态树直径 (维护)
+
+树剖维护子树/链
+
+网络流 24 题建模 (可能不宜作为知识点，但模式)
+
+二分图博弈
+
+棋盘二分图模型
+
+流量平衡
+
+费用流 消圈算法
+
+无源汇可行流
+
+平面图点定位
+
+图嵌入
+
+最小公共祖先 (LCA) RMQ (已有)
+
+树链剖分 求LCA (已有)
+
+点分治应用（路径统计）
+
+边分治
+
+点分树 (动态点分治)
+
+DSU on tree (sack)
+
+长链剖分优化DP
+
+重心剖分
+
+动态加边最小生成树 (LCT)
+
+矩阵树定理 (Kirchhoff) 生成树计数，属于数学图论。
+
+最小割树 Gomory-Hu 已包括。
+
+仙人掌图直径
+
+一般图最大独立集精确算法
+
+树的最大独立集 DP
+
+环套树 DP (基环树)
+
+仙人掌 DP (需要圆方树)
+
+二分图最大匹配必经点/边
+
+有向图必经点 (支配树应用)
+
+必经边 (桥，边双)
+
+最大流最小割定理 (可能已有)
+
+对偶线性规划与最大流
+
+图论中的随机算法
+
+最小平均环应用
+
+最小比率生成树
+
+最小比率环
+
+最大权子图
+
+着色数界
+
+图论中的构造问题
+
+竞赛图与哈密顿性质
+
+稳定匹配变种
+
+路径覆盖与DAG
+
+最小边覆盖
+
+带权最小路径覆盖
+
+网络流24题中的经典模型（作为题型模式可能）
+
+残量网络分析
+
+图划分 (Spectral)
+
+随机游走与覆盖时间
+
+这样差不多180个图论候选。我们需要为每个生成一个JSON对象。数据结构候选也可以类似生成。
+
+
+数据结构候选重点补充方向B：
+
+Segment Tree Beats (区间最值操作) -> cand.ds.segment_tree_beats.range_chmin
+
+Segment Tree Beats 区间加与区间最值
+
+李超线段树 Li Chao Tree -> cand.ds.li_chao_tree
+
+合并排序树 Merge Sort Tree -> cand.ds.merge_sort_tree
+
+小波树 Wavelet Tree -> cand.ds.wavelet_tree
+
+小波矩阵 Wavelet Matrix -> cand.ds.wavelet_matrix
+
+KD 树 K-D Tree -> cand.ds.kd_tree
+
+笛卡尔树 Cartesian Tree -> cand.ds.cartesian_tree
+
+Sqrt Tree (开根树) -> cand.ds.sqrt_tree
+
+不相交稀疏表 Disjoint Sparse Table -> cand.ds.disjoint_sparse_table
+
+可回滚并查集 Rollback DSU -> cand.ds.rollback_dsu
+
+可持久化并查集 Persistent DSU -> cand.ds.persistent_dsu
+
+动态开点线段树 Dynamic Segment Tree -> cand.ds.dynamic_segment_tree
+
+隐式 Treap (Implicit Treap) -> cand.ds.implicit_treap
+
+序统计树 Order Statistic Tree -> cand.ds.order_statistic_tree
+
+二维树状数组 Fenwick Tree 2D -> cand.ds.fenwick_tree_2d
+
+二维线段树 Segment Tree 2D -> cand.ds.segment_tree_2d
+
+树上启发式合并 DSU on Tree -> cand.ds.dsu_on_tree
+
+小转大合并 Small-to-Large (树上合并) -> cand.ds.small_to_large
+
+重心分解应用 Centroid Decomposition Applications (如路径统计) -> cand.ds.centroid_decomposition_apps
+
+欧拉游览树 Euler Tour Tree (动态树) -> cand.ds.euler_tour_tree
+
+顶树 Top Tree -> cand.ds.top_tree
+
+树堆 Treap (基础可能已有，但隐式 Treap是高级)
+
+可持久化线段树 (主席树) 可能已有，但可生成其应用如：二维数点
+
+可持久化平衡树
+
+可持久化 Trie
+
+可持久化数组
+
+区间众数查询 (Mo's algorithm 可能已有，但可再细分)
+
+莫队算法变体 (带修莫队, 树上莫队, 回滚莫队)
+
+树上莫队
+
+带修改莫队 (Mo's algorithm with updates)
+
+回滚莫队 (Mo's algorithm rollback)
+
+二维莫队
+
+分块 (Sqrt Decomposition) 可能已有，但可以生成高级分块：数列分块九讲等
+
+块状链表
+
+跳跃表 Skip List
+
+前缀和优化 (多维)
+
+差分数组 (可能已有)
+
+双指针 (可能已有)
+
+单调队列/栈 (可能已有)
+
+二分哈希 (可能已有)
+
+字符串哈希 (可能已有，但应用)
+
+并查集 (可能已有)
+
+可撤销并查集 (Rollback DSU) 已包括。
+
+扩展域并查集
+
+带权并查集 (已有?)
+
+离散化 (已有)
+
+逆序对 (树状数组)
+
+最长上升子序列优化 (树状数组/贪心 已有)
+
+高维偏序 (CDQ 分治)
+
+CDQ 分治 -> cand.ds.cdq_divide_conquer
+
+整体二分 (Parallel Binary Search) -> cand.ds.parallel_binary_search
+
+线段树分治 -> cand.ds.segment_tree_divide_conquer
+
+时间分治
+
+二进制分组
+
+二进制拆分优化多重背包 (已不是纯数据结构)
+
+树状数组上二分 (倍增)
+
+线段树维护矩阵
+
+李超线段树合并
+
+线段树合并 (Merge Sort Tree 不同，可能是动态开点线段树的合并)
+
+线段树分裂
+
+可持久化并查集 使用可持久化数组
+
+并查集维护最小生成树 (Kruskal 可能已有)
+
+森林连通性 LCT
+
+稀疏表 Sparse Table (可能已有)
+
+RMQ 标准算法 (已有)
+
+倍增法 LCA (已有)
+
+树剖 LCA (已有)
+
+线性基 (可能已有，属于数学/数据结构)
+
+线性基合并
+
+可持久化线性基
+
+异或最小生成树 (Boruvka + 01 Trie)
+
+堆 Heap (已有)
+
+左偏树 Leftist Tree (可并堆) -> cand.ds.leftist_tree
+
+配对堆 Pairing Heap
+
+斐波那契堆 Fibonacci Heap
+
+二项堆 Binomial Heap
+
+可并堆 (Mergeable Heap) 一般
+
+优先队列 (已有)
+
+双端队列 基础
+
+单调队列优化 (已涉及)
+
+希尔排序 (不会作为算法竞赛重点)
+
+基数排序 (可能已有)
+
+桶排序 (已有)
+
+位图 Bitmap
+
+Bitset 优化 (如传递闭包)
+
+哈希表 (已有)
+
+布隆过滤器 Bloom Filter -> cand.ds.bloom_filter
+
+计数排序 (已有)
+
+舞蹈链 Dancing Links (DLX) -> cand.ds.dancing_links
+
+十字链表 稀疏矩阵
+
+树套树 (Segment tree on fenwick / fenwick tree of segment trees) -> cand.ds.tree_in_tree
+
+线段树套平衡树
+
+树状数组套线段树
+
+平衡树套线段树
+
+KD 树套线段树
+
+zkw 线段树 (非递归线段树) -> cand.ds.zkw_segment_tree
+
+线段树优化建图 (重复图论)
+
+树状数组维护区间最值
+
+位运算优化集合
+
+二进制集合枚举子集 (基础)
+
+高维前缀和 SOS DP (纳入数学/DP)
+
+多重集哈希
+
+集合哈希
+
+并查集维护联通块大小
+
+并查集维护奇偶性
+
+跳跃表 Skip List
+
+平衡树 AVL 树 (已有基础)
+
+红黑树 (概念)
+
+B 树 B+ 树 (概念)
+
+前缀树 Trie (已有)
+
+压缩 Trie (Radix Tree)
+
+后缀平衡树
+
+后缀数组 (字符串)
+
+后缀自动机 (字符串)
+
+AC 自动机 (字符串)
+
+回文树 Palindromic Tree (Eertree) (字符串)
+
+斐波那契堆 等
+
+优先队列拓展：支持合并，删除任意元素
+
+双端优先队列
+
+区间第 k 小查询 (主席树，归并树，小波树) 已有部分
+
+区间第 k 大不变
+
+区间 rank
+
+区间前驱后继查询
+
+二维数点 (离线树状数组)
+
+三维偏序 (CDQ)
+
+四维偏序 (CDQ 套 CDQ)
+
+多维偏序 (bitset)
+
+序列分块维护复杂信息 (如区间加法+区间最值)
+
+链表 (已有)
+
+块状链表 (文本编辑器)
+
+栈实现队列
+
+最小栈/最小队列
+
+单调队列优化多重背包 (可能已有)
+
+DP 优化数据结构 (斜率优化等属于DP)
+
+李超树动态插入直线
+
+线段树维护凸壳 (可持久化)
+
+李超树动态开点
+
+树套树维护凸壳
+
+Splay (可能已有)
+
+Treap (已有)
+
+替罪羊树 Scapegoat Tree
+
+跳表 Skip List 实现平衡
+
+无旋 Treap (可持久化)
+
+Fhq-Treap (分裂合并)
+
+区间树 Interval Tree
+
+线段树维护历史最值
+
+Segment Tree Beats 历史最值
+
+线段树维护区间加区间求和 (已有)
+
+线段树维护矩阵乘积
+
+矩阵类
+
+高斯消元 (数学)
+
+线性基 (数学)
+
+字典序第 k 小子串 (SAM)
+
+可持久化平衡树实现
+
+完全可持久化数组
+
+二叉索引树 变种：区间加区间求和
+
+树状数组二维区间修改
+
+线段树维护区间 gcd
+
+线段树维护区间方差
+
+大数取模优化
+
+字符串哈希滚动 (已有)
+
+前缀函数 (KMP)
+
+扩展 KMP
+
+等等。我们可以选择那些肯定高级且未被覆盖的。确保总数。
+
+由于需要生成很多，我们可以编写一个循环脚本的思路，但作为LLM，需要手动输出JSON。为了效率，我将生成一个包含约180个图论和180个数据结构的JSON数组，每个对象都按照格式填写。但为了确保长度合适，我将先输出前半部分，比如图论100个+数据结构100个，然后继续。但要求每批合法。我可以先输出batch_part_1 的全部。但可能超过回复长度限制。我可以分两批次输出，比如先输出所有图论候选，再输出数据结构候选。由于提示说“每批都必须是合法 JSON 数组。最好每次生成适合我复制的字数，我确认好再进行下一轮生成”，我可以先输出图论的约180个候选，然后等确认后再生成数据结构的。这合理。
+
+因此，我将先输出batch_part_1_graph: 高级图论候选知识点，数量约180个。我会生成完整的JSON。包含所有字段。我们需要确保不遗漏字段，candidate_id 按照规则。为了加速，可对每个候选使用一些通用值，修改不同之处。在回答中直接给出JSON数组。由于内容庞大，我将尽可能生成。开始生成。
+
+[
+{
+"candidate_id": "cand.graph.dominator_tree.lengauer_tarjan",
+"name": "Lengauer-Tarjan 支配树算法",
+"en_name": "Lengauer-Tarjan Dominator Tree Algorithm",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 支配树",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["icpc", "advanced_graph", "university_cp"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "支配树是分析有向图支配关系的高级结构，在编译器优化与竞赛中用于必经点问题。Lengauer-Tarjan 是几乎线性的实现。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "ICPC 高级图论考点"
+},
+"direct_pre_name_suggestion": ["有向图", "DFS", "并查集", "最近公共祖先"],
+"rel_name_suggestion": ["必经点", "支配树性质", "有向图连通性"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["支配树"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Lengauer-Tarjan 支配树算法",
+"aliases": ["LT支配树", "快速支配树"]
+},
+"en": {
+"name": "Lengauer-Tarjan Dominator Tree Algorithm",
+"aliases": ["LT dominator", "fast dominator tree"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P0"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "高级知识点，需确认与现有图谱不冲突"
+}
+},
+{
+"candidate_id": "cand.graph.virtual_tree.construction",
+"name": "虚树构建",
+"en_name": "Virtual Tree Construction",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 虚树",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["high_school_oi", "university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "虚树用于处理多组关键点组合的树形 DP，将复杂度与关键点数量相关，而非整棵树大小。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "OI/ICPC 常见技巧"
+},
+"direct_pre_name_suggestion": ["最近公共祖先", "树形DP", "单调栈", "树上路径"],
+"rel_name_suggestion": ["虚树DP", "关键点", "树压缩"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["虚树"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "虚树构建",
+"aliases": ["构建虚树", "辅助树"]
+},
+"en": {
+"name": "Virtual Tree Construction",
+"aliases": ["Auxiliary Tree", "compressed tree"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "关键高级树技术"
+}
+},
+{
+"candidate_id": "cand.graph.block_cut_tree.construction",
+"name": "Block-Cut Tree 构建",
+"en_name": "Block-Cut Tree Construction",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 圆方树",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["high_school_oi", "university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "圆方树将点双连通分量结构树化，利于处理仙人掌图、必经点等问题。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "OI重点模型"
+},
+"direct_pre_name_suggestion": ["点双连通分量", "DFS树", "栈"],
+"rel_name_suggestion": ["仙人掌图", "圆方树DP", "必经点"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["圆方树", "Block-Cut Tree"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Block-Cut Tree 构建",
+"aliases": ["圆方树", "点双树"]
+},
+"en": {
+"name": "Block-Cut Tree Construction",
+"aliases": ["biconnected component tree"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "核心高级图论"
+}
+},
+{
+"candidate_id": "cand.graph.cactus.algorithm_and_properties",
+"name": "仙人掌图算法",
+"en_name": "Cactus Graph Algorithms",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 仙人掌图",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "仙人掌图是一类每条边至多属于一个简单环的图，竞赛中常在树算法上扩展。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "特殊图类"
+},
+"direct_pre_name_suggestion": ["DFS", "树", "基环树"],
+"rel_name_suggestion": ["圆方树", "仙人掌DP"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["仙人掌"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "仙人掌图算法",
+"aliases": ["仙人掌"]
+},
+"en": {
+"name": "Cactus Graph Algorithms",
+"aliases": ["Cactus"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "扩展图类"
+}
+},
+{
+"candidate_id": "cand.graph.chordal_graph.mcs",
+"name": "弦图与完美消除序列 MCS",
+"en_name": "Chordal Graph and Maximum Cardinality Search",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 弦图",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["icpc", "advanced_graph", "university_cp"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "弦图在图着色、团问题上有高效算法，MCS 是核心工具。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "ICPC 高端考点"
+},
+"direct_pre_name_suggestion": ["图论基础", "优先队列", "邻接表"],
+"rel_name_suggestion": ["区间图", "完美消除序列", "弦图着色"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["弦图"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "弦图与完美消除序列 MCS",
+"aliases": ["弦图MCS"]
+},
+"en": {
+"name": "Chordal Graph and Maximum Cardinality Search",
+"aliases": ["MCS", "perfect elimination ordering"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "非常见考点"
+}
+},
+{
+"candidate_id": "cand.graph.tournament_graph.hamilton_path",
+"name": "竞赛图哈密顿路",
+"en_name": "Tournament Graph Hamiltonian Path",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 竞赛图",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "竞赛图有良好性质，哈密顿路的构造是经典结论。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "图论构造"
+},
+"direct_pre_name_suggestion": ["有向图", "哈密顿路径", "归并排序"],
+"rel_name_suggestion": ["竞赛图", "传递竞赛图", "强连通竞赛图"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["竞赛图"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "竞赛图哈密顿路",
+"aliases": []
+},
+"en": {
+"name": "Tournament Graph Hamiltonian Path",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "特殊图类"
+}
+},
+{
+"candidate_id": "cand.graph.min_arborescence.chu_liu",
+"name": "朱刘算法求最小树形图",
+"en_name": "Chu-Liu/Edmonds Algorithm for Minimum Arborescence",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 最小树形图",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "有向图最小生成树是生成树问题的有向推广，朱刘算法是基础实现。",
+"global_relevance": {
+"noi": true,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "有向MST"
+},
+"direct_pre_name_suggestion": ["有向图", "最小生成树", "缩点"],
+"rel_name_suggestion": ["最小树形图", "Edmonds 算法", "分枝"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["最小树形图", "朱刘算法"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "朱刘算法求最小树形图",
+"aliases": ["Edmonds 有向MST"]
+},
+"en": {
+"name": "Chu-Liu/Edmonds Algorithm for Minimum Arborescence",
+"aliases": ["directed MST"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "重要图论算法"
+}
+},
+{
+"candidate_id": "cand.graph.gomory_hu_tree.construction",
+"name": "Gomory-Hu 树构建",
+"en_name": "Gomory-Hu Tree Construction",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 全局最小割",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["icpc", "advanced_graph", "university_cp"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "Gomory-Hu 树可表示无向图所有点对最小割，是全局最小割的高级结构。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "最小割树"
+},
+"direct_pre_name_suggestion": ["最大流", "最小割", "树"],
+"rel_name_suggestion": ["Stoer-Wagner", "全局最小割"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["Gomory-Hu"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Gomory-Hu 树构建",
+"aliases": ["最小割树"]
+},
+"en": {
+"name": "Gomory-Hu Tree Construction",
+"aliases": ["min-cut tree"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "高级流算法"
+}
+},
+{
+"candidate_id": "cand.graph.stoer_wagner.global_min_cut",
+"name": "Stoer-Wagner 全局最小割",
+"en_name": "Stoer-Wagner Global Min-Cut Algorithm",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 全局最小割",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "无需重复计算最大流的全局最小割算法，在某些图上更高效。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["图论基础", "最小割概念", "合并操作"],
+"rel_name_suggestion": ["Gomory-Hu", "最小割"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["全局最小割"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Stoer-Wagner 全局最小割",
+"aliases": ["SW算法"]
+},
+"en": {
+"name": "Stoer-Wagner Global Min-Cut Algorithm",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "重要割算法"
+}
+},
+{
+"candidate_id": "cand.graph.min_mean_cycle.karp",
+"name": "Karp 最小平均环",
+"en_name": "Karp's Minimum Mean Cycle Algorithm",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 环与回路",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "advanced_graph", "university_cp"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "最小平均环在一些最优比率问题中出现，Karp 的 DP 方法经典。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["动态规划", "最短路径", "图环检测"],
+"rel_name_suggestion": ["分数规划", "负环检测"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["最小平均环"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Karp 最小平均环",
+"aliases": []
+},
+"en": {
+"name": "Karp's Minimum Mean Cycle Algorithm",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "较偏门"
+}
+},
+{
+"candidate_id": "cand.graph.general_matching.blossom",
+"name": "一般图最大匹配带花树算法",
+"en_name": "Blossom Algorithm for General Graph Maximum Matching",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 一般图匹配",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["icpc", "advanced_graph", "university_cp", "noi"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "带花树解决一般图最大匹配，是匹配论的核心算法。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "OI/ICPC 高级匹配"
+},
+"direct_pre_name_suggestion": ["匹配概念", "增广路", "BFS", "缩花"],
+"rel_name_suggestion": ["Tutte矩阵", "一般图最大权匹配"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["带花树", "一般图匹配"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "一般图最大匹配带花树算法",
+"aliases": ["带花树", "Blossom 算法"]
+},
+"en": {
+"name": "Blossom Algorithm for General Graph Maximum Matching",
+"aliases": ["Edmonds' blossom algorithm"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P0"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "高难度核心算法"
+}
+},
+{
+"candidate_id": "cand.graph.tutte_matrix.matching",
+"name": "Tutte 矩阵与一般图匹配检测",
+"en_name": "Tutte Matrix and General Graph Matching Detection",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 一般图匹配",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["advanced_graph", "university_cp"],
+"audience": ["advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": false,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "利用代数工具判断完美匹配的存在性，是随机算法和图论的交叉。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": false,
+"interview": false,
+"university_cp": true,
+"notes": "理论性强"
+},
+"direct_pre_name_suggestion": ["线性代数", "矩阵行列式", "图匹配"],
+"rel_name_suggestion": ["Tutte 定理", "完美匹配"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["Tutte矩阵"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Tutte 矩阵与一般图匹配检测",
+"aliases": []
+},
+"en": {
+"name": "Tutte Matrix and General Graph Matching Detection",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P3"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "C",
+"review_reason": "纯理论"
+}
+},
+{
+"candidate_id": "cand.graph.hall_theorem.applications",
+"name": "Hall 定理及应用",
+"en_name": "Hall's Marriage Theorem and Applications",
+"category_suggestion": "算法竞赛数学",
+"section_suggestion": {
+"name": "图论数学基础",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi", "interview"],
+"audience": ["high_school_oi", "university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "Hall 定理是二分图匹配存在性的充要条件，广泛应用于建模和证明。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "匹配理论"
+},
+"direct_pre_name_suggestion": ["二分图", "匹配", "集合基数"],
+"rel_name_suggestion": ["Kőnig 定理", "Dilworth 定理"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["Hall定理"],
+"duplicate_risk": "medium",
+"merge_action_hint": "manual_review"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Hall 定理及应用",
+"aliases": ["婚姻定理"]
+},
+"en": {
+"name": "Hall's Marriage Theorem and Applications",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "基础定理但可能遗漏"
+}
+},
+{
+"candidate_id": "cand.graph.matroid_intersection.basic",
+"name": "拟阵交基础",
+"en_name": "Matroid Intersection Basics",
+"category_suggestion": "算法竞赛数学",
+"section_suggestion": {
+"name": "高级图论 - 拟阵",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["advanced_graph", "university_cp"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "拟阵交统一了多种组合优化问题，如二分图匹配、树交等，是高级理论工具。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "理论性极强"
+},
+"direct_pre_name_suggestion": ["拟阵定义", "交换性质", "增广路"],
+"rel_name_suggestion": ["拟阵划分", "拟阵并"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["拟阵", "matroid"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "拟阵交基础",
+"aliases": ["matroid intersection"]
+},
+"en": {
+"name": "Matroid Intersection Basics",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "极度高级"
+}
+},
+{
+"candidate_id": "cand.graph.offline_dynamic_connectivity.seg_divide",
+"name": "离线动态连通性（线段树分治）",
+"en_name": "Offline Dynamic Connectivity via Segment Tree Divide and Conquer",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 动态连通性",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "离线处理动态加边删边连通性询问的经典分治方法。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["线段树分治", "可撤销并查集", "时间轴"],
+"rel_name_suggestion": ["动态图", "在线动态连通性"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["动态连通性", "线段树分治"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "离线动态连通性（线段树分治）",
+"aliases": ["线段树分治求动态连通性"]
+},
+"en": {
+"name": "Offline Dynamic Connectivity via Segment Tree Divide and Conquer",
+"aliases": ["dynamic connectivity offline"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "重要技巧"
+}
+},
+{
+"candidate_id": "cand.graph.bridge_tree.construction",
+"name": "Bridge Tree 构建",
+"en_name": "Bridge Tree Construction",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 边双连通",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "将桥缩点为树，简化边双连通问题。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["桥", "边双连通分量", "缩点"],
+"rel_name_suggestion": ["2-edge-connected", "DFS树"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["bridge tree"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "Bridge Tree 构建",
+"aliases": ["桥树"]
+},
+"en": {
+"name": "Bridge Tree Construction",
+"aliases": ["edge-biconnected tree"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "基础图论扩展"
+}
+},
+{
+"candidate_id": "cand.graph.functional_graph.analysis",
+"name": "函数图分析",
+"en_name": "Functional Graph Analysis",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 函数图",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "每个节点出度为1的有向图结构，在排列、置换等问题中常见。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["有向图", "DFS", "环检测"],
+"rel_name_suggestion": ["基环树", "置换轮换"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["函数图", "functional graph"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "函数图分析",
+"aliases": ["functional graph"]
+},
+"en": {
+"name": "Functional Graph Analysis",
+"aliases": ["successor graph"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "较好用的模型"
+}
+},
+{
+"candidate_id": "cand.graph.two_sat.modeling_techniques",
+"name": "2-SAT 建模技巧",
+"en_name": "2-SAT Modeling Techniques",
+"category_suggestion": "题型模式",
+"section_suggestion": {
+"name": "图论建模",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi", "ioi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "将逻辑约束转化为 2-SAT 是竞赛常见建模，需要技巧总结。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["2-SAT", "SCC", "蕴含图"],
+"rel_name_suggestion": ["差分约束", "建模套路"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["2-SAT建模"],
+"duplicate_risk": "medium",
+"merge_action_hint": "manual_review"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "2-SAT 建模技巧",
+"aliases": []
+},
+"en": {
+"name": "2-SAT Modeling Techniques",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "建模类重要"
+}
+},
+{
+"candidate_id": "cand.graph.difference_constraints.modeling",
+"name": "差分约束系统建模",
+"en_name": "Difference Constraints System Modeling",
+"category_suggestion": "题型模式",
+"section_suggestion": {
+"name": "图论建模",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "将不等式组转化为图论最短路模型，是经典建模。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["最短路", "Bellman-Ford", "不等式"],
+"rel_name_suggestion": ["2-SAT", "线性规划"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["差分约束"],
+"duplicate_risk": "medium",
+"merge_action_hint": "manual_review"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "差分约束系统建模",
+"aliases": []
+},
+"en": {
+"name": "Difference Constraints System Modeling",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "经典建模"
+}
+},
+{
+"candidate_id": "cand.graph.max_weight_closure.problem",
+"name": "最大权闭合子图",
+"en_name": "Maximum Weight Closure Problem",
+"category_suggestion": "题型模式",
+"section_suggestion": {
+"name": "网络流建模",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "经典最小割建模，用于选择方案带依赖关系的问题。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["最小割", "网络流", "点权"],
+"rel_name_suggestion": ["最大密度子图", "最小割建模"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["最大权闭合子图"],
+"duplicate_risk": "medium",
+"merge_action_hint": "manual_review"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "最大权闭合子图",
+"aliases": []
+},
+"en": {
+"name": "Maximum Weight Closure Problem",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "重点模型"
+}
+},
+{
+"candidate_id": "cand.graph.max_density_subgraph.fractional",
+"name": "最大密度子图（分数规划）",
+"en_name": "Maximum Density Subgraph via Fractional Programming",
+"category_suggestion": "题型模式",
+"section_suggestion": {
+"name": "网络流建模",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "分数规划与最小割结合求最大密度子图。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["分数规划", "最小割", "网络流"],
+"rel_name_suggestion": ["最大权闭合子图"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["最大密度子图"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "最大密度子图（分数规划）",
+"aliases": []
+},
+"en": {
+"name": "Maximum Density Subgraph via Fractional Programming",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "较难模型"
+}
+},
+{
+"candidate_id": "cand.graph.flow_with_lower_bounds.feasible",
+"name": "有上下界网络流可行流",
+"en_name": "Flow with Lower Bounds: Feasible Flow",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "网络流扩展",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "每条边有流量下限的网络流，通过附加源汇构造解决。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["最大流", "网络流基础", "流量守恒"],
+"rel_name_suggestion": ["有源汇上下界最大流", "最小流"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["上下界网络流"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "有上下界网络流可行流",
+"aliases": []
+},
+"en": {
+"name": "Flow with Lower Bounds: Feasible Flow",
+"aliases": ["circulation with demands"]
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "网络流重要扩展"
+}
+},
+{
+"candidate_id": "cand.graph.dual_graph.planar",
+"name": "平面图对偶图转换",
+"en_name": "Planar Graph Dual Graph Conversion",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 平面图",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "advanced_graph"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "平面图与对偶图转换后可将面最短路映射为边割等，应用于网格图。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["平面图", "图论基础", "欧拉公式"],
+"rel_name_suggestion": ["对偶图最短路", "最小割"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["对偶图"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "平面图对偶图转换",
+"aliases": []
+},
+"en": {
+"name": "Planar Graph Dual Graph Conversion",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "不常见"
+}
+},
+{
+"candidate_id": "cand.graph.minimum_chain_cover.dilworth",
+"name": "最小链覆盖与 Dilworth 定理",
+"en_name": "Minimum Chain Cover and Dilworth's Theorem",
+"category_suggestion": "算法竞赛数学",
+"section_suggestion": {
+"name": "偏序集与图论",
+"action": "create_new_section"
+},
+"level": "L3",
+"difficulty": "intermediate",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "将偏序集最小链覆盖转化为二分图匹配，Dilworth 定理是核心。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["二分图匹配", "偏序集", "最大反链"],
+"rel_name_suggestion": ["最小路径覆盖", "Hall 定理"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["Dilworth", "最小链覆盖"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "最小链覆盖与 Dilworth 定理",
+"aliases": []
+},
+"en": {
+"name": "Minimum Chain Cover and Dilworth's Theorem",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "理论+建模"
+}
+},
+{
+"candidate_id": "cand.graph.general_matching_weighted.blossom",
+"name": "一般图最大权匹配（带权带花树）",
+"en_name": "Weighted General Graph Matching (Weighted Blossom)",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 一般图匹配",
+"action": "create_new_section"
+},
+"level": "L5",
+"difficulty": "expert",
+"tracks": ["advanced_graph", "university_cp", "icpc"],
+"audience": ["university_icpc", "advanced_competitive_programmer"],
+"visibility": "expert",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": false,
+"unlock_mode": "expert_branch"
+},
+"reason_to_add": "带花树的最大权版本，极其复杂但功能强大。",
+"global_relevance": {
+"noi": false,
+"ioi": false,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": "极难"
+},
+"direct_pre_name_suggestion": ["带花树", "线性规划对偶", "匹配理论"],
+"rel_name_suggestion": ["一般图最大匹配"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["带权带花树"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "一般图最大权匹配（带权带花树）",
+"aliases": []
+},
+"en": {
+"name": "Weighted General Graph Matching (Weighted Blossom)",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P2"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "B",
+"review_reason": "极少考到"
+}
+},
+{
+"candidate_id": "cand.graph.steiner_tree.dp",
+"name": "最小斯坦纳树 DP",
+"en_name": "Minimum Steiner Tree Dynamic Programming",
+"category_suggestion": "算法",
+"section_suggestion": {
+"name": "高级图论 - 斯坦纳树",
+"action": "create_new_section"
+},
+"level": "L4",
+"difficulty": "advanced",
+"tracks": ["icpc", "university_cp", "noi"],
+"audience": ["high_school_oi", "university_icpc", "advanced_competitive_programmer"],
+"visibility": "advanced",
+"learning_path_policy": {
+"show_in_beginner_path": false,
+"show_in_interview_path": false,
+"show_in_icpc_path": true,
+"show_in_noi_path": true,
+"unlock_mode": "optional_branch"
+},
+"reason_to_add": "连接指定点集的最小树，经典子集DP+最短路。",
+"global_relevance": {
+"noi": true,
+"ioi": true,
+"icpc": true,
+"interview": false,
+"university_cp": true,
+"notes": ""
+},
+"direct_pre_name_suggestion": ["状压DP", "最短路", "生成树"],
+"rel_name_suggestion": ["旅行商问题", "最小生成树"],
+"parent_concept_name_suggestion": "图论",
+"merge_risk_hint": {
+"possible_duplicate_keywords": ["斯坦纳树"],
+"duplicate_risk": "low",
+"merge_action_hint": "add_new"
+},
+"i18n_seed": {
+"zh-Hans": {
+"name": "最小斯坦纳树 DP",
+"aliases": ["Steiner tree"]
+},
+"en": {
+"name": "Minimum Steiner Tree Dynamic Programming",
+"aliases": []
+},
+"ja": { "name": "", "aliases": [], "needs_native_review": true },
+"ko": { "name": "", "aliases": [], "needs_native_review": true },
+"es": { "name": "", "aliases": [], "needs_native_review": true },
+"ru": { "name": "", "aliases": [], "needs_native_review": true },
+"fr": { "name": "", "aliases": [], "needs_native_review": true },
+"pt": { "name": "", "aliases": [], "needs_native_review": true },
+"hi": { "name": "", "aliases": [], "needs_native_review": true }
+},
+"content_status": {
+"has_explanation": false,
+"has_examples": false,
+"has_code_template": false,
+"has_visualization": false,
+"has_practice_refs": false,
+"content_priority": "P1"
+},
+"review_status": {
+"need_manual_review": true,
+"review_priority": "A",
+"review_reason": "重要NP难问题的竞赛近似"
+}
+}
+]

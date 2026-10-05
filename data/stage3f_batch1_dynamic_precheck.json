@@ -1,0 +1,96 @@
+{
+  "batch_id": "stage3f_batch1",
+  "candidate_count": 20,
+  "selected_candidates": [
+    "cand.ds.multidimensional.dominance_counting",
+    "cand.ds.merge_sort_tree.memory_optimization",
+    "cand.ds.merge_sort_tree.offline_inversion",
+    "cand.ds.merge_sort_tree.persistent_variant",
+    "cand.dp.digit.complex",
+    "cand.dp.tree.rerooting",
+    "cand.dp.profile.basic",
+    "cand.dp.profile.plug",
+    "cand.string.suffix_array.sa_is",
+    "cand.string.generalized_sam.construction",
+    "cand.string.suffix_tree.ukkonen",
+    "cand.dp.optimization.slope.advanced",
+    "cand.math.polynomial.berlekamp_massey",
+    "cand.math.combinatorial.exlucas",
+    "cand.math.sieve.min_25",
+    "cand.dp.digit.basic",
+    "cand.dp.tree.basic",
+    "cand.dp.tree.diameter",
+    "cand.dp.tree.centroid",
+    "cand.dp.dag.topological"
+  ],
+  "excluded_already_merged_candidates": [],
+  "excluded_duplicate_or_near_duplicate": [],
+  "high_risk_candidates": [],
+  "manual_review_candidates": [],
+  "near_duplicate_notes": [
+    {
+      "candidate_id": "cand.dp.digit.basic",
+      "name": "数位DP基础",
+      "similar_graph_items": [
+        "数位DP"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.dp.tree.diameter",
+      "name": "树的直径DP",
+      "similar_graph_items": [
+        "树的直径"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.dp.tree.centroid",
+      "name": "树的重心DP",
+      "similar_graph_items": [
+        "树的重心"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.dp.dag.topological",
+      "name": "拓扑排序DP",
+      "similar_graph_items": [
+        "拓扑排序"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.string.suffix_array.sa_is",
+      "name": "后缀数组SA-IS算法",
+      "similar_graph_items": [
+        "后缀数组"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    },
+    {
+      "candidate_id": "cand.math.combinatorial.exlucas",
+      "name": "扩展Lucas定理",
+      "similar_graph_items": [
+        "Lucas"
+      ],
+      "verdict": "可区分, 建议保留但使用时注意语义边界"
+    }
+  ],
+  "needs_new_section": false,
+  "dependency_mapping_risk": [],
+  "section_ref_dependencies": [],
+  "dependency_cleanup_required": false,
+  "candidate_dependency_cycle": false,
+  "section_distribution": {
+    "2.17": 1,
+    "2.18": 1,
+    "2.8": 9,
+    "3.13": 4,
+    "3.8": 3,
+    "4.3": 1,
+    "4.9": 1
+  },
+  "recommendation": "ready_for_1号线程_merge",
+  "recommended_merge_count": 20
+}

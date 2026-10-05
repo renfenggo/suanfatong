@@ -1,0 +1,7639 @@
+[
+  {
+    "candidate_id": "cand.string.z_algorithm.basic",
+    "name": "Z算法基础",
+    "en_name": "Z Algorithm Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Z算法是一种线性时间字符串匹配算法，用于计算字符串的Z函数，适用于模式匹配和字符串分析。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Matching",
+      "Linear Time Algorithms"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Z算法基础",
+        "Z Algorithm Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Z算法基础",
+        "aliases": [
+          "Z Algorithm Basic"
+        ]
+      },
+      "en": {
+        "name": "Z Algorithm Basic",
+        "aliases": [
+          "Z算法基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.z_algorithm.pattern_matching",
+    "name": "Z算法模式匹配应用",
+    "en_name": "Z Algorithm Pattern Matching",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Z算法在模式匹配中的应用，包括多模式匹配、字符串查找等场景。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Z Algorithm Basic",
+      "String Matching"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Z算法模式匹配应用",
+        "Z Algorithm Pattern Matching"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Z算法模式匹配应用",
+        "aliases": [
+          "Z Algorithm Pattern Matching"
+        ]
+      },
+      "en": {
+        "name": "Z Algorithm Pattern Matching",
+        "aliases": [
+          "Z算法模式匹配应用"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.ex_kmp.basic",
+    "name": "扩展KMP算法基础",
+    "en_name": "Extended KMP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "扩展KMP算法用于计算字符串的扩展Z函数，适用于字符串匹配和边界分析。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "KMP Algorithm",
+      "Z Algorithm Basic"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "扩展KMP算法基础",
+        "Extended KMP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "扩展KMP算法基础",
+        "aliases": [
+          "Extended KMP Basic"
+        ]
+      },
+      "en": {
+        "name": "Extended KMP Basic",
+        "aliases": [
+          "扩展KMP算法基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.kmp_automaton.basic",
+    "name": "KMP自动机基础",
+    "en_name": "KMP Automaton Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "KMP自动机基于KMP算法的失败函数构建有限状态自动机，用于处理字符串匹配和状态转移。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "KMP Algorithm",
+      "Finite Automata"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "KMP自动机基础",
+        "KMP Automaton Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "KMP自动机基础",
+        "aliases": [
+          "KMP Automaton Basic"
+        ]
+      },
+      "en": {
+        "name": "KMP Automaton Basic",
+        "aliases": [
+          "KMP自动机基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.ac_automaton.applications",
+    "name": "AC自动机高级应用",
+    "en_name": "AC Automaton Advanced Applications",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "AC自动机的高级应用，包括多模式匹配、模式计数、动态路径查询等复杂场景。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "AC Automaton",
+      "Trie Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "AC自动机高级应用",
+        "AC Automaton Advanced Applications"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "AC自动机高级应用",
+        "aliases": [
+          "AC Automaton Advanced Applications"
+        ]
+      },
+      "en": {
+        "name": "AC Automaton Advanced Applications",
+        "aliases": [
+          "AC自动机高级应用"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.ac_failure_tree.analysis",
+    "name": "AC自动机失败树分析",
+    "en_name": "AC Automaton Failure Tree Analysis",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "AC自动机的失败树结构分析，利用失败函数构建树形结构进行模式匹配和查询优化。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "AC Automaton",
+      "Tree Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "AC自动机失败树分析",
+        "AC Automaton Failure Tree Analysis"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "AC自动机失败树分析",
+        "aliases": [
+          "AC Automaton Failure Tree Analysis"
+        ]
+      },
+      "en": {
+        "name": "AC Automaton Failure Tree Analysis",
+        "aliases": [
+          "AC自动机失败树分析"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.suffix_array.sa_is",
+    "name": "后缀数组SA-IS算法",
+    "en_name": "Suffix Array SA-IS Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "SA-IS算法是一种线性时间后缀数组构建算法，效率高且实现相对简洁，是竞赛中重要的字符串算法。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Suffix Array",
+      "Divide and Conquer"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "后缀数组SA-IS算法",
+        "Suffix Array SA-IS Algorithm"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "后缀数组SA-IS算法",
+        "aliases": [
+          "Suffix Array SA-IS Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Suffix Array SA-IS Algorithm",
+        "aliases": [
+          "后缀数组SA-IS算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.lcp_rmq.optimization",
+    "name": "LCP RMQ优化",
+    "en_name": "LCP RMQ Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "最长公共前缀数组的RMQ优化，包括稀疏表、线段树等多种数据结构的应用和选择。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "LCP Array",
+      "RMQ",
+      "Sparse Table"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "LCP RMQ优化",
+        "LCP RMQ Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "LCP RMQ优化",
+        "aliases": [
+          "LCP RMQ Optimization"
+        ]
+      },
+      "en": {
+        "name": "LCP RMQ Optimization",
+        "aliases": [
+          "LCP RMQ优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.generalized_sam.construction",
+    "name": "广义SAM构建",
+    "en_name": "Generalized SAM Construction",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "广义后缀自动机用于处理多个字符串的公共子串问题，在竞赛中用于复杂字符串分析。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Suffix Automaton",
+      "Trie Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "广义SAM构建",
+        "Generalized SAM Construction"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "广义SAM构建",
+        "aliases": [
+          "Generalized SAM Construction"
+        ]
+      },
+      "en": {
+        "name": "Generalized SAM Construction",
+        "aliases": [
+          "广义SAM构建"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.sam_parent_tree.structure",
+    "name": "SAM父树结构",
+    "en_name": "SAM Parent Tree Structure",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "后缀自动机的父树结构分析，利用后缀自动机构建树形结构进行子串分析和查询。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Suffix Automaton",
+      "Tree Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "SAM父树结构",
+        "SAM Parent Tree Structure"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "SAM父树结构",
+        "aliases": [
+          "SAM Parent Tree Structure"
+        ]
+      },
+      "en": {
+        "name": "SAM Parent Tree Structure",
+        "aliases": [
+          "SAM父树结构"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.eertree.construction",
+    "name": "回文树Eertree构建",
+    "en_name": "Eertree Palindromic Tree Construction",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "回文树（Eertree）是一种专门处理回文子串的数据结构，能够高效处理回文相关的问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Palindrome",
+      "Tree Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "回文树Eertree构建",
+        "Eertree Palindromic Tree Construction"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "回文树Eertree构建",
+        "aliases": [
+          "Eertree Palindromic Tree Construction"
+        ]
+      },
+      "en": {
+        "name": "Eertree Palindromic Tree Construction",
+        "aliases": [
+          "回文树Eertree构建"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.suffix_tree.ukkonen",
+    "name": "后缀树Ukkonen算法",
+    "en_name": "Suffix Tree Ukkonen Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "Ukkonen算法是一种线性时间后缀树构建算法，虽然实现复杂，但在竞赛中有重要理论价值。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Suffix Tree",
+      "Linear Time Algorithms"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "后缀树Ukkonen算法",
+        "Suffix Tree Ukkonen Algorithm"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "后缀树Ukkonen算法",
+        "aliases": [
+          "Suffix Tree Ukkonen Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Suffix Tree Ukkonen Algorithm",
+        "aliases": [
+          "后缀树Ukkonen算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.lyndon_decomposition.basic",
+    "name": "Lyndon分解基础",
+    "en_name": "Lyndon Decomposition Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Lyndon分解是将字符串分解为Lyndon单词的技术，在字符串排序和最小表示中有重要应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Manipulation",
+      "Greedy Algorithm"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Lyndon分解基础",
+        "Lyndon Decomposition Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Lyndon分解基础",
+        "aliases": [
+          "Lyndon Decomposition Basic"
+        ]
+      },
+      "en": {
+        "name": "Lyndon Decomposition Basic",
+        "aliases": [
+          "Lyndon分解基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.duval_algorithm.minimal_rotation",
+    "name": "Duval算法最小表示",
+    "en_name": "Duval Algorithm Minimal Rotation",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Duval算法用于Lyndon分解和字符串最小表示求解，时间复杂度线性。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Lyndon Decomposition",
+      "String Rotation"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Duval算法最小表示",
+        "Duval Algorithm Minimal Rotation"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Duval算法最小表示",
+        "aliases": [
+          "Duval Algorithm Minimal Rotation"
+        ]
+      },
+      "en": {
+        "name": "Duval Algorithm Minimal Rotation",
+        "aliases": [
+          "Duval算法最小表示"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.runs_repetitions.basic",
+    "name": "Runs重复子串分析",
+    "en_name": "Runs and Repetitions Analysis",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Runs（最大重复子串）分析是字符串算法的重要研究方向，在周期性检测中有广泛应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Periodicity",
+      "Suffix Automaton"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Runs重复子串分析",
+        "Runs and Repetitions Analysis"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Runs重复子串分析",
+        "aliases": [
+          "Runs and Repetitions Analysis"
+        ]
+      },
+      "en": {
+        "name": "Runs and Repetitions Analysis",
+        "aliases": [
+          "Runs重复子串分析"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.border_tree.structure",
+    "name": "Border树结构",
+    "en_name": "Border Tree Structure",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Border树是基于字符串的边界函数构建的树形结构，用于分析字符串的周期性和结构。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Border",
+      "Tree Data Structure"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Border树结构",
+        "Border Tree Structure"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Border树结构",
+        "aliases": [
+          "Border Tree Structure"
+        ]
+      },
+      "en": {
+        "name": "Border Tree Structure",
+        "aliases": [
+          "Border树结构"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.hashing.2d_rolling_hash",
+    "name": "二维滚动哈希",
+    "en_name": "2D Rolling Hash",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "二维滚动哈希用于处理二维字符串/矩阵的匹配和查询问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Rolling Hash",
+      "2D Arrays"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "二维滚动哈希",
+        "2D Rolling Hash"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "二维滚动哈希",
+        "aliases": [
+          "2D Rolling Hash"
+        ]
+      },
+      "en": {
+        "name": "2D Rolling Hash",
+        "aliases": [
+          "二维滚动哈希"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.hashing.collision_strategy",
+    "name": "哈希碰撞处理策略",
+    "en_name": "Hash Collision Strategy",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "处理字符串哈希碰撞的策略，包括双哈希、随机化哈希等防碰撞技术。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Rolling Hash",
+      "Probability"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "哈希碰撞处理策略",
+        "Hash Collision Strategy"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "哈希碰撞处理策略",
+        "aliases": [
+          "Hash Collision Strategy"
+        ]
+      },
+      "en": {
+        "name": "Hash Collision Strategy",
+        "aliases": [
+          "哈希碰撞处理策略"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.manacher.algorithm",
+    "name": "Manacher算法",
+    "en_name": "Manacher Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Manacher算法用于在线性时间内求解最长回文子串问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Palindrome",
+      "String Matching"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Manacher算法",
+        "Manacher Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Manacher算法",
+        "aliases": [
+          "Manacher Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Manacher Algorithm",
+        "aliases": [
+          "Manacher算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.boyer_moore.algorithm",
+    "name": "Boyer-Moore算法",
+    "en_name": "Boyer-Moore Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Boyer-Moore算法是一种高效的字符串匹配算法，通过坏字符和好后缀规则进行跳转。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Matching",
+      "Pattern Matching"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Boyer-Moore算法",
+        "Boyer-Moore Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Boyer-Moore算法",
+        "aliases": [
+          "Boyer-Moore Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Boyer-Moore Algorithm",
+        "aliases": [
+          "Boyer-Moore算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.rabin_karp.algorithm",
+    "name": "Rabin-Karp算法",
+    "en_name": "Rabin-Karp Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Rabin-Karp算法基于哈希的字符串匹配算法，适合多模式匹配。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Matching",
+      "Rolling Hash"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Rabin-Karp算法",
+        "Rabin-Karp Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Rabin-Karp算法",
+        "aliases": [
+          "Rabin-Karp Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Rabin-Karp Algorithm",
+        "aliases": [
+          "Rabin-Karp算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.string_matching.kmp",
+    "name": "KMP算法详解",
+    "en_name": "KMP Algorithm Detailed",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "KMP算法的详细分析，包括next数组的构建和算法的正确性证明。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Matching",
+      "Greedy Algorithm"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "KMP算法详解",
+        "KMP Algorithm Detailed"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "KMP算法详解",
+        "aliases": [
+          "KMP Algorithm Detailed"
+        ]
+      },
+      "en": {
+        "name": "KMP Algorithm Detailed",
+        "aliases": [
+          "KMP算法详解"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.string.string_matching.sunday",
+    "name": "Sunday算法",
+    "en_name": "Sunday Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_string",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Sunday算法是一种简单的字符串匹配算法，在平均情况下性能优秀。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "String Matching",
+      "Pattern Matching"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Sunday算法",
+        "Sunday Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Sunday算法",
+        "aliases": [
+          "Sunday Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Sunday Algorithm",
+        "aliases": [
+          "Sunday算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.prime_testing.miller_rabin",
+    "name": "Miller-Rabin素数测试",
+    "en_name": "Miller-Rabin Primality Test",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Miller-Rabin素数测试是一种概率性素数判断算法，速度快且准确率高。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Prime Numbers",
+      "Modular Arithmetic"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Miller-Rabin素数测试",
+        "Miller-Rabin Primality Test"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Miller-Rabin素数测试",
+        "aliases": [
+          "Miller-Rabin Primality Test"
+        ]
+      },
+      "en": {
+        "name": "Miller-Rabin Primality Test",
+        "aliases": [
+          "Miller-Rabin素数测试"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.prime_factorization.pollard_rho",
+    "name": "Pollard Rho分解",
+    "en_name": "Pollard Rho Factorization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Pollard Rho算法用于快速分解大整数的素因数，结合Miller-Rabin可用于完全分解。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Prime Factorization",
+      "Random Algorithm"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Pollard Rho分解",
+        "Pollard Rho Factorization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Pollard Rho分解",
+        "aliases": [
+          "Pollard Rho Factorization"
+        ]
+      },
+      "en": {
+        "name": "Pollard Rho Factorization",
+        "aliases": [
+          "Pollard Rho分解"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.primitive_root.basic",
+    "name": "原根基础",
+    "en_name": "Primitive Root Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "原根的概念和计算，在离散对数问题中有重要应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Modular Arithmetic",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "原根基础",
+        "Primitive Root Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "原根基础",
+        "aliases": [
+          "Primitive Root Basic"
+        ]
+      },
+      "en": {
+        "name": "Primitive Root Basic",
+        "aliases": [
+          "原根基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.discrete_log.bsgs",
+    "name": "BSGS离散对数",
+    "en_name": "BSGS Discrete Logarithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Baby Step Giant Step算法用于求解离散对数问题，时间复杂度O(sqrt(n))。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Discrete Logarithm",
+      "Meet in the Middle"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "BSGS离散对数",
+        "BSGS Discrete Logarithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "BSGS离散对数",
+        "aliases": [
+          "BSGS Discrete Logarithm"
+        ]
+      },
+      "en": {
+        "name": "BSGS Discrete Logarithm",
+        "aliases": [
+          "BSGS离散对数"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.discrete_log.exbsgs",
+    "name": "扩展BSGS",
+    "en_name": "Extended BSGS",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "扩展BSGS算法处理模数非素数情况下的离散对数问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "BSGS Discrete Logarithm",
+      "GCD"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "扩展BSGS",
+        "Extended BSGS"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "扩展BSGS",
+        "aliases": [
+          "Extended BSGS"
+        ]
+      },
+      "en": {
+        "name": "Extended BSGS",
+        "aliases": [
+          "扩展BSGS"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.quadratic_residue.legendre_symbol",
+    "name": "Legendre符号",
+    "en_name": "Legendre Symbol",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Legendre符号用于判断一个数是否为二次剩余。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Quadratic Residue",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Legendre符号",
+        "Legendre Symbol"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Legendre符号",
+        "aliases": [
+          "Legendre Symbol"
+        ]
+      },
+      "en": {
+        "name": "Legendre Symbol",
+        "aliases": [
+          "Legendre符号"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+    "name": "Tonelli-Shanks算法",
+    "en_name": "Tonelli-Shanks Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Tonelli-Shanks算法用于求解二次剩余问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Quadratic Residue",
+      "Modular Arithmetic"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Tonelli-Shanks算法",
+        "Tonelli-Shanks Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Tonelli-Shanks算法",
+        "aliases": [
+          "Tonelli-Shanks Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Tonelli-Shanks Algorithm",
+        "aliases": [
+          "Tonelli-Shanks算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.dirichlet_convolution.basic",
+    "name": "狄利克雷卷积基础",
+    "en_name": "Dirichlet Convolution Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "狄利克雷卷积是数论中重要的运算，用于处理数论函数的组合。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Number Theory Functions",
+      "Convolution"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "狄利克雷卷积基础",
+        "Dirichlet Convolution Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "狄利克雷卷积基础",
+        "aliases": [
+          "Dirichlet Convolution Basic"
+        ]
+      },
+      "en": {
+        "name": "Dirichlet Convolution Basic",
+        "aliases": [
+          "狄利克雷卷积基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.mobius_inversion.applications",
+    "name": "莫比乌斯反演应用",
+    "en_name": "Mobius Inversion Applications",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "莫比乌斯反演在计数问题中的广泛应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Mobius Function",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "莫比乌斯反演应用",
+        "Mobius Inversion Applications"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "莫比乌斯反演应用",
+        "aliases": [
+          "Mobius Inversion Applications"
+        ]
+      },
+      "en": {
+        "name": "Mobius Inversion Applications",
+        "aliases": [
+          "莫比乌斯反演应用"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.euler_function.applications",
+    "name": "欧拉函数应用",
+    "en_name": "Euler Function Applications",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "欧拉函数在数论和密码学中的应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Euler Function",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "欧拉函数应用",
+        "Euler Function Applications"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "欧拉函数应用",
+        "aliases": [
+          "Euler Function Applications"
+        ]
+      },
+      "en": {
+        "name": "Euler Function Applications",
+        "aliases": [
+          "欧拉函数应用"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.sieve.du_jiao",
+    "name": "杜教筛",
+    "en_name": "Du Jiao Sieve",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "杜教筛用于快速计算数论函数的前缀和。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Sieve Algorithm",
+      "Prefix Sum"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "杜教筛",
+        "Du Jiao Sieve"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "杜教筛",
+        "aliases": [
+          "Du Jiao Sieve"
+        ]
+      },
+      "en": {
+        "name": "Du Jiao Sieve",
+        "aliases": [
+          "杜教筛"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.sieve.min_25",
+    "name": "Min_25筛",
+    "en_name": "Min_25 Sieve",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "Min_25筛是一种高效的筛法，可以快速计算积性函数的前缀和。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Sieve Algorithm",
+      "Number Theory Functions"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Min_25筛",
+        "Min_25 Sieve"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Min_25筛",
+        "aliases": [
+          "Min_25 Sieve"
+        ]
+      },
+      "en": {
+        "name": "Min_25 Sieve",
+        "aliases": [
+          "Min_25筛"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.lucas",
+    "name": "Lucas定理",
+    "en_name": "Lucas Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Lucas定理用于计算大数组合数模素数。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Combinatorial Math",
+      "Modular Arithmetic"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Lucas定理",
+        "Lucas Theorem"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Lucas定理",
+        "aliases": [
+          "Lucas Theorem"
+        ]
+      },
+      "en": {
+        "name": "Lucas Theorem",
+        "aliases": [
+          "Lucas定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.exlucas",
+    "name": "扩展Lucas定理",
+    "en_name": "Extended Lucas Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "扩展Lucas定理处理模数非素数情况下的组合数计算。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Lucas Theorem",
+      "Chinese Remainder Theorem"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "扩展Lucas定理",
+        "Extended Lucas Theorem"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "扩展Lucas定理",
+        "aliases": [
+          "Extended Lucas Theorem"
+        ]
+      },
+      "en": {
+        "name": "Extended Lucas Theorem",
+        "aliases": [
+          "扩展Lucas定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.combinatorial.catalan",
+    "name": "Catalan数",
+    "en_name": "Catalan Number",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Catalan数的性质和应用，包括括号匹配、二叉树计数等。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Combinatorial Math",
+      "Dynamic Programming"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Catalan数",
+        "Catalan Number"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Catalan数",
+        "aliases": [
+          "Catalan Number"
+        ]
+      },
+      "en": {
+        "name": "Catalan Number",
+        "aliases": [
+          "Catalan数"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.crt.basic",
+    "name": "中国剩余定理",
+    "en_name": "Chinese Remainder Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "中国剩余定理用于求解同余方程组。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Modular Arithmetic",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "中国剩余定理",
+        "Chinese Remainder Theorem"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "中国剩余定理",
+        "aliases": [
+          "Chinese Remainder Theorem"
+        ]
+      },
+      "en": {
+        "name": "Chinese Remainder Theorem",
+        "aliases": [
+          "中国剩余定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.crt.extended",
+    "name": "扩展中国剩余定理",
+    "en_name": "Extended Chinese Remainder Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "扩展中国剩余定理处理模数不互质的情况。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Chinese Remainder Theorem",
+      "GCD"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "扩展中国剩余定理",
+        "Extended Chinese Remainder Theorem"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "扩展中国剩余定理",
+        "aliases": [
+          "Extended Chinese Remainder Theorem"
+        ]
+      },
+      "en": {
+        "name": "Extended Chinese Remainder Theorem",
+        "aliases": [
+          "扩展中国剩余定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.crt.garner",
+    "name": "Garner算法",
+    "en_name": "Garner Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Garner算法是另一种求解同余方程组的高效方法。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Chinese Remainder Theorem",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Garner算法",
+        "Garner Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Garner算法",
+        "aliases": [
+          "Garner Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Garner Algorithm",
+        "aliases": [
+          "Garner算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.polynomial.fwt",
+    "name": "快速沃尔什变换",
+    "en_name": "Fast Walsh Transform",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "快速沃尔什变换用于处理多项式的位运算卷积。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Polynomial",
+      "Divide and Conquer"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "快速沃尔什变换",
+        "Fast Walsh Transform"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "快速沃尔什变换",
+        "aliases": [
+          "Fast Walsh Transform"
+        ]
+      },
+      "en": {
+        "name": "Fast Walsh Transform",
+        "aliases": [
+          "快速沃尔什变换"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.polynomial.subset_convolution",
+    "name": "子集卷积",
+    "en_name": "Subset Convolution",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "子集卷积用于处理集合幂级数的乘法运算。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Polynomial",
+      "Bitmask DP"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "子集卷积",
+        "Subset Convolution"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "子集卷积",
+        "aliases": [
+          "Subset Convolution"
+        ]
+      },
+      "en": {
+        "name": "Subset Convolution",
+        "aliases": [
+          "子集卷积"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.polynomial.lagrange",
+    "name": "拉格朗日插值",
+    "en_name": "Lagrange Interpolation",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "拉格朗日插值法用于构造多项式，在数值计算中有广泛应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Polynomial",
+      "Numerical Method"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "拉格朗日插值",
+        "Lagrange Interpolation"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "拉格朗日插值",
+        "aliases": [
+          "Lagrange Interpolation"
+        ]
+      },
+      "en": {
+        "name": "Lagrange Interpolation",
+        "aliases": [
+          "拉格朗日插值"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.polynomial.berlekamp_massey",
+    "name": "Berlekamp-Massey算法",
+    "en_name": "Berlekamp-Massey Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "Berlekamp-Massey算法用于求解线性递推关系的最小多项式。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Linear Recurrence",
+      "Polynomial"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Berlekamp-Massey算法",
+        "Berlekamp-Massey Algorithm"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Berlekamp-Massey算法",
+        "aliases": [
+          "Berlekamp-Massey Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Berlekamp-Massey Algorithm",
+        "aliases": [
+          "Berlekamp-Massey算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.linear_recurrence.basic",
+    "name": "线性递推基础",
+    "en_name": "Linear Recurrence Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "线性递推关系的求解方法，包括矩阵快速幂和特征多项式法。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Matrix",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "线性递推基础",
+        "Linear Recurrence Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "线性递推基础",
+        "aliases": [
+          "Linear Recurrence Basic"
+        ]
+      },
+      "en": {
+        "name": "Linear Recurrence Basic",
+        "aliases": [
+          "线性递推基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.linear_recurrence.kitamasa",
+    "name": "Kitamasa算法",
+    "en_name": "Kitamasa Algorithm",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Kitamasa算法用于快速计算线性递推关系的第n项。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Linear Recurrence",
+      "Polynomial"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Kitamasa算法",
+        "Kitamasa Algorithm"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Kitamasa算法",
+        "aliases": [
+          "Kitamasa Algorithm"
+        ]
+      },
+      "en": {
+        "name": "Kitamasa Algorithm",
+        "aliases": [
+          "Kitamasa算法"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.generating_function.ordinary",
+    "name": "普通生成函数",
+    "en_name": "Ordinary Generating Function",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "普通生成函数在组合计数中的应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Combinatorial Math",
+      "Calculus"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "普通生成函数",
+        "Ordinary Generating Function"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "普通生成函数",
+        "aliases": [
+          "Ordinary Generating Function"
+        ]
+      },
+      "en": {
+        "name": "Ordinary Generating Function",
+        "aliases": [
+          "普通生成函数"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.generating_function.exponential",
+    "name": "指数生成函数",
+    "en_name": "Exponential Generating Function",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "指数生成函数在排列计数中的应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Ordinary Generating Function",
+      "Combinatorial Math"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "指数生成函数",
+        "Exponential Generating Function"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "指数生成函数",
+        "aliases": [
+          "Exponential Generating Function"
+        ]
+      },
+      "en": {
+        "name": "Exponential Generating Function",
+        "aliases": [
+          "指数生成函数"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.group_theory.burnside",
+    "name": "Burnside引理",
+    "en_name": "Burnside Lemma",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Burnside引理用于计算不等价对象的数目。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Group Theory",
+      "Combinatorial Math"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Burnside引理",
+        "Burnside Lemma"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Burnside引理",
+        "aliases": [
+          "Burnside Lemma"
+        ]
+      },
+      "en": {
+        "name": "Burnside Lemma",
+        "aliases": [
+          "Burnside引理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.group_theory.polya",
+    "name": "Polya计数定理",
+    "en_name": "Polya Counting Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Polya计数定理是Burnside引理的推广，用于处理更复杂的对称计数问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Burnside Lemma",
+      "Group Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Polya计数定理",
+        "Polya Counting Theorem"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Polya计数定理",
+        "aliases": [
+          "Polya Counting Theorem"
+        ]
+      },
+      "en": {
+        "name": "Polya Counting Theorem",
+        "aliases": [
+          "Polya计数定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.graph.matrix_tree",
+    "name": "矩阵树定理",
+    "en_name": "Matrix Tree Theorem",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "矩阵树定理用于计算图的生成树数目。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Matrix",
+      "Graph Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "矩阵树定理",
+        "Matrix Tree Theorem"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "矩阵树定理",
+        "aliases": [
+          "Matrix Tree Theorem"
+        ]
+      },
+      "en": {
+        "name": "Matrix Tree Theorem",
+        "aliases": [
+          "矩阵树定理"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.math.graph.gaussian_elimination_gf2",
+    "name": "GF(2)上的高斯消元",
+    "en_name": "Gaussian Elimination over GF(2)",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_math",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "在二进制域上应用高斯消元，解决异或方程组问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Gaussian Elimination",
+      "Linear Algebra"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "GF(2)上的高斯消元",
+        "Gaussian Elimination over GF(2)"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "GF(2)上的高斯消元",
+        "aliases": [
+          "Gaussian Elimination over GF(2)"
+        ]
+      },
+      "en": {
+        "name": "Gaussian Elimination over GF(2)",
+        "aliases": [
+          "GF(2)上的高斯消元"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.digit.basic",
+    "name": "数位DP基础",
+    "en_name": "Digit DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "数位动态规划用于处理数字范围的计数问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Number Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "数位DP基础",
+        "Digit DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "数位DP基础",
+        "aliases": [
+          "Digit DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Digit DP Basic",
+        "aliases": [
+          "数位DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.digit.complex",
+    "name": "复杂数位DP",
+    "en_name": "Complex Digit DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "复杂条件下的数位DP，包括多重限制和记忆化优化。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Digit DP Basic",
+      "State Design"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "复杂数位DP",
+        "Complex Digit DP"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "复杂数位DP",
+        "aliases": [
+          "Complex Digit DP"
+        ]
+      },
+      "en": {
+        "name": "Complex Digit DP",
+        "aliases": [
+          "复杂数位DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.tree.basic",
+    "name": "树DP基础",
+    "en_name": "Tree DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "树上动态规划的基本模式和应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Tree"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "树DP基础",
+        "Tree DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "树DP基础",
+        "aliases": [
+          "Tree DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Tree DP Basic",
+        "aliases": [
+          "树DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.tree.diameter",
+    "name": "树的直径DP",
+    "en_name": "Tree Diameter DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用动态规划求解树的直径相关问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Tree DP Basic",
+      "Tree"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "树的直径DP",
+        "Tree Diameter DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "树的直径DP",
+        "aliases": [
+          "Tree Diameter DP"
+        ]
+      },
+      "en": {
+        "name": "Tree Diameter DP",
+        "aliases": [
+          "树的直径DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.tree.centroid",
+    "name": "树的重心DP",
+    "en_name": "Tree Centroid DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "树重心的计算和应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Tree DP Basic",
+      "Tree"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "树的重心DP",
+        "Tree Centroid DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "树的重心DP",
+        "aliases": [
+          "Tree Centroid DP"
+        ]
+      },
+      "en": {
+        "name": "Tree Centroid DP",
+        "aliases": [
+          "树的重心DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.tree.rerooting",
+    "name": "换根DP",
+    "en_name": "Rerooting DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "换根动态规划技术，用于处理树上所有节点的DP转移。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Tree DP Basic",
+      "Dynamic Programming"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "换根DP",
+        "Rerooting DP"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "换根DP",
+        "aliases": [
+          "Rerooting DP"
+        ]
+      },
+      "en": {
+        "name": "Rerooting DP",
+        "aliases": [
+          "换根DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.dag.topological",
+    "name": "拓扑排序DP",
+    "en_name": "Topological Sort DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "在DAG上按拓扑序进行动态规划。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Graph"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "拓扑排序DP",
+        "Topological Sort DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "拓扑排序DP",
+        "aliases": [
+          "Topological Sort DP"
+        ]
+      },
+      "en": {
+        "name": "Topological Sort DP",
+        "aliases": [
+          "拓扑排序DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.dag.longest_path",
+    "name": "DAG最长路DP",
+    "en_name": "DAG Longest Path DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "在DAG上求最长路的相关DP技术。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Topological Sort DP",
+      "Graph"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "DAG最长路DP",
+        "DAG Longest Path DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "DAG最长路DP",
+        "aliases": [
+          "DAG Longest Path DP"
+        ]
+      },
+      "en": {
+        "name": "DAG Longest Path DP",
+        "aliases": [
+          "DAG最长路DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.state_compression.basic",
+    "name": "状态压缩DP基础",
+    "en_name": "State Compression DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用位运算压缩状态的动态规划技术。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Bitmask"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "状态压缩DP基础",
+        "State Compression DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "状态压缩DP基础",
+        "aliases": [
+          "State Compression DP Basic"
+        ]
+      },
+      "en": {
+        "name": "State Compression DP Basic",
+        "aliases": [
+          "状态压缩DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.state_compression.traveling",
+    "name": "旅行商问题DP",
+    "en_name": "Traveling Salesman Problem DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用状态压缩DP解决旅行商问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "State Compression DP Basic",
+      "Graph"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "旅行商问题DP",
+        "Traveling Salesman Problem DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "旅行商问题DP",
+        "aliases": [
+          "Traveling Salesman Problem DP"
+        ]
+      },
+      "en": {
+        "name": "Traveling Salesman Problem DP",
+        "aliases": [
+          "旅行商问题DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.subset.basic",
+    "name": "子集DP基础",
+    "en_name": "Subset DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "基于子集的动态规划技术。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "State Compression DP Basic",
+      "Set"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "子集DP基础",
+        "Subset DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "子集DP基础",
+        "aliases": [
+          "Subset DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Subset DP Basic",
+        "aliases": [
+          "子集DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.subset.enumeration",
+    "name": "子集枚举优化",
+    "en_name": "Subset Enumeration Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "子集枚举的高效实现和优化技巧。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Subset DP Basic",
+      "Bitmask"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "子集枚举优化",
+        "Subset Enumeration Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "子集枚举优化",
+        "aliases": [
+          "Subset Enumeration Optimization"
+        ]
+      },
+      "en": {
+        "name": "Subset Enumeration Optimization",
+        "aliases": [
+          "子集枚举优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.profile.basic",
+    "name": "轮廓DP基础",
+    "en_name": "Profile DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "轮廓DP用于处理网格问题中的复杂状态转移。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "State Compression DP Basic",
+      "Grid"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "轮廓DP基础",
+        "Profile DP Basic"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "轮廓DP基础",
+        "aliases": [
+          "Profile DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Profile DP Basic",
+        "aliases": [
+          "轮廓DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.profile.plug",
+    "name": "插头DP基础",
+    "en_name": "Plug DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "插头DP是一种特殊的轮廓DP，用于处理连通性约束。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Profile DP Basic",
+      "State Compression"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "插头DP基础",
+        "Plug DP Basic"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "插头DP基础",
+        "aliases": [
+          "Plug DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Plug DP Basic",
+        "aliases": [
+          "插头DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.automaton.basic",
+    "name": "自动机DP基础",
+    "en_name": "Automaton DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "在自动机结构上进行动态规划。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Automata"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "自动机DP基础",
+        "Automaton DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "自动机DP基础",
+        "aliases": [
+          "Automaton DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Automaton DP Basic",
+        "aliases": [
+          "自动机DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.automaton.matrix",
+    "name": "自动机矩阵DP",
+    "en_name": "Automaton Matrix DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用矩阵快速幂优化自动机DP。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Automaton DP Basic",
+      "Matrix"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "自动机矩阵DP",
+        "Automaton Matrix DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "自动机矩阵DP",
+        "aliases": [
+          "Automaton Matrix DP"
+        ]
+      },
+      "en": {
+        "name": "Automaton Matrix DP",
+        "aliases": [
+          "自动机矩阵DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.probability.basic",
+    "name": "概率DP基础",
+    "en_name": "Probability DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "处理概率问题的动态规划方法。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Probability"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "概率DP基础",
+        "Probability DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "概率DP基础",
+        "aliases": [
+          "Probability DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Probability DP Basic",
+        "aliases": [
+          "概率DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.probability.expectation",
+    "name": "期望DP",
+    "en_name": "Expectation DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "计算期望值的动态规划技术。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Probability DP Basic",
+      "Expected Value"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "期望DP",
+        "Expectation DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "期望DP",
+        "aliases": [
+          "Expectation DP"
+        ]
+      },
+      "en": {
+        "name": "Expectation DP",
+        "aliases": [
+          "期望DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.probability.markov",
+    "name": "马尔可夫链DP",
+    "en_name": "Markov Chain DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "马尔可夫链模型的动态规划求解。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Probability DP Basic",
+      "Matrix"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "马尔可夫链DP",
+        "Markov Chain DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "马尔可夫链DP",
+        "aliases": [
+          "Markov Chain DP"
+        ]
+      },
+      "en": {
+        "name": "Markov Chain DP",
+        "aliases": [
+          "马尔可夫链DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.game.basic",
+    "name": "博弈DP基础",
+    "en_name": "Game DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "博弈论问题的动态规划求解方法。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Game Theory"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "博弈DP基础",
+        "Game DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "博弈DP基础",
+        "aliases": [
+          "Game DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Game DP Basic",
+        "aliases": [
+          "博弈DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.game.grundy",
+    "name": "Grundy数DP",
+    "en_name": "Grundy Number DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Grundy数在组合博弈中的应用。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Game DP Basic",
+      "Nim Game"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Grundy数DP",
+        "Grundy Number DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Grundy数DP",
+        "aliases": [
+          "Grundy Number DP"
+        ]
+      },
+      "en": {
+        "name": "Grundy Number DP",
+        "aliases": [
+          "Grundy数DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.monotone_queue",
+    "name": "单调队列优化",
+    "en_name": "Monotone Queue Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用单调队列优化DP转移。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Monotone Queue"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "单调队列优化",
+        "Monotone Queue Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "单调队列优化",
+        "aliases": [
+          "Monotone Queue Optimization"
+        ]
+      },
+      "en": {
+        "name": "Monotone Queue Optimization",
+        "aliases": [
+          "单调队列优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.monotone_queue_sliding",
+    "name": "滑动窗口DP",
+    "en_name": "Sliding Window DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L3",
+    "difficulty": "intermediate",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "intermediate",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "滑动窗口模型的动态规划优化。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Monotone Queue Optimization",
+      "Dynamic Programming"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "滑动窗口DP",
+        "Sliding Window DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "滑动窗口DP",
+        "aliases": [
+          "Sliding Window DP"
+        ]
+      },
+      "en": {
+        "name": "Sliding Window DP",
+        "aliases": [
+          "滑动窗口DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.slope.basic",
+    "name": "斜率优化基础",
+    "en_name": "Slope Optimization Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "斜率优化用于优化特定形式的DP转移。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Convex Hull"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "斜率优化基础",
+        "Slope Optimization Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "斜率优化基础",
+        "aliases": [
+          "Slope Optimization Basic"
+        ]
+      },
+      "en": {
+        "name": "Slope Optimization Basic",
+        "aliases": [
+          "斜率优化基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.slope.advanced",
+    "name": "斜率优化高级",
+    "en_name": "Slope Optimization Advanced",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L5",
+    "difficulty": "expert",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "visibility": "expert",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": false,
+      "unlock_mode": "expert_branch"
+    },
+    "reason_to_add": "复杂的斜率优化技巧，包括维护凸包和处理边界情况。",
+    "global_relevance": {
+      "noi": false,
+      "ioi": false,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Slope Optimization Basic",
+      "Dynamic Programming"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "斜率优化高级",
+        "Slope Optimization Advanced"
+      ],
+      "duplicate_risk": "low",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "斜率优化高级",
+        "aliases": [
+          "Slope Optimization Advanced"
+        ]
+      },
+      "en": {
+        "name": "Slope Optimization Advanced",
+        "aliases": [
+          "斜率优化高级"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "A",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.divide_conquer",
+    "name": "分治DP优化",
+    "en_name": "Divide and Conquer DP Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用分治思想优化DP转移。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Divide and Conquer"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "分治DP优化",
+        "Divide and Conquer DP Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "分治DP优化",
+        "aliases": [
+          "Divide and Conquer DP Optimization"
+        ]
+      },
+      "en": {
+        "name": "Divide and Conquer DP Optimization",
+        "aliases": [
+          "分治DP优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.knuth",
+    "name": "Knuth优化",
+    "en_name": "Knuth Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "Knuth优化用于满足特定条件的四边形不等式DP优化。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Optimization"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "Knuth优化",
+        "Knuth Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "Knuth优化",
+        "aliases": [
+          "Knuth Optimization"
+        ]
+      },
+      "en": {
+        "name": "Knuth Optimization",
+        "aliases": [
+          "Knuth优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.optimization.wqs_binary",
+    "name": "WQS二分优化",
+    "en_name": "WQS Binary Search Optimization",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "WQS（Williamson–Shmoys）二分用于优化具有约束的DP问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Binary Search",
+      "Dynamic Programming"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "WQS二分优化",
+        "WQS Binary Search Optimization"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "WQS二分优化",
+        "aliases": [
+          "WQS Binary Search Optimization"
+        ]
+      },
+      "en": {
+        "name": "WQS Binary Search Optimization",
+        "aliases": [
+          "WQS二分优化"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.matrix.basic",
+    "name": "矩阵DP基础",
+    "en_name": "Matrix DP Basic",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "使用矩阵乘法优化DP转移。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Dynamic Programming",
+      "Matrix"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "矩阵DP基础",
+        "Matrix DP Basic"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "矩阵DP基础",
+        "aliases": [
+          "Matrix DP Basic"
+        ]
+      },
+      "en": {
+        "name": "Matrix DP Basic",
+        "aliases": [
+          "矩阵DP基础"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  },
+  {
+    "candidate_id": "cand.dp.matrix.fast_power",
+    "name": "矩阵快速幂DP",
+    "en_name": "Matrix Fast Power DP",
+    "category_suggestion": "算法",
+    "section_suggestion": {
+      "name": "高级算法",
+      "action": "create_new_section"
+    },
+    "level": "L4",
+    "difficulty": "advanced",
+    "tracks": [
+      "icpc",
+      "advanced_dp",
+      "noi"
+    ],
+    "audience": [
+      "high_school_oi",
+      "university_icpc"
+    ],
+    "visibility": "advanced",
+    "learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_icpc_path": true,
+      "show_in_noi_path": true,
+      "unlock_mode": "optional_branch"
+    },
+    "reason_to_add": "结合矩阵快速幂处理具有线性递推关系的DP问题。",
+    "global_relevance": {
+      "noi": true,
+      "ioi": true,
+      "icpc": true,
+      "interview": false,
+      "university_cp": true,
+      "notes": "算法高级技术"
+    },
+    "direct_pre_name_suggestion": [
+      "Matrix DP Basic",
+      "Binary Exponentiation"
+    ],
+    "rel_name_suggestion": [
+      "算法技术"
+    ],
+    "parent_concept_name_suggestion": "算法",
+    "merge_risk_hint": {
+      "possible_duplicate_keywords": [
+        "矩阵快速幂DP",
+        "Matrix Fast Power DP"
+      ],
+      "duplicate_risk": "medium",
+      "merge_action_hint": "add_new"
+    },
+    "i18n_seed": {
+      "zh-Hans": {
+        "name": "矩阵快速幂DP",
+        "aliases": [
+          "Matrix Fast Power DP"
+        ]
+      },
+      "en": {
+        "name": "Matrix Fast Power DP",
+        "aliases": [
+          "矩阵快速幂DP"
+        ]
+      },
+      "ja": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      },
+      "ko": {
+        "name": "",
+        "aliases": [],
+        "needs_native_review": true
+      }
+    },
+    "content_status": {
+      "has_explanation": false,
+      "has_examples": false,
+      "has_code_template": false,
+      "has_visualization": false,
+      "has_practice_refs": false,
+      "content_priority": "P1"
+    },
+    "review_status": {
+      "need_manual_review": false,
+      "review_priority": "B",
+      "review_reason": "算法高级技术"
+    },
+    "source": "thread2_batch2_generation"
+  }
+]

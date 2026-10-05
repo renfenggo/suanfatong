@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "Stage5 桥梁能力规划稳定检查点",
+    "version": "1.0",
+    "generated_at": "2026-05-26T12:00:00.000Z",
+    "checkpoint_type": "stable",
+    "stage": "stage5_bridge_ability_planning",
+    "main_graph_baseline": 2165,
+    "main_graph_sections": 65,
+    "scope": "planning_checkpoint_only",
+    "main_graph_modified": false,
+    "formal_nodes_generated": false,
+    "merge_executed": false
+  },
+  "planning_state": {
+    "stage_name": "Stage5 桥梁能力规划",
+    "planning_completed": true,
+    "schema_completed": true,
+    "batch_plan_completed": true,
+    "sample_candidates_completed": true,
+    "report_completed": true
+  },
+  "three_categories_plan": {
+    "code_implementation": {
+      "name": "代码实现技巧",
+      "target_count": 600,
+      "goal": "解决'懂原理但写不出代码'的问题",
+      "sub_categories_count": 8,
+      "sub_categories": [
+        {"id": "binary_enum_loop_boundary", "name": "二分、枚举、循环边界", "target_count": 80},
+        {"id": "array_index_direction_prefix_diff", "name": "数组、下标、方向数组、前缀和差分", "target_count": 80},
+        {"id": "variable_design_answer_maintenance", "name": "变量设计、答案维护、标记变量", "target_count": 60},
+        {"id": "function_template_parameter", "name": "函数封装、模板改造、参数设计", "target_count": 80},
+        {"id": "search_bfs_dfs_implementation", "name": "搜索、广搜、深搜实现细节", "target_count": 80},
+        {"id": "dp_array_design_loop_order", "name": "动态规划数组设计与循环顺序", "target_count": 80},
+        {"id": "data_structure_template_adaptation", "name": "数据结构模板改造", "target_count": 80},
+        {"id": "debug_check_common_errors", "name": "调试、对拍、常见运行错误", "target_count": 60}
+      ]
+    },
+    "problem_solving_analysis": {
+      "name": "解题分析方法",
+      "target_count": 500,
+      "goal": "解决'从题目想不到算法'的问题",
+      "sub_categories_count": 8,
+      "sub_categories": [
+        {"id": "sample_construction_pattern_finding", "name": "造样例与找规律", "target_count": 80},
+        {"id": "data_range_analysis", "name": "数据范围分析", "target_count": 60},
+        {"id": "exclude_wrong_approach", "name": "排除错误做法", "target_count": 60},
+        {"id": "problem_type_recognition_signal", "name": "题型识别信号", "target_count": 80},
+        {"id": "brute_force_to_optimization", "name": "暴力到优化", "target_count": 80},
+        {"id": "proof_counterexample_awareness", "name": "证明与反例意识", "target_count": 50},
+        {"id": "boundary_special_case_analysis", "name": "边界与特殊情况分析", "target_count": 50},
+        {"id": "complete_solving_process", "name": "完整解题流程", "target_count": 40}
+      ]
+    },
+    "training_management_psychology": {
+      "name": "训练管理与竞赛心理",
+      "target_count": 400,
+      "goal": "帮助学生长期坚持、稳定训练、面对挫败、比赛发挥更稳",
+      "sub_categories_count": 7,
+      "sub_categories": [
+        {"id": "time_allocation_learning_rhythm", "name": "时间分配与学习节奏", "target_count": 60},
+        {"id": "school_olympiad_balance", "name": "学校学习与信奥平衡", "target_count": 50},
+        {"id": "self_discipline_habit_system", "name": "自律与习惯系统", "target_count": 60},
+        {"id": "difficulty_response_strategy", "name": "遇到困难时的应对", "target_count": 70},
+        {"id": "error_review_long_term_progress", "name": "错题复盘与长期进步", "target_count": 60},
+        {"id": "competition_strategy_on_site_decision", "name": "比赛策略与临场决策", "target_count": 60},
+        {"id": "emotion_pressure_recovery", "name": "情绪、压力与恢复", "target_count": 40}
+      ]
+    }
+  },
+  "total_candidates_planned": 1500,
+  "sample_candidates": {
+    "total": 92,
+    "code_implementation": 32,
+    "problem_solving_analysis": 30,
+    "training_management_psychology": 30,
+    "note": "每类样例 >= 30，满足规划要求"
+  },
+  "batch_plan": {
+    "total_batches": 12,
+    "phase1": {"batches": ["batch1", "batch2", "batch3", "batch5", "batch6"], "count": 730, "priority": "high"},
+    "phase2": {"batches": ["batch4", "batch7", "batch8", "batch9", "batch10", "batch11"], "count": 630, "priority": "medium"},
+    "phase3": {"batches": ["batch12"], "count": 40, "priority": "low"}
+  },
+  "key_files": {
+    "schema": "data/stage5_bridge_ability_candidate_schema.json",
+    "batch_plan": "data/stage5_bridge_ability_batch_plan.json",
+    "sample_candidates": "data/stage5_bridge_ability_sample_candidates.json",
+    "report": "docs/stage5_bridge_ability_candidate_plan_report.md",
+    "checkpoint": "data/stage5_bridge_ability_plan_stable_checkpoint.json",
+    "checkpoint_report": "docs/stage5_bridge_ability_plan_stable_checkpoint_report.md"
+  },
+  "next_steps": {
+    "recommendation": "等硬知识 Batch1 流程稳定后，再正式生成桥梁能力完整候选池",
+    "execution_order": [
+      "1. 先从代码实现技巧 600 个开始",
+      "2. 再做解题分析方法 500 个",
+      "3. 最后做训练管理与竞赛心理 400 个"
+    ],
+    "prerequisites": [
+      "Stage5 硬知识候选池 Batch1 合并完成并稳定",
+      "主图谱 item_count 确认更新",
+      "重复检测机制就绪"
+    ]
+  },
+  "declarations": {
+    "stage_name": "Stage5 桥梁能力规划",
+    "three_categories_planned": true,
+    "total_planned": 1500,
+    "schema_completed": true,
+    "batch_plan_completed": true,
+    "samples_completed": true,
+    "samples_each_category_ge_30": true,
+    "formal_nodes_generated": false,
+    "main_graph_modified": false,
+    "merge_executed": false,
+    "checkpoint_only": true
+  }
+}

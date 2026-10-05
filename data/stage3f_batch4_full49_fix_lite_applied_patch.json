@@ -1,0 +1,446 @@
+{
+  "meta": {
+    "title": "Stage3F Batch4 Full49 Fix Lite Applied Patch",
+    "generated_at": "2026-05-25T21:47:35.647731",
+    "batch_id": "stage3f_batch4_full49",
+    "total_patched": 49,
+    "branch": "A (standard fix lite)",
+    "summary": {
+      "total_added_items": 49,
+      "downgraded_to_C": 40,
+      "kept_B": 8,
+      "kept_A": 1,
+      "problem_pattern_candidates_not_handled": 6,
+      "direct_pre_modified": false,
+      "resolved_pre_modified": false,
+      "rel_modified": false,
+      "items_added_or_deleted": false
+    }
+  },
+  "applied_patches": [
+    {
+      "item_id": "3.13.195",
+      "name": "高级并查集：Small To Large",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "3.13.193",
+      "name": "高级并查集：Distance",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "2.21.171",
+      "name": "2-SAT 建模技巧",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.161",
+      "name": "Hall 定理及应用",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.162",
+      "name": "最大权闭合子图",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.166",
+      "name": "高级最短路：Min Cost Path Cover",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.198",
+      "name": "可持久化结构：Retroactive Overview",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.4.16",
+      "name": "Kitamasa算法",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.159",
+      "name": "差分约束系统建模",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.168",
+      "name": "高级最短路：Resource Constrained",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.170",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.163",
+      "name": "平面图：Embedding Basics",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.156",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.194",
+      "name": "高级并查集：Offline Dynamic Connectivity",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "2.21.154",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.204",
+      "name": "线段树变体：Segment Tree Over Time",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.205",
+      "name": "线段树变体：Two Dimensional Segment Tree",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.206",
+      "name": "简洁与概率结构：Van Emde Boas Overview",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "2.21.157",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.39",
+      "name": "Sunday算法",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.8.155",
+      "name": "期望DP",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.158",
+      "name": "强连通分量 DAG：Scc Dp",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.164",
+      "name": "高级最短路：Eppstein K Shortest",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.167",
+      "name": "高级最短路：Replacement Paths",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.8.152",
+      "name": "Grundy数DP",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.199",
+      "name": "线段树变体：Matrix Segment Tree",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.200",
+      "name": "线段树变体：Merge 变体 1",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.8.151",
+      "name": "博弈DP基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.8.153",
+      "name": "矩阵DP基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.8.154",
+      "name": "矩阵快速幂DP",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.196",
+      "name": "高级并查集：Weighted",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "3.13.203",
+      "name": "线段树变体：Segment Tree Of Vectors",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.42",
+      "name": "哈希碰撞处理策略",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.169",
+      "name": "高级最短路：Yen K Shortest",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.5.17",
+      "name": "GF(2)上的高斯消元",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.152",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.40",
+      "name": "Duval算法最小表示",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.155",
+      "name": "动态图连通性：Dynamic Bridge",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.160",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.202",
+      "name": "线段树变体：Range Assign Lazy",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.5.18",
+      "name": "矩阵树定理",
+      "old_review_priority": "B",
+      "new_review_priority": "A",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.4.15",
+      "name": "线性递推基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.41",
+      "name": "二维滚动哈希",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.153",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.197",
+      "name": "李超线段树：Cht Comparison",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "3.13.201",
+      "name": "线段树变体：Persistent Segment Tree",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.13.192",
+      "name": "高级并查集：Component Aggregate",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "2.8.156",
+      "name": "马尔可夫链DP",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.21.165",
+      "name": "高级最短路：Johnson Potentials",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    }
+  ],
+  "problem_pattern_candidates_recorded": [
+    {
+      "item_id": "",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "pattern_type": ""
+    },
+    {
+      "item_id": "",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "pattern_type": ""
+    },
+    {
+      "item_id": "",
+      "name": "差分约束系统建模",
+      "pattern_type": ""
+    },
+    {
+      "item_id": "",
+      "name": "Hall 定理及应用",
+      "pattern_type": ""
+    },
+    {
+      "item_id": "",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "pattern_type": ""
+    },
+    {
+      "item_id": "",
+      "name": "2-SAT 建模技巧",
+      "pattern_type": ""
+    }
+  ]
+}

@@ -3,8 +3,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/progress_provider.dart';
 import '../state/cpp_animation_provider.dart';
+import '../state/unified_learning_provider.dart';
 import '../models/knowledge_item.dart';
 import '../models/knowledge_graph.dart';
+import '../models/learning_card.dart';
+import '../models/practice_entry.dart';
+import '../models/cpp14_template_entry.dart';
+import '../services/learning_card_service.dart';
+import '../services/practice_entry_service.dart';
+import '../services/cpp14_template_service.dart';
+import '../widgets/knowledge/learning_card_section.dart';
+import '../widgets/knowledge/practice_entry_section.dart';
+import '../widgets/knowledge/cpp14_template_entry_section.dart';
+import '../widgets/knowledge/animation_entry_section.dart';
 
 class KnowledgeItemPage extends ConsumerStatefulWidget {
   final String itemId;
@@ -16,6 +27,34 @@ class KnowledgeItemPage extends ConsumerStatefulWidget {
 }
 
 class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
+  final _learningCardService = LearningCardService();
+  final _practiceEntryService = PracticeEntryService();
+  final _cpp14TemplateService = Cpp14TemplateService();
+
+  Future<LearningCard?> _loadLearningCard(String itemId) async {
+    try {
+      return await _learningCardService.getCardById(itemId);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<PracticeEntry?> _loadPracticeEntry(String itemId) async {
+    try {
+      return await _practiceEntryService.getEntryByItemId(itemId);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<Cpp14TemplateEntry?> _loadCpp14Template(String itemId) async {
+    try {
+      return await _cpp14TemplateService.getEntryByItemId(itemId);
+    } catch (_) {
+      return null;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -98,14 +137,57 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
         children: [
           _buildHeader(item, section),
           const SizedBox(height: 16),
-          if (isLearnableItem) ...[
-            _buildCppLearnCard(context, item),
-            const SizedBox(height: 12),
-          ],
-          if (isCppItem) ...[
-            _buildCppAnimationCard(context, item),
-            const SizedBox(height: 12),
-          ],
+          // 学习卡片区域（异步）
+          FutureBuilder<LearningCard?>(
+            future: _loadLearningCard(item.id),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data == null) {
+                return const SizedBox.shrink();
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LearningCardSection(card: snapshot.data!),
+                  const SizedBox(height: 12),
+                ],
+              );
+            },
+          ),
+          // 练习入口区域（异步）
+          FutureBuilder<PracticeEntry?>(
+            future: _loadPracticeEntry(item.id),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data == null) {
+                return const SizedBox.shrink();
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  PracticeEntrySection(entry: snapshot.data!),
+                  const SizedBox(height: 12),
+                ],
+              );
+            },
+          ),
+          // C++14 模板入口区域（异步）
+          FutureBuilder<Cpp14TemplateEntry?>(
+            future: _loadCpp14Template(item.id),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data == null) {
+                return const SizedBox.shrink();
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Cpp14TemplateEntrySection(entry: snapshot.data!),
+                  const SizedBox(height: 12),
+                ],
+              );
+            },
+          ),
+          // 动画入口区域（复用现有 provider 和路由）
+          _buildAnimationEntrySection(context, item),
+          if (isLearnableItem) _buildLegacyCppLearnCard(context, item),
           if (bfsActions.isNotEmpty) ...[
             _buildBfsActionsGroup(context, bfsActions),
             const SizedBox(height: 12),
@@ -149,6 +231,34 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
             _buildInfoRow('block_name', item.blockName),
         ],
       ),
+    );
+  }
+
+  /// 动画入口区域（统一入口，复用现有 provider 和路由）
+  Widget _buildAnimationEntrySection(BuildContext context, KnowledgeItem item) {
+    final animationsAsync = ref.watch(cppAnimationsForItemProvider(item.id));
+    return animationsAsync.when(
+      data: (animations) {
+        if (animations.isEmpty) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AnimationEntrySection(
+              animations: animations,
+              onViewAnimation: (animationId) {
+                Navigator.pushNamed(
+                  context,
+                  '/cpp_animation',
+                  arguments: animationId,
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+          ],
+        );
+      },
+      loading: () => const SizedBox.shrink(),
+      error: (_, __) => const SizedBox.shrink(),
     );
   }
 
@@ -275,71 +385,17 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
     );
   }
 
-  Widget _buildCppAnimationCard(BuildContext context, KnowledgeItem item) {
-    final animationsAsync = ref.watch(cppAnimationsForItemProvider(item.id));
-    return animationsAsync.when(
-      data: (animations) {
-        if (animations.isEmpty) return const SizedBox.shrink();
-        final first = animations.first;
-        return Card(
-          color: const Color(0xFFE8F5E9),
-          child: InkWell(
-            onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/cpp_animation',
-                arguments: first.animationId,
-              );
-            },
-            borderRadius: BorderRadius.circular(16),
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF4CAF50).withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Icon(
-                      Icons.play_circle_filled,
-                      color: Color(0xFF4CAF50),
-                      size: 26,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '动画演示（${animations.length}）',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF2E7D32),
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          first.title,
-                          style: const TextStyle(
-                            fontSize: 13,
-                            color: Color(0xFF66BB6A),
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Icon(Icons.arrow_forward, color: Color(0xFF4CAF50)),
-                ],
-              ),
-            ),
-          ),
+  Widget _buildLegacyCppLearnCard(BuildContext context, KnowledgeItem item) {
+    final unitAsync = ref.watch(unifiedLearningUnitByItemIdProvider(item.id));
+    return unitAsync.when(
+      data: (unit) {
+        if (unit == null) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildCppLearnCard(context, item),
+            const SizedBox(height: 12),
+          ],
         );
       },
       loading: () => const SizedBox.shrink(),

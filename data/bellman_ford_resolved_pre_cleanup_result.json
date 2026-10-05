@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T13:52:57Z",
+    "task": "bellman_ford_resolved_pre_cleanup",
+    "main_graph_modified": true,
+    "only_resolved_pre_modified": true,
+    "direct_pre_modified": false,
+    "rel_modified": false,
+    "io_v4_4_modified": false,
+    "content_packages_modified": false,
+    "frontend_code_modified": false,
+    "batch2_continued": false
+  },
+  "pre_cleanup": {
+    "resolved_pre_1_5_16_count": 250,
+    "resolved_pre_1_5_16_nodes": [
+      "2.4.53",
+      "2.4.54",
+      "2.4.55",
+      "2.4.56",
+      "2.4.57",
+      "2.4.58",
+      "2.4.59",
+      "2.4.60",
+      "2.4.61",
+      "2.4.62",
+      "2.4.63",
+      "2.4.64",
+      "2.4.65",
+      "2.4.66",
+      "2.4.67",
+      "2.4.68",
+      "2.4.69",
+      "2.4.70",
+      "2.4.71",
+      "2.4.72",
+      "2.4.73",
+      "2.4.74",
+      "2.4.75",
+      "2.6.11",
+      "2.6.12",
+      "2.6.13",
+      "2.6.14",
+      "2.6.15",
+      "2.6.16",
+      "2.6.17"
+    ],
+    "direct_pre_1_5_16_count": 0,
+    "rel_1_5_16_count": 0
+  },
+  "post_cleanup": {
+    "resolved_pre_1_5_16_count": 0,
+    "direct_pre_1_5_16_count": 0,
+    "rel_1_5_16_count": 0,
+    "nodes_changed": 2018,
+    "changed_node_count": 2018
+  },
+  "verification": {
+    "item_count": 2640,
+    "section_count": 65,
+    "no_1_5_16": true,
+    "has_2_13_30": true,
+    "direct_pre_1_5_16_refs": 0,
+    "rel_1_5_16_refs": 0,
+    "resolved_pre_1_5_16_refs": 0,
+    "dangling_refs": [],
+    "direct_pre_cycle": null,
+    "resolved_pre_mismatches": [],
+    "duplicate_ids": false,
+    "passed": true
+  },
+  "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_bellman_resolved_pre_cleanup_20260526_215257.json",
+  "recommendations": {
+    "generate_bellman_migration_stable_checkpoint": true,
+    "continue_batch2": false
+  }
+}

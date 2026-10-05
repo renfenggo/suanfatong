@@ -1,0 +1,447 @@
+{
+  "sectionId": "2.15",
+  "sectionName": "连通分量与特殊图",
+  "units": [
+    {
+      "itemId": "2.15.1",
+      "title": "强连通分量 SCC",
+      "learningGoal": "掌握强连通分量的定义和 Kosaraju/Tarjan 算法，理解缩点后的 DAG 结构",
+      "explanation": "强连通分量（SCC）：有向图中，任意两点可以互相到达的极大子图。\n\n核心思想：\n将有向图缩点为 DAG，每个 SCC 缩为一个点。\n\nKosaraju 算法：\n1. DFS 遍历，记录后序遍历顺序\n2. 反转所有边\n3. 按逆序遍历，每棵 DFS 树是一个 SCC\n\nTarjan 算法：\n用 dfn（访问时间）和 low（能到达的最小 dfn）识别 SCC。\n如果 dfn[u] == low[u]，u 是 SCC 的根。\n\n时间复杂度：O(V + E)\n空间复杂度：O(V + E)\n\n应用：\n- 缩点求 DAG 上的最长路\n- 2-SAT 问题\n- 必胜策略判断",
+      "exampleCode": "#include <iostream>\n#include <stack>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> g(n + 1), rg(n + 1);\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n        rg[v].push_back(u);\n    }\n    vector<int> vis(n + 1, 0), order, scc(n + 1, 0);\n    function<void(int)> dfs1 = [&](int u) {\n        vis[u] = 1;\n        for (int v : g[u])\n            if (!vis[v]) dfs1(v);\n        order.push_back(u);\n    };\n    function<void(int,int)> dfs2 = [&](int u, int id) {\n        scc[u] = id;\n        for (int v : rg[u])\n            if (!scc[v]) dfs2(v, id);\n    };\n    for (int i = 1; i <= n; i++)\n        if (!vis[i]) dfs1(i);\n    reverse(order.begin(), order.end());\n    int cnt = 0;\n    for (int u : order)\n        if (!scc[u]) dfs2(u, ++cnt);\n    cout << cnt << endl;\n    for (int i = 1; i <= n; i++) cout << scc[i] << \" \";\n    return 0;\n}",
+      "codeNotes": [
+        "Kosaraju 双 DFS",
+        "第一次记录后序",
+        "第二次在反图上找 SCC",
+        "时间 O(V+E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记反转图",
+          "description": "Kosaraju 需要在反图上第二次 DFS。",
+          "fix": "建图时同时建反图 rg。"
+        },
+        {
+          "title": "顺序错误",
+          "description": "第二次 DFS 要按逆序遍历。",
+          "fix": "reverse(order.begin(), order.end())。"
+        }
+      ],
+      "practice": {
+        "prompt": "求有向图的强连通分量数量。",
+        "hint": "Kosaraju 或 Tarjan。",
+        "expectedIdea": "O(V+E) SCC"
+      },
+      "quiz": [
+        {
+          "question": "强连通分量的定义是？",
+          "options": [
+            "任意两点连通",
+            "任意两点可以互相到达",
+            "存在一条路径",
+            "树状结构"
+          ],
+          "answerIndex": 1,
+          "explanation": "SCC 是有向图中任意两点可以互相到达的极大子图。"
+        },
+        {
+          "question": "Kosaraju 算法需要几次 DFS？",
+          "options": [
+            "1 次",
+            "2 次",
+            "3 次",
+            "4 次"
+          ],
+          "answerIndex": 1,
+          "explanation": "Kosaraju 两次 DFS：第一次后序，第二次在反图上。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.2",
+      "title": "桥",
+      "learningGoal": "掌握桥的定义和 Tarjan 算法，理解无向图的边双连通分量",
+      "explanation": "桥（割边）：无向图中，删除后使连通分量数增加的边。\n\n判定条件（Tarjan）：\n对于边 (u, v)，其中 v 是 u 的子节点，如果 low[v] > dfn[u]，则 (u, v) 是桥。\n\n算法流程：\n1. DFS 遍历，记录每个点的 dfn 和 low\n2. low[v] = min(dfn[u], low[v], low[child])\n3. 如果 low[v] > dfn[u]，(u, v) 是桥\n\n时间复杂度：O(V + E)\n空间复杂度：O(V + E)\n\n应用：\n- 求边双连通分量\n- 网络可靠性分析\n- 关键路径判断\n\n边双连通分量：\n删除所有桥后，每个连通分量是边双连通分量。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<pair<int,int>>> g(n + 1);\n    for (int i = 0; i < m; i++) {\n        int u, v, id = i + 1;\n        cin >> u >> v;\n        g[u].push_back({v, id});\n        g[v].push_back({u, id});\n    }\n    vector<int> dfn(n + 1, 0), low(n + 1, 0);\n    vector<bool> isBridge(m + 1, false);\n    int timer = 0;\n    function<void(int,int)> dfs = [&](int u, int pe) {\n        dfn[u] = low[u] = ++timer;\n        for (auto [v, id] : g[u]) {\n            if (id == pe) continue;\n            if (!dfn[v]) {\n                dfs(v, id);\n                low[u] = min(low[u], low[v]);\n                if (low[v] > dfn[u]) isBridge[id] = true;\n            } else {\n                low[u] = min(low[u], dfn[v]);\n            }\n        }\n    };\n    for (int i = 1; i <= n; i++)\n        if (!dfn[i]) dfs(i, 0);\n    int cnt = 0;\n    for (int i = 1; i <= m; i++)\n        if (isBridge[i]) cnt++;\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "low[v] > dfn[u] 判定桥",
+        "避免回头边",
+        "时间 O(V+E)",
+        "桥是无向图的割边"
+      ],
+      "commonMistakes": [
+        {
+          "title": "重复处理边",
+          "description": "无向图每条边会遍历两次，需要记录父边 ID。",
+          "fix": "每个边有唯一 ID，dfs 时跳过父边。"
+        },
+        {
+          "title": "low 更新错误",
+          "description": "已访问的边只能用 dfn，不能用 low。",
+          "fix": "else 分支用 dfn[v]，不是 low[v]。"
+        }
+      ],
+      "practice": {
+        "prompt": "求无向图中的桥数量。",
+        "hint": "Tarjan low[v] > dfn[u]。",
+        "expectedIdea": "O(V+E) 桥"
+      },
+      "quiz": [
+        {
+          "question": "桥的判定条件是？",
+          "options": [
+            "low[v] >= dfn[u]",
+            "low[v] > dfn[u]",
+            "low[v] < dfn[u]",
+            "dfn[v] > dfn[u]"
+          ],
+          "answerIndex": 1,
+          "explanation": "如果 low[v] > dfn[u]，说明 v 无法绕过 u 到达其他点，(u, v) 是桥。"
+        },
+        {
+          "question": "边双连通分量是？",
+          "options": [
+            "删除桥后的连通分量",
+            "所有点连通",
+            "最小生成树",
+            "强连通分量"
+          ],
+          "answerIndex": 0,
+          "explanation": "删除所有桥后，每个连通分量是边双连通分量。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.3",
+      "title": "割点",
+      "learningGoal": "掌握割点的定义和 Tarjan 算法，理解无向图的点双连通分量",
+      "explanation": "割点（articulation point）：无向图中，删除后使连通分量数增加的点。\n\n判定条件（Tarjan）：\n1. u 不是根：如果存在子节点 v，low[v] >= dfn[u]，则 u 是割点\n2. u 是根：如果有 >= 2 个子节点，则 u 是割点\n\n算法流程：\n1. DFS 遍历，记录 dfn 和 low\n2. 根节点特殊判断：子节点数 >= 2\n3. 非根节点：low[v] >= dfn[u]\n\n时间复杂度：O(V + E)\n空间复杂度：O(V + E)\n\n应用：\n- 求点双连通分量\n- 网络可靠性分析\n- 关键节点识别\n\n点双连通分量：\n删除所有割点后，每个连通分量是点双连通分量。",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> g(n + 1);\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n        g[v].push_back(u);\n    }\n    vector<int> dfn(n + 1, 0), low(n + 1, 0);\n    vector<bool> isCut(n + 1, false);\n    int timer = 0;\n    function<void(int,int)> dfs = [&](int u, int p) {\n        dfn[u] = low[u] = ++timer;\n        int child = 0;\n        for (int v : g[u]) {\n            if (v == p) continue;\n            if (!dfn[v]) {\n                dfs(v, u);\n                low[u] = min(low[u], low[v]);\n                if (low[v] >= dfn[u] && p != 0) isCut[u] = true;\n                child++;\n            } else {\n                low[u] = min(low[u], dfn[v]);\n            }\n        }\n        if (p == 0 && child >= 2) isCut[u] = true;\n    };\n    for (int i = 1; i <= n; i++)\n        if (!dfn[i]) dfs(i, 0);\n    int cnt = 0;\n    for (int i = 1; i <= n; i++)\n        if (isCut[i]) cnt++;\n    cout << cnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "low[v] >= dfn[u] 判定割点",
+        "根节点需要 >=2 个子节点",
+        "时间 O(V+E)",
+        "割点是无向图的割点"
+      ],
+      "commonMistakes": [
+        {
+          "title": "根节点判断错误",
+          "description": "根节点不是用 low[v] >= dfn[u]，而是子节点数 >= 2。",
+          "fix": "if (p == 0 && child >= 2) 判断根节点。"
+        },
+        {
+          "title": "重复访问父节点",
+          "description": "无向图需要跳过父节点。",
+          "fix": "if (v == p) continue;"
+        }
+      ],
+      "practice": {
+        "prompt": "求无向图中的割点数量。",
+        "hint": "Tarjan low[v] >= dfn[u]。",
+        "expectedIdea": "O(V+E) 割点"
+      },
+      "quiz": [
+        {
+          "question": "割点的判定条件（非根节点）是？",
+          "options": [
+            "low[v] > dfn[u]",
+            "low[v] >= dfn[u]",
+            "low[v] < dfn[u]",
+            "dfn[v] >= dfn[u]"
+          ],
+          "answerIndex": 1,
+          "explanation": "如果 low[v] >= dfn[u]，说明 v 无法绕过 u 到达其他点，u 是割点。"
+        },
+        {
+          "question": "根节点是割点的条件是？",
+          "options": [
+            "low[v] >= dfn[u]",
+            "子节点数 >= 1",
+            "子节点数 >= 2",
+            "dfn[u] 最小"
+          ],
+          "answerIndex": 2,
+          "explanation": "根节点有 >= 2 个子节点时，删除根节点会使图不连通。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.4",
+      "title": "点双 / 边双",
+      "learningGoal": "理解点双连通分量和边双连通分量的概念，掌握缩点和缩边后的树结构",
+      "explanation": "点双连通分量（V-BCC）：任意两点之间至少有两条点不相交的路径。\n边双连通分量（E-BCC）：任意两点之间至少有两条边不相交的路径。\n\n点双连通分量：\n- 删除割点后的连通分量\n- 用 Tarjan 找割点，在 DFS 时收集\n- 圆方树：每个点双收缩为方点，割点为圆点\n\n边双连通分量：\n- 删除桥后的连通分量\n- 用 Tarjan 找桥，并查集合并\n- 缩点成树：每个边双收缩为一个点\n\n时间复杂度：O(V + E)\n空间复杂度：O(V + E)\n\n应用：\n- 网络可靠性分析\n- 关键路径规划\n- 图的缩点简化",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> g(n + 1);\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n        g[v].push_back(u);\n    }\n    vector<int> dfn(n + 1, 0), low(n + 1, 0), ebcc(n + 1, 0);\n    vector<vector<int>> bridges;\n    int timer = 0, ebccCnt = 0;\n    function<void(int,int)> dfs = [&](int u, int pe) {\n        dfn[u] = low[u] = ++timer;\n        for (int v : g[u]) {\n            if (v == pe) continue;\n            if (!dfn[v]) {\n                dfs(v, u);\n                low[u] = min(low[u], low[v]);\n                if (low[v] > dfn[u]) bridges.push_back({u, v});\n            } else {\n                low[u] = min(low[u], dfn[v]);\n            }\n        }\n    };\n    for (int i = 1; i <= n; i++)\n        if (!dfn[i]) dfs(i, 0);\n    vector<int> p(n + 1);\n    for (int i = 1; i <= n; i++) p[i] = i;\n    function<int(int)> find = [&](int x) { return p[x] == x ? x : p[x] = find(p[x]); };\n    for (int u = 1; u <= n; u++)\n        for (int v : g[u])\n            if (dfn[u] < dfn[v] && low[v] > dfn[u] == false)\n                p[find(u)] = find(v);\n    for (int i = 1; i <= n; i++)\n        if (find(i) == i) ebccCnt++;\n    cout << ebccCnt << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "边双：删除桥后的连通分量",
+        "并查集合并非桥边",
+        "点双：割点分割的子图",
+        "时间 O(V+E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "混淆点双和边双",
+          "description": "点双是删割点，边双是删桥。",
+          "fix": "点双用割点，边双用桥。"
+        },
+        {
+          "title": "缩点后结构错误",
+          "description": "边双缩点是树，点双缩点是圆方树。",
+          "fix": "边双缩点后无环，点双可能有多个割点。"
+        }
+      ],
+      "practice": {
+        "prompt": "求边双连通分量数量。",
+        "hint": "Tarjan + 并查集。",
+        "expectedIdea": "O(V+E) 边双"
+      },
+      "quiz": [
+        {
+          "question": "点双连通分量的定义是？",
+          "options": [
+            "任意两点连通",
+            "任意两点有两条点不相交路径",
+            "任意两点有两条边不相交路径",
+            "无环"
+          ],
+          "answerIndex": 1,
+          "explanation": "点双连通分量中任意两点有至少两条点不相交路径。"
+        },
+        {
+          "question": "边双缩点后形成？",
+          "options": [
+            "有环图",
+            "树",
+            "完全图",
+            "强连通图"
+          ],
+          "answerIndex": 1,
+          "explanation": "删除所有桥后，边双缩点形成树结构。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.5",
+      "title": "欧拉路",
+      "learningGoal": "理解欧拉路的定义，掌握判断欧拉路的方法和 Hierholzer 算法",
+      "explanation": "欧拉路：图中经过每条边恰好一次的路径。\n\n存在条件：\n1. 无向图：最多 2 个奇度点（起点和终点）\n2. 有向图：最多 2 个奇度点（起点出度 > 入度，终点入度 > 出度）\n3. 所有边在同一个连通分量中\n\nHierholzer 算法：\n1. 从起点开始 DFS\n2. 每次走一条边后删除\n3. 回溯时记录路径\n4. 最后反转路径\n\n时间复杂度：O(V + E)\n空间复杂度：O(E)\n\n竞赛提示：\n1. 有向图和无向图的条件不同\n2. 如果所有点度数都为偶数，任意点可以作为起点\n3. 路径需要反转，因为回溯顺序相反",
+      "exampleCode": "#include <iostream>\n#include <stack>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nbool used[N];\nint n, m;\n\nvoid dfs(int u, vector<int>& path) {\n    for (int& i = 0; i < (int)adj[u].size(); i++) {\n        int v = adj[u][i];\n        if (!used[v]) {\n            used[v] = true;\n            dfs(v, path);\n        }\n    }\n    path.push_back(u);\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 1; i <= m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    int odd = 0, start = 1;\n    for (int i = 1; i <= n; i++) {\n        if (adj[i].size() % 2 == 1) {\n            odd++;\n            start = i;\n        }\n    }\n    \n    if (odd > 2) {\n        cout << \"No Euler path\" << endl;\n        return 0;\n    }\n    \n    vector<int> path;\n    dfs(start, path);\n    \n    if ((int)path.size() != m + 1) {\n        cout << \"Not connected\" << endl;\n        return 0;\n    }\n    \n    for (int i = path.size() - 1; i >= 0; i--) {\n        cout << path[i] << \" \";\n    }\n    cout << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "odd: 奇度点数量",
+        "start: 起点（如果有奇度点，选择其中一个）",
+        "Hierholzer: DFS 回溯记录路径",
+        "时间复杂度 O(V + E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记检查奇度点",
+          "description": "无向图最多 2 个奇度点，否则不存在欧拉路。",
+          "fix": "统计奇度点数量，odd <= 2。"
+        },
+        {
+          "title": "路径未反转",
+          "description": "Hierholzer 回溯时路径顺序相反，需要反转。",
+          "fix": "for (int i = path.size() - 1; i >= 0; i--) 输出。"
+        },
+        {
+          "title": "未检查连通性",
+          "description": "所有边必须在同一个连通分量中。",
+          "fix": "检查 path.size() == m + 1。"
+        },
+        {
+          "title": "有向图和无向图混淆",
+          "description": "有向图和无向图的欧拉路条件不同。",
+          "fix": "有向图检查入度和出度，无向图检查度数。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现无向图的欧拉路，输出路径。",
+        "hint": "Hierholzer 算法，奇度点判断。",
+        "expectedIdea": "O(V + E) 欧拉路"
+      },
+      "quiz": [
+        {
+          "question": "无向图存在欧拉路的充要条件是？",
+          "options": [
+            "所有点度数为偶数",
+            "最多 2 个奇度点",
+            "所有点度数为奇数",
+            "没有奇度点"
+          ],
+          "answerIndex": 1,
+          "explanation": "无向图最多 2 个奇度点，且所有边在同一个连通分量中。"
+        },
+        {
+          "question": "Hierholzer 算法的时间复杂度是？",
+          "options": [
+            "O(V)",
+            "O(E)",
+            "O(V + E)",
+            "O(V × E)"
+          ],
+          "answerIndex": 2,
+          "explanation": "Hierholzer 遍历所有边，O(V + E)。"
+        },
+        {
+          "question": "如果所有点度数为偶数，欧拉路的起点是？",
+          "options": [
+            "任意点",
+            "第一个奇度点",
+            "度数最大的点",
+            "度数最小的点"
+          ],
+          "answerIndex": 0,
+          "explanation": "如果所有点度数为偶数，任意点都可以作为起点。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.6",
+      "title": "欧拉回路",
+      "learningGoal": "理解欧拉回路的定义，掌握判断欧拉回路的方法和 Hierholzer 算法",
+      "explanation": "欧拉回路：图中经过每条边恰好一次且回到起点的路径。\n\n存在条件：\n1. 无向图：所有点度数为偶数\n2. 有向图：所有点入度 = 出度\n3. 所有边在同一个连通分量中\n\nHierholzer 算法（同欧拉路）：\n1. 从起点开始 DFS\n2. 每次走一条边后删除\n3. 回溯时记录路径\n4. 最后反转路径\n\n时间复杂度：O(V + E)\n空间复杂度：O(E)\n\n竞赛提示：\n1. 欧拉回路是欧拉路的特殊情况\n2. 有向图和无向图的条件不同\n3. 任意点可以作为起点（因为度数都为偶数）\n4. 路径需要反转，因为回溯顺序相反",
+      "exampleCode": "#include <iostream>\n#include <stack>\n#include <vector>\nusing namespace std;\n\nconst int N = 100005;\nvector<int> adj[N];\nbool used[N];\nint n, m;\n\nvoid dfs(int u, vector<int>& path) {\n    for (int& i = 0; i < (int)adj[u].size(); i++) {\n        int v = adj[u][i];\n        if (!used[v]) {\n            used[v] = true;\n            dfs(v, path);\n        }\n    }\n    path.push_back(u);\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 1; i <= m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    \n    for (int i = 1; i <= n; i++) {\n        if (adj[i].size() % 2 == 1) {\n            cout << \"No Euler circuit\" << endl;\n            return 0;\n        }\n    }\n    \n    vector<int> path;\n    dfs(1, path);\n    \n    if ((int)path.size() != m + 1) {\n        cout << \"Not connected\" << endl;\n        return 0;\n    }\n    \n    for (int i = path.size() - 1; i >= 0; i--) {\n        cout << path[i] << \" \";\n    }\n    cout << endl;\n    \n    return 0;\n}",
+      "codeNotes": [
+        "欧拉回路：所有点度数为偶数",
+        "start: 任意点（因为度数都为偶数）",
+        "Hierholzer: DFS 回溯记录路径",
+        "时间复杂度 O(V + E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记检查偶数度",
+          "description": "无向图所有点度数必须为偶数，否则不存在欧拉回路。",
+          "fix": "for (int i = 1; i <= n; i++) if (adj[i].size() % 2 == 1) 检查。"
+        },
+        {
+          "title": "路径未反转",
+          "description": "Hierholzer 回溯时路径顺序相反，需要反转。",
+          "fix": "for (int i = path.size() - 1; i >= 0; i--) 输出。"
+        },
+        {
+          "title": "未检查连通性",
+          "description": "所有边必须在同一个连通分量中。",
+          "fix": "检查 path.size() == m + 1。"
+        },
+        {
+          "title": "有向图和无向图混淆",
+          "description": "有向图和无向图的欧拉回路条件不同。",
+          "fix": "有向图检查入度和出度，无向图检查度数。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现无向图的欧拉回路，输出路径。",
+        "hint": "Hierholzer 算法，偶数度判断。",
+        "expectedIdea": "O(V + E) 欧拉回路"
+      },
+      "quiz": [
+        {
+          "question": "无向图存在欧拉回路的充要条件是？",
+          "options": [
+            "最多 2 个奇度点",
+            "所有点度数为偶数",
+            "所有点度数为奇数",
+            "没有奇度点"
+          ],
+          "answerIndex": 1,
+          "explanation": "无向图所有点度数为偶数，且所有边在同一个连通分量中。"
+        },
+        {
+          "question": "欧拉回路和欧拉路的关系是？",
+          "options": [
+            "完全相同",
+            "欧拉回路是欧拉路的特殊情况",
+            "欧拉路是欧拉回路的特殊情况",
+            "没有关系"
+          ],
+          "answerIndex": 1,
+          "explanation": "欧拉回路是欧拉路的特殊情况，起点和终点相同。"
+        },
+        {
+          "question": "欧拉回路的起点是？",
+          "options": [
+            "任意点",
+            "度数最大的点",
+            "度数最小的点",
+            "第一个点"
+          ],
+          "answerIndex": 0,
+          "explanation": "欧拉回路中所有点度数为偶数，任意点都可以作为起点。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.15.7",
+      "title": "哈密顿路径/回路概念",
+      "learningGoal": "理解哈密顿路径/回路的定义，了解与欧拉路/回路的区别",
+      "explanation": "哈密顿路径：图中经过每个节点恰好一次的路径。\n哈密顿回路：图中经过每个节点恰好一次且回到起点的路径。\n\n与欧拉路/回路的区别：\n- 欧拉：经过每条边恰好一次\n- 哈密顿：经过每个节点恰好一次\n- 欧拉：有充要条件（度数判断）\n- 哈密顿：无充要条件，判断困难\n\n存在性判断（特殊图）：\n1. 完全图：一定存在哈密顿回路\n2. 狄拉克定理：n >= 3，所有点度数 >= n/2，存在哈密顿回路\n3. 奥尔定理：n >= 3，任意不相邻两点度数之和 >= n，存在哈密顿回路\n4. 度量和定理：所有点度数之和 >= (n-1)(n-2)/2 + 2，存在哈密顿路径\n\n求解方法：\n1. 暴力搜索：O(n!)\n2. 状态压缩 DP：O(2^n × n^2)\n3. 分支限界：剪枝优化\n\n时间复杂度：\n- 暴力：O(n!)\n- DP：O(2^n × n^2)\n\n竞赛提示：\n1. 哈密顿问题是 NP-hard\n2. 小规模数据用状态压缩 DP\n3. 大规模数据用贪心或随机算法\n4. 特殊图有充要条件",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nconst int N = 20, INF = 1e9;\nint g[N][N], dp[1 << N][N], n, m;\n\nint hamiltonianPath() {\n    for (int i = 0; i < (1 << n); i++) {\n        for (int j = 0; j < n; j++) {\n            dp[i][j] = INF;\n        }\n    }\n    for (int i = 0; i < n; i++) dp[1 << i][i] = 0;\n    \n    for (int mask = 1; mask < (1 << n); mask++) {\n        for (int u = 0; u < n; u++) {\n            if (!(mask & (1 << u))) continue;\n            for (int v = 0; v < n; v++) {\n                if (mask & (1 << v)) continue;\n                dp[mask | (1 << v)][v] = min(dp[mask | (1 << v)][v], dp[mask][u] + g[u][v]);\n            }\n        }\n    }\n    \n    int ans = INF;\n    for (int i = 0; i < n; i++) {\n        ans = min(ans, dp[(1 << n) - 1][i]);\n    }\n    \n    return ans;\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            g[i][j] = INF;\n        }\n        g[i][i] = 0;\n    }\n    \n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        u--; v--;\n        g[u][v] = min(g[u][v], w);\n        g[v][u] = min(g[v][u], w);\n    }\n    \n    int ans = hamiltonianPath();\n    \n    if (ans >= INF) {\n        cout << \"No Hamiltonian path\" << endl;\n    } else {\n        cout << ans << endl;\n    }\n    \n    return 0;\n}",
+      "codeNotes": [
+        "dp[mask][u]: 经过 mask 集合的节点，最后到达 u 的最短路径",
+        "时间复杂度：O(2^n × n^2)",
+        "空间复杂度：O(2^n × n)",
+        "适用于 n <= 20 的情况"
+      ],
+      "commonMistakes": [
+        {
+          "title": "状态定义错误",
+          "description": "dp[mask][u] 应该表示经过 mask 集合的节点，最后到达 u。",
+          "fix": "dp[mask | (1 << v)][v] = min(dp[mask | (1 << v)][v], dp[mask][u] + g[u][v]);"
+        },
+        {
+          "title": "初始化错误",
+          "description": "dp[1 << i][i] = 0，表示从每个点出发的初始状态。",
+          "fix": "for (int i = 0; i < n; i++) dp[1 << i][i] = 0;"
+        },
+        {
+          "title": "INF 设置太小",
+          "description": "INF 应该设置得足够大，避免被误认为最短路径。",
+          "fix": "const int INF = 1e9;"
+        },
+        {
+          "title": "节点编号错误",
+          "description": "节点编号从 0 开始，而不是 1。",
+          "fix": "u--; v--; 将节点编号转为 0-based。"
+        }
+      ],
+      "practice": {
+        "prompt": "实现状态压缩 DP 求哈密顿路径的最短距离。",
+        "hint": "状态压缩 DP，时间复杂度 O(2^n × n^2)。",
+        "expectedIdea": "O(2^n × n^2) 哈密顿路径"
+      },
+      "quiz": [
+        {
+          "question": "哈密顿路径和欧拉路的区别是？",
+          "options": [
+            "哈密顿经过边，欧拉经过点",
+            "哈密顿经过点，欧拉经过边",
+            "完全相同",
+            "没有区别"
+          ],
+          "answerIndex": 1,
+          "explanation": "哈密顿路径经过每个节点恰好一次，欧拉路经过每条边恰好一次。"
+        },
+        {
+          "question": "哈密顿问题的复杂度是？",
+          "options": [
+            "P",
+            "NP-complete",
+            "NP-hard",
+            "O(n)"
+          ],
+          "answerIndex": 2,
+          "explanation": "哈密顿问题是 NP-hard，没有多项式时间算法。"
+        },
+        {
+          "question": "状态压缩 DP 求哈密顿路径的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n^2)",
+            "O(2^n)",
+            "O(2^n × n^2)"
+          ],
+          "answerIndex": 3,
+          "explanation": "状态压缩 DP 有 2^n 个状态，每个状态转移 O(n)，总时间复杂度 O(2^n × n^2)。"
+        }
+      ]
+    }
+  ]
+}

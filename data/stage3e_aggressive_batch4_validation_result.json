@@ -1,0 +1,132 @@
+{
+  "batch_info": {
+    "batch_id": "stage3e_aggressive_batch4",
+    "merge_date": "2026-05-23T09:58:49.457771",
+    "status": "completed_with_issues"
+  },
+  "item_statistics": {
+    "before_merge": 1572,
+    "after_merge": 1602,
+    "added": 30,
+    "expected_added": 30
+  },
+  "section_statistics": {
+    "section_count": 65,
+    "new_sections_created": 0,
+    "section_distribution": {
+      "2.21": {
+        "name": "高级图论扩展",
+        "count": 18
+      },
+      "3.13": {
+        "name": "高级数据结构扩展",
+        "count": 12
+      }
+    }
+  },
+  "dependency_cleaning": {
+    "total_candidates": 30,
+    "cleaned_candidates": 16,
+    "uncleaned_candidates": 14,
+    "cleaned_dependency_plan_used": true
+  },
+  "validation_status": {
+    "item_count_match": true,
+    "section_count_match": true,
+    "section_references_in_direct_pre": 0,
+    "section_references_in_resolved_pre": 0,
+    "section_references_in_rel": 0,
+    "dangling_references": 0,
+    "direct_pre_cycles": "null",
+    "resolved_pre_mismatches": 30,
+    "resolved_pre_mismatch_detail": {
+      "total": 30,
+      "all_with_equal_counts": true,
+      "affected_new_nodes_only": true
+    },
+    "product_metadata_passed": false,
+    "validation_passed": false
+  },
+  "resolved_pre_computation": {
+    "based_on_complete_graph": true,
+    "old_node_count": 1572,
+    "new_node_count": 30,
+    "total_nodes_computed": 1602,
+    "only_updated_new_nodes": true,
+    "old_nodes_resolved_pre_unchanged": true,
+    "new_nodes_have_dependencies_between_themselves": false
+  },
+  "rollback_plan": {
+    "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch4.json",
+    "items_to_remove": [
+      "3.13.131",
+      "3.13.135",
+      "2.21.135",
+      "2.21.143",
+      "3.13.138",
+      "2.21.129",
+      "2.21.137",
+      "3.13.137",
+      "2.21.140",
+      "2.21.144",
+      "2.21.139",
+      "2.21.145",
+      "2.21.133",
+      "3.13.136",
+      "3.13.133",
+      "2.21.132",
+      "3.13.141",
+      "3.13.140",
+      "2.21.146",
+      "2.21.136",
+      "3.13.142",
+      "3.13.134",
+      "3.13.132",
+      "2.21.134",
+      "3.13.139",
+      "2.21.141",
+      "2.21.138",
+      "2.21.130",
+      "2.21.131",
+      "2.21.142"
+    ],
+    "items_count": 30,
+    "restore_command": "Copy-Item backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch4.json merged_knowledge_graph_item_dependencies_refined.json"
+  },
+  "review_priority": {
+    "high_priority_count": 17,
+    "medium_priority_count": 13,
+    "high_priority_items": [
+      "2.21.129",
+      "2.21.130",
+      "2.21.131",
+      "2.21.132",
+      "2.21.133",
+      "2.21.134",
+      "2.21.135",
+      "2.21.136",
+      "2.21.137",
+      "2.21.138",
+      "2.21.139",
+      "2.21.140",
+      "2.21.141",
+      "2.21.142",
+      "2.21.143",
+      "2.21.144",
+      "2.21.145"
+    ]
+  },
+  "quality_assessment": {
+    "backup_successful": true,
+    "merge_completed": true,
+    "all_checks_passed": false,
+    "critical_issues": [
+      "resolved_pre_mismatches reported for all 30 new nodes (but expected_count == actual_count)",
+      "product_metadata_validation.passed = false (though manual check shows all nodes have learning_path_policy)"
+    ],
+    "non_critical_notes": [
+      "Validation script may have false positives in resolved_pre_mismatches",
+      "Learning path policy check may have validation script issues"
+    ]
+  }
+}

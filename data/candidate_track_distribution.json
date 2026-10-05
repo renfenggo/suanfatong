@@ -1,0 +1,488 @@
+{
+  "total_candidates": 114,
+  "unique_tracks": 46,
+  "track_distribution": {
+    "advanced_graph": 16,
+    "k_shortest": 3,
+    "path_optimization": 3,
+    "dominator": 3,
+    "program_analysis": 3,
+    "tree_algorithms": 10,
+    "path_query": 5,
+    "network_flow": 10,
+    "optimization": 37,
+    "advanced_data_structure": 16,
+    "segment_tree": 6,
+    "range_operations": 6,
+    "tree_structure": 5,
+    "query": 5,
+    "balanced_tree": 5,
+    "bst": 5,
+    "advanced_string": 14,
+    "suffix_structure": 4,
+    "matching": 14,
+    "pattern": 5,
+    "advanced_math": 10,
+    "number_theory": 11,
+    "modular": 11,
+    "computational_geometry": 10,
+    "polygon": 5,
+    "interview": 5,
+    "system_design": 5,
+    "cache": 5,
+    "contest_modeling": 5,
+    "game_theory": 5,
+    "randomized": 5,
+    "heuristic": 5,
+    "advanced_dp": 7,
+    "dynamic_programming": 7,
+    "max_flow": 5,
+    "geometry": 5,
+    "algorithm": 11,
+    "lca": 5,
+    "graph": 10,
+    "polynomial": 5,
+    "fft": 5,
+    "automaton": 5,
+    "mst": 5,
+    "persistent": 5,
+    "data_structure": 5,
+    "advanced": 5
+  },
+  "track_details": {
+    "advanced_graph": [
+      "cand.graph.k_shortest.yen",
+      "cand.graph.k_shortest.eppstein",
+      "cand.graph.k_shortest.recursive",
+      "cand.graph.dominator_tree.lengauer_tarjan",
+      "cand.graph.dominator_tree.iterative",
+      "cand.graph.dominator_tree.application",
+      "cand.graph.tree_advanced.virtual_tree",
+      "cand.graph.tree_advanced.centroid_decomposition",
+      "cand.graph.tree_advanced.tree_flattening",
+      "cand.graph.tree_advanced.heavy_light",
+      "cand.graph.tree_advanced.parallel_binary",
+      "cand.graph.network_flow.dinic",
+      "cand.graph.network_flow.isap",
+      "cand.graph.network_flow.hlpp",
+      "cand.graph.network_flow.min_cost",
+      "cand.graph.network_flow.lower_upper"
+    ],
+    "k_shortest": [
+      "cand.graph.k_shortest.yen",
+      "cand.graph.k_shortest.eppstein",
+      "cand.graph.k_shortest.recursive"
+    ],
+    "path_optimization": [
+      "cand.graph.k_shortest.yen",
+      "cand.graph.k_shortest.eppstein",
+      "cand.graph.k_shortest.recursive"
+    ],
+    "dominator": [
+      "cand.graph.dominator_tree.lengauer_tarjan",
+      "cand.graph.dominator_tree.iterative",
+      "cand.graph.dominator_tree.application"
+    ],
+    "program_analysis": [
+      "cand.graph.dominator_tree.lengauer_tarjan",
+      "cand.graph.dominator_tree.iterative",
+      "cand.graph.dominator_tree.application"
+    ],
+    "tree_algorithms": [
+      "cand.graph.tree_advanced.virtual_tree",
+      "cand.graph.tree_advanced.centroid_decomposition",
+      "cand.graph.tree_advanced.tree_flattening",
+      "cand.graph.tree_advanced.heavy_light",
+      "cand.graph.tree_advanced.parallel_binary",
+      "cand.tree.advanced.lca_binary_lifting",
+      "cand.tree.advanced.lca_euler_tour",
+      "cand.tree.advanced.tree_diameter",
+      "cand.tree.advanced.tree_center",
+      "cand.tree.advanced.tree_hash"
+    ],
+    "path_query": [
+      "cand.graph.tree_advanced.virtual_tree",
+      "cand.graph.tree_advanced.centroid_decomposition",
+      "cand.graph.tree_advanced.tree_flattening",
+      "cand.graph.tree_advanced.heavy_light",
+      "cand.graph.tree_advanced.parallel_binary"
+    ],
+    "network_flow": [
+      "cand.graph.network_flow.dinic",
+      "cand.graph.network_flow.isap",
+      "cand.graph.network_flow.hlpp",
+      "cand.graph.network_flow.min_cost",
+      "cand.graph.network_flow.lower_upper",
+      "cand.graph.network_flow_advanced.dinic",
+      "cand.graph.network_flow_advanced.isap",
+      "cand.graph.network_flow_advanced.edmonds_karp",
+      "cand.graph.network_flow_advanced.min_cost_flow",
+      "cand.graph.network_flow_advanced.max_flow_bipartite"
+    ],
+    "optimization": [
+      "cand.graph.network_flow.dinic",
+      "cand.graph.network_flow.isap",
+      "cand.graph.network_flow.hlpp",
+      "cand.graph.network_flow.min_cost",
+      "cand.graph.network_flow.lower_upper",
+      "cand.geo.basic.convex_hull",
+      "cand.geo.basic.graham_scan",
+      "cand.geo.basic.andrew_monotone",
+      "cand.geo.basic.rotating_calipers",
+      "cand.geo.basic.half_plane_intersection",
+      "cand.contest.modeling.game_theory",
+      "cand.contest.modeling.sg_theorem",
+      "cand.contest.modeling.nim_game",
+      "cand.contest.modeling.simulation_optimization",
+      "cand.contest.modeling.greedy_proof",
+      "cand.algo.randomized.simulated_annealing",
+      "cand.algo.randomized.genetic_algorithm",
+      "cand.algo.randomized.monte_carlo",
+      "cand.algo.randomized.randomized_quickselect",
+      "cand.algo.randomized.randomized_prim",
+      "cand.dp.advanced.slope_optimization",
+      "cand.dp.advanced.convex_hull_opt",
+      "cand.dp.advanced.quadrangle_inequality",
+      "cand.dp.advanced.divide_conquer_opt",
+      "cand.dp.advanced.knuth_opt",
+      "cand.dp.advanced.cdq_divide",
+      "cand.dp.advanced.wqs_binary",
+      "cand.graph.network_flow_advanced.dinic",
+      "cand.graph.network_flow_advanced.isap",
+      "cand.graph.network_flow_advanced.edmonds_karp",
+      "cand.graph.network_flow_advanced.min_cost_flow",
+      "cand.graph.network_flow_advanced.max_flow_bipartite",
+      "cand.graph.optimization.minimum_spanning_tree",
+      "cand.graph.optimization.kruskal",
+      "cand.graph.optimization.prim",
+      "cand.graph.optimization.topological_sort",
+      "cand.graph.optimization.critical_path"
+    ],
+    "advanced_data_structure": [
+      "cand.ds.segtree_advanced.beats_chmin",
+      "cand.ds.segtree_advanced.beats_chmax",
+      "cand.ds.segtree_advanced.beats_range_add",
+      "cand.ds.segtree_advanced.dynamic_persistent",
+      "cand.ds.segtree_advanced.segment_tree_merge",
+      "cand.ds.segtree_advanced.segment_tree_split",
+      "cand.ds.tree_advanced.chairman_tree",
+      "cand.ds.tree_advanced.kdtree",
+      "cand.ds.tree_advanced.divide_merge_tree",
+      "cand.ds.tree_advanced.catenary_tree",
+      "cand.ds.tree_advanced.binary_indexed_2d",
+      "cand.ds.balanced_tree.treap",
+      "cand.ds.balanced_tree.splay",
+      "cand.ds.balanced_tree.scapegoat",
+      "cand.ds.balanced_tree.avl",
+      "cand.ds.balanced_tree.sbt"
+    ],
+    "segment_tree": [
+      "cand.ds.segtree_advanced.beats_chmin",
+      "cand.ds.segtree_advanced.beats_chmax",
+      "cand.ds.segtree_advanced.beats_range_add",
+      "cand.ds.segtree_advanced.dynamic_persistent",
+      "cand.ds.segtree_advanced.segment_tree_merge",
+      "cand.ds.segtree_advanced.segment_tree_split"
+    ],
+    "range_operations": [
+      "cand.ds.segtree_advanced.beats_chmin",
+      "cand.ds.segtree_advanced.beats_chmax",
+      "cand.ds.segtree_advanced.beats_range_add",
+      "cand.ds.segtree_advanced.dynamic_persistent",
+      "cand.ds.segtree_advanced.segment_tree_merge",
+      "cand.ds.segtree_advanced.segment_tree_split"
+    ],
+    "tree_structure": [
+      "cand.ds.tree_advanced.chairman_tree",
+      "cand.ds.tree_advanced.kdtree",
+      "cand.ds.tree_advanced.divide_merge_tree",
+      "cand.ds.tree_advanced.catenary_tree",
+      "cand.ds.tree_advanced.binary_indexed_2d"
+    ],
+    "query": [
+      "cand.ds.tree_advanced.chairman_tree",
+      "cand.ds.tree_advanced.kdtree",
+      "cand.ds.tree_advanced.divide_merge_tree",
+      "cand.ds.tree_advanced.catenary_tree",
+      "cand.ds.tree_advanced.binary_indexed_2d"
+    ],
+    "balanced_tree": [
+      "cand.ds.balanced_tree.treap",
+      "cand.ds.balanced_tree.splay",
+      "cand.ds.balanced_tree.scapegoat",
+      "cand.ds.balanced_tree.avl",
+      "cand.ds.balanced_tree.sbt"
+    ],
+    "bst": [
+      "cand.ds.balanced_tree.treap",
+      "cand.ds.balanced_tree.splay",
+      "cand.ds.balanced_tree.scapegoat",
+      "cand.ds.balanced_tree.avl",
+      "cand.ds.balanced_tree.sbt"
+    ],
+    "advanced_string": [
+      "cand.string.suffix_structure.suffix_array",
+      "cand.string.suffix_structure.suffix_automaton",
+      "cand.string.suffix_structure.suffix_tree",
+      "cand.string.suffix_structure.lcp_array",
+      "cand.string.matching.manacher",
+      "cand.string.matching.z_algorithm",
+      "cand.string.matching.kmp",
+      "cand.string.matching.rabin_karp",
+      "cand.string.matching.booth",
+      "cand.string.matching_advanced.kmp",
+      "cand.string.matching_advanced.aho_corasick",
+      "cand.string.matching_advanced.suffix_array",
+      "cand.string.matching_advanced.suffix_automaton",
+      "cand.string.matching_advanced.min_string"
+    ],
+    "suffix_structure": [
+      "cand.string.suffix_structure.suffix_array",
+      "cand.string.suffix_structure.suffix_automaton",
+      "cand.string.suffix_structure.suffix_tree",
+      "cand.string.suffix_structure.lcp_array"
+    ],
+    "matching": [
+      "cand.string.suffix_structure.suffix_array",
+      "cand.string.suffix_structure.suffix_automaton",
+      "cand.string.suffix_structure.suffix_tree",
+      "cand.string.suffix_structure.lcp_array",
+      "cand.string.matching.manacher",
+      "cand.string.matching.z_algorithm",
+      "cand.string.matching.kmp",
+      "cand.string.matching.rabin_karp",
+      "cand.string.matching.booth",
+      "cand.string.matching_advanced.kmp",
+      "cand.string.matching_advanced.aho_corasick",
+      "cand.string.matching_advanced.suffix_array",
+      "cand.string.matching_advanced.suffix_automaton",
+      "cand.string.matching_advanced.min_string"
+    ],
+    "pattern": [
+      "cand.string.matching.manacher",
+      "cand.string.matching.z_algorithm",
+      "cand.string.matching.kmp",
+      "cand.string.matching.rabin_karp",
+      "cand.string.matching.booth"
+    ],
+    "advanced_math": [
+      "cand.math.number_theory.pollard_rho",
+      "cand.math.number_theory.miller_rabin",
+      "cand.math.number_theory.discrete_log",
+      "cand.math.number_theory.primitive_root",
+      "cand.math.number_theory.legendre",
+      "cand.math.polynomial.fft",
+      "cand.math.polynomial.ntt",
+      "cand.math.polynomial.fwht",
+      "cand.math.polynomial.polynomial_inv",
+      "cand.math.polynomial.polynomial_sqrt"
+    ],
+    "number_theory": [
+      "cand.math.number_theory.pollard_rho",
+      "cand.math.number_theory.miller_rabin",
+      "cand.math.number_theory.discrete_log",
+      "cand.math.number_theory.primitive_root",
+      "cand.math.number_theory.legendre",
+      "cand.math.number_theory_advanced.euler_totient",
+      "cand.math.number_theory_advanced.mobius",
+      "cand.math.number_theory_advanced.crt",
+      "cand.math.number_theory_advanced.bsgs",
+      "cand.math.number_theory_advanced.exgcd",
+      "cand.math.number_theory_advanced.lucas"
+    ],
+    "modular": [
+      "cand.math.number_theory.pollard_rho",
+      "cand.math.number_theory.miller_rabin",
+      "cand.math.number_theory.discrete_log",
+      "cand.math.number_theory.primitive_root",
+      "cand.math.number_theory.legendre",
+      "cand.math.number_theory_advanced.euler_totient",
+      "cand.math.number_theory_advanced.mobius",
+      "cand.math.number_theory_advanced.crt",
+      "cand.math.number_theory_advanced.bsgs",
+      "cand.math.number_theory_advanced.exgcd",
+      "cand.math.number_theory_advanced.lucas"
+    ],
+    "computational_geometry": [
+      "cand.geo.basic.convex_hull",
+      "cand.geo.basic.graham_scan",
+      "cand.geo.basic.andrew_monotone",
+      "cand.geo.basic.rotating_calipers",
+      "cand.geo.basic.half_plane_intersection",
+      "cand.geo.computational.point_in_polygon",
+      "cand.geo.computational.line_intersection",
+      "cand.geo.computational.area_polygon",
+      "cand.geo.computational.circle_intersection",
+      "cand.geo.computational.closest_pair"
+    ],
+    "polygon": [
+      "cand.geo.basic.convex_hull",
+      "cand.geo.basic.graham_scan",
+      "cand.geo.basic.andrew_monotone",
+      "cand.geo.basic.rotating_calipers",
+      "cand.geo.basic.half_plane_intersection"
+    ],
+    "interview": [
+      "cand.interview.design.lru_cache",
+      "cand.interview.design.lfu_cache",
+      "cand.interview.design.trie_autocomplete",
+      "cand.interview.design.rate_limiter",
+      "cand.interview.design.consistent_hashing"
+    ],
+    "system_design": [
+      "cand.interview.design.lru_cache",
+      "cand.interview.design.lfu_cache",
+      "cand.interview.design.trie_autocomplete",
+      "cand.interview.design.rate_limiter",
+      "cand.interview.design.consistent_hashing"
+    ],
+    "cache": [
+      "cand.interview.design.lru_cache",
+      "cand.interview.design.lfu_cache",
+      "cand.interview.design.trie_autocomplete",
+      "cand.interview.design.rate_limiter",
+      "cand.interview.design.consistent_hashing"
+    ],
+    "contest_modeling": [
+      "cand.contest.modeling.game_theory",
+      "cand.contest.modeling.sg_theorem",
+      "cand.contest.modeling.nim_game",
+      "cand.contest.modeling.simulation_optimization",
+      "cand.contest.modeling.greedy_proof"
+    ],
+    "game_theory": [
+      "cand.contest.modeling.game_theory",
+      "cand.contest.modeling.sg_theorem",
+      "cand.contest.modeling.nim_game",
+      "cand.contest.modeling.simulation_optimization",
+      "cand.contest.modeling.greedy_proof"
+    ],
+    "randomized": [
+      "cand.algo.randomized.simulated_annealing",
+      "cand.algo.randomized.genetic_algorithm",
+      "cand.algo.randomized.monte_carlo",
+      "cand.algo.randomized.randomized_quickselect",
+      "cand.algo.randomized.randomized_prim"
+    ],
+    "heuristic": [
+      "cand.algo.randomized.simulated_annealing",
+      "cand.algo.randomized.genetic_algorithm",
+      "cand.algo.randomized.monte_carlo",
+      "cand.algo.randomized.randomized_quickselect",
+      "cand.algo.randomized.randomized_prim"
+    ],
+    "advanced_dp": [
+      "cand.dp.advanced.slope_optimization",
+      "cand.dp.advanced.convex_hull_opt",
+      "cand.dp.advanced.quadrangle_inequality",
+      "cand.dp.advanced.divide_conquer_opt",
+      "cand.dp.advanced.knuth_opt",
+      "cand.dp.advanced.cdq_divide",
+      "cand.dp.advanced.wqs_binary"
+    ],
+    "dynamic_programming": [
+      "cand.dp.advanced.slope_optimization",
+      "cand.dp.advanced.convex_hull_opt",
+      "cand.dp.advanced.quadrangle_inequality",
+      "cand.dp.advanced.divide_conquer_opt",
+      "cand.dp.advanced.knuth_opt",
+      "cand.dp.advanced.cdq_divide",
+      "cand.dp.advanced.wqs_binary"
+    ],
+    "max_flow": [
+      "cand.graph.network_flow_advanced.dinic",
+      "cand.graph.network_flow_advanced.isap",
+      "cand.graph.network_flow_advanced.edmonds_karp",
+      "cand.graph.network_flow_advanced.min_cost_flow",
+      "cand.graph.network_flow_advanced.max_flow_bipartite"
+    ],
+    "geometry": [
+      "cand.geo.computational.point_in_polygon",
+      "cand.geo.computational.line_intersection",
+      "cand.geo.computational.area_polygon",
+      "cand.geo.computational.circle_intersection",
+      "cand.geo.computational.closest_pair"
+    ],
+    "algorithm": [
+      "cand.geo.computational.point_in_polygon",
+      "cand.geo.computational.line_intersection",
+      "cand.geo.computational.area_polygon",
+      "cand.geo.computational.circle_intersection",
+      "cand.geo.computational.closest_pair",
+      "cand.math.number_theory_advanced.euler_totient",
+      "cand.math.number_theory_advanced.mobius",
+      "cand.math.number_theory_advanced.crt",
+      "cand.math.number_theory_advanced.bsgs",
+      "cand.math.number_theory_advanced.exgcd",
+      "cand.math.number_theory_advanced.lucas"
+    ],
+    "lca": [
+      "cand.tree.advanced.lca_binary_lifting",
+      "cand.tree.advanced.lca_euler_tour",
+      "cand.tree.advanced.tree_diameter",
+      "cand.tree.advanced.tree_center",
+      "cand.tree.advanced.tree_hash"
+    ],
+    "graph": [
+      "cand.tree.advanced.lca_binary_lifting",
+      "cand.tree.advanced.lca_euler_tour",
+      "cand.tree.advanced.tree_diameter",
+      "cand.tree.advanced.tree_center",
+      "cand.tree.advanced.tree_hash",
+      "cand.graph.optimization.minimum_spanning_tree",
+      "cand.graph.optimization.kruskal",
+      "cand.graph.optimization.prim",
+      "cand.graph.optimization.topological_sort",
+      "cand.graph.optimization.critical_path"
+    ],
+    "polynomial": [
+      "cand.math.polynomial.fft",
+      "cand.math.polynomial.ntt",
+      "cand.math.polynomial.fwht",
+      "cand.math.polynomial.polynomial_inv",
+      "cand.math.polynomial.polynomial_sqrt"
+    ],
+    "fft": [
+      "cand.math.polynomial.fft",
+      "cand.math.polynomial.ntt",
+      "cand.math.polynomial.fwht",
+      "cand.math.polynomial.polynomial_inv",
+      "cand.math.polynomial.polynomial_sqrt"
+    ],
+    "automaton": [
+      "cand.string.matching_advanced.kmp",
+      "cand.string.matching_advanced.aho_corasick",
+      "cand.string.matching_advanced.suffix_array",
+      "cand.string.matching_advanced.suffix_automaton",
+      "cand.string.matching_advanced.min_string"
+    ],
+    "mst": [
+      "cand.graph.optimization.minimum_spanning_tree",
+      "cand.graph.optimization.kruskal",
+      "cand.graph.optimization.prim",
+      "cand.graph.optimization.topological_sort",
+      "cand.graph.optimization.critical_path"
+    ],
+    "persistent": [
+      "cand.ds.persistent_advanced.persistent_treap",
+      "cand.ds.persistent_advanced.persistent_bit",
+      "cand.ds.persistent_advanced.persistent_segment_tree",
+      "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "cand.ds.persistent_advanced.segment_tree_beats"
+    ],
+    "data_structure": [
+      "cand.ds.persistent_advanced.persistent_treap",
+      "cand.ds.persistent_advanced.persistent_bit",
+      "cand.ds.persistent_advanced.persistent_segment_tree",
+      "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "cand.ds.persistent_advanced.segment_tree_beats"
+    ],
+    "advanced": [
+      "cand.ds.persistent_advanced.persistent_treap",
+      "cand.ds.persistent_advanced.persistent_bit",
+      "cand.ds.persistent_advanced.persistent_segment_tree",
+      "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "cand.ds.persistent_advanced.segment_tree_beats"
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "candidate_id": "cand.ds.li_chao_tree.on_tree",
+    "item_id": "3.13.158",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.rollback",
+    "item_id": "3.13.159",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.lazy_deletion_heap",
+    "item_id": "3.13.160",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.persistent_heap",
+    "item_id": "3.13.161",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_min_max_sum",
+    "item_id": "3.13.162",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.heap_with_decrease_key",
+    "item_id": "3.13.163",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.double_ended_priority_queue",
+    "item_id": "3.13.164",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.range_modulo",
+    "item_id": "3.13.165",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.maximum_query",
+    "item_id": "3.13.166",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.li_chao_tree.minimum_query",
+    "item_id": "3.13.167",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_amortized_analysis",
+    "item_id": "3.13.168",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_proof",
+    "item_id": "3.13.169",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.heap_mergeable.meldable_priority_queue",
+    "item_id": "3.13.170",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.beats_with_assignment",
+    "item_id": "3.13.171",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.segment_tree_beats.second_maximum_invariant",
+    "item_id": "3.13.172",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+    "item_id": "3.13.173",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+    "item_id": "3.13.174",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+    "item_id": "3.13.175",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+    "item_id": "3.13.176",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+    "item_id": "3.13.177",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+    "item_id": "3.13.178",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+    "item_id": "3.13.179",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+    "item_id": "3.13.180",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+    "item_id": "3.13.181",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "batch_id": "batch6_fallback24",
+    "risk_band": "green"
+  }
+]

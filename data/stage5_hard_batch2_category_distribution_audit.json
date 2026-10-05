@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "generated_at": "2026-05-28T14:19:31.551603+00:00",
+    "audit_type": "category_distribution",
+    "batch2_item_count": 600,
+    "main_graph_modified": false,
+    "io_v4_4_modified": false,
+    "content_modified": false
+  },
+  "original_merge_report_distribution": {
+    "算法": 255,
+    "数据结构": 145,
+    "数学": 200,
+    "total": 600
+  },
+  "checkpoint_report_distribution": {
+    "algorithm": 433,
+    "data_structure": 0,
+    "math": 167,
+    "total": 600
+  },
+  "corrected_distribution": {
+    "by_candidate_category": {
+      "算法": 255,
+      "数据结构": 145,
+      "数学": 200
+    },
+    "by_item_category_field": {
+      "算法": 255,
+      "数据结构": 145,
+      "数学": 200
+    },
+    "by_graph_section_parent": {
+      "算法": 330,
+      "数据结构": 103,
+      "算法竞赛数学": 167
+    },
+    "by_corrected_section_prefix": {
+      "算法": 330,
+      "数据结构": 103,
+      "数学": 167
+    }
+  },
+  "root_cause": {
+    "file": "_gen_full_chain_checkpoint.py",
+    "line": 89,
+    "buggy_code": "if sec_prefix in (\"2\", \"3\"): algo_count += 1",
+    "explanation": "Section 3.x = 数据结构, but script treats both 2.x and 3.x as algorithm. ds_count is never incremented.",
+    "fix": "if sec_prefix == \"2\": algo_count += 1\\nelif sec_prefix == \"3\": ds_count += 1"
+  },
+  "impact_assessment": {
+    "main_graph_correct": true,
+    "io_v4_4_correct": true,
+    "content_correct": true,
+    "only_report_bug": true,
+    "item_category_field_correct": true,
+    "candidate_category_correct": true
+  },
+  "cross_category_items": {
+    "数据结构_in_2x_sections": 42,
+    "算法_in_3x_sections": 0,
+    "note": "Items may be in different section than their candidate_category due to section assignment during merge"
+  },
+  "section_distribution": {
+    "2.20": 120,
+    "4.1": 100,
+    "3.13": 90,
+    "2.8": 78,
+    "4.3": 64,
+    "2.1": 35,
+    "2.17": 33,
+    "2.6": 30,
+    "2.7": 23,
+    "3.7": 13,
+    "2.4": 7,
+    "2.9": 4,
+    "4.7": 3
+  },
+  "conclusion": {
+    "is_checkpoint_report_wrong": true,
+    "is_data_wrong": false,
+    "needs_graph_fix": false,
+    "needs_io_v4_4_fix": false,
+    "needs_content_fix": false,
+    "needs_checkpoint_report_regen": true,
+    "can_continue_batch3": true
+  }
+}

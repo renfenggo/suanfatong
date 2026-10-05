@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T15:12:10.190861+00:00",
+    "main_graph_modified": false
+  },
+  "readiness": {
+    "baseline_item_count": 3240,
+    "relocation_count": 27,
+    "recommendation": "ready_for_1号线程_section_relocation_stage5_hard_batch2_full600",
+    "expected_item_count_after_relocation": 3240,
+    "needs_new_section": false,
+    "id_conflicts": [],
+    "dangling_ref_risk": false,
+    "cycle_risk": false,
+    "manual_review_candidates": [],
+    "direct_pre_refs_to_relocated": 0,
+    "resolved_pre_refs_to_relocated": 0,
+    "rel_refs_to_relocated": 0
+  }
+}

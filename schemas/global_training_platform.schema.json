@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Global Training Platform Dataset",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "knowledge_items": {
+      "type": "array",
+      "items": {
+        "$ref": "knowledge_item.schema.json"
+      }
+    },
+    "problem_patterns": {
+      "type": "array",
+      "items": {
+        "$ref": "problem_pattern.schema.json"
+      }
+    },
+    "problem_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "problem_ref.schema.json"
+      }
+    },
+    "i18n_terms": {
+      "type": "array",
+      "items": {
+        "$ref": "i18n_term.schema.json"
+      }
+    },
+    "learning_paths": {
+      "type": "array",
+      "items": {
+        "$ref": "learning_path.schema.json"
+      }
+    }
+  },
+  "required": [
+    "knowledge_items"
+  ]
+}

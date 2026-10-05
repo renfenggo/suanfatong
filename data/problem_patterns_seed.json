@@ -1,0 +1,562 @@
+[
+  {
+    "pattern_id": "pat.two_pointers.opposite",
+    "name": "双指针",
+    "en_name": "Two Pointers",
+    "category": "Array/String Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.5.1"
+    ],
+    "related_items": [
+      "2.5.12"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "beginner"
+    ],
+    "audience": [
+      "primary_beginner",
+      "middle_school_oi"
+    ],
+    "difficulty": "beginner",
+    "visibility": "core",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.two_pointers.opposite"
+  },
+  {
+    "pattern_id": "pat.sliding_window.variable",
+    "name": "滑动窗口",
+    "en_name": "Sliding Window",
+    "category": "Array/String Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.5.4"
+    ],
+    "related_items": [
+      "3.2.5"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "beginner"
+    ],
+    "audience": [
+      "primary_beginner",
+      "middle_school_oi"
+    ],
+    "difficulty": "beginner",
+    "visibility": "core",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.sliding_window.variable"
+  },
+  {
+    "pattern_id": "pat.prefix_sum.range_query",
+    "name": "前缀和区间查询",
+    "en_name": "Prefix Sum Range Query",
+    "category": "Range Query Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.4.1"
+    ],
+    "related_items": [
+      "3.7.1"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "beginner"
+    ],
+    "audience": [
+      "primary_beginner",
+      "middle_school_oi"
+    ],
+    "difficulty": "beginner",
+    "visibility": "core",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.prefix_sum.range_query"
+  },
+  {
+    "pattern_id": "pat.monotonic_stack.next_greater",
+    "name": "单调栈 next greater",
+    "en_name": "Monotonic Stack Next Greater",
+    "category": "Stack Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "3.2.4"
+    ],
+    "related_items": [
+      "2.5.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.monotonic_stack.next_greater"
+  },
+  {
+    "pattern_id": "pat.heap.top_k",
+    "name": "Top K",
+    "en_name": "Top K with Heap",
+    "category": "Heap Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "3.2.6"
+    ],
+    "related_items": [
+      "2.2.10"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.heap.top_k"
+  },
+  {
+    "pattern_id": "pat.binary_search.answer",
+    "name": "二分答案",
+    "en_name": "Binary Search on Answer",
+    "category": "Search Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.3.6"
+    ],
+    "related_items": [
+      "2.3.7",
+      "2.3.8"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.binary_search.answer"
+  },
+  {
+    "pattern_id": "pat.backtracking.subsets",
+    "name": "回溯子集",
+    "en_name": "Backtracking Subsets",
+    "category": "Search Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.7.4"
+    ],
+    "related_items": [
+      "2.1.1"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "beginner"
+    ],
+    "audience": [
+      "primary_beginner",
+      "middle_school_oi"
+    ],
+    "difficulty": "beginner",
+    "visibility": "core",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.backtracking.subsets"
+  },
+  {
+    "pattern_id": "pat.grid.islands",
+    "name": "岛屿问题",
+    "en_name": "Grid Islands",
+    "category": "Graph/Search Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.7.1",
+      "2.7.2"
+    ],
+    "related_items": [
+      "2.9.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "beginner"
+    ],
+    "audience": [
+      "primary_beginner",
+      "middle_school_oi"
+    ],
+    "difficulty": "beginner",
+    "visibility": "core",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.grid.islands"
+  },
+  {
+    "pattern_id": "pat.tree.path_query",
+    "name": "树上路径",
+    "en_name": "Tree Path Query",
+    "category": "Tree Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.14.2"
+    ],
+    "related_items": [
+      "2.14.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.tree.path_query"
+  },
+  {
+    "pattern_id": "pat.graph.shortest_path_modeling",
+    "name": "最短路建模",
+    "en_name": "Shortest Path Modeling",
+    "category": "Graph Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.13.1"
+    ],
+    "related_items": [
+      "2.9.3"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.graph.shortest_path_modeling"
+  },
+  {
+    "pattern_id": "pat.dp.knapsack",
+    "name": "背包 DP",
+    "en_name": "Knapsack DP",
+    "category": "DP Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.8.7"
+    ],
+    "related_items": [
+      "2.8.8",
+      "2.8.9"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dp.knapsack"
+  },
+  {
+    "pattern_id": "pat.dp.interval",
+    "name": "区间 DP",
+    "en_name": "Interval DP",
+    "category": "DP Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.8.12"
+    ],
+    "related_items": [
+      "2.8.3"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dp.interval"
+  },
+  {
+    "pattern_id": "pat.dp.tree",
+    "name": "树形 DP",
+    "en_name": "Tree DP",
+    "category": "DP Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.8.13"
+    ],
+    "related_items": [
+      "2.9.1"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dp.tree"
+  },
+  {
+    "pattern_id": "pat.dp.bitmask",
+    "name": "状压 DP",
+    "en_name": "Bitmask DP",
+    "category": "DP Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.8.20"
+    ],
+    "related_items": [
+      "2.11.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dp.bitmask"
+  },
+  {
+    "pattern_id": "pat.dp.digit",
+    "name": "数位 DP",
+    "en_name": "Digit DP",
+    "category": "DP Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.8.21"
+    ],
+    "related_items": [
+      "2.8.6"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dp.digit"
+  },
+  {
+    "pattern_id": "pat.segment_tree.range_update",
+    "name": "线段树区间维护",
+    "en_name": "Segment Tree Range Maintenance",
+    "category": "Data Structure Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "3.7.2"
+    ],
+    "related_items": [
+      "3.7.3"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.segment_tree.range_update"
+  },
+  {
+    "pattern_id": "pat.dsu.merge_components",
+    "name": "并查集合并",
+    "en_name": "DSU Component Merging",
+    "category": "Data Structure Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "3.4.1"
+    ],
+    "related_items": [
+      "3.4.2"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.dsu.merge_components"
+  },
+  {
+    "pattern_id": "pat.flow.modeling",
+    "name": "网络流建模",
+    "en_name": "Network Flow Modeling",
+    "category": "Graph Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.16.3"
+    ],
+    "related_items": [
+      "2.16.5"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "expert",
+    "visibility": "expert",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.flow.modeling"
+  },
+  {
+    "pattern_id": "pat.string.matching",
+    "name": "字符串匹配",
+    "en_name": "String Matching",
+    "category": "String Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "2.10.2"
+    ],
+    "related_items": [
+      "2.10.3",
+      "2.10.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "intermediate",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.string.matching"
+  },
+  {
+    "pattern_id": "pat.geometry.sweep_line",
+    "name": "扫描线",
+    "en_name": "Sweep Line",
+    "category": "Geometry Patterns",
+    "description": "",
+    "recognition_signals": [],
+    "required_items": [
+      "3.7.2",
+      "4.7.42"
+    ],
+    "related_items": [
+      "2.2.4"
+    ],
+    "common_transforms": [],
+    "typical_complexities": [],
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "audience": [
+      "university_icpc",
+      "advanced_competitive_programmer"
+    ],
+    "difficulty": "advanced",
+    "visibility": "advanced",
+    "example_problem_refs": [],
+    "i18n_key": "pattern.geometry.sweep_line"
+  }
+]

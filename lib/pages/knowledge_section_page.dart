@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state/knowledge_graph_provider.dart';
+import '../state/learning_structure_provider.dart';
 import '../models/knowledge_section.dart';
 import '../models/knowledge_item.dart';
+import '../models/knowledge_graph.dart';
+import '../widgets/knowledge/section/learning_path_panel.dart';
+import '../widgets/knowledge/section/cross_section_prerequisite_panel.dart';
+import '../widgets/knowledge/section/layered_knowledge_list.dart';
 
 class KnowledgeSectionPage extends ConsumerWidget {
   final String sectionId;
@@ -22,7 +27,7 @@ class KnowledgeSectionPage extends ConsumerWidget {
             if (section == null) {
               return _buildNotFound(context);
             }
-            return _buildContent(context, section, graph);
+            return _buildContent(context, ref, section, graph);
           },
           loading: () => const Center(child: CircularProgressIndicator()),
           error:
@@ -64,9 +69,22 @@ class KnowledgeSectionPage extends ConsumerWidget {
 
   Widget _buildContent(
     BuildContext context,
+    WidgetRef ref,
     KnowledgeSection section,
-    dynamic graph,
+    KnowledgeGraph graph,
   ) {
+    // 监听学习路径和分层数据
+    final learningPathAsync = ref.watch(
+      sectionLearningPathProvider(sectionId),
+    );
+    final collapsePolicyAsync = ref.watch(
+      sectionCollapsePolicyProvider(sectionId),
+    );
+
+    // 收集所有 itemId 用于查询分层
+    final allItemIds = section.items.map((e) => e.id).toList();
+    final itemLayersAsync = ref.watch(itemFrontendLayersProvider(allItemIds));
+
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
       child: Column(
@@ -82,15 +100,92 @@ class KnowledgeSectionPage extends ConsumerWidget {
             _buildTagRow('相关章节', section.rel, const Color(0xFF27AE60)),
             const SizedBox(height: 12),
           ],
+
+          // 学习路径区域（仅有数据时显示，优雅降级）
+          learningPathAsync.when(
+            data: (learningPath) {
+              if (learningPath == null || !learningPath.hasPathData()) {
+                return const SizedBox.shrink();
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 跨章节前置区域（仅有数据时显示）
+                  if (learningPath.hasCrossSectionPrerequisites()) ...[
+                    CrossSectionPrerequisitePanel(
+                      prerequisites: learningPath.crossSectionPrerequisites,
+                      onItemTap: (itemId) {
+                        Navigator.pushNamed(
+                          context,
+                          '/knowledge/item',
+                          arguments: itemId,
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                  ],
+                  // 学习路径面板
+                  LearningPathPanel(
+                    learningPath: learningPath,
+                    itemNameResolver: (itemId) {
+                      final item = graph.itemById(itemId);
+                      return item?.name;
+                    },
+                    onItemTap: (itemId) {
+                      Navigator.pushNamed(
+                        context,
+                        '/knowledge/item',
+                        arguments: itemId,
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                ],
+              );
+            },
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+          ),
+
           const Divider(height: 24),
           Text(
             '知识点（${section.items.length}）',
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          ...section.items.map((item) => _ItemCard(item: item)),
+
+          // 分层知识点列表（替代原来的平铺列表）
+          itemLayersAsync.when(
+            data: (itemLayers) {
+              final collapsePolicy = collapsePolicyAsync.maybeWhen(
+                data: (p) => p,
+                orElse: () => null,
+              );
+              return LayeredKnowledgeList(
+                items: section.items,
+                itemLayers: itemLayers,
+                collapsePolicy: collapsePolicy,
+                onItemTap: (item) {
+                  Navigator.pushNamed(
+                    context,
+                    '/knowledge/item',
+                    arguments: item.id,
+                  );
+                },
+              );
+            },
+            loading: () => _buildFallbackList(section),
+            error: (_, __) => _buildFallbackList(section),
+          ),
         ],
       ),
+    );
+  }
+
+  /// 降级方案：不分层，直接平铺（与原有 UI 一致）
+  Widget _buildFallbackList(KnowledgeSection section) {
+    return Column(
+      children: section.items.map((item) => _ItemCard(item: item)).toList(),
     );
   }
 

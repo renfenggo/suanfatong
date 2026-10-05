@@ -1,0 +1,1120 @@
+[
+  {
+    "pattern_id": "pat.two_sum",
+    "name": "两数之和模式",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Not duplicate with Prefix Sum + HashMap: complement lookup on pair elements has different recognition signal from historical prefix-sum counting."
+  },
+  {
+    "pattern_id": "pat.prefix_sum_hashmap",
+    "name": "前缀和 + 哈希表",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Not duplicate with Two Sum: this pattern targets subarray/range sums through prefix differences and count maps."
+  },
+  {
+    "pattern_id": "pat.sliding_window_fixed_size",
+    "name": "定长滑动窗口",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [],
+    "suggested_patch": {
+      "recognition_signals": [
+        "窗口长度固定为 k",
+        "每步恰好移入一个元素并移出一个元素",
+        "连续子数组/子串的和、计数或最值可增量维护"
+      ],
+      "description": "定长滑动窗口用于窗口大小固定的连续段问题，核心边界是长度不变而非条件驱动收缩。"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.sliding_window_variable_size",
+    "name": "变长滑动窗口",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [],
+    "suggested_patch": {
+      "recognition_signals": [
+        "窗口长度由合法性条件决定",
+        "右端扩张后可能需要反复移动左端",
+        "合法性随端点移动具有单调或可维护性质"
+      ],
+      "description": "变长滑动窗口用于最长/最短满足条件的连续段问题，核心边界是用左端收缩恢复合法性。"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.fast_slow_pointers",
+    "name": "快慢指针",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.monotonic_stack_next_greater",
+    "name": "单调栈求下一个更大元素",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.top_k_frequent",
+    "name": "高频 Top K",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.k_way_merge",
+    "name": "K 路归并",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.binary_search_on_answer",
+    "name": "答案二分",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [],
+    "suggested_patch": {
+      "required_items": [
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2"
+      ],
+      "description": "答案二分模式用于把最小可行值/最大可行值问题转化为单调判定函数；required_items 保持为二分查找，判定函数所需算法只放入 related_items 或题单层。"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.merge_intervals",
+    "name": "区间合并",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.interval_sweep_events",
+    "name": "区间事件扫描",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.subarray_product_window",
+    "name": "乘积约束窗口",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.palindrome_expand",
+    "name": "中心扩展回文",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.linked_list_reverse",
+    "name": "链表原地反转",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.tree_level_order",
+    "name": "树的层序遍历",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.valid_parentheses_stack",
+    "name": "括号匹配栈",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.hash_dedup_seen",
+    "name": "哈希去重与已访问集合",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.matrix_spiral_simulation",
+    "name": "矩阵边界模拟",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.backtracking_combinations",
+    "name": "组合回溯",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.permutation_used_array",
+    "name": "排列回溯 used 数组",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.island_problems",
+    "name": "岛屿问题",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.word_ladder",
+    "name": "单词接龙",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.course_schedule",
+    "name": "课程表依赖",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.bipartite_coloring",
+    "name": "二分图染色",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.multi_source_bfs",
+    "name": "多源 BFS",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.zero_one_bfs",
+    "name": "0-1 BFS 模式",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.state_compressed_bfs",
+    "name": "状态压缩 BFS",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.topological_longest_path_dag",
+    "name": "DAG 拓扑 DP",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.connected_components",
+    "name": "连通块分解",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.cycle_detection_undirected",
+    "name": "无向图判环",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "Pattern is clear enough for Batch1 and can stay in the pattern layer."
+  },
+  {
+    "pattern_id": "pat.shortest_path_modeling",
+    "name": "最短路建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.difference_constraints_modeling",
+    "name": "差分约束建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "description": "差分约束建模作为 stage3b 同步 pattern 保留在模式层，用于识别 x_j - x_i <= c 这类题面约束并连接到最短路判可行；不向主图谱重复新增 knowledge_item。",
+      "visibility": "advanced"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.flow_modeling",
+    "name": "网络流建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "A",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "name": "基础网络流建模",
+      "en_name": "Basic Flow Modeling",
+      "description": "基础网络流建模只覆盖源汇、容量、守恒和最大流可行性；最小割选择、最大权闭合、费用流、上下界流应作为独立子模式。",
+      "common_transforms": [
+        "把供给/需求转为源汇边",
+        "容量表达资源上限或选择次数",
+        "只保留最大流/可行流语义，最小割和费用目标交给子模式"
+      ],
+      "related_items": [
+        "2.16.5"
+      ]
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.two_sat_modeling",
+    "name": "2-SAT 建模",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "A",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.9.1"
+      ],
+      "description": "2-SAT 建模保留为图论建模模式；当前主图谱缺少强连通分量直接 item 时，required_items 暂挂拓扑/有向图基础，Fix 阶段应补充或改映射到 SCC 相关 item。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.bipartite_matching_modeling",
+    "name": "二分图匹配建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.min_cut_selection",
+    "name": "最小割选择建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.project_selection_closure",
+    "name": "最大权闭合子图",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "description": "最大权闭合子图/项目选择作为 stage3b 同步 pattern，强调选择依赖到最小割的题型转换，不作为新的主图谱知识点合并。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.min_cost_flow_assignment",
+    "name": "费用流分配建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.dag_dependency_modeling",
+    "name": "DAG 依赖建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.grid_graph_modeling",
+    "name": "网格图建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.time_expanded_graph",
+    "name": "时间展开图建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.layered_graph_shortest_path",
+    "name": "分层图最短路",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.complement_graph_modeling",
+    "name": "补图搜索建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.game_graph_retrograde",
+    "name": "博弈图逆推",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.knapsack_dp",
+    "name": "背包 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Approved as umbrella 0/1 knapsack pattern; complete and multiple knapsack entries have distinct reuse/count boundaries."
+  },
+  {
+    "pattern_id": "pat.complete_knapsack_dp",
+    "name": "完全背包 DP",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.multiple_knapsack_binary_split",
+    "name": "多重背包二进制拆分",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.interval_dp",
+    "name": "区间 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Approved: interval boundary and split-point transform are distinct from generic linear DP."
+  },
+  {
+    "pattern_id": "pat.tree_dp",
+    "name": "树形 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Approved: subtree merge pattern is distinct from rerooting and tree query patterns."
+  },
+  {
+    "pattern_id": "pat.digit_dp",
+    "name": "数位 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Approved: digit/tight/leading-zero state signals make it a clear DP pattern."
+  },
+  {
+    "pattern_id": "pat.automaton_dp",
+    "name": "自动机 DP 模式",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "related_items": [
+        "2.10.2",
+        "2.10.4",
+        "2.8.3"
+      ],
+      "description": "自动机 DP 应明确是“模式串状态机 + DP”的组合题型，常由禁用子串、必须出现模式、多模式计数触发。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.bitmask_dp",
+    "name": "状压 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.linear_dp_sequence",
+    "name": "序列线性 DP",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.lis_dp",
+    "name": "最长递增子序列模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.lcs_dp",
+    "name": "最长公共子序列模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.edit_distance_dp",
+    "name": "编辑距离 DP",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.probability_dp",
+    "name": "概率 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.expectation_dp",
+    "name": "期望 DP 模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.profile_dp",
+    "name": "轮廓线 DP",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "description": "轮廓线 DP 是网格局部连通/铺设类模式，需补充宽度较小、逐格推进、mask 表示轮廓的识别信号。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.divide_conquer_dp_optimization",
+    "name": "分治 DP 优化",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.monotone_queue_dp",
+    "name": "单调队列 DP 优化",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.segment_tree_range_update",
+    "name": "线段树区间更新",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.dsu_connectivity",
+    "name": "并查集连通性",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.fenwick_prefix_maintenance",
+    "name": "树状数组前缀维护",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.monotonic_queue_window_max",
+    "name": "单调队列窗口最值",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.order_statistic_maintenance",
+    "name": "动态第 k 小维护",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.range_mode_offline",
+    "name": "区间众数离线维护",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.rollback_dsu",
+    "name": "可撤销并查集",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.persistent_segment_tree_kth",
+    "name": "主席树第 k 小",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "description": "主席树第 k 小是典型区间 order statistic 维护模式，但名称偏模板；Fix 阶段建议改名为 Persistent Range K-th Query Pattern。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.lazy_tag_composition",
+    "name": "懒标记组合",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.sparse_table_idempotent",
+    "name": "ST 表幂等查询",
+    "review_result": "move_to_knowledge_items",
+    "new_review_priority": "A",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "ST 表幂等查询更像数据结构知识点/模板，若留在 patterns 应改名为 Static Idempotent Range Query Pattern 并强化题面信号。"
+    },
+    "reason": "Entry is currently phrased as an algorithm/data-structure technique rather than a reusable problem-pattern family."
+  },
+  {
+    "pattern_id": "pat.heap_lazy_deletion",
+    "name": "堆懒删除",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.trie_prefix_query",
+    "name": "Trie 前缀查询",
+    "review_result": "merge_with_existing",
+    "new_review_priority": "A",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "与 Trie Multi-pattern Prefix Matching 近重复；Fix 阶段建议转为 knowledge_item 关联或并入字符串前缀匹配模式。"
+    },
+    "reason": "Boundary overlaps with a broader existing pattern and should be merged or made explicitly subordinate."
+  },
+  {
+    "pattern_id": "pat.coordinate_compression",
+    "name": "坐标离散化维护",
+    "review_result": "move_to_knowledge_items",
+    "new_review_priority": "A",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "坐标离散化是通用技术知识点，不宜作为独立 problem_pattern；建议并入离散化扫描、树状数组/线段树维护等模式的 common_transforms。"
+    },
+    "reason": "Entry is currently phrased as an algorithm/data-structure technique rather than a reusable problem-pattern family."
+  },
+  {
+    "pattern_id": "pat.tree_path_query",
+    "name": "树上路径查询",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "description": "树上路径查询模式是组合型题型模式：用 LCA 定位路径，用 HLD/欧拉序等把路径拆成可维护区间；不替代 LCA 或 HLD 知识点。"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.lca_binary_lifting",
+    "name": "LCA 倍增",
+    "review_result": "merge_with_existing",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "category": "Tree Query Patterns",
+      "visibility": "optional",
+      "description": "LCA 倍增更接近树查询技术模板；若保留在 pattern 层，应定位为 Tree Path Query 的轻量子模式。"
+    },
+    "reason": "Boundary overlaps with a broader existing pattern and should be merged or made explicitly subordinate."
+  },
+  {
+    "pattern_id": "pat.rerooting_tree_dp",
+    "name": "换根 DP",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.virtual_tree_pattern",
+    "name": "虚树建模",
+    "review_result": "needs_fix",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "related_items": [
+        "2.14.2",
+        "2.7.1"
+      ],
+      "description": "虚树模式用于关键点集合反复变化的树上查询/DP，边界不同于一般 LCA 查询：先按 DFS 序压缩相关路径，再在小树上求解。"
+    },
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.subtree_query_euler",
+    "name": "子树查询欧拉序",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.centroid_decomposition_query",
+    "name": "点分治查询",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.kmp_string_matching",
+    "name": "KMP 字符串匹配",
+    "review_result": "move_to_knowledge_items",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "KMP 是知识点名，作为 pattern 时需强调单模式匹配题型；否则应移动回 knowledge_item 层。"
+    },
+    "reason": "Entry is currently phrased as an algorithm/data-structure technique rather than a reusable problem-pattern family."
+  },
+  {
+    "pattern_id": "pat.rabin_karp_hash",
+    "name": "滚动哈希匹配",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.trie_multi_pattern",
+    "name": "Trie 多模式前缀匹配",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.aho_corasick_matching",
+    "name": "AC 自动机多模式匹配",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.z_algorithm_pattern",
+    "name": "Z 算法匹配",
+    "review_result": "move_to_knowledge_items",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "Z Algorithm 是算法知识点名，建议在 Fix 阶段与 KMP 单模式匹配边界统一。"
+    },
+    "reason": "Entry is currently phrased as an algorithm/data-structure technique rather than a reusable problem-pattern family."
+  },
+  {
+    "pattern_id": "pat.suffix_array_lcp_query",
+    "name": "后缀数组 + LCP",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "后缀数组 + LCP 偏知识点组合，建议改成 Substring Ordering Query Pattern 或保持人工审核。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.manacher_palindrome",
+    "name": "Manacher 回文",
+    "review_result": "move_to_knowledge_items",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "review_note": "Manacher 是算法知识点名；如果模式层保留，应改为 Linear Palindrome Radius Pattern。"
+    },
+    "reason": "Entry is currently phrased as an algorithm/data-structure technique rather than a reusable problem-pattern family."
+  },
+  {
+    "pattern_id": "pat.string_dp_wildcard",
+    "name": "通配符匹配 DP",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.offline_query_pattern",
+    "name": "离线查询模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.sweep_line_pattern",
+    "name": "扫描线模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.meet_in_the_middle",
+    "name": "折半搜索",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.constructive_invariant",
+    "name": "构造题不变量",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.greedy_exchange_argument",
+    "name": "贪心交换论证",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.binary_lifting_state_jump",
+    "name": "倍增状态跳转",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.modular_counting_pattern",
+    "name": "取模计数模式",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.inclusion_exclusion_counting",
+    "name": "容斥计数",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.coordinate_sweep_compression",
+    "name": "离散化扫描",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  },
+  {
+    "pattern_id": "pat.divide_conquer_offline",
+    "name": "整体二分",
+    "review_result": "keep_manual_review",
+    "new_review_priority": "B",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {
+      "name": "整体二分模式",
+      "en_name": "Parallel Binary Search Pattern",
+      "description": "整体二分模式用于多个查询共同寻找最早/最小可行答案；它是离线答案二分，不是普通分治算法。"
+    },
+    "reason": "Valuable pattern, but needs human confirmation of item mapping, naming, or layer boundary before applying fixes."
+  },
+  {
+    "pattern_id": "pat.randomized_hash_check",
+    "name": "随机哈希判等",
+    "review_result": "needs_fix",
+    "new_review_priority": "C",
+    "issues": [
+      "related_items include generic placeholders; consider domain-specific related_items in fix phase"
+    ],
+    "suggested_patch": {},
+    "reason": "Pattern is useful but needs clearer boundary, mapping, or wording before final acceptance."
+  }
+]

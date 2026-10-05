@@ -1,0 +1,396 @@
+{
+  "batch_id": "stage3g_400_plan",
+  "meta": {
+    "title": "Stage3G 400 Candidate Pool Rebuild Plan",
+    "generated_by": "GLM5 (2号线程)",
+    "generated_at": "2026-05-25T14:02:10.000Z",
+    "main_graph_modified": false,
+    "formal_candidates_generated": false,
+    "merge_executed": false
+  },
+  "current_state_after_stage3f": {
+    "item_count": 1765,
+    "section_count": 65,
+    "validate_only_passed": true,
+    "stage3f_completed_batches": [
+      "Batch1(20)",
+      "Batch2(20)",
+      "Batch3(40)",
+      "Batch4(49)"
+    ],
+    "stage3f_total_added": 129,
+    "stage3f_net_added_after_prune": 124,
+    "item_count_before_stage3f": 1607,
+    "pool_remaining": 0,
+    "recommend_end_stage3f": true
+  },
+  "stage3g_400_plan": {
+    "total_planned_candidates": 400,
+    "planned_distribution_by_topic": {
+      "C++_advanced": {
+        "display": "C++ 语法高级细节",
+        "sections": [
+          "1.3",
+          "1.7",
+          "1.8"
+        ],
+        "planned_count": 25,
+        "priority": "medium",
+        "examples": [
+          "右值引用与移动语义",
+          "模板元编程基础",
+          "constexpr与编译期计算",
+          "异常安全与RAII",
+          "C++17/20新特性"
+        ]
+      },
+      "STL_details": {
+        "display": "STL 与常用库细节",
+        "sections": [
+          "1.8",
+          "3.2"
+        ],
+        "planned_count": 30,
+        "priority": "high",
+        "examples": [
+          "自定义分配器",
+          "迭代器失效分析",
+          "PB_ds库扩展",
+          "rope/可持久化数组",
+          "unorder_map哈希策略"
+        ]
+      },
+      "basic_algorithms_ext": {
+        "display": "基础算法扩展",
+        "sections": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4"
+        ],
+        "planned_count": 35,
+        "priority": "high",
+        "examples": [
+          "分治进阶：CDQ分治",
+          "整体二分",
+          "随机化算法",
+          "爬山与模拟退火",
+          "双向搜索进阶"
+        ]
+      },
+      "DP_topics": {
+        "display": "动态规划专题",
+        "sections": [
+          "2.8"
+        ],
+        "planned_count": 45,
+        "priority": "high",
+        "examples": [
+          "DP优化：决策单调性",
+          "DP优化：WQS二分",
+          "DP优化：斜率优化进阶",
+          "插头DP进阶",
+          "DP套DP"
+        ]
+      },
+      "graph_topics": {
+        "display": "图论专题",
+        "sections": [
+          "2.9",
+          "2.11",
+          "2.12",
+          "2.13",
+          "2.14",
+          "2.15",
+          "2.16",
+          "2.17",
+          "2.21"
+        ],
+        "planned_count": 55,
+        "priority": "high",
+        "examples": [
+          "图论建模进阶",
+          "网络流建模",
+          "费用流进阶",
+          "二分图高级应用",
+          "树分治"
+        ]
+      },
+      "string_topics": {
+        "display": "字符串专题",
+        "sections": [
+          "2.10",
+          "3.8"
+        ],
+        "planned_count": 35,
+        "priority": "high",
+        "examples": [
+          "字符串哈希进阶",
+          "后缀数组应用",
+          "后缀自动机应用",
+          "AC自动机DP",
+          "回文自动机"
+        ]
+      },
+      "data_structure_topics": {
+        "display": "数据结构专题",
+        "sections": [
+          "3.1",
+          "3.3",
+          "3.5",
+          "3.9",
+          "3.13"
+        ],
+        "planned_count": 50,
+        "priority": "high",
+        "examples": [
+          "树链剖分进阶",
+          "LCT应用",
+          "可持久化数据结构",
+          "分块与莫队",
+          "K-D Tree"
+        ]
+      },
+      "oi_math": {
+        "display": "信奥数学",
+        "sections": [
+          "4.1",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6"
+        ],
+        "planned_count": 40,
+        "priority": "high",
+        "examples": [
+          "数论进阶：杜教筛",
+          "多项式：FFT/NTT",
+          "多项式：生成函数",
+          "组合计数进阶",
+          "概率论进阶"
+        ]
+      },
+      "programming_skills": {
+        "display": "编程技巧",
+        "sections": [
+          "1.4",
+          "1.5",
+          "1.6",
+          "2.18"
+        ],
+        "planned_count": 25,
+        "priority": "medium",
+        "examples": [
+          "代码调试技巧",
+          "性能分析",
+          "对拍与测试",
+          "常用宏与模板",
+          "输入输出优化"
+        ]
+      },
+      "debug_methods": {
+        "display": "调试方法",
+        "sections": [
+          "2.18",
+          "5.5"
+        ],
+        "planned_count": 15,
+        "priority": "medium",
+        "examples": [
+          "gdb/lldb调试",
+          "内存检测",
+          "断言与日志",
+          "静态分析工具",
+          "常见bug模式"
+        ]
+      },
+      "contest_knowledge": {
+        "display": "比赛相关知识",
+        "sections": [
+          "5.5"
+        ],
+        "planned_count": 15,
+        "priority": "low",
+        "examples": [
+          "竞赛策略",
+          "时间复杂度估算",
+          "空间复杂度优化",
+          "IOI/ICPC赛制",
+          "常见罚时分析"
+        ]
+      },
+      "problem_modeling": {
+        "display": "题型建模方法",
+        "sections": [
+          "2.18"
+        ],
+        "planned_count": 30,
+        "priority": "high",
+        "examples": [
+          "构造题方法",
+          "交互题方法",
+          "提交答案题方法",
+          "模型转化技巧",
+          "贪心证明方法"
+        ]
+      }
+    },
+    "planned_distribution_by_risk": {
+      "green": 80,
+      "yellow": 180,
+      "medium": 100,
+      "red": 40
+    },
+    "planned_distribution_by_section": {
+      "2.1-2.4": 35,
+      "2.8": 45,
+      "2.9-2.17,2.21": 55,
+      "2.10,3.8": 35,
+      "3.1,3.3,3.5,3.9,3.13": 50,
+      "4.1,4.3,4.4,4.5,4.6": 40,
+      "1.3,1.7,1.8": 25,
+      "1.4,1.5,1.6,2.18": 55,
+      "5.5": 15,
+      "new_sections_needed": 50
+    },
+    "total": 400
+  },
+  "tier_strategy": {
+    "description": "400 候选分层策略",
+    "green": {
+      "count": 80,
+      "criteria": "高置信度，知识完整无重复，直接前置明确",
+      "priority_batches": "Batch1-Batch3"
+    },
+    "yellow": {
+      "count": 180,
+      "criteria": "有价值但需要复查依赖边界",
+      "priority_batches": "Batch2-Batch6"
+    },
+    "medium": {
+      "count": 100,
+      "criteria": "有价值但依赖或重复风险较高，需重点审查",
+      "priority_batches": "Batch5-Batch8"
+    },
+    "red": {
+      "count": 40,
+      "criteria": "暂不进入正式候选池，作为备选",
+      "priority_batches": "备选"
+    }
+  },
+  "batch_execution_plan": [
+    {
+      "batch": "Stage3G Batch1",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch2",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch3",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch4",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch5",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch6",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch7",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch8",
+      "recommended_size": 50,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch9",
+      "recommended_size": 40,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    },
+    {
+      "batch": "Stage3G Batch10",
+      "recommended_size": 40,
+      "steps": [
+        "候选计划 → 动态预审 → 全图谱查重 → 依赖清理 → Merge → Added Items Review → 重复删除/Fix Lite → 稳定检查点"
+      ]
+    }
+  ],
+  "recommended_flow_per_batch": [
+    "1. 候选计划：从400池中按分层策略选取N个候选",
+    "2. 动态预审：检查重复、依赖环、section分布、item_count",
+    "3. 全图谱查重：对比当前1765+节点，精确查重",
+    "4. 依赖清理：映射direct_pre为正式item_id，解决悬空引用",
+    "5. Merge：写入主图谱，更新items",
+    "6. Added Items Review：复查新增节点质量",
+    "7. 重复删除 / Fix Lite：处理Review发现的问题",
+    "8. 稳定检查点：记录当前状态，准备下一批"
+  ],
+  "dedup_strategy": {
+    "approach": "逐候选对比当前图谱所有1765个节点，检查name/alias/en_name完全匹配和模糊匹配",
+    "tools": [
+      "name_exact_match",
+      "name_fuzzy_match",
+      "alias_check",
+      "en_name_check",
+      "candidate_id_check"
+    ],
+    "threshold": "完全匹配直接排除；>80%相似标记 yellow/medium",
+    "execution": "在候选计划阶段动态执行，不进候选池时预标记"
+  },
+  "required_fields_per_candidate": [
+    "candidate_id",
+    "name",
+    "en_name",
+    "target_section",
+    "risk_band (green/yellow/medium/red)",
+    "suggested_parent_concept",
+    "direct_pre_name_suggestion (3-10 items)",
+    "may_belong_to_problem_patterns (true/false)",
+    "source (newly_proposed / carry_over_from_stage3f)"
+  ],
+  "conclusion": {
+    "main_graph_modified": false,
+    "formal_candidates_generated": false,
+    "merge_executed": false,
+    "recommend_end_stage3f": true,
+    "recommend_start_stage3g": true,
+    "stage3g_first_batch_size": 40,
+    "stage3g_total_batches": 10,
+    "note": "Stage3F 候选池已耗尽(129/129)。建议启动 Stage3G，重建 400 候选池，按 40-50 一批分 8-10 批合并。"
+  }
+}

@@ -1,0 +1,392 @@
+[
+  {
+    "item_id": "3.13.106",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖明确（时间复杂度+二分查找），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.107",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "needs_merge_or_collapse",
+    "reason": "明显过度拆分，建议合并或精简",
+    "issues": [
+      "所有节点都依赖同一个前置 3.13.9，可能存在过度拆分"
+    ],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个可持久化实现方法节点"
+    }
+  },
+  {
+    "item_id": "3.13.108",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "needs_merge_or_collapse",
+    "reason": "明显过度拆分，建议合并或精简",
+    "issues": [
+      "所有节点都依赖同一个前置 3.13.9，可能存在过度拆分"
+    ],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个可持久化实现方法节点"
+    }
+  },
+  {
+    "item_id": "3.13.109",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "needs_merge_or_collapse",
+    "reason": "明显过度拆分，建议合并或精简",
+    "issues": [
+      "所有节点都依赖同一个前置 3.13.9，可能存在过度拆分"
+    ],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个可持久化实现方法节点"
+    }
+  },
+  {
+    "item_id": "3.13.110",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "needs_merge_or_collapse",
+    "reason": "明显过度拆分，建议合并或精简",
+    "issues": [
+      "所有节点都依赖同一个前置 3.13.9，可能存在过度拆分"
+    ],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个可持久化实现方法节点"
+    }
+  },
+  {
+    "item_id": "3.13.111",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个 RMQ 变体都依赖 3.8.1，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个 RMQ 变体节点"
+    }
+  },
+  {
+    "item_id": "3.13.112",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个 RMQ 变体都依赖 3.8.1，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个 RMQ 变体节点"
+    }
+  },
+  {
+    "item_id": "3.13.113",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个 RMQ 变体都依赖 3.8.1，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个 RMQ 变体节点"
+    }
+  },
+  {
+    "item_id": "3.13.114",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个 RMQ 变体都依赖 3.8.1，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个 RMQ 变体节点"
+    }
+  },
+  {
+    "item_id": "3.13.115",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个 RMQ 变体都依赖 3.8.1，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个 RMQ 变体节点"
+    }
+  },
+  {
+    "item_id": "3.13.116",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（平衡树变体），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.117",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（平衡树变体），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.118",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（平衡树变体），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.119",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（平衡树变体），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.120",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（平衡树变体），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.121",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个简洁结构节点依赖相同前置，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个简洁结构节点"
+    }
+  },
+  {
+    "item_id": "3.13.122",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个简洁结构节点依赖相同前置，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个简洁结构节点"
+    }
+  },
+  {
+    "item_id": "3.13.123",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个简洁结构节点依赖相同前置，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个简洁结构节点"
+    }
+  },
+  {
+    "item_id": "3.13.124",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个简洁结构节点依赖相同前置，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个简洁结构节点"
+    }
+  },
+  {
+    "item_id": "3.13.125",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "B",
+    "action": "needs_merge_or_collapse",
+    "reason": "多个简洁结构节点依赖相同前置，可能过度拆分",
+    "issues": [],
+    "suggested_patch": {
+      "action": "merge_or_collapse",
+      "suggestion": "考虑合并多个简洁结构节点"
+    }
+  },
+  {
+    "item_id": "3.13.126",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（树基础+仙人掌图DP），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.127",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（树基础+仙人掌图DP），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.128",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（树基础+仙人掌图DP），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.129",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（树基础+仙人掌图DP），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "3.13.130",
+    "current_need_manual_review": true,
+    "new_need_manual_review": false,
+    "current_review_priority": "B",
+    "new_review_priority": "C",
+    "action": "approve",
+    "reason": "依赖清洗成功，依赖明确（树基础+仙人掌图DP），子专题合理",
+    "issues": [],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "2.21.124",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "keep_manual_review",
+    "reason": "高级网络流专题，依赖合理但需要人工审核边界",
+    "issues": [
+      "依赖主要依赖基础网络流，可能缺少关键前置"
+    ],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "2.21.125",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "keep_manual_review",
+    "reason": "高级网络流专题，依赖合理但需要人工审核边界",
+    "issues": [
+      "依赖主要依赖基础网络流，可能缺少关键前置"
+    ],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "2.21.126",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "keep_manual_review",
+    "reason": "高级网络流专题，依赖合理但需要人工审核边界",
+    "issues": [
+      "依赖主要依赖基础网络流，可能缺少关键前置"
+    ],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "2.21.127",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "keep_manual_review",
+    "reason": "高级网络流专题，依赖合理但需要人工审核边界",
+    "issues": [
+      "依赖主要依赖基础网络流，可能缺少关键前置"
+    ],
+    "suggested_patch": {}
+  },
+  {
+    "item_id": "2.21.128",
+    "current_need_manual_review": true,
+    "new_need_manual_review": true,
+    "current_review_priority": "A",
+    "new_review_priority": "A",
+    "action": "keep_manual_review",
+    "reason": "高级网络流专题，依赖合理但需要人工审核边界",
+    "issues": [
+      "依赖主要依赖基础网络流，可能缺少关键前置"
+    ],
+    "suggested_patch": {}
+  }
+]

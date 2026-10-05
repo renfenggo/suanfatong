@@ -1,0 +1,131 @@
+{
+  "check_type": "io_v4_4_2640_frontend_readiness",
+  "generated_at": "2026-05-26T16:54:43.000Z",
+  "io_v4_4_file": "assets/data/knowledge/io_v4_4.json",
+  "file_size_mb": 8.8,
+  "json_parse_valid": true,
+  "parse_time_ms": 51.2,
+  "item_count": 2640,
+  "section_count": 65,
+  "old_2165_preserved": 2165,
+  "stage5_475_present": 475,
+  "keepers_7_found": 7,
+  "keeper_details": [
+    {
+      "id": "2.8.202",
+      "name": "凸包维护 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 224
+    },
+    {
+      "id": "2.8.203",
+      "name": "分治转移 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 220
+    },
+    {
+      "id": "2.8.204",
+      "name": "队列维护 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 220
+    },
+    {
+      "id": "2.8.205",
+      "name": "线段树维护 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 230
+    },
+    {
+      "id": "2.8.206",
+      "name": "堆维护 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 220
+    },
+    {
+      "id": "2.8.207",
+      "name": "前缀最值 DP",
+      "direct_pre_count": 2,
+      "resolved_pre_count": 220
+    },
+    {
+      "id": "2.8.208",
+      "name": "后缀最值 DP",
+      "direct_pre_count": 3,
+      "resolved_pre_count": 237
+    }
+  ],
+  "removed_25_found_in_io_v4_4": [],
+  "dangling_refs": [],
+  "section_refs_in_direct_pre": [],
+  "duplicate_item_ids": [],
+  "required_field_issues": {},
+  "spot_check_old_20": 20,
+  "spot_check_new_30": 30,
+  "checks": {
+    "item_count_2640": true,
+    "section_count_65": true,
+    "old_2165_present": true,
+    "stage5_475_present": true,
+    "keepers_7_present": true,
+    "removed_25_absent": true,
+    "dangling_refs_zero": true,
+    "section_refs_in_direct_pre_zero": true,
+    "duplicates_zero": true,
+    "required_fields_complete": true,
+    "json_parse_valid": true
+  },
+  "total_checks_passed": 11,
+  "total_checks": 11,
+  "data_passed": true,
+  "main_graph_modified": false,
+  "frontend_code_modified": false,
+  "io_v4_4_modified": false,
+  "batch2_continued": false,
+  "flutter_analyze": {
+    "issues": 6,
+    "errors": 0,
+    "warnings": 0,
+    "info": 6,
+    "passed": true,
+    "notes": [
+      "6 info-level lints only: 2 unnecessary_string_escapes (fill_content.dart), 4 avoid_print (fill_content.dart, verify_dp.dart). All pre-existing, none related to 2640 data sync."
+    ]
+  },
+  "flutter_test": {
+    "total": 35,
+    "passed": 34,
+    "failed": 1,
+    "passed_ratio": 0.971,
+    "notes": [
+      "34/35 tests pass. 1 failure is pre-existing infrastructure issue (Binding not initialized) unrelated to 2640 data sync."
+    ]
+  },
+  "flutter_build_web": {
+    "passed": true,
+    "compile_time_ms": 2465,
+    "output_path": "build/web",
+    "artifact_io_v4_4_items": 2640,
+    "artifact_io_v4_4_size_mb": 8.8,
+    "notes": [
+      "flutter build web --release succeeded. io_v4_4.json correctly bundled. Icon font tree-shaking notice only (non-error)."
+    ]
+  },
+  "flutter_build_apk": {
+    "passed": true,
+    "compile_time_s": 21.6,
+    "output_path": "build/app/outputs/flutter-apk/app-debug.apk",
+    "notes": [
+      "flutter build apk --debug succeeded."
+    ]
+  },
+  "all_checks_passed": {
+    "data": true,
+    "flutter_analyze": true,
+    "flutter_test": "partial_34_35",
+    "flutter_build_web": true,
+    "flutter_build_apk": true
+  },
+  "overall_frontend_ready": true,
+  "data_modified": false,
+  "recommend_next": "ready_for_stage5_content_package_generation"
+}

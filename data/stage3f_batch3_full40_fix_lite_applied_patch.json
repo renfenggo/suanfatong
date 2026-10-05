@@ -1,0 +1,376 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Fix Lite Applied Patch",
+    "generated_by": "GLM5 (1号线程)",
+    "generated_at": "2026-05-25T17:12:42.124463",
+    "batch_id": "stage3f_batch3_full40",
+    "action": "review_status_downgrade",
+    "total_patches": 39,
+    "priority_c": 36,
+    "priority_b": 3,
+    "priority_a": 0,
+    "skipped_deleted": 1
+  },
+  "applied_patches": [
+    {
+      "item_id": "2.8.143",
+      "name": "DAG最长路DP",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.144",
+      "name": "状态压缩DP基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.145",
+      "name": "旅行商问题DP",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.146",
+      "name": "子集DP基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.147",
+      "name": "子集枚举优化",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.148",
+      "name": "自动机DP基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.149",
+      "name": "自动机矩阵DP",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.8.150",
+      "name": "概率DP基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.10.35",
+      "name": "Border树结构",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.10.36",
+      "name": "Manacher算法",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "B",
+      "new_need_manual_review": true,
+      "applied": true
+    },
+    {
+      "item_id": "2.10.37",
+      "name": "Boyer-Moore算法",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.10.38",
+      "name": "Rabin-Karp算法",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.8.15",
+      "name": "Lyndon分解基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.8.16",
+      "name": "Runs重复子串分析",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.1.35",
+      "name": "Legendre符号",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.1.36",
+      "name": "Tonelli-Shanks算法",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.1.37",
+      "name": "扩展中国剩余定理",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.1.38",
+      "name": "Garner算法",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.9.6",
+      "name": "欧拉函数应用",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.9.7",
+      "name": "杜教筛",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "B",
+      "new_need_manual_review": true,
+      "applied": true
+    },
+    {
+      "item_id": "4.9.8",
+      "name": "Burnside引理",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "4.9.9",
+      "name": "Polya计数定理",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.17.21",
+      "name": "快速沃尔什变换",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "B",
+      "new_need_manual_review": true,
+      "applied": true
+    },
+    {
+      "item_id": "2.17.22",
+      "name": "子集卷积",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.18.12",
+      "name": "斜率优化基础",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.18.13",
+      "name": "分治DP优化",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.18.14",
+      "name": "Knuth优化",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.18.15",
+      "name": "WQS二分优化",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.21.147",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.21.148",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.21.149",
+      "name": "强连通分量 DAG：Dominating Components",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.21.150",
+      "name": "动态图连通性：Edge Interval Model",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "2.21.151",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.186",
+      "name": "位集与线性基：Rollback Linear Basis",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.187",
+      "name": "位集与线性基：Maximum Xor Query",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.188",
+      "name": "位集与线性基：Rank Over Gf2",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.189",
+      "name": "位集与线性基：Basis With Deletion",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.190",
+      "name": "线段树变体：Split",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    },
+    {
+      "item_id": "3.13.191",
+      "name": "高级并查集：Parity",
+      "old_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_review_priority": "C",
+      "new_need_manual_review": false,
+      "applied": true
+    }
+  ],
+  "skipped_patches": [
+    {
+      "item_id": "2.10.39",
+      "name": "KMP算法详解",
+      "reason": "已通过 Duplicate Prune 删除，跳过"
+    }
+  ],
+  "source_review_file": "data/stage3f_batch3_full40_added_items_review.json",
+  "deleted_item_excluded": "2.10.39"
+}

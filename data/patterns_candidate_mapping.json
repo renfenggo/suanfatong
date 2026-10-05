@@ -1,0 +1,1448 @@
+{
+  "generated_at": "2026-05-22",
+  "thread": "thread3_problem_patterns_only",
+  "main_graph_modified": false,
+  "pattern_count": 99,
+  "item_mapping_policy": "required_items and related_items reference existing knowledge item ids only; no candidate was merged into the main graph.",
+  "unmapped_required_or_related_items": [],
+  "stage3b_sync_mappings": [
+    {
+      "source": "stage3b_problem_pattern_sync_candidates",
+      "source_candidate_id": "cand.graph.closure_model.project_selection",
+      "source_item_id": "2.21.29",
+      "suggested_pattern_id": "pat.graph_closure_model_project_selection",
+      "mapped_pattern_id": "pat.project_selection_closure",
+      "mapped_pattern_name": "Maximum Closure Project Selection",
+      "action": "synced_into_batch1",
+      "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+    },
+    {
+      "source": "stage3b_problem_pattern_sync_candidates",
+      "source_candidate_id": "cand.graph.graph_modeling.difference_constraints",
+      "source_item_id": "2.21.39",
+      "suggested_pattern_id": "pat.graph_graph_modeling_difference_constraints",
+      "mapped_pattern_id": "pat.difference_constraints_modeling",
+      "mapped_pattern_name": "Difference Constraints Modeling",
+      "action": "synced_into_batch1",
+      "reason": "Modeling-oriented topic should remain in graph for now but be mirrored/reviewed as a problem pattern."
+    }
+  ],
+  "pattern_to_required_items": [
+    {
+      "pattern_id": "pat.two_sum",
+      "en_name": "Two Sum Pattern",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.5",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.prefix_sum_hashmap",
+      "en_name": "Prefix Sum + HashMap",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.4.1",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.sliding_window_fixed_size",
+      "en_name": "Sliding Window Fixed Size",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.sliding_window_variable_size",
+      "en_name": "Sliding Window Variable Size",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.5.4",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.fast_slow_pointers",
+      "en_name": "Fast and Slow Pointers",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.5.12",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.monotonic_stack_next_greater",
+      "en_name": "Monotonic Stack Next Greater",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.top_k_frequent",
+      "en_name": "Top K Frequent",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.5",
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.k_way_merge",
+      "en_name": "K-way Merge",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.binary_search_on_answer",
+      "en_name": "Binary Search on Answer",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.merge_intervals",
+      "en_name": "Merge Intervals Pattern",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.interval_sweep_events",
+      "en_name": "Interval Sweep Events",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.subarray_product_window",
+      "en_name": "Subarray Product Window",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.palindrome_expand",
+      "en_name": "Palindrome Center Expansion",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.linked_list_reverse",
+      "en_name": "Linked List In-place Reverse",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.tree_level_order",
+      "en_name": "Tree Level Order Pattern",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.valid_parentheses_stack",
+      "en_name": "Valid Parentheses Stack",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.hash_dedup_seen",
+      "en_name": "Hash Set Seen Pattern",
+      "category": "Interview Patterns",
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.matrix_spiral_simulation",
+      "en_name": "Matrix Boundary Simulation",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.backtracking_combinations",
+      "en_name": "Backtracking Combinations",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.permutation_used_array",
+      "en_name": "Permutation Used Array",
+      "category": "Interview Patterns",
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.island_problems",
+      "en_name": "Island Problems",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.1",
+        "2.7.2",
+        "2.9.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.word_ladder",
+      "en_name": "Word Ladder",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.course_schedule",
+      "en_name": "Course Schedule",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.bipartite_coloring",
+      "en_name": "Bipartite Coloring Pattern",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.multi_source_bfs",
+      "en_name": "Multi-source BFS",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.zero_one_bfs",
+      "en_name": "0-1 BFS Pattern",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.state_compressed_bfs",
+      "en_name": "State-compressed BFS",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.2",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.topological_longest_path_dag",
+      "en_name": "DAG Topological DP",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.9.3",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.connected_components",
+      "en_name": "Connected Components Pattern",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.cycle_detection_undirected",
+      "en_name": "Undirected Cycle Detection",
+      "category": "Graph/Search Patterns",
+      "required_items": [
+        "2.7.1",
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.shortest_path_modeling",
+      "en_name": "Shortest Path Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.difference_constraints_modeling",
+      "en_name": "Difference Constraints Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.21.39",
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": [
+        "cand.graph.graph_modeling.difference_constraints"
+      ]
+    },
+    {
+      "pattern_id": "pat.flow_modeling",
+      "en_name": "Flow Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.two_sat_modeling",
+      "en_name": "2-SAT Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.bipartite_matching_modeling",
+      "en_name": "Bipartite Matching Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.16.3",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.min_cut_selection",
+      "en_name": "Minimum Cut Selection Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.project_selection_closure",
+      "en_name": "Maximum Closure Project Selection",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.21.29",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": [
+        "cand.graph.closure_model.project_selection"
+      ]
+    },
+    {
+      "pattern_id": "pat.min_cost_flow_assignment",
+      "en_name": "Min-cost Flow Assignment Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.16.5",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.dag_dependency_modeling",
+      "en_name": "DAG Dependency Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.grid_graph_modeling",
+      "en_name": "Grid Graph Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.time_expanded_graph",
+      "en_name": "Time-expanded Graph Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.13.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.layered_graph_shortest_path",
+      "en_name": "Layered Graph Shortest Path",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.complement_graph_modeling",
+      "en_name": "Complement Graph Search Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.game_graph_retrograde",
+      "en_name": "Game Graph Retrograde Modeling",
+      "category": "Graph Modeling Patterns",
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.knapsack_dp",
+      "en_name": "Knapsack DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.complete_knapsack_dp",
+      "en_name": "Complete Knapsack DP",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.8",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.multiple_knapsack_binary_split",
+      "en_name": "Multiple Knapsack Binary Split",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.9",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.interval_dp",
+      "en_name": "Interval DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.12"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.tree_dp",
+      "en_name": "Tree DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.13",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.digit_dp",
+      "en_name": "Digit DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.21"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.automaton_dp",
+      "en_name": "Automaton DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.10.2",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.bitmask_dp",
+      "en_name": "Bitmask DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.20",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.linear_dp_sequence",
+      "en_name": "Linear Sequence DP",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.lis_dp",
+      "en_name": "LIS Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.3.6",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.lcs_dp",
+      "en_name": "LCS Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.edit_distance_dp",
+      "en_name": "Edit Distance DP",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.probability_dp",
+      "en_name": "Probability DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.expectation_dp",
+      "en_name": "Expectation DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.profile_dp",
+      "en_name": "Profile DP Pattern",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.8.20"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.divide_conquer_dp_optimization",
+      "en_name": "Divide and Conquer DP Optimization",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.1.5",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.monotone_queue_dp",
+      "en_name": "Monotone Queue DP Optimization",
+      "category": "DP Patterns",
+      "required_items": [
+        "2.5.4",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.segment_tree_range_update",
+      "en_name": "Segment Tree Range Update Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.7.2",
+        "3.7.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.dsu_connectivity",
+      "en_name": "DSU Connectivity Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.fenwick_prefix_maintenance",
+      "en_name": "Fenwick Prefix Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.monotonic_queue_window_max",
+      "en_name": "Monotonic Queue Window Maximum",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.order_statistic_maintenance",
+      "en_name": "Order Statistic Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.7.2",
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.range_mode_offline",
+      "en_name": "Range Mode Offline Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "2.1.8",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.rollback_dsu",
+      "en_name": "Rollback DSU Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.persistent_segment_tree_kth",
+      "en_name": "Persistent Segment Tree K-th",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.lazy_tag_composition",
+      "en_name": "Lazy Tag Composition Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.7.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.sparse_table_idempotent",
+      "en_name": "Sparse Table Idempotent Query",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.heap_lazy_deletion",
+      "en_name": "Heap Lazy Deletion",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "3.2.6",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.trie_prefix_query",
+      "en_name": "Trie Prefix Query Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "2.10.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.coordinate_compression",
+      "en_name": "Coordinate Compression Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.tree_path_query",
+      "en_name": "Tree Path Query Pattern",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.14.2",
+        "2.14.4",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.lca_binary_lifting",
+      "en_name": "LCA Binary Lifting Pattern",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.14.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.rerooting_tree_dp",
+      "en_name": "Rerooting Tree DP",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.8.13"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.virtual_tree_pattern",
+      "en_name": "Virtual Tree Pattern",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.14.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.subtree_query_euler",
+      "en_name": "Subtree Query Euler Tour",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.7.1",
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.centroid_decomposition_query",
+      "en_name": "Centroid Decomposition Query",
+      "category": "Tree Query Patterns",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.kmp_string_matching",
+      "en_name": "KMP String Matching",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.3",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.rabin_karp_hash",
+      "en_name": "Rabin-Karp Rolling Hash",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.trie_multi_pattern",
+      "en_name": "Trie Multi-pattern Prefix Matching",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.aho_corasick_matching",
+      "en_name": "Aho-Corasick Multi-pattern Matching",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.4",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.z_algorithm_pattern",
+      "en_name": "Z Algorithm Pattern",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.suffix_array_lcp_query",
+      "en_name": "Suffix Array + LCP Pattern",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.manacher_palindrome",
+      "en_name": "Manacher Palindrome Pattern",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.string_dp_wildcard",
+      "en_name": "Wildcard String Matching DP",
+      "category": "String Matching Patterns",
+      "required_items": [
+        "2.8.3",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.offline_query_pattern",
+      "en_name": "Offline Query Pattern",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.1.8",
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.sweep_line_pattern",
+      "en_name": "Sweep Line Pattern",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "4.7.42",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.meet_in_the_middle",
+      "en_name": "Meet-in-the-middle",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.1.1",
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.constructive_invariant",
+      "en_name": "Constructive Invariant Pattern",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.1.7"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.greedy_exchange_argument",
+      "en_name": "Greedy Exchange Argument",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.binary_lifting_state_jump",
+      "en_name": "Binary Lifting State Jump",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.modular_counting_pattern",
+      "en_name": "Modular Counting Pattern",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.inclusion_exclusion_counting",
+      "en_name": "Inclusion-Exclusion Counting",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.1.1",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.coordinate_sweep_compression",
+      "en_name": "Compressed Coordinate Sweep",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.divide_conquer_offline",
+      "en_name": "Parallel Binary Search Pattern",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "2.3.6",
+        "2.1.8"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    },
+    {
+      "pattern_id": "pat.randomized_hash_check",
+      "en_name": "Randomized Hash Check",
+      "category": "Competitive Modeling Patterns",
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.7.1",
+        "2.8.3"
+      ],
+      "source_candidates": []
+    }
+  ]
+}

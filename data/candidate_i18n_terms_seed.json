@@ -1,0 +1,1150 @@
+{
+  "total_candidates": 114,
+  "coverage_stats": {
+    "has_zh_hans": 114,
+    "has_en": 114,
+    "has_additional_languages": 114
+  },
+  "terms": [
+    {
+      "candidate_id": "cand.graph.k_shortest.yen",
+      "name": "K 短路 (Yen 算法)",
+      "en_name": "K-Shortest Paths (Yen's Algorithm)",
+      "translations": {
+        "zh-Hans": "K 短路 (Yen 算法)",
+        "en": "K-Shortest Paths (Yen's Algorithm)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.eppstein",
+      "name": "K 短路 (Eppstein 算法)",
+      "en_name": "K-Shortest Paths (Eppstein's Algorithm)",
+      "translations": {
+        "zh-Hans": "K 短路 (Eppstein 算法)",
+        "en": "K-Shortest Paths (Eppstein's Algorithm)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.k_shortest.recursive",
+      "name": "K 短路 (递归K短路)",
+      "en_name": "K-Shortest Paths (Recursive K-Shortest)",
+      "translations": {
+        "zh-Hans": "K 短路 (递归K短路)",
+        "en": "K-Shortest Paths (Recursive K-Shortest)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.lengauer_tarjan",
+      "name": "支配树 (Lengauer-Tarjan 算法)",
+      "en_name": "Dominator Tree (Lengauer-Tarjan Algorithm)",
+      "translations": {
+        "zh-Hans": "支配树 (Lengauer-Tarjan 算法)",
+        "en": "Dominator Tree (Lengauer-Tarjan Algorithm)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.iterative",
+      "name": "支配树 (迭代支配树)",
+      "en_name": "Dominator Tree (Iterative Dominator Tree)",
+      "translations": {
+        "zh-Hans": "支配树 (迭代支配树)",
+        "en": "Dominator Tree (Iterative Dominator Tree)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.dominator_tree.application",
+      "name": "支配树 (支配树应用)",
+      "en_name": "Dominator Tree (Dominator Tree Applications)",
+      "translations": {
+        "zh-Hans": "支配树 (支配树应用)",
+        "en": "Dominator Tree (Dominator Tree Applications)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.virtual_tree",
+      "name": "虚树构建",
+      "en_name": "Virtual Tree Construction",
+      "translations": {
+        "zh-Hans": "虚树构建",
+        "en": "Virtual Tree Construction",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.centroid_decomposition",
+      "name": "点分治",
+      "en_name": "Centroid Decomposition",
+      "translations": {
+        "zh-Hans": "点分治",
+        "en": "Centroid Decomposition",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.tree_flattening",
+      "name": "树链剖分",
+      "en_name": "Tree Chain Decomposition",
+      "translations": {
+        "zh-Hans": "树链剖分",
+        "en": "Tree Chain Decomposition",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.heavy_light",
+      "name": "重链剖分",
+      "en_name": "Heavy-Light Decomposition",
+      "translations": {
+        "zh-Hans": "重链剖分",
+        "en": "Heavy-Light Decomposition",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.tree_advanced.parallel_binary",
+      "name": "并查集维护连通性",
+      "en_name": "Disjoint Set Union on Trees",
+      "translations": {
+        "zh-Hans": "并查集维护连通性",
+        "en": "Disjoint Set Union on Trees",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.dinic",
+      "name": "Dinic 算法",
+      "en_name": "Dinic's Algorithm",
+      "translations": {
+        "zh-Hans": "Dinic 算法",
+        "en": "Dinic's Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.isap",
+      "name": "ISAP 算法",
+      "en_name": "ISAP Algorithm",
+      "translations": {
+        "zh-Hans": "ISAP 算法",
+        "en": "ISAP Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.hlpp",
+      "name": "HLPP 算法",
+      "en_name": "HLPP Algorithm",
+      "translations": {
+        "zh-Hans": "HLPP 算法",
+        "en": "HLPP Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.min_cost",
+      "name": "最小费用最大流",
+      "en_name": "Min-Cost Max-Flow",
+      "translations": {
+        "zh-Hans": "最小费用最大流",
+        "en": "Min-Cost Max-Flow",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow.lower_upper",
+      "name": "上下界网络流",
+      "en_name": "Flow with Lower/Upper Bounds",
+      "translations": {
+        "zh-Hans": "上下界网络流",
+        "en": "Flow with Lower/Upper Bounds",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmin",
+      "name": "吉司机线段树(区间最小)",
+      "en_name": "Segment Tree Beats (Range Chmin)",
+      "translations": {
+        "zh-Hans": "吉司机线段树(区间最小)",
+        "en": "Segment Tree Beats (Range Chmin)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_chmax",
+      "name": "吉司机线段树(区间最大)",
+      "en_name": "Segment Tree Beats (Range Chmax)",
+      "translations": {
+        "zh-Hans": "吉司机线段树(区间最大)",
+        "en": "Segment Tree Beats (Range Chmax)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.beats_range_add",
+      "name": "吉司机线段树(区间加)",
+      "en_name": "Segment Tree Beats (Range Add)",
+      "translations": {
+        "zh-Hans": "吉司机线段树(区间加)",
+        "en": "Segment Tree Beats (Range Add)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.dynamic_persistent",
+      "name": "动态可持久化线段树",
+      "en_name": "Dynamic Persistent Segment Tree",
+      "translations": {
+        "zh-Hans": "动态可持久化线段树",
+        "en": "Dynamic Persistent Segment Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_merge",
+      "name": "线段树合并",
+      "en_name": "Segment Tree Merge",
+      "translations": {
+        "zh-Hans": "线段树合并",
+        "en": "Segment Tree Merge",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.segtree_advanced.segment_tree_split",
+      "name": "线段树分裂",
+      "en_name": "Segment Tree Split",
+      "translations": {
+        "zh-Hans": "线段树分裂",
+        "en": "Segment Tree Split",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.chairman_tree",
+      "name": "主席树",
+      "en_name": "Chairman Tree (Persistent Segment Tree)",
+      "translations": {
+        "zh-Hans": "主席树",
+        "en": "Chairman Tree (Persistent Segment Tree)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.kdtree",
+      "name": "KD 树",
+      "en_name": "KD-Tree",
+      "translations": {
+        "zh-Hans": "KD 树",
+        "en": "KD-Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.divide_merge_tree",
+      "name": "划分树",
+      "en_name": "Divide and Conquer Tree",
+      "translations": {
+        "zh-Hans": "划分树",
+        "en": "Divide and Conquer Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.catenary_tree",
+      "name": "猫树",
+      "en_name": "Catenary Tree",
+      "translations": {
+        "zh-Hans": "猫树",
+        "en": "Catenary Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.tree_advanced.binary_indexed_2d",
+      "name": "二维树状数组",
+      "en_name": "2D Binary Indexed Tree",
+      "translations": {
+        "zh-Hans": "二维树状数组",
+        "en": "2D Binary Indexed Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.treap",
+      "name": "Treap (树堆)",
+      "en_name": "Treap (Tree Heap)",
+      "translations": {
+        "zh-Hans": "Treap (树堆)",
+        "en": "Treap (Tree Heap)",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.splay",
+      "name": "Splay Tree (伸展树)",
+      "en_name": "Splay Tree",
+      "translations": {
+        "zh-Hans": "Splay Tree (伸展树)",
+        "en": "Splay Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.scapegoat",
+      "name": "替罪羊树",
+      "en_name": "Scapegoat Tree",
+      "translations": {
+        "zh-Hans": "替罪羊树",
+        "en": "Scapegoat Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.avl",
+      "name": "AVL 树",
+      "en_name": "AVL Tree",
+      "translations": {
+        "zh-Hans": "AVL 树",
+        "en": "AVL Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree.sbt",
+      "name": "Size Balanced Tree",
+      "en_name": "Size Balanced Tree",
+      "translations": {
+        "zh-Hans": "Size Balanced Tree",
+        "en": "Size Balanced Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_array",
+      "name": "后缀数组",
+      "en_name": "Suffix Array",
+      "translations": {
+        "zh-Hans": "后缀数组",
+        "en": "Suffix Array",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_automaton",
+      "name": "后缀自动机",
+      "en_name": "Suffix Automaton",
+      "translations": {
+        "zh-Hans": "后缀自动机",
+        "en": "Suffix Automaton",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.suffix_tree",
+      "name": "后缀树",
+      "en_name": "Suffix Tree",
+      "translations": {
+        "zh-Hans": "后缀树",
+        "en": "Suffix Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.suffix_structure.lcp_array",
+      "name": "LCP 数组",
+      "en_name": "Longest Common Prefix Array",
+      "translations": {
+        "zh-Hans": "LCP 数组",
+        "en": "Longest Common Prefix Array",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching.manacher",
+      "name": "Manacher 算法",
+      "en_name": "Manacher's Algorithm",
+      "translations": {
+        "zh-Hans": "Manacher 算法",
+        "en": "Manacher's Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching.z_algorithm",
+      "name": "Z 算法",
+      "en_name": "Z-Algorithm",
+      "translations": {
+        "zh-Hans": "Z 算法",
+        "en": "Z-Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching.kmp",
+      "name": "KMP 算法",
+      "en_name": "Knuth-Morris-Pratt Algorithm",
+      "translations": {
+        "zh-Hans": "KMP 算法",
+        "en": "Knuth-Morris-Pratt Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching.rabin_karp",
+      "name": "Rabin-Karp 算法",
+      "en_name": "Rabin-Karp Algorithm",
+      "translations": {
+        "zh-Hans": "Rabin-Karp 算法",
+        "en": "Rabin-Karp Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching.booth",
+      "name": "Booth 算法",
+      "en_name": "Booth's Algorithm",
+      "translations": {
+        "zh-Hans": "Booth 算法",
+        "en": "Booth's Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory.pollard_rho",
+      "name": "Pollard Rho 算法",
+      "en_name": "Pollard Rho Algorithm",
+      "translations": {
+        "zh-Hans": "Pollard Rho 算法",
+        "en": "Pollard Rho Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory.miller_rabin",
+      "name": "Miller-Rabin 素性测试",
+      "en_name": "Miller-Rabin Primality Test",
+      "translations": {
+        "zh-Hans": "Miller-Rabin 素性测试",
+        "en": "Miller-Rabin Primality Test",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory.discrete_log",
+      "name": "离散对数",
+      "en_name": "Discrete Logarithm",
+      "translations": {
+        "zh-Hans": "离散对数",
+        "en": "Discrete Logarithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory.primitive_root",
+      "name": "原根",
+      "en_name": "Primitive Root",
+      "translations": {
+        "zh-Hans": "原根",
+        "en": "Primitive Root",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory.legendre",
+      "name": "勒让德符号",
+      "en_name": "Legendre Symbol",
+      "translations": {
+        "zh-Hans": "勒让德符号",
+        "en": "Legendre Symbol",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.basic.convex_hull",
+      "name": "凸包",
+      "en_name": "Convex Hull",
+      "translations": {
+        "zh-Hans": "凸包",
+        "en": "Convex Hull",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.basic.graham_scan",
+      "name": "Graham Scan 算法",
+      "en_name": "Graham Scan Algorithm",
+      "translations": {
+        "zh-Hans": "Graham Scan 算法",
+        "en": "Graham Scan Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.basic.andrew_monotone",
+      "name": "Andrew 单调链算法",
+      "en_name": "Andrew's Monotone Chain",
+      "translations": {
+        "zh-Hans": "Andrew 单调链算法",
+        "en": "Andrew's Monotone Chain",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.basic.rotating_calipers",
+      "name": "旋转卡壳",
+      "en_name": "Rotating Calipers",
+      "translations": {
+        "zh-Hans": "旋转卡壳",
+        "en": "Rotating Calipers",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.basic.half_plane_intersection",
+      "name": "半平面交",
+      "en_name": "Half Plane Intersection",
+      "translations": {
+        "zh-Hans": "半平面交",
+        "en": "Half Plane Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.design.lru_cache",
+      "name": "LRU 缓存设计",
+      "en_name": "LRU Cache Design",
+      "translations": {
+        "zh-Hans": "LRU 缓存设计",
+        "en": "LRU Cache Design",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.design.lfu_cache",
+      "name": "LFU 缓存设计",
+      "en_name": "LFU Cache Design",
+      "translations": {
+        "zh-Hans": "LFU 缓存设计",
+        "en": "LFU Cache Design",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.design.trie_autocomplete",
+      "name": "前缀树自动补全",
+      "en_name": "Trie Autocomplete System",
+      "translations": {
+        "zh-Hans": "前缀树自动补全",
+        "en": "Trie Autocomplete System",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.design.rate_limiter",
+      "name": "速率限制器",
+      "en_name": "Rate Limiter",
+      "translations": {
+        "zh-Hans": "速率限制器",
+        "en": "Rate Limiter",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.interview.design.consistent_hashing",
+      "name": "一致性哈希",
+      "en_name": "Consistent Hashing",
+      "translations": {
+        "zh-Hans": "一致性哈希",
+        "en": "Consistent Hashing",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.contest.modeling.game_theory",
+      "name": "博弈论建模",
+      "en_name": "Game Theory Modeling",
+      "translations": {
+        "zh-Hans": "博弈论建模",
+        "en": "Game Theory Modeling",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.contest.modeling.sg_theorem",
+      "name": "SG 定理",
+      "en_name": "Sprague-Grundy Theorem",
+      "translations": {
+        "zh-Hans": "SG 定理",
+        "en": "Sprague-Grundy Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.contest.modeling.nim_game",
+      "name": "Nim 游戏",
+      "en_name": "Nim Game",
+      "translations": {
+        "zh-Hans": "Nim 游戏",
+        "en": "Nim Game",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.contest.modeling.simulation_optimization",
+      "name": "模拟优化",
+      "en_name": "Simulation Optimization",
+      "translations": {
+        "zh-Hans": "模拟优化",
+        "en": "Simulation Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.contest.modeling.greedy_proof",
+      "name": "贪心证明",
+      "en_name": "Greedy Proof Techniques",
+      "translations": {
+        "zh-Hans": "贪心证明",
+        "en": "Greedy Proof Techniques",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.algo.randomized.simulated_annealing",
+      "name": "模拟退火",
+      "en_name": "Simulated Annealing",
+      "translations": {
+        "zh-Hans": "模拟退火",
+        "en": "Simulated Annealing",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.algo.randomized.genetic_algorithm",
+      "name": "遗传算法",
+      "en_name": "Genetic Algorithm",
+      "translations": {
+        "zh-Hans": "遗传算法",
+        "en": "Genetic Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.algo.randomized.monte_carlo",
+      "name": "蒙特卡洛方法",
+      "en_name": "Monte Carlo Method",
+      "translations": {
+        "zh-Hans": "蒙特卡洛方法",
+        "en": "Monte Carlo Method",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_quickselect",
+      "name": "随机化快速选择",
+      "en_name": "Randomized Quickselect",
+      "translations": {
+        "zh-Hans": "随机化快速选择",
+        "en": "Randomized Quickselect",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.algo.randomized.randomized_prim",
+      "name": "随机化 Prim 算法",
+      "en_name": "Randomized Prim Algorithm",
+      "translations": {
+        "zh-Hans": "随机化 Prim 算法",
+        "en": "Randomized Prim Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.slope_optimization",
+      "name": "斜率优化",
+      "en_name": "Slope Optimization",
+      "translations": {
+        "zh-Hans": "斜率优化",
+        "en": "Slope Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.convex_hull_opt",
+      "name": "凸包优化",
+      "en_name": "Convex Hull Optimization",
+      "translations": {
+        "zh-Hans": "凸包优化",
+        "en": "Convex Hull Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.quadrangle_inequality",
+      "name": "四边形不等式优化",
+      "en_name": "Quadrangle Inequality Optimization",
+      "translations": {
+        "zh-Hans": "四边形不等式优化",
+        "en": "Quadrangle Inequality Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.divide_conquer_opt",
+      "name": "分治优化",
+      "en_name": "Divide and Conquer Optimization",
+      "translations": {
+        "zh-Hans": "分治优化",
+        "en": "Divide and Conquer Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.knuth_opt",
+      "name": "Knuth 优化",
+      "en_name": "Knuth Optimization",
+      "translations": {
+        "zh-Hans": "Knuth 优化",
+        "en": "Knuth Optimization",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.cdq_divide",
+      "name": "CDQ 分治",
+      "en_name": "CDQ Divide and Conquer",
+      "translations": {
+        "zh-Hans": "CDQ 分治",
+        "en": "CDQ Divide and Conquer",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.dp.advanced.wqs_binary",
+      "name": "WQS 二分",
+      "en_name": "WQS Binary Search",
+      "translations": {
+        "zh-Hans": "WQS 二分",
+        "en": "WQS Binary Search",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.dinic",
+      "name": "Dinic 算法",
+      "en_name": "Dinic Algorithm",
+      "translations": {
+        "zh-Hans": "Dinic 算法",
+        "en": "Dinic Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.isap",
+      "name": "ISAP 算法",
+      "en_name": "ISAP Algorithm",
+      "translations": {
+        "zh-Hans": "ISAP 算法",
+        "en": "ISAP Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.edmonds_karp",
+      "name": "Edmonds-Karp 算法",
+      "en_name": "Edmonds-Karp Algorithm",
+      "translations": {
+        "zh-Hans": "Edmonds-Karp 算法",
+        "en": "Edmonds-Karp Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.min_cost_flow",
+      "name": "最小费用最大流",
+      "en_name": "Min-Cost Max-Flow",
+      "translations": {
+        "zh-Hans": "最小费用最大流",
+        "en": "Min-Cost Max-Flow",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.network_flow_advanced.max_flow_bipartite",
+      "name": "最大流二分图匹配",
+      "en_name": "Max Flow Bipartite Matching",
+      "translations": {
+        "zh-Hans": "最大流二分图匹配",
+        "en": "Max Flow Bipartite Matching",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.computational.point_in_polygon",
+      "name": "点在多边形内判断",
+      "en_name": "Point in Polygon",
+      "translations": {
+        "zh-Hans": "点在多边形内判断",
+        "en": "Point in Polygon",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.computational.line_intersection",
+      "name": "线段相交判断",
+      "en_name": "Line Segment Intersection",
+      "translations": {
+        "zh-Hans": "线段相交判断",
+        "en": "Line Segment Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.computational.area_polygon",
+      "name": "多边形面积计算",
+      "en_name": "Polygon Area Calculation",
+      "translations": {
+        "zh-Hans": "多边形面积计算",
+        "en": "Polygon Area Calculation",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.computational.circle_intersection",
+      "name": "圆相交判断",
+      "en_name": "Circle Intersection",
+      "translations": {
+        "zh-Hans": "圆相交判断",
+        "en": "Circle Intersection",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.geo.computational.closest_pair",
+      "name": "最近点对",
+      "en_name": "Closest Pair of Points",
+      "translations": {
+        "zh-Hans": "最近点对",
+        "en": "Closest Pair of Points",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_binary_lifting",
+      "name": "LCA 倍增法",
+      "en_name": "LCA with Binary Lifting",
+      "translations": {
+        "zh-Hans": "LCA 倍增法",
+        "en": "LCA with Binary Lifting",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.tree.advanced.lca_euler_tour",
+      "name": "LCA 欧拉序+RMQ",
+      "en_name": "LCA with Euler Tour and RMQ",
+      "translations": {
+        "zh-Hans": "LCA 欧拉序+RMQ",
+        "en": "LCA with Euler Tour and RMQ",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_diameter",
+      "name": "树的直径",
+      "en_name": "Tree Diameter",
+      "translations": {
+        "zh-Hans": "树的直径",
+        "en": "Tree Diameter",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_center",
+      "name": "树的中心",
+      "en_name": "Tree Center",
+      "translations": {
+        "zh-Hans": "树的中心",
+        "en": "Tree Center",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.tree.advanced.tree_hash",
+      "name": "树哈希",
+      "en_name": "Tree Hashing",
+      "translations": {
+        "zh-Hans": "树哈希",
+        "en": "Tree Hashing",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fft",
+      "name": "快速傅里叶变换",
+      "en_name": "Fast Fourier Transform",
+      "translations": {
+        "zh-Hans": "快速傅里叶变换",
+        "en": "Fast Fourier Transform",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.ntt",
+      "name": "数论变换",
+      "en_name": "Number Theoretic Transform",
+      "translations": {
+        "zh-Hans": "数论变换",
+        "en": "Number Theoretic Transform",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.fwht",
+      "name": "快速沃尔什变换",
+      "en_name": "Fast Walsh-Hadamard Transform",
+      "translations": {
+        "zh-Hans": "快速沃尔什变换",
+        "en": "Fast Walsh-Hadamard Transform",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_inv",
+      "name": "多项式求逆",
+      "en_name": "Polynomial Inversion",
+      "translations": {
+        "zh-Hans": "多项式求逆",
+        "en": "Polynomial Inversion",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.polynomial.polynomial_sqrt",
+      "name": "多项式开方",
+      "en_name": "Polynomial Square Root",
+      "translations": {
+        "zh-Hans": "多项式开方",
+        "en": "Polynomial Square Root",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.kmp",
+      "name": "KMP 算法",
+      "en_name": "Knuth-Morris-Pratt Algorithm",
+      "translations": {
+        "zh-Hans": "KMP 算法",
+        "en": "Knuth-Morris-Pratt Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.aho_corasick",
+      "name": "AC 自动机",
+      "en_name": "Aho-Corasick Automaton",
+      "translations": {
+        "zh-Hans": "AC 自动机",
+        "en": "Aho-Corasick Automaton",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_array",
+      "name": "后缀数组",
+      "en_name": "Suffix Array",
+      "translations": {
+        "zh-Hans": "后缀数组",
+        "en": "Suffix Array",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.suffix_automaton",
+      "name": "后缀自动机",
+      "en_name": "Suffix Automaton",
+      "translations": {
+        "zh-Hans": "后缀自动机",
+        "en": "Suffix Automaton",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.string.matching_advanced.min_string",
+      "name": "最小表示法",
+      "en_name": "Minimum String Representation",
+      "translations": {
+        "zh-Hans": "最小表示法",
+        "en": "Minimum String Representation",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.euler_totient",
+      "name": "欧拉函数",
+      "en_name": "Euler Totient Function",
+      "translations": {
+        "zh-Hans": "欧拉函数",
+        "en": "Euler Totient Function",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.mobius",
+      "name": "莫比乌斯函数",
+      "en_name": "Mobius Function",
+      "translations": {
+        "zh-Hans": "莫比乌斯函数",
+        "en": "Mobius Function",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.crt",
+      "name": "中国剩余定理",
+      "en_name": "Chinese Remainder Theorem",
+      "translations": {
+        "zh-Hans": "中国剩余定理",
+        "en": "Chinese Remainder Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.bsgs",
+      "name": "BSGS 算法",
+      "en_name": "Baby-Step Giant-Step",
+      "translations": {
+        "zh-Hans": "BSGS 算法",
+        "en": "Baby-Step Giant-Step",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.exgcd",
+      "name": "扩展欧几里得",
+      "en_name": "Extended Euclidean Algorithm",
+      "translations": {
+        "zh-Hans": "扩展欧几里得",
+        "en": "Extended Euclidean Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.math.number_theory_advanced.lucas",
+      "name": "Lucas 定理",
+      "en_name": "Lucas Theorem",
+      "translations": {
+        "zh-Hans": "Lucas 定理",
+        "en": "Lucas Theorem",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.optimization.minimum_spanning_tree",
+      "name": "最小生成树",
+      "en_name": "Minimum Spanning Tree",
+      "translations": {
+        "zh-Hans": "最小生成树",
+        "en": "Minimum Spanning Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.optimization.kruskal",
+      "name": "Kruskal 算法",
+      "en_name": "Kruskal Algorithm",
+      "translations": {
+        "zh-Hans": "Kruskal 算法",
+        "en": "Kruskal Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.optimization.prim",
+      "name": "Prim 算法",
+      "en_name": "Prim Algorithm",
+      "translations": {
+        "zh-Hans": "Prim 算法",
+        "en": "Prim Algorithm",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.optimization.topological_sort",
+      "name": "拓扑排序",
+      "en_name": "Topological Sort",
+      "translations": {
+        "zh-Hans": "拓扑排序",
+        "en": "Topological Sort",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.graph.optimization.critical_path",
+      "name": "关键路径",
+      "en_name": "Critical Path Method",
+      "translations": {
+        "zh-Hans": "关键路径",
+        "en": "Critical Path Method",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_treap",
+      "name": "可持久化 Treap",
+      "en_name": "Persistent Treap",
+      "translations": {
+        "zh-Hans": "可持久化 Treap",
+        "en": "Persistent Treap",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_bit",
+      "name": "可持久化 BIT",
+      "en_name": "Persistent BIT",
+      "translations": {
+        "zh-Hans": "可持久化 BIT",
+        "en": "Persistent BIT",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.persistent_segment_tree",
+      "name": "可持久化线段树",
+      "en_name": "Persistent Segment Tree",
+      "translations": {
+        "zh-Hans": "可持久化线段树",
+        "en": "Persistent Segment Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.dynamic_segment_tree",
+      "name": "动态开点线段树",
+      "en_name": "Dynamic Segment Tree",
+      "translations": {
+        "zh-Hans": "动态开点线段树",
+        "en": "Dynamic Segment Tree",
+        "needs_native_review": true
+      }
+    },
+    {
+      "candidate_id": "cand.ds.persistent_advanced.segment_tree_beats",
+      "name": "吉司机线段树",
+      "en_name": "Segment Tree Beats",
+      "translations": {
+        "zh-Hans": "吉司机线段树",
+        "en": "Segment Tree Beats",
+        "needs_native_review": true
+      }
+    }
+  ]
+}

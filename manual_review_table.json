@@ -1,0 +1,1451 @@
+[
+  {
+    "docx_id": 25,
+    "docx_name": "pair 对组",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 26,
+    "docx_name": "tuple 元组",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 30,
+    "docx_name": "随机数生成",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 32,
+    "docx_name": "时间复杂度估算",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 33,
+    "docx_name": "空间复杂度估算",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 37,
+    "docx_name": "动态内存分配 (new/delete)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 38,
+    "docx_name": "深拷贝与浅拷贝",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 44,
+    "docx_name": "命令行参数解析",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 47,
+    "docx_name": "日期与时间计算",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 65,
+    "docx_name": "三分查找",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 103,
+    "docx_name": "复杂度分析中的主定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 104,
+    "docx_name": "均摊复杂度分析",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 109,
+    "docx_name": "Meet-in-the-Middle",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 114,
+    "docx_name": "悬线法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 116,
+    "docx_name": "表达式求值",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 117,
+    "docx_name": "后缀表达式计算",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 122,
+    "docx_name": "找规律与数学归纳",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 124,
+    "docx_name": "鸽巢原理应用",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 135,
+    "docx_name": "二进制分组",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 141,
+    "docx_name": "子集卷积初步",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 142,
+    "docx_name": "Gray 码生成",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 143,
+    "docx_name": "大数判等与比较",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 147,
+    "docx_name": "内存池技术",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 148,
+    "docx_name": "对象池复用",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 150,
+    "docx_name": "移动语义与完美转发",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 151,
+    "docx_name": "图的基本概念",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 178,
+    "docx_name": "次短路",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 179,
+    "docx_name": "第 k 短路",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 188,
+    "docx_name": "2-SAT 问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 189,
+    "docx_name": "2-SAT 输出方案",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 198,
+    "docx_name": "欧拉回路：Hierholzer 算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 199,
+    "docx_name": "欧拉回路：Fleury 算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 201,
+    "docx_name": "树的基本性质",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 206,
+    "docx_name": "树的中心",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 207,
+    "docx_name": "树的同构",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 208,
+    "docx_name": "有根树和无根树转换",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 216,
+    "docx_name": "树的链上求和",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 220,
+    "docx_name": "树形背包",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 225,
+    "docx_name": "竞赛图性质",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 243,
+    "docx_name": "最大权闭合子图",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 246,
+    "docx_name": "最大密度子图",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 248,
+    "docx_name": "最小树形图：朱刘算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 253,
+    "docx_name": "K 短路 (Yen 算法)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 254,
+    "docx_name": "最小斯坦纳树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 255,
+    "docx_name": "弦图判定",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 256,
+    "docx_name": "区间图与完美消除序列",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 257,
+    "docx_name": "稳定婚姻问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 258,
+    "docx_name": "最小瓶颈路",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 262,
+    "docx_name": "消圈算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 274,
+    "docx_name": "反向图建图",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 275,
+    "docx_name": "超级源点和超级汇点",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 280,
+    "docx_name": "奇偶性建图",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 281,
+    "docx_name": "可达性统计",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 286,
+    "docx_name": "边双缩点成树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 287,
+    "docx_name": "点双缩点成方点",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 289,
+    "docx_name": "树的 Prufer 序列",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 291,
+    "docx_name": "笛卡尔树构建",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 309,
+    "docx_name": "扫描线：求周长并",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 310,
+    "docx_name": "扫描线：求覆盖次数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 328,
+    "docx_name": "ST 表静态 RMQ",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 329,
+    "docx_name": "ST 表：可重复贡献问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 330,
+    "docx_name": "ST 表：二维 ST 表",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 344,
+    "docx_name": "Link-Cut Tree 基础",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 353,
+    "docx_name": "KD-Tree",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 357,
+    "docx_name": "笛卡尔树与 RMQ",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 371,
+    "docx_name": "回文自动机 (PAM)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 372,
+    "docx_name": "回文自动机：本质不同回文串",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 373,
+    "docx_name": "序列自动机",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 378,
+    "docx_name": "AC 自动机：fail 树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 387,
+    "docx_name": "布隆过滤器",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 388,
+    "docx_name": "跳表",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 389,
+    "docx_name": "稀疏表",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 394,
+    "docx_name": "轻重链剖分",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 396,
+    "docx_name": "树剖：子树修改查询",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 398,
+    "docx_name": "长链剖分",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 399,
+    "docx_name": "DSU on Tree",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 400,
+    "docx_name": "珂朵莉树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 401,
+    "docx_name": "舞蹈链 (DLX)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 402,
+    "docx_name": "DLX 解数独",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 404,
+    "docx_name": "四叉树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 405,
+    "docx_name": "区间最值操作与历史最值",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 407,
+    "docx_name": "括号表示法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 418,
+    "docx_name": "点分树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 423,
+    "docx_name": "三维偏序",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 424,
+    "docx_name": "四维偏序",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 437,
+    "docx_name": "树的离线查询",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 442,
+    "docx_name": "哈夫曼编码",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 443,
+    "docx_name": "败者树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 445,
+    "docx_name": "布隆过滤器工程应用",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 447,
+    "docx_name": "区间异或最大值",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 476,
+    "docx_name": "离散对数：BSGS",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 478,
+    "docx_name": "原根",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 479,
+    "docx_name": "阶",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 480,
+    "docx_name": "N 次剩余",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 481,
+    "docx_name": "威尔逊定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 482,
+    "docx_name": "卢卡斯定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 490,
+    "docx_name": "贝尔数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 491,
+    "docx_name": "伯努利数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 492,
+    "docx_name": "错排公式",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 496,
+    "docx_name": "狄利克雷卷积",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 497,
+    "docx_name": "杜教筛",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 500,
+    "docx_name": "完全数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 501,
+    "docx_name": "斐波那契数列",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 504,
+    "docx_name": "佩尔方程",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 505,
+    "docx_name": "勾股数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 518,
+    "docx_name": "BM 算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 519,
+    "docx_name": "快速傅里叶变换 (FFT)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 521,
+    "docx_name": "快速数论变换 (NTT)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 522,
+    "docx_name": "任意模数 NTT",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 523,
+    "docx_name": "快速沃尔什变换 (FWT)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 537,
+    "docx_name": "牛顿迭代法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 542,
+    "docx_name": "自适应辛普森积分",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 551,
+    "docx_name": "最近点对",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 552,
+    "docx_name": "最远点对",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 562,
+    "docx_name": "最小球覆盖",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 565,
+    "docx_name": "三维距离计算",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 566,
+    "docx_name": "Pick 定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 567,
+    "docx_name": "Delaunay 三角剖分",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 568,
+    "docx_name": "Voronoi 图",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 572,
+    "docx_name": "判断线段相交",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 573,
+    "docx_name": "求两线段交点",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 574,
+    "docx_name": "点到直线距离",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 575,
+    "docx_name": "点到线段距离",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 576,
+    "docx_name": "点在直线上的投影",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 577,
+    "docx_name": "直线与直线夹角",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 581,
+    "docx_name": "曼哈顿距离转切比雪夫距离",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 583,
+    "docx_name": "切比雪夫距离",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 584,
+    "docx_name": "线性规划",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 586,
+    "docx_name": "博弈论：Nim 游戏",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 587,
+    "docx_name": "Nim 游戏变种",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 589,
+    "docx_name": "SG 定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 590,
+    "docx_name": "反 Nim",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 591,
+    "docx_name": "巴什博奕",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 592,
+    "docx_name": "威佐夫博弈",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 593,
+    "docx_name": "Fibonacci 博弈",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 594,
+    "docx_name": "树上删边游戏",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 595,
+    "docx_name": "有向图游戏",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 596,
+    "docx_name": "不平等博弈",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 601,
+    "docx_name": "随机游走问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 607,
+    "docx_name": "丢番图方程",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 608,
+    "docx_name": "连分数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 609,
+    "docx_name": "Stern-Brocot 树",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 610,
+    "docx_name": "Farey 序列",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 611,
+    "docx_name": "模意义下的二次剩余",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 612,
+    "docx_name": "高次剩余",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 624,
+    "docx_name": "杨表与钩子公式",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 625,
+    "docx_name": "五边形数定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 626,
+    "docx_name": "费马大定理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 627,
+    "docx_name": "哥德巴赫猜想",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 628,
+    "docx_name": "亲和数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 629,
+    "docx_name": "过剩数与亏数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 631,
+    "docx_name": "平衡三进制",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 632,
+    "docx_name": "格雷码生成",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 633,
+    "docx_name": "大数开根",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 634,
+    "docx_name": "模指数塔",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 636,
+    "docx_name": "柯西不等式",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 637,
+    "docx_name": "切比雪夫不等式",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 638,
+    "docx_name": "抽屉原理高级应用",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 642,
+    "docx_name": "Alpha-Beta 剪枝",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 645,
+    "docx_name": "线性回归",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 648,
+    "docx_name": "对偶线性规划",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 655,
+    "docx_name": "最长上升子序列 O(n log n)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 656,
+    "docx_name": "最长公共子序列 O(n^2)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 657,
+    "docx_name": "最长公共子序列 O(n log n)",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 658,
+    "docx_name": "最长公共子串",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 659,
+    "docx_name": "最短编辑距离",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 660,
+    "docx_name": "最大子段和",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 662,
+    "docx_name": "最大子长方体和",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 733,
+    "docx_name": "双调欧几里得旅行商问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 751,
+    "docx_name": "最大 k 乘积问题",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 752,
+    "docx_name": "最优三角剖分",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 756,
+    "docx_name": "数字三角形",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 762,
+    "docx_name": "树上依赖背包",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 763,
+    "docx_name": "树上直径合并",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 809,
+    "docx_name": "Z 算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 820,
+    "docx_name": "回文自动机求本质不同回文串",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 821,
+    "docx_name": "回文自动机求回文串出现次数",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 845,
+    "docx_name": "最长公共前缀查询",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 848,
+    "docx_name": "Duval 算法",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 849,
+    "docx_name": "最小后缀",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 850,
+    "docx_name": "最大后缀",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 852,
+    "docx_name": "弱周期引理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 890,
+    "docx_name": "树链剖分的边权处理",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 892,
+    "docx_name": "Link-Cut Tree 的 makeroot 操作",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 898,
+    "docx_name": "Euler Tour Tree",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 899,
+    "docx_name": "Top Tree",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 903,
+    "docx_name": "珂朵莉树的 assign 操作",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 917,
+    "docx_name": "四维偏序",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 920,
+    "docx_name": "离线询问的 Trick",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 932,
+    "docx_name": "李超树求区间最值",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 940,
+    "docx_name": "跳表实现",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 942,
+    "docx_name": "布隆过滤器",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 943,
+    "docx_name": "Count-Min Sketch",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 944,
+    "docx_name": "HyperLogLog",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 947,
+    "docx_name": "惰性求值",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 951,
+    "docx_name": "输入挂",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 952,
+    "docx_name": "输出挂",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 957,
+    "docx_name": "大小端序",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 960,
+    "docx_name": "退火算法参数调优",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 976,
+    "docx_name": "势能分析",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 977,
+    "docx_name": "均摊复杂度在实际中的应用",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 980,
+    "docx_name": "利用位域",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 982,
+    "docx_name": "死锁与线程安全",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 985,
+    "docx_name": "大数据结构的内存释放",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 991,
+    "docx_name": "C++17 新特性在竞赛中",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 992,
+    "docx_name": "Python 快速 I/O 与 PyPy",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  },
+  {
+    "docx_id": 994,
+    "docx_name": "竞赛平台熟悉度",
+    "status": "needs_manual_review",
+    "reason": "无法自动分类，需要人工审核",
+    "suggested_action": "人工判断归属章节、是否应纳入主图谱、以及是否只是已有节点别名"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "rollback_performed": false,
+  "backup_file": "C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\backups\\merged_knowledge_graph_item_dependencies_refined_before_stage3c.json",
+  "restore_command": "Copy-Item -LiteralPath 'C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\backups\\merged_knowledge_graph_item_dependencies_refined_before_stage3c.json' -Destination 'C:\\Users\\renfenggo\\Documents\\trae_projects\\suanfatong\\merged_knowledge_graph_item_dependencies_refined.json' -Force",
+  "files_to_review_or_remove_if_rolling_back_stage3c": [
+    "data/stage3c_candidate_to_item_id_mapping.json",
+    "data/stage3c_added_items_summary.json",
+    "data/stage3c_validation_result.json",
+    "docs/stage3c_small_batch_merge_report.md"
+  ]
+}

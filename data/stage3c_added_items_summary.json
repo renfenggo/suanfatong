@@ -1,0 +1,608 @@
+[
+  {
+    "id": "2.21.40",
+    "name": "虚树：Stack Construction",
+    "en_name": "Virtual Tree: Stack Construction",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.14.2",
+      "2.7.1",
+      "2.14.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 28,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.41",
+    "name": "圆方树：Biconnected Component",
+    "en_name": "Block-Cut Tree: Biconnected Component",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.16.6"
+    ],
+    "resolved_pre_count": 23,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.42",
+    "name": "仙人掌图：Shortest Path",
+    "en_name": "Cactus Graph: Shortest Path",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1",
+      "2.15.13"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.43",
+    "name": "动态图连通性：Segment Tree Over Time",
+    "en_name": "Dynamic Connectivity: Segment Tree Over Time",
+    "parent": "2.21",
+    "direct_pre": [
+      "3.13.36",
+      "3.4.1",
+      "3.7.2"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.21.36"
+    ],
+    "resolved_pre_count": 29,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.44",
+    "name": "动态最小生成树：Offline Updates",
+    "en_name": "Dynamic MST: Offline Updates",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.13.8",
+      "2.13.9",
+      "3.4.1"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.13.10"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.45",
+    "name": "全局最小割：Gomory Hu Tree",
+    "en_name": "Global Min-Cut: Gomory Hu Tree",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.5",
+      "2.16.25"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.16.6"
+    ],
+    "resolved_pre_count": 27,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.46",
+    "name": "最大权闭合子图：Profit Dependency",
+    "en_name": "Maximum Closure: Profit Dependency",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.16.3",
+      "2.16.5",
+      "2.21.29"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.16.6"
+    ],
+    "resolved_pre_count": 27,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.47",
+    "name": "特殊图：Maximum Cardinality Search",
+    "en_name": "Special Graph: Maximum Cardinality Search",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.48",
+    "name": "有向生成树：Contracted Cycle",
+    "en_name": "Directed MST: Contracted Cycle",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.13.8",
+      "2.13.9"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.13.10"
+    ],
+    "resolved_pre_count": 28,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.49",
+    "name": "强连通分量 DAG：Source Sink Count",
+    "en_name": "SCC Condensation DAG: Source Sink Count",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.15.1",
+      "2.15.9",
+      "2.15.16"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 24,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.50",
+    "name": "拟阵图论：Matroid Intersection",
+    "en_name": "Matroid in Graphs: Matroid Intersection",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.2.1",
+      "2.9.1",
+      "4.7.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.51",
+    "name": "平面图：Euler Formula",
+    "en_name": "Planar Graph: Euler Formula",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1",
+      "4.5.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.52",
+    "name": "支配树：Immediate Dominator",
+    "en_name": "Dominator Tree: Immediate Dominator",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.53",
+    "name": "虚树：树形 DP",
+    "en_name": "Virtual Tree: Tree Dp",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.14.2",
+      "2.7.1",
+      "2.14.1"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 28,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.54",
+    "name": "圆方树：Path Query",
+    "en_name": "Block-Cut Tree: Path Query",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1",
+      "2.15.13",
+      "2.15.14"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.16.6"
+    ],
+    "resolved_pre_count": 23,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.55",
+    "name": "仙人掌图：Tree Conversion",
+    "en_name": "Cactus Graph: Tree Conversion",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.9.1",
+      "2.7.1",
+      "2.15.13"
+    ],
+    "rel": [
+      "2.21.4"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.56",
+    "name": "动态图连通性：Rollback Dsu",
+    "en_name": "Dynamic Connectivity: Rollback Dsu",
+    "parent": "2.21",
+    "direct_pre": [
+      "3.13.36",
+      "3.4.1",
+      "3.7.2"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.21.36"
+    ],
+    "resolved_pre_count": 29,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "2.21.57",
+    "name": "动态最小生成树：Link Cut Tree Approach",
+    "en_name": "Dynamic MST: Link Cut Tree Approach",
+    "parent": "2.21",
+    "direct_pre": [
+      "2.13.8",
+      "2.13.9",
+      "3.4.1"
+    ],
+    "rel": [
+      "2.21.4",
+      "2.16.6",
+      "2.13.10"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.37",
+    "name": "高级 RMQ：Fischer Heun",
+    "en_name": "Advanced RMQ: Fischer Heun",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.5",
+      "2.14.2"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 28,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.38",
+    "name": "多维数据结构：Range Tree",
+    "en_name": "Multidimensional Data Structure: Range Tree",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.39",
+    "name": "位集与线性基：Range Xor Basis",
+    "en_name": "Bitset and Linear Basis: Range Xor Basis",
+    "parent": "3.13",
+    "direct_pre": [
+      "1.4.6",
+      "4.7.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 8,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.40",
+    "name": "离线数据结构框架：Mo Algorithm With Updates",
+    "en_name": "Offline Data Structure Framework: Mo Algorithm With Updates",
+    "parent": "3.13",
+    "direct_pre": [
+      "2.3.1",
+      "3.7.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 24,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.41",
+    "name": "序列维护结构：Implicit Splay Reverse",
+    "en_name": "Sequence Maintenance Structure: Implicit Splay Reverse",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.6.5",
+      "1.8.9"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 7,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.42",
+    "name": "简洁与概率结构：Skip List",
+    "en_name": "Succinct and Probabilistic Structure: Skip List",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.2.1",
+      "1.4.6"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 8,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.43",
+    "name": "可持久化结构：Persistent Segment Tree Kth",
+    "en_name": "Persistent Data Structure: Persistent Segment Tree Kth",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.11.1"
+    ],
+    "rel": [
+      "3.13.33",
+      "3.11.5"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.44",
+    "name": "树分治维护：Dsu On Tree Color",
+    "en_name": "Tree Decomposition Data Structure: Dsu On Tree Color",
+    "parent": "3.13",
+    "direct_pre": [
+      "2.14.1",
+      "2.8.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.45",
+    "name": "归并排序树：Range Successor",
+    "en_name": "Merge Sort Tree: Range Successor",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.2",
+      "2.5.2"
+    ],
+    "rel": [
+      "3.13.33",
+      "3.13.11"
+    ],
+    "resolved_pre_count": 29,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.46",
+    "name": "动态树结构：Dynamic Tree Diameter",
+    "en_name": "Dynamic Tree Structure: Dynamic Tree Diameter",
+    "parent": "3.13",
+    "direct_pre": [
+      "2.14.1",
+      "2.14.7"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 41,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.47",
+    "name": "高级 RMQ：Blocked Rmq",
+    "en_name": "Advanced RMQ: Blocked Rmq",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.5",
+      "2.14.2"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 28,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.48",
+    "name": "多维数据结构：Offline 2D Point Counting",
+    "en_name": "Multidimensional Data Structure: Offline 2D Point Counting",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.49",
+    "name": "位集与线性基：Linear Basis Merge",
+    "en_name": "Bitset and Linear Basis: Linear Basis Merge",
+    "parent": "3.13",
+    "direct_pre": [
+      "1.4.6",
+      "4.7.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 8,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.50",
+    "name": "离线数据结构框架：Rollback Block Decomposition",
+    "en_name": "Offline Data Structure Framework: Rollback Block Decomposition",
+    "parent": "3.13",
+    "direct_pre": [
+      "2.3.1",
+      "3.7.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 24,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.51",
+    "name": "序列维护结构：Implicit Treap Lazy Tags",
+    "en_name": "Sequence Maintenance Structure: Implicit Treap Lazy Tags",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.6.5",
+      "1.8.9"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 7,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.52",
+    "name": "可持久化结构：Persistent Union Find",
+    "en_name": "Persistent Data Structure: Persistent Union Find",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.11.1"
+    ],
+    "rel": [
+      "3.13.33",
+      "3.11.5"
+    ],
+    "resolved_pre_count": 21,
+    "review_priority": "A",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.53",
+    "name": "树分治维护：Small Large Subtree",
+    "en_name": "Tree Decomposition Data Structure: Small Large Subtree",
+    "parent": "3.13",
+    "direct_pre": [
+      "2.14.1",
+      "2.8.1"
+    ],
+    "rel": [
+      "3.13.33"
+    ],
+    "resolved_pre_count": 22,
+    "review_priority": "B",
+    "needs_manual_review": true
+  },
+  {
+    "id": "3.13.54",
+    "name": "归并排序树：Point Update",
+    "en_name": "Merge Sort Tree: Point Update",
+    "parent": "3.13",
+    "direct_pre": [
+      "3.7.2",
+      "2.5.2"
+    ],
+    "rel": [
+      "3.13.33",
+      "3.13.11"
+    ],
+    "resolved_pre_count": 29,
+    "review_priority": "A",
+    "needs_manual_review": true
+  }
+]

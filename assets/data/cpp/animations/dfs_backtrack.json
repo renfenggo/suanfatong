@@ -1,0 +1,286 @@
+{
+  "animationId": "cpp_dfs_backtrack",
+  "itemId": "5.5.5",
+  "title": "DFS 回溯恢复现场",
+  "description": "演示DFS回溯算法中的状态管理和现场恢复：全排列生成",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "used", "type": "bool[]", "values": ["F", "F", "F"], "activeIndex": -1, "note": "是否使用过"},
+      {"name": "path", "type": "int[]", "values": [], "activeIndex": -1, "note": "当前路径"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "开始DFS：dfs(0)",
+      "description": "从空路径开始，深度优先搜索全排列。path=[], used=[F,F,F]",
+      "codeLine": "dfs(0)",
+      "highlights": ["dfs(0)"],
+      "state": {
+        "variables": [
+          {"name": "当前位置", "value": "0", "note": "准备填充第0位"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["F", "F", "F"], "activeIndex": -1, "note": "都没用过"},
+          {"name": "path", "type": "int[]", "values": [], "activeIndex": -1, "note": "空路径"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "尝试放数字1",
+      "description": "遍历数字1，2，3。先尝试1。used[0]=F，可以放。更新状态：used[0]=T, path=[1]",
+      "codeLine": "for i=0..2: if(!used[i]) { path.push(i+1); used[i]=true; }",
+      "highlights": ["used[0]=true"],
+      "state": {
+        "variables": [
+          {"name": "尝试数字", "value": "1", "note": "i=0"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "F"], "activeIndex": 0, "note": "1已使用"},
+          {"name": "path", "type": "int[]", "values": ["1"], "activeIndex": 0, "note": "当前路径"}
+        ],
+        "output": "1"
+      }
+    },
+    {
+      "step": 3,
+      "title": "递归到下一层：dfs(1)",
+      "description": "path长度1，继续递归到第1位。path=[1], used=[T,F,F]",
+      "codeLine": "dfs(1)",
+      "highlights": ["dfs(1)"],
+      "state": {
+        "variables": [
+          {"name": "递归深度", "value": "1", "note": "填充第1位"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "F"], "activeIndex": -1, "note": "保持状态"},
+          {"name": "path", "type": "int[]", "values": ["1"], "activeIndex": 0, "note": "继续深搜"}
+        ],
+        "output": "1"
+      }
+    },
+    {
+      "step": 4,
+      "title": "尝试放数字2",
+      "description": "在第1位尝试数字。1已用过，跳过。2没用过，可以放。used[1]=T, path=[1,2]",
+      "codeLine": "i=0: used[0]=true跳过; i=1: used[1]=false，放2",
+      "highlights": ["used[1]=true"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "2", "note": "i=1"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "T", "F"], "activeIndex": 1, "note": "1,2已用"},
+          {"name": "path", "type": "int[]", "values": ["1", "2"], "activeIndex": 1, "note": "继续增长"}
+        ],
+        "output": "1 2"
+      }
+    },
+    {
+      "step": 5,
+      "title": "递归到第2位：dfs(2)",
+      "description": "path长度2，继续递归到第2位。只剩数字3可用",
+      "codeLine": "dfs(2)",
+      "highlights": ["dfs(2)"],
+      "state": {
+        "variables": [
+          {"name": "递归深度", "value": "2", "note": "最后一位"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "T", "F"], "activeIndex": -1, "note": "只剩3"},
+          {"name": "path", "type": "int[]", "values": ["1", "2"], "activeIndex": 1, "note": "即将完成"}
+        ],
+        "output": "1 2"
+      }
+    },
+    {
+      "step": 6,
+      "title": "放数字3，完成第一个排列",
+      "description": "只有3没用过，放3。used[2]=T, path=[1,2,3]。path长度3==n，记录结果",
+      "codeLine": "path.size() == n: 输出",
+      "highlights": ["[1,2,3]"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "[1,2,3]", "note": "第一个排列"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "T", "T"], "activeIndex": 2, "note": "全用完"},
+          {"name": "path", "type": "int[]", "values": ["1", "2", "3"], "activeIndex": 2, "note": "完成"}
+        ],
+        "output": "1 2 3"
+      }
+    },
+    {
+      "step": 7,
+      "title": "回溯！恢复现场：删除3",
+      "description": "回到上一层，恢复状态。used[2]=F, path=[1,2]",
+      "codeLine": "path.pop(); used[2] = false;",
+      "highlights": ["path.pop()", "used[2]=false"],
+      "state": {
+        "variables": [
+          {"name": "回溯操作", "value": "恢复第2位", "note": "现场恢复"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "T", "F"], "activeIndex": 2, "note": "3恢复未用"},
+          {"name": "path", "type": "int[]", "values": ["1", "2"], "activeIndex": 1, "note": "删除3"}
+        ],
+        "output": "1 2"
+      }
+    },
+    {
+      "step": 8,
+      "title": "回溯！恢复现场：删除2",
+      "description": "回到上一层，继续恢复状态。used[1]=F, path=[1]",
+      "codeLine": "path.pop(); used[1] = false;",
+      "highlights": ["path.pop()", "used[1]=false"],
+      "state": {
+        "variables": [
+          {"name": "回溯操作", "value": "恢复第1位", "note": "尝试其他分支"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "F"], "activeIndex": 1, "note": "2恢复未用"},
+          {"name": "path", "type": "int[]", "values": ["1"], "activeIndex": 0, "note": "回到path=[1]"}
+        ],
+        "output": "1"
+      }
+    },
+    {
+      "step": 9,
+      "title": "在第1位尝试数字3",
+      "description": "第1位的循环继续。数字2已试过，跳过。数字3没用过，可以放。used[2]=T, path=[1,3]",
+      "codeLine": "i=2: used[2]=false，放3",
+      "highlights": ["used[2]=true"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "3", "note": "i=2"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "T"], "activeIndex": 2, "note": "1,3已用"},
+          {"name": "path", "type": "int[]", "values": ["1", "3"], "activeIndex": 1, "note": "新分支"}
+        ],
+        "output": "1 3"
+      }
+    },
+    {
+      "step": 10,
+      "title": "递归到第2位，只能放2",
+      "description": "path=[1,3]，继续递归。1和3都用了，只能放2。used[1]=T, path=[1,3,2]",
+      "codeLine": "dfs(2) → 只能放2",
+      "highlights": ["[1,3,2]"],
+      "state": {
+        "variables": [
+          {"name": "第二个排列", "value": "[1,3,2]", "note": "完成"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "T", "T"], "activeIndex": 1, "note": "2也用了"},
+          {"name": "path", "type": "int[]", "values": ["1", "3", "2"], "activeIndex": 2, "note": "完成"}
+        ],
+        "output": "1 3 2"
+      }
+    },
+    {
+      "step": 11,
+      "title": "回溯！恢复现场：删除2",
+      "description": "回到上一层，恢复状态。used[1]=F, path=[1,3]",
+      "codeLine": "path.pop(); used[1] = false;",
+      "highlights": ["path.pop()", "used[1]=false"],
+      "state": {
+        "variables": [
+          {"name": "回溯操作", "value": "恢复第2位", "note": "现场恢复"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "T"], "activeIndex": 1, "note": "2恢复未用"},
+          {"name": "path", "type": "int[]", "values": ["1", "3"], "activeIndex": 1, "note": "删除2"}
+        ],
+        "output": "1 3"
+      }
+    },
+    {
+      "step": 12,
+      "title": "回溯！恢复现场：删除3",
+      "description": "回到上一层，恢复状态。used[2]=F, path=[1]",
+      "codeLine": "path.pop(); used[2] = false;",
+      "highlights": ["path.pop()", "used[2]=false"],
+      "state": {
+        "variables": [
+          {"name": "回溯操作", "value": "恢复第1位", "note": "第1位循环结束"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["T", "F", "F"], "activeIndex": 2, "note": "3恢复未用"},
+          {"name": "path", "type": "int[]", "values": ["1"], "activeIndex": 0, "note": "回到path=[1]"}
+        ],
+        "output": "1"
+      }
+    },
+    {
+      "step": 13,
+      "title": "回溯！恢复现场：删除1",
+      "description": "回到上一层，恢复状态。used[0]=F, path=[]。第0位尝试完毕，开始尝试2",
+      "codeLine": "path.pop(); used[0] = false;",
+      "highlights": ["path.pop()", "used[0]=false"],
+      "state": {
+        "variables": [
+          {"name": "回到初始", "value": "path=[]", "note": "尝试2开头"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["F", "F", "F"], "activeIndex": 0, "note": "全部恢复"},
+          {"name": "path", "type": "int[]", "values": [], "activeIndex": -1, "note": "空路径"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 14,
+      "title": "开始以数字2开头",
+      "description": "第0位的循环继续，数字1已试过，跳过。尝试2。used[1]=T, path=[2]",
+      "codeLine": "i=1: used[1]=false，放2",
+      "highlights": ["used[1]=true"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "2", "note": "i=1"}
+        ],
+        "containers": [
+          {"name": "used", "type": "bool[]", "values": ["F", "T", "F"], "activeIndex": 1, "note": "2已使用"},
+          {"name": "path", "type": "int[]", "values": ["2"], "activeIndex": 0, "note": "新起点"}
+        ],
+        "output": "2"
+      }
+    },
+    {
+      "step": 15,
+      "title": "快速完成剩余排列",
+      "description": "类似前面的过程，以2开头会生成[2,1,3]和[2,3,1]，然后恢复现场尝试3开头",
+      "codeLine": "继续深搜...",
+      "highlights": ["继续深搜"],
+      "state": {
+        "variables": [
+          {"name": "剩余排列", "value": "4个", "note": "2开头的2个+3开头的2个"}
+        ],
+        "containers": [
+          {"name": "状态", "type": "text", "values": ["[2,1,3]", "[2,3,1]", "[3,1,2]", "[3,2,1]"], "activeIndex": -1, "note": "剩余4个排列"}
+        ],
+        "output": "2..."
+      }
+    },
+    {
+      "step": 16,
+      "title": "DFS回溯总结",
+      "description": "全排列生成完毕！关键要点：1) 使用used数组记录已选数字 2) 递归前改变状态，递归后恢复状态 3) 深度优先，一条路走到黑再回溯",
+      "codeLine": "for (int i = 0; i < n; i++) {\n    if (!used[i]) {\n        used[i] = true;  path.push_back(i+1);\n        dfs(depth+1);\n        used[i] = false; path.pop_back();  // 回溯！\n    }\n}",
+      "highlights": ["回溯"],
+      "state": {
+        "variables": [
+          {"name": "总排列数", "value": "6", "note": "3! = 6"}
+        ],
+        "containers": [
+          {"name": "所有排列", "type": "int[]", "values": ["1,2,3", "1,3,2", "2,1,3", "2,3,1", "3,1,2", "3,2,1"], "activeIndex": 5, "note": "全部完成"}
+        ],
+        "output": "1,2,3  1,3,2  2,1,3  2,3,1  3,1,2  3,2,1"
+      }
+    }
+  ]
+}

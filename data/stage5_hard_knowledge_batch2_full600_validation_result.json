@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T14:35:55Z",
+    "validate_only": true,
+    "main_graph_modified": true,
+    "only_new_nodes_added": true,
+    "old_nodes_modified": false,
+    "resolved_pre_recalculated": true,
+    "io_v4_4_modified": false,
+    "content_packages_modified": false,
+    "frontend_code_modified": false,
+    "batch3_continued": false
+  },
+  "pre_merge_checks": {
+    "item_count_before_2640": true,
+    "section_count_65": true,
+    "recommendation_ready": true,
+    "selected_candidate_count_600": true,
+    "recommended_merge_count_600": true,
+    "dependency_cleanup_required_false": true,
+    "needs_new_section_false": true,
+    "candidate_dependency_cycle_false": true,
+    "excluded_duplicate_empty": true,
+    "section_ref_dependencies_empty": true,
+    "direct_pre_over_limit_empty": true,
+    "whole_section_expansion_risk_empty": true,
+    "manual_review_candidates_empty": true,
+    "dp_2_to_6": true,
+    "no_whole_section_expansion": true
+  },
+  "merge_result": {
+    "baseline_item_count": 2640,
+    "final_item_count": 3240,
+    "new_items": 600,
+    "section_count": 65
+  },
+  "validation": {
+    "item_count_3240": true,
+    "section_count_65": true,
+    "dangling_refs": [],
+    "dangling_count": 0,
+    "direct_pre_cycle": null,
+    "resolved_pre_mismatches": [],
+    "resolved_pre_mismatch_count": 0,
+    "direct_pre_section_refs": [],
+    "direct_pre_over_8": [],
+    "duplicate_ids": false,
+    "product_metadata_validation_passed": true,
+    "report_matches_json": true,
+    "passed": true
+  },
+  "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch2_full600_20260526_223555.json",
+  "old_nodes_unchanged": {
+    "ids_unchanged": true,
+    "names_unchanged": true,
+    "direct_pre_unchanged": true,
+    "rel_unchanged": true,
+    "resolved_pre_old_changes": 0,
+    "resolved_pre_old_changes_expected": "only from new nodes added to transitive closures"
+  },
+  "recommendations": {
+    "enter_review_phase": true,
+    "continue_batch3": false
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "title": "Patterns Batch3 & Batch4 Generation Plan",
+    "generated_by": "DeepSeek V4 Pro (Thread 3)",
+    "generated_at": "2026-05-26T01:00:00.000Z",
+    "task": "batch3_batch4_generation_plan",
+    "version": "1.0",
+    "description": "三种正式生成方案的对比与推荐",
+    "formal_patterns_generated": false
+  },
+  "options": {
+    "plan_a": {
+      "name": "方案 A: 仅生成 patterns_batch3",
+      "description": "只生成已准备就绪的 3 个 batch3 草案候选",
+      "count": 3,
+      "patterns": [
+        "pat.dominance_counting",
+        "pat.mobius_inversion_application",
+        "pat.euler_function_application"
+      ],
+      "pros": [
+        "风险最低，3 个草案已通过全部检查",
+        "不需要准备新 draft",
+        "可与 Stage3F Batch4 full49 流水线并行",
+        "快速交付"
+      ],
+      "cons": [
+        "仅 3 个 pattern，覆盖范围窄",
+        "Stage3G 的 8 个 P1 候选将推迟"
+      ],
+      "preparation_required": [
+        "确认 Stage3F Batch4 full49 完成",
+        "合成 3 个 draft → patterns_batch3.json",
+        "Validation"
+      ]
+    },
+    "plan_b": {
+      "name": "方案 B: 生成 patterns_batch3 + Stage3G P1",
+      "description": "生成 batch3 的 3 个 + Stage3G P1 的 8 个",
+      "count": 11,
+      "patterns": [
+        "pat.dominance_counting",
+        "pat.mobius_inversion_application",
+        "pat.euler_function_application",
+        "pat.parallel_binary_search",
+        "pat.matrix_exponentiation_dp",
+        "pat.two_pointer_sliding_window",
+        "pat.meet_in_the_middle",
+        "pat.congruence_shortest_path_modeling",
+        "pat.max_density_subgraph",
+        "pat.mixed_graph_euler_circuit",
+        "pat.generating_function_dp"
+      ],
+      "pros": [
+        "覆盖 3 个 batch3 草案 + 8 个高价值 P1 候选",
+        "P1 候选信号清晰，价值高",
+        "与 batch3 草案领域不重叠"
+      ],
+      "cons": [
+        "8 个 P1 候选需要提前准备 draft preview",
+        "P2 候选推迟"
+      ],
+      "preparation_required": [
+        "确认 Stage3F Batch4 full49 完成",
+        "为 8 个 P1 候选准备 draft preview",
+        "合成 11 个 draft → patterns_batch3.json + patterns_batch4.json",
+        "Validation"
+      ]
+    },
+    "plan_c": {
+      "name": "方案 C: 生成 batch3 + P1 + P2 (约 20 个)",
+      "description": "生成 batch3 的 3 个 + Stage3G P1 的 8 个 + P2 合并后的 9 个",
+      "count_raw": 23,
+      "count_after_merge": 20,
+      "patterns": [
+        "pat.dominance_counting",
+        "pat.mobius_inversion_application",
+        "pat.euler_function_application",
+        "pat.parallel_binary_search",
+        "pat.matrix_exponentiation_dp",
+        "pat.two_pointer_sliding_window",
+        "pat.meet_in_the_middle",
+        "pat.congruence_shortest_path_modeling",
+        "pat.max_density_subgraph",
+        "pat.mixed_graph_euler_circuit",
+        "pat.generating_function_dp",
+        "pat.binary_search_answer",
+        "pat.interval_scheduling_extended",
+        "pat.interval_point_selection",
+        "pat.dp_on_automaton",
+        "pat.knapsack_counting",
+        "pat.super_source_sink_modeling",
+        "pat.difference_constraints_advanced",
+        "pat.binary_lifting_pattern",
+        "pat.prefix_sum_difference_extended",
+        "pat.state_compression_modeling"
+      ],
+      "pros": [
+        "最完整的覆盖",
+        "一次性完成所有候选",
+        "后续无积压"
+      ],
+      "cons": [
+        "20 个 pattern 需要准备大量 draft preview",
+        "工作量大，风险较高",
+        "P2 部分候选信号不够强"
+      ],
+      "preparation_required": [
+        "确认 Stage3F Batch4 full49 完成",
+        "为 8 个 P1 + 9 个 P2 候选准备 draft preview",
+        "处理 3 组合并",
+        "合成 ~20 个 draft → 正式文件",
+        "Validation"
+      ]
+    }
+  },
+  "recommendation": {
+    "recommended_plan": "plan_b",
+    "reason": [
+      "方案 B 平衡了交付速度与覆盖广度",
+      "3 个 batch3 草案已就绪，可立即合成",
+      "8 个 P1 候选信号清晰、价值高，值得优先生成",
+      "P2 候选信号不如 P1 清晰，可在下一轮再评估",
+      "避免一次性生成 20 个 pattern 带来的质量风险"
+    ],
+    "execution_order": [
+      {
+        "step": 1,
+        "action": "等待 Stage3F Batch4 full49 dependency cleanup 完成 (Thread 2)",
+        "blocker": true
+      },
+      {
+        "step": 2,
+        "action": "用户发出正式生成指令",
+        "blocker": true
+      },
+      {
+        "step": 3,
+        "action": "生成 patterns_batch3.json (3 patterns)",
+        "details": [
+          "pat.dominance_counting",
+          "pat.mobius_inversion_application",
+          "pat.euler_function_application"
+        ]
+      },
+      {
+        "step": 4,
+        "action": "为 8 个 Stage3G P1 候选准备 draft preview",
+        "details": "每个 draft 需含: recognition_signals, common_transforms, pitfalls, boundary_note, required_items, related_items, example_problem_refs"
+      },
+      {
+        "step": 5,
+        "action": "合成 8 个 draft → patterns_batch4.json",
+        "details": "Validation 后正式发布"
+      },
+      {
+        "step": 6,
+        "action": "Phase 2: 评估 P2 候选 readiness，决定是否进入 patterns_batch5",
+        "blocker": false
+      }
+    ]
+  },
+  "merge_records": {
+    "count": 9,
+    "action": "记录为目标 pattern 的补充说明，不生成新 pattern"
+  },
+  "defer_records": {
+    "count": 65,
+    "action": "保留在知识图谱中作为知识点条目，不生成 pattern"
+  },
+  "declarations": {
+    "recommend_generate_now": false,
+    "main_graph_modified": false,
+    "existing_patterns_modified": false
+  }
+}

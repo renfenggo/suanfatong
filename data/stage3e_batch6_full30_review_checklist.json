@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 full_30 Review 检查清单",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T10:40:00.000Z",
+    "batch_id": "stage3e_batch6_full30",
+    "expected_new_items": 30,
+    "expected_item_count_after_merge": 1647,
+    "template_only": true,
+    "main_graph_modified": false,
+    "note": "本检查清单为 Review 模板，待 Batch6 Merge 成功后执行"
+  },
+  "checklist": {
+    "pre_review": {
+      "title": "Review 前检查",
+      "items": [
+        {
+          "id": "pre_01",
+          "check": "确认 validate-only passed",
+          "expected": "passed = true",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_02",
+          "check": "确认 item_count = 1647",
+          "expected": "1617 + 30 = 1647",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_03",
+          "check": "确认 section_count 仍为 65",
+          "expected": "65（无新 section）",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_04",
+          "check": "确认 resolved_pre_mismatches = []",
+          "expected": "0",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_05",
+          "check": "确认 product_metadata_validation.passed = true",
+          "expected": "true",
+          "priority": "P0"
+        },
+        {
+          "id": "pre_06",
+          "check": "确认 candidates 涉及的 3 个 section (3.13/2.21/2.15) 均已有 dependency",
+          "expected": "3.13/2.21/2.15 均已存在",
+          "priority": "P1"
+        },
+        {
+          "id": "pre_07",
+          "check": "确认新增 candidate 与 Batch1~5 无重复",
+          "expected": "无重复",
+          "priority": "P1"
+        },
+        {
+          "id": "pre_08",
+          "check": "确认 Batch5 Fix Lite 的 review_status 变更未影响新增节点",
+          "expected": "无冲突",
+          "priority": "P2"
+        }
+      ]
+    },
+    "per_item_checks": {
+      "title": "逐节点检查维度",
+      "items": [
+        {
+          "id": "item_01",
+          "check": "是否适合作为 knowledge_item",
+          "options": ["keep", "needs_review", "reject"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_02",
+          "check": "item_type 分类",
+          "options": ["core_concept", "implementation_variant", "modeling_pattern", "theorem_or_property", "application_case", "unclear"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_03",
+          "check": "是否存在过度拆分",
+          "options": ["ok", "borderline", "over_split"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_04",
+          "check": "是否与已有节点重复",
+          "options": ["no_overlap", "partial_overlap", "duplicate"],
+          "priority": "P0"
+        },
+        {
+          "id": "item_05",
+          "check": "direct_pre 是否合理",
+          "options": ["ok", "too_few", "too_broad", "wrong"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_06",
+          "check": "是否应进入 problem_patterns",
+          "options": ["keep_in_knowledge", "sync_to_patterns", "unclear"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_07",
+          "check": "parent_concept 是否明确",
+          "options": ["clear", "weak", "missing"],
+          "priority": "P1"
+        },
+        {
+          "id": "item_08",
+          "check": "learning_path_policy 建议",
+          "options": ["core", "advanced_only", "encyclopedia_only"],
+          "priority": "P2"
+        },
+        {
+          "id": "item_09",
+          "check": "review_priority 建议",
+          "options": ["A", "B", "C"],
+          "priority": "P2"
+        }
+      ]
+    },
+    "series_specific_checks": {
+      "title": "系列专项检查",
+      "series": [
+        {
+          "name": "李超线段树变体 (4 个: On Tree / Rollback / Max Query / Min Query)",
+          "checks": [
+            {
+              "id": "series_li_01",
+              "check": "On Tree 的独立价值 vs 基本李超树+树剖",
+              "expected": "树上李超树有独立复杂度优势",
+              "priority": "P1"
+            },
+            {
+              "id": "series_li_02",
+              "check": "Rollback 回滚功能的竞赛出现频率",
+              "expected": "回滚版在特定题型中有应用",
+              "priority": "P1"
+            },
+            {
+              "id": "series_li_03",
+              "check": "Maximum Query / Minimum Query 与动态版是否界限清晰",
+              "expected": "两者是查询类型变体，但可能与 Dynamic 版功能重叠",
+              "priority": "P0"
+            },
+            {
+              "id": "series_li_04",
+              "check": "4 个变体是否存在过度拆分",
+              "expected": "Max/Min Query 可能可合并为 1 个节点",
+              "priority": "P1"
+            }
+          ]
+        },
+        {
+          "name": "可并堆变体 (5 个: Lazy Deletion / Persistent / Decrease Key / Double Ended / Meldable)",
+          "checks": [
+            {
+              "id": "series_heap_01",
+              "check": "Lazy Deletion Heap 的独立实用性",
+              "expected": "懒删除在竞赛中常用，有独立价值",
+              "priority": "P2"
+            },
+            {
+              "id": "series_heap_02",
+              "check": "Persistent Heap 的竞赛出现频率",
+              "expected": "可持久化堆出现频率较低",
+              "priority": "P1"
+            },
+            {
+              "id": "series_heap_03",
+              "check": "Heap With Decrease Key 是否可合并到 Fibonacci Heap",
+              "expected": "Decrease Key 是 Fibonacci 的核心操作，建议合并",
+              "priority": "P0"
+            },
+            {
+              "id": "series_heap_04",
+              "check": "Double Ended Priority Queue 与 3.2.3 双端队列的关系",
+              "expected": "DEPQ 是堆变体，与双端队列不同",
+              "priority": "P1"
+            },
+            {
+              "id": "series_heap_05",
+              "check": "Meldable Priority Queue 是否为过度抽象",
+              "expected": "Meldable 是可并堆的抽象接口，建议降级或合并",
+              "priority": "P0"
+            },
+            {
+              "id": "series_heap_06",
+              "check": "5 个变体是否可合并/折叠为更少",
+              "expected": "建议保留 3~4 个，Decrease Key 合并到 Fibonacci，Meldable 降级",
+              "priority": "P1"
+            }
+          ]
+        },
+        {
+          "name": "Segment Tree Beats 变体 (6 个)",
+          "checks": [
+            {
+              "id": "series_beats_01",
+              "check": "Beats Amortized Analysis 是否为 theorem_or_property",
+              "expected": "建议改为 theorem_or_property，非独立算法",
+              "priority": "P0"
+            },
+            {
+              "id": "series_beats_02",
+              "check": "Beats Proof 是否可折叠到 Historical Maximum",
+              "expected": "正确性分析适合作为子话题，建议 collapse",
+              "priority": "P0"
+            },
+            {
+              "id": "series_beats_03",
+              "check": "Beats With Assignment / Second Maximum Invariant / Range Modulo 的竞赛频率",
+              "expected": "三者均为罕见操作，竞赛中出现频率低",
+              "priority": "P1"
+            },
+            {
+              "id": "series_beats_04",
+              "check": "Range Min Max Sum 与已合并的 Historical Max / Range Add Max 的关系",
+              "expected": "Min Max Sum 是已合并操作的组合变体",
+              "priority": "P0"
+            },
+            {
+              "id": "series_beats_05",
+              "check": "6 个变体的整体过度拆分风险",
+              "expected": "高，建议合并/折叠 2~3 个，保留 3~4 个核心",
+              "priority": "P0"
+            }
+          ]
+        },
+        {
+          "name": "Dynamic Tree 系列 (5 个: Cut Link / Dynamic LCA / Path Lazy Tag / Reroot / Virtual Subtree)",
+          "checks": [
+            {
+              "id": "series_dt_01",
+              "check": "5 个操作变体是否各有独立价值",
+              "expected": "Cut Link Connectivity 和 Path Lazy Tag 最核心；Reroot 和 Virtual Subtree Aggregate 为扩展",
+              "priority": "P0"
+            },
+            {
+              "id": "series_dt_02",
+              "check": "Dynamic LCA vs 已有 2.6.3 LCA 的关系",
+              "expected": "Dynamic LCA 支持树上动态边操作",
+              "priority": "P1"
+            },
+            {
+              "id": "series_dt_03",
+              "check": "与已有 3.13 节点无重复",
+              "expected": "Dynamic Tree 为 3.13 全新子系列",
+              "priority": "P1"
+            },
+            {
+              "id": "series_dt_04",
+              "check": "是否全部应标记 advanced_only",
+              "expected": "全部 advanced_only",
+              "priority": "P2"
+            }
+          ]
+        },
+        {
+          "name": "Bitset Linear Basis: Basis On Tree",
+          "checks": [
+            {
+              "id": "series_blb_01",
+              "check": "与已有 3.13 线性基节点的关系",
+              "expected": "确认已有线性基节点无重复",
+              "priority": "P1"
+            },
+            {
+              "id": "series_blb_02",
+              "check": "树上线性基的独立竞赛价值",
+              "expected": "树上路径异或查询是经典题型",
+              "priority": "P1"
+            }
+          ]
+        },
+        {
+          "name": "匹配与覆盖 (5 个: Stable Marriage / Minimum Path Cover / Dilworth Theorem / Blossom / Konig Theorem / Weighted General Matching)",
+          "checks": [
+            {
+              "id": "series_match_01",
+              "check": "Stable Marriage 是否与已有 2.15 重复",
+              "expected": "Stable Marriage 是独立算法",
+              "priority": "P1"
+            },
+            {
+              "id": "series_match_02",
+              "check": "Minimum Path Cover / Dilworth Theorem 的关系",
+              "expected": "Dilworth 是 Min Path Cover 的理论基础，item_type 应为 theorem",
+              "priority": "P1"
+            },
+            {
+              "id": "series_match_03",
+              "check": "Blossom Algorithm 的实现复杂度说明",
+              "expected": "一般图最大匹配，实现复杂，需 advanced_only",
+              "priority": "P1"
+            },
+            {
+              "id": "series_match_04",
+              "check": "Konig Theorem 的 item_type",
+              "expected": "theorem_or_property",
+              "priority": "P1"
+            },
+            {
+              "id": "series_match_05",
+              "check": "Weighted General Matching 的竞赛实用性",
+              "expected": "高级内容，竞赛罕见",
+              "priority": "P2"
+            },
+            {
+              "id": "series_match_06",
+              "check": "Minimum Path Cover / Dilworth Theorem 是否应同步 problem_patterns",
+              "expected": "DAG 最小路径覆盖有建模模式特征",
+              "priority": "P1"
+            }
+          ]
+        },
+        {
+          "name": "上下界网络流 (3 个: Demands / Edge Lower Bound Transform / Minimum Flow)",
+          "checks": [
+            {
+              "id": "series_flow_01",
+              "check": "3 个变体的区分度",
+              "expected": "Demands 是节点需求、Edge Lower Bound 是边下界、Minimum Flow 是最小流，三者不同",
+              "priority": "P1"
+            },
+            {
+              "id": "series_flow_02",
+              "check": "与 2.16.3 网络流基础的关系",
+              "expected": "上下界网络流是 2.16.3 的扩展",
+              "priority": "P1"
+            },
+            {
+              "id": "series_flow_03",
+              "check": "direct_pre 是否包含 2.16.3",
+              "expected": "应包含网络流基础",
+              "priority": "P2"
+            }
+          ]
+        }
+      ]
+    },
+    "over_split_risk_groups": {
+      "title": "过度拆分风险组（重点复查）",
+      "groups": [
+        {
+          "group": "Segment Tree Beats",
+          "count": 6,
+          "risk": "high",
+          "recommended_target": "3~4",
+          "note": "Beats Amortized Analysis 和 Proof 应改为 theorem_or_property 或 collapse；Range Min Max Sum 与已有的 3 个 Beats 操作可能重叠"
+        },
+        {
+          "group": "可并堆变体",
+          "count": 5,
+          "risk": "medium",
+          "recommended_target": "3~4",
+          "note": "Decrease Key 可合并到 Fibonacci；Meldable 可降级"
+        },
+        {
+          "group": "李超线段树",
+          "count": 4,
+          "risk": "medium",
+          "recommended_target": "3",
+          "note": "Max Query 和 Min Query 可能合并为 1 个"
+        },
+        {
+          "group": "上下界网络流",
+          "count": 3,
+          "risk": "low",
+          "recommended_target": "3",
+          "note": "三者区分明确"
+        }
+      ]
+    },
+    "output_checklist": {
+      "title": "Review 输出文件检查",
+      "items": [
+        {
+          "id": "out_01",
+          "file": "data/stage3e_batch6_full30_added_items_review.json",
+          "expected_content": "30 个新增节点的逐项审查结论",
+          "priority": "P0"
+        },
+        {
+          "id": "out_02",
+          "file": "docs/stage3e_batch6_full30_added_items_review_report.md",
+          "expected_content": "Review 完整报告",
+          "priority": "P0"
+        },
+        {
+          "id": "out_03",
+          "file": "data/stage3e_batch6_full30_review_status_patch_preview.json",
+          "expected_content": "review_status 补丁预览",
+          "priority": "P1"
+        },
+        {
+          "id": "out_04",
+          "file": "data/stage3e_batch6_full30_dependency_fix_candidates.json",
+          "expected_content": "依赖修复候选（预期为空）",
+          "priority": "P2"
+        },
+        {
+          "id": "out_05",
+          "file": "data/stage3e_batch6_full30_problem_pattern_sync_candidates.json",
+          "expected_content": "应同步到 problem_patterns 的候选",
+          "priority": "P1"
+        },
+        {
+          "id": "out_06",
+          "file": "data/stage3e_batch6_full30_merge_or_collapse_candidates.json",
+          "expected_content": "应合并或折叠的候选",
+          "priority": "P1"
+        }
+      ]
+    },
+    "post_review_validation": {
+      "title": "Review 后验证",
+      "items": [
+        {
+          "id": "post_01",
+          "check": "validate-only passed",
+          "expected": "passed = true",
+          "priority": "P0"
+        },
+        {
+          "id": "post_02",
+          "check": "所有新增节点已标记 review_decision",
+          "expected": "30/30",
+          "priority": "P0"
+        },
+        {
+          "id": "post_03",
+          "check": "无 unreviewed high risk 节点残留",
+          "expected": "0",
+          "priority": "P0"
+        },
+        {
+          "id": "post_04",
+          "check": "确认主图谱未修改（Review 阶段无 direct_pre 变更）",
+          "expected": "true",
+          "priority": "P1"
+        },
+        {
+          "id": "post_05",
+          "check": "parent_concept 全部 clear 或已标注 weak",
+          "expected": "全部 clear 或已记录",
+          "priority": "P1"
+        },
+        {
+          "id": "post_06",
+          "check": "3 个 section (3.13/2.21/2.15) 的节点分布已确认",
+          "expected": "3.13=21, 2.21=7, 2.15=2",
+          "priority": "P2"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,501 @@
+[
+  {
+    "problem_ref_id": "cses.range_queries.static_range_sum",
+    "platform": "CSES",
+    "problem_id": "1646",
+    "title": "Static Range Sum Queries",
+    "url": "https://cses.fi/problemset/task/1646",
+    "difficulty": "easy",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.4.1"
+    ],
+    "linked_patterns": [
+      "pat.prefix_sum.range_query"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "cses.sorting_and_searching.apartments",
+    "platform": "CSES",
+    "problem_id": "1084",
+    "title": "Apartments",
+    "url": "https://cses.fi/problemset/task/1084",
+    "difficulty": "easy",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.5.1"
+    ],
+    "linked_patterns": [
+      "pat.two_pointers.opposite"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "cses.graph_algorithms.message_route",
+    "platform": "CSES",
+    "problem_id": "1667",
+    "title": "Message Route",
+    "url": "https://cses.fi/problemset/task/1667",
+    "difficulty": "easy",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.7.2",
+      "2.13.1"
+    ],
+    "linked_patterns": [
+      "pat.graph.shortest_path_modeling"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "cses.graph_algorithms.shortest_routes_i",
+    "platform": "CSES",
+    "problem_id": "1671",
+    "title": "Shortest Routes I",
+    "url": "https://cses.fi/problemset/task/1671",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.13.2"
+    ],
+    "linked_patterns": [
+      "pat.graph.shortest_path_modeling"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "leetcode.two_sum",
+    "platform": "LeetCode",
+    "problem_id": "1",
+    "title": "Two Sum",
+    "url": "https://leetcode.com/problems/two-sum/",
+    "difficulty": "easy",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "3.3.6"
+    ],
+    "linked_patterns": [
+      "pat.two_pointers.opposite"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "leetcode.longest_substring_without_repeating",
+    "platform": "LeetCode",
+    "problem_id": "3",
+    "title": "Longest Substring Without Repeating Characters",
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+    "difficulty": "medium",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "2.5.4",
+      "3.3.6"
+    ],
+    "linked_patterns": [
+      "pat.sliding_window.variable"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "leetcode.number_of_islands",
+    "platform": "LeetCode",
+    "problem_id": "200",
+    "title": "Number of Islands",
+    "url": "https://leetcode.com/problems/number-of-islands/",
+    "difficulty": "medium",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "2.7.1",
+      "2.7.2"
+    ],
+    "linked_patterns": [
+      "pat.grid.islands"
+    ],
+    "role": "classic",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "leetcode.binary_search",
+    "platform": "LeetCode",
+    "problem_id": "704",
+    "title": "Binary Search",
+    "url": "https://leetcode.com/problems/binary-search/",
+    "difficulty": "easy",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "2.3.1"
+    ],
+    "linked_patterns": [
+      "pat.binary_search.answer"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "leetcode.kth_largest",
+    "platform": "LeetCode",
+    "problem_id": "215",
+    "title": "Kth Largest Element in an Array",
+    "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+    "difficulty": "medium",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "3.2.6",
+      "2.2.10"
+    ],
+    "linked_patterns": [
+      "pat.heap.top_k"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "atcoder.dp_contest.knapsack1",
+    "platform": "AtCoder",
+    "problem_id": "dp_d",
+    "title": "Knapsack 1",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_d",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.8.8"
+    ],
+    "linked_patterns": [
+      "pat.dp.knapsack"
+    ],
+    "role": "classic",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "atcoder.dp_contest.longest_path",
+    "platform": "AtCoder",
+    "problem_id": "dp_g",
+    "title": "Longest Path",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_g",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.8.14"
+    ],
+    "linked_patterns": [
+      "pat.dp.tree"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "atcoder.abc_segment_tree_practice",
+    "platform": "AtCoder",
+    "problem_id": "",
+    "title": "Segment Tree Practice",
+    "url": "https://atcoder.jp/contests/practice2/tasks/practice2_j",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "3.7.2"
+    ],
+    "linked_patterns": [
+      "pat.segment_tree.range_update"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "codeforces.educational_dsu",
+    "platform": "Codeforces",
+    "problem_id": "",
+    "title": "DSU Practice",
+    "url": "https://codeforces.com/problemset",
+    "difficulty": "unknown",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "3.4.1"
+    ],
+    "linked_patterns": [
+      "pat.dsu.merge_components"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "codeforces.flow_practice",
+    "platform": "Codeforces",
+    "problem_id": "",
+    "title": "Flow Practice",
+    "url": "https://codeforces.com/problemset",
+    "difficulty": "hard",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.16.3"
+    ],
+    "linked_patterns": [
+      "pat.flow.modeling"
+    ],
+    "role": "challenge",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "kattis.shortestpath1",
+    "platform": "Kattis",
+    "problem_id": "shortestpath1",
+    "title": "Single source shortest path, non-negative weights",
+    "url": "https://open.kattis.com/problems/shortestpath1",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.13.2"
+    ],
+    "linked_patterns": [
+      "pat.graph.shortest_path_modeling"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "usaco.guide.prefix_sum",
+    "platform": "USACO",
+    "problem_id": "",
+    "title": "Prefix Sum Practice",
+    "url": "https://usaco.guide/silver/prefix-sums",
+    "difficulty": "easy",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "2.4.1"
+    ],
+    "linked_patterns": [
+      "pat.prefix_sum.range_query"
+    ],
+    "role": "intro",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "luogu.p3374",
+    "platform": "Luogu",
+    "problem_id": "P3374",
+    "title": "树状数组 1",
+    "url": "https://www.luogu.com.cn/problem/P3374",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "3.7.1"
+    ],
+    "linked_patterns": [
+      "pat.prefix_sum.range_query"
+    ],
+    "role": "classic",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "luogu.p3372",
+    "platform": "Luogu",
+    "problem_id": "P3372",
+    "title": "线段树 1",
+    "url": "https://www.luogu.com.cn/problem/P3372",
+    "difficulty": "medium",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "3.7.2",
+      "3.7.3"
+    ],
+    "linked_patterns": [
+      "pat.segment_tree.range_update"
+    ],
+    "role": "classic",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "dmoj.dsu",
+    "platform": "DMOJ",
+    "problem_id": "",
+    "title": "Disjoint Set Practice",
+    "url": "https://dmoj.ca/problems/",
+    "difficulty": "unknown",
+    "tracks": [
+      "icpc",
+      "university_cp"
+    ],
+    "linked_items": [
+      "3.4.1"
+    ],
+    "linked_patterns": [
+      "pat.dsu.merge_components"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  },
+  {
+    "problem_ref_id": "hackerrank.bfs_shortest_reach",
+    "platform": "HackerRank",
+    "problem_id": "",
+    "title": "BFS: Shortest Reach",
+    "url": "https://www.hackerrank.com/challenges/bfsshortreach",
+    "difficulty": "medium",
+    "tracks": [
+      "interview"
+    ],
+    "linked_items": [
+      "2.7.2"
+    ],
+    "linked_patterns": [
+      "pat.graph.shortest_path_modeling"
+    ],
+    "role": "standard",
+    "language_availability": [
+      "en"
+    ],
+    "source_language": "en",
+    "copyright_policy": "metadata_only",
+    "notes": ""
+  }
+]

@@ -1,0 +1,3610 @@
+{
+  "meta": {
+    "title": "Stage3G Full400 Candidate to Item ID Mapping",
+    "generated_at": "2026-05-25T22:56:20.206224",
+    "batch_id": "stage3g_full400",
+    "total_mapped": 400
+  },
+  "mappings": [
+    {
+      "candidate_id": "cand.basic_algo.分治进阶_cdq分治",
+      "name": "分治进阶：CDQ分治",
+      "item_id": "2.1.65",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.分治进阶_点分治",
+      "name": "分治进阶：点分治",
+      "item_id": "2.1.66",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.分治进阶_分治fft",
+      "name": "分治进阶：分治FFT",
+      "item_id": "2.1.67",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.分治进阶_分治ntt",
+      "name": "分治进阶：分治NTT",
+      "item_id": "2.1.68",
+      "target_section": "2.1",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.倍增进阶_st表上倍增",
+      "name": "倍增进阶：ST表上倍增",
+      "item_id": "2.1.69",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.倍增进阶_树上倍增进阶",
+      "name": "倍增进阶：树上倍增进阶",
+      "item_id": "2.1.70",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_模拟退火",
+      "name": "随机化算法：模拟退火",
+      "item_id": "2.1.71",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_随机增量",
+      "name": "随机化算法：随机增量",
+      "item_id": "2.1.72",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_treap随机化",
+      "name": "随机化算法：Treap随机化",
+      "item_id": "2.1.73",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_随机哈希",
+      "name": "随机化算法：随机哈希",
+      "item_id": "2.1.74",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.递归进阶_尾递归优化",
+      "name": "递归进阶：尾递归优化",
+      "item_id": "2.1.75",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.递归进阶_递归转迭代",
+      "name": "递归进阶：递归转迭代",
+      "item_id": "2.1.76",
+      "target_section": "2.1",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.递推进阶_线性递推_特征方程",
+      "name": "递推进阶：线性递推(特征方程)",
+      "item_id": "2.1.77",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.递推进阶_bm算法_递推检测",
+      "name": "递推进阶：BM算法(递推检测)",
+      "item_id": "2.1.78",
+      "target_section": "2.1",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.递推进阶_常系数线性递推优化",
+      "name": "递推进阶：常系数线性递推优化",
+      "item_id": "2.1.79",
+      "target_section": "2.1",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.随机化算法_随机排列",
+      "name": "随机化算法：随机排列",
+      "item_id": "2.1.80",
+      "target_section": "2.1",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_字符串哈希进阶_双哈希",
+      "name": "字符串基础进阶：字符串哈希进阶(双哈希)",
+      "item_id": "2.10.43",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_滚动哈希",
+      "name": "字符串基础进阶：滚动哈希",
+      "item_id": "2.10.44",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_border树",
+      "name": "字符串基础进阶：Border树",
+      "item_id": "2.10.45",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_z算法_扩展kmp",
+      "name": "字符串基础进阶：Z算法(扩展KMP)",
+      "item_id": "2.10.46",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串基础进阶_最小表示法",
+      "name": "字符串基础进阶：最小表示法",
+      "item_id": "2.10.47",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.回文结构_manacher进阶",
+      "name": "回文结构：Manacher进阶",
+      "item_id": "2.10.48",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串处理_表达式求值",
+      "name": "字符串处理：表达式求值",
+      "item_id": "2.10.49",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串处理_大数处理",
+      "name": "字符串处理：大数处理",
+      "item_id": "2.10.50",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_最长公共子串_lcs",
+      "name": "字符串问题：最长公共子串(LCS)",
+      "item_id": "2.10.51",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_最长公共子序列_lcs",
+      "name": "字符串问题：最长公共子序列(LCS)",
+      "item_id": "2.10.52",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_编辑距离",
+      "name": "字符串问题：编辑距离",
+      "item_id": "2.10.53",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_最长回文子序列",
+      "name": "字符串问题：最长回文子序列",
+      "item_id": "2.10.54",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串问题_最长重复子串",
+      "name": "字符串问题：最长重复子串",
+      "item_id": "2.10.55",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_rabin_karp算法",
+      "name": "字符串匹配：Rabin-Karp算法",
+      "item_id": "2.10.56",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_shift_or算法",
+      "name": "字符串匹配：Shift-Or算法",
+      "item_id": "2.10.57",
+      "target_section": "2.10",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_bm算法",
+      "name": "字符串匹配：BM算法",
+      "item_id": "2.10.58",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串建模_字符串问题建模技巧",
+      "name": "字符串建模：字符串问题建模技巧",
+      "item_id": "2.10.59",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串技巧_滚动哈希进阶应用",
+      "name": "字符串技巧：滚动哈希进阶应用",
+      "item_id": "2.10.60",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_finite_automaton",
+      "name": "字符串匹配：Finite Automaton",
+      "item_id": "2.10.61",
+      "target_section": "2.10",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.string_lcs_sa",
+      "name": "字符串DP：最长公共子串后缀数组解法",
+      "item_id": "2.10.62",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.string.string_trie_graph",
+      "name": "字符串技巧：Trie树建图",
+      "item_id": "2.10.63",
+      "target_section": "2.10",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.string.string_sunday_opt",
+      "name": "字符串匹配：Sunday算法优化",
+      "item_id": "2.10.64",
+      "target_section": "2.10",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.graph.拓扑排序进阶_字典序拓扑",
+      "name": "拓扑排序进阶：字典序拓扑",
+      "item_id": "2.11.9",
+      "target_section": "2.11",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.拓扑排序进阶_拓扑计数",
+      "name": "拓扑排序进阶：拓扑计数",
+      "item_id": "2.11.10",
+      "target_section": "2.11",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.欧拉路径进阶_hierholzer算法",
+      "name": "欧拉路径进阶：Hierholzer算法",
+      "item_id": "2.11.11",
+      "target_section": "2.11",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.欧拉路径进阶_中国邮路问题",
+      "name": "欧拉路径进阶：中国邮路问题",
+      "item_id": "2.11.12",
+      "target_section": "2.11",
+      "risk_band": "medium",
+      "candidate_type": "application_case",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最小生成树进阶_次小生成树",
+      "name": "最小生成树进阶：次小生成树",
+      "item_id": "2.12.20",
+      "target_section": "2.12",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最小生成树进阶_最小瓶颈生成树",
+      "name": "最小生成树进阶：最小瓶颈生成树",
+      "item_id": "2.12.21",
+      "target_section": "2.12",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最小生成树进阶_生成树计数",
+      "name": "最小生成树进阶：生成树计数",
+      "item_id": "2.12.22",
+      "target_section": "2.12",
+      "risk_band": "medium",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.lca进阶_tarjan离线lca",
+      "name": "LCA进阶：Tarjan离线LCA",
+      "item_id": "2.14.15",
+      "target_section": "2.14",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.lca进阶_lca与树上差分",
+      "name": "LCA进阶：LCA与树上差分",
+      "item_id": "2.14.16",
+      "target_section": "2.14",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.树论_树的重心进阶",
+      "name": "树论：树的重心进阶",
+      "item_id": "2.14.17",
+      "target_section": "2.14",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.树论_树的直径进阶应用",
+      "name": "树论：树的直径进阶应用",
+      "item_id": "2.14.18",
+      "target_section": "2.14",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.树论_树哈希",
+      "name": "树论：树哈希",
+      "item_id": "2.14.19",
+      "target_section": "2.14",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.树论_点分治进阶",
+      "name": "树论：点分治进阶",
+      "item_id": "2.14.20",
+      "target_section": "2.14",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.树论_边分治",
+      "name": "树论：边分治",
+      "item_id": "2.14.21",
+      "target_section": "2.14",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最短路进阶_0_1bfs变体",
+      "name": "最短路进阶：0-1BFS变体",
+      "item_id": "2.15.18",
+      "target_section": "2.15",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最短路进阶_同余最短路",
+      "name": "最短路进阶：同余最短路",
+      "item_id": "2.15.19",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最短路进阶_k短路_a",
+      "name": "最短路进阶：K短路(A*)",
+      "item_id": "2.15.20",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最短路进阶_最小环",
+      "name": "最短路进阶：最小环",
+      "item_id": "2.15.21",
+      "target_section": "2.15",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流进阶_dinic进阶优化",
+      "name": "最大流进阶：Dinic进阶优化",
+      "item_id": "2.16.32",
+      "target_section": "2.16",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流进阶_isap算法",
+      "name": "最大流进阶：ISAP算法",
+      "item_id": "2.16.33",
+      "target_section": "2.16",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流进阶_hlpp预流推进",
+      "name": "最大流进阶：HLPP预流推进",
+      "item_id": "2.16.34",
+      "target_section": "2.16",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.费用流进阶_最小费用最大流_dinic_spfa",
+      "name": "费用流进阶：最小费用最大流(Dinic+SPFA)",
+      "item_id": "2.16.35",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.费用流进阶_最小费用流_primal_dual",
+      "name": "费用流进阶：最小费用流(Primal-Dual)",
+      "item_id": "2.16.36",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.费用流进阶_上下界费用流",
+      "name": "费用流进阶：上下界费用流",
+      "item_id": "2.16.37",
+      "target_section": "2.16",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流建模_最大权闭合子图进阶",
+      "name": "最大流建模：最大权闭合子图进阶",
+      "item_id": "2.16.38",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流建模_最大密度子图",
+      "name": "最大流建模：最大密度子图",
+      "item_id": "2.16.39",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.最大流建模_混合图欧拉回路",
+      "name": "最大流建模：混合图欧拉回路",
+      "item_id": "2.16.40",
+      "target_section": "2.16",
+      "risk_band": "medium",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.graph_flow_dynamic_edges",
+      "name": "图论建模：网络流动态加边",
+      "item_id": "2.16.41",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.graph.graph_bipartite_matching_props",
+      "name": "图论进阶：二分图最大匹配性质",
+      "item_id": "2.16.42",
+      "target_section": "2.16",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.graph.二分图进阶_二分图完美匹配_km算法",
+      "name": "二分图进阶：二分图完美匹配(KM算法)",
+      "item_id": "2.17.23",
+      "target_section": "2.17",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.二分图进阶_一般图匹配_tutte矩阵",
+      "name": "二分图进阶：一般图匹配(Tutte矩阵)",
+      "item_id": "2.17.24",
+      "target_section": "2.17",
+      "risk_band": "medium",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.二分图进阶_稳定婚姻问题",
+      "name": "二分图进阶：稳定婚姻问题",
+      "item_id": "2.17.25",
+      "target_section": "2.17",
+      "risk_band": "green",
+      "candidate_type": "application_case",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.线性代数进阶_矩阵加速递推",
+      "name": "线性代数进阶：矩阵加速递推",
+      "item_id": "2.17.26",
+      "target_section": "2.17",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.线性代数进阶_矩阵树定理进阶",
+      "name": "线性代数进阶：矩阵树定理进阶",
+      "item_id": "2.17.27",
+      "target_section": "2.17",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_gdb入门",
+      "name": "调试基础：GDB入门",
+      "item_id": "2.18.16",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_gdb进阶命令",
+      "name": "调试基础：GDB进阶命令",
+      "item_id": "2.18.17",
+      "target_section": "2.18",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_print调试法",
+      "name": "调试基础：print调试法",
+      "item_id": "2.18.18",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试基础_静态分析",
+      "name": "调试基础：静态分析",
+      "item_id": "2.18.19",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_二分定位bug",
+      "name": "调试技巧：二分定位bug",
+      "item_id": "2.18.20",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_复原测试法",
+      "name": "调试技巧：复原测试法",
+      "item_id": "2.18.21",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_断言辅助调试",
+      "name": "调试技巧：断言辅助调试",
+      "item_id": "2.18.22",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_边界测试",
+      "name": "调试技巧：边界测试",
+      "item_id": "2.18.23",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试技巧_随机测试",
+      "name": "调试技巧：随机测试",
+      "item_id": "2.18.24",
+      "target_section": "2.18",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_re_运行时错误_排查",
+      "name": "调试场景：RE(运行时错误)排查",
+      "item_id": "2.18.25",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_tle_超时_优化",
+      "name": "调试场景：TLE(超时)优化",
+      "item_id": "2.18.26",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_wa_答案错误_排查",
+      "name": "调试场景：WA(答案错误)排查",
+      "item_id": "2.18.27",
+      "target_section": "2.18",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试场景_mle_内存超限_排查",
+      "name": "调试场景：MLE(内存超限)排查",
+      "item_id": "2.18.28",
+      "target_section": "2.18",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试工具_valgrind内存检测",
+      "name": "调试工具：Valgrind内存检测",
+      "item_id": "2.18.29",
+      "target_section": "2.18",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.debug.调试工具_addresssanitizer",
+      "name": "调试工具：AddressSanitizer",
+      "item_id": "2.18.30",
+      "target_section": "2.18",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_二分答案判定",
+      "name": "二分进阶：二分答案判定",
+      "item_id": "2.2.23",
+      "target_section": "2.2",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_三分法",
+      "name": "二分进阶：三分法",
+      "item_id": "2.2.24",
+      "target_section": "2.2",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_实数二分精度处理",
+      "name": "二分进阶：实数二分精度处理",
+      "item_id": "2.2.25",
+      "target_section": "2.2",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.二分进阶_答案判定技巧",
+      "name": "二分进阶：答案判定技巧",
+      "item_id": "2.2.26",
+      "target_section": "2.2",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic.sort_inversion_count",
+      "name": "排序进阶：逆序对计算(归并)",
+      "item_id": "2.2.27",
+      "target_section": "2.2",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_2_sat方案输出",
+      "name": "SCC/DAG进阶：2-SAT方案输出",
+      "item_id": "2.21.172",
+      "target_section": "2.21",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_dag最小路径覆盖",
+      "name": "SCC/DAG进阶：DAG最小路径覆盖",
+      "item_id": "2.21.173",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_dag最长反链_dilworth",
+      "name": "SCC/DAG进阶：DAG最长反链(Dilworth)",
+      "item_id": "2.21.174",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag进阶_可达性统计_bitset优化",
+      "name": "SCC/DAG进阶：可达性统计(Bitset优化)",
+      "item_id": "2.21.175",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.特殊图_竞赛图",
+      "name": "特殊图：竞赛图",
+      "item_id": "2.21.176",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.特殊图_弦图",
+      "name": "特殊图：弦图",
+      "item_id": "2.21.177",
+      "target_section": "2.21",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.特殊图_平面图",
+      "name": "特殊图：平面图",
+      "item_id": "2.21.178",
+      "target_section": "2.21",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.特殊图_仙人掌图进阶",
+      "name": "特殊图：仙人掌图进阶",
+      "item_id": "2.21.179",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_steiner树进阶",
+      "name": "图论专题：Steiner树进阶",
+      "item_id": "2.21.180",
+      "target_section": "2.21",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_最小树形图_朱刘",
+      "name": "图论专题：最小树形图(朱刘)",
+      "item_id": "2.21.181",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_最小树形图进阶",
+      "name": "图论专题：最小树形图进阶",
+      "item_id": "2.21.182",
+      "target_section": "2.21",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_最大密度子图_参数搜索",
+      "name": "图论专题：最大密度子图(参数搜索)",
+      "item_id": "2.21.183",
+      "target_section": "2.21",
+      "risk_band": "medium",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_gomory_hu树",
+      "name": "图论专题：Gomory-Hu树",
+      "item_id": "2.21.184",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_stoer_wagner全局最小割",
+      "name": "图论专题：Stoer-Wagner全局最小割",
+      "item_id": "2.21.185",
+      "target_section": "2.21",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论专题_离线动态连通性_线段树分治",
+      "name": "图论专题：离线动态连通性(线段树分治)",
+      "item_id": "2.21.186",
+      "target_section": "2.21",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.贪心进阶_反悔贪心",
+      "name": "贪心进阶：反悔贪心",
+      "item_id": "2.3.26",
+      "target_section": "2.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.贪心进阶_交换论证法",
+      "name": "贪心进阶：交换论证法",
+      "item_id": "2.3.27",
+      "target_section": "2.3",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.贪心进阶_区间调度进阶",
+      "name": "贪心进阶：区间调度进阶",
+      "item_id": "2.3.28",
+      "target_section": "2.3",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic.binary_open_closed",
+      "name": "二分进阶：开区间与闭区间二分",
+      "item_id": "2.3.29",
+      "target_section": "2.3",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_基数排序",
+      "name": "排序进阶：基数排序",
+      "item_id": "2.4.48",
+      "target_section": "2.4",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_计数排序",
+      "name": "排序进阶：计数排序",
+      "item_id": "2.4.49",
+      "target_section": "2.4",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_拓扑排序_计数排序应用",
+      "name": "排序进阶：拓扑排序(计数排序应用)",
+      "item_id": "2.4.50",
+      "target_section": "2.4",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.排序进阶_外部排序",
+      "name": "排序进阶：外部排序",
+      "item_id": "2.4.51",
+      "target_section": "2.4",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic.divide_conquer_overall_binary",
+      "name": "分治进阶：整体二分应用",
+      "item_id": "2.4.52",
+      "target_section": "2.4",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_双向搜索",
+      "name": "搜索进阶：双向搜索",
+      "item_id": "2.5.17",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_迭代加深搜索_ida",
+      "name": "搜索进阶：迭代加深搜索(IDA*)",
+      "item_id": "2.5.18",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_a_算法",
+      "name": "搜索进阶：A*算法",
+      "item_id": "2.5.19",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_dlx精确覆盖",
+      "name": "搜索进阶：DLX精确覆盖",
+      "item_id": "2.5.20",
+      "target_section": "2.5",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_剪枝技巧",
+      "name": "搜索进阶：剪枝技巧",
+      "item_id": "2.5.21",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_双向bfs优化",
+      "name": "搜索进阶：双向BFS优化",
+      "item_id": "2.5.22",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic_algo.搜索进阶_dfs序与回溯",
+      "name": "搜索进阶：DFS序与回溯",
+      "item_id": "2.5.23",
+      "target_section": "2.5",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.basic.greedy_point_selection",
+      "name": "贪心进阶：区间选点问题",
+      "item_id": "2.6.10",
+      "target_section": "2.6",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.basic.search_hash_bfs",
+      "name": "搜索进阶：哈希优化BFS",
+      "item_id": "2.7.28",
+      "target_section": "2.7",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_决策单调性_四边形不等式",
+      "name": "DP优化：决策单调性(四边形不等式)",
+      "item_id": "2.8.157",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_wqs二分_带权二分",
+      "name": "DP优化：WQS二分(带权二分)",
+      "item_id": "2.8.158",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_斜率优化进阶",
+      "name": "DP优化：斜率优化进阶",
+      "item_id": "2.8.159",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_li_chao线段树",
+      "name": "DP优化：Li Chao线段树",
+      "item_id": "2.8.160",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp优化_knuth优化",
+      "name": "DP优化：Knuth优化",
+      "item_id": "2.8.161",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.数位dp进阶_数位dp与自动机",
+      "name": "数位DP进阶：数位DP与自动机",
+      "item_id": "2.8.162",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.数位dp进阶_数位dp_sum_product约束",
+      "name": "数位DP进阶：数位DP(sum/product约束)",
+      "item_id": "2.8.163",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.区间dp进阶_环上区间dp",
+      "name": "区间DP进阶：环上区间DP",
+      "item_id": "2.8.164",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.区间dp进阶_区间dp与四边形不等式",
+      "name": "区间DP进阶：区间DP与四边形不等式",
+      "item_id": "2.8.165",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.树形dp进阶_换根dp_二次扫描",
+      "name": "树形DP进阶：换根DP(二次扫描)",
+      "item_id": "2.8.166",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.树形dp进阶_树形背包",
+      "name": "树形DP进阶：树形背包",
+      "item_id": "2.8.167",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.树形dp进阶_树形dp与直径",
+      "name": "树形DP进阶：树形DP与直径",
+      "item_id": "2.8.168",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.状压dp进阶_高维前缀和_sos_dp",
+      "name": "状压DP进阶：高维前缀和(SOS DP)",
+      "item_id": "2.8.169",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.状压dp进阶_插头dp_轮廓线",
+      "name": "状压DP进阶：插头DP(轮廓线)",
+      "item_id": "2.8.170",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.状压dp进阶_dp套dp_自动机dp",
+      "name": "状压DP进阶：DP套DP(自动机DP)",
+      "item_id": "2.8.171",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.概率dp进阶_期望dp与高斯消元",
+      "name": "概率DP进阶：期望DP与高斯消元",
+      "item_id": "2.8.172",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.计数dp_卡特兰数dp",
+      "name": "计数DP：卡特兰数DP",
+      "item_id": "2.8.173",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.计数dp_斯特林数",
+      "name": "计数DP：斯特林数",
+      "item_id": "2.8.174",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.计数dp_容斥dp",
+      "name": "计数DP：容斥DP",
+      "item_id": "2.8.175",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.计数dp_burnside引理与polya计数",
+      "name": "计数DP：Burnside引理与Polya计数",
+      "item_id": "2.8.176",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp与自动机_kmp自动机dp",
+      "name": "DP进阶：DP与自动机(KMP自动机DP)",
+      "item_id": "2.8.177",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp与ac自动机",
+      "name": "DP进阶：DP与AC自动机",
+      "item_id": "2.8.178",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp与sam",
+      "name": "DP进阶：DP与SAM",
+      "item_id": "2.8.179",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_不平等博弈",
+      "name": "博弈DP进阶：不平等博弈",
+      "item_id": "2.8.180",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_multi_sg",
+      "name": "博弈DP进阶：Multi-SG",
+      "item_id": "2.8.181",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.博弈dp进阶_every_sg",
+      "name": "博弈DP进阶：Every-SG",
+      "item_id": "2.8.182",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp状态压缩与记忆化搜索",
+      "name": "DP进阶：DP状态压缩与记忆化搜索",
+      "item_id": "2.8.183",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp状态设计技巧",
+      "name": "DP进阶：DP状态设计技巧",
+      "item_id": "2.8.184",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_高维dp降维",
+      "name": "DP进阶：高维DP降维",
+      "item_id": "2.8.185",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.单调队列优化dp进阶",
+      "name": "单调队列优化DP进阶",
+      "item_id": "2.8.186",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.数据结构优化dp进阶_线段树优化",
+      "name": "数据结构优化DP进阶：线段树优化",
+      "item_id": "2.8.187",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.数据结构优化dp进阶_树状数组优化",
+      "name": "数据结构优化DP进阶：树状数组优化",
+      "item_id": "2.8.188",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dp与矩阵乘法优化",
+      "name": "DP进阶：DP与矩阵乘法优化",
+      "item_id": "2.8.189",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.环形dp进阶",
+      "name": "环形DP进阶",
+      "item_id": "2.8.190",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.双状态dp进阶",
+      "name": "双状态DP进阶",
+      "item_id": "2.8.191",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_后效性处理_高斯消元dp",
+      "name": "DP进阶：后效性处理(高斯消元DP)",
+      "item_id": "2.8.192",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_插头dp进阶_多回路",
+      "name": "DP进阶：插头DP进阶(多回路)",
+      "item_id": "2.8.193",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_旅行商问题_tsp_状压dp",
+      "name": "DP进阶：旅行商问题(TSP)状压DP",
+      "item_id": "2.8.194",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_dag上dp进阶",
+      "name": "DP进阶：DAG上DP进阶",
+      "item_id": "2.8.195",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_凸优化技巧",
+      "name": "DP进阶：凸优化技巧",
+      "item_id": "2.8.196",
+      "target_section": "2.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp进阶_插头dp_轮廓线dp",
+      "name": "DP进阶：插头DP(轮廓线DP)",
+      "item_id": "2.8.197",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.dp.dp_subset_enum_opt",
+      "name": "DP进阶：状态压缩子集枚举优化",
+      "item_id": "2.8.198",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.dp.dp_bitonic",
+      "name": "DP进阶：双调DP(双调路径)",
+      "item_id": "2.8.199",
+      "target_section": "2.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.dp.dp_knapsack_count",
+      "name": "DP建模：背包总方案数",
+      "item_id": "2.8.200",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.dp.dp_dimension_reduction",
+      "name": "DP建模：高维DP降维",
+      "item_id": "2.8.201",
+      "target_section": "2.8",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.graph.图论建模_超级源点与超级汇点",
+      "name": "图论建模：超级源点与超级汇点",
+      "item_id": "2.9.40",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论建模_分层图",
+      "name": "图论建模：分层图",
+      "item_id": "2.9.41",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论建模_差分约束进阶",
+      "name": "图论建模：差分约束进阶",
+      "item_id": "2.9.42",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.图论建模_状态压缩图",
+      "name": "图论建模：状态压缩图",
+      "item_id": "2.9.43",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_deque底层实现",
+      "name": "STL容器：deque底层实现",
+      "item_id": "2.9.44",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_priority_queue底层_堆",
+      "name": "STL容器：priority_queue底层(堆)",
+      "item_id": "2.9.45",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_set_multiset_map底层_红黑树",
+      "name": "STL容器：set/multiset/map底层(红黑树)",
+      "item_id": "2.9.46",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_unordered_set_map底层_哈希表",
+      "name": "STL容器：unordered_set/map底层(哈希表)",
+      "item_id": "2.9.47",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_bitset使用",
+      "name": "STL容器：bitset使用",
+      "item_id": "2.9.48",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器_array_forward_list",
+      "name": "STL容器：array/forward_list",
+      "item_id": "2.9.49",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_sort底层_introspect",
+      "name": "STL算法：sort底层(introspect)",
+      "item_id": "2.9.50",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_nth_element原理",
+      "name": "STL算法：nth_element原理",
+      "item_id": "2.9.51",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_lower_bound_upper_bound底层",
+      "name": "STL算法：lower_bound/upper_bound底层",
+      "item_id": "2.9.52",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_next_permutation原理",
+      "name": "STL算法：next_permutation原理",
+      "item_id": "2.9.53",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_merge_inplace_merge",
+      "name": "STL算法：merge/inplace_merge",
+      "item_id": "2.9.54",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_unique_remove_erase惯用法",
+      "name": "STL算法：unique/remove/erase惯用法",
+      "item_id": "2.9.55",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_lambda表达式进阶",
+      "name": "STL函数对象：lambda表达式进阶",
+      "item_id": "2.9.56",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_function_bind",
+      "name": "STL函数对象：function/bind",
+      "item_id": "2.9.57",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl函数对象_仿函数与比较器",
+      "name": "STL函数对象：仿函数与比较器",
+      "item_id": "2.9.58",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_迭代器类型",
+      "name": "STL迭代器：迭代器类型",
+      "item_id": "2.9.59",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_istream_iterator_ostream_iterator",
+      "name": "STL迭代器：istream_iterator/ostream_iterator",
+      "item_id": "2.9.60",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl迭代器_back_inserter_inserter",
+      "name": "STL迭代器：back_inserter/inserter",
+      "item_id": "2.9.61",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_pair_tuple",
+      "name": "STL工具：pair/tuple",
+      "item_id": "2.9.62",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_optional_variant_any_c_17",
+      "name": "STL工具：optional/variant/any(C++17)",
+      "item_id": "2.9.63",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl工具_string_view_c_17",
+      "name": "STL工具：string_view(C++17)",
+      "item_id": "2.9.64",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_partial_sort_stable_sort",
+      "name": "STL算法：partial_sort/stable_sort",
+      "item_id": "2.9.65",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_minmax_element_accumulate",
+      "name": "STL算法：minmax_element/accumulate",
+      "item_id": "2.9.66",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_iota_fill_n_generate",
+      "name": "STL算法：iota/fill_n/generate",
+      "item_id": "2.9.67",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl容器适配器_stack_queue_priority_queue",
+      "name": "STL容器适配器：stack/queue/priority_queue",
+      "item_id": "2.9.68",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_copy_transform惯用法",
+      "name": "STL算法：copy/transform惯用法",
+      "item_id": "2.9.69",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_remove_if_partition",
+      "name": "STL算法：remove_if/partition",
+      "item_id": "2.9.70",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl算法_set_union_intersection_difference",
+      "name": "STL算法：set_union/intersection/difference",
+      "item_id": "2.9.71",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl性能_vector扩容机制",
+      "name": "STL性能：vector扩容机制",
+      "item_id": "2.9.72",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.stl.stl性能_emplace_back_vs_push_back",
+      "name": "STL性能：emplace_back vs push_back",
+      "item_id": "2.9.73",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_内存模型_栈与堆",
+      "name": "C++内存模型：栈与堆",
+      "item_id": "2.9.74",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_引用_左值_右值引用",
+      "name": "C++引用：左值/右值引用",
+      "item_id": "2.9.75",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_移动语义与完美转发",
+      "name": "C++11：移动语义与完美转发",
+      "item_id": "2.9.76",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_auto_decltype类型推导",
+      "name": "C++11：auto/decltype类型推导",
+      "item_id": "2.9.77",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_范围for循环",
+      "name": "C++11：范围for循环",
+      "item_id": "2.9.78",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_nullptr与智能指针",
+      "name": "C++11：nullptr与智能指针",
+      "item_id": "2.9.79",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_11_override_final_default_delete",
+      "name": "C++11：override/final/default/delete",
+      "item_id": "2.9.80",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_14_泛型lambda_返回值推导",
+      "name": "C++14：泛型lambda/返回值推导",
+      "item_id": "2.9.81",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_if_constexpr",
+      "name": "C++17：if constexpr",
+      "item_id": "2.9.82",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_结构化绑定",
+      "name": "C++17：结构化绑定",
+      "item_id": "2.9.83",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_17_折叠表达式",
+      "name": "C++17：折叠表达式",
+      "item_id": "2.9.84",
+      "target_section": "2.9",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_模板_特化与偏特化",
+      "name": "C++模板：特化与偏特化",
+      "item_id": "2.9.85",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_模板_sfinae",
+      "name": "C++模板：SFINAE",
+      "item_id": "2.9.86",
+      "target_section": "2.9",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_模板_变参模板",
+      "name": "C++模板：变参模板",
+      "item_id": "2.9.87",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_运算符重载_输入输出重载",
+      "name": "C++运算符重载：输入输出重载",
+      "item_id": "2.9.88",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_运算符重载_类型转换",
+      "name": "C++运算符重载：类型转换",
+      "item_id": "2.9.89",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_异常_异常安全编程",
+      "name": "C++异常：异常安全编程",
+      "item_id": "2.9.90",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_constexpr与编译期计算",
+      "name": "C++特性：constexpr与编译期计算",
+      "item_id": "2.9.91",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_inline与内联优化",
+      "name": "C++特性：inline与内联优化",
+      "item_id": "2.9.92",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_volatile_mutable",
+      "name": "C++特性：volatile/mutable",
+      "item_id": "2.9.93",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_编译_头文件与编译单元",
+      "name": "C++编译：头文件与编译单元",
+      "item_id": "2.9.94",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_编译_预处理器与宏",
+      "name": "C++编译：预处理器与宏",
+      "item_id": "2.9.95",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.cpp.c_特性_位域与联合体",
+      "name": "C++特性：位域与联合体",
+      "item_id": "2.9.96",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.io优化_快读快写模板",
+      "name": "IO优化：快读快写模板",
+      "item_id": "2.9.97",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.io优化_关闭同步流",
+      "name": "IO优化：关闭同步流",
+      "item_id": "2.9.98",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.io优化_文件读写重定向",
+      "name": "IO优化：文件读写重定向",
+      "item_id": "2.9.99",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_编译优化选项",
+      "name": "性能优化：编译优化选项",
+      "item_id": "2.9.100",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_内存对齐与缓存",
+      "name": "性能优化：内存对齐与缓存",
+      "item_id": "2.9.101",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_循环展开与内联",
+      "name": "性能优化：循环展开与内联",
+      "item_id": "2.9.102",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.性能优化_指针与数组性能差异",
+      "name": "性能优化：指针与数组性能差异",
+      "item_id": "2.9.103",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_namespace使用",
+      "name": "代码组织：namespace使用",
+      "item_id": "2.9.104",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_头文件包含与guard",
+      "name": "代码组织：头文件包含与guard",
+      "item_id": "2.9.105",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码组织_using与typedef最佳实践",
+      "name": "代码组织：using与typedef最佳实践",
+      "item_id": "2.9.106",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_assert使用",
+      "name": "调试技巧：assert使用",
+      "item_id": "2.9.107",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_静态断言_static_assert",
+      "name": "调试技巧：静态断言(static_assert)",
+      "item_id": "2.9.108",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.调试技巧_条件编译_debug_release",
+      "name": "调试技巧：条件编译(debug/release)",
+      "item_id": "2.9.109",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_整数溢出检测",
+      "name": "代码安全：整数溢出检测",
+      "item_id": "2.9.110",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_数组越界检查",
+      "name": "代码安全：数组越界检查",
+      "item_id": "2.9.111",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码安全_野指针与空指针",
+      "name": "代码安全：野指针与空指针",
+      "item_id": "2.9.112",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_函数化封装",
+      "name": "代码复用：函数化封装",
+      "item_id": "2.9.113",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_模板化编程",
+      "name": "代码复用：模板化编程",
+      "item_id": "2.9.114",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_常用宏定义",
+      "name": "代码复用：常用宏定义",
+      "item_id": "2.9.115",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.代码复用_函数指针与回调",
+      "name": "代码复用：函数指针与回调",
+      "item_id": "2.9.116",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.时间优化_clock计时",
+      "name": "时间优化：clock计时",
+      "item_id": "2.9.117",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.stl技巧_reserve预分配",
+      "name": "STL技巧：reserve预分配",
+      "item_id": "2.9.118",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.stl技巧_swap技巧",
+      "name": "STL技巧：swap技巧",
+      "item_id": "2.9.119",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.skills.编码规范_命名规范与注释",
+      "name": "编码规范：命名规范与注释",
+      "item_id": "2.9.120",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_最优化问题建模",
+      "name": "建模方法：最优化问题建模",
+      "item_id": "2.9.121",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_决策问题建模",
+      "name": "建模方法：决策问题建模",
+      "item_id": "2.9.122",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_计数问题建模",
+      "name": "建模方法：计数问题建模",
+      "item_id": "2.9.123",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_构造问题建模",
+      "name": "建模方法：构造问题建模",
+      "item_id": "2.9.124",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_交互问题建模",
+      "name": "建模方法：交互问题建模",
+      "item_id": "2.9.125",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_离线处理建模",
+      "name": "建模方法：离线处理建模",
+      "item_id": "2.9.126",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_在线转离线",
+      "name": "建模方法：在线转离线",
+      "item_id": "2.9.127",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_分治建模",
+      "name": "建模方法：分治建模",
+      "item_id": "2.9.128",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_增量处理建模",
+      "name": "建模方法：增量处理建模",
+      "item_id": "2.9.129",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_等效转换",
+      "name": "建模方法：等效转换",
+      "item_id": "2.9.130",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_正难则反",
+      "name": "建模方法：正难则反",
+      "item_id": "2.9.131",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_二分答案建模",
+      "name": "建模方法：二分答案建模",
+      "item_id": "2.9.132",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_倍增思想",
+      "name": "建模方法：倍增思想",
+      "item_id": "2.9.133",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_差分约束建模",
+      "name": "建模方法：差分约束建模",
+      "item_id": "2.9.134",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_前缀和与差分扩展",
+      "name": "建模方法：前缀和与差分扩展",
+      "item_id": "2.9.135",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_双指针_滑动窗口建模",
+      "name": "建模方法：双指针/滑动窗口建模",
+      "item_id": "2.9.136",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_离散化建模",
+      "name": "建模方法：离散化建模",
+      "item_id": "2.9.137",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_折半搜索_meet_in_the_middle",
+      "name": "建模方法：折半搜索(meet-in-the-middle)",
+      "item_id": "2.9.138",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_状态压缩建模",
+      "name": "建模方法：状态压缩建模",
+      "item_id": "2.9.139",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_贪心建模证明",
+      "name": "建模方法：贪心建模证明",
+      "item_id": "2.9.140",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_图论建模技巧",
+      "name": "建模方法：图论建模技巧",
+      "item_id": "2.9.141",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_网络流建模",
+      "name": "建模方法：网络流建模",
+      "item_id": "2.9.142",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_博弈论建模",
+      "name": "建模方法：博弈论建模",
+      "item_id": "2.9.143",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_矩阵乘法建模",
+      "name": "建模方法：矩阵乘法建模",
+      "item_id": "2.9.144",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_概率期望建模",
+      "name": "建模方法：概率期望建模",
+      "item_id": "2.9.145",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_组合数学建模",
+      "name": "建模方法：组合数学建模",
+      "item_id": "2.9.146",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_数论建模",
+      "name": "建模方法：数论建模",
+      "item_id": "2.9.147",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_数据范围分析",
+      "name": "建模方法：数据范围分析",
+      "item_id": "2.9.148",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_特殊性质利用",
+      "name": "建模方法：特殊性质利用",
+      "item_id": "2.9.149",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.modeling.建模方法_暴力与优化",
+      "name": "建模方法：暴力与优化",
+      "item_id": "2.9.150",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_noi系列赛制",
+      "name": "比赛规则：NOI系列赛制",
+      "item_id": "2.9.151",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_acm赛制",
+      "name": "比赛规则：ACM赛制",
+      "item_id": "2.9.152",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛规则_oi与acm区别",
+      "name": "比赛规则：OI与ACM区别",
+      "item_id": "2.9.153",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_时间分配策略",
+      "name": "比赛策略：时间分配策略",
+      "item_id": "2.9.154",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_题目难度识别",
+      "name": "比赛策略：题目难度识别",
+      "item_id": "2.9.155",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_暴力与正解权衡",
+      "name": "比赛策略：暴力与正解权衡",
+      "item_id": "2.9.156",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛策略_部分分策略",
+      "name": "比赛策略：部分分策略",
+      "item_id": "2.9.157",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_对拍调试",
+      "name": "比赛技巧：对拍调试",
+      "item_id": "2.9.158",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_批量数据测试",
+      "name": "比赛技巧：批量数据测试",
+      "item_id": "2.9.159",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_常见陷阱",
+      "name": "比赛技巧：常见陷阱",
+      "item_id": "2.9.160",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛技巧_猜结论与打表",
+      "name": "比赛技巧：猜结论与打表",
+      "item_id": "2.9.161",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛心理_压力管理",
+      "name": "比赛心理：压力管理",
+      "item_id": "2.9.162",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛心理_复盘总结",
+      "name": "比赛心理：复盘总结",
+      "item_id": "2.9.163",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛工具_本地环境配置",
+      "name": "比赛工具：本地环境配置",
+      "item_id": "2.9.164",
+      "target_section": "2.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.contest.比赛工具_vim_vs_code竞赛配置",
+      "name": "比赛工具：Vim/VS Code竞赛配置",
+      "item_id": "2.9.165",
+      "target_section": "2.9",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.并查集进阶_可撤销并查集",
+      "name": "并查集进阶：可撤销并查集",
+      "item_id": "3.1.12",
+      "target_section": "3.1",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.动态树_树链剖分_lct辅助",
+      "name": "动态树：树链剖分(LCT辅助)",
+      "item_id": "3.13.207",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.graph.动态树_树上路径并集",
+      "name": "动态树：树上路径并集",
+      "item_id": "3.13.208",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.并查集进阶_可持久化并查集",
+      "name": "并查集进阶：可持久化并查集",
+      "item_id": "3.13.209",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.线段树进阶_segment_tree_beats",
+      "name": "线段树进阶：Segment Tree Beats",
+      "item_id": "3.13.210",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.线段树进阶_线段树分裂合并",
+      "name": "线段树进阶：线段树分裂合并",
+      "item_id": "3.13.211",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.线段树进阶_线段树分治",
+      "name": "线段树进阶：线段树分治",
+      "item_id": "3.13.212",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_带修莫队",
+      "name": "分块进阶：带修莫队",
+      "item_id": "3.13.213",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_回滚莫队",
+      "name": "分块进阶：回滚莫队",
+      "item_id": "3.13.214",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_树上莫队",
+      "name": "分块进阶：树上莫队",
+      "item_id": "3.13.215",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.k_d_tree",
+      "name": "K-D Tree",
+      "item_id": "3.13.216",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.k_d_tree进阶_最近邻搜索",
+      "name": "K-D Tree进阶：最近邻搜索",
+      "item_id": "3.13.217",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.cdq分治进阶_三维偏序",
+      "name": "CDQ分治进阶：三维偏序",
+      "item_id": "3.13.218",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.整体二分进阶_带修改整体二分",
+      "name": "整体二分进阶：带修改整体二分",
+      "item_id": "3.13.219",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.可持久化进阶_可持久化trie",
+      "name": "可持久化进阶：可持久化Trie",
+      "item_id": "3.13.220",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.可持久化进阶_可持久化平衡树",
+      "name": "可持久化进阶：可持久化平衡树",
+      "item_id": "3.13.221",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.树链剖分进阶_动态dp",
+      "name": "树链剖分进阶：动态DP",
+      "item_id": "3.13.222",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.树链剖分进阶_长链剖分",
+      "name": "树链剖分进阶：长链剖分",
+      "item_id": "3.13.223",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.link_cut_tree进阶_维护子树信息",
+      "name": "Link-Cut Tree进阶：维护子树信息",
+      "item_id": "3.13.224",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.link_cut_tree进阶_lct处理边权",
+      "name": "Link-Cut Tree进阶：LCT处理边权",
+      "item_id": "3.13.225",
+      "target_section": "3.13",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.link_cut_tree进阶_lct维护最小生成树",
+      "name": "Link-Cut Tree进阶：LCT维护最小生成树",
+      "item_id": "3.13.226",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.珂朵莉树_odt",
+      "name": "珂朵莉树(ODT)",
+      "item_id": "3.13.227",
+      "target_section": "3.13",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.集合进阶_bitset优化",
+      "name": "集合进阶：bitset优化",
+      "item_id": "3.13.228",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.集合进阶_压位trie_二进制trie",
+      "name": "集合进阶：压位Trie(二进制Trie)",
+      "item_id": "3.13.229",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.ds_segtree_beats_app",
+      "name": "数据结构：Segment Tree Beats 应用",
+      "item_id": "3.13.230",
+      "target_section": "3.13",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.ds.堆进阶_可并堆_左偏树",
+      "name": "堆进阶：可并堆(左偏树)",
+      "item_id": "3.2.15",
+      "target_section": "3.2",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.堆进阶_配对堆",
+      "name": "堆进阶：配对堆",
+      "item_id": "3.2.16",
+      "target_section": "3.2",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.最小值栈_队列",
+      "name": "最小值栈/队列",
+      "item_id": "3.2.17",
+      "target_section": "3.2",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.树状数组进阶_树状数组二分",
+      "name": "树状数组进阶：树状数组二分",
+      "item_id": "3.3.24",
+      "target_section": "3.3",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.树状数组进阶_多维树状数组",
+      "name": "树状数组进阶：多维树状数组",
+      "item_id": "3.3.25",
+      "target_section": "3.3",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.st表进阶_二维st表",
+      "name": "ST表进阶：二维ST表",
+      "item_id": "3.3.26",
+      "target_section": "3.3",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_莫队算法",
+      "name": "分块进阶：莫队算法",
+      "item_id": "3.3.27",
+      "target_section": "3.3",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_块状链表",
+      "name": "分块进阶：块状链表",
+      "item_id": "3.3.28",
+      "target_section": "3.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.分块进阶_分块打表",
+      "name": "分块进阶：分块打表",
+      "item_id": "3.3.29",
+      "target_section": "3.3",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_fhq_treap可持久化",
+      "name": "平衡树进阶：FHQ Treap可持久化",
+      "item_id": "3.5.21",
+      "target_section": "3.5",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_splay区间操作",
+      "name": "平衡树进阶：Splay区间操作",
+      "item_id": "3.5.22",
+      "target_section": "3.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_treap实现",
+      "name": "平衡树进阶：Treap实现",
+      "item_id": "3.5.23",
+      "target_section": "3.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.树链剖分进阶_边权转点权",
+      "name": "树链剖分进阶：边权转点权",
+      "item_id": "3.5.24",
+      "target_section": "3.5",
+      "risk_band": "green",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.平衡树进阶_wblt",
+      "name": "平衡树进阶：WBLT",
+      "item_id": "3.5.25",
+      "target_section": "3.5",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.ds_dsu_xor",
+      "name": "数据结构：并查集维护异或关系",
+      "item_id": "3.5.26",
+      "target_section": "3.5",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.ds.哈希进阶_布隆过滤器",
+      "name": "哈希进阶：布隆过滤器",
+      "item_id": "3.8.17",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_后缀数组sa_is算法",
+      "name": "字符串数据结构：后缀数组SA-IS算法",
+      "item_id": "3.8.18",
+      "target_section": "3.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_后缀自动机_sam_进阶",
+      "name": "字符串数据结构：后缀自动机(SAM)进阶",
+      "item_id": "3.8.19",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_广义后缀自动机",
+      "name": "字符串数据结构：广义后缀自动机",
+      "item_id": "3.8.20",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_回文自动机_pam",
+      "name": "字符串数据结构：回文自动机(PAM)",
+      "item_id": "3.8.21",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.字符串数据结构_后缀树",
+      "name": "字符串数据结构：后缀树",
+      "item_id": "3.8.22",
+      "target_section": "3.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配进阶_多模式匹配_ac自动机",
+      "name": "字符串匹配进阶：多模式匹配(AC自动机)",
+      "item_id": "3.8.23",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配进阶_ac自动机dp进阶",
+      "name": "字符串匹配进阶：AC自动机DP进阶",
+      "item_id": "3.8.24",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配进阶_ac自动机_fail树",
+      "name": "字符串匹配进阶：AC自动机(fail树)",
+      "item_id": "3.8.25",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构进阶_后缀数组应用",
+      "name": "后缀结构进阶：后缀数组应用",
+      "item_id": "3.8.26",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构进阶_后缀数组_height数组",
+      "name": "后缀结构进阶：后缀数组(height数组)",
+      "item_id": "3.8.27",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构进阶_后缀自动机_sam_进阶",
+      "name": "后缀结构进阶：后缀自动机(SAM)进阶",
+      "item_id": "3.8.28",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构进阶_广义sam",
+      "name": "后缀结构进阶：广义SAM",
+      "item_id": "3.8.29",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构进阶_后缀树",
+      "name": "后缀结构进阶：后缀树",
+      "item_id": "3.8.30",
+      "target_section": "3.8",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.回文结构_回文自动机_pam",
+      "name": "回文结构：回文自动机(PAM)",
+      "item_id": "3.8.31",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.trie进阶_可持久化trie",
+      "name": "Trie进阶：可持久化Trie",
+      "item_id": "3.8.32",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.trie进阶_0_1_trie",
+      "name": "Trie进阶：0-1 Trie",
+      "item_id": "3.8.33",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.trie进阶_trie与ac自动机",
+      "name": "Trie进阶：Trie与AC自动机",
+      "item_id": "3.8.34",
+      "target_section": "3.8",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.后缀结构_后缀数组dc3构造",
+      "name": "后缀结构：后缀数组DC3构造",
+      "item_id": "3.8.35",
+      "target_section": "3.8",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.string.字符串匹配_aho_corasick加强",
+      "name": "字符串匹配：Aho-Corasick加强",
+      "item_id": "3.8.36",
+      "target_section": "3.8",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.图存储进阶_十字链表",
+      "name": "图存储进阶：十字链表",
+      "item_id": "3.9.7",
+      "target_section": "3.9",
+      "risk_band": "medium",
+      "candidate_type": "implementation_variant",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.图存储进阶_链式前向星",
+      "name": "图存储进阶：链式前向星",
+      "item_id": "3.9.8",
+      "target_section": "3.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.ds.ds_segtree_prefix",
+      "name": "数据结构：线段树维护前缀和",
+      "item_id": "3.9.9",
+      "target_section": "3.9",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.ds.ds_bit_range_add",
+      "name": "数据结构：树状数组维护区间加区间和",
+      "item_id": "3.9.10",
+      "target_section": "3.9",
+      "risk_band": "green",
+      "candidate_type": "implementation_variant",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_杜教筛",
+      "name": "数论进阶：杜教筛",
+      "item_id": "4.1.39",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_min_25筛",
+      "name": "数论进阶：Min_25筛",
+      "item_id": "4.1.40",
+      "target_section": "4.1",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_二次剩余_cipolla算法",
+      "name": "数论进阶：二次剩余(Cipolla算法)",
+      "item_id": "4.1.41",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_原根与阶",
+      "name": "数论进阶：原根与阶",
+      "item_id": "4.1.42",
+      "target_section": "4.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_大步小步_bsgs_进阶",
+      "name": "数论进阶：大步小步(BSGS)进阶",
+      "item_id": "4.1.43",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_扩展bsgs_exbsgs",
+      "name": "数论进阶：扩展BSGS(exBSGS)",
+      "item_id": "4.1.44",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_中国剩余定理_crt_进阶",
+      "name": "数论进阶：中国剩余定理(CRT)进阶",
+      "item_id": "4.1.45",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_扩展crt_excrt",
+      "name": "数论进阶：扩展CRT(exCRT)",
+      "item_id": "4.1.46",
+      "target_section": "4.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_pollard_rho进阶",
+      "name": "数论进阶：Pollard-Rho进阶",
+      "item_id": "4.1.47",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_lucas定理进阶",
+      "name": "数论进阶：Lucas定理进阶",
+      "item_id": "4.1.48",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_扩展lucas",
+      "name": "数论进阶：扩展Lucas",
+      "item_id": "4.1.49",
+      "target_section": "4.1",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_欧拉函数进阶",
+      "name": "数论进阶：欧拉函数进阶",
+      "item_id": "4.1.50",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_莫比乌斯反演进阶",
+      "name": "数论进阶：莫比乌斯反演进阶",
+      "item_id": "4.1.51",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_数论分块_整除分块",
+      "name": "数论进阶：数论分块(整除分块)",
+      "item_id": "4.1.52",
+      "target_section": "4.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.数论进阶_积性函数线性筛",
+      "name": "数论进阶：积性函数线性筛",
+      "item_id": "4.1.53",
+      "target_section": "4.1",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.math_excrt_apps",
+      "name": "数学进阶：扩展中国剩余定理应用",
+      "item_id": "4.1.54",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.math.math_dujiao_sieve",
+      "name": "数学进阶：杜教筛",
+      "item_id": "4.1.55",
+      "target_section": "4.1",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.math.多项式_fft进阶_三次变两次",
+      "name": "多项式：FFT进阶(三次变两次)",
+      "item_id": "4.3.35",
+      "target_section": "4.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_ntt_数论变换",
+      "name": "多项式：NTT(数论变换)",
+      "item_id": "4.3.36",
+      "target_section": "4.3",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_fntt_分治ntt",
+      "name": "多项式：FNTT(分治NTT)",
+      "item_id": "4.3.37",
+      "target_section": "4.3",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_多项式求逆",
+      "name": "多项式：多项式求逆",
+      "item_id": "4.3.38",
+      "target_section": "4.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_多项式ln_exp",
+      "name": "多项式：多项式ln/exp",
+      "item_id": "4.3.39",
+      "target_section": "4.3",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_多项式快速幂",
+      "name": "多项式：多项式快速幂",
+      "item_id": "4.3.40",
+      "target_section": "4.3",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_生成函数基础",
+      "name": "多项式：生成函数基础",
+      "item_id": "4.3.41",
+      "target_section": "4.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_指数型生成函数_egf",
+      "name": "多项式：指数型生成函数(EGF)",
+      "item_id": "4.3.42",
+      "target_section": "4.3",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.多项式_生成函数与dp",
+      "name": "多项式：生成函数与DP",
+      "item_id": "4.3.43",
+      "target_section": "4.3",
+      "risk_band": "yellow",
+      "candidate_type": "modeling_pattern",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.组合计数进阶_容斥原理进阶",
+      "name": "组合计数进阶：容斥原理进阶",
+      "item_id": "4.3.44",
+      "target_section": "4.3",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.组合计数进阶_反演_莫比乌斯_二项式",
+      "name": "组合计数进阶：反演(莫比乌斯/二项式)",
+      "item_id": "4.3.45",
+      "target_section": "4.3",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.组合计数进阶_cfs_计数公式系统",
+      "name": "组合计数进阶：CFS(计数公式系统)",
+      "item_id": "4.3.46",
+      "target_section": "4.3",
+      "risk_band": "medium",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.math_binomial_inversion",
+      "name": "数学进阶：二项式反演",
+      "item_id": "4.3.47",
+      "target_section": "4.3",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.math.离散数学_集合论应用",
+      "name": "离散数学：集合论应用",
+      "item_id": "4.4.17",
+      "target_section": "4.4",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.离散数学_布尔代数与逻辑",
+      "name": "离散数学：布尔代数与逻辑",
+      "item_id": "4.4.18",
+      "target_section": "4.4",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.图论数学_cayley定理",
+      "name": "图论数学：Cayley定理",
+      "item_id": "4.5.19",
+      "target_section": "4.5",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.图论数学_kirchhoff矩阵树定理进阶",
+      "name": "图论数学：Kirchhoff矩阵树定理进阶",
+      "item_id": "4.5.20",
+      "target_section": "4.5",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.线性代数进阶_线性基应用",
+      "name": "线性代数进阶：线性基应用",
+      "item_id": "4.5.21",
+      "target_section": "4.5",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.math_nim_product",
+      "name": "数学进阶：nim积",
+      "item_id": "4.5.22",
+      "target_section": "4.5",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": true
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_期望线性性应用",
+      "name": "概率论进阶：期望线性性应用",
+      "item_id": "4.6.14",
+      "target_section": "4.6",
+      "risk_band": "green",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_全期望公式",
+      "name": "概率论进阶：全期望公式",
+      "item_id": "4.6.15",
+      "target_section": "4.6",
+      "risk_band": "yellow",
+      "candidate_type": "theorem_or_property",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_随机化算法_蒙特卡洛",
+      "name": "概率论进阶：随机化算法(蒙特卡洛)",
+      "item_id": "4.6.16",
+      "target_section": "4.6",
+      "risk_band": "yellow",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    },
+    {
+      "candidate_id": "cand.math.概率论进阶_马尔可夫链进阶",
+      "name": "概率论进阶：马尔可夫链进阶",
+      "item_id": "4.6.17",
+      "target_section": "4.6",
+      "risk_band": "medium",
+      "candidate_type": "core_concept",
+      "is_replacement": false
+    }
+  ]
+}

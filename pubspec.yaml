@@ -1,5 +1,5 @@
 name: bfs_learn
-description: 信奥 BFS 专题离线学习 App
+description: 算法通离线学习 App
 publish_to: 'none'
 version: 260520.1.0+260520a
 
@@ -16,6 +16,7 @@ dependencies:
   shared_preferences: ^2.5.3
   path_provider: ^2.1.5
   package_info_plus: ^9.0.1
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -32,4 +33,11 @@ flutter:
     - assets/data/bfs_steps.json
     - assets/data/knowledge/
     - assets/data/cpp/
+    - assets/data/cpp/animations/
     - assets/data/algorithm/
+    - assets/data/math/
+    - data/learning_card_samples.json
+    - data/learning_path_report_data.json
+    - data/learning_path_layers_frontend_usage_review.json
+    - data/practice_entry_mvp_index.json
+    - data/cpp14_template_mvp_index.json

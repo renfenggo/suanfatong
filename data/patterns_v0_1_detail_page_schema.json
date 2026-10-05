@@ -1,0 +1,3877 @@
+{
+  "generated_at": "2026-05-22",
+  "source": "patterns_v0_1_ready.json",
+  "schema_version": "patterns_detail_v0_1",
+  "field_schema": {
+    "pattern_id": "stable string key, use for route and analytics",
+    "title": "localized display name, currently zh-Hans name",
+    "en_title": "English display name",
+    "category": "pattern category",
+    "difficulty": "beginner | intermediate | advanced | expert",
+    "tracks": "array of learning tracks",
+    "recognition_signals": "short bullets that help users identify the pattern from a problem statement",
+    "common_transforms": "short bullets explaining how the problem is transformed",
+    "required_items": "knowledge item ids required before learning this pattern",
+    "related_items": "knowledge item ids that can be linked as related context",
+    "typical_complexities": "expected complexity strings",
+    "example_problem_refs": "external or platform problem references, display only when available",
+    "next_patterns": "recommended ready pattern ids to continue learning",
+    "frontend_notes": "implementation hint for UI rendering"
+  },
+  "example_record": {
+    "pattern_id": "pat.two_sum",
+    "title": "两数之和模式",
+    "en_title": "Two Sum Pattern",
+    "category": "Interview Patterns",
+    "difficulty": "intermediate",
+    "tracks": [
+      "interview",
+      "beginner"
+    ],
+    "recognition_signals": [
+      "题面要求两个元素/两个下标配对",
+      "target - x 的补数可直接查询",
+      "答案通常不要求连续子数组",
+      "补数查询",
+      "返回两个下标或两元素",
+      "一次扫描即可确认答案"
+    ],
+    "common_transforms": [
+      "把 a+b=target 转为补数存在性查询",
+      "若要求值而非下标，可排序后相向双指针",
+      "把 a+b=target 改写为 target-a 的存在性查询",
+      "排序后用相向双指针"
+    ],
+    "required_items": [
+      "3.2.5",
+      "2.5.1"
+    ],
+    "related_items": [
+      "2.2.1",
+      "2.4.1"
+    ],
+    "typical_complexities": [
+      "O(n)",
+      "O(n log n) after sorting"
+    ],
+    "example_problem_refs": [
+      "LeetCode 1"
+    ],
+    "next_patterns": [
+      "pat.prefix_sum_hashmap",
+      "pat.sliding_window_fixed_size",
+      "pat.word_ladder",
+      "pat.range_mode_offline"
+    ],
+    "frontend_notes": "Show required_items as prerequisite chips linked to knowledge item detail pages; keep transforms as compact bullets."
+  },
+  "records": [
+    {
+      "pattern_id": "pat.two_sum",
+      "title": "两数之和模式",
+      "en_title": "Two Sum Pattern",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "题面要求两个元素/两个下标配对",
+        "target - x 的补数可直接查询",
+        "答案通常不要求连续子数组",
+        "补数查询",
+        "返回两个下标或两元素",
+        "一次扫描即可确认答案"
+      ],
+      "common_transforms": [
+        "把 a+b=target 转为补数存在性查询",
+        "若要求值而非下标，可排序后相向双指针",
+        "把 a+b=target 改写为 target-a 的存在性查询",
+        "排序后用相向双指针"
+      ],
+      "required_items": [
+        "3.2.5",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.2.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n log n) after sorting"
+      ],
+      "example_problem_refs": [
+        "LeetCode 1"
+      ],
+      "next_patterns": [
+        "pat.prefix_sum_hashmap",
+        "pat.sliding_window_fixed_size",
+        "pat.word_ladder",
+        "pat.range_mode_offline"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.prefix_sum_hashmap",
+      "title": "前缀和 + 哈希表",
+      "en_title": "Prefix Sum + HashMap",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "题面要求连续子数组或区间",
+        "目标是区间和/余数/平衡计数",
+        "负数或混合数值使普通滑动窗口失效",
+        "子数组和等于 K",
+        "需要统计区间和出现次数",
+        "负数使滑窗失效"
+      ],
+      "common_transforms": [
+        "把 sum(l..r)=target 转为 pre[r]-target 的历史出现次数",
+        "用哈希表记录前缀和、前缀余数或状态签名",
+        "sum[l..r]=pre[r]-pre[l-1]",
+        "把目标区间转换为历史前缀计数"
+      ],
+      "required_items": [
+        "2.4.1",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.5.4",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 560"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.sliding_window_fixed_size",
+        "pat.word_ladder",
+        "pat.range_mode_offline"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.sliding_window_fixed_size",
+      "title": "定长滑动窗口",
+      "en_title": "Sliding Window Fixed Size",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "窗口长度固定为 k",
+        "每一步恰好移入一个元素并移出一个元素",
+        "常见目标是固定区间的和、计数、平均值或最值",
+        "每步恰好移入一个元素并移出一个元素",
+        "连续子数组/子串的和、计数或最值可增量维护"
+      ],
+      "common_transforms": [
+        "把每个长度 k 的区间统计改为增量维护",
+        "窗口最值可进一步转为单调队列维护",
+        "维护窗口增量而非重算",
+        "窗口内计数、和、最大值可替换为专门结构"
+      ],
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.4.1",
+        "3.2.5"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(k) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 643"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.monotone_queue_dp",
+        "pat.monotonic_queue_window_max"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.sliding_window_variable_size",
+      "title": "变长滑动窗口",
+      "en_title": "Sliding Window Variable Size",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "窗口长度由约束是否满足决定",
+        "常见目标是最长/最短满足条件的连续子数组或子串",
+        "右端扩张后通过移动左端恢复合法性",
+        "窗口长度由合法性条件决定",
+        "右端扩张后可能需要反复移动左端",
+        "合法性随端点移动具有单调或可维护性质"
+      ],
+      "common_transforms": [
+        "把全局搜索转为右扩左缩的双指针过程",
+        "用计数表、频率差或窗口和维护合法性",
+        "右扩左缩",
+        "用计数表维护窗口合法性"
+      ],
+      "required_items": [
+        "2.5.4",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.5.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(alphabet) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 3",
+        "LeetCode 76"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.word_ladder",
+        "pat.monotone_queue_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.fast_slow_pointers",
+      "title": "快慢指针",
+      "en_title": "Fast and Slow Pointers",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "链表成环",
+        "找中点",
+        "原地处理链式结构"
+      ],
+      "common_transforms": [
+        "一指针每次两步一指针一步",
+        "相遇点转化为环入口"
+      ],
+      "required_items": [
+        "2.5.12",
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(1) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 141",
+        "LeetCode 142"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.monotonic_stack_next_greater",
+      "title": "单调栈求下一个更大元素",
+      "en_title": "Monotonic Stack Next Greater",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "下一个更大/更小元素",
+        "每个元素只出入栈一次",
+        "需要最近支配关系"
+      ],
+      "common_transforms": [
+        "维护单调递减或递增栈",
+        "环形数组复制或取模扫描"
+      ],
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 496",
+        "LeetCode 739"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.top_k_frequent",
+      "title": "高频 Top K",
+      "en_title": "Top K Frequent",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "统计频率后取前 k",
+        "不需要全排序",
+        "数据规模大但 k 较小"
+      ],
+      "common_transforms": [
+        "哈希计数 + 小根堆",
+        "桶排序按频率分层"
+      ],
+      "required_items": [
+        "3.2.5",
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.2.1",
+        "2.5.1",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n log k)",
+        "O(n) bucket"
+      ],
+      "example_problem_refs": [
+        "LeetCode 347"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.word_ladder",
+        "pat.range_mode_offline"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.k_way_merge",
+      "title": "K 路归并",
+      "en_title": "K-way Merge",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "多个有序数组/链表",
+        "每次取当前最小候选",
+        "需要合并或第 k 小"
+      ],
+      "common_transforms": [
+        "小根堆保存每一路头部",
+        "把二维有序矩阵视作多路流"
+      ],
+      "required_items": [
+        "3.2.6"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n log k)",
+        "O(k) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 23",
+        "LeetCode 373"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.heap_lazy_deletion"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.binary_search_on_answer",
+      "title": "答案二分",
+      "en_title": "Binary Search on Answer",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "答案空间有序",
+        "存在单调可行性判定函数",
+        "求最小可行值或最大不可行边界",
+        "求最小可行值或最大可行值",
+        "存在单调判定函数",
+        "直接构造答案困难"
+      ],
+      "common_transforms": [
+        "把优化问题改写成 feasible(x) 判定",
+        "把题目算法放在 check 函数中，而不是放进 required_items",
+        "把优化问题转为判定问题",
+        "设计 feasible(x)"
+      ],
+      "required_items": [
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.2",
+        "2.2.1",
+        "2.13.1",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(log V * check)",
+        "O(check) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 875",
+        "LeetCode 410"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.lis_dp",
+        "pat.meet_in_the_middle"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.merge_intervals",
+      "title": "区间合并",
+      "en_title": "Merge Intervals Pattern",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "区间重叠",
+        "需要合并覆盖范围",
+        "按左端点排序后线性扫描"
+      ],
+      "common_transforms": [
+        "排序后维护当前右端点",
+        "半开/闭区间边界统一"
+      ],
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "3.2.5",
+        "2.5.1",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(n) output"
+      ],
+      "example_problem_refs": [
+        "LeetCode 56"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.offline_query_pattern",
+        "pat.greedy_exchange_argument"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.interval_sweep_events",
+      "title": "区间事件扫描",
+      "en_title": "Interval Sweep Events",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "会议室/重叠数",
+        "区间端点事件",
+        "统计同时活跃对象"
+      ],
+      "common_transforms": [
+        "拆成进入/离开事件",
+        "同坐标事件定义先后顺序"
+      ],
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "3.2.5",
+        "2.5.1",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 253"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.subarray_product_window",
+      "title": "乘积约束窗口",
+      "en_title": "Subarray Product Window",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "正数数组乘积约束",
+        "乘积随右端扩张单调",
+        "统计连续子数组个数"
+      ],
+      "common_transforms": [
+        "窗口合法时一次贡献 r-l+1",
+        "注意 0/1 和阈值边界"
+      ],
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(1) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 713"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.monotone_queue_dp",
+        "pat.monotonic_queue_window_max"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.palindrome_expand",
+      "title": "中心扩展回文",
+      "en_title": "Palindrome Center Expansion",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "回文子串",
+        "中心可以是点或缝",
+        "需要枚举所有中心"
+      ],
+      "common_transforms": [
+        "奇偶中心统一处理",
+        "向两侧扩展直到失配"
+      ],
+      "required_items": [
+        "2.5.1"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n^2)",
+        "O(1) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 5",
+        "LeetCode 647"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.linked_list_reverse",
+      "title": "链表原地反转",
+      "en_title": "Linked List In-place Reverse",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "反转链表或区间",
+        "只能使用常数额外空间",
+        "指针重连顺序敏感"
+      ],
+      "common_transforms": [
+        "prev-cur-next 三指针",
+        "虚拟头节点处理区间反转"
+      ],
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(1) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 206",
+        "LeetCode 92"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.tree_level_order",
+      "title": "树的层序遍历",
+      "en_title": "Tree Level Order Pattern",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "按层输出二叉树/图",
+        "最短层数",
+        "需要队列边界"
+      ],
+      "common_transforms": [
+        "队列按层分批",
+        "记录 depth 或当前层大小"
+      ],
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(width) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 102"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.island_problems",
+        "pat.word_ladder"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.valid_parentheses_stack",
+      "title": "括号匹配栈",
+      "en_title": "Valid Parentheses Stack",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "括号成对匹配",
+        "最近未匹配左括号",
+        "嵌套结构合法性"
+      ],
+      "common_transforms": [
+        "遇左入栈遇右匹配",
+        "哨兵简化空栈边界"
+      ],
+      "required_items": [
+        "3.2.4"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 20"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.hash_dedup_seen",
+      "title": "哈希去重与已访问集合",
+      "en_title": "Hash Set Seen Pattern",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "检查重复",
+        "状态是否访问过",
+        "需要 O(1) 期望查询"
+      ],
+      "common_transforms": [
+        "把线性查找换成集合查询",
+        "状态序列化为 key"
+      ],
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.2.1",
+        "2.5.1",
+        "2.4.1",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 217"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.word_ladder",
+        "pat.range_mode_offline"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.matrix_spiral_simulation",
+      "title": "矩阵边界模拟",
+      "en_title": "Matrix Boundary Simulation",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "螺旋/方向移动",
+        "边界逐步收缩",
+        "实现细节多于算法难度"
+      ],
+      "common_transforms": [
+        "维护上下左右边界",
+        "方向数组统一转向"
+      ],
+      "required_items": [
+        "2.1.2"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(mn)",
+        "O(1) extra"
+      ],
+      "example_problem_refs": [
+        "LeetCode 54"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.backtracking_combinations",
+      "title": "组合回溯",
+      "en_title": "Backtracking Combinations",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "列出所有组合/子集",
+        "需要撤销选择",
+        "可通过剩余数量剪枝"
+      ],
+      "common_transforms": [
+        "路径 + start 下标",
+        "选择/不选择递归"
+      ],
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(C(n,k))",
+        "O(n) stack"
+      ],
+      "example_problem_refs": [
+        "LeetCode 77",
+        "LeetCode 78"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.permutation_used_array",
+      "title": "排列回溯 used 数组",
+      "en_title": "Permutation Used Array",
+      "category": "Interview Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "beginner"
+      ],
+      "recognition_signals": [
+        "枚举排列",
+        "每个元素使用一次",
+        "有重复元素需去重"
+      ],
+      "common_transforms": [
+        "used 数组标记",
+        "排序后跳过同层重复"
+      ],
+      "required_items": [
+        "2.7.4"
+      ],
+      "related_items": [
+        "2.2.1",
+        "3.2.5",
+        "2.5.1",
+        "2.4.1"
+      ],
+      "typical_complexities": [
+        "O(n!)",
+        "O(n) stack"
+      ],
+      "example_problem_refs": [
+        "LeetCode 46",
+        "LeetCode 47"
+      ],
+      "next_patterns": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.island_problems",
+      "title": "岛屿问题",
+      "en_title": "Island Problems",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "网格连通块",
+        "四/八方向扩展",
+        "陆地水域二值状态"
+      ],
+      "common_transforms": [
+        "网格转图",
+        "DFS/BFS 染色或 DSU 合并"
+      ],
+      "required_items": [
+        "2.7.1",
+        "2.7.2",
+        "2.9.4"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.9.3",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "typical_complexities": [
+        "O(nm)",
+        "O(nm) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 200",
+        "LeetCode 695"
+      ],
+      "next_patterns": [
+        "pat.word_ladder",
+        "pat.course_schedule",
+        "pat.tree_level_order",
+        "pat.grid_graph_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.word_ladder",
+      "title": "单词接龙",
+      "en_title": "Word Ladder",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "单词一步变换",
+        "求最短变换次数",
+        "隐式图边数巨大"
+      ],
+      "common_transforms": [
+        "通配桶建边",
+        "双向 BFS 降低搜索量"
+      ],
+      "required_items": [
+        "2.7.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.1",
+        "2.9.3",
+        "2.13.1"
+      ],
+      "typical_complexities": [
+        "O(NL^2)",
+        "O(NL) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 127"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.course_schedule",
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.course_schedule",
+      "title": "课程表依赖",
+      "en_title": "Course Schedule",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "先修关系",
+        "有向环检测",
+        "判断是否存在合法学习顺序"
+      ],
+      "common_transforms": [
+        "建 DAG 后拓扑排序",
+        "DFS 三色标记检测环"
+      ],
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.2",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 207",
+        "LeetCode 210"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.dag_dependency_modeling",
+        "pat.grid_graph_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.bipartite_coloring",
+      "title": "二分图染色",
+      "en_title": "Bipartite Coloring Pattern",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "相邻点必须异色",
+        "冲突约束",
+        "判断可二分"
+      ],
+      "common_transforms": [
+        "BFS/DFS 染两色",
+        "约束图中同/异关系拆分"
+      ],
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.9.3",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 785"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.tree_level_order",
+        "pat.bipartite_matching_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.multi_source_bfs",
+      "title": "多源 BFS",
+      "en_title": "Multi-source BFS",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "多个起点同时扩散",
+        "求最近源距离",
+        "网格最短时间"
+      ],
+      "common_transforms": [
+        "把所有源点初始入队",
+        "层数即扩散轮次"
+      ],
+      "required_items": [
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.1",
+        "2.9.3",
+        "2.13.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 994",
+        "LeetCode 542"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.tree_level_order",
+        "pat.grid_graph_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.zero_one_bfs",
+      "title": "0-1 BFS 模式",
+      "en_title": "0-1 BFS Pattern",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "边权只有 0/1",
+        "普通 BFS 不够但 Dijkstra 过重",
+        "需要双端队列"
+      ],
+      "common_transforms": [
+        "0 权边 push_front",
+        "1 权边 push_back"
+      ],
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.1",
+        "2.7.2",
+        "2.9.3"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "Codeforces 0-1 BFS tasks"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.shortest_path_modeling",
+        "pat.time_expanded_graph"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.state_compressed_bfs",
+      "title": "状态压缩 BFS",
+      "en_title": "State-compressed BFS",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "状态包含位置和已收集集合",
+        "最短步数",
+        "状态数为 n*2^k"
+      ],
+      "common_transforms": [
+        "把集合编码为 bitmask",
+        "visited[position][mask]"
+      ],
+      "required_items": [
+        "2.7.2",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.1",
+        "2.9.3",
+        "2.13.1"
+      ],
+      "typical_complexities": [
+        "O(n 2^k)",
+        "O(n 2^k) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 847"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.tree_level_order",
+        "pat.grid_graph_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.topological_longest_path_dag",
+      "title": "DAG 拓扑 DP",
+      "en_title": "DAG Topological DP",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "有向无环图上的最优值",
+        "依赖顺序明确",
+        "点/边状态沿拓扑传播"
+      ],
+      "common_transforms": [
+        "拓扑序后转移",
+        "入度队列处理依赖"
+      ],
+      "required_items": [
+        "2.9.3",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.1",
+        "2.7.2",
+        "2.13.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "Longest Path in DAG"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.dag_dependency_modeling",
+        "pat.game_graph_retrograde"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.connected_components",
+      "title": "连通块分解",
+      "en_title": "Connected Components Pattern",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "统计连通块数量或大小",
+        "无向图/网格",
+        "访问过的点不重复处理"
+      ],
+      "common_transforms": [
+        "DFS/BFS 染色",
+        "组件 id 映射"
+      ],
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.9.3",
+        "2.13.1",
+        "3.4.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "CSES Building Roads"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.tree_level_order",
+        "pat.grid_graph_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.cycle_detection_undirected",
+      "title": "无向图判环",
+      "en_title": "Undirected Cycle Detection",
+      "category": "Graph/Search Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "interview",
+        "icpc",
+        "university_cp"
+      ],
+      "recognition_signals": [
+        "无向边逐步加入",
+        "出现回边或同集合",
+        "判断是否成环"
+      ],
+      "common_transforms": [
+        "DFS 记录父节点",
+        "DSU 合并前检查连通性"
+      ],
+      "required_items": [
+        "2.7.1",
+        "3.4.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.7.2",
+        "2.9.3",
+        "2.13.1"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(E alpha V)"
+      ],
+      "example_problem_refs": [
+        "LeetCode 684"
+      ],
+      "next_patterns": [
+        "pat.island_problems",
+        "pat.word_ladder",
+        "pat.grid_graph_modeling",
+        "pat.game_graph_retrograde"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.shortest_path_modeling",
+      "title": "最短路建模",
+      "en_title": "Shortest Path Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "状态转移代价可加",
+        "求最少操作/最小费用",
+        "局部选择依赖路径"
+      ],
+      "common_transforms": [
+        "把状态作为点操作作为边",
+        "边权表达操作成本"
+      ],
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.9.3",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(E log V)",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "CSES Shortest Routes"
+      ],
+      "next_patterns": [
+        "pat.bipartite_matching_modeling",
+        "pat.min_cut_selection",
+        "pat.zero_one_bfs"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.bipartite_matching_modeling",
+      "title": "二分图匹配建模",
+      "en_title": "Bipartite Matching Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "对象天然分成左右两类",
+        "每个对象最多被匹配一次",
+        "目标是最大匹配、完美匹配或可行配对",
+        "左右两类对象配对",
+        "每个对象最多匹配一次",
+        "最大匹配或完美匹配"
+      ],
+      "common_transforms": [
+        "左右部建点",
+        "匹配边容量为 1"
+      ],
+      "required_items": [
+        "2.16.3",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.13.1",
+        "2.9.3",
+        "2.16.5",
+        "2.21.39"
+      ],
+      "typical_complexities": [
+        "O(E sqrt V) Hopcroft-Karp",
+        "Flow alternative"
+      ],
+      "example_problem_refs": [
+        "LeetCode 1820"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.min_cut_selection",
+        "pat.bipartite_coloring"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.min_cut_selection",
+      "title": "最小割选择建模",
+      "en_title": "Minimum Cut Selection Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "每个对象只有选/不选两种状态",
+        "选择代价或收益可由割边表达",
+        "约束表现为冲突、依赖或必须同侧",
+        "二元选择带收益/惩罚",
+        "选择间有依赖或冲突",
+        "目标可转割代价"
+      ],
+      "common_transforms": [
+        "正收益连源，负收益连汇",
+        "冲突或依赖用大容量边防止非法割",
+        "正收益连源负收益连汇",
+        "冲突用大容量边"
+      ],
+      "required_items": [
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.13.1",
+        "2.9.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(maxflow)",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "Project Selection"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.min_cost_flow_assignment",
+      "title": "费用流分配建模",
+      "en_title": "Min-cost Flow Assignment Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "expert",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "容量约束和单位费用同时出现",
+        "目标不是只求最大流，而是最小成本或最大收益",
+        "常见于分配、运输、带成本匹配",
+        "既有容量又有单位成本",
+        "求最小成本匹配/运输",
+        "多源多汇供需"
+      ],
+      "common_transforms": [
+        "源到供给点、需求点到汇",
+        "费用挂在选择边上"
+      ],
+      "required_items": [
+        "2.16.5",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.13.1",
+        "2.9.3",
+        "2.21.39"
+      ],
+      "typical_complexities": [
+        "O(F * shortest_path)",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "Assignment with Costs"
+      ],
+      "next_patterns": [],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.dag_dependency_modeling",
+      "title": "DAG 依赖建模",
+      "en_title": "DAG Dependency Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "任务依赖",
+        "必须先完成前置条件",
+        "无环时可按顺序处理"
+      ],
+      "common_transforms": [
+        "依赖建边",
+        "拓扑序驱动 DP 或模拟"
+      ],
+      "required_items": [
+        "2.9.3"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.13.1",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V) space"
+      ],
+      "example_problem_refs": [
+        "Course Schedule variants"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.course_schedule",
+        "pat.topological_longest_path_dag"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.grid_graph_modeling",
+      "title": "网格图建模",
+      "en_title": "Grid Graph Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "二维地图移动",
+        "障碍/代价/方向",
+        "坐标即状态"
+      ],
+      "common_transforms": [
+        "坐标编码为点",
+        "方向数组生成邻边"
+      ],
+      "required_items": [
+        "2.7.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.13.1",
+        "2.9.3",
+        "2.16.3"
+      ],
+      "typical_complexities": [
+        "O(nm)",
+        "O(nm) space"
+      ],
+      "example_problem_refs": [
+        "CSES Labyrinth"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.tree_level_order",
+        "pat.island_problems"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.time_expanded_graph",
+      "title": "时间展开图建模",
+      "en_title": "Time-expanded Graph Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "状态随时间变化",
+        "等待或周期限制",
+        "同一位置不同时间不可等价"
+      ],
+      "common_transforms": [
+        "状态扩展为 (node,time mod period)",
+        "加等待边"
+      ],
+      "required_items": [
+        "2.13.1",
+        "2.7.2"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.9.3",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(T(V+E))",
+        "O(TV) space"
+      ],
+      "example_problem_refs": [
+        "Periodic graph tasks"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.tree_level_order",
+        "pat.island_problems"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.layered_graph_shortest_path",
+      "title": "分层图最短路",
+      "en_title": "Layered Graph Shortest Path",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "允许使用 k 次特殊操作",
+        "状态包含已用次数",
+        "每层表示一种资源使用量"
+      ],
+      "common_transforms": [
+        "复制 k+1 层图",
+        "普通边同层特殊边跨层"
+      ],
+      "required_items": [
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.9.3",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(kE log kV)",
+        "O(kV) space"
+      ],
+      "example_problem_refs": [
+        "Discounted shortest path"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.zero_one_bfs"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.complement_graph_modeling",
+      "title": "补图搜索建模",
+      "en_title": "Complement Graph Search Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "边很多但缺边更关键",
+        "需要在补图上连通/最短路",
+        "直接建补图过大"
+      ],
+      "common_transforms": [
+        "维护未访问集合",
+        "按原图邻接过滤可达点"
+      ],
+      "required_items": [
+        "2.7.2",
+        "2.9.1"
+      ],
+      "related_items": [
+        "2.13.1",
+        "2.9.3",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(V+E) with sets",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "Complement BFS tasks"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.tree_level_order",
+        "pat.island_problems"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.game_graph_retrograde",
+      "title": "博弈图逆推",
+      "en_title": "Game Graph Retrograde Modeling",
+      "category": "Graph Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_graph"
+      ],
+      "recognition_signals": [
+        "状态胜负由后继决定",
+        "有终止状态",
+        "可能存在平局/环"
+      ],
+      "common_transforms": [
+        "反图从终止态逆推",
+        "出度计数判断必败"
+      ],
+      "required_items": [
+        "2.9.3",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.9.1",
+        "2.13.1",
+        "2.16.3",
+        "2.16.5"
+      ],
+      "typical_complexities": [
+        "O(V+E)",
+        "O(V+E) space"
+      ],
+      "example_problem_refs": [
+        "AtCoder game graph"
+      ],
+      "next_patterns": [
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.island_problems",
+        "pat.course_schedule"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.knapsack_dp",
+      "title": "背包 DP 模式",
+      "en_title": "Knapsack DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "容量限制",
+        "物品选择",
+        "最大价值/方案数"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "倒序枚举容量处理 0/1",
+        "正序处理完全背包"
+      ],
+      "required_items": [
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.11.4",
+        "2.10.2"
+      ],
+      "typical_complexities": [
+        "O(nW)",
+        "O(W) space"
+      ],
+      "example_problem_refs": [
+        "Luogu P1048"
+      ],
+      "next_patterns": [
+        "pat.complete_knapsack_dp",
+        "pat.multiple_knapsack_binary_split"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.complete_knapsack_dp",
+      "title": "完全背包 DP",
+      "en_title": "Complete Knapsack DP",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "每种物品可无限取",
+        "容量维度",
+        "顺序枚举允许重复使用"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "容量正序转移",
+        "组合/排列由循环顺序决定"
+      ],
+      "required_items": [
+        "2.8.8",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.11.4",
+        "2.10.2"
+      ],
+      "typical_complexities": [
+        "O(nW)",
+        "O(W) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 322"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.multiple_knapsack_binary_split"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.multiple_knapsack_binary_split",
+      "title": "多重背包二进制拆分",
+      "en_title": "Multiple Knapsack Binary Split",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "每个物品数量有限",
+        "直接展开过大",
+        "数量可拆成 1,2,4,..."
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "二进制分组为若干 0/1 物品",
+        "再套 0/1 背包"
+      ],
+      "required_items": [
+        "2.8.9",
+        "2.8.7"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.11.4",
+        "2.10.2"
+      ],
+      "typical_complexities": [
+        "O(W sum log c_i)",
+        "O(W) space"
+      ],
+      "example_problem_refs": [
+        "Luogu P1776"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.interval_dp",
+      "title": "区间 DP 模式",
+      "en_title": "Interval DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "状态是连续区间",
+        "枚举断点合并左右区间",
+        "区间长度从小到大"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "按长度递推",
+        "dp[l][r] 枚举 k"
+      ],
+      "required_items": [
+        "2.8.12"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.11.4",
+        "2.10.2"
+      ],
+      "typical_complexities": [
+        "O(n^3)",
+        "O(n^2) space"
+      ],
+      "example_problem_refs": [
+        "Stone Merge"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.tree_dp",
+      "title": "树形 DP 模式",
+      "en_title": "Tree DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "状态依赖子树",
+        "父子关系天然无环",
+        "需要后序合并"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "DFS 后序转移",
+        "换根处理全树答案"
+      ],
+      "required_items": [
+        "2.8.13",
+        "2.7.1"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(n * state)",
+        "O(n * state) space"
+      ],
+      "example_problem_refs": [
+        "Tree Diameter DP"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.island_problems",
+        "pat.course_schedule"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.digit_dp",
+      "title": "数位 DP 模式",
+      "en_title": "Digit DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "统计区间 [0,N] 内数字性质",
+        "有上界 tight 限制",
+        "按位构造"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "solve(R)-solve(L-1)",
+        "状态包含 pos/tight/leading/属性"
+      ],
+      "required_items": [
+        "2.8.21"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.11.4",
+        "2.10.2"
+      ],
+      "typical_complexities": [
+        "O(d * states * 10)",
+        "O(d * states) space"
+      ],
+      "example_problem_refs": [
+        "Digit Sum Count"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.bitmask_dp",
+      "title": "状压 DP 模式",
+      "en_title": "Bitmask DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "集合规模小",
+        "状态是已选子集",
+        "枚举子集转移"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "mask 表示集合",
+        "枚举子集 sub=(sub-1)&mask"
+      ],
+      "required_items": [
+        "2.8.20",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.8.3",
+        "2.7.1",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(n2^n)",
+        "O(2^n) space"
+      ],
+      "example_problem_refs": [
+        "TSP DP"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.state_compressed_bfs",
+        "pat.inclusion_exclusion_counting"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.linear_dp_sequence",
+      "title": "序列线性 DP",
+      "en_title": "Linear Sequence DP",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "只依赖前若干位置",
+        "序列最优值",
+        "可滚动数组"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "定义 dp[i] 为前缀答案",
+        "压缩固定窗口依赖"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(n * transition)",
+        "O(1) to O(n) space"
+      ],
+      "example_problem_refs": [
+        "House Robber"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.string_dp_wildcard"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.lis_dp",
+      "title": "最长递增子序列模式",
+      "en_title": "LIS Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "严格/非严格递增子序列",
+        "可选 O(n^2) 或贪心二分",
+        "需要长度或恢复路径"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "tails 数组维护最小结尾",
+        "lower_bound/upper_bound 区分边界"
+      ],
+      "required_items": [
+        "2.3.6",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.5.4"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 300"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.binary_search_on_answer",
+        "pat.topological_longest_path_dag"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.lcs_dp",
+      "title": "最长公共子序列模式",
+      "en_title": "LCS Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "两个序列匹配",
+        "可跳过字符",
+        "状态为两个前缀"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "dp[i][j] 表示前缀最优",
+        "匹配时从左上转移"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(nm)",
+        "O(min(n,m)) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 1143"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.string_dp_wildcard"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.edit_distance_dp",
+      "title": "编辑距离 DP",
+      "en_title": "Edit Distance DP",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "插入删除替换代价",
+        "两个字符串转化",
+        "前缀状态"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "dp[i][j] 表示转换前缀",
+        "三种操作取最小"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(nm)",
+        "O(min(n,m)) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 72"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.string_dp_wildcard"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.probability_dp",
+      "title": "概率 DP 模式",
+      "en_title": "Probability DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "求期望/概率",
+        "状态转移带概率权重",
+        "答案为加权和"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "把选择概率写入转移",
+        "期望用方程或拓扑顺序"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(states * transitions)",
+        "O(states) space"
+      ],
+      "example_problem_refs": [
+        "AtCoder DP I"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.string_dp_wildcard"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.expectation_dp",
+      "title": "期望 DP 模式",
+      "en_title": "Expectation DP Pattern",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "求平均步数/期望收益",
+        "状态可能自环",
+        "需要列方程或逆推"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "E[state]=1+sum pE[next]",
+        "按可消元顺序处理"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(states * transitions)",
+        "May require linear solve"
+      ],
+      "example_problem_refs": [
+        "AtCoder DP J"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.string_dp_wildcard"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.divide_conquer_dp_optimization",
+      "title": "分治 DP 优化",
+      "en_title": "Divide and Conquer DP Optimization",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "转移 argmin 单调",
+        "dp[i][j]=min dp[i-1][k]+cost",
+        "朴素 O(kn^2) 过慢"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "递归求一层 dp",
+        "用最优决策区间剪枝"
+      ],
+      "required_items": [
+        "2.1.5",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(k n log n)",
+        "O(n) per layer"
+      ],
+      "example_problem_refs": [
+        "Divide Conquer Optimization"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.topological_longest_path_dag",
+        "pat.centroid_decomposition_query"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.monotone_queue_dp",
+      "title": "单调队列 DP 优化",
+      "en_title": "Monotone Queue DP Optimization",
+      "category": "DP Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_dp"
+      ],
+      "recognition_signals": [
+        "题目可拆成状态和转移",
+        "当前选择依赖较小的子问题",
+        "需要明确状态维度和转移顺序",
+        "转移窗口有限",
+        "取区间最大/最小",
+        "需要线性优化"
+      ],
+      "common_transforms": [
+        "定义状态含义、边界和转移来源",
+        "根据依赖关系选择滚动数组、拓扑顺序或优化结构",
+        "把候选值入单调队列",
+        "过期下标出队"
+      ],
+      "required_items": [
+        "2.5.4",
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.7.1",
+        "2.11.4",
+        "2.10.2",
+        "2.3.6"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(window) space"
+      ],
+      "example_problem_refs": [
+        "Sliding window DP"
+      ],
+      "next_patterns": [
+        "pat.knapsack_dp",
+        "pat.complete_knapsack_dp",
+        "pat.sliding_window_fixed_size",
+        "pat.sliding_window_variable_size"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.segment_tree_range_update",
+      "title": "线段树区间更新",
+      "en_title": "Segment Tree Range Update Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "区间修改区间查询",
+        "多次在线操作",
+        "需要 lazy 标记"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "懒标记下传",
+        "节点维护聚合值"
+      ],
+      "required_items": [
+        "3.7.2",
+        "3.7.3"
+      ],
+      "related_items": [
+        "3.7.1",
+        "3.2.5",
+        "3.2.6",
+        "2.1.8"
+      ],
+      "typical_complexities": [
+        "O(log n) per operation",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Range Add Range Sum"
+      ],
+      "next_patterns": [
+        "pat.dsu_connectivity",
+        "pat.fenwick_prefix_maintenance",
+        "pat.tree_path_query",
+        "pat.sweep_line_pattern"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.dsu_connectivity",
+      "title": "并查集连通性",
+      "en_title": "DSU Connectivity Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "动态加边",
+        "查询是否同连通块",
+        "无需删除边"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "路径压缩 + 按秩合并",
+        "边加入时合并集合"
+      ],
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.1",
+        "3.2.5"
+      ],
+      "typical_complexities": [
+        "O(alpha n) amortized",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 684"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.fenwick_prefix_maintenance",
+        "pat.cycle_detection_undirected"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.fenwick_prefix_maintenance",
+      "title": "树状数组前缀维护",
+      "en_title": "Fenwick Prefix Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "点更新前缀和",
+        "区间和查询",
+        "索引可离散化"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "lowbit 跳转",
+        "差分树状数组支持区间加"
+      ],
+      "required_items": [
+        "3.7.1"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.2.5",
+        "3.2.6"
+      ],
+      "typical_complexities": [
+        "O(log n) per operation",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "CSES Dynamic Range Sum Queries"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.subtree_query_euler"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.monotonic_queue_window_max",
+      "title": "单调队列窗口最值",
+      "en_title": "Monotonic Queue Window Maximum",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "滑动窗口最大/最小值",
+        "窗口端点单调右移",
+        "每个元素最多进出一次"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "队列存候选下标",
+        "队尾弹出劣候选"
+      ],
+      "required_items": [
+        "2.5.4"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.1",
+        "3.2.5"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(k) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 239"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.sliding_window_fixed_size",
+        "pat.sliding_window_variable_size"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.order_statistic_maintenance",
+      "title": "动态第 k 小维护",
+      "en_title": "Order Statistic Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "动态插入删除",
+        "查询第 k 小/排名",
+        "值域可离散化"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "频率树上二分",
+        "坐标压缩后维护计数"
+      ],
+      "required_items": [
+        "3.7.2",
+        "3.7.1"
+      ],
+      "related_items": [
+        "3.7.3",
+        "3.2.5",
+        "3.2.6",
+        "2.1.8"
+      ],
+      "typical_complexities": [
+        "O(log n) per operation",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "K-th order statistic"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.tree_path_query",
+        "pat.subtree_query_euler"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.range_mode_offline",
+      "title": "区间众数离线维护",
+      "en_title": "Range Mode Offline Maintenance",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "多次区间查询",
+        "在线结构困难",
+        "允许重排查询"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "按块排序查询",
+        "移动端点维护计数"
+      ],
+      "required_items": [
+        "2.1.8",
+        "3.2.5"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.1",
+        "3.2.6"
+      ],
+      "typical_complexities": [
+        "O((n+q) sqrt n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Mo's Algorithm mode"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.rollback_dsu",
+      "title": "可撤销并查集",
+      "en_title": "Rollback DSU Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "离线动态连通性",
+        "需要撤销合并",
+        "通常不用路径压缩"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "栈记录修改",
+        "递归分治时间段"
+      ],
+      "required_items": [
+        "3.4.1"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.1",
+        "3.2.5"
+      ],
+      "typical_complexities": [
+        "O(log q * alpha n) per edge interval",
+        "O(n+q) space"
+      ],
+      "example_problem_refs": [
+        "Dynamic Connectivity Offline"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.cycle_detection_undirected"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.lazy_tag_composition",
+      "title": "懒标记组合",
+      "en_title": "Lazy Tag Composition Pattern",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "区间赋值/加法/乘法混合",
+        "标记顺序影响结果",
+        "需要封装 tag compose"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "定义标记作用函数",
+        "下传时先组合后应用"
+      ],
+      "required_items": [
+        "3.7.3"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.1",
+        "3.2.5",
+        "3.2.6"
+      ],
+      "typical_complexities": [
+        "O(log n) per operation",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Range affine update"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.heap_lazy_deletion",
+      "title": "堆懒删除",
+      "en_title": "Heap Lazy Deletion",
+      "category": "Data Structure Maintenance Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题目包含多次更新和查询",
+        "朴素重算会超时",
+        "需要把操作映射到可维护的聚合状态",
+        "堆不支持任意删除",
+        "需要维护窗口或动态集合最值",
+        "删除操作可延迟"
+      ],
+      "common_transforms": [
+        "明确更新类型和查询聚合量",
+        "选择能支持该操作组合的数据结构维护状态",
+        "删除表记录待删次数",
+        "堆顶无效时循环弹出"
+      ],
+      "required_items": [
+        "3.2.6",
+        "3.2.5"
+      ],
+      "related_items": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.1",
+        "2.1.8"
+      ],
+      "typical_complexities": [
+        "O(log n) amortized",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Sliding Median variants"
+      ],
+      "next_patterns": [
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.tree_path_query",
+      "title": "树上路径查询",
+      "en_title": "Tree Path Query Pattern",
+      "category": "Tree Query Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "多次询问树上 u-v 路径",
+        "路径上需要求和、最大值、颜色、边权或执行修改",
+        "单纯子树区间不足以覆盖查询",
+        "需要把一条树路径拆成若干线性区间"
+      ],
+      "common_transforms": [
+        "用 LCA 定位路径分叉点",
+        "用重链剖分将路径拆成 O(log n) 段",
+        "每段交给线段树或树状数组维护"
+      ],
+      "required_items": [
+        "2.14.2",
+        "2.14.4",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.7.1",
+        "3.7.1",
+        "2.8.13"
+      ],
+      "typical_complexities": [
+        "O(log^2 n) per query",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "QTREE"
+      ],
+      "next_patterns": [
+        "pat.rerooting_tree_dp",
+        "pat.virtual_tree_pattern",
+        "pat.segment_tree_range_update",
+        "pat.order_statistic_maintenance"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.rerooting_tree_dp",
+      "title": "换根 DP",
+      "en_title": "Rerooting Tree DP",
+      "category": "Tree Query Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题面对象是一棵静态或动态树",
+        "查询目标与路径、子树或关键点集合有关",
+        "需要把树结构转成 LCA、链区间、欧拉序或压缩树上的操作",
+        "每个点作为根都要求答案",
+        "子树答案需换到邻居",
+        "全树贡献可局部重算"
+      ],
+      "common_transforms": [
+        "先下行求子树",
+        "再上行传父侧贡献"
+      ],
+      "required_items": [
+        "2.8.13"
+      ],
+      "related_items": [
+        "2.14.2",
+        "2.14.4",
+        "2.7.1",
+        "3.7.1"
+      ],
+      "typical_complexities": [
+        "O(n * state)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Tree distances"
+      ],
+      "next_patterns": [
+        "pat.tree_path_query",
+        "pat.virtual_tree_pattern",
+        "pat.tree_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.virtual_tree_pattern",
+      "title": "虚树关键点模式",
+      "en_title": "Virtual Tree Key-Node Pattern",
+      "category": "Tree Query Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "每个询问给出一组关键点",
+        "原树很大但关键点数量相对小",
+        "答案只依赖关键点之间的祖先路径关系"
+      ],
+      "common_transforms": [
+        "按 DFS 序排序关键点",
+        "加入相邻关键点的 LCA",
+        "用栈按祖先关系建立压缩树"
+      ],
+      "required_items": [
+        "2.14.2"
+      ],
+      "related_items": [
+        "2.14.4",
+        "2.7.1",
+        "3.7.1",
+        "3.7.2"
+      ],
+      "typical_complexities": [
+        "O(k log k)",
+        "O(k) space"
+      ],
+      "example_problem_refs": [
+        "Virtual tree problems"
+      ],
+      "next_patterns": [
+        "pat.tree_path_query",
+        "pat.rerooting_tree_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.subtree_query_euler",
+      "title": "子树查询欧拉序",
+      "en_title": "Subtree Query Euler Tour",
+      "category": "Tree Query Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "查询目标是某个节点的整棵子树",
+        "树结构静态或根固定",
+        "子树节点在 DFS 序上形成连续区间"
+      ],
+      "common_transforms": [
+        "DFS 记录 tin/tout",
+        "在线性序列上用 BIT/线段树"
+      ],
+      "required_items": [
+        "2.7.1",
+        "3.7.1"
+      ],
+      "related_items": [
+        "2.14.2",
+        "2.14.4",
+        "3.7.2",
+        "2.8.13"
+      ],
+      "typical_complexities": [
+        "O(log n) per query",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "CSES Subtree Queries"
+      ],
+      "next_patterns": [
+        "pat.tree_path_query",
+        "pat.rerooting_tree_dp",
+        "pat.island_problems",
+        "pat.course_schedule"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.centroid_decomposition_query",
+      "title": "点分治查询",
+      "en_title": "Centroid Decomposition Query",
+      "category": "Tree Query Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_data_structure"
+      ],
+      "recognition_signals": [
+        "题面对象是一棵静态或动态树",
+        "查询目标与路径、子树或关键点集合有关",
+        "需要把树结构转成 LCA、链区间、欧拉序或压缩树上的操作",
+        "树上距离约束",
+        "动态点更新和最近点查询",
+        "需要分治祖先链"
+      ],
+      "common_transforms": [
+        "递归找重心",
+        "每个点记录到分治祖先距离"
+      ],
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.14.2",
+        "2.14.4",
+        "2.7.1",
+        "3.7.1"
+      ],
+      "typical_complexities": [
+        "O(log n) update/query",
+        "O(n log n) space"
+      ],
+      "example_problem_refs": [
+        "Dynamic nearest marked node"
+      ],
+      "next_patterns": [
+        "pat.tree_path_query",
+        "pat.rerooting_tree_dp",
+        "pat.divide_conquer_dp_optimization",
+        "pat.binary_lifting_state_jump"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.rabin_karp_hash",
+      "title": "滚动哈希匹配",
+      "en_title": "Rabin-Karp Rolling Hash",
+      "category": "String Matching Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_string"
+      ],
+      "recognition_signals": [
+        "题面存在文本、模式串、前缀、后缀或子串匹配关系",
+        "需要避免逐位置暴力比对",
+        "匹配状态可以被复用或自动转移",
+        "子串相等查询",
+        "多次比较",
+        "可接受低概率碰撞或双哈希"
+      ],
+      "common_transforms": [
+        "把字符比较转成前缀函数、哈希或自动机状态转移",
+        "根据单模式/多模式/回文/通配符选择匹配模型",
+        "前缀哈希 O(1) 取子串",
+        "双模数降低碰撞"
+      ],
+      "required_items": [
+        "2.10.2",
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.10.3",
+        "2.10.4",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(n+m)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "String hashing tasks"
+      ],
+      "next_patterns": [
+        "pat.trie_multi_pattern",
+        "pat.aho_corasick_matching",
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.trie_multi_pattern",
+      "title": "Trie 多模式前缀匹配",
+      "en_title": "Trie Multi-pattern Prefix Matching",
+      "category": "String Matching Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_string"
+      ],
+      "recognition_signals": [
+        "题面存在文本、模式串、前缀、后缀或子串匹配关系",
+        "需要避免逐位置暴力比对",
+        "匹配状态可以被复用或自动转移",
+        "多个模式串共享前缀",
+        "查询前缀存在性",
+        "在线插入查找"
+      ],
+      "common_transforms": [
+        "把字符比较转成前缀函数、哈希或自动机状态转移",
+        "根据单模式/多模式/回文/通配符选择匹配模型",
+        "字典树节点存通过次数",
+        "按字符逐层走"
+      ],
+      "required_items": [
+        "2.10.4"
+      ],
+      "related_items": [
+        "2.10.2",
+        "2.10.3",
+        "3.2.5",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(total characters)",
+        "O(nodes) space"
+      ],
+      "example_problem_refs": [
+        "Word Dictionary"
+      ],
+      "next_patterns": [
+        "pat.rabin_karp_hash",
+        "pat.aho_corasick_matching"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.aho_corasick_matching",
+      "title": "AC 自动机多模式匹配",
+      "en_title": "Aho-Corasick Multi-pattern Matching",
+      "category": "String Matching Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_string"
+      ],
+      "recognition_signals": [
+        "题面存在文本、模式串、前缀、后缀或子串匹配关系",
+        "需要避免逐位置暴力比对",
+        "匹配状态可以被复用或自动转移",
+        "大量模式串同时匹配",
+        "需要所有出现位置/计数",
+        "模式间有前缀关系"
+      ],
+      "common_transforms": [
+        "把字符比较转成前缀函数、哈希或自动机状态转移",
+        "根据单模式/多模式/回文/通配符选择匹配模型",
+        "Trie + failure 链",
+        "BFS 构建自动机转移"
+      ],
+      "required_items": [
+        "2.10.4",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3",
+        "3.2.5",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(text + total pattern length + matches)",
+        "O(nodes * alphabet)"
+      ],
+      "example_problem_refs": [
+        "Multi-pattern matching"
+      ],
+      "next_patterns": [
+        "pat.rabin_karp_hash",
+        "pat.trie_multi_pattern"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.string_dp_wildcard",
+      "title": "通配符匹配 DP",
+      "en_title": "Wildcard String Matching DP",
+      "category": "String Matching Patterns",
+      "difficulty": "intermediate",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "advanced_string"
+      ],
+      "recognition_signals": [
+        "题面存在文本、模式串、前缀、后缀或子串匹配关系",
+        "需要避免逐位置暴力比对",
+        "匹配状态可以被复用或自动转移",
+        "模式含 ? 或 *",
+        "字符匹配和空串转移",
+        "两个前缀状态"
+      ],
+      "common_transforms": [
+        "把字符比较转成前缀函数、哈希或自动机状态转移",
+        "根据单模式/多模式/回文/通配符选择匹配模型",
+        "dp[i][j] 表示前缀匹配",
+        "* 可匹配空或扩展"
+      ],
+      "required_items": [
+        "2.8.3",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3",
+        "2.10.4",
+        "3.2.5"
+      ],
+      "typical_complexities": [
+        "O(nm)",
+        "O(m) space"
+      ],
+      "example_problem_refs": [
+        "LeetCode 44"
+      ],
+      "next_patterns": [
+        "pat.rabin_karp_hash",
+        "pat.trie_multi_pattern",
+        "pat.topological_longest_path_dag",
+        "pat.linear_dp_sequence"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.offline_query_pattern",
+      "title": "离线查询模式",
+      "en_title": "Offline Query Pattern",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "查询可重排",
+        "按阈值/时间排序更容易",
+        "答案不依赖原处理顺序"
+      ],
+      "common_transforms": [
+        "排序事件和查询",
+        "边扫边维护数据结构"
+      ],
+      "required_items": [
+        "2.1.8",
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.3.6",
+        "4.7.42",
+        "3.7.2",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O((n+q) log n)",
+        "Depends on structure"
+      ],
+      "example_problem_refs": [
+        "KQUERY"
+      ],
+      "next_patterns": [
+        "pat.sweep_line_pattern",
+        "pat.meet_in_the_middle",
+        "pat.merge_intervals",
+        "pat.interval_sweep_events"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.sweep_line_pattern",
+      "title": "扫描线模式",
+      "en_title": "Sweep Line Pattern",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "几何/区间事件按坐标发生",
+        "维护当前活跃集合",
+        "求面积/交点/重叠"
+      ],
+      "common_transforms": [
+        "端点转事件",
+        "用线段树维护覆盖长度"
+      ],
+      "required_items": [
+        "4.7.42",
+        "3.7.2"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Rectangle Union Area"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.meet_in_the_middle",
+        "pat.interval_sweep_events",
+        "pat.segment_tree_range_update"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.meet_in_the_middle",
+      "title": "折半搜索",
+      "en_title": "Meet-in-the-middle",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "n 约 30-40",
+        "全枚举 2^n 过大",
+        "拆成两半可合并"
+      ],
+      "common_transforms": [
+        "枚举左右半集合",
+        "排序后二分或双指针合并"
+      ],
+      "required_items": [
+        "2.1.1",
+        "2.3.6"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "4.7.42",
+        "3.7.2"
+      ],
+      "typical_complexities": [
+        "O(2^(n/2) log 2^(n/2))",
+        "O(2^(n/2)) space"
+      ],
+      "example_problem_refs": [
+        "Subset Sum n=40"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.binary_search_on_answer",
+        "pat.lis_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.constructive_invariant",
+      "title": "构造题不变量",
+      "en_title": "Constructive Invariant Pattern",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "要求输出任意方案",
+        "存在性依赖不变量",
+        "需要保持某种性质"
+      ],
+      "common_transforms": [
+        "寻找奇偶/和/连通性不变量",
+        "从小规模构造扩展"
+      ],
+      "required_items": [
+        "2.1.7"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "4.7.42"
+      ],
+      "typical_complexities": [
+        "Problem dependent",
+        "Usually O(n log n) or O(n)"
+      ],
+      "example_problem_refs": [
+        "Codeforces constructive"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.greedy_exchange_argument",
+      "title": "贪心交换论证",
+      "en_title": "Greedy Exchange Argument",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "局部选择看似最优",
+        "需要证明排序或选择规则",
+        "可通过交换改善"
+      ],
+      "common_transforms": [
+        "排序后相邻交换证明",
+        "反证最早不同位置"
+      ],
+      "required_items": [
+        "2.2.1"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.3.6",
+        "4.7.42",
+        "3.7.2"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(1) to O(n) space"
+      ],
+      "example_problem_refs": [
+        "Activity Selection"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.merge_intervals",
+        "pat.interval_sweep_events"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.binary_lifting_state_jump",
+      "title": "倍增状态跳转",
+      "en_title": "Binary Lifting State Jump",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "重复应用同一转移很多次",
+        "k 很大",
+        "转移函数可组合"
+      ],
+      "common_transforms": [
+        "预处理 jump[state][p]",
+        "按二进制位跳转"
+      ],
+      "required_items": [
+        "2.1.5"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "4.7.42"
+      ],
+      "typical_complexities": [
+        "O(n log K) build, O(log K) query",
+        "O(n log K) space"
+      ],
+      "example_problem_refs": [
+        "Functional graph jumps"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.divide_conquer_dp_optimization",
+        "pat.centroid_decomposition_query"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.modular_counting_pattern",
+      "title": "取模计数模式",
+      "en_title": "Modular Counting Pattern",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "答案很大只需模数",
+        "组合/路径计数",
+        "转移中保持取模"
+      ],
+      "common_transforms": [
+        "每次加乘后取模",
+        "预处理阶乘逆元"
+      ],
+      "required_items": [
+        "2.8.3"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "4.7.42"
+      ],
+      "typical_complexities": [
+        "O(states)",
+        "O(states) space"
+      ],
+      "example_problem_refs": [
+        "Counting paths modulo"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.topological_longest_path_dag",
+        "pat.linear_dp_sequence"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.inclusion_exclusion_counting",
+      "title": "容斥计数",
+      "en_title": "Inclusion-Exclusion Counting",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "至少/至多条件交叠",
+        "直接计数重复",
+        "集合数量小"
+      ],
+      "common_transforms": [
+        "按子集奇偶加减",
+        "把限制转成违反条件集合"
+      ],
+      "required_items": [
+        "2.1.1",
+        "2.11.4"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "4.7.42"
+      ],
+      "typical_complexities": [
+        "O(2^k * work)",
+        "O(1) to O(2^k)"
+      ],
+      "example_problem_refs": [
+        "Derangements variants"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.state_compressed_bfs",
+        "pat.bitmask_dp"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.coordinate_sweep_compression",
+      "title": "离散化扫描",
+      "en_title": "Compressed Coordinate Sweep",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "坐标范围巨大",
+        "事件数有限",
+        "相邻事件之间答案不变"
+      ],
+      "common_transforms": [
+        "离散化端点",
+        "按压缩坐标维护覆盖"
+      ],
+      "required_items": [
+        "2.2.1",
+        "4.7.42"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.3.6",
+        "3.7.2",
+        "2.8.3"
+      ],
+      "typical_complexities": [
+        "O(n log n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Large coordinate intervals"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.merge_intervals",
+        "pat.interval_sweep_events"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    },
+    {
+      "pattern_id": "pat.randomized_hash_check",
+      "title": "随机哈希判等",
+      "en_title": "Randomized Hash Check",
+      "category": "Competitive Modeling Patterns",
+      "difficulty": "advanced",
+      "tracks": [
+        "icpc",
+        "university_cp",
+        "noi"
+      ],
+      "recognition_signals": [
+        "复杂结构等价难判",
+        "可用随机权重压缩状态",
+        "低概率误判可接受"
+      ],
+      "common_transforms": [
+        "给元素随机权值",
+        "集合/多重集合用和或 xor 摘要"
+      ],
+      "required_items": [
+        "3.2.5"
+      ],
+      "related_items": [
+        "2.1.8",
+        "2.2.1",
+        "2.3.6",
+        "4.7.42"
+      ],
+      "typical_complexities": [
+        "O(n)",
+        "O(n) space"
+      ],
+      "example_problem_refs": [
+        "Probabilistic equality check"
+      ],
+      "next_patterns": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap"
+      ],
+      "frontend_notes": "Use compact sections: identify, transform, prerequisites, related knowledge, examples."
+    }
+  ]
+}

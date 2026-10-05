@@ -1,0 +1,20 @@
+{
+  "pre_fix_item_count": 2665,
+  "post_fix_item_count": 2640,
+  "section_count": 65,
+  "step1_merged_nodes": 25,
+  "step1_keeper_nodes": 7,
+  "step2_shrunk_nodes": 282,
+  "duplicate_item_ids": [],
+  "dangling_refs": [],
+  "direct_pre_section_refs": [],
+  "direct_pre_refs_to_removed_nodes": [],
+  "direct_pre_cycle": null,
+  "resolved_pre_mismatches": [],
+  "product_metadata_validation": {
+    "passed": true,
+    "sample_count": 50
+  },
+  "report_matches_json": true,
+  "passed": true
+}

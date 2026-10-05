@@ -1,0 +1,1043 @@
+{
+  "meta": {
+    "generated_by": "stage3g_full400_added_items_review",
+    "generated_at": "2026-05-25T15:09:03.568508+00:00",
+    "total_suggested_sync": 94
+  },
+  "candidates": [
+    {
+      "id": "2.1.76",
+      "name": "递归进阶：递归转迭代",
+      "candidate_id": "cand.basic_algo.递归进阶_递归转迭代",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "递归进阶：递归转迭代"
+      ]
+    },
+    {
+      "id": "2.2.23",
+      "name": "二分进阶：二分答案判定",
+      "candidate_id": "cand.basic_algo.二分进阶_二分答案判定",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "二分进阶：二分答案判定"
+      ]
+    },
+    {
+      "id": "2.2.25",
+      "name": "二分进阶：实数二分精度处理",
+      "candidate_id": "cand.basic_algo.二分进阶_实数二分精度处理",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "二分进阶：实数二分精度处理"
+      ]
+    },
+    {
+      "id": "2.2.26",
+      "name": "二分进阶：答案判定技巧",
+      "candidate_id": "cand.basic_algo.二分进阶_答案判定技巧",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "二分进阶：答案判定技巧"
+      ]
+    },
+    {
+      "id": "2.3.27",
+      "name": "贪心进阶：交换论证法",
+      "candidate_id": "cand.basic_algo.贪心进阶_交换论证法",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "贪心进阶：交换论证法"
+      ]
+    },
+    {
+      "id": "2.3.28",
+      "name": "贪心进阶：区间调度进阶",
+      "candidate_id": "cand.basic_algo.贪心进阶_区间调度进阶",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "贪心进阶：区间调度进阶"
+      ]
+    },
+    {
+      "id": "2.3.29",
+      "name": "二分进阶：开区间与闭区间二分",
+      "candidate_id": "cand.basic.binary_open_closed",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "二分进阶：开区间与闭区间二分"
+      ]
+    },
+    {
+      "id": "2.4.52",
+      "name": "分治进阶：整体二分应用",
+      "candidate_id": "cand.basic.divide_conquer_overall_binary",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "分治进阶：整体二分应用"
+      ]
+    },
+    {
+      "id": "2.5.21",
+      "name": "搜索进阶：剪枝技巧",
+      "candidate_id": "cand.basic_algo.搜索进阶_剪枝技巧",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "搜索进阶：剪枝技巧"
+      ]
+    },
+    {
+      "id": "2.5.23",
+      "name": "搜索进阶：DFS序与回溯",
+      "candidate_id": "cand.basic_algo.搜索进阶_dfs序与回溯",
+      "theme": "基础算法扩展",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "搜索进阶：DFS序与回溯"
+      ]
+    },
+    {
+      "id": "2.6.10",
+      "name": "贪心进阶：区间选点问题",
+      "candidate_id": "cand.basic.greedy_point_selection",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "贪心进阶：区间选点问题"
+      ]
+    },
+    {
+      "id": "2.8.175",
+      "name": "计数DP：容斥DP",
+      "candidate_id": "cand.dp.计数dp_容斥dp",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "计数DP：容斥DP"
+      ]
+    },
+    {
+      "id": "2.8.177",
+      "name": "DP进阶：DP与自动机(KMP自动机DP)",
+      "candidate_id": "cand.dp.dp进阶_dp与自动机_kmp自动机dp",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP进阶：DP与自动机(KMP自动机DP)"
+      ]
+    },
+    {
+      "id": "2.8.183",
+      "name": "DP进阶：DP状态压缩与记忆化搜索",
+      "candidate_id": "cand.dp.dp进阶_dp状态压缩与记忆化搜索",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP进阶：DP状态压缩与记忆化搜索"
+      ]
+    },
+    {
+      "id": "2.8.184",
+      "name": "DP进阶：DP状态设计技巧",
+      "candidate_id": "cand.dp.dp进阶_dp状态设计技巧",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP进阶：DP状态设计技巧"
+      ]
+    },
+    {
+      "id": "2.8.185",
+      "name": "DP进阶：高维DP降维",
+      "candidate_id": "cand.dp.dp进阶_高维dp降维",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP进阶：高维DP降维"
+      ]
+    },
+    {
+      "id": "2.8.187",
+      "name": "数据结构优化DP进阶：线段树优化",
+      "candidate_id": "cand.dp.数据结构优化dp进阶_线段树优化",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "数据结构优化DP进阶：线段树优化"
+      ]
+    },
+    {
+      "id": "2.8.188",
+      "name": "数据结构优化DP进阶：树状数组优化",
+      "candidate_id": "cand.dp.数据结构优化dp进阶_树状数组优化",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "数据结构优化DP进阶：树状数组优化"
+      ]
+    },
+    {
+      "id": "2.8.189",
+      "name": "DP进阶：DP与矩阵乘法优化",
+      "candidate_id": "cand.dp.dp进阶_dp与矩阵乘法优化",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP进阶：DP与矩阵乘法优化"
+      ]
+    },
+    {
+      "id": "2.8.191",
+      "name": "双状态DP进阶",
+      "candidate_id": "cand.dp.双状态dp进阶",
+      "theme": "动态规划专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "双状态DP进阶"
+      ]
+    },
+    {
+      "id": "2.8.200",
+      "name": "DP建模：背包总方案数",
+      "candidate_id": "cand.dp.dp_knapsack_count",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP建模：背包总方案数"
+      ]
+    },
+    {
+      "id": "2.8.201",
+      "name": "DP建模：高维DP降维",
+      "candidate_id": "cand.dp.dp_dimension_reduction",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "DP建模：高维DP降维"
+      ]
+    },
+    {
+      "id": "2.9.40",
+      "name": "图论建模：超级源点与超级汇点",
+      "candidate_id": "cand.graph.图论建模_超级源点与超级汇点",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论建模：超级源点与超级汇点"
+      ]
+    },
+    {
+      "id": "2.9.41",
+      "name": "图论建模：分层图",
+      "candidate_id": "cand.graph.图论建模_分层图",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论建模：分层图"
+      ]
+    },
+    {
+      "id": "2.9.42",
+      "name": "图论建模：差分约束进阶",
+      "candidate_id": "cand.graph.图论建模_差分约束进阶",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论建模：差分约束进阶"
+      ]
+    },
+    {
+      "id": "2.9.43",
+      "name": "图论建模：状态压缩图",
+      "candidate_id": "cand.graph.图论建模_状态压缩图",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论建模：状态压缩图"
+      ]
+    },
+    {
+      "id": "2.9.55",
+      "name": "STL算法：unique/remove/erase惯用法",
+      "candidate_id": "cand.stl.stl算法_unique_remove_erase惯用法",
+      "theme": "STL与常用库细节",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "STL算法：unique/remove/erase惯用法"
+      ]
+    },
+    {
+      "id": "2.9.69",
+      "name": "STL算法：copy/transform惯用法",
+      "candidate_id": "cand.stl.stl算法_copy_transform惯用法",
+      "theme": "STL与常用库细节",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "STL算法：copy/transform惯用法"
+      ]
+    },
+    {
+      "id": "2.9.106",
+      "name": "代码组织：using与typedef最佳实践",
+      "candidate_id": "cand.skills.代码组织_using与typedef最佳实践",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "代码组织：using与typedef最佳实践"
+      ]
+    },
+    {
+      "id": "2.9.107",
+      "name": "调试技巧：assert使用",
+      "candidate_id": "cand.skills.调试技巧_assert使用",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：assert使用"
+      ]
+    },
+    {
+      "id": "2.9.109",
+      "name": "调试技巧：条件编译(debug/release)",
+      "candidate_id": "cand.skills.调试技巧_条件编译_debug_release",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：条件编译(debug/release)"
+      ]
+    },
+    {
+      "id": "2.9.113",
+      "name": "代码复用：函数化封装",
+      "candidate_id": "cand.skills.代码复用_函数化封装",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "代码复用：函数化封装"
+      ]
+    },
+    {
+      "id": "2.9.114",
+      "name": "代码复用：模板化编程",
+      "candidate_id": "cand.skills.代码复用_模板化编程",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "代码复用：模板化编程"
+      ]
+    },
+    {
+      "id": "2.9.118",
+      "name": "STL技巧：reserve预分配",
+      "candidate_id": "cand.skills.stl技巧_reserve预分配",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "STL技巧：reserve预分配"
+      ]
+    },
+    {
+      "id": "2.9.119",
+      "name": "STL技巧：swap技巧",
+      "candidate_id": "cand.skills.stl技巧_swap技巧",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "STL技巧：swap技巧"
+      ]
+    },
+    {
+      "id": "2.9.120",
+      "name": "编码规范：命名规范与注释",
+      "candidate_id": "cand.skills.编码规范_命名规范与注释",
+      "theme": "编程技巧",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "编码规范：命名规范与注释"
+      ]
+    },
+    {
+      "id": "2.9.121",
+      "name": "建模方法：最优化问题建模",
+      "candidate_id": "cand.modeling.建模方法_最优化问题建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：最优化问题建模"
+      ]
+    },
+    {
+      "id": "2.9.122",
+      "name": "建模方法：决策问题建模",
+      "candidate_id": "cand.modeling.建模方法_决策问题建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：决策问题建模"
+      ]
+    },
+    {
+      "id": "2.9.123",
+      "name": "建模方法：计数问题建模",
+      "candidate_id": "cand.modeling.建模方法_计数问题建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：计数问题建模"
+      ]
+    },
+    {
+      "id": "2.9.124",
+      "name": "建模方法：构造问题建模",
+      "candidate_id": "cand.modeling.建模方法_构造问题建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：构造问题建模"
+      ]
+    },
+    {
+      "id": "2.9.125",
+      "name": "建模方法：交互问题建模",
+      "candidate_id": "cand.modeling.建模方法_交互问题建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：交互问题建模"
+      ]
+    },
+    {
+      "id": "2.9.126",
+      "name": "建模方法：离线处理建模",
+      "candidate_id": "cand.modeling.建模方法_离线处理建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：离线处理建模"
+      ]
+    },
+    {
+      "id": "2.9.127",
+      "name": "建模方法：在线转离线",
+      "candidate_id": "cand.modeling.建模方法_在线转离线",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：在线转离线"
+      ]
+    },
+    {
+      "id": "2.9.128",
+      "name": "建模方法：分治建模",
+      "candidate_id": "cand.modeling.建模方法_分治建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：分治建模"
+      ]
+    },
+    {
+      "id": "2.9.129",
+      "name": "建模方法：增量处理建模",
+      "candidate_id": "cand.modeling.建模方法_增量处理建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：增量处理建模"
+      ]
+    },
+    {
+      "id": "2.9.130",
+      "name": "建模方法：等效转换",
+      "candidate_id": "cand.modeling.建模方法_等效转换",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：等效转换"
+      ]
+    },
+    {
+      "id": "2.9.131",
+      "name": "建模方法：正难则反",
+      "candidate_id": "cand.modeling.建模方法_正难则反",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：正难则反"
+      ]
+    },
+    {
+      "id": "2.9.132",
+      "name": "建模方法：二分答案建模",
+      "candidate_id": "cand.modeling.建模方法_二分答案建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：二分答案建模"
+      ]
+    },
+    {
+      "id": "2.9.133",
+      "name": "建模方法：倍增思想",
+      "candidate_id": "cand.modeling.建模方法_倍增思想",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：倍增思想"
+      ]
+    },
+    {
+      "id": "2.9.134",
+      "name": "建模方法：差分约束建模",
+      "candidate_id": "cand.modeling.建模方法_差分约束建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：差分约束建模"
+      ]
+    },
+    {
+      "id": "2.9.135",
+      "name": "建模方法：前缀和与差分扩展",
+      "candidate_id": "cand.modeling.建模方法_前缀和与差分扩展",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：前缀和与差分扩展"
+      ]
+    },
+    {
+      "id": "2.9.136",
+      "name": "建模方法：双指针/滑动窗口建模",
+      "candidate_id": "cand.modeling.建模方法_双指针_滑动窗口建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：双指针/滑动窗口建模"
+      ]
+    },
+    {
+      "id": "2.9.137",
+      "name": "建模方法：离散化建模",
+      "candidate_id": "cand.modeling.建模方法_离散化建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：离散化建模"
+      ]
+    },
+    {
+      "id": "2.9.138",
+      "name": "建模方法：折半搜索(meet-in-the-middle)",
+      "candidate_id": "cand.modeling.建模方法_折半搜索_meet_in_the_middle",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：折半搜索(meet-in-the-middle)"
+      ]
+    },
+    {
+      "id": "2.9.139",
+      "name": "建模方法：状态压缩建模",
+      "candidate_id": "cand.modeling.建模方法_状态压缩建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：状态压缩建模"
+      ]
+    },
+    {
+      "id": "2.9.140",
+      "name": "建模方法：贪心建模证明",
+      "candidate_id": "cand.modeling.建模方法_贪心建模证明",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：贪心建模证明"
+      ]
+    },
+    {
+      "id": "2.9.141",
+      "name": "建模方法：图论建模技巧",
+      "candidate_id": "cand.modeling.建模方法_图论建模技巧",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：图论建模技巧"
+      ]
+    },
+    {
+      "id": "2.9.142",
+      "name": "建模方法：网络流建模",
+      "candidate_id": "cand.modeling.建模方法_网络流建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：网络流建模"
+      ]
+    },
+    {
+      "id": "2.9.143",
+      "name": "建模方法：博弈论建模",
+      "candidate_id": "cand.modeling.建模方法_博弈论建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：博弈论建模"
+      ]
+    },
+    {
+      "id": "2.9.144",
+      "name": "建模方法：矩阵乘法建模",
+      "candidate_id": "cand.modeling.建模方法_矩阵乘法建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：矩阵乘法建模"
+      ]
+    },
+    {
+      "id": "2.9.145",
+      "name": "建模方法：概率期望建模",
+      "candidate_id": "cand.modeling.建模方法_概率期望建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：概率期望建模"
+      ]
+    },
+    {
+      "id": "2.9.146",
+      "name": "建模方法：组合数学建模",
+      "candidate_id": "cand.modeling.建模方法_组合数学建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：组合数学建模"
+      ]
+    },
+    {
+      "id": "2.9.147",
+      "name": "建模方法：数论建模",
+      "candidate_id": "cand.modeling.建模方法_数论建模",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：数论建模"
+      ]
+    },
+    {
+      "id": "2.9.148",
+      "name": "建模方法：数据范围分析",
+      "candidate_id": "cand.modeling.建模方法_数据范围分析",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：数据范围分析"
+      ]
+    },
+    {
+      "id": "2.9.149",
+      "name": "建模方法：特殊性质利用",
+      "candidate_id": "cand.modeling.建模方法_特殊性质利用",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：特殊性质利用"
+      ]
+    },
+    {
+      "id": "2.9.150",
+      "name": "建模方法：暴力与优化",
+      "candidate_id": "cand.modeling.建模方法_暴力与优化",
+      "theme": "题型建模方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "建模方法：暴力与优化"
+      ]
+    },
+    {
+      "id": "2.9.154",
+      "name": "比赛策略：时间分配策略",
+      "candidate_id": "cand.contest.比赛策略_时间分配策略",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛策略：时间分配策略"
+      ]
+    },
+    {
+      "id": "2.9.155",
+      "name": "比赛策略：题目难度识别",
+      "candidate_id": "cand.contest.比赛策略_题目难度识别",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛策略：题目难度识别"
+      ]
+    },
+    {
+      "id": "2.9.156",
+      "name": "比赛策略：暴力与正解权衡",
+      "candidate_id": "cand.contest.比赛策略_暴力与正解权衡",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛策略：暴力与正解权衡"
+      ]
+    },
+    {
+      "id": "2.9.157",
+      "name": "比赛策略：部分分策略",
+      "candidate_id": "cand.contest.比赛策略_部分分策略",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛策略：部分分策略"
+      ]
+    },
+    {
+      "id": "2.9.158",
+      "name": "比赛技巧：对拍调试",
+      "candidate_id": "cand.contest.比赛技巧_对拍调试",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛技巧：对拍调试"
+      ]
+    },
+    {
+      "id": "2.9.161",
+      "name": "比赛技巧：猜结论与打表",
+      "candidate_id": "cand.contest.比赛技巧_猜结论与打表",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛技巧：猜结论与打表"
+      ]
+    },
+    {
+      "id": "2.9.163",
+      "name": "比赛心理：复盘总结",
+      "candidate_id": "cand.contest.比赛心理_复盘总结",
+      "theme": "比赛相关知识",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "比赛心理：复盘总结"
+      ]
+    },
+    {
+      "id": "2.15.19",
+      "name": "最短路进阶：同余最短路",
+      "candidate_id": "cand.graph.最短路进阶_同余最短路",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "最短路进阶：同余最短路"
+      ]
+    },
+    {
+      "id": "2.16.38",
+      "name": "最大流建模：最大权闭合子图进阶",
+      "candidate_id": "cand.graph.最大流建模_最大权闭合子图进阶",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "最大流建模：最大权闭合子图进阶"
+      ]
+    },
+    {
+      "id": "2.16.39",
+      "name": "最大流建模：最大密度子图",
+      "candidate_id": "cand.graph.最大流建模_最大密度子图",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "最大流建模：最大密度子图"
+      ]
+    },
+    {
+      "id": "2.16.40",
+      "name": "最大流建模：混合图欧拉回路",
+      "candidate_id": "cand.graph.最大流建模_混合图欧拉回路",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "最大流建模：混合图欧拉回路"
+      ]
+    },
+    {
+      "id": "2.16.41",
+      "name": "图论建模：网络流动态加边",
+      "candidate_id": "cand.graph.graph_flow_dynamic_edges",
+      "theme": "",
+      "item_type": "core_concept",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论建模：网络流动态加边"
+      ]
+    },
+    {
+      "id": "2.10.59",
+      "name": "字符串建模：字符串问题建模技巧",
+      "candidate_id": "cand.string.字符串建模_字符串问题建模技巧",
+      "theme": "字符串专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "字符串建模：字符串问题建模技巧"
+      ]
+    },
+    {
+      "id": "2.10.60",
+      "name": "字符串技巧：滚动哈希进阶应用",
+      "candidate_id": "cand.string.字符串技巧_滚动哈希进阶应用",
+      "theme": "字符串专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "字符串技巧：滚动哈希进阶应用"
+      ]
+    },
+    {
+      "id": "2.10.63",
+      "name": "字符串技巧：Trie树建图",
+      "candidate_id": "cand.string.string_trie_graph",
+      "theme": "",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "字符串技巧：Trie树建图"
+      ]
+    },
+    {
+      "id": "2.18.18",
+      "name": "调试基础：print调试法",
+      "candidate_id": "cand.debug.调试基础_print调试法",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试基础：print调试法"
+      ]
+    },
+    {
+      "id": "2.18.19",
+      "name": "调试基础：静态分析",
+      "candidate_id": "cand.debug.调试基础_静态分析",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试基础：静态分析"
+      ]
+    },
+    {
+      "id": "2.18.20",
+      "name": "调试技巧：二分定位bug",
+      "candidate_id": "cand.debug.调试技巧_二分定位bug",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：二分定位bug"
+      ]
+    },
+    {
+      "id": "2.18.21",
+      "name": "调试技巧：复原测试法",
+      "candidate_id": "cand.debug.调试技巧_复原测试法",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：复原测试法"
+      ]
+    },
+    {
+      "id": "2.18.22",
+      "name": "调试技巧：断言辅助调试",
+      "candidate_id": "cand.debug.调试技巧_断言辅助调试",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：断言辅助调试"
+      ]
+    },
+    {
+      "id": "2.18.23",
+      "name": "调试技巧：边界测试",
+      "candidate_id": "cand.debug.调试技巧_边界测试",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：边界测试"
+      ]
+    },
+    {
+      "id": "2.18.24",
+      "name": "调试技巧：随机测试",
+      "candidate_id": "cand.debug.调试技巧_随机测试",
+      "theme": "调试方法",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "调试技巧：随机测试"
+      ]
+    },
+    {
+      "id": "2.21.173",
+      "name": "SCC/DAG进阶：DAG最小路径覆盖",
+      "candidate_id": "cand.graph.scc_dag进阶_dag最小路径覆盖",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "SCC/DAG进阶：DAG最小路径覆盖"
+      ]
+    },
+    {
+      "id": "2.21.183",
+      "name": "图论专题：最大密度子图(参数搜索)",
+      "candidate_id": "cand.graph.图论专题_最大密度子图_参数搜索",
+      "theme": "图论专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "图论专题：最大密度子图(参数搜索)"
+      ]
+    },
+    {
+      "id": "3.3.29",
+      "name": "分块进阶：分块打表",
+      "candidate_id": "cand.ds.分块进阶_分块打表",
+      "theme": "数据结构专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "分块进阶：分块打表"
+      ]
+    },
+    {
+      "id": "3.5.24",
+      "name": "树链剖分进阶：边权转点权",
+      "candidate_id": "cand.ds.树链剖分进阶_边权转点权",
+      "theme": "数据结构专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "树链剖分进阶：边权转点权"
+      ]
+    },
+    {
+      "id": "3.13.228",
+      "name": "集合进阶：bitset优化",
+      "candidate_id": "cand.ds.集合进阶_bitset优化",
+      "theme": "数据结构专题",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "集合进阶：bitset优化"
+      ]
+    },
+    {
+      "id": "4.3.43",
+      "name": "多项式：生成函数与DP",
+      "candidate_id": "cand.math.多项式_生成函数与dp",
+      "theme": "信奥数学",
+      "item_type": "modeling_pattern",
+      "issues": [],
+      "suggested_problem_patterns": [
+        "多项式：生成函数与DP"
+      ]
+    }
+  ]
+}

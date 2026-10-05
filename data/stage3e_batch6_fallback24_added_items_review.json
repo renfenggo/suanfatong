@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 fallback_24 Added Items Review",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T11:10:00.000Z",
+    "batch_id": "stage3e_batch6_fallback24",
+    "main_graph_modified": false,
+    "total_reviewed": 24,
+    "item_count_confirmed": 1641,
+    "section_count_confirmed": 65
+  },
+  "statistics": {
+    "total_added": 24,
+    "approve": 24,
+    "downgrade_to_C": 22,
+    "keep_B": 2,
+    "keep_A": 0,
+    "needs_dependency_fix": 0,
+    "move_to_problem_patterns": 0,
+    "needs_merge_or_collapse": 0,
+    "needs_manual_review_remaining": 0
+  },
+  "review_results": [
+    {
+      "id": "3.13.158",
+      "name": "李超线段树：On Tree",
+      "series": "李超线段树",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "树上李超线段树将李超树扩展到树链场景，与基本李超树+树剖有不同实现，有独立教育价值。direct_pre(2.8.28, 3.7.2)合理。降为 C。"
+    },
+    {
+      "id": "3.13.159",
+      "name": "李超线段树：回滚版",
+      "series": "李超线段树",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "回滚李超树支持撤销操作，是与可持久化不同的时间回溯方式。在特定题型中有应用。降为 C。"
+    },
+    {
+      "id": "3.13.160",
+      "name": "可并堆：Lazy Deletion Heap",
+      "series": "可并堆",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "懒删除堆是竞赛常用的堆技巧，不真正删除而是打标记，在有懒删除需求的题目中有独立价值。direct_pre(3.2.3)合理。降为 C。"
+    },
+    {
+      "id": "3.13.161",
+      "name": "可并堆：Persistent Heap",
+      "series": "可并堆",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "可持久化堆支持历史版本查询，是可并堆的高级变体。竞赛中出现频率中等，但教育上有独立价值。降为 C。"
+    },
+    {
+      "id": "3.13.162",
+      "name": "Segment Tree Beats：Range Min Max Sum",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "与已合并的 Historical Max / Range Add Max 同属 Beats 操作系列，区分度需说明"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Range Min Max Sum 是 Beats 区间最小+最大+和组合查询变体，在竞赛中有特定应用场景(如同时维护多种信息)。与已合并的 Historical Max 和 Range Add Max 不同(操作语义不同)。降为 C。"
+    },
+    {
+      "id": "3.13.163",
+      "name": "可并堆：Heap With Decrease Key",
+      "series": "可并堆",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "Decrease Key 是 Fibonacci Heap 的核心操作，但作为独立节点有一定教育价值（用于 Dijkstra 优化介绍）"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Decrease Key 操作是可并堆的关键增强功能，虽然 Fibonacci 堆已包含此操作，但单独成节点有利于教学分层。降为 C。"
+    },
+    {
+      "id": "3.13.164",
+      "name": "可并堆：Double Ended Priority Queue",
+      "series": "可并堆",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "与 3.2.3 双端队列及 3.2.3 堆的区分度需文档说明"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "双端优先队列支持同时获取最大和最小值，与普通堆和双端队列有本质区别。在特定题型(滑动窗口极值问题)中有应用。降为 C。"
+    },
+    {
+      "id": "3.13.165",
+      "name": "Segment Tree Beats：Range Modulo",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "区间取模操作在竞赛中出现频率较低"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Range Modulo 是 Beats 框架的扩展操作，利用值域收敛性质保证复杂度。虽然竞赛出现频率较低，但作为 Beats 系列完善，有百科价值。降为 C。"
+    },
+    {
+      "id": "3.13.166",
+      "name": "李超线段树：Maximum Query",
+      "series": "李超线段树",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "与 Dynamic 版的区别主要在于查询类型，考虑是否有必要独立存在"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Maximum Query 变体专注最大查询，与 Dynamic 版(动态开点)功能维度不同。虽有相似之处但查询语义区别明确。降为 C。"
+    },
+    {
+      "id": "3.13.167",
+      "name": "李超线段树：Minimum Query",
+      "series": "李超线段树",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "Maximum Query 和 Minimum Query 可能是对称操作，建议在说明中标注两者关系"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Minimum Query 与 Maximum Query 是对称变体。保留为独立节点有利于完整覆盖李超树知识体系。降为 C。"
+    },
+    {
+      "id": "3.13.168",
+      "name": "Segment Tree Beats：Beats Amortized Analysis",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "theorem_or_property",
+      "issues": [
+        "此节点是理论分析而非算法实现，item_type 改为 theorem_or_property"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Beats 摊还复杂度分析是 Beats 框架的理论基础节点，作为 theorem_or_property 保留。有助于教学时理解复杂度保证。降为 C。"
+    },
+    {
+      "id": "3.13.169",
+      "name": "Segment Tree Beats：Beats Proof",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "theorem_or_property",
+      "issues": [
+        "此节点是正确性证明而非独立算法，item_type 改为 theorem_or_property"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Beats 正确性证明是 Beats 框架的理论基础，作为 theorem_or_property 保留。与 Amortized Analysis 可互为参考。降为 C。"
+    },
+    {
+      "id": "3.13.170",
+      "name": "可并堆：Meldable Priority Queue",
+      "series": "可并堆",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "Meldable Priority Queue 是抽象概念而非具体实现，与已有的 Heap 节点有概念重叠"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Meldable Priority Queue 是可合并优先队列的抽象/接口级概念，作为独立节点有助于理解可并堆整体框架。降为 C。"
+    },
+    {
+      "id": "3.13.171",
+      "name": "Segment Tree Beats：Beats With Assignment",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "Beats + Assignment 是 Beats 与线段树赋值操作的组合，竞赛中出现频率低"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Beats With Assignment 是 Beats 框架中较少见的变体，组合了区间赋值操作。作为系列完善有百科价值。降为 C。"
+    },
+    {
+      "id": "3.13.172",
+      "name": "Segment Tree Beats：Second Maximum Invariant",
+      "series": "Segment Tree Beats",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "次大值不变量是 Beats 的具体实现细节，作为独立节点边界较窄"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "次大值不变量是 Beats 框架的核心实现细节节点。保留有助讲解 Beats 实现原理。降为 C。"
+    },
+    {
+      "id": "3.13.173",
+      "name": "Bitset Linear Basis: Basis On Tree",
+      "series": "Bitset Linear Basis",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "树上线性基是线性基在树结构上的典型应用，支持树上路径异或查询。direct_pre(2.8.25, 3.2.1)合理。与已有线性基节点无重复。降为 C。"
+    },
+    {
+      "id": "3.13.174",
+      "name": "Dynamic Tree: Cut Link Connectivity",
+      "series": "Dynamic Tree",
+      "review_result": "approve",
+      "new_review_priority": "B",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [
+        "Dynamic Tree 系列是 Link-Cut Tree 的变体集合，作为高级数据结构需确认 advanced_only"
+      ],
+      "suggested_patch": {
+        "review_priority": "B",
+        "need_manual_review": false
+      },
+      "reason": "Cut Link Connectivity 是 Link-Cut Tree 的核心操作，支持动态树上边的断/连与连通性查询。Dynamic Tree 系列在竞赛中为高级内容。保留 B 级确认复杂度说明充分。"
+    },
+    {
+      "id": "3.13.175",
+      "name": "Dynamic Tree: Dynamic Lca",
+      "series": "Dynamic Tree",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Dynamic LCA 利用 LCT 支持动态树上 LCA 查询，与静态 LCA(2.6.3)区分明显。降为 C。"
+    },
+    {
+      "id": "3.13.176",
+      "name": "Dynamic Tree: Path Lazy Tag",
+      "series": "Dynamic Tree",
+      "review_result": "approve",
+      "new_review_priority": "B",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "路径懒标记是 LCT 的高级操作，与 3.7.3 懒标记线段树有关联但实现不同"
+      ],
+      "suggested_patch": {
+        "review_priority": "B",
+        "need_manual_review": false
+      },
+      "reason": "Path Lazy Tag 是 LCT 的核心增强操作，在树链懒标记和动态 DP 中有重要应用。保留 B 级确认复杂度说明。"
+    },
+    {
+      "id": "3.13.177",
+      "name": "Dynamic Tree: Reroot Query",
+      "series": "Dynamic Tree",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Reroot Query 支持动态换根后的 LCT 操作，是makeroot操作的扩展应用。降为 C。"
+    },
+    {
+      "id": "3.13.178",
+      "name": "Dynamic Tree: Virtual Subtree Aggregate",
+      "series": "Dynamic Tree",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "虚子树聚合是 LCT 的高级操作，实现复杂度较高"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Virtual Subtree Aggregate 支持 LCT 中的虚子树信息聚合，是 LCT 的高级扩展。降为 C。"
+    },
+    {
+      "id": "3.13.179",
+      "name": "Merge Sort Tree: 2d Dominance",
+      "series": "Merge Sort Tree",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [
+        "与 3.7.2(线段树)的区分度需说明: Merge Sort Tree=线段树每个节点维护有序数组"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Merge Sort Tree(归并排序树)是线段树的变体，2d Dominance 是它的经典应用(二维偏序查询)。direct_pre(3.7.2, 1.3.1)合理。降为 C。"
+    },
+    {
+      "id": "3.13.180",
+      "name": "Multidimensional: Bitset Rectangle Query",
+      "series": "Multidimensional",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "implementation_variant",
+      "issues": [],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "Bitset Rectangle Query 利用 bitset 优化多维矩形查询，是竞赛中常见优化技巧(如 bitset 分块)。与已有区间节点无重复。降为 C。"
+    },
+    {
+      "id": "3.13.181",
+      "name": "Multidimensional: Cdq Divide Conquer",
+      "series": "Multidimensional",
+      "review_result": "approve",
+      "new_review_priority": "C",
+      "need_manual_review": false,
+      "item_type": "core_concept",
+      "issues": [
+        "CDQ 分治是通用算法框架而非仅数据结构，与 3.7.1(分治)需要有明确的区分说明"
+      ],
+      "suggested_patch": {
+        "review_priority": "C",
+        "need_manual_review": false
+      },
+      "reason": "CDQ 分治是多维偏序问题的经典离线算法框架，是分治思想在多维场景中的应用。与 1.3.1(分治基础)有明确的进阶关系。降为 C。"
+    }
+  ]
+}

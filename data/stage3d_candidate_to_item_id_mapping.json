@@ -1,0 +1,177 @@
+[
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.basis_on_tree",
+    "item_id": "3.13.55",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 1
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.cut_link_connectivity",
+    "item_id": "3.13.56",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 2
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.dynamic_lca",
+    "item_id": "3.13.57",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 3
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.path_lazy_tag",
+    "item_id": "3.13.58",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 4
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.reroot_query",
+    "item_id": "3.13.59",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 5
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.virtual_subtree_aggregate",
+    "item_id": "3.13.60",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 6
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.2d_dominance",
+    "item_id": "3.13.61",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 7
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.memory_optimization",
+    "item_id": "3.13.62",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 8
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.offline_inversion",
+    "item_id": "3.13.63",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 9
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.persistent_variant",
+    "item_id": "3.13.64",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 10
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.bitset_rectangle_query",
+    "item_id": "3.13.65",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 11
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.cdq_divide_conquer",
+    "item_id": "3.13.66",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 12
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.dominance_counting",
+    "item_id": "3.13.67",
+    "section_id": "3.13",
+    "handling": "add_new",
+    "whitelist_rank": 13
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.bridge_interaction",
+    "item_id": "2.21.58",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 30
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.connectivity_query",
+    "item_id": "2.21.59",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 31
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.distance_on_block_cut_tree",
+    "item_id": "2.21.60",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 32
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.offline_query",
+    "item_id": "2.21.61",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 33
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.tree_dp",
+    "item_id": "2.21.62",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 34
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.weighted_variant",
+    "item_id": "2.21.63",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 35
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.diameter",
+    "item_id": "2.21.64",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 36
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.dynamic_programming",
+    "item_id": "2.21.65",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 37
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.edge_cactus",
+    "item_id": "2.21.66",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 38
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.minimum_cut",
+    "item_id": "2.21.67",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 39
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.path_counting",
+    "item_id": "2.21.68",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 40
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.vertex_cactus",
+    "item_id": "2.21.69",
+    "section_id": "2.21",
+    "handling": "add_new",
+    "whitelist_rank": 41
+  }
+]

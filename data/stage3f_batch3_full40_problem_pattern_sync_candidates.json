@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Full40 Problem Pattern Sync Candidates",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T18:30:00.000Z",
+    "batch_id": "stage3f_batch3_full40",
+    "main_graph_modified": false,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "item_id": "4.9.6",
+      "name": "欧拉函数应用",
+      "reason": "欧拉函数应用: 涉及互质计数、欧拉降幂、阶乘互质部分等经典数学建模应用, 适合同步到problem_patterns作为建模模式",
+      "suggested_item_type": "modeling_pattern"
+    },
+    {
+      "item_id": "3.13.190",
+      "name": "线段树变体：Split",
+      "reason": "线段树Split操作(将一颗线段树分裂为两颗)在线段树合并分裂的建模中频繁使用, 适合同步到problem_patterns",
+      "suggested_item_type": "modeling_pattern"
+    }
+  ]
+}

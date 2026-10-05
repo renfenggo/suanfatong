@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 fallback_24 Fix Lite Applied Patch",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T11:36:56.000Z",
+    "main_graph_modified": true,
+    "patch_applied": true,
+    "backup_path": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch6_fallback24_fix_lite.json"
+  },
+  "batch_id": "stage3e_batch6_fallback24",
+  "summary": {
+    "total_added": 24,
+    "downgrade_to_C": 22,
+    "keep_B": 2,
+    "keep_A": 0,
+    "direct_pre_modified": false,
+    "resolved_pre_modified": false,
+    "rel_modified": false,
+    "items_added": false,
+    "items_deleted": false,
+    "items_merged": false,
+    "problem_patterns_synced": false,
+    "note": "keep_B items(3.13.174,3.13.176): need_manual_review=True (per user rules)"
+  },
+  "applied_patches": [
+    {
+      "item_id": "3.13.158",
+      "name": "李超线段树：On Tree",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.159",
+      "name": "李超线段树：回滚版",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.160",
+      "name": "可并堆：Lazy Deletion Heap",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.161",
+      "name": "可并堆：Persistent Heap",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.162",
+      "name": "Segment Tree Beats：Range Min Max Sum",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.163",
+      "name": "可并堆：Heap With Decrease Key",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.164",
+      "name": "可并堆：Double Ended Priority Queue",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.165",
+      "name": "Segment Tree Beats：Range Modulo",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.166",
+      "name": "李超线段树：Maximum Query",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.167",
+      "name": "李超线段树：Minimum Query",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.168",
+      "name": "Segment Tree Beats：Beats Amortized Analysis",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.169",
+      "name": "Segment Tree Beats：Beats Proof",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.170",
+      "name": "可并堆：Meldable Priority Queue",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.171",
+      "name": "Segment Tree Beats：Beats With Assignment",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.172",
+      "name": "Segment Tree Beats：Second Maximum Invariant",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.173",
+      "name": "Bitset Linear Basis: Basis On Tree",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.174",
+      "name": "Dynamic Tree: Cut Link Connectivity",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "change_type": "keep"
+    },
+    {
+      "item_id": "3.13.175",
+      "name": "Dynamic Tree: Dynamic Lca",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.176",
+      "name": "Dynamic Tree: Path Lazy Tag",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "change_type": "keep"
+    },
+    {
+      "item_id": "3.13.177",
+      "name": "Dynamic Tree: Reroot Query",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.178",
+      "name": "Dynamic Tree: Virtual Subtree Aggregate",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.179",
+      "name": "Merge Sort Tree: 2d Dominance",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.180",
+      "name": "Multidimensional: Bitset Rectangle Query",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    },
+    {
+      "item_id": "3.13.181",
+      "name": "Multidimensional: Cdq Divide Conquer",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "change_type": "downgrade"
+    }
+  ]
+}

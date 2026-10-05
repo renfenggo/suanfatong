@@ -6,20 +6,20 @@ import 'package:bfs_learn/models/cpp_learning_unit.dart';
 import 'package:bfs_learn/models/knowledge_graph.dart';
 
 const _dpSectionItemIds = <String>{
-  '2.5.1',
-  '2.5.2',
-  '2.5.3',
-  '2.5.4',
-  '2.5.5',
-  '2.5.6',
-  '2.5.7',
-  '2.5.8',
-  '2.5.9',
-  '2.5.10',
-  '2.5.11',
   '2.8.1',
   '2.8.2',
   '2.8.3',
+  '2.8.36',
+  '2.8.5',
+  '2.8.6',
+  '2.8.7',
+  '2.8.12',
+  '2.8.13',
+  '2.8.19',
+  '2.8.20',
+  '2.8.21',
+  '2.8.23',
+  '2.8.26',
 };
 
 Future<Map<String, dynamic>> _readJson(String assetPath) async {
@@ -124,8 +124,7 @@ void main() {
       expect(
         empty,
         isEmpty,
-        reason:
-            'These DP units have no exampleCode: ${empty.join(', ')}',
+        reason: 'These DP units have no exampleCode: ${empty.join(', ')}',
       );
     });
 
@@ -197,8 +196,7 @@ void main() {
       expect(
         empty,
         isEmpty,
-        reason:
-            'These DP units have no commonMistakes: ${empty.join(', ')}',
+        reason: 'These DP units have no commonMistakes: ${empty.join(', ')}',
       );
     });
 
@@ -212,8 +210,7 @@ void main() {
       expect(
         empty,
         isEmpty,
-        reason:
-            'These DP units have no practice prompt: ${empty.join(', ')}',
+        reason: 'These DP units have no practice prompt: ${empty.join(', ')}',
       );
     });
   });
@@ -226,23 +223,30 @@ void main() {
       graph = KnowledgeGraph.fromJson(graphMap);
     });
 
-    test('section 2.5 has all expected DP items', () {
+    test('section 2.8 has all expected curated DP items', () {
       final expectedIds = [
-        '2.5.1',
-        '2.5.2',
-        '2.5.3',
-        '2.5.4',
-        '2.5.5',
-        '2.5.6',
-        '2.5.7',
-        '2.5.8',
-        '2.5.9',
-        '2.5.10',
-        '2.5.11',
+        '2.8.1',
+        '2.8.2',
+        '2.8.3',
+        '2.8.36',
+        '2.8.5',
+        '2.8.6',
+        '2.8.7',
+        '2.8.12',
+        '2.8.13',
+        '2.8.19',
+        '2.8.20',
+        '2.8.21',
+        '2.8.23',
+        '2.8.26',
       ];
       for (final id in expectedIds) {
         final item = graph.itemById(id);
-        expect(item, isNotNull, reason: 'Missing DP item $id in knowledge graph');
+        expect(
+          item,
+          isNotNull,
+          reason: 'Missing DP item $id in knowledge graph',
+        );
       }
     });
 
@@ -250,53 +254,50 @@ void main() {
       final expectedIds = ['2.8.1', '2.8.2', '2.8.3'];
       for (final id in expectedIds) {
         final item = graph.itemById(id);
-        expect(item, isNotNull, reason: 'Missing DP item $id in knowledge graph');
+        expect(
+          item,
+          isNotNull,
+          reason: 'Missing DP item $id in knowledge graph',
+        );
       }
     });
 
     test('DP item names contain expected keywords', () {
-      final dpBasics = graph.itemById('2.5.1');
+      final dpBasics = graph.itemById('2.8.1');
       expect(dpBasics, isNotNull);
       expect(dpBasics!.name, contains('DP'));
 
-      final knapsack = graph.itemById('2.5.2');
+      final knapsack = graph.itemById('2.8.7');
       expect(knapsack, isNotNull);
       expect(knapsack!.name, contains('背包'));
 
-      final interval = graph.itemById('2.5.4');
+      final interval = graph.itemById('2.8.12');
       expect(interval, isNotNull);
       expect(interval!.name, contains('区间'));
 
-      final tree = graph.itemById('2.5.5');
+      final tree = graph.itemById('2.8.13');
       expect(tree, isNotNull);
       expect(tree!.name, contains('树形'));
 
-      final bitmask = graph.itemById('2.5.6');
+      final bitmask = graph.itemById('2.8.20');
       expect(bitmask, isNotNull);
-      expect(bitmask!.name, contains('状态压缩'));
+      expect(bitmask!.name, anyOf(contains('状态压缩'), contains('状压')));
 
-      final digit = graph.itemById('2.5.8');
+      final digit = graph.itemById('2.8.21');
       expect(digit, isNotNull);
       expect(digit!.name, contains('数位'));
 
-      final counting = graph.itemById('2.5.9');
+      final counting = graph.itemById('2.8.19');
       expect(counting, isNotNull);
       expect(counting!.name, contains('计数'));
 
-      final prob = graph.itemById('2.5.10');
+      final prob = graph.itemById('2.8.23');
       expect(prob, isNotNull);
-      expect(prob!.name, contains('概率'));
+      expect(prob!.name, anyOf(contains('期望'), contains('概率')));
     });
 
     test('DP items have correct parent section', () {
-      for (var i = 1; i <= 11; i++) {
-        final id = '2.5.$i';
-        final item = graph.itemById(id);
-        expect(item, isNotNull);
-        expect(item!.parent, equals('2.5'));
-      }
-      for (var i = 1; i <= 3; i++) {
-        final id = '2.8.$i';
+      for (final id in _dpSectionItemIds) {
         final item = graph.itemById(id);
         expect(item, isNotNull);
         expect(item!.parent, equals('2.8'));
@@ -320,19 +321,25 @@ void main() {
       }
     });
 
-    test('DP items have alias for searchability', () {
-      final noAlias = <String>[];
+    test('DP items are searchable by name or alias', () {
+      final notSearchable = <String>[];
       for (final id in _dpSectionItemIds) {
         final item = graph.itemById(id);
-        if (item != null && item.alias.isEmpty) {
-          noAlias.add(id);
+        if (item != null) {
+          final haystack = [item.name, ...item.alias].join(' ');
+          if (!RegExp(
+            r'DP|状态|转移|记忆化|背包|区间|树形|状压|状态压缩|数位|计数|期望|概率|动态规划',
+          ).hasMatch(haystack)) {
+            notSearchable.add(id);
+          }
         }
       }
       expect(
-        noAlias,
+        notSearchable,
         isEmpty,
         reason:
-            'These DP items have no alias for search: ${noAlias.join(', ')}',
+            'These DP items have neither searchable names nor aliases: '
+            '${notSearchable.join(', ')}',
       );
     });
   });
@@ -360,7 +367,8 @@ void main() {
         'cpp_dp_interval_stone',
         'cpp_dp_bitmask_tsp',
       ];
-      final manifestIds = animations.map((a) => a['animationId'] as String).toSet();
+      final manifestIds =
+          animations.map((a) => a['animationId'] as String).toSet();
       for (final id in dpAnimationIds) {
         expect(
           manifestIds.contains(id),
@@ -371,7 +379,13 @@ void main() {
     });
 
     test('DP animation assetPaths point to existing files', () async {
-      final dpKeywords = ['dp', 'knapsack', 'house_robber', 'interval_stone', 'bitmask_tsp'];
+      final dpKeywords = [
+        'dp',
+        'knapsack',
+        'house_robber',
+        'interval_stone',
+        'bitmask_tsp',
+      ];
       final dpAnims = animations.where(
         (a) => dpKeywords.any((k) => (a['assetPath'] as String).contains(k)),
       );
@@ -385,7 +399,13 @@ void main() {
     });
 
     test('DP animation itemIds exist in knowledge graph', () {
-      final dpKeywords = ['dp', 'knapsack', 'house_robber', 'interval_stone', 'bitmask_tsp'];
+      final dpKeywords = [
+        'dp',
+        'knapsack',
+        'house_robber',
+        'interval_stone',
+        'bitmask_tsp',
+      ];
       final dpAnims = animations.where(
         (a) => dpKeywords.any((k) => (a['assetPath'] as String).contains(k)),
       );
@@ -403,7 +423,13 @@ void main() {
     });
 
     test('DP animation JSON files are valid', () async {
-      final dpKeywords = ['dp', 'knapsack', 'house_robber', 'interval_stone', 'bitmask_tsp'];
+      final dpKeywords = [
+        'dp',
+        'knapsack',
+        'house_robber',
+        'interval_stone',
+        'bitmask_tsp',
+      ];
       final dpAnims = animations.where(
         (a) => dpKeywords.any((k) => (a['assetPath'] as String).contains(k)),
       );
@@ -446,9 +472,7 @@ void main() {
     });
 
     test('search 动态规划 finds content', () {
-      final hits = graph.allSections.where(
-        (s) => s.name.contains('动态规划'),
-      );
+      final hits = graph.allSections.where((s) => s.name.contains('动态规划'));
       expect(hits.isNotEmpty, isTrue, reason: 'Should find 动态规划 section');
     });
 

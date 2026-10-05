@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "generated_by": "thread2_candidate_cleanup",
+    "generated_at": "2026-05-22T12:00:00.000Z",
+    "task": "reject_or_merge_candidates",
+    "main_graph_modified": false,
+    "validate_only_passed": true
+  },
+  "summary": {
+    "total_candidates": 2,
+    "merge_with_existing": 1,
+    "reject": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": "cand.graph.virtual_tree.construction",
+      "name": "虚树构建",
+      "en_name": "Virtual Tree Construction",
+      "decision": "merge_with_existing",
+      "possible_existing_item": "2.21.40",
+      "reason": "与现有虚树：Stack Construction（2.21.40）是重复概念，建议合并"
+    },
+    {
+      "candidate_id": "cand.ds.balanced_tree_advanced.rope",
+      "name": "平衡树高级：Rope",
+      "en_name": "Balanced Tree Advanced: Rope",
+      "decision": "reject",
+      "possible_existing_item": "",
+      "reason": "Rope是字符串数据结构的实现细节，不适合作为算法竞赛的独立知识点"
+    }
+  ]
+}

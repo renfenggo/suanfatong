@@ -1,0 +1,363 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T07:13:51.655064+00:00",
+    "count": 59,
+    "main_graph_modified": false
+  },
+  "candidates": [
+    {
+      "item_id": "2.9.191",
+      "name": "二分图建模的容量语义 (二分图建模 Capacity Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.190",
+      "name": "二分图建模的源汇选择 (二分图建模 Source Sink Selection)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.47",
+      "name": "迭代加深搜索的状态图模型 (迭代加深搜索 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.188",
+      "name": "最小割建模的容量语义 (最小割建模 Capacity Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.174",
+      "name": "差分约束建模的拆边约束 (差分约束建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.185",
+      "name": "可达性建模的拆点约束 (可达性建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.166",
+      "name": "最小割建模的点权转边权 (最小割建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.184",
+      "name": "可达性建模的点权转边权 (可达性建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.33",
+      "name": "双向 BFS的状态图模型 (双向 BFS State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.7.41",
+      "name": "模拟退火的状态图模型 (模拟退火 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.178",
+      "name": "割到对偶图的模型扩展 (割到对偶图 模型扩展)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论衔接"
+    },
+    {
+      "item_id": "2.9.168",
+      "name": "最小割建模的拆边约束 (最小割建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.43",
+      "name": "分支限界搜索的状态图模型 (分支限界搜索 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.198",
+      "name": "闭合子图建模的费用语义 (闭合子图建模 Cost Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.187",
+      "name": "最小割建模的源汇选择 (最小割建模 Source Sink Selection)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.196",
+      "name": "闭合子图建模的源汇选择 (闭合子图建模 Source Sink Selection)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.8.218",
+      "name": "DP 与连通性状态融合模型 (DP 与连通性状态融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "2.7.35",
+      "name": "多源 BFS的状态图模型 (多源 BFS State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.8.214",
+      "name": "DP 与网络流融合模型 (DP 与网络流融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "2.9.193",
+      "name": "差分约束建模的源汇选择 (差分约束建模 Source Sink Selection)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "4.3.73",
+      "name": "Kitamasa 算法的卷积模型 (Kitamasa 算法 Convolution Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "多项式与生成函数"
+    },
+    {
+      "item_id": "2.9.180",
+      "name": "闭合子图建模的拆边约束 (闭合子图建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.171",
+      "name": "二分图建模的拆边约束 (二分图建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.197",
+      "name": "闭合子图建模的容量语义 (闭合子图建模 Capacity Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.183",
+      "name": "路径覆盖建模的拆边约束 (路径覆盖建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.39",
+      "name": "爬山法的状态图模型 (爬山法 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "4.3.50",
+      "name": "FFT的卷积模型 (FFT Convolution Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "多项式与生成函数"
+    },
+    {
+      "item_id": "2.9.192",
+      "name": "二分图建模的费用语义 (二分图建模 Cost Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.172",
+      "name": "差分约束建模的点权转边权 (差分约束建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.49",
+      "name": "启发式估价函数的状态图模型 (启发式估价函数 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.7.31",
+      "name": "IDA* 搜索的状态图模型 (IDA* 搜索 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.175",
+      "name": "闭合子图建模的点权转边权 (闭合子图建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.8.215",
+      "name": "DP 与字符串自动机融合模型 (DP 与字符串自动机融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "2.9.194",
+      "name": "差分约束建模的容量语义 (差分约束建模 Capacity Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "3.13.304",
+      "name": "二维树状数组的矩形查询模型 (二维树状数组 Rectangle Query Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "数据结构嵌套"
+    },
+    {
+      "item_id": "2.9.181",
+      "name": "路径覆盖建模的点权转边权 (路径覆盖建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.7.29",
+      "name": "A* 搜索的状态图模型 (A* 搜索 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.186",
+      "name": "可达性建模的拆边约束 (可达性建模 Edge Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "4.3.78",
+      "name": "Berlekamp-Massey 算法的卷积模型 (Berlekamp-Massey 算法 Convolution Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "多项式与生成函数"
+    },
+    {
+      "item_id": "2.9.167",
+      "name": "最小割建模的拆点约束 (最小割建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "3.13.308",
+      "name": "可持久化字典树的矩形查询模型 (可持久化字典树 Rectangle Query Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "数据结构嵌套"
+    },
+    {
+      "item_id": "2.7.37",
+      "name": "DLX 舞蹈链的状态图模型 (DLX 舞蹈链 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.195",
+      "name": "差分约束建模的费用语义 (差分约束建模 Cost Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.199",
+      "name": "路径覆盖建模的源汇选择 (路径覆盖建模 Source Sink Selection)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "3.13.300",
+      "name": "整体二分结构的矩形查询模型 (整体二分结构 Rectangle Query Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "数据结构嵌套"
+    },
+    {
+      "item_id": "2.8.213",
+      "name": "DP 与最短路融合模型 (DP 与最短路融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "2.7.45",
+      "name": "Meet-in-the-Middle 搜索的状态图模型 (Meet-in-the-Middle 搜索 State Graph Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "搜索进阶"
+    },
+    {
+      "item_id": "2.9.179",
+      "name": "路径问题到状态图的模型扩展 (路径问题到状态图 模型扩展)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论衔接"
+    },
+    {
+      "item_id": "2.9.176",
+      "name": "闭合子图建模的拆点约束 (闭合子图建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.8.217",
+      "name": "DP 与数据结构查询融合模型 (DP 与数据结构查询融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "2.9.169",
+      "name": "二分图建模的点权转边权 (二分图建模 Vertex Weight to Edge Weight)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.189",
+      "name": "最小割建模的费用语义 (最小割建模 Cost Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.170",
+      "name": "二分图建模的拆点约束 (二分图建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.173",
+      "name": "差分约束建模的拆点约束 (差分约束建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "4.3.68",
+      "name": "常系数线性递推的卷积模型 (常系数线性递推 Convolution Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "多项式与生成函数"
+    },
+    {
+      "item_id": "2.9.182",
+      "name": "路径覆盖建模的拆点约束 (路径覆盖建模 Vertex Splitting Constraint)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.9.200",
+      "name": "路径覆盖建模的容量语义 (路径覆盖建模 Capacity Semantics)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "图论建模"
+    },
+    {
+      "item_id": "2.8.216",
+      "name": "DP 与生成函数融合模型 (DP 与生成函数融合模型)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "DP融合模型"
+    },
+    {
+      "item_id": "4.3.55",
+      "name": "NTT的卷积模型 (NTT Convolution Model)",
+      "reason": "modeling_pattern_candidate",
+      "suggested_problem_pattern_tag": "多项式与生成函数"
+    }
+  ]
+}

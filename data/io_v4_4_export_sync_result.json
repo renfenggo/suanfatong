@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "io_v4_4.json Export Sync Result",
+    "generated_at": "2026-05-26T01:11:36.857026",
+    "sync_executed": true,
+    "source": "merged_knowledge_graph_item_dependencies_refined.json",
+    "target": "assets/data/knowledge/io_v4_4.json",
+    "backup": "backups/io_v4_4_before_sync_to_2165.json",
+    "main_graph_modified": false,
+    "io_v4_4_modified": true
+  },
+  "export": {
+    "item_count_before": 1349,
+    "item_count_after": 2165,
+    "items_added": 816,
+    "section_count_before": 64,
+    "section_count_after": 65,
+    "sections_added": [
+      "3.13"
+    ],
+    "legacy_fields_filled_on": 816,
+    "format_used": "main_graph_native_format_with_legacy_backfill"
+  },
+  "format_note": "All old io_v4_4 fields (alias/parent/source/docx_ids/merge_type) filled where missing from main graph data. New fields (review_status/visibility/tracks etc.) carried through."
+}

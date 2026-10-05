@@ -1,0 +1,331 @@
+{
+  "batch_id": "stage3f_batch4_full49",
+  "description": "需要依赖修复的候选。direct_pre 过长的节点需在 Fix Lite 阶段精简。",
+  "main_graph_modified": false,
+  "candidates": [
+    {
+      "id": "2.10.39",
+      "name": "Sunday算法",
+      "direct_pre_count": 218,
+      "section": "2.10",
+      "issues": [
+        "direct_pre 过长 (218个)，可能包含大量泛化依赖",
+        "direct_pre (218) 接近整节 item 数 (41)，疑似整节引用",
+        "medium 风险候选，需人工确认 direct_pre 是否为必要前置"
+      ]
+    },
+    {
+      "id": "2.10.40",
+      "name": "Duval算法最小表示",
+      "direct_pre_count": 218,
+      "section": "2.10",
+      "issues": [
+        "direct_pre 过长 (218个)，可能包含大量泛化依赖",
+        "direct_pre (218) 接近整节 item 数 (41)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.10.41",
+      "name": "二维滚动哈希",
+      "direct_pre_count": 218,
+      "section": "2.10",
+      "issues": [
+        "direct_pre 过长 (218个)，可能包含大量泛化依赖",
+        "direct_pre (218) 接近整节 item 数 (41)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.10.42",
+      "name": "哈希碰撞处理策略",
+      "direct_pre_count": 218,
+      "section": "2.10",
+      "issues": [
+        "direct_pre 过长 (218个)，可能包含大量泛化依赖",
+        "direct_pre (218) 接近整节 item 数 (41)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.21.152",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.153",
+      "name": "动态图连通性：Connectivity Snapshots",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.154",
+      "name": "动态图连通性：Dynamic Biconnectivity",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.155",
+      "name": "动态图连通性：Dynamic Bridge",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.156",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.157",
+      "name": "强连通分量 DAG：Component Topo Order",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.158",
+      "name": "强连通分量 DAG：Scc Dp",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.159",
+      "name": "差分约束系统建模",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.160",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.161",
+      "name": "Hall 定理及应用",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.162",
+      "name": "最大权闭合子图",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.163",
+      "name": "平面图：Embedding Basics",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.164",
+      "name": "高级最短路：Eppstein K Shortest",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.165",
+      "name": "高级最短路：Johnson Potentials",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.166",
+      "name": "高级最短路：Min Cost Path Cover",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.167",
+      "name": "高级最短路：Replacement Paths",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.168",
+      "name": "高级最短路：Resource Constrained",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.169",
+      "name": "高级最短路：Yen K Shortest",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.170",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.21.171",
+      "name": "2-SAT 建模技巧",
+      "direct_pre_count": 113,
+      "section": "2.21",
+      "issues": [
+        "direct_pre 过长 (113个)，可能包含大量泛化依赖"
+      ]
+    },
+    {
+      "id": "2.8.151",
+      "name": "博弈DP基础",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.8.152",
+      "name": "Grundy数DP",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.8.153",
+      "name": "矩阵DP基础",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.8.154",
+      "name": "矩阵快速幂DP",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.8.155",
+      "name": "期望DP",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "2.8.156",
+      "name": "马尔可夫链DP",
+      "direct_pre_count": 202,
+      "section": "2.8",
+      "issues": [
+        "direct_pre 过长 (202个)，可能包含大量泛化依赖",
+        "direct_pre (202) 接近整节 item 数 (156)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "4.4.15",
+      "name": "线性递推基础",
+      "direct_pre_count": 88,
+      "section": "4.4",
+      "issues": [
+        "direct_pre 过长 (88个)，可能包含大量泛化依赖",
+        "direct_pre (88) 接近整节 item 数 (16)，疑似整节引用",
+        "medium 风险候选，需人工确认 direct_pre 是否为必要前置"
+      ]
+    },
+    {
+      "id": "4.4.16",
+      "name": "Kitamasa算法",
+      "direct_pre_count": 88,
+      "section": "4.4",
+      "issues": [
+        "direct_pre 过长 (88个)，可能包含大量泛化依赖",
+        "direct_pre (88) 接近整节 item 数 (16)，疑似整节引用",
+        "medium 风险候选，需人工确认 direct_pre 是否为必要前置"
+      ]
+    },
+    {
+      "id": "4.5.17",
+      "name": "GF(2)上的高斯消元",
+      "direct_pre_count": 152,
+      "section": "4.5",
+      "issues": [
+        "direct_pre 过长 (152个)，可能包含大量泛化依赖",
+        "direct_pre (152) 接近整节 item 数 (18)，疑似整节引用"
+      ]
+    },
+    {
+      "id": "4.5.18",
+      "name": "矩阵树定理",
+      "direct_pre_count": 152,
+      "section": "4.5",
+      "issues": [
+        "direct_pre 过长 (152个)，可能包含大量泛化依赖",
+        "direct_pre (152) 接近整节 item 数 (18)，疑似整节引用"
+      ]
+    }
+  ],
+  "total": 34
+}

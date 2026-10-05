@@ -1,0 +1,23 @@
+[
+  {
+    "source_item_id": "2.21.46",
+    "source_item_name": "最大权闭合子图：Profit Dependency",
+    "suggested_pattern_id": "pat.graph_closure_model_profit_dependency",
+    "name": "最大权闭合子图：Profit Dependency",
+    "en_name": "Maximum Closure: Profit Dependency",
+    "reason": "Keep the knowledge item, but sync this modeling-shaped concept to problem_patterns.",
+    "required_items": [
+      "2.16.3",
+      "2.16.5",
+      "2.21.29",
+      "2.21.46"
+    ],
+    "tracks": [
+      "icpc",
+      "university_cp",
+      "advanced_graph",
+      "ioi"
+    ],
+    "difficulty": "advanced"
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-05-22",
+  "source": "patterns_v0_1_ready.json",
+  "entries": [
+    {
+      "entry_id": "beginner",
+      "title": "入门题型路径",
+      "description": "从数组、哈希、滑动窗口、基础搜索开始，建立题型识别感。",
+      "recommended_pattern_ids": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.sliding_window_fixed_size",
+        "pat.sliding_window_variable_size",
+        "pat.merge_intervals",
+        "pat.tree_level_order",
+        "pat.valid_parentheses_stack",
+        "pat.matrix_spiral_simulation",
+        "pat.backtracking_combinations",
+        "pat.island_problems"
+      ],
+      "recommended_count": 10
+    },
+    {
+      "entry_id": "interview",
+      "title": "面试刷题路径",
+      "description": "优先展示面试高频可复用模式，适合按题型集中训练。",
+      "recommended_pattern_ids": [
+        "pat.two_sum",
+        "pat.prefix_sum_hashmap",
+        "pat.sliding_window_fixed_size",
+        "pat.sliding_window_variable_size",
+        "pat.fast_slow_pointers",
+        "pat.monotonic_stack_next_greater",
+        "pat.top_k_frequent",
+        "pat.k_way_merge",
+        "pat.binary_search_on_answer",
+        "pat.word_ladder",
+        "pat.course_schedule",
+        "pat.island_problems"
+      ],
+      "recommended_count": 12
+    },
+    {
+      "entry_id": "icpc",
+      "title": "ICPC 训练路径",
+      "description": "覆盖图建模、DP、离线查询与数据结构维护，适合作为专题训练入口。",
+      "recommended_pattern_ids": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.meet_in_the_middle",
+        "pat.shortest_path_modeling",
+        "pat.bipartite_matching_modeling",
+        "pat.min_cut_selection",
+        "pat.knapsack_dp",
+        "pat.interval_dp",
+        "pat.tree_dp",
+        "pat.digit_dp",
+        "pat.segment_tree_range_update",
+        "pat.dsu_connectivity",
+        "pat.tree_path_query",
+        "pat.island_problems"
+      ],
+      "recommended_count": 14
+    },
+    {
+      "entry_id": "noi",
+      "title": "NOI 进阶路径",
+      "description": "保留少量适合 OI/NOI 训练的进阶建模与竞赛技巧入口。",
+      "recommended_pattern_ids": [
+        "pat.offline_query_pattern",
+        "pat.sweep_line_pattern",
+        "pat.meet_in_the_middle",
+        "pat.constructive_invariant",
+        "pat.greedy_exchange_argument",
+        "pat.inclusion_exclusion_counting",
+        "pat.coordinate_sweep_compression",
+        "pat.tree_path_query",
+        "pat.segment_tree_range_update",
+        "pat.binary_lifting_state_jump"
+      ],
+      "recommended_count": 10
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "batch_id": "stage3f_batch4_full50",
+  "meta": {
+    "title": "Stage3F Batch4 Full50 Dynamic Precheck",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T09:27:13.000Z",
+    "main_graph_modified": false,
+    "main_graph_item_count": 1716,
+    "main_graph_section_count": 65,
+    "candidate_count": 49,
+    "validate_only_passed": true
+  },
+  "precheck_results": {
+    "summary": {
+      "total_checks": 12,
+      "passed": 9,
+      "warnings": 1,
+      "info": 2,
+      "failed": 0,
+      "all_pass": false
+    },
+    "checks": [
+      {
+        "check": "item_count",
+        "status": "pass",
+        "detail": "item_count = 1716, 预期 1716"
+      },
+      {
+        "check": "validate_only_passed",
+        "status": "pass",
+        "detail": "validate-only passed = True"
+      },
+      {
+        "check": "duplicate_check",
+        "status": "pass",
+        "detail": "严格重复守卫已执行，排除 0 个重复候选"
+      },
+      {
+        "check": "candidate_id_history_conflict",
+        "status": "pass",
+        "detail": "无候选 ID 冲突"
+      },
+      {
+        "check": "name_en_name_alias_conflict",
+        "status": "pass",
+        "detail": "无名称冲突"
+      },
+      {
+        "check": "high_risk_red_candidates",
+        "status": "pass",
+        "detail": "0 个 high risk/red 候选"
+      },
+      {
+        "check": "manual_review_strong_risk",
+        "status": "pass",
+        "detail": "0 个 manual_review 候选"
+      },
+      {
+        "check": "needs_new_section",
+        "status": "pass",
+        "detail": "是否需要新 section: False"
+      },
+      {
+        "check": "dependency_mapping",
+        "status": "warn",
+        "detail": "3 个候选映射风险"
+      },
+      {
+        "check": "section_distribution",
+        "status": "info",
+        "detail": "6 个 section 涉及, 2 个 section 候选密集"
+      },
+      {
+        "check": "candidate_dependency_cycle",
+        "status": "pass",
+        "detail": "未检测到候选依赖环"
+      },
+      {
+        "check": "dependency_cleanup_required",
+        "status": "info",
+        "detail": "dependency_cleanup_required = True"
+      }
+    ],
+    "warnings": []
+  },
+  "current_graph_state": {
+    "item_count": 1716,
+    "expected_item_count": 1716,
+    "section_count": 65,
+    "validate_only_passed": true,
+    "main_graph_modified": false
+  },
+  "candidate_overview": {
+    "selected_count": 49,
+    "by_source": {
+      "external_b1": 35,
+      "external_b2": 14
+    },
+    "by_section": {
+      "2.21": 20,
+      "3.13": 15,
+      "2.8": 6,
+      "4.5": 2,
+      "2.10": 4,
+      "4.4": 2
+    },
+    "by_risk": {
+      "green": 7,
+      "yellow": 39,
+      "medium": 3
+    }
+  },
+  "recommendation": "needs_dependency_cleanup_before_merge",
+  "recommended_merge_count": 49,
+  "notes": [
+    "本批次仅做候选计划和动态预审，不执行 Merge",
+    "主图谱未被修改",
+    "严格重复守卫排除了 0 个候选",
+    "共计 80 个候选 ID 从历史批次排除"
+  ]
+}

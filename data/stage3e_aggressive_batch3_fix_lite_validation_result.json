@@ -1,0 +1,31 @@
+{
+  "validation_status": "passed",
+  "backup_file": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_aggressive_batch3_fix_lite.json",
+  "timestamp": "2026-05-22T22:00:00.000Z",
+  "validation_results": {
+    "item_count": 1572,
+    "section_count": 65,
+    "expected_item_count": 1572,
+    "expected_section_count": 65,
+    "dangling_refs": 0,
+    "direct_pre_cycle": null,
+    "product_metadata_validation": {
+      "passed": true
+    },
+    "resolved_pre_mismatches": 0
+  },
+  "fix_lite_execution": {
+    "total_patches_applied": 30,
+    "approve_downgrade_to_c": 11,
+    "keep_a": 5,
+    "mark_merge_or_collapse_with_b": 14,
+    "nodes_deleted": 0,
+    "nodes_merged": 0,
+    "item_ids_modified": 0,
+    "direct_pre_modified": false,
+    "resolved_pre_modified": false,
+    "rel_modified": false
+  },
+  "success": true,
+  "recommendation": "Batch3 Fix Lite 执行成功，可以继续后续流程"
+}

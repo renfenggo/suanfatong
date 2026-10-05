@@ -1,0 +1,44 @@
+{
+  "batch_id": "stage3f_batch4_full49",
+  "description": "建议同步到 problem_patterns 的建模/应用节点。",
+  "main_graph_modified": false,
+  "candidates": [
+    {
+      "id": "2.21.152",
+      "name": "最大权闭合子图：Penalty Modeling",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    },
+    {
+      "id": "2.21.156",
+      "name": "全局最小割：Minimum Cut Modeling",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    },
+    {
+      "id": "2.21.159",
+      "name": "差分约束系统建模",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    },
+    {
+      "id": "2.21.161",
+      "name": "Hall 定理及应用",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    },
+    {
+      "id": "2.21.170",
+      "name": "高级最短路：Zero One Bfs Modeling",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    },
+    {
+      "id": "2.21.171",
+      "name": "2-SAT 建模技巧",
+      "section": "2.21",
+      "reason": "建模/应用/技巧类节点，可同步到 problem_patterns"
+    }
+  ],
+  "total": 6
+}

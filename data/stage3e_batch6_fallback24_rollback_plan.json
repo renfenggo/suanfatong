@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 fallback_24 Rollback Plan",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T11:05:20.000Z",
+    "backup_path": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch6_fallback24.json",
+    "merge_applied": true
+  },
+  "rollback_steps": [
+    "Copy-Item backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch6_fallback24.json merged_knowledge_graph_item_dependencies_refined.json",
+    "python refine_item_dependencies.py --validate-only ..."
+  ],
+  "added_item_ids": [
+    "3.13.158",
+    "3.13.159",
+    "3.13.160",
+    "3.13.161",
+    "3.13.162",
+    "3.13.163",
+    "3.13.164",
+    "3.13.165",
+    "3.13.166",
+    "3.13.167",
+    "3.13.168",
+    "3.13.169",
+    "3.13.170",
+    "3.13.171",
+    "3.13.172",
+    "3.13.173",
+    "3.13.174",
+    "3.13.175",
+    "3.13.176",
+    "3.13.177",
+    "3.13.178",
+    "3.13.179",
+    "3.13.180",
+    "3.13.181"
+  ]
+}

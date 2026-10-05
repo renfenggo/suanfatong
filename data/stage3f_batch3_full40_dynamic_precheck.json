@@ -1,0 +1,363 @@
+{
+  "batch_id": "stage3f_batch3_full40",
+  "candidate_count": 40,
+  "selected_candidates": [
+    "cand.dp.dag.longest_path",
+    "cand.dp.state_compression.basic",
+    "cand.dp.state_compression.traveling",
+    "cand.dp.subset.basic",
+    "cand.dp.subset.enumeration",
+    "cand.dp.automaton.basic",
+    "cand.dp.automaton.matrix",
+    "cand.dp.probability.basic",
+    "cand.string.border_tree.structure",
+    "cand.string.manacher.algorithm",
+    "cand.string.boyer_moore.algorithm",
+    "cand.string.rabin_karp.algorithm",
+    "cand.string.string_matching.kmp",
+    "cand.string.lyndon_decomposition.basic",
+    "cand.string.runs_repetitions.basic",
+    "cand.math.quadratic_residue.legendre_symbol",
+    "cand.math.quadratic_residue.tonelli_shanks",
+    "cand.math.crt.extended",
+    "cand.math.crt.garner",
+    "cand.math.euler_function.applications",
+    "cand.math.sieve.du_jiao",
+    "cand.math.group_theory.burnside",
+    "cand.math.group_theory.polya",
+    "cand.math.polynomial.fwt",
+    "cand.math.polynomial.subset_convolution",
+    "cand.dp.optimization.slope.basic",
+    "cand.dp.optimization.divide_conquer",
+    "cand.dp.optimization.knuth",
+    "cand.dp.optimization.wqs_binary",
+    "cand.graph.scc_dag.dag_reachability",
+    "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+    "cand.graph.scc_dag.dominating_components",
+    "cand.graph.dynamic_connectivity.edge_interval_model",
+    "cand.graph.scc_dag.minimum_edges_to_strong",
+    "cand.ds.bitset_linear_basis.rollback_linear_basis",
+    "cand.ds.bitset_linear_basis.maximum_xor_query",
+    "cand.ds.bitset_linear_basis.rank_over_gf2",
+    "cand.ds.bitset_linear_basis.basis_with_deletion",
+    "cand.ds.segment_tree_variants.split",
+    "cand.ds.dsu_advanced.parity"
+  ],
+  "excluded_already_merged_candidates": [
+    "cand.dp.tree.basic",
+    "cand.math.combinatorial.catalan",
+    "cand.math.dirichlet_convolution.basic",
+    "cand.string.ac_failure_tree.analysis",
+    "cand.math.discrete_log.exbsgs",
+    "cand.string.suffix_array.sa_is",
+    "cand.math.sieve.min_25",
+    "cand.math.polynomial.berlekamp_massey",
+    "cand.math.primitive_root.basic",
+    "cand.dp.dag.topological",
+    "cand.dp.digit.complex",
+    "cand.math.prime_factorization.pollard_rho",
+    "cand.math.combinatorial.lucas",
+    "cand.string.ac_automaton.applications",
+    "cand.string.kmp_automaton.basic",
+    "cand.string.suffix_tree.ukkonen",
+    "cand.dp.tree.diameter",
+    "cand.string.eertree.construction",
+    "cand.string.lcp_rmq.optimization",
+    "cand.ds.merge_sort_tree.persistent_variant",
+    "cand.dp.profile.plug",
+    "cand.string.sam_parent_tree.structure",
+    "cand.dp.digit.basic",
+    "cand.dp.optimization.monotone_queue_sliding",
+    "cand.math.combinatorial.exlucas",
+    "cand.string.generalized_sam.construction",
+    "cand.math.prime_testing.miller_rabin",
+    "cand.ds.merge_sort_tree.offline_inversion",
+    "cand.dp.tree.rerooting",
+    "cand.string.z_algorithm.basic",
+    "cand.math.discrete_log.bsgs",
+    "cand.dp.optimization.monotone_queue",
+    "cand.string.ex_kmp.basic",
+    "cand.string.z_algorithm.pattern_matching",
+    "cand.dp.tree.centroid",
+    "cand.dp.optimization.slope.advanced",
+    "cand.math.mobius_inversion.applications",
+    "cand.ds.multidimensional.dominance_counting",
+    "cand.dp.profile.basic",
+    "cand.ds.merge_sort_tree.memory_optimization"
+  ],
+  "excluded_duplicate_or_near_duplicate": [],
+  "high_risk_candidates": [],
+  "manual_review_candidates": [],
+  "needs_new_section": false,
+  "dependency_mapping_risk": [
+    {
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "section": "2.21",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "section": "2.21",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "section": "2.21",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "section": "2.21",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "section": "2.21",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+      "name": "位集与线性基：Rollback Linear Basis",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+      "name": "位集与线性基：Maximum Xor Query",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+      "name": "位集与线性基：Rank Over Gf2",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+      "name": "位集与线性基：Basis With Deletion",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.split",
+      "name": "线段树变体：Split",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_advanced.parity",
+      "name": "高级并查集：Parity",
+      "section": "3.13",
+      "risk": "complex_dependencies_possible"
+    }
+  ],
+  "section_ref_dependencies": [],
+  "dependency_cleanup_required": true,
+  "candidate_dependency_cycle": false,
+  "section_distribution": {
+    "2.8": 8,
+    "2.10": 5,
+    "3.8": 2,
+    "4.1": 4,
+    "4.9": 4,
+    "2.17": 2,
+    "2.18": 4,
+    "2.21": 5,
+    "3.13": 6
+  },
+  "near_duplicate_notes": [
+    {
+      "candidate_id": "cand.dp.dag.longest_path",
+      "name": "DAG最长路DP",
+      "similar_graph_items": [
+        "dag"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.dp.state_compression.basic",
+      "name": "状态压缩DP基础",
+      "similar_graph_items": [
+        "状态压缩"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.dp.subset.enumeration",
+      "name": "子集枚举优化",
+      "similar_graph_items": [
+        "枚举",
+        "子集枚举"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.dp.probability.basic",
+      "name": "概率DP基础",
+      "similar_graph_items": [
+        "概率dp"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.string.manacher.algorithm",
+      "name": "Manacher算法",
+      "similar_graph_items": [
+        "manacher"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.string.boyer_moore.algorithm",
+      "name": "Boyer-Moore算法",
+      "similar_graph_items": [
+        "re"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.string.string_matching.kmp",
+      "name": "KMP算法详解",
+      "similar_graph_items": [
+        "kmp"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.legendre_symbol",
+      "name": "Legendre符号",
+      "similar_graph_items": [
+        "re"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.math.crt.extended",
+      "name": "扩展中国剩余定理",
+      "similar_graph_items": [
+        "中国剩余定理",
+        "扩展中国剩余定理 (excrt)"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.math.euler_function.applications",
+      "name": "欧拉函数应用",
+      "similar_graph_items": [
+        "欧拉函数"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.math.group_theory.burnside",
+      "name": "Burnside引理",
+      "similar_graph_items": [
+        "burnside"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.dp.optimization.divide_conquer",
+      "name": "分治DP优化",
+      "similar_graph_items": [
+        "分治",
+        "dp优化"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "similar_graph_items": [
+        "连通分量",
+        "dag",
+        "re"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "similar_graph_items": [
+        "连通性"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "similar_graph_items": [
+        "连通分量",
+        "dag"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "similar_graph_items": [
+        "int",
+        "连通性"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "similar_graph_items": [
+        "连通分量",
+        "dag"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+      "name": "位集与线性基：Rollback Linear Basis",
+      "similar_graph_items": [
+        "线性基"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+      "name": "位集与线性基：Maximum Xor Query",
+      "similar_graph_items": [
+        "线性基"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+      "name": "位集与线性基：Rank Over Gf2",
+      "similar_graph_items": [
+        "线性基"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+      "name": "位集与线性基：Basis With Deletion",
+      "similar_graph_items": [
+        "线性基"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_variants.split",
+      "name": "线段树变体：Split",
+      "similar_graph_items": [
+        "线段树",
+        "线段"
+      ],
+      "verdict": "near_duplicate_check_needed"
+    }
+  ],
+  "recommendation": "ready_for_1号线程_merge_full40",
+  "recommended_merge_count": 40
+}

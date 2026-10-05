@@ -1,0 +1,45 @@
+# Stage 3D Small Batch Merge Report
+
+- Backup success: True
+- Backup file: `C:\Users\renfenggo\Documents\trae_projects\suanfatong\backups\merged_knowledge_graph_item_dependencies_refined_before_stage3d.json`
+- Before item_count: 1457
+- After item_count: 1482
+- Actual added item count: 25
+- Added to 2.21: 12
+- Added to 3.13: 13
+- Created new section: false
+- Section id conflict result: none
+- add_new merged count: 25
+- add_as_subtopic merged count: 0
+- Dangling refs count: 0
+- direct_pre cycle: None
+- resolved_pre mismatch count: 0
+- validation passed: True
+- Rollback plan generated: true
+
+## Manual Review Needed
+- `3.13.55` Bitset and Linear Basis: Basis On Tree (A)
+- `3.13.56` Dynamic Tree Structure: Cut Link Connectivity (B)
+- `3.13.57` Dynamic Tree Structure: Dynamic Lca (A)
+- `3.13.58` Dynamic Tree Structure: Path Lazy Tag (A)
+- `3.13.59` Dynamic Tree Structure: Reroot Query (B)
+- `3.13.60` Dynamic Tree Structure: Virtual Subtree Aggregate (B)
+- `3.13.61` Merge Sort Tree: 2D Dominance (A)
+- `3.13.62` Merge Sort Tree: Memory Optimization (B)
+- `3.13.63` Merge Sort Tree: Offline Inversion (B)
+- `3.13.64` Merge Sort Tree: Persistent Variant (B)
+- `3.13.65` Multidimensional Data Structure: Bitset Rectangle Query (A)
+- `3.13.66` Multidimensional Data Structure: Cdq Divide Conquer (B)
+- `3.13.67` Multidimensional Data Structure: Dominance Counting (B)
+- `2.21.58` Block-Cut Tree: Bridge Interaction (B)
+- `2.21.59` Block-Cut Tree: Connectivity Query (B)
+- `2.21.60` Block-Cut Tree: Distance On Block Cut Tree (B)
+- `2.21.61` Block-Cut Tree: Offline Query (B)
+- `2.21.62` Block-Cut Tree: Tree Dp (A)
+- `2.21.63` Block-Cut Tree: Weighted Variant (A)
+- `2.21.64` Cactus Graph: Diameter (B)
+- `2.21.65` Cactus Graph: Dynamic Programming (B)
+- `2.21.66` Cactus Graph: Edge Cactus (A)
+- `2.21.67` Cactus Graph: Minimum Cut (A)
+- `2.21.68` Cactus Graph: Path Counting (B)
+- `2.21.69` Cactus Graph: Vertex Cactus (B)

@@ -1,0 +1,1568 @@
+{
+  "meta": {
+    "title": "Stage5 桥梁能力样例候选",
+    "version": "1.0",
+    "generated_at": "2026-05-26T10:00:00.000Z",
+    "total_samples": 92,
+    "code_implementation_samples": 33,
+    "problem_solving_analysis_samples": 30,
+    "training_management_psychology_samples": 30,
+    "scope": "sample_only",
+    "main_graph_modified": false,
+    "formal_nodes_generated": false
+  },
+  "samples": {
+    "code_implementation": [
+      {
+        "candidate_id": "cand.code.binary.boundary_001",
+        "name": "二分查找的三种标准模板：找第一个>=、找最后一个<=、找精确值",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "学生知道二分原理，但写代码时总是死循环或边界错误，不知道用哪种模板",
+        "what_student_can_do_after_learning": "能正确写出三种二分模板，并能根据题目要求选择合适的模板",
+        "suggested_direct_pre_names": [
+          "二分查找原理"
+        ],
+        "similar_existing_items": [
+          "二分查找",
+          "lower_bound",
+          "upper_bound"
+        ],
+        "duplicate_risk_note": "与 2.3.1 二分查找有部分重叠，但本节点侧重实现模板而非原理",
+        "writing_style_note": ""
+      },
+      {
+        "candidate_id": "cand.code.binary.boundary_002",
+        "name": "二分边界死循环排查：l < r vs l <= r 的选择依据",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "二分代码经常死循环，不知道是循环条件还是mid取法的问题",
+        "what_student_can_do_after_learning": "能快速定位二分死循环的原因，并知道如何修改",
+        "suggested_direct_pre_names": [
+          "二分查找"
+        ],
+        "similar_existing_items": [
+          "二分查找"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.binary.boundary_003",
+        "name": "二分答案时判定函数的写法规范：参数、返回值、边界处理",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "知道要二分答案，但判定函数不知道怎么写",
+        "what_student_can_do_after_learning": "能正确写出二分答案的判定函数框架",
+        "suggested_direct_pre_names": [
+          "二分答案"
+        ],
+        "similar_existing_items": [
+          "二分答案判定"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.binary.boundary_004",
+        "name": "整数二分 vs 实数二分的实现差异：精度控制、终止条件",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "实数二分不知道什么时候停止，精度控制不好",
+        "what_student_can_do_after_learning": "能正确实现实数二分，控制精度和迭代次数",
+        "suggested_direct_pre_names": [
+          "二分查找",
+          "浮点数精度"
+        ],
+        "similar_existing_items": [
+          "三分查找"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.array.index_001",
+        "name": "数组下标从0还是从1：选择依据和一致性维护",
+        "category": "code_implementation",
+        "sub_category": "array_index_direction_prefix_diff",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "数组下标混乱，一会儿0一会儿1，导致越界或逻辑错误",
+        "what_student_can_do_after_learning": "能根据题目特点选择合适的下标起点，并保持一致",
+        "suggested_direct_pre_names": [
+          "数组"
+        ],
+        "similar_existing_items": [
+          "数组越界"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.array.index_002",
+        "name": "方向数组的定义和使用：四方向、八方向、六方向（蜂窝）",
+        "category": "code_implementation",
+        "sub_category": "array_index_direction_prefix_diff",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "BFS/DFS时方向数组写错，导致搜索方向不对",
+        "what_student_can_do_after_learning": "能正确写出各种方向数组，并理解其含义",
+        "suggested_direct_pre_names": [
+          "广度优先搜索",
+          "深度优先搜索"
+        ],
+        "similar_existing_items": [
+          "BFS",
+          "DFS"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.array.index_003",
+        "name": "前缀和数组的实现细节：边界处理、下标偏移",
+        "category": "code_implementation",
+        "sub_category": "array_index_direction_prefix_diff",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "前缀和计算时下标搞错，查询时边界处理不对",
+        "what_student_can_do_after_learning": "能正确实现前缀和数组，并处理各种边界情况",
+        "suggested_direct_pre_names": [
+          "前缀和"
+        ],
+        "similar_existing_items": [
+          "前缀和",
+          "差分"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.array.index_004",
+        "name": "差分数组的实现细节：区间修改、还原数组",
+        "category": "code_implementation",
+        "sub_category": "array_index_direction_prefix_diff",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "差分数组修改后不知道怎么还原，或者还原时边界错误",
+        "what_student_can_do_after_learning": "能正确实现差分数组的修改和还原",
+        "suggested_direct_pre_names": [
+          "差分"
+        ],
+        "similar_existing_items": [
+          "差分",
+          "前缀和"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.variable.design_001",
+        "name": "变量命名规范：tmp/cur/nxt/pre 等临时变量的含义和使用场景",
+        "category": "code_implementation",
+        "sub_category": "variable_design_answer_maintenance",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "变量命名混乱，代码可读性差，容易出错",
+        "what_student_can_do_after_learning": "能使用规范的变量命名，提高代码可读性",
+        "suggested_direct_pre_names": [
+          "变量"
+        ],
+        "similar_existing_items": [
+          "变量命名"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.variable.design_002",
+        "name": "答案变量的维护时机：何时更新、何时比较、何时输出",
+        "category": "code_implementation",
+        "sub_category": "variable_design_answer_maintenance",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "答案变量更新时机不对，导致结果错误",
+        "what_student_can_do_after_learning": "能正确判断答案变量的更新时机",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.variable.design_003",
+        "name": "标记变量的设计：visited/used/flag 等布尔变量的使用规范",
+        "category": "code_implementation",
+        "sub_category": "variable_design_answer_maintenance",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "标记变量忘记重置，或者重置时机不对",
+        "what_student_can_do_after_learning": "能正确设计和管理标记变量",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.function.template_001",
+        "name": "函数参数设计：值传递 vs 引用传递的选择依据",
+        "category": "code_implementation",
+        "sub_category": "function_template_parameter",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "函数参数传递方式不对，导致修改无效或效率低下",
+        "what_student_can_do_after_learning": "能根据需要选择合适的参数传递方式",
+        "suggested_direct_pre_names": [
+          "函数"
+        ],
+        "similar_existing_items": [
+          "函数参数"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.function.template_002",
+        "name": "模板函数的改造：如何将通用模板改为题目特定版本",
+        "category": "code_implementation",
+        "sub_category": "function_template_parameter",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "有模板但不知道怎么改，改了就出错",
+        "what_student_can_do_after_learning": "能正确改造模板函数适应题目需求",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.function.template_003",
+        "name": "递归函数的参数设计：状态传递、返回值设计",
+        "category": "code_implementation",
+        "sub_category": "function_template_parameter",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "递归函数参数设计不好，导致状态传递错误",
+        "what_student_can_do_after_learning": "能正确设计递归函数的参数和返回值",
+        "suggested_direct_pre_names": [
+          "递归"
+        ],
+        "similar_existing_items": [
+          "递归"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.search.bfs_001",
+        "name": "BFS队列的实现：push/pop/front 的顺序和时机",
+        "category": "code_implementation",
+        "sub_category": "search_bfs_dfs_implementation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "BFS队列操作顺序不对，导致搜索错误",
+        "what_student_can_do_after_learning": "能正确实现BFS队列操作",
+        "suggested_direct_pre_names": [
+          "广度优先搜索"
+        ],
+        "similar_existing_items": [
+          "BFS"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.search.bfs_002",
+        "name": "DFS回溯的实现：状态保存和恢复的时机",
+        "category": "code_implementation",
+        "sub_category": "search_bfs_dfs_implementation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "回溯时状态恢复不对，导致搜索结果错误",
+        "what_student_can_do_after_learning": "能正确实现DFS回溯的状态保存和恢复",
+        "suggested_direct_pre_names": [
+          "深度优先搜索",
+          "回溯"
+        ],
+        "similar_existing_items": [
+          "DFS",
+          "回溯"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.search.bfs_003",
+        "name": "剪枝条件的实现：可行性剪枝和最优性剪枝的写法",
+        "category": "code_implementation",
+        "sub_category": "search_bfs_dfs_implementation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "知道要剪枝但不知道怎么写剪枝条件",
+        "what_student_can_do_after_learning": "能正确实现各种剪枝条件",
+        "suggested_direct_pre_names": [
+          "剪枝"
+        ],
+        "similar_existing_items": [
+          "剪枝"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.dp.array_001",
+        "name": "DP数组维度设计：一维、二维、三维的选择依据",
+        "category": "code_implementation",
+        "sub_category": "dp_array_design_loop_order",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "DP数组维度设计不对，导致状态表示不完整",
+        "what_student_can_do_after_learning": "能根据问题特点设计合适的DP数组维度",
+        "suggested_direct_pre_names": [
+          "动态规划"
+        ],
+        "similar_existing_items": [
+          "动态规划"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.dp.array_002",
+        "name": "DP转移顺序：外层循环物品还是容量、内层循环方向",
+        "category": "code_implementation",
+        "sub_category": "dp_array_design_loop_order",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "DP转移顺序不对，导致状态转移错误",
+        "what_student_can_do_after_learning": "能正确确定DP转移顺序",
+        "suggested_direct_pre_names": [
+          "动态规划"
+        ],
+        "similar_existing_items": [
+          "动态规划"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.dp.array_003",
+        "name": "滚动数组的实现：空间优化时的下标计算",
+        "category": "code_implementation",
+        "sub_category": "dp_array_design_loop_order",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "滚动数组下标计算错误",
+        "what_student_can_do_after_learning": "能正确实现滚动数组",
+        "suggested_direct_pre_names": [
+          "动态规划",
+          "空间优化"
+        ],
+        "similar_existing_items": [
+          "滚动数组"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.ds.template_001",
+        "name": "线段树模板的改造：build/update/query 的接口设计",
+        "category": "code_implementation",
+        "sub_category": "data_structure_template_adaptation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "yellow",
+        "mapping_confidence": "medium",
+        "learning_pain_point": "线段树模板不知道怎么改适应题目",
+        "what_student_can_do_after_learning": "能正确改造线段树模板",
+        "suggested_direct_pre_names": [
+          "线段树"
+        ],
+        "similar_existing_items": [
+          "线段树"
+        ],
+        "duplicate_risk_note": "与线段树相关节点有重叠，但侧重模板改造"
+      },
+      {
+        "candidate_id": "cand.code.ds.template_002",
+        "name": "并查集模板：路径压缩和按秩合并的实现",
+        "category": "code_implementation",
+        "sub_category": "data_structure_template_adaptation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "并查集模板写不对，路径压缩或按秩合并漏掉",
+        "what_student_can_do_after_learning": "能正确实现并查集模板",
+        "suggested_direct_pre_names": [
+          "并查集"
+        ],
+        "similar_existing_items": [
+          "并查集"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.ds.template_003",
+        "name": "树状数组模板：单点修改和区间查询的实现",
+        "category": "code_implementation",
+        "sub_category": "data_structure_template_adaptation",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "树状数组模板写不对，lowbit计算错误",
+        "what_student_can_do_after_learning": "能正确实现树状数组模板",
+        "suggested_direct_pre_names": [
+          "树状数组"
+        ],
+        "similar_existing_items": [
+          "树状数组"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.debug.error_001",
+        "name": "多组数据时的初始化遗漏：数组、变量、标记的重置",
+        "category": "code_implementation",
+        "sub_category": "debug_check_common_errors",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "多组数据时忘记重置，导致后续数据错误",
+        "what_student_can_do_after_learning": "能养成多组数据时检查初始化的习惯",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [
+          "常见错误"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.debug.error_002",
+        "name": "数组越界的常见场景：下标范围、边界检查",
+        "category": "code_implementation",
+        "sub_category": "debug_check_common_errors",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "数组越界导致RE，不知道哪里出错",
+        "what_student_can_do_after_learning": "能快速定位数组越界的位置",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [
+          "数组越界"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.debug.error_003",
+        "name": "整数溢出的检测和预防：long long 的使用时机",
+        "category": "code_implementation",
+        "sub_category": "debug_check_common_errors",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "整数溢出导致结果错误，不知道何时用long long",
+        "what_student_can_do_after_learning": "能判断何时需要使用long long",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [
+          "整数溢出"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.debug.error_004",
+        "name": "对拍脚本的编写：暴力 vs 优化版的自动对比",
+        "category": "code_implementation",
+        "sub_category": "debug_check_common_errors",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道怎么写对拍脚本",
+        "what_student_can_do_after_learning": "能编写对拍脚本自动验证代码正确性",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [
+          "对拍"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.debug.error_005",
+        "name": "print调试技巧：关键变量输出、分段输出、条件输出",
+        "category": "code_implementation",
+        "sub_category": "debug_check_common_errors",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "debugging_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道怎么用print调试",
+        "what_student_can_do_after_learning": "能使用print调试定位问题",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [
+          "调试技巧"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.loop.boundary_001",
+        "name": "循环边界 i < n vs i <= n 的选择依据",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "循环边界经常写错，不知道用 < 还是 <=",
+        "what_student_can_do_after_learning": "能正确选择循环边界条件",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.loop.boundary_002",
+        "name": "多层循环的变量管理：内层循环变量重置、break/continue 的行为",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "多层循环时变量管理混乱",
+        "what_student_can_do_after_learning": "能正确管理多层循环的变量",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.enum.range_001",
+        "name": "枚举范围的确定：全枚举、部分枚举、枚举优化",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "枚举范围确定不对，漏掉情况或重复枚举",
+        "what_student_can_do_after_learning": "能正确确定枚举范围",
+        "suggested_direct_pre_names": [
+          "枚举"
+        ],
+        "similar_existing_items": [
+          "枚举"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.code.enum.range_002",
+        "name": "枚举顺序的选择：正序、倒序、特殊顺序的影响",
+        "category": "code_implementation",
+        "sub_category": "binary_enum_loop_boundary",
+        "target_section_suggestion": "5.12",
+        "candidate_type": "implementation_micro_skill",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "枚举顺序选择不对，导致结果错误或效率低",
+        "what_student_can_do_after_learning": "能根据问题选择合适的枚举顺序",
+        "suggested_direct_pre_names": [
+          "枚举"
+        ],
+        "similar_existing_items": [
+          "枚举"
+        ],
+        "duplicate_risk_note": ""
+      }
+    ],
+    "problem_solving_analysis": [
+      {
+        "candidate_id": "cand.psa.sample_001",
+        "name": "不会做题时先造哪些小样例：从最简单到有代表性",
+        "category": "problem_solving_analysis",
+        "sub_category": "sample_construction_pattern_finding",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不会做题时不知道从哪里入手",
+        "what_student_can_do_after_learning": "能主动构造小样例，从中发现规律",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.sample_002",
+        "name": "如何从小样例中找单调性：观察趋势、猜测性质",
+        "category": "problem_solving_analysis",
+        "sub_category": "sample_construction_pattern_finding",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "造了样例但看不出规律",
+        "what_student_can_do_after_learning": "能从样例中发现单调性等规律",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.sample_003",
+        "name": "如何从样例猜测答案公式：观察、验证、证明",
+        "category": "problem_solving_analysis",
+        "sub_category": "sample_construction_pattern_finding",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "样例算出来了但猜不出公式",
+        "what_student_can_do_after_learning": "能从样例猜测答案公式并验证",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.sample_004",
+        "name": "边界样例的构造：空集、单元素、全相同、极端情况",
+        "category": "problem_solving_analysis",
+        "sub_category": "sample_construction_pattern_finding",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "只测普通样例，边界情况没考虑",
+        "what_student_can_do_after_learning": "能主动构造边界样例测试",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.range_001",
+        "name": "如何用数据范围反推复杂度：n=10^5 对应什么算法",
+        "category": "problem_solving_analysis",
+        "sub_category": "data_range_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到数据范围不知道用什么算法",
+        "what_student_can_do_after_learning": "能根据数据范围判断可行的算法复杂度",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.range_002",
+        "name": "时间限制1秒对应的大致运算量：10^7、10^8 的判断",
+        "category": "problem_solving_analysis",
+        "sub_category": "data_range_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道1秒能跑多少运算",
+        "what_student_can_do_after_learning": "能根据时间限制判断运算量上限",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.range_003",
+        "name": "多变量数据范围的分析：n*m、n*log(m) 等组合复杂度",
+        "category": "problem_solving_analysis",
+        "sub_category": "data_range_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "多个变量时复杂度分析不清楚",
+        "what_student_can_do_after_learning": "能分析多变量的组合复杂度",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.exclude_001",
+        "name": "如何用反例打掉错误贪心：构造最小反例",
+        "category": "problem_solving_analysis",
+        "sub_category": "exclude_wrong_approach",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "想用贪心但不确定对不对",
+        "what_student_can_do_after_learning": "能构造反例验证贪心是否正确",
+        "suggested_direct_pre_names": [
+          "贪心"
+        ],
+        "similar_existing_items": [
+          "贪心"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.exclude_002",
+        "name": "如何判断这题能不能二分答案：单调性验证",
+        "category": "problem_solving_analysis",
+        "sub_category": "exclude_wrong_approach",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道这题能不能二分答案",
+        "what_student_can_do_after_learning": "能判断问题是否具有二分答案的单调性",
+        "suggested_direct_pre_names": [
+          "二分答案"
+        ],
+        "similar_existing_items": [
+          "二分答案"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.exclude_003",
+        "name": "如何判断DP状态是否正确：最优子结构验证",
+        "category": "problem_solving_analysis",
+        "sub_category": "exclude_wrong_approach",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "DP状态定义了但不确定对不对",
+        "what_student_can_do_after_learning": "能验证DP状态的最优子结构",
+        "suggested_direct_pre_names": [
+          "动态规划"
+        ],
+        "similar_existing_items": [
+          "动态规划"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_001",
+        "name": "看到区间查询想到什么：前缀和、线段树、树状数组、ST表",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到区间查询不知道用什么数据结构",
+        "what_student_can_do_after_learning": "能根据区间查询特点选择数据结构",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_002",
+        "name": "看到最大值最小化想到什么：二分答案+贪心验证",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到最大值最小化不知道用什么方法",
+        "what_student_can_do_after_learning": "能识别最大值最小化问题并选择方法",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_003",
+        "name": "看到路径计数想到什么：DP、组合数、矩阵快速幂",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到路径计数不知道用什么方法",
+        "what_student_can_do_after_learning": "能识别路径计数问题并选择方法",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_004",
+        "name": "看到子串/子序列想到什么：双指针、DP、字符串算法",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到子串/子序列不知道用什么方法",
+        "what_student_can_do_after_learning": "能识别子串/子序列问题并选择方法",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_005",
+        "name": "看到图论判定想到什么：并查集、BFS/DFS、二分图染色",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到图论判定不知道用什么方法",
+        "what_student_can_do_after_learning": "能识别图论判定问题并选择方法",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.brute_001",
+        "name": "先写暴力再优化：暴力作为正确性基准",
+        "category": "problem_solving_analysis",
+        "sub_category": "brute_force_to_optimization",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "直接想优化想不到，又不敢写暴力",
+        "what_student_can_do_after_learning": "能先写暴力验证正确性，再寻找优化点",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.brute_002",
+        "name": "从暴力到二分优化：发现单调性",
+        "category": "problem_solving_analysis",
+        "sub_category": "brute_force_to_optimization",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "暴力枚举超时，不知道怎么优化",
+        "what_student_can_do_after_learning": "能从暴力中发现二分优化的机会",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.brute_003",
+        "name": "从暴力到数据结构优化：前缀和、线段树优化枚举",
+        "category": "problem_solving_analysis",
+        "sub_category": "brute_force_to_optimization",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "暴力枚举超时，不知道用什么数据结构优化",
+        "what_student_can_do_after_learning": "能从暴力中发现数据结构优化的机会",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.brute_004",
+        "name": "从暴力到DP：发现重叠子问题",
+        "category": "problem_solving_analysis",
+        "sub_category": "brute_force_to_optimization",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "暴力搜索超时，不知道可以DP",
+        "what_student_can_do_after_learning": "能从暴力中发现DP的机会",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.proof_001",
+        "name": "贪心证明的意识：什么时候需要证明、怎么证明",
+        "category": "problem_solving_analysis",
+        "sub_category": "proof_counterexample_awareness",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "贪心写对了但没证明，或者不知道怎么证明",
+        "what_student_can_do_after_learning": "能有证明意识，知道基本的证明方法",
+        "suggested_direct_pre_names": [
+          "贪心"
+        ],
+        "similar_existing_items": [
+          "贪心"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.proof_002",
+        "name": "反例构造能力：最小反例、边界反例、随机反例",
+        "category": "problem_solving_analysis",
+        "sub_category": "proof_counterexample_awareness",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "知道错了但构造不出反例",
+        "what_student_can_do_after_learning": "能构造各种类型的反例",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.boundary_001",
+        "name": "边界情况的系统检查：空、单元素、全相同、极端",
+        "category": "problem_solving_analysis",
+        "sub_category": "boundary_special_case_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "边界情况经常漏掉",
+        "what_student_can_do_after_learning": "能系统检查各种边界情况",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.boundary_002",
+        "name": "特殊情况启发：从简化条件到一般情况",
+        "category": "problem_solving_analysis",
+        "sub_category": "boundary_special_case_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "题目条件复杂，不知道从哪里入手",
+        "what_student_can_do_after_learning": "能从特殊情况入手，逐步推广到一般情况",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.process_001",
+        "name": "完整解题流程：读题、分析、实现、验证、复盘",
+        "category": "problem_solving_analysis",
+        "sub_category": "complete_solving_process",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "解题过程混乱，经常漏步骤",
+        "what_student_can_do_after_learning": "能按完整流程解题",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.process_002",
+        "name": "读题技巧：提取输入、输出、约束、样例含义",
+        "category": "problem_solving_analysis",
+        "sub_category": "complete_solving_process",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "读题不仔细，漏掉关键条件",
+        "what_student_can_do_after_learning": "能结构化读题，提取关键信息",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.process_003",
+        "name": "赛后复盘方法：错因分析、补题时机、一题多解",
+        "category": "problem_solving_analysis",
+        "sub_category": "complete_solving_process",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛后不复盘，同样错误重复犯",
+        "what_student_can_do_after_learning": "能进行有效的赛后复盘",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.recognize_006",
+        "name": "看到方案数取模想到什么：DP+组合数学、容斥、生成函数",
+        "category": "problem_solving_analysis",
+        "sub_category": "problem_type_recognition_signal",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到方案数取模不知道用什么方法",
+        "what_student_can_do_after_learning": "能识别方案数取模问题并选择方法",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.brute_005",
+        "name": "从暴力到数学优化：发现数学规律代替枚举",
+        "category": "problem_solving_analysis",
+        "sub_category": "brute_force_to_optimization",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "暴力枚举超时，不知道可以用数学公式优化",
+        "what_student_can_do_after_learning": "能从暴力中发现数学优化的机会",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.proof_003",
+        "name": "DP正确性验证：状态定义是否完整、转移是否遗漏",
+        "category": "problem_solving_analysis",
+        "sub_category": "proof_counterexample_awareness",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "DP写完了但不确定对不对",
+        "what_student_can_do_after_learning": "能验证DP的正确性",
+        "suggested_direct_pre_names": [
+          "动态规划"
+        ],
+        "similar_existing_items": [
+          "动态规划"
+        ],
+        "duplicate_risk_note": ""
+      },
+      {
+        "candidate_id": "cand.psa.boundary_003",
+        "name": "特殊构造：利用题目特殊性质简化问题",
+        "category": "problem_solving_analysis",
+        "sub_category": "boundary_special_case_analysis",
+        "target_section_suggestion": "5.13",
+        "candidate_type": "thinking_method",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "题目有特殊性质但没发现",
+        "what_student_can_do_after_learning": "能发现并利用题目特殊性质",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": ""
+      }
+    ],
+    "training_management_psychology": [
+      {
+        "candidate_id": "cand.tmp.time_001",
+        "name": "每天训练多长时间合适：根据阶段和目标调整",
+        "category": "training_management_psychology",
+        "sub_category": "time_allocation_learning_rhythm",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道每天该花多少时间训练",
+        "what_student_can_do_after_learning": "能根据自己的阶段制定合理的训练时间",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "使用建议性语气，承认每个人的情况不同"
+      },
+      {
+        "candidate_id": "cand.tmp.time_002",
+        "name": "训练节奏：刷题、补题、学知识的平衡",
+        "category": "training_management_psychology",
+        "sub_category": "time_allocation_learning_rhythm",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "只刷题不学知识，或者只学知识不刷题",
+        "what_student_can_do_after_learning": "能平衡刷题、补题、学知识的时间",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认这很难平衡，给一些可以试试的方法"
+      },
+      {
+        "candidate_id": "cand.tmp.time_003",
+        "name": "周期规划：周计划、月计划、赛前冲刺",
+        "category": "training_management_psychology",
+        "sub_category": "time_allocation_learning_rhythm",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "没有长期规划，训练随意",
+        "what_student_can_do_after_learning": "能制定合理的周期规划",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一个简单的规划模板，承认执行起来会有偏差"
+      },
+      {
+        "candidate_id": "cand.tmp.balance_001",
+        "name": "课内学习和竞赛训练的冲突：如何取舍和平衡",
+        "category": "training_management_psychology",
+        "sub_category": "school_olympiad_balance",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "课内学习和竞赛训练冲突，不知道怎么平衡",
+        "what_student_can_do_after_learning": "能找到适合自己的平衡点",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认这是真实的困难，没有标准答案，给一些参考思路"
+      },
+      {
+        "candidate_id": "cand.tmp.balance_002",
+        "name": "考试周怎么处理训练：暂停还是减少",
+        "category": "training_management_psychology",
+        "sub_category": "school_olympiad_balance",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "考试周不知道要不要训练",
+        "what_student_can_do_after_learning": "能在考试周做出合理的训练安排",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认考试重要，给一些保持手感的最小训练建议"
+      },
+      {
+        "candidate_id": "cand.tmp.habit_001",
+        "name": "如何养成训练习惯：从小目标开始",
+        "category": "training_management_psychology",
+        "sub_category": "self_discipline_habit_system",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "总是坚持不下来，三天打鱼两天晒网",
+        "what_student_can_do_after_learning": "能养成稳定的训练习惯",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认坚持很难，从小目标开始，不要一上来就定大目标"
+      },
+      {
+        "candidate_id": "cand.tmp.habit_002",
+        "name": "环境设计：减少干扰、创造专注空间",
+        "category": "training_management_psychology",
+        "sub_category": "self_discipline_habit_system",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "训练时总是分心",
+        "what_student_can_do_after_learning": "能创造有利于专注的训练环境",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些简单的环境调整建议"
+      },
+      {
+        "candidate_id": "cand.tmp.habit_003",
+        "name": "记录和回顾：训练日志的作用",
+        "category": "training_management_psychology",
+        "sub_category": "self_discipline_habit_system",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "训练了很久但不知道自己进步了没",
+        "what_student_can_do_after_learning": "能通过记录看到自己的进步轨迹",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一个简单的记录模板"
+      },
+      {
+        "candidate_id": "cand.tmp.difficulty_001",
+        "name": "卡题时的应对：什么时候继续想、什么时候看题解",
+        "category": "training_management_psychology",
+        "sub_category": "difficulty_response_strategy",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "卡题时不知道该继续想还是看题解",
+        "what_student_can_do_after_learning": "能做出合理的卡题应对决策",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认卡题很正常，给一些判断依据"
+      },
+      {
+        "candidate_id": "cand.tmp.difficulty_002",
+        "name": "挫败感的处理：做不出来题时的情绪调节",
+        "category": "training_management_psychology",
+        "sub_category": "difficulty_response_strategy",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "做不出来题很挫败，影响后续训练",
+        "what_student_can_do_after_learning": "能处理做不出题时的挫败感",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认挫败感很正常，给一些调节方法"
+      },
+      {
+        "candidate_id": "cand.tmp.difficulty_003",
+        "name": "求助策略：什么时候问人、怎么问",
+        "category": "training_management_psychology",
+        "sub_category": "difficulty_response_strategy",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道什么时候该求助",
+        "what_student_can_do_after_learning": "能合理地寻求帮助",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "求助不是坏事，但也要先自己思考"
+      },
+      {
+        "candidate_id": "cand.tmp.review_001",
+        "name": "错题本怎么用：记录什么、怎么回顾",
+        "category": "training_management_psychology",
+        "sub_category": "error_review_long_term_progress",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "错题本记了但从来不看",
+        "what_student_can_do_after_learning": "能有效使用错题本",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一个简单的错题本模板和回顾节奏"
+      },
+      {
+        "candidate_id": "cand.tmp.review_002",
+        "name": "复盘的时机：刚考完 vs 隔天复现 vs 专题回顾",
+        "category": "training_management_psychology",
+        "sub_category": "error_review_long_term_progress",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "不知道什么时候复盘最有效",
+        "what_student_can_do_after_learning": "能选择合适的复盘时机",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "不同时机有不同效果，可以都试试"
+      },
+      {
+        "candidate_id": "cand.tmp.review_003",
+        "name": "长期进步的追踪：如何看到自己的成长",
+        "category": "training_management_psychology",
+        "sub_category": "error_review_long_term_progress",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "训练了很久感觉没进步",
+        "what_student_can_do_after_learning": "能看到并追踪自己的长期进步",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "进步不是线性的，给一些追踪方法"
+      },
+      {
+        "candidate_id": "cand.tmp.competition_001",
+        "name": "比赛时间分配：先看全部题还是按顺序做",
+        "category": "training_management_psychology",
+        "sub_category": "competition_strategy_on_site_decision",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛时时间分配混乱",
+        "what_student_can_do_after_learning": "能合理分配比赛时间",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些参考策略，承认每个人的节奏不同"
+      },
+      {
+        "candidate_id": "cand.tmp.competition_002",
+        "name": "比赛中的决策：继续卡还是换题",
+        "category": "training_management_psychology",
+        "sub_category": "competition_strategy_on_site_decision",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛中卡在一题上不知道要不要换",
+        "what_student_can_do_after_learning": "能在比赛中做出合理的换题决策",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些判断依据"
+      },
+      {
+        "candidate_id": "cand.tmp.competition_003",
+        "name": "部分分策略：拿不到满分时怎么拿部分分",
+        "category": "training_management_psychology",
+        "sub_category": "competition_strategy_on_site_decision",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "做不出来满分就放弃了",
+        "what_student_can_do_after_learning": "能主动争取部分分",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "部分分也是分，给一些常见部分分思路"
+      },
+      {
+        "candidate_id": "cand.tmp.emotion_001",
+        "name": "比赛前的紧张：正常化、简单的放松方法",
+        "category": "training_management_psychology",
+        "sub_category": "emotion_pressure_recovery",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛前太紧张，影响发挥",
+        "what_student_can_do_after_learning": "能处理比赛前的紧张情绪",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "紧张是正常的，给一些简单的放松方法"
+      },
+      {
+        "candidate_id": "cand.tmp.emotion_002",
+        "name": "比赛后的情绪：考好了和考砸了分别怎么处理",
+        "category": "training_management_psychology",
+        "sub_category": "emotion_pressure_recovery",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛后情绪波动大",
+        "what_student_can_do_after_learning": "能合理处理比赛后的情绪",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "考好考砸都是经历，给一些情绪处理建议"
+      },
+      {
+        "candidate_id": "cand.tmp.emotion_003",
+        "name": "长期训练的倦怠：如何保持动力",
+        "category": "training_management_psychology",
+        "sub_category": "emotion_pressure_recovery",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "训练久了感到倦怠",
+        "what_student_can_do_after_learning": "能处理长期训练的倦怠感",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "倦怠是正常的，给一些保持动力的方法"
+      },
+      {
+        "candidate_id": "cand.tmp.difficulty_004",
+        "name": "遇到瓶颈期怎么办：进步停滞时的应对",
+        "category": "training_management_psychology",
+        "sub_category": "difficulty_response_strategy",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "感觉一直在瓶颈期，进步不了",
+        "what_student_can_do_after_learning": "能识别并突破瓶颈期",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "瓶颈期是进步的前奏，给一些突破方法"
+      },
+      {
+        "candidate_id": "cand.tmp.difficulty_005",
+        "name": "和别人比较时的焦虑：如何专注于自己的进步",
+        "category": "training_management_psychology",
+        "sub_category": "difficulty_response_strategy",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看到别人进步快很焦虑",
+        "what_student_can_do_after_learning": "能专注于自己的进步而非比较",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "每个人的节奏不同，专注于自己"
+      },
+      {
+        "candidate_id": "cand.tmp.review_004",
+        "name": "如何从题解中学到东西：不只是抄代码",
+        "category": "training_management_psychology",
+        "sub_category": "error_review_long_term_progress",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "看题解只是抄代码，没学到东西",
+        "what_student_can_do_after_learning": "能从题解中有效学习",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些看题解的方法"
+      },
+      {
+        "candidate_id": "cand.tmp.competition_004",
+        "name": "比赛中的心态：遇到难题不慌、遇到简单题不飘",
+        "category": "training_management_psychology",
+        "sub_category": "competition_strategy_on_site_decision",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "比赛中心态不稳",
+        "what_student_can_do_after_learning": "能在比赛中保持稳定心态",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些心态调节方法"
+      },
+      {
+        "candidate_id": "cand.tmp.competition_005",
+        "name": "赛后总结怎么做：不只是看分数",
+        "category": "training_management_psychology",
+        "sub_category": "competition_strategy_on_site_decision",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "赛后只看分数不总结",
+        "what_student_can_do_after_learning": "能进行有效的赛后总结",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一个赛后总结模板"
+      },
+      {
+        "candidate_id": "cand.tmp.habit_004",
+        "name": "如何设定训练目标：具体、可衡量、可实现",
+        "category": "training_management_psychology",
+        "sub_category": "self_discipline_habit_system",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "目标定得太高实现不了，或者太低没动力",
+        "what_student_can_do_after_learning": "能设定合理的训练目标",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些目标设定的方法"
+      },
+      {
+        "candidate_id": "cand.tmp.time_004",
+        "name": "碎片时间的利用：课间、通勤时能做什么",
+        "category": "training_management_psychology",
+        "sub_category": "time_allocation_learning_rhythm",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "没有整块时间训练",
+        "what_student_can_do_after_learning": "能利用碎片时间进行训练",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "给一些碎片时间利用的建议"
+      },
+      {
+        "candidate_id": "cand.tmp.balance_003",
+        "name": "家人不支持怎么办：沟通和理解",
+        "category": "training_management_psychology",
+        "sub_category": "school_olympiad_balance",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "家人不支持搞竞赛",
+        "what_student_can_do_after_learning": "能和家人有效沟通",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认这是真实的困难，给一些沟通建议"
+      },
+      {
+        "candidate_id": "cand.tmp.emotion_004",
+        "name": "连续失败后的恢复：如何重新建立信心",
+        "category": "training_management_psychology",
+        "sub_category": "emotion_pressure_recovery",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "连续几次比赛都没考好，信心受挫",
+        "what_student_can_do_after_learning": "能从连续失败中恢复信心",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "承认连续失败很打击，给一些恢复方法"
+      },
+      {
+        "candidate_id": "cand.tmp.habit_005",
+        "name": "如何处理训练中的低谷期：接纳和调整",
+        "category": "training_management_psychology",
+        "sub_category": "self_discipline_habit_system",
+        "target_section_suggestion": "5.14",
+        "candidate_type": "training_strategy",
+        "risk_band": "green",
+        "mapping_confidence": "high",
+        "learning_pain_point": "训练状态不好，效率很低",
+        "what_student_can_do_after_learning": "能处理训练低谷期",
+        "suggested_direct_pre_names": [],
+        "similar_existing_items": [],
+        "duplicate_risk_note": "",
+        "writing_style_note": "低谷期是正常的，给一些调整方法"
+      }
+    ]
+  },
+  "declarations": {
+    "main_graph_modified": false,
+    "formal_nodes_generated": false,
+    "merge_executed": false,
+    "planning_only": true,
+    "samples_only": true
+  }
+}

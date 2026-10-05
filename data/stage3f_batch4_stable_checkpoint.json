@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Stage3F Batch4 Stable Checkpoint",
+    "generated_at": "2026-05-25T21:56:43.347992",
+    "batch_id": "stage3f_batch4_full49",
+    "main_graph_modified": false,
+    "description": "Stage3F Batch4 最终稳定状态。已包含 Merge、direct_pre Shrink Fix、Fix Lite。等待 Stage3F Batch4 Review 或 Batch5 启动指令。"
+  },
+  "state": {
+    "item_count": 1765,
+    "section_count": 65,
+    "item_count_before_batch4": 1716,
+    "item_count_after_batch4": 1765,
+    "items_added_in_batch4": 49,
+    "section_count_before_batch4": 65,
+    "section_count_after_batch4": 65,
+    "validate_only": {
+      "passed": true,
+      "expected_item_count": 1765,
+      "actual_item_count": 1765,
+      "actual_section_count": 65,
+      "dangling_refs": 0,
+      "direct_pre_cycle": true,
+      "resolved_pre_mismatches": 0,
+      "product_metadata_validation_passed": true,
+      "report_matches_json": true
+    },
+    "validation_checks": {
+      "item_count_eq_expected": true,
+      "section_count_eq_expected": true,
+      "dangling_refs_empty": true,
+      "direct_pre_cycle_null": true,
+      "resolved_pre_mismatches_empty": true,
+      "product_metadata_validation_passed": true,
+      "report_matches_json": true,
+      "passed": true
+    }
+  },
+  "batch4_history": {
+    "merge": {
+      "completed": true,
+      "items_before": 1716,
+      "items_after": 1765,
+      "items_added": 49,
+      "sections_before": 65,
+      "sections_after": 65,
+      "candidates_planned": 49,
+      "candidates_actually_added": 49
+    },
+    "direct_pre_shrink": {
+      "completed": true,
+      "nodes_shrunk": 34,
+      "old_total": 4824,
+      "new_total": 138,
+      "average_before": 141.9,
+      "average_after": 4.1,
+      "manual_review_3_handled": true,
+      "sunday_algorithm": "2.10.39",
+      "linear_recurrence_basic": "4.4.15",
+      "kitamasa": "4.4.16"
+    },
+    "fix_lite": {
+      "completed": true,
+      "branch": "A (standard fix lite)",
+      "total_processed": 49,
+      "downgraded_to_C": 40,
+      "kept_B": 8,
+      "kept_A": 1,
+      "A_node": "4.5.18 (矩阵树定理)",
+      "modified_direct_pre": false,
+      "modified_resolved_pre": false,
+      "modified_rel": false,
+      "modified_review_status_only": true
+    },
+    "dependency_fix_candidates_handled": true,
+    "merge_or_collapse_candidates": [],
+    "merge_or_collapse_candidates_empty": true,
+    "problem_pattern_candidates": {
+      "count": 6,
+      "handled": false,
+      "candidates": [
+        {
+          "id": "2.21.152",
+          "name": "最大权闭合子图：Penalty Modeling",
+          "section": "2.21"
+        },
+        {
+          "id": "2.21.156",
+          "name": "全局最小割：Minimum Cut Modeling",
+          "section": "2.21"
+        },
+        {
+          "id": "2.21.159",
+          "name": "差分约束系统建模",
+          "section": "2.21"
+        },
+        {
+          "id": "2.21.161",
+          "name": "Hall 定理及应用",
+          "section": "2.21"
+        },
+        {
+          "id": "2.21.170",
+          "name": "高级最短路：Zero One Bfs Modeling",
+          "section": "2.21"
+        },
+        {
+          "id": "2.21.171",
+          "name": "2-SAT 建模技巧",
+          "section": "2.21"
+        }
+      ]
+    }
+  },
+  "backups_available": [
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch4_full49.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch4_direct_pre_shrink.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3f_batch4_fix_lite.json"
+  ],
+  "next_steps": {
+    "continue_stage3f_batch5": "可以，但需先确认候选池剩余数量",
+    "handle_problem_patterns_6_candidates": "可选，等用户指令",
+    "handle_patterns_batch3_remaining": "可选，等用户指令"
+  }
+}

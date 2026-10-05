@@ -1,0 +1,98 @@
+{
+  "description": "Stage3E-Aggressive Batch1 Problem Pattern Sync Ready",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+  "source_item_count": 4,
+  "sync_candidates": [
+    {
+      "source_item_id": "2.21.70",
+      "source_item_name": "最大权闭合子图：Binary Decision Model",
+      "suggested_pattern_id": "pp.closure_model.binary_decision_model",
+      "name": "Binary Decision Model",
+      "en_name": "Binary Decision Model",
+      "reason": "Binary Decision Model 是最大权闭合子图的具体应用场景，描述二进制决策问题，更接近 problem pattern 而非算法概念。",
+      "required_items": ["2.21.67", "2.16.3"],
+      "tracks": ["icpc", "university_cp", "advanced_graph"],
+      "difficulty": "advanced",
+      "pattern_type": "network_flow_modeling",
+      "pattern_description": "将选择问题建模为二进制决策，用最大权闭合子图求解。",
+      "core_algorithm": "Maximum Closure",
+      "application_domain": "optimization",
+      "typical_problem_type": "selection_optimization",
+      "notes": ["保留 item，但标记为应用模型，适合作为题型分类。", "不建议删除，因为可以作为最大权闭合子图的应用案例。"]
+    },
+    {
+      "source_item_id": "2.21.73",
+      "source_item_name": "最大权闭合子图：Open Pit Mining Model",
+      "suggested_pattern_id": "pp.closure_model.open_pit_mining_model",
+      "name": "Open Pit Mining Model",
+      "en_name": "Open Pit Mining Model",
+      "reason": "Open Pit Mining Model 是最大权闭合子图经典的应用建模场景（开矿问题），属于建模题型。",
+      "required_items": ["2.21.67", "2.16.3"],
+      "tracks": ["icpc", "university_cp", "advanced_graph"],
+      "difficulty": "advanced",
+      "pattern_type": "network_flow_modeling",
+      "pattern_description": "将开矿问题建模为最大权闭合子图，考虑收益和依赖关系。",
+      "core_algorithm": "Maximum Closure",
+      "application_domain": "resource_planning",
+      "typical_problem_type": "resource_selection",
+      "notes": ["保留 item，但标记为应用模型，适合作为题型分类。", "这是最大权闭合子图最经典的应用案例之一。"]
+    },
+    {
+      "source_item_id": "2.21.74",
+      "source_item_name": "最大权闭合子图：Prerequisite Graph",
+      "suggested_pattern_id": "pp.closure_model.prerequisite_graph_model",
+      "name": "Prerequisite Graph Model",
+      "en_name": "Prerequisite Graph Model",
+      "reason": "Prerequisite Graph 是前置依赖选择问题的经典建模，描述任务之间的依赖关系，属于应用层。",
+      "required_items": ["2.21.67", "2.16.3"],
+      "tracks": ["icpc", "university_cp", "advanced_graph"],
+      "difficulty": "advanced",
+      "pattern_type": "network_flow_modeling",
+      "pattern_description": "将前置依赖选择问题建模为最大权闭合子图，考虑任务收益和依赖关系。",
+      "core_algorithm": "Maximum Closure",
+      "application_domain": "task_scheduling",
+      "typical_problem_type": "dependency_selection",
+      "notes": ["保留 item，但标记为应用模型，适合作为题型分类。", "课程前置要求、项目依赖选择等场景均可应用此模式。"]
+    },
+    {
+      "source_item_id": "2.21.75",
+      "source_item_name": "最大权闭合子图：Task Selection",
+      "suggested_pattern_id": "pp.closure_model.task_selection_model",
+      "name": "Task Selection Model",
+      "en_name": "Task Selection Model",
+      "reason": "Task Selection 是任务选择问题的经典建模，属于应用层，与 Prerequisite Graph 语义相似。",
+      "required_items": ["2.21.67", "2.16.3"],
+      "tracks": ["icpc", "university_cp", "advanced_graph"],
+      "difficulty": "advanced",
+      "pattern_type": "network_flow_modeling",
+      "pattern_description": "将任务选择问题建模为最大权闭合子图，考虑收益和依赖关系。",
+      "core_algorithm": "Maximum Closure",
+      "application_domain": "task_scheduling",
+      "typical_problem_type": "task_optimization",
+      "notes": ["保留 item，但标记为应用模型，适合作为题型分类。", "与 Prerequisite Graph 语义相似，可能需要考虑合并。"]
+    }
+  ],
+  "summary": {
+    "by_source_item_series": {
+      "maximum_closure": 4
+    },
+    "by_pattern_type": {
+      "network_flow_modeling": 4
+    },
+    "by_application_domain": {
+      "optimization": 1,
+      "resource_planning": 1,
+      "task_scheduling": 2
+    },
+    "by_difficulty": {
+      "advanced": 4
+    },
+    "recommendations": [
+      "Maximum Closure 系列中的应用模型节点适合同步到 problem_patterns。",
+      "这些节点保留在知识图谱中，但标记为应用层而非算法层。",
+      "Task Selection 与 Prerequisite Graph 可能存在语义重叠，建议人工确认是否需要合并。",
+      "所有这些 pattern 都依赖 Maximum Closure 核心算法和 Network Flow 基础。"
+    ]
+  }
+}

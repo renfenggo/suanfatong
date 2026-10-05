@@ -1,0 +1,485 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Added Items Summary",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T16:45:15.476385",
+    "batch_id": "stage3f_batch3_full40",
+    "uses_v2_files": true,
+    "dependency_cleanup_completed": true,
+    "total_added": 40,
+    "item_count_before": 1677,
+    "item_count_after": 1717,
+    "source": "stage3f_batch3_full40_candidate_plan_v2"
+  },
+  "section_distribution": {
+    "2.8": 8,
+    "2.10": 5,
+    "3.8": 2,
+    "4.1": 4,
+    "4.9": 4,
+    "2.17": 2,
+    "2.18": 4,
+    "2.21": 5,
+    "3.13": 6
+  },
+  "cleaned_dependency_count": 11,
+  "cleaned_candidate_ids": [
+    "cand.ds.bitset_linear_basis.maximum_xor_query",
+    "cand.graph.scc_dag.minimum_edges_to_strong",
+    "cand.ds.segment_tree_variants.split",
+    "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+    "cand.graph.scc_dag.dominating_components",
+    "cand.ds.bitset_linear_basis.basis_with_deletion",
+    "cand.graph.scc_dag.dag_reachability",
+    "cand.ds.dsu_advanced.parity",
+    "cand.graph.dynamic_connectivity.edge_interval_model",
+    "cand.ds.bitset_linear_basis.rollback_linear_basis",
+    "cand.ds.bitset_linear_basis.rank_over_gf2"
+  ],
+  "added_items": [
+    {
+      "item_id": "2.8.143",
+      "candidate_id": "cand.dp.dag.longest_path",
+      "name": "DAG最长路DP",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.23",
+        "2.8.95"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.144",
+      "candidate_id": "cand.dp.state_compression.basic",
+      "name": "状态压缩DP基础",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.20"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.145",
+      "candidate_id": "cand.dp.state_compression.traveling",
+      "name": "旅行商问题DP",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.20",
+        "2.8.115"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.146",
+      "candidate_id": "cand.dp.subset.basic",
+      "name": "子集DP基础",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.20",
+        "2.11.3"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.147",
+      "candidate_id": "cand.dp.subset.enumeration",
+      "name": "子集枚举优化",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.20",
+        "2.11.3"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.148",
+      "candidate_id": "cand.dp.automaton.basic",
+      "name": "自动机DP基础",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.1",
+        "2.8.3"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.149",
+      "candidate_id": "cand.dp.automaton.matrix",
+      "name": "自动机矩阵DP",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.1",
+        "2.8.3",
+        "2.12.3"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.8.150",
+      "candidate_id": "cand.dp.probability.basic",
+      "name": "概率DP基础",
+      "section_id": "2.8",
+      "direct_pre": [
+        "2.8.22",
+        "2.8.23"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.10.35",
+      "candidate_id": "cand.string.border_tree.structure",
+      "name": "Border树结构",
+      "section_id": "2.10",
+      "direct_pre": [
+        "2.10.2",
+        "3.8.1"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.10.36",
+      "candidate_id": "cand.string.manacher.algorithm",
+      "name": "Manacher算法",
+      "section_id": "2.10",
+      "direct_pre": [
+        "2.10.1",
+        "2.10.19"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.10.37",
+      "candidate_id": "cand.string.boyer_moore.algorithm",
+      "name": "Boyer-Moore算法",
+      "section_id": "2.10",
+      "direct_pre": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.10.38",
+      "candidate_id": "cand.string.rabin_karp.algorithm",
+      "name": "Rabin-Karp算法",
+      "section_id": "2.10",
+      "direct_pre": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.10.39",
+      "candidate_id": "cand.string.string_matching.kmp",
+      "name": "KMP算法详解",
+      "section_id": "2.10",
+      "direct_pre": [
+        "2.10.1"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "3.8.15",
+      "candidate_id": "cand.string.lyndon_decomposition.basic",
+      "name": "Lyndon分解基础",
+      "section_id": "3.8",
+      "direct_pre": [
+        "3.8.6",
+        "2.10.8"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "3.8.16",
+      "candidate_id": "cand.string.runs_repetitions.basic",
+      "name": "Runs重复子串分析",
+      "section_id": "3.8",
+      "direct_pre": [
+        "3.8.6",
+        "3.8.7"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.1.35",
+      "candidate_id": "cand.math.quadratic_residue.legendre_symbol",
+      "name": "Legendre符号",
+      "section_id": "4.1",
+      "direct_pre": [
+        "4.1.12",
+        "4.1.7"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.1.36",
+      "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+      "name": "Tonelli-Shanks算法",
+      "section_id": "4.1",
+      "direct_pre": [
+        "4.1.12",
+        "4.1.7"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.1.37",
+      "candidate_id": "cand.math.crt.extended",
+      "name": "扩展中国剩余定理",
+      "section_id": "4.1",
+      "direct_pre": [
+        "4.2.3",
+        "4.2.9"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.1.38",
+      "candidate_id": "cand.math.crt.garner",
+      "name": "Garner算法",
+      "section_id": "4.1",
+      "direct_pre": [
+        "4.2.3",
+        "4.2.9"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.9.6",
+      "candidate_id": "cand.math.euler_function.applications",
+      "name": "欧拉函数应用",
+      "section_id": "4.9",
+      "direct_pre": [
+        "4.1.10",
+        "4.1.11"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.9.7",
+      "candidate_id": "cand.math.sieve.du_jiao",
+      "name": "杜教筛",
+      "section_id": "4.9",
+      "direct_pre": [
+        "4.1.7",
+        "4.9.1",
+        "4.9.2"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.9.8",
+      "candidate_id": "cand.math.group_theory.burnside",
+      "name": "Burnside引理",
+      "section_id": "4.9",
+      "direct_pre": [
+        "4.3.1",
+        "4.3.6",
+        "2.17.1"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "4.9.9",
+      "candidate_id": "cand.math.group_theory.polya",
+      "name": "Polya计数定理",
+      "section_id": "4.9",
+      "direct_pre": [
+        "4.3.1",
+        "4.3.6",
+        "2.17.1"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.17.21",
+      "candidate_id": "cand.math.polynomial.fwt",
+      "name": "快速沃尔什变换",
+      "section_id": "2.17",
+      "direct_pre": [
+        "2.12.3",
+        "2.17.4"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.17.22",
+      "candidate_id": "cand.math.polynomial.subset_convolution",
+      "name": "子集卷积",
+      "section_id": "2.17",
+      "direct_pre": [
+        "2.17.4",
+        "2.11.3"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.18.12",
+      "candidate_id": "cand.dp.optimization.slope.basic",
+      "name": "斜率优化基础",
+      "section_id": "2.18",
+      "direct_pre": [
+        "2.8.26",
+        "2.8.28"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.18.13",
+      "candidate_id": "cand.dp.optimization.divide_conquer",
+      "name": "分治DP优化",
+      "section_id": "2.18",
+      "direct_pre": [
+        "2.8.1",
+        "2.8.3",
+        "2.8.9"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.18.14",
+      "candidate_id": "cand.dp.optimization.knuth",
+      "name": "Knuth优化",
+      "section_id": "2.18",
+      "direct_pre": [
+        "2.8.1",
+        "2.8.3",
+        "2.8.12"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.18.15",
+      "candidate_id": "cand.dp.optimization.wqs_binary",
+      "name": "WQS二分优化",
+      "section_id": "2.18",
+      "direct_pre": [
+        "2.8.1",
+        "2.8.3",
+        "2.8.26"
+      ],
+      "used_cleaned_dependency": false
+    },
+    {
+      "item_id": "2.21.147",
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "section_id": "2.21",
+      "direct_pre": [
+        "2.15.1",
+        "2.9.7"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "2.21.148",
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "section_id": "2.21",
+      "direct_pre": [
+        "2.1.34",
+        "3.4.1"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "2.21.149",
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "section_id": "2.21",
+      "direct_pre": [
+        "2.15.1",
+        "2.15.10"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "2.21.150",
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "section_id": "2.21",
+      "direct_pre": [
+        "2.21.27",
+        "3.4.1"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "2.21.151",
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "section_id": "2.21",
+      "direct_pre": [
+        "2.15.1",
+        "2.15.10"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.186",
+      "candidate_id": "cand.ds.bitset_linear_basis.rollback_linear_basis",
+      "name": "位集与线性基：Rollback Linear Basis",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.18.3",
+        "3.13.49"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.187",
+      "candidate_id": "cand.ds.bitset_linear_basis.maximum_xor_query",
+      "name": "位集与线性基：Maximum Xor Query",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.18.3",
+        "2.17.6"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.188",
+      "candidate_id": "cand.ds.bitset_linear_basis.rank_over_gf2",
+      "name": "位集与线性基：Rank Over Gf2",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.18.3",
+        "2.17.8"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.189",
+      "candidate_id": "cand.ds.bitset_linear_basis.basis_with_deletion",
+      "name": "位集与线性基：Basis With Deletion",
+      "section_id": "3.13",
+      "direct_pre": [
+        "2.18.3",
+        "3.13.49"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.190",
+      "candidate_id": "cand.ds.segment_tree_variants.split",
+      "name": "线段树变体：Split",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.7.2"
+      ],
+      "used_cleaned_dependency": true
+    },
+    {
+      "item_id": "3.13.191",
+      "candidate_id": "cand.ds.dsu_advanced.parity",
+      "name": "高级并查集：Parity",
+      "section_id": "3.13",
+      "direct_pre": [
+        "3.4.1",
+        "3.4.4"
+      ],
+      "used_cleaned_dependency": true
+    }
+  ]
+}

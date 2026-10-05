@@ -1,0 +1,1119 @@
+[
+  {
+    "id": "2.21.100",
+    "name": "拟阵图论：Basis Exchange",
+    "en_name": "Matroid in Graphs: Basis Exchange",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.101",
+    "name": "拟阵图论：Matroid Parity",
+    "en_name": "Matroid in Graphs: Matroid Parity",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.102",
+    "name": "拟阵图论：Partition Matroid",
+    "en_name": "Matroid in Graphs: Partition Matroid",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.103",
+    "name": "拟阵图论：Spanning Tree Matroid",
+    "en_name": "Matroid in Graphs: Spanning Tree Matroid",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.104",
+    "name": "拟阵图论：Transversal Matroid",
+    "en_name": "Matroid in Graphs: Transversal Matroid",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.105",
+    "name": "拟阵图论：Weighted Matroid Intersection",
+    "en_name": "Matroid in Graphs: Weighted Matroid Intersection",
+    "series": "拟阵图论系列",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      "依赖关系过于简单，缺少图论基础和集合论基础"
+    ],
+    "suggested_patch": {
+      "direct_pre": [
+        "2.7.1",
+        "2.6.1",
+        "2.9.1"
+      ]
+    },
+    "reason": "拟阵理论是高级图论概念，需要更完整的图论基础和数学基础",
+    "current_direct_pre": [
+      "2.6.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.106",
+    "name": "平面图：Dual Shortest Path",
+    "en_name": "Planar Graph: Dual Shortest Path",
+    "series": "平面图系列",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      "部分平面图主题更接近建模套路"
+    ],
+    "suggested_patch": {},
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.107",
+    "name": "平面图：Face Traversal",
+    "en_name": "Planar Graph: Face Traversal",
+    "series": "平面图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "平面图专题依赖明确，内容边界清晰，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.108",
+    "name": "平面图：Outerplanar Graph",
+    "en_name": "Planar Graph: Outerplanar Graph",
+    "series": "平面图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "平面图专题依赖明确，内容边界清晰，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.109",
+    "name": "平面图：Planar Min Cut",
+    "en_name": "Planar Graph: Planar Min Cut",
+    "series": "平面图系列",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      "部分平面图主题更接近建模套路"
+    ],
+    "suggested_patch": {},
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.110",
+    "name": "平面图：Planar Separator",
+    "en_name": "Planar Graph: Planar Separator",
+    "series": "平面图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "平面图专题依赖明确，内容边界清晰，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.111",
+    "name": "强连通分量 DAG：Implication Graph",
+    "en_name": "SCC Condensation DAG: Implication Graph",
+    "series": "强连通分量DAG系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "强连通分量DAG应用明确，依赖合理，可以降为C级",
+    "current_direct_pre": [
+      "4.5.2",
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.112",
+    "name": "特殊图：Bipartite Complement",
+    "en_name": "Special Graph: Bipartite Complement",
+    "series": "特殊图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "特殊图系列概念明确，依赖关系合理，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.113",
+    "name": "特殊图：Condensation Dag",
+    "en_name": "Special Graph: Condensation Dag",
+    "series": "特殊图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "特殊图系列概念明确，依赖关系合理，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.114",
+    "name": "特殊图：Functional Graph",
+    "en_name": "Special Graph: Functional Graph",
+    "series": "特殊图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "特殊图系列概念明确，依赖关系合理，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.115",
+    "name": "特殊图：Interval Graph",
+    "en_name": "Special Graph: Interval Graph",
+    "series": "特殊图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "特殊图系列概念明确，依赖关系合理，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.116",
+    "name": "特殊图：Planar Dual Graph",
+    "en_name": "Special Graph: Planar Dual Graph",
+    "series": "平面图系列",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      "部分平面图主题更接近建模套路"
+    ],
+    "suggested_patch": {},
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.117",
+    "name": "特殊图：Tournament Graph",
+    "en_name": "Special Graph: Tournament Graph",
+    "series": "特殊图系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "特殊图系列概念明确，依赖关系合理，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.118",
+    "name": "虚树：Colored Points",
+    "en_name": "Virtual Tree: Colored Points",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.119",
+    "name": "虚树：Distance Compression",
+    "en_name": "Virtual Tree: Distance Compression",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.120",
+    "name": "虚树：Edge Weight Compression",
+    "en_name": "Virtual Tree: Edge Weight Compression",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.121",
+    "name": "虚树：Minimum Connection",
+    "en_name": "Virtual Tree: Minimum Connection",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.122",
+    "name": "虚树：Multi-Key Query",
+    "en_name": "Virtual Tree: Multi-Key Query",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "2.21.123",
+    "name": "虚树：Subtree Aggregation",
+    "en_name": "Virtual Tree: Subtree Aggregation",
+    "series": "虚树系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "虚树系列依赖明确，都是基于LCA和树的经典应用，可以降为C级",
+    "current_direct_pre": [
+      "2.7.1",
+      "2.14.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.100",
+    "name": "多维数据结构：Orthogonal Range Query",
+    "en_name": "Multidimensional Data Structure: Orthogonal Range Query",
+    "series": "多维数据结构系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "多维数据结构依赖明确，是树结构的高级应用，可以降为C级",
+    "current_direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.101",
+    "name": "多维数据结构：Parallel Binary Search",
+    "en_name": "Multidimensional Data Structure: Parallel Binary Search",
+    "series": "多维数据结构系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "多维数据结构依赖明确，是树结构的高级应用，可以降为C级",
+    "current_direct_pre": [
+      "3.7.1",
+      "3.7.2"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.102",
+    "name": "离线数据结构框架：Event Sweep With Tree",
+    "en_name": "Offline Data Structure Framework: Event Sweep With Tree",
+    "series": "离线数据结构框架系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "离线数据结构框架主题明确，依赖合理，可以降为C级",
+    "current_direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.103",
+    "name": "离线数据结构框架：Offline Range Mex",
+    "en_name": "Offline Data Structure Framework: Offline Range Mex",
+    "series": "离线数据结构框架系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "离线数据结构框架主题明确，依赖合理，可以降为C级",
+    "current_direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.104",
+    "name": "离线数据结构框架：Offline Rectangle Add",
+    "en_name": "Offline Data Structure Framework: Offline Rectangle Add",
+    "series": "离线数据结构框架系列",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "离线数据结构框架主题明确，依赖合理，可以降为C级",
+    "current_direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  },
+  {
+    "id": "3.13.105",
+    "name": "离线数据结构框架：Parallel Check Framework",
+    "en_name": "Offline Data Structure Framework: Parallel Check Framework",
+    "series": "离线数据结构框架系列",
+    "review_result": "approve",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [],
+    "suggested_patch": {},
+    "reason": "并行检查框架是复杂技巧，建议保持B级优先级",
+    "current_direct_pre": [
+      "2.1.8",
+      "2.1.5"
+    ],
+    "current_rel": [],
+    "current_tracks": [
+      "icpc",
+      "noi",
+      "university_cp",
+      "interview"
+    ],
+    "current_audience": [
+      "high_school_oi",
+      "university_icpc",
+      "software_engineer_interview",
+      "advanced_competitive_programmer"
+    ],
+    "current_visibility": "expert",
+    "current_learning_path_policy": {
+      "show_in_beginner_path": false,
+      "show_in_interview_path": false,
+      "show_in_competitive_path": false,
+      "show_in_expert_path": true
+    }
+  }
+]

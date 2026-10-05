@@ -1,0 +1,776 @@
+[
+  {
+    "id": "2.21.70",
+    "name": "最大权闭合子图：Binary Decision Model",
+    "en_name": "Maximum Closure: Binary Decision Model",
+    "source_candidate_id": "cand.graph.closure_model.binary_decision_model",
+    "series": "maximum_closure",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "application_model",
+        "severity": "medium",
+        "detail": "Binary Decision Model 是最大权闭合子图的具体应用场景，更接近 problem pattern 而非算法概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "建模题型，可降级并建议同步到 problem_patterns。"
+      },
+      "notes": [
+        "保留 item，但标记为应用模型，适合作为题型分类。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Binary Decision Model 是最大权闭合子图的具体建模场景，属于应用层而非算法层，建议保留 item 但标记为 problem pattern。"
+  },
+  {
+    "id": "2.21.71",
+    "name": "最大权闭合子图：Maximum Weight Closure",
+    "en_name": "Maximum Closure: Maximum Weight Closure",
+    "source_candidate_id": "cand.graph.closure_model.maximum_weight_closure",
+    "series": "maximum_closure",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心概念，依赖明确，属于算法层。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Maximum Weight Closure 是最大权闭合子图的核心概念，依赖 [2.16.3, 2.21.67] 明确，属于算法概念而非建模场景。"
+  },
+  {
+    "id": "2.21.72",
+    "name": "最大权闭合子图：Minimum Cut Transform",
+    "en_name": "Maximum Closure: Minimum Cut Transform",
+    "source_candidate_id": "cand.graph.closure_model.minimum_cut_transform",
+    "series": "maximum_closure",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心转换技巧，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Minimum Cut Transform 是将最大权闭合子图转换为网络流最小割的核心技巧，依赖明确，是算法实现的关键步骤。"
+  },
+  {
+    "id": "2.21.73",
+    "name": "最大权闭合子图：Open Pit Mining Model",
+    "en_name": "Maximum Closure: Open Pit Mining Model",
+    "source_candidate_id": "cand.graph.closure_model.open_pit_mining_model",
+    "series": "maximum_closure",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "application_model",
+        "severity": "medium",
+        "detail": "Open Pit Mining Model 是最大权闭合子图经典的应用建模场景，更接近 problem pattern。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "建模题型，可降级并建议同步到 problem_patterns。"
+      },
+      "notes": [
+        "保留 item，但标记为应用模型，适合作为题型分类。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Open Pit Mining Model 是最大权闭合子图经典的应用场景（开矿问题），属于建模题型，建议保留 item 但标记为 problem pattern。"
+  },
+  {
+    "id": "2.21.74",
+    "name": "最大权闭合子图：Prerequisite Graph",
+    "en_name": "Maximum Closure: Prerequisite Graph",
+    "source_candidate_id": "cand.graph.closure_model.prerequisite_graph",
+    "series": "maximum_closure",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "application_model",
+        "severity": "medium",
+        "detail": "Prerequisite Graph 是最大权闭合子图的应用场景，描述前置依赖选择问题，更接近 problem pattern。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "建模题型，可降级并建议同步到 problem_patterns。"
+      },
+      "notes": [
+        "保留 item，但标记为应用模型，适合作为题型分类。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Prerequisite Graph 是前置依赖选择问题的经典建模，属于应用层，建议保留 item 但标记为 problem pattern。"
+  },
+  {
+    "id": "2.21.75",
+    "name": "最大权闭合子图：Task Selection",
+    "en_name": "Maximum Closure: Task Selection",
+    "source_candidate_id": "cand.graph.closure_model.task_selection",
+    "series": "maximum_closure",
+    "review_result": "move_to_problem_patterns",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [
+      {
+        "code": "application_model",
+        "severity": "medium",
+        "detail": "Task Selection 是最大权闭合子图的应用场景，描述任务选择问题，更接近 problem pattern。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "建模题型，可降级并建议同步到 problem_patterns。"
+      },
+      "notes": [
+        "保留 item，但标记为应用模型，适合作为题型分类。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Task Selection 是任务选择问题的经典建模，属于应用层，建议保留 item 但标记为 problem pattern。"
+  },
+  {
+    "id": "2.21.76",
+    "name": "有向生成树：Branching Theorem",
+    "en_name": "Directed MST: Branching Theorem",
+    "source_candidate_id": "cand.graph.directed_mst.branching_theorem",
+    "series": "directed_mst",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "理论基础清晰，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Branching Theorem 是有向生成树的理论基础，描述了分支结构的存在性和性质，依赖 [4.5.2, 2.13.10] 明确合理。"
+  },
+  {
+    "id": "2.21.77",
+    "name": "有向生成树：Maximum Arborescence",
+    "en_name": "Directed MST: Maximum Arborescence",
+    "source_candidate_id": "cand.graph.directed_mst.maximum_arborescence",
+    "series": "directed_mst",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心算法概念，与 Minimum Arborescence 有明确区分。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Maximum Arborescence 是有向生成树的核心概念，与 Minimum Arborescence 有明确区分（求最大权和最小权），依赖明确合理。"
+  },
+  {
+    "id": "2.21.78",
+    "name": "有向生成树：Minimum Arborescence",
+    "en_name": "Directed MST: Minimum Arborescence",
+    "source_candidate_id": "cand.graph.directed_mst.minimum_arborescence",
+    "series": "directed_mst",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心算法概念，与 Maximum Arborescence 有明确区分。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Minimum Arborescence 是有向生成树的核心概念，与 Maximum Arborescence 有明确区分，依赖明确合理。"
+  },
+  {
+    "id": "2.21.79",
+    "name": "有向生成树：Rooted Arborescence",
+    "en_name": "Directed MST: Rooted Arborescence",
+    "source_candidate_id": "cand.graph.directed_mst.rooted_arborescence",
+    "series": "directed_mst",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "特定类型的 arborescence，概念清晰。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Rooted Arborescence 是指定根节点的有向生成树，与 Maximum/Minimum Arborescence 是不同维度的分类（是否指定根 vs 优化目标），概念清晰合理。"
+  },
+  {
+    "id": "2.21.80",
+    "name": "有向生成树：Super Root Model",
+    "en_name": "Directed MST: Super Root Model",
+    "source_candidate_id": "cand.graph.directed_mst.super_root_model",
+    "series": "directed_mst",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "重要建模技巧，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Super Root Model 是将有向生成树问题转化为单一根点的重要技巧，依赖明确，是解决不指定根问题的标准方法。"
+  },
+  {
+    "id": "2.21.81",
+    "name": "有向生成树：Weighted Directed Mst",
+    "en_name": "Directed MST: Weighted Directed Mst",
+    "source_candidate_id": "cand.graph.directed_mst.weighted_directed_mst",
+    "series": "directed_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Weighted Directed Mst 应该依赖 2.21.77 或 2.21.78，而非仅依赖 4.5.2 和 2.13.10。"
+      },
+      {
+        "code": "potential_overlap",
+        "severity": "medium",
+        "detail": "Weighted Directed Mst 与 Maximum/Minimum Arborescence 可能有语义重叠，需要确认是否需要保留。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要细化，概念需要明确区分。"
+      },
+      "notes": [
+        "建议人工确认与 Maximum/Minimum Arborescence 的关系。"
+      ],
+      "direct_pre_add": [
+        "2.21.77",
+        "2.21.78"
+      ]
+    },
+    "reason": "Weighted Directed Mst 可能与 Maximum/Minimum Arborescence 语义重叠，建议人工确认是否需要保留，并补充依赖。"
+  },
+  {
+    "id": "2.21.82",
+    "name": "支配树：Bridge Relation",
+    "en_name": "Dominator Tree: Bridge Relation",
+    "source_candidate_id": "cand.graph.dominator_tree.bridge_relation",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "支配树的理论概念，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Bridge Relation 是支配树的理论概念，描述支配关系与桥边的联系，依赖 [4.5.2, 2.7.1] 明确合理。"
+  },
+  {
+    "id": "2.21.83",
+    "name": "支配树：Dag Dominator",
+    "en_name": "Dominator Tree: Dag Dominator",
+    "source_candidate_id": "cand.graph.dominator_tree.dag_dominator",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "DAG 上的支配关系，概念清晰。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Dag Dominator 是 DAG 上支配关系的简化情况，概念清晰，依赖明确合理。"
+  },
+  {
+    "id": "2.21.84",
+    "name": "支配树：Dominance Frontier",
+    "en_name": "Dominator Tree: Dominance Frontier",
+    "source_candidate_id": "cand.graph.dominator_tree.dominance_frontier",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "支配树的重要概念，用于 SSA 构造。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Dominance Frontier 是支配树的重要概念，在编译器优化（SSA 构造）中有广泛应用，依赖明确合理。"
+  },
+  {
+    "id": "2.21.85",
+    "name": "支配树：Dominator Tree Dp",
+    "en_name": "Dominator Tree: Dominator Tree Dp",
+    "source_candidate_id": "cand.graph.dominator_tree.dominator_tree_dp",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "高级应用技巧，边界需要抽查。"
+      },
+      "notes": [
+        "支配树上的 DP 应用场景需要人工确认边界。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Dominator Tree Dp 是支配树的高级应用，涉及在支配树上进行动态规划，应用边界需要人工抽查确认。"
+  },
+  {
+    "id": "2.21.86",
+    "name": "支配树：Online Query",
+    "en_name": "Dominator Tree: Online Query",
+    "source_candidate_id": "cand.graph.dominator_tree.online_query",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "高级查询技巧，边界需要抽查。"
+      },
+      "notes": [
+        "在线查询的场景和算法细节需要人工确认。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Online Query 是支配树的在线查询优化，涉及复杂的数据结构和算法，边界需要人工抽查确认。"
+  },
+  {
+    "id": "2.21.87",
+    "name": "支配树：Path Dominator Query",
+    "en_name": "Dominator Tree: Path Dominator Query",
+    "source_candidate_id": "cand.graph.dominator_tree.path_dominator_query",
+    "series": "dominator_tree",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "特定的查询类型，概念清晰。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Path Dominator Query 是路径支配查询，是支配树的标准查询类型，概念清晰合理。"
+  },
+  {
+    "id": "2.21.88",
+    "name": "动态最小生成树：Batch Recomputation",
+    "en_name": "Dynamic MST: Batch Recomputation",
+    "source_candidate_id": "cand.graph.dynamic_mst.batch_recomputation",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Batch Recomputation 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Batch Recomputation 是 Dynamic MST 的一种策略，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Batch Recomputation 是动态最小生成树的批量重计算策略，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.89",
+    "name": "动态最小生成树：Certificate Graph",
+    "en_name": "Dynamic MST: Certificate Graph",
+    "source_candidate_id": "cand.graph.dynamic_mst.certificate_graph",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Certificate Graph 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Certificate Graph 是 Dynamic MST 的核心数据结构，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Certificate Graph 是动态最小生成树的核心数据结构，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.90",
+    "name": "动态最小生成树：Divide Conquer Approach",
+    "en_name": "Dynamic MST: Divide Conquer Approach",
+    "source_candidate_id": "cand.graph.dynamic_mst.divide_conquer_approach",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Divide Conquer Approach 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Divide Conquer Approach 是 Dynamic MST 的算法策略，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Divide Conquer Approach 是动态最小生成树的分治算法策略，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.91",
+    "name": "动态最小生成树：Edge Deletion",
+    "en_name": "Dynamic MST: Edge Deletion",
+    "source_candidate_id": "cand.graph.dynamic_mst.edge_deletion",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Edge Deletion 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Edge Deletion 是 Dynamic MST 的操作类型，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Edge Deletion 是动态最小生成树的边删除操作，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.92",
+    "name": "动态最小生成树：Edge Insertion",
+    "en_name": "Dynamic MST: Edge Insertion",
+    "source_candidate_id": "cand.graph.dynamic_mst.edge_insertion",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Edge Insertion 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Edge Insertion 是 Dynamic MST 的操作类型，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Edge Insertion 是动态最小生成树的边插入操作，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.93",
+    "name": "动态最小生成树：Sensitivity Analysis",
+    "en_name": "Dynamic MST: Sensitivity Analysis",
+    "source_candidate_id": "cand.graph.dynamic_mst.sensitivity_analysis",
+    "series": "dynamic_mst",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Sensitivity Analysis 应该依赖 2.21.44（Dynamic MST: Offline Updates）或 Dynamic MST 主概念。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Dynamic MST 主概念。"
+      },
+      "notes": [
+        "Sensitivity Analysis 是 Dynamic MST 的分析工具，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.44"
+      ]
+    },
+    "reason": "Sensitivity Analysis 是动态最小生成树的灵敏度分析工具，应该依赖 2.21.44（Dynamic MST: Offline Updates）。"
+  },
+  {
+    "id": "2.21.94",
+    "name": "全局最小割：Cut Tree Query",
+    "en_name": "Global Min-Cut: Cut Tree Query",
+    "source_candidate_id": "cand.graph.global_min_cut.cut_tree_query",
+    "series": "global_min_cut",
+    "review_result": "approve",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "高级查询技巧，边界需要抽查。"
+      },
+      "notes": [
+        "Gomory Hu Tree 上的查询技巧需要人工确认边界。"
+      ],
+      "direct_pre_add": []
+    },
+    "reason": "Cut Tree Query 是 Gomory Hu Tree 上的高级查询技巧，依赖 [2.21.67, 2.16.12] 明确，但边界需要人工抽查确认。"
+  },
+  {
+    "id": "2.21.95",
+    "name": "全局最小割：Pair Min Cut",
+    "en_name": "Global Min-Cut: Pair Min Cut",
+    "source_candidate_id": "cand.graph.global_min_cut.pair_min_cut",
+    "series": "global_min_cut",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心概念，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Pair Min Cut 是全局最小割的核心概念，描述点对之间的最小割，依赖 [2.21.67, 2.16.12] 明确合理。"
+  },
+  {
+    "id": "2.21.96",
+    "name": "全局最小割：Random Contraction",
+    "en_name": "Global Min-Cut: Random Contraction",
+    "source_candidate_id": "cand.graph.global_min_cut.random_contraction",
+    "series": "global_min_cut",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Random Contraction 应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Global Min-Cut 主概念。"
+      },
+      "notes": [
+        "Random Contraction 是 Global Min-Cut 的经典算法，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.45"
+      ]
+    },
+    "reason": "Random Contraction（Karger 算法）是全局最小割的经典随机算法，应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+  },
+  {
+    "id": "2.21.97",
+    "name": "全局最小割：Recursive Contraction",
+    "en_name": "Global Min-Cut: Recursive Contraction",
+    "source_candidate_id": "cand.graph.global_min_cut.recursive_contraction",
+    "series": "global_min_cut",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Recursive Contraction 应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Global Min-Cut 主概念。"
+      },
+      "notes": [
+        "Recursive Contraction 是 Global Min-Cut 的算法优化，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.45"
+      ]
+    },
+    "reason": "Recursive Contraction 是全局最小割算法的递归优化，应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+  },
+  {
+    "id": "2.21.98",
+    "name": "全局最小割：Sparsification",
+    "en_name": "Global Min-Cut: Sparsification",
+    "source_candidate_id": "cand.graph.global_min_cut.sparsification",
+    "series": "global_min_cut",
+    "review_result": "needs_dependency_fix",
+    "new_review_priority": "B",
+    "need_manual_review": true,
+    "issues": [
+      {
+        "code": "missing_key_prerequisite",
+        "severity": "high",
+        "detail": "Sparsification 应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+      }
+    ],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "依赖需要补充 Global Min-Cut 主概念。"
+      },
+      "notes": [
+        "Sparsification 是 Global Min-Cut 的优化技巧，应依赖主概念。"
+      ],
+      "direct_pre_add": [
+        "2.21.45"
+      ]
+    },
+    "reason": "Sparsification 是全局最小割的稀疏化优化技巧，应该依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。"
+  },
+  {
+    "id": "2.21.99",
+    "name": "全局最小割：Undirected Min Cut",
+    "en_name": "Global Min-Cut: Undirected Min Cut",
+    "source_candidate_id": "cand.graph.global_min_cut.undirected_min_cut",
+    "series": "global_min_cut",
+    "review_result": "approve",
+    "new_review_priority": "C",
+    "need_manual_review": false,
+    "issues": [],
+    "suggested_patch": {
+      "review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "核心概念，依赖明确。"
+      },
+      "notes": [],
+      "direct_pre_add": []
+    },
+    "reason": "Undirected Min Cut 是全局最小割的核心概念，描述无向图的最小割问题，依赖 [2.21.67, 2.16.12] 明确合理。"
+  }
+]

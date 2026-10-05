@@ -1,0 +1,476 @@
+{
+  "sectionId": "2.9",
+  "sectionName": "图基础与遍历",
+  "units": [
+    {
+      "itemId": "2.9.1",
+      "title": "图的 DFS",
+      "learningGoal": "理解图上 DFS 的遍历原理，掌握邻接表存图下的 DFS 实现，能用于连通性判断和环检测",
+      "explanation": "图上的 DFS（深度优先搜索）是图论最基础的遍历算法。\n\n基本思路：从起点出发，沿一条路走到底，走不通就回退换路。\n\n与树上的 DFS 不同，图可能有环，所以必须用 visited 数组标记已访问节点，防止死循环。\n\nDFS 标准模板：\nvoid dfs(int u) {\n    visited[u] = true;\n    for (int v : adj[u])\n        if (!visited[v])\n            dfs(v);\n}\n\n时间复杂度：O(V + E)，每个节点和每条边最多访问一次。\n空间复杂度：O(V)，visited 数组 + 递归栈深度。\n\n常见应用：\n- 连通性判断\n- 环检测（有向图/无向图）\n- 求连通分量个数\n- 拓扑排序\n- 二分图判定",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nbool visited[10005];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    cout << u << \" \";\n    for (int v : adj[u]) {\n        if (!visited[v]) {\n            dfs(v);\n        }\n    }\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    dfs(1);\n    return 0;\n}",
+      "codeNotes": [
+        "adj[] 邻接表存图",
+        "visited[] 标记已访问，防止环导致死循环",
+        "进入 dfs 第一行就标记 visited[u] = true",
+        "遍历所有未访问邻居并递归，时间 O(V+E)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记标记 visited 导致死循环",
+          "description": "图有环时，不标记 visited 会无限递归。",
+          "fix": "进入递归函数的第一行就写 visited[u] = true;。"
+        },
+        {
+          "title": "递归层数过深导致栈溢出",
+          "description": "节点数超过 ~10^5 时，递归 DFS 可能栈溢出。",
+          "fix": "改用非递归 DFS（手写栈），或调整编译器栈大小限制。"
+        },
+        {
+          "title": "无向图存边只存单向",
+          "description": "无向图的边需要存两次：adj[u].push_back(v) 和 adj[v].push_back(u)。",
+          "fix": "无向图每条边要双向存储。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个节点 m 条边的无向图，从节点 1 出发 DFS 遍历，输出访问顺序。",
+        "hint": "邻接表存图，visited 数组标记，递归遍历。",
+        "expectedIdea": "标准 DFS 模板，adj + visited + 递归"
+      },
+      "quiz": [
+        {
+          "question": "图上 DFS 为什么必须使用 visited 数组？",
+          "options": [
+            "提高运行速度",
+            "防止图中环导致无限递归",
+            "记录路径长度",
+            "排序节点"
+          ],
+          "answerIndex": 1,
+          "explanation": "图可能有环，不标记已访问节点会陷入无限循环。"
+        },
+        {
+          "question": "图上 DFS 的时间复杂度是？",
+          "options": [
+            "O(V)",
+            "O(V + E)",
+            "O(V × E)",
+            "O(V^2)"
+          ],
+          "answerIndex": 1,
+          "explanation": "每个顶点访问一次 O(V)，每条边检查一次 O(E)，总共 O(V + E)。"
+        },
+        {
+          "question": "对无向图，n 个节点 m 条边，邻接表中总共有多少条记录？",
+          "options": [
+            "m 条",
+            "2m 条",
+            "n 条",
+            "n + m 条"
+          ],
+          "answerIndex": 1,
+          "explanation": "无向图每条边存两次（u→v 和 v→u），所以共 2m 条记录。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.2",
+      "title": "图的 BFS",
+      "learningGoal": "理解图上 BFS 的逐层扩展原理，掌握队列实现，能用于求无权图最短路径",
+      "explanation": "图上的 BFS（广度优先搜索）从起点出发，逐层向外扩展。\n\nBFS 用队列实现：\n1. 起点入队，标记 visited\n2. 循环：取出队首，将未访问邻居入队\n3. 队列为空时结束\n\nBFS 标准模板：\nqueue<int> q;\nq.push(start);\nvisited[start] = true;\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u])\n        if (!visited[v]) {\n            visited[v] = true;\n            q.push(v);\n        }\n}\n\n时间复杂度：O(V + E)\n空间复杂度：O(V)\n\nBFS 的核心优势：在无权图中，BFS 第一次到达某节点时的距离就是最短距离。因此 BFS 天然适合求无权图最短路径。\n\nBFS vs DFS：\n- BFS：逐层扩展，空间 O(V)，适合求最短路\n- DFS：深入到底再回溯，空间 O(深度)，适合连通性/回溯",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nbool visited[10005];\nint dist[10005];\n\nvoid bfs(int start) {\n    queue<int> q;\n    q.push(start);\n    visited[start] = true;\n    dist[start] = 0;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                dist[v] = dist[u] + 1;\n                q.push(v);\n            }\n        }\n    }\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    bfs(1);\n    for (int i = 1; i <= n; i++)\n        cout << \"dist[\" << i << \"]=\" << dist[i] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "BFS 用队列实现，先进先出",
+        "入队时就标记 visited，防止重复入队",
+        "dist 数组记录到起点的最短距离",
+        "第一次到达时距离最短，天然求无权最短路"
+      ],
+      "commonMistakes": [
+        {
+          "title": "出队时才标记 visited",
+          "description": "如果出队时才标记 visited，同一节点可能被多个邻居重复入队。",
+          "fix": "入队时就标记 visited[v] = true，保证每个节点只入队一次。"
+        },
+        {
+          "title": "dist 数组未初始化",
+          "description": "dist 未初始化为 -1 或 0，无法区分「未到达」和「距离为 0」。",
+          "fix": "memset(dist, -1, sizeof(dist))，起点 dist[start] = 0。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定无向图和起点 s，用 BFS 求起点到每个节点的最短距离。无法到达输出 -1。",
+        "hint": "BFS 模板，dist 初始化为 -1，起点 dist[s] = 0。",
+        "expectedIdea": "标准 BFS + dist 数组模板"
+      },
+      "quiz": [
+        {
+          "question": "BFS 为什么能求无权图最短路径？",
+          "options": [
+            "BFS 用了优先队列",
+            "BFS 按距离从小到大逐层扩展",
+            "BFS 不会重复访问",
+            "BFS 比 DFS 快"
+          ],
+          "answerIndex": 1,
+          "explanation": "BFS 逐层扩展，距离为 1 的先访问，距离为 2 的后访问，所以第一次到达时距离最短。"
+        },
+        {
+          "question": "BFS 中 visited 应该在什么时候标记？",
+          "options": [
+            "出队时",
+            "入队时",
+            "处理完所有邻居后",
+            "不需要标记"
+          ],
+          "answerIndex": 1,
+          "explanation": "入队时就标记 visited，防止同一节点被多个邻居重复入队，保证每个节点只入队一次。"
+        },
+        {
+          "question": "BFS 和 DFS 的空间复杂度分别取决于什么？",
+          "options": [
+            "都取决于边数",
+            "BFS 取决于队列大小（最宽层），DFS 取决于递归深度",
+            "都取决于节点数",
+            "BFS 取决于递归深度，DFS 取决于队列大小"
+          ],
+          "answerIndex": 1,
+          "explanation": "BFS 队列最多存一层的节点，DFS 递归栈最深为图的最长路径。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.3",
+      "title": "图建模基础",
+      "learningGoal": "掌握三种常见存图方式（邻接矩阵、邻接表、链式前向星），能根据题目选择合适的存图方式",
+      "explanation": "图建模是把实际问题转化为图论问题的过程，存图方式是基础。\n\n三种常见存图方式：\n\n1. 邻接矩阵（适合稠密图）\n   int g[N][N];  // g[u][v] = 边权或 0/1\n   优点：查边 O(1)，实现简单\n   缺点：空间 O(V^2)，遍历邻居 O(V)\n\n2. 邻接表（最常用，适合稀疏图）\n   vector<int> adj[N];  // adj[u] 存 u 的所有邻居\n   优点：空间 O(V+E)，遍历邻居 O(度数)\n   缺点：查边 O(度数)\n\n3. 链式前向星（竞赛常用）\n   struct Edge { int to, w, next; } edges[M];\n   int head[N], cnt;\n   优点：空间连续，效率高\n   缺点：写法复杂\n\n选择建议：\n- 一般题目用邻接表（vector）就够了\n- 节点数 N <= 1000 且边多时可用邻接矩阵\n- 边数特别大或需要高效遍历时用链式前向星\n\n常见建模场景：\n- 朋友关系 → 无向图\n- 道路交通 → 有向/无向带权图\n- 先修课程 → 有向图（DAG）",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nconst int N = 10005;\nvector<pair<int,int>> adj[N];\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        adj[u].push_back({v, w});\n        adj[v].push_back({u, w});\n    }\n    for (int u = 1; u <= n; u++) {\n        cout << u << \": \";\n        for (auto [v, w] : adj[u])\n            cout << \"(\" << v << \",\" << w << \") \";\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "vector<pair<int,int>> adj[N] 存带权图",
+        "adj[u] 里每个 pair 是 (邻居, 权值)",
+        "无向图每条边存两次",
+        "邻接表空间 O(V+E)，最常用"
+      ],
+      "commonMistakes": [
+        {
+          "title": "邻接矩阵开太大",
+          "description": "节点数 N=100000 时，g[N][N] 需要 10^10 的空间，内存爆炸。",
+          "fix": "节点数大时必须用邻接表或链式前向星。"
+        },
+        {
+          "title": "有向图当无向图存",
+          "description": "题目说是有向图，但存边时存了双向。",
+          "fix": "有向图只存 adj[u].push_back(v)，不存反向边。"
+        },
+        {
+          "title": "重边和自环没处理",
+          "description": "有些题目有重边或自环，需要根据题意决定是否去重。",
+          "fix": "仔细读题，必要时用 set 去重或取最短边。"
+        }
+      ],
+      "practice": {
+        "prompt": "读入 n 个节点 m 条边的有向带权图，用邻接表存储，然后输出每个节点的出度和所有邻居。",
+        "hint": "adj[u].push_back({v, w})，出度 = adj[u].size()。",
+        "expectedIdea": "邻接表存有向带权图，遍历输出"
+      },
+      "quiz": [
+        {
+          "question": "节点数 N=100000、边数 M=200000 的稀疏图，应该用哪种存图方式？",
+          "options": [
+            "邻接矩阵",
+            "邻接表",
+            "直接用数组",
+            "不需要存图"
+          ],
+          "answerIndex": 1,
+          "explanation": "稀疏图用邻接表，空间 O(V+E) 远小于邻接矩阵的 O(V^2)。"
+        },
+        {
+          "question": "邻接矩阵 g[N][N] 的空间复杂度是？",
+          "options": [
+            "O(N)",
+            "O(N + M)",
+            "O(N^2)",
+            "O(N × M)"
+          ],
+          "answerIndex": 2,
+          "explanation": "邻接矩阵是 N×N 的二维数组，空间 O(N^2)。"
+        },
+        {
+          "question": "有向图和无向图在邻接表存储上的区别是？",
+          "options": [
+            "没有区别",
+            "无向图每条边存两次，有向图只存一次",
+            "有向图每条边存两次",
+            "无向图不需要存图"
+          ],
+          "answerIndex": 1,
+          "explanation": "无向边 (u,v) 等价于 u→v 和 v→u，需要存两次；有向边只存一个方向。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.4",
+      "title": "连通性",
+      "learningGoal": "理解连通图、连通分量的概念，掌握用 DFS/BFS 求连通分量的方法",
+      "explanation": "连通性是图论的基本概念：\n\n无向图的连通性：\n- 连通图：任意两个节点之间都有路径\n- 连通分量：极大连通子图\n- 非连通图由多个连通分量组成\n\n有向图的连通性：\n- 强连通：任意两个节点互相可达\n- 弱连通：忽略方向后连通\n\n求连通分量方法：\n1. 遍历所有节点\n2. 对每个未访问节点执行 DFS/BFS\n3. 每次搜索覆盖一个连通分量\n4. 搜索次数 = 连通分量个数\n\n代码框架：\nint cnt = 0;\nfor (int i = 1; i <= n; i++)\n    if (!visited[i]) {\n        dfs(i);\n        cnt++;\n    }\n\ncnt 就是连通分量个数。\n\n时间复杂度：O(V + E)",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nbool visited[10005];\n\nvoid dfs(int u) {\n    visited[u] = true;\n    for (int v : adj[u])\n        if (!visited[v])\n            dfs(v);\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    int components = 0;\n    for (int i = 1; i <= n; i++) {\n        if (!visited[i]) {\n            dfs(i);\n            components++;\n        }\n    }\n    cout << \"连通分量个数: \" << components << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "对每个未访问节点执行 DFS",
+        "一次 DFS 覆盖一个连通分量",
+        "DFS 调用次数 = 连通分量个数",
+        "连通图时 components = 1"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只从一个节点出发遍历",
+          "description": "只从节点 1 出发 DFS，漏掉了其他连通分量中的节点。",
+          "fix": "必须遍历所有节点 1~n，对每个未访问节点启动新的 DFS。"
+        },
+        {
+          "title": "混淆有向图和无向图的连通性",
+          "description": "有向图的连通性更复杂（强连通 vs 弱连通），不能直接套用无向图的方法。",
+          "fix": "有向图强连通分量需要 Kosaraju 或 Tarjan 算法。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个城市 m 条道路（无向图），判断所有城市是否连通。如果不连通，输出连通分量个数。",
+        "hint": "对每个未访问城市 DFS，统计 DFS 调用次数。",
+        "expectedIdea": "遍历所有节点，未访问就 DFS，cnt++。cnt==1 则连通。"
+      },
+      "quiz": [
+        {
+          "question": "一个连通图有几个连通分量？",
+          "options": [
+            "0 个",
+            "1 个",
+            "等于节点数",
+            "等于边数"
+          ],
+          "answerIndex": 1,
+          "explanation": "连通图的定义就是任意两点都有路径，所以整体是一个连通分量。"
+        },
+        {
+          "question": "求无向图连通分量个数的时间复杂度是？",
+          "options": [
+            "O(V)",
+            "O(V + E)",
+            "O(V^2)",
+            "O(V × E)"
+          ],
+          "answerIndex": 1,
+          "explanation": "本质就是一次完整的 DFS/BFS 遍历，每个节点和边最多访问一次，O(V+E)。"
+        },
+        {
+          "question": "n 个节点 0 条边的图，连通分量个数是？",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "n-1"
+          ],
+          "answerIndex": 2,
+          "explanation": "没有边时每个节点自成一个连通分量，共 n 个。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.5",
+      "title": "染色法 / 二分图判定",
+      "learningGoal": "理解二分图的定义，掌握用 BFS/DFS 染色法判定二分图的方法",
+      "explanation": "二分图（Bipartite Graph）：顶点可分成两个集合 L 和 R，每条边只连接 L 和 R 中的顶点（没有集合内部的边）。\n\n等价条件：图无奇数长度的环。\n\n染色法判定二分图：\n- 用两种颜色（0 和 1）给节点染色\n- 起点染颜色 0\n- 每条边两端必须不同颜色\n- 如果发现相邻节点同色 → 不是二分图\n\nBFS 染色实现：\n1. 起点入队，染颜色 0\n2. 取出队首 u，遍历邻居 v\n3. 如果 v 未染色，染成与 u 不同的颜色，入队\n4. 如果 v 已染色且与 u 同色 → 不是二分图\n\n时间复杂度：O(V + E)\n\n常见应用：\n- 匹配问题（二分图最大匹配）\n- 任务分配\n- 判断是否可以把节点分成两组",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nint color[10005]; // -1=未染色, 0/1=颜色\n\nbool isBipartite() {\n    for (int i = 1; i <= n; i++) color[i] = -1;\n    for (int s = 1; s <= n; s++) {\n        if (color[s] != -1) continue;\n        color[s] = 0;\n        queue<int> q;\n        q.push(s);\n        while (!q.empty()) {\n            int u = q.front(); q.pop();\n            for (int v : adj[u]) {\n                if (color[v] == -1) {\n                    color[v] = 1 - color[u];\n                    q.push(v);\n                } else if (color[v] == color[u]) {\n                    return false;\n                }\n            }\n        }\n    }\n    return true;\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n    }\n    cout << (isBipartite() ? \"Yes\" : \"No\") << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "color[] 初始化为 -1 表示未染色",
+        "相邻节点染不同颜色：color[v] = 1 - color[u]",
+        "发现相邻同色 → 不是二分图",
+        "不一定是连通图，要遍历所有未染色起点"
+      ],
+      "commonMistakes": [
+        {
+          "title": "只从一个起点开始染色",
+          "description": "图不连通时，只从一个起点 BFS 只能覆盖一个连通分量。",
+          "fix": "遍历所有节点，对每个未染色的节点启动 BFS。"
+        },
+        {
+          "title": "color 初始化为 0",
+          "description": "color 默认为 0，无法区分「未染色」和「颜色 0」。",
+          "fix": "初始化 color 为 -1（表示未染色），0 和 1 表示两种颜色。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个人和 m 对敌对关系（无向边），判断能否把所有人分成两组，使得同一组内没有敌对关系。",
+        "hint": "二分图判定：敌对关系建图，用染色法判定。",
+        "expectedIdea": "染色法判定二分图，相邻不同色则可以分组。"
+      },
+      "quiz": [
+        {
+          "question": "以下哪个图一定是二分图？",
+          "options": [
+            "含三角形（3 元环）的图",
+            "树",
+            "含 5 元环的图",
+            "完全图 K5"
+          ],
+          "answerIndex": 1,
+          "explanation": "树没有环，自然没有奇数长度的环，所以一定是二分图。"
+        },
+        {
+          "question": "染色法判定二分图的时间复杂度是？",
+          "options": [
+            "O(V)",
+            "O(V + E)",
+            "O(V^2)",
+            "O(E^2)"
+          ],
+          "answerIndex": 1,
+          "explanation": "染色法本质是一次 BFS/DFS 遍历，O(V+E)。"
+        },
+        {
+          "question": "二分图的等价定义是？",
+          "options": [
+            "没有度为奇数的节点",
+            "没有奇数长度的环",
+            "边数等于节点数",
+            "所有节点度数相同"
+          ],
+          "answerIndex": 1,
+          "explanation": "二分图等价于图中不存在奇数长度的环（可用染色法证明）。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.6",
+      "title": "拓扑排序",
+      "learningGoal": "理解拓扑排序的概念和前提（DAG），掌握 Kahn 算法和 DFS 方法实现拓扑排序",
+      "explanation": "拓扑排序（Topological Sort）：将有向无环图（DAG）的所有节点排成一个线性序列，使得每条边的起点在终点前面。\n\n前提：图必须是 DAG（有向无环图）。\n\nKahn 算法（BFS 方式）：\n1. 计算所有节点的入度\n2. 将入度为 0 的节点入队\n3. 循环：取出队首 u，删掉 u 的所有出边\n4. 如果某邻居入度变为 0，入队\n5. 若所有节点都输出 → 拓扑序；否则有环\n\nDFS 方式：\n1. 对每个未访问节点 DFS\n2. 在递归返回时（后序）将节点加入序列\n3. 反转序列即为拓扑序\n\n时间复杂度：O(V + E)\n空间复杂度：O(V)\n\n应用：\n- 判断有向图是否有环\n- 任务调度（有依赖关系的任务排序）\n- 编译依赖分析",
+      "exampleCode": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nint indeg[10005];\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n    }\n    for (int u = 1; u <= n; u++)\n        for (int v : adj[u])\n            indeg[v]++;\n    queue<int> q;\n    for (int i = 1; i <= n; i++)\n        if (indeg[i] == 0) q.push(i);\n    vector<int> topo;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        topo.push_back(u);\n        for (int v : adj[u]) {\n            indeg[v]--;\n            if (indeg[v] == 0) q.push(v);\n        }\n    }\n    if (topo.size() == n) {\n        for (int x : topo) cout << x << \" \";\n    } else {\n        cout << \"图中有环！\" << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "先计算所有节点入度",
+        "入度为 0 的节点入队",
+        "取出队首，删出边，邻居入度减 1",
+        "入度减到 0 的邻居入队；输出节点数 < n 说明有环"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记判断是否有环",
+          "description": "拓扑排序后输出的节点数 < n，说明有环，但没检查。",
+          "fix": "if (topo.size() < n) 则图中有环，不存在拓扑序。"
+        },
+        {
+          "title": "入度计算错误",
+          "description": "在建边时忘了统计入度，或统计方式不对。",
+          "fix": "对每条边 u→v，indeg[v]++。"
+        },
+        {
+          "title": "拓扑序不唯一时处理不当",
+          "description": "拓扑序可能不唯一，题目要求字典序最小时需要用优先队列。",
+          "fix": "把 queue 改成 priority_queue 即可得到字典序最小的拓扑序。"
+        }
+      ],
+      "practice": {
+        "prompt": "n 个任务，m 个依赖关系（u v 表示 u 必须在 v 之前完成），输出一个合法的完成顺序。",
+        "hint": "拓扑排序 Kahn 算法，入度为 0 的任务先做。",
+        "expectedIdea": "Kahn 算法拓扑排序模板"
+      },
+      "quiz": [
+        {
+          "question": "拓扑排序的前提条件是什么？",
+          "options": [
+            "图必须连通",
+            "图必须是无向图",
+            "图必须是有向无环图（DAG）",
+            "图必须是完全图"
+          ],
+          "answerIndex": 2,
+          "explanation": "拓扑排序只对 DAG 有意义，有环的有向图不存在拓扑序。"
+        },
+        {
+          "question": "Kahn 算法中，如何判断图有环？",
+          "options": [
+            "队列为空时还有节点没输出",
+            "某个节点入度为 0",
+            "某条边被访问两次",
+            "DFS 递归层数太深"
+          ],
+          "answerIndex": 0,
+          "explanation": "如果拓扑排序结束后输出的节点数 < n，说明有环（环中节点入度永远不会变 0）。"
+        },
+        {
+          "question": "拓扑排序的时间复杂度是？",
+          "options": [
+            "O(V)",
+            "O(V + E)",
+            "O(V^2)",
+            "O(V log V)"
+          ],
+          "answerIndex": 1,
+          "explanation": "每个节点入队出队一次 O(V)，每条边处理一次 O(E)，总共 O(V+E)。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.9.7",
+      "title": "DAG 判定",
+      "learningGoal": "理解 DAG 的定义和性质，掌握用拓扑排序或 DFS 判定有向图是否为 DAG 的方法",
+      "explanation": "DAG（Directed Acyclic Graph）= 有向无环图。\n\nDAG 的重要性质：\n1. DAG 一定存在拓扑排序\n2. 有向图是 DAG ⟺ 存在拓扑排序 ⟺ 没有有向环\n3. DAG 上可以做 DP（按拓扑序递推）\n\n判定方法一：拓扑排序（Kahn 算法）\n- 执行 Kahn 算法\n- 如果所有节点都被输出 → 是 DAG\n- 如果有节点未被输出 → 有环，不是 DAG\n\n判定方法二：DFS 三色标记法\n- 白（0）：未访问\n- 灰（1）：正在访问（在当前递归栈中）\n- 黑（2）：已完成\n- 如果 DFS 时遇到灰色节点 → 发现后向边 → 有环\n\n时间复杂度：O(V + E)\n\nDAG 的应用：\n- 拓扑排序\n- DAG 上的 DP（最长路、最短路、路径计数）\n- 任务调度\n- 版本控制系统的依赖图",
+      "exampleCode": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint n, m;\nvector<int> adj[10005];\nint state[10005]; // 0=未访问, 1=访问中, 2=已完成\nbool hasCycle = false;\n\nvoid dfs(int u) {\n    state[u] = 1;\n    for (int v : adj[u]) {\n        if (state[v] == 0) {\n            dfs(v);\n        } else if (state[v] == 1) {\n            hasCycle = true;\n        }\n    }\n    state[u] = 2;\n}\n\nint main() {\n    cin >> n >> m;\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        adj[u].push_back(v);\n    }\n    for (int i = 1; i <= n; i++)\n        if (state[i] == 0)\n            dfs(i);\n    cout << (hasCycle ? \"不是 DAG\" : \"是 DAG\") << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "三色标记：0=未访问(白), 1=访问中(灰), 2=已完成(黑)",
+        "遇到灰色节点(1)说明有后向边，即有环",
+        "递归结束时标记为黑色(2)",
+        "遍历所有未访问节点，确保覆盖所有连通分量"
+      ],
+      "commonMistakes": [
+        {
+          "title": "DFS 判环时只用 visited 二值标记",
+          "description": "只用 visited[true/false] 无法区分「在当前路径上」和「已经完全处理完」。",
+          "fix": "用三色标记（白/灰/黑），只有遇到灰色（当前路径上的节点）才是环。"
+        },
+        {
+          "title": "混淆无向图和有向图的环检测",
+          "description": "无向图判环只需 visited，有向图需要三色标记法。",
+          "fix": "有向图环检测必须区分「在递归栈中」和「已完成」，用三色标记。"
+        }
+      ],
+      "practice": {
+        "prompt": "给定 n 个节点 m 条有向边的图，判断它是否是 DAG（有向无环图）。",
+        "hint": "DFS 三色标记法或 Kahn 拓扑排序判定。",
+        "expectedIdea": "DFS 三色标记：遇到灰色节点则有环，否则是 DAG。"
+      },
+      "quiz": [
+        {
+          "question": "DFS 三色标记法中，遇到什么颜色的节点说明有环？",
+          "options": [
+            "白色（未访问）",
+            "灰色（访问中）",
+            "黑色（已完成）",
+            "任意颜色"
+          ],
+          "answerIndex": 1,
+          "explanation": "灰色节点在当前递归路径上，遇到灰色说明形成了后向边，即存在环。"
+        },
+        {
+          "question": "以下哪个等价说法是正确的？",
+          "options": [
+            "DAG ⟺ 有环的有向图",
+            "DAG ⟺ 存在拓扑排序的有向图",
+            "DAG ⟺ 连通的有向图",
+            "DAG ⟺ 每个节点都有入边"
+          ],
+          "answerIndex": 1,
+          "explanation": "DAG（有向无环图）等价于存在拓扑排序，也等价于没有有向环。"
+        },
+        {
+          "question": "DAG 上 DP 的计算顺序应该是什么？",
+          "options": [
+            "任意顺序",
+            "按节点编号从小到大",
+            "按拓扑排序的顺序",
+            "按 DFS 的顺序"
+          ],
+          "answerIndex": 2,
+          "explanation": "DAG 上 DP 需要保证计算某个节点时，它的所有前驱（依赖）都已计算完，拓扑序恰好满足这个条件。"
+        }
+      ]
+    }
+  ]
+}

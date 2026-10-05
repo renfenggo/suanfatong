@@ -1,0 +1,183 @@
+{
+  "audit_time": "2026-06-16",
+  "input_files": [
+    "merged_knowledge_graph_item_dependencies_refined.json",
+    "assets/data/knowledge/io_v4_4.json",
+    "assets/data/knowledge_content/content_index.json",
+    "assets/data/knowledge_content/items/stage5_hard_batch2_part_001.json",
+    "docs/stage5_batch2_persistent_segment_tree_section_review.md",
+    "data/stage5_batch2_persistent_segment_tree_section_review.json",
+    "data/stage5_batch2_persistent_segment_tree_section_fix_report.json",
+    "data/checkpoint_category_logic_verification.json",
+    "data/stage5_hard_knowledge_batch3_readiness_plan.json"
+  ],
+  "thread1_result": {
+    "passed": true,
+    "has_content_check": true,
+    "has_content_details": {
+      "2.1.95": true,
+      "2.1.96": true,
+      "2.1.97": true,
+      "2.1.98": true,
+      "2.1.99": true,
+      "2.1.100": true,
+      "2.1.101": true
+    },
+    "target_nodes_main_all_313": true,
+    "target_nodes_frontend_all_313": true,
+    "target_nodes_content_all_313": true,
+    "target_nodes_section_main": {
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.96": "3.13",
+      "2.1.95": "3.13",
+      "2.1.97": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "target_nodes_section_frontend": {
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.96": "3.13",
+      "2.1.95": "3.13",
+      "2.1.97": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "target_nodes_section_content": {
+      "2.1.95": "3.13",
+      "2.1.96": "3.13",
+      "2.1.97": "3.13",
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    },
+    "pre_fields_intact": true,
+    "declared_no_content_modification": true
+  },
+  "thread2_result": {
+    "passed": true,
+    "verification_status": "passed",
+    "matches_expected": true,
+    "stats_fixed": {
+      "算法": 323,
+      "数据结构": 110,
+      "数学": 167,
+      "合计": 600
+    },
+    "expected_stats": {
+      "算法": 323,
+      "数据结构": 110,
+      "数学": 167,
+      "合计": 600
+    },
+    "stats_match_expected": true,
+    "prefix_distribution": {
+      "2": 323,
+      "3": 110,
+      "4": 167
+    },
+    "expected_prefix": {
+      "2": 323,
+      "3": 110,
+      "4": 167
+    },
+    "prefix_match_expected": true,
+    "all_checks": {
+      "total_count_600": true,
+      "main_graph_count_3240": true,
+      "frontend_graph_count_3240": true,
+      "section_3x_in_ds": true,
+      "id_sets_consistent": true,
+      "matches_expected": true
+    }
+  },
+  "thread3_result": {
+    "passed": true,
+    "stability_status": "[PASS] 稳定",
+    "is_stable_3240": true,
+    "risk_type_counts": {
+      "exact_title_duplicate": 0,
+      "near_title_duplicate": 0,
+      "ambiguous_section": 3,
+      "overcrowded_section": 0,
+      "cross_domain_category": 0,
+      "low_value_or_too_general": 7,
+      "dependency_missing": 141,
+      "content_generation_risk": 0
+    },
+    "unique_risky_candidate_count": 141,
+    "safe_candidate_count": 0,
+    "risk_ratio": 100,
+    "dependency_missing_count": 141,
+    "dependency_missing_ratio": 100.0,
+    "remaining_candidate_count": 141,
+    "has_negative": false,
+    "has_over_100": false,
+    "batch2_discrepancy_explanation": {
+      "batch2_mapping_total": 600,
+      "batch2_found_in_current_pool": 339,
+      "explanation": "Batch2 mapping记录了600个已使用候选，但当前候选池中只匹配到339个。差异原因：当前候选池主要来自ready_core_candidates(842个)和candidate_pool_1200(138个)，可能不包含所有Batch2使用的候选源。这不影响Batch3剩余候选判断，因为filtering已正确排除池中匹配的Batch2候选。"
+    },
+    "suggestion_reasonable": true
+  },
+  "global_stability_result": {
+    "passed": true,
+    "main_item_count": 3240,
+    "frontend_item_count": 3240,
+    "main_section_count": 65,
+    "frontend_section_count": 65,
+    "id_sets_match": true,
+    "generated_item_count": 3240,
+    "content_covered_count": 3240,
+    "batch2_id_count": 600,
+    "batch2_content_covered": true,
+    "target_content_section": {
+      "2.1.95": "3.13",
+      "2.1.96": "3.13",
+      "2.1.97": "3.13",
+      "2.1.98": "3.13",
+      "2.1.99": "3.13",
+      "2.1.100": "3.13",
+      "2.1.101": "3.13"
+    }
+  },
+  "batch2_stats": {
+    "section_major_category": {
+      "算法": 323,
+      "数学": 167,
+      "数据结构": 110
+    },
+    "prefix_distribution": {
+      "2": 323,
+      "4": 167,
+      "3": 110
+    },
+    "total": 600,
+    "expected": {
+      "算法": 323,
+      "数据结构": 110,
+      "数学": 167,
+      "合计": 600
+    }
+  },
+  "batch3_readiness": {
+    "ready": false,
+    "reason": "剩余候选 141 个，建议先补依赖和 section_id，再做 30-50 个候选试点; 依赖缺失比例 100%，建议先补依赖",
+    "blockers": [
+      "剩余候选 141 个，建议先补依赖和 section_id，再做 30-50 个候选试点",
+      "依赖缺失比例 100%，建议先补依赖"
+    ]
+  },
+  "overall_passed": true,
+  "declaration": {
+    "read_only_audit": true,
+    "no_modifications_to_main_graph": true,
+    "no_modifications_to_frontend_graph": true,
+    "no_modifications_to_content_index": true,
+    "no_modifications_to_content_body": true,
+    "no_modifications_to_existing_reports": true,
+    "no_batch3_entry": true
+  }
+}

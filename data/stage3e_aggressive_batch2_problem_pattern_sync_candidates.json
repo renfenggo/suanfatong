@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2.21.106",
+    "name": "平面图：Dual Shortest Path",
+    "candidate_id": "cand.graph.planar_graph.dual_shortest_path",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns"
+  },
+  {
+    "id": "2.21.109",
+    "name": "平面图：Planar Min Cut",
+    "candidate_id": "cand.graph.planar_graph.planar_min_cut",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns"
+  },
+  {
+    "id": "2.21.116",
+    "name": "特殊图：Planar Dual Graph",
+    "candidate_id": "cand.graph.special_graph.planar_dual_graph",
+    "reason": "平面图的双图和最小割主题更接近建模套路，建议同步到problem_patterns"
+  }
+]

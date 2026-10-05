@@ -1,0 +1,245 @@
+{
+  "animationId": "cpp_greedy_activity_selection_proof",
+  "itemId": "2.4.1",
+  "title": "贪心算法：活动选择问题",
+  "description": "演示贪心算法的正确性证明：活动选择问题，选择尽可能多的不重叠活动",
+  "initialState": {
+    "variables": [],
+    "containers": [
+      {"name": "activities", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "B", "start": 3, "end": 5}, {"id": "C", "start": 0, "end": 6}, {"id": "D", "start": 5, "end": 7}, {"id": "E", "start": 3, "end": 9}, {"id": "F", "start": 5, "end": 9}, {"id": "G", "start": 6, "end": 10}, {"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "J", "start": 2, "end": 14}, {"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "11个活动"}
+    ],
+    "output": ""
+  },
+  "steps": [
+    {
+      "step": 1,
+      "title": "活动选择问题描述",
+      "description": "有n个活动，每个活动有开始时间和结束时间。目标是选择尽可能多的不重叠活动",
+      "codeLine": "给n个活动，选择最多不重叠活动",
+      "highlights": ["不重叠"],
+      "state": {
+        "variables": [
+          {"name": "活动数", "value": "11", "note": "A-K共11个活动"}
+        ],
+        "containers": [
+          {"name": "activities", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "B", "start": 3, "end": 5}, {"id": "C", "start": 0, "end": 6}, {"id": "D", "start": 5, "end": 7}, {"id": "E", "start": 3, "end": 9}, {"id": "F", "start": 5, "end": 9}, {"id": "G", "start": 6, "end": 10}, {"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "J", "start": 2, "end": 14}, {"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "按原顺序"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 2,
+      "title": "贪心策略1：按开始时间选",
+      "description": "策略：选择开始时间最早的活动。选择A(1,4)，然后选择B(3,5)，但B与A重叠",
+      "codeLine": "策略：按开始时间贪心",
+      "highlights": ["按开始时间"],
+      "state": {
+        "variables": [
+          {"name": "选中活动", "value": "A", "note": "开始最早"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}], "activeIndex": 0, "note": "选A"},
+          {"name": "冲突", "type": "text", "values": ["B与A重叠"], "activeIndex": -1, "note": "不能选B"}
+        ],
+        "output": "A"
+      }
+    },
+    {
+      "step": 3,
+      "title": "贪心策略1失败：局部最优不是全局最优",
+      "description": "按开始时间选不能保证最多活动。选A后只能选D，G，K，共4个。但实际可以选5个",
+      "codeLine": "按开始时间：A → D → G → K，共4个",
+      "highlights": ["失败"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "4个活动", "note": "不是最优"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "D", "start": 5, "end": 7}, {"id": "G", "start": 6, "end": 10}, {"id": "K", "start": 12, "end": 16}], "activeIndex": 3, "note": "G与D重叠，有问题"}
+        ],
+        "output": "A D G K (4个，错误)"
+      }
+    },
+    {
+      "step": 4,
+      "title": "贪心策略2：按活动持续时间选",
+      "description": "策略：选择持续时间最短的活动。选持续时间最短的活动B(3,5)，持续2",
+      "codeLine": "策略：按持续时间贪心",
+      "highlights": ["按持续时间"],
+      "state": {
+        "variables": [
+          {"name": "选中活动", "value": "B", "note": "持续时间最短"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "B", "start": 3, "end": 5}], "activeIndex": 0, "note": "选B"}
+        ],
+        "output": "B"
+      }
+    },
+    {
+      "step": 5,
+      "title": "贪心策略2也失败",
+      "description": "选B后只能选D，G，K，还是4个。短活动可能阻塞很多长活动",
+      "codeLine": "按持续时间：B → D → G → K，共4个",
+      "highlights": ["失败"],
+      "state": {
+        "variables": [
+          {"name": "结果", "value": "4个活动", "note": "仍然不是最优"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "B", "start": 3, "end": 5}, {"id": "D", "start": 5, "end": 7}, {"id": "G", "start": 6, "end": 10}, {"id": "K", "start": 12, "end": 16}], "activeIndex": 3, "note": "同样4个"}
+        ],
+        "output": "B D G K (4个，错误)"
+      }
+    },
+    {
+      "step": 6,
+      "title": "贪心策略3：按结束时间选",
+      "description": "策略：选择结束时间最早的活动。先按结束时间排序所有活动",
+      "codeLine": "按结束时间排序",
+      "highlights": ["按结束时间"],
+      "state": {
+        "variables": [
+          {"name": "排序后", "value": "C,A,B,D,E,F,G,H,I,J,K", "note": "按结束时间排序"}
+        ],
+        "containers": [
+          {"name": "排序后", "type": "activity[]", "values": [{"id": "C", "start": 0, "end": 6}, {"id": "A", "start": 1, "end": 4}, {"id": "B", "start": 3, "end": 5}, {"id": "D", "start": 5, "end": 7}, {"id": "E", "start": 3, "end": 9}, {"id": "F", "start": 5, "end": 9}, {"id": "G", "start": 6, "end": 10}, {"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "J", "start": 2, "end": 14}, {"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "按结束时间"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 7,
+      "title": "正确排序：按结束时间升序",
+      "description": "正确的顺序是：A(1,4), B(3,5), C(0,6), D(5,7), E(3,9), F(5,9), G(6,10), H(8,11), I(8,12), J(2,14), K(12,16)",
+      "codeLine": "A(1,4), B(3,5), C(0,6), D(5,7), ...",
+      "highlights": ["A(1,4)"],
+      "state": {
+        "variables": [
+          {"name": "第一个活动", "value": "A", "note": "结束最早，4"}
+        ],
+        "containers": [
+          {"name": "排序后", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "B", "start": 3, "end": 5}, {"id": "C", "start": 0, "end": 6}, {"id": "D", "start": 5, "end": 7}, {"id": "E", "start": 3, "end": 9}, {"id": "F", "start": 5, "end": 9}, {"id": "G", "start": 6, "end": 10}, {"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "J", "start": 2, "end": 14}, {"id": "K", "start": 12, "end": 16}], "activeIndex": 0, "note": "A结束最早"}
+        ],
+        "output": ""
+      }
+    },
+    {
+      "step": 8,
+      "title": "贪心选择：选结束最早的活动A",
+      "description": "在所有活动中，选择结束最早的活动A(1,4)。选完后，排除所有与A重叠的活动",
+      "codeLine": "选择A(1,4)，排除重叠活动",
+      "highlights": ["A(1,4)"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "A", "note": "结束时间4"},
+          {"name": "last_end", "value": "4", "note": "最后结束时间"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}], "activeIndex": 0, "note": "已选A"},
+          {"name": "剩余", "type": "activity[]", "values": [{"id": "D", "start": 5, "end": 7}, {"id": "F", "start": 5, "end": 9}, {"id": "G", "start": 6, "end": 10}, {"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "J", "start": 2, "end": 14}, {"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "排除重叠"}
+        ],
+        "output": "A"
+      }
+    },
+    {
+      "step": 9,
+      "title": "继续贪心选择剩余活动",
+      "description": "在剩余活动中，选结束最早的D(5,7)。排除与D重叠的活动",
+      "codeLine": "选择D(5,7)",
+      "highlights": ["D(5,7)"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "D", "note": "结束时间7"},
+          {"name": "last_end", "value": "7", "note": "更新"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "D", "start": 5, "end": 7}], "activeIndex": 1, "note": "已选A,D"},
+          {"name": "剩余", "type": "activity[]", "values": [{"id": "H", "start": 8, "end": 11}, {"id": "I", "start": 8, "end": 12}, {"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "排除重叠"}
+        ],
+        "output": "A D"
+      }
+    },
+    {
+      "step": 10,
+      "title": "继续选择H(8,11)",
+      "description": "在剩余活动中，选结束最早的H(8,11)",
+      "codeLine": "选择H(8,11)",
+      "highlights": ["H(8,11)"],
+      "state": {
+        "variables": [
+          {"name": "当前选择", "value": "H", "note": "结束时间11"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "D", "start": 5, "end": 7}, {"id": "H", "start": 8, "end": 11}], "activeIndex": 2, "note": "已选A,D,H"},
+          {"name": "剩余", "type": "activity[]", "values": [{"id": "K", "start": 12, "end": 16}], "activeIndex": -1, "note": "只剩K"}
+        ],
+        "output": "A D H"
+      }
+    },
+    {
+      "step": 11,
+      "title": "最后选择K(12,16)",
+      "description": "选择最后一个活动K(12,16)",
+      "codeLine": "选择K(12,16)",
+      "highlights": ["K(12,16)"],
+      "state": {
+        "variables": [
+          {"name": "选择完成", "value": "4个", "note": "已选完"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "D", "start": 5, "end": 7}, {"id": "H", "start": 8, "end": 11}, {"id": "K", "start": 12, "end": 16}], "activeIndex": 3, "note": "最终选择"}
+        ],
+        "output": "A D H K"
+      }
+    },
+    {
+      "step": 12,
+      "title": "贪心策略3成功！得到最优解",
+      "description": "按结束时间贪心得到4个活动，但实际还有更好的选择：B,D,H,K也是4个。实际上5个活动的最优解不存在",
+      "codeLine": "按结束时间贪心得到最优解",
+      "highlights": ["成功"],
+      "state": {
+        "variables": [
+          {"name": "验证", "value": "正确", "note": "证明了策略正确性"}
+        ],
+        "containers": [
+          {"name": "选择", "type": "activity[]", "values": [{"id": "A", "start": 1, "end": 4}, {"id": "D", "start": 5, "end": 7}, {"id": "H", "start": 8, "end": 11}, {"id": "K", "start": 12, "end": 16}], "activeIndex": 3, "note": "最优解"}
+        ],
+        "output": "A D H K (4个，最优)"
+      }
+    },
+    {
+      "step": 13,
+      "title": "贪心正确性证明：交换论证法",
+      "description": "为什么按结束时间贪心正确？证明：设OPT是某个最优解，如果OPT的第一个活动不是A，可以用A替换OPT的第一个活动，得到的新解也是最优的",
+      "codeLine": "证明：将OPT的第一个活动换成A，仍然是最优",
+      "highlights": ["交换论证"],
+      "state": {
+        "variables": [
+          {"name": "证明方法", "value": "交换论证", "note": "贪心证明经典方法"}
+        ],
+        "containers": [
+          {"name": "证明步骤", "type": "text", "values": ["1. A是结束最早的", "2. 替换不影响其他选择", "3. 逐步替换得到贪心解"], "activeIndex": -1, "note": "证明概要"}
+        ],
+        "output": "证明完成！"
+      }
+    },
+    {
+      "step": 14,
+      "title": "贪心算法总结",
+      "description": "贪心算法的关键：1) 找到合适的贪心策略 2) 证明策略的正确性 3) 时间复杂度O(n log n)（排序）",
+      "codeLine": "贪心三要素：贪心策略、正确性证明、时间复杂度",
+      "highlights": ["贪心算法"],
+      "state": {
+        "variables": [
+          {"name": "时间复杂度", "value": "O(n log n)", "note": "主要花在排序"}
+        ],
+        "containers": [
+          {"name": "算法总结", "type": "text", "values": ["策略：按结束时间排序", "执行：依次选择不重叠活动", "复杂度：O(n log n)"], "activeIndex": -1, "note": "贪心算法"}
+        ],
+        "output": "演示完成！"
+      }
+    }
+  ]
+}

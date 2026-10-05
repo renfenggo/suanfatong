@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "title": "Stage3F Batch3 Problem Patterns Sync Triage Checklist",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T19:00:00.000Z",
+    "task": "batch3_sync_triage_checklist",
+    "version": "1.0",
+    "description": "等 Thread 2 输出 data/stage3f_batch3_full40_problem_pattern_sync_candidates.json 后，用此模板对候选进行分级",
+    "input_files": [
+      "data/patterns_backlog_status_after_stage3f_batch2.json",
+      "docs/patterns_backlog_status_after_stage3f_batch2_report.md",
+      "data/patterns_order_statistics_suite_generation_checklist.json",
+      "data/patterns_batch2.json",
+      "data/patterns_v0_1_ready.json"
+    ],
+    "prerequisites": {
+      "batch3_full40_merge": true,
+      "batch3_full40_validation": "unknown (rolling back due to product_metadata_validation failure)",
+      "batch3_full40_added_items_review": "in_progress (Thread 2)",
+      "problem_pattern_sync_candidates_ready": false,
+      "awaiting_thread2_output": true
+    },
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "expected_input": {
+    "filename": "data/stage3f_batch3_full40_problem_pattern_sync_candidates.json",
+    "produced_by": "Thread 2 (Batch3 full_40 Review)",
+    "content": "List of knowledge items from Batch3 merge that review flagged as move_to_problem_patterns"
+  },
+  "pipeline_position": {
+    "description": "此 checklist 在 Thread 2 Review 之后、正式 triage 之前使用",
+    "steps": [
+      "Step 1: Thread 2 completes Batch3 full_40 Review",
+      "Step 2: Thread 2 outputs problem_pattern_sync_candidates.json",
+      "Step 3: Thread 3 用此 checklist 对每个候选执行 triage",
+      "Step 4: Thread 3 输出 stage3f_batch3_problem_patterns_sync_triage.json + report",
+      "Step 5: 结合 Batch1 triage 结果 (Dominance Counting) + Batch2 triage 结果 (莫比乌斯反演应用) + Batch3 triage 结果",
+      "Step 6: 统一规划 patterns_batch3 内容",
+      "Step 7: 用户发出指令后生成 patterns_batch3.json"
+    ]
+  },
+  "existing_backlog_reference": {
+    "batch1_ready_count": 83,
+    "batch2_generated_count": 13,
+    "batch2_merge_actions": 1,
+    "future_batch3_already_prepared": [
+      {
+        "item_id": "3.13.182",
+        "name": "Multidimensional: Dominance Counting",
+        "status": "draft_preview_ready",
+        "preparations_completed": ["draft_preview", "boundary_review", "suite_plan", "generation_checklist"]
+      }
+    ],
+    "pending_triage_from_batch2": [
+      {
+        "item_id": "4.9.5",
+        "name": "莫比乌斯反演应用",
+        "source_review_result": "move_to_problem_patterns",
+        "triage_status": "not_yet_triaged"
+      }
+    ],
+    "deferred_candidates": [
+      "2.17.20 Berlekamp-Massey",
+      "4.9.3 Min_25筛",
+      "3.13.181 CDQ Divide Conquer",
+      "3.13.179 Merge Sort Tree 2D Dominance",
+      "3.13.180 Bitset Rectangle Query"
+    ]
+  },
+  "triage_criteria": [
+    {
+      "check_id": "T-01",
+      "category": "duplicate_check",
+      "description": "是否与 ready patterns 重复",
+      "method": "逐一比对 candidate 的 pattern_id 建议与 83 个 ready patterns 的 pattern_id。对于语义重叠，检查 recognition_signals 和 description 是否被覆盖。",
+      "possible_outcomes": [
+        "pass — 无重复",
+        "fail — 存在确切 ID 重复",
+        "note — 存在语义重叠（需 boundary_note）"
+      ],
+      "reference_source": "data/patterns_v0_1_ready.json"
+    },
+    {
+      "check_id": "T-02",
+      "category": "duplicate_check",
+      "description": "是否与 patterns_batch2 重复",
+      "method": "逐一比对 candidate 与 13 个 batch2 patterns 的 ID 和语义。Batch2 全部为图论/网络流方向，只要 candidate 不属于这两个方向，批量 pass。",
+      "possible_outcomes": [
+        "pass — 无重复",
+        "fail — 存在重复"
+      ],
+      "reference_source": "data/patterns_batch2.json"
+    },
+    {
+      "check_id": "T-03",
+      "category": "duplicate_check",
+      "description": "是否与 Dominance Counting suite 相关",
+      "method": "检查 candidate 是否属于 Order Statistics / Dominance Query 领域。如果相关，确认是否被 suite 覆盖（pat.dominance_counting）或是 suite 成员（CDQ / MST 2D / Bitset — 均已 defer）。",
+      "possible_outcomes": [
+        "pass — 不相关",
+        "note — 相关但不冲突",
+        "fail — 被 suite 覆盖（应 defer 或 merge）"
+      ],
+      "reference_source": "data/patterns_order_statistics_suite_generation_checklist.json"
+    },
+    {
+      "check_id": "T-04",
+      "category": "suitability",
+      "description": "是否属于建模模式（modeling_pattern）而非纯知识点",
+      "method": "检查知识图谱中的 item_type。modeling_pattern → 适合生成 pattern。core_concept / theorem_or_property / implementation_variant → 不适合生成 pattern。",
+      "possible_outcomes": [
+        "pass — 类型为 modeling_pattern",
+        "fail — 类型不被支持（core_concept / theorem等）",
+        "note — 类型为 application_case（需要进一步判断）"
+      ],
+      "reference_source": "merged_knowledge_graph_item_dependencies_refined.json"
+    },
+    {
+      "check_id": "T-05",
+      "category": "suitability",
+      "description": "是否有明确的识别信号",
+      "method": "判断该知识项是否有独特的题面识别信号，让解题者能快速判断'这类题应该用这个模式'。例如 Dominance Counting 的信号是'统计多维偏序关系的点对数量'。",
+      "possible_outcomes": [
+        "pass — 信号明确且独特",
+        "note — 信号存在但较模糊",
+        "fail — 无明确信号（不适合 pattern）"
+      ]
+    },
+    {
+      "check_id": "T-06",
+      "category": "suitability",
+      "description": "是否有固定的转化路径",
+      "method": "判断从识别问题到选择求解方法之间是否有清晰的转化步骤。例如'排序降维 + CDQ/BIT'是一个固定的转化路径。",
+      "possible_outcomes": [
+        "pass — 转化路径清晰",
+        "note — 有一定路径但非唯一",
+        "fail — 仅有单一实现（不适合 pattern）"
+      ]
+    },
+    {
+      "check_id": "T-07",
+      "category": "boundary",
+      "description": "是否需要 boundary_note",
+      "method": "如果 candidate 与任何 ready/batch2 pattern 有语义重叠但又不是完全重复，需要 boundary_note 说明区分点。",
+      "possible_outcomes": [
+        "true — 需要 boundary_note（列出 target pattern_ids）",
+        "false — 不需要"
+      ]
+    },
+    {
+      "check_id": "T-08",
+      "category": "decision",
+      "description": "是否需要人工复查",
+      "method": "如果边界不清、优先级高但判断困难、或有争议的合并决策，标记 manual_review。否则 AI 可直接决策。",
+      "possible_outcomes": [
+        "true — 需要人工复查",
+        "false — AI 可直接决策"
+      ]
+    },
+    {
+      "check_id": "T-09",
+      "category": "decision",
+      "description": "是否建议进入 future patterns_batch3",
+      "method": "综合 T-01 到 T-08 的结果。仅当：无重复 + 类型合适 + 信号明确 + 路径清晰 → create_new_draft_later。",
+      "possible_outcomes": [
+        "yes — create_new_draft_later（进入 batch3）",
+        "no — defer（不生成 pattern）",
+        "merge — merge_with_existing（合并到已有 pattern）",
+        "manual — manual_review（需人工判断）"
+      ]
+    },
+    {
+      "check_id": "T-10",
+      "category": "decision",
+      "description": "是否 defer",
+      "method": "如果 candidate 不适合 pattern（algorithm_only / 信号单一 / 类型不支持），标记 defer。",
+      "possible_outcomes": [
+        "true — defer",
+        "false — 不 defer"
+      ]
+    }
+  ],
+  "output_template": {
+    "per_candidate": {
+      "item_id": "",
+      "name": "",
+      "suggested_pattern_id": "",
+      "priority": "P0 | P1 | P2 | defer",
+      "decision": "create_new_draft_later | merge_with_existing | defer | manual_review",
+      "knowledge_item_type": "",
+      "matched_existing_pattern": "",
+      "matched_batch2_pattern": "",
+      "boundary_note_required": false,
+      "boundary_note_targets": [],
+      "existing_coverage_assessment": {
+        "ready_patterns_cover": false,
+        "batch2_patterns_cover": false,
+        "dominance_counting_suite_related": false,
+        "overlap_with_existing": "none | partial | full",
+        "overlap_detail": ""
+      },
+      "suitable_as_pattern": false,
+      "suitable_reason": "",
+      "recommended_timing": "",
+      "reason": ""
+    },
+    "example": {
+      "description": "基于 Batch1 Dominance Counting triage 的实际格式参考",
+      "record": {
+        "item_id": "3.13.182",
+        "name": "Multidimensional: Dominance Counting",
+        "suggested_pattern_id": "pat.dominance_counting",
+        "priority": "P1",
+        "decision": "create_new_draft_later",
+        "knowledge_item_type": "modeling_pattern",
+        "matched_existing_pattern": "",
+        "matched_batch2_pattern": "",
+        "boundary_note_required": true,
+        "boundary_note_targets": [
+          "pat.offline_query_pattern",
+          "pat.coordinate_sweep_compression",
+          "pat.fenwick_prefix_maintenance"
+        ],
+        "existing_coverage_assessment": {
+          "ready_patterns_cover": false,
+          "batch2_patterns_cover": false,
+          "dominance_counting_suite_related": false,
+          "overlap_with_existing": "partial",
+          "overlap_detail": "pat.offline_query_pattern 和 pat.coordinate_sweep_compression 涉及离线处理和坐标压缩，但均未专门覆盖多维偏序计数。"
+        },
+        "suitable_as_pattern": true,
+        "suitable_reason": "多维偏序计数建模模式，具备清晰识别信号、通用转化路径和复杂度边界。",
+        "recommended_timing": "patterns_batch3",
+        "reason": "valid_modeling_pattern"
+      }
+    }
+  },
+  "ready_patterns_digest": {
+    "total": 83,
+    "by_category": {
+      "Interview Patterns": 20,
+      "Graph/Search Patterns": 10,
+      "Graph Modeling Patterns": 14,
+      "DP Patterns": 17,
+      "Data Structure Maintenance Patterns": 13,
+      "Tree Query Patterns": 6,
+      "String Matching Patterns": 8,
+      "Competitive Modeling Patterns": 11
+    },
+    "key_patterns_for_boundary_check": [
+      "pat.inclusion_exclusion_counting（容斥计数）— 与数论/反演类候选可能有语义重叠",
+      "pat.offline_query_pattern（离线查询）— 与离线计数类候选可能有重叠",
+      "pat.modular_counting_pattern（取模计数）— 与计数类候选可能有重叠",
+      "pat.fenwick_prefix_maintenance（BIT前缀维护）— 常用于偏序计数实现",
+      "pat.coordinate_sweep_compression（离散化扫描）— 常用于偏序计数预处理"
+    ]
+  },
+  "batch2_patterns_digest": {
+    "total": 13,
+    "scope": "全部为图论/网络流方向，与数论/计数/数据结构方向的候选不太可能重叠",
+    "caution_areas": []
+  },
+  "dominance_counting_suite_digest": {
+    "scope": "多维偏序关系统计与查询",
+    "status": "1 pattern to generate + 3 implementation references",
+    "batch3_relevance": "如果 Batch3 Review 产生多维查询/偏序计数/矩形统计相关的候选，先检查是否被此 suite 覆盖"
+  },
+  "pending_items_before_batch3_generation": {
+    "description": "生成 patterns_batch3.json 前必须完成的事项",
+    "items": [
+      "☐ Thread 2 完成 Stage3F Batch3 full_40 Review",
+      "☐ Thread 2 输出 stage3f_batch3_full40_problem_pattern_sync_candidates.json",
+      "☐ Thread 3 用此 checklist 对 Batch3 候选执行 triage",
+      "☐ 输出 stage3f_batch3_problem_patterns_sync_triage.json",
+      "☐ 合并统计：batch1 (Dominance Counting) + batch2 (莫比乌斯反演应用) + batch3 (新候选)",
+      "☐ 统一规划 patterns_batch3 的 pattern 列表和顺序",
+      "☐ 用户发出'生成 patterns_batch3.json'指令",
+      "☐ 正式生成 patterns_batch3.json"
+    ]
+  },
+  "declarations": {
+    "generate_formal_patterns_batch3_now": false,
+    "must_wait_for_stage3f_batch3_review_first": true,
+    "main_graph_modified": false,
+    "existing_patterns_modified": false,
+    "template_ready": true
+  }
+}

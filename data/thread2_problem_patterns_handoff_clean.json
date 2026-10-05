@@ -1,0 +1,1518 @@
+{
+  "meta": {
+    "generated_by": "thread2_problem_patterns_handoff_clean",
+    "generated_at": "2026-05-22T13:00:00.000Z",
+    "task": "problem_patterns_handoff_cleaning",
+    "main_graph_modified": false,
+    "validate_only_passed": true
+  },
+  "statistics": {
+    "original_handoff_count": 36,
+    "clean_handoff_count": 34,
+    "deduplicated_count": 0,
+    "duplicate_existing_pattern_count": 0,
+    "excluded_knowledge_like_count": 2,
+    "p0_count": 7,
+    "p1_count": 18,
+    "p2_count": 9
+  },
+  "pattern_categories": {
+    "图论建模": [
+      {
+        "candidate_id": "cand.graph.hall_theorem.applications",
+        "name": "Hall 定理及应用",
+        "en_name": "Hall's Marriage Theorem and Applications",
+        "suggested_pattern_id": "pattern_matching_hall",
+        "pattern_category": "图论建模",
+        "reason": "Hall 定理是二分图匹配的经典建模模式",
+        "required_items": [
+          "2.15.2",
+          "2.15.3"
+        ],
+        "related_items": [
+          "2.16.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.difference_constraints.modeling.raw",
+        "name": "差分约束系统建模",
+        "en_name": "Difference Constraints System Modeling",
+        "suggested_pattern_id": "graph_modeling_diff_constraints",
+        "pattern_category": "图论建模",
+        "reason": "差分约束是图论建模的重要模式",
+        "required_items": [
+          "2.10.1",
+          "4.5.2"
+        ],
+        "related_items": [
+          "2.10.2"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.2_sat_modeling",
+        "name": "图论建模：2 Sat Modeling",
+        "en_name": "Graph Modeling: 2 Sat Modeling",
+        "suggested_pattern_id": "graph_modeling_2sat_detailed",
+        "pattern_category": "图论建模",
+        "reason": "2-SAT建模的详细模式分析",
+        "required_items": [
+          "2.7.1",
+          "4.5.2"
+        ],
+        "related_items": [
+          "2.15.1"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.hall_theorem",
+        "name": "匹配与覆盖：Hall Theorem",
+        "en_name": "Matching and Cover: Hall Theorem",
+        "suggested_pattern_id": "matching_hall_theorem",
+        "pattern_category": "图论建模",
+        "reason": "Hall定理在匹配中的应用模式",
+        "required_items": [
+          "2.15.2",
+          "2.15.3"
+        ],
+        "related_items": [
+          "2.16.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.layered_graph",
+        "name": "图论建模：Layered Graph",
+        "en_name": "Graph Modeling: Layered Graph",
+        "suggested_pattern_id": "layered_graph_modeling",
+        "pattern_category": "图论建模",
+        "reason": "分层图建模的技巧模式",
+        "required_items": [
+          "2.10.1",
+          "4.5.2"
+        ],
+        "related_items": [
+          "2.10.2"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+        "name": "匹配与覆盖：Dilworth Theorem",
+        "en_name": "Matching and Cover: Dilworth Theorem",
+        "suggested_pattern_id": "partial_order_matching",
+        "pattern_category": "图论建模",
+        "reason": "偏序集匹配的经典模式",
+        "required_items": [
+          "2.15.2",
+          "2.15.3"
+        ],
+        "related_items": [
+          "2.16.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.state_graph",
+        "name": "图论建模：State Graph",
+        "en_name": "Graph Modeling: State Graph",
+        "suggested_pattern_id": "state_machine_modeling",
+        "pattern_category": "图论建模",
+        "reason": "状态图建模的技巧模式",
+        "required_items": [
+          "2.7.1",
+          "4.5.2"
+        ],
+        "related_items": [
+          "2.10.1"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+        "name": "匹配与覆盖：Minimum Path Cover",
+        "en_name": "Matching and Cover: Minimum Path Cover",
+        "suggested_pattern_id": "path_cover_modeling",
+        "pattern_category": "图论建模",
+        "reason": "最小路径覆盖的经典建模模式",
+        "required_items": [
+          "2.11.1",
+          "2.15.2"
+        ],
+        "related_items": [
+          "2.15.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.shortest_path_potentials",
+        "name": "图论建模：Shortest Path Potentials",
+        "en_name": "Graph Modeling: Shortest Path Potentials",
+        "suggested_pattern_id": "potential_method_modeling",
+        "pattern_category": "图论建模",
+        "reason": "势函数在图论建模中的应用",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.k_shortest_paths",
+        "name": "图论建模：K Shortest Paths",
+        "en_name": "Graph Modeling: K Shortest Paths",
+        "suggested_pattern_id": "k_shortest_modeling",
+        "pattern_category": "图论建模",
+        "reason": "K短路问题的建模模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.minimum_mean_cycle",
+        "name": "图论建模：Minimum Mean Cycle",
+        "en_name": "Graph Modeling: Minimum Mean Cycle",
+        "suggested_pattern_id": "cycle_optimization_modeling",
+        "pattern_category": "图论建模",
+        "reason": "最小平均环的建模模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.21.12"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.konig_theorem",
+        "name": "匹配与覆盖：Konig Theorem",
+        "en_name": "Matching and Cover: Konig Theorem",
+        "suggested_pattern_id": "konig_theorem_pattern",
+        "pattern_category": "图论建模",
+        "reason": "König定理的应用模式",
+        "required_items": [
+          "2.15.2",
+          "2.15.3"
+        ],
+        "related_items": [
+          "2.16.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.graph_modeling.steiner_tree",
+        "name": "图论建模：Steiner Tree",
+        "en_name": "Graph Modeling: Steiner Tree",
+        "suggested_pattern_id": "steiner_tree_modeling",
+        "pattern_category": "图论建模",
+        "reason": "斯坦纳树问题的建模模式",
+        "required_items": [
+          "2.10.1",
+          "2.13.1"
+        ],
+        "related_items": [
+          "2.21.23"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      }
+    ],
+    "网络流建模": [
+      {
+        "candidate_id": "cand.graph.max_weight_closure.problem",
+        "name": "最大权闭合子图",
+        "en_name": "Maximum Weight Closure Problem",
+        "suggested_pattern_id": "network_flow_closure",
+        "pattern_category": "网络流建模",
+        "reason": "最大权闭合子图是网络流建模的经典模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.21.67"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.project_selection",
+        "name": "上下界网络流：Project Selection",
+        "en_name": "Flow with Lower Bounds: Project Selection",
+        "suggested_pattern_id": "network_flow_project_selection",
+        "pattern_category": "网络流建模",
+        "reason": "项目选择的网络流建模模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.21.67"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+        "name": "上下界网络流：Minimum Flow",
+        "en_name": "Flow with Lower Bounds: Minimum Flow",
+        "suggested_pattern_id": "min_flow_modeling",
+        "pattern_category": "网络流建模",
+        "reason": "最小流的建模模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.16.5"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+        "name": "上下界网络流：Edge Lower Bound Transform",
+        "en_name": "Flow with Lower Bounds: Edge Lower Bound Transform",
+        "suggested_pattern_id": "flow_bounds_transformation",
+        "pattern_category": "网络流建模",
+        "reason": "流量边界变换的模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.16.5"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+        "name": "上下界网络流：Maximum Flow",
+        "en_name": "Flow with Lower Bounds: Maximum Flow",
+        "suggested_pattern_id": "max_flow_with_bounds",
+        "pattern_category": "网络流建模",
+        "reason": "带边界最大流的模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.16.5"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+        "name": "上下界网络流：Min Cost Circulation",
+        "en_name": "Flow with Lower Bounds: Min Cost Circulation",
+        "suggested_pattern_id": "circulation_optimization",
+        "pattern_category": "网络流建模",
+        "reason": "最小费用循环流的模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.6"
+        ],
+        "related_items": [
+          "2.16.4"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.node_demand",
+        "name": "上下界网络流：Node Demand",
+        "en_name": "Flow with Lower Bounds: Node Demand",
+        "suggested_pattern_id": "node_demand_modeling",
+        "pattern_category": "网络流建模",
+        "reason": "节点需求流的建模模式",
+        "required_items": [
+          "2.16.3",
+          "2.16.4"
+        ],
+        "related_items": [
+          "2.16.5"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+        "name": "上下界网络流：Bounded Bipartite Matching",
+        "en_name": "Flow with Lower Bounds: Bounded Bipartite Matching",
+        "suggested_pattern_id": "bounded_matching_modeling",
+        "pattern_category": "网络流建模",
+        "reason": "带边界二分图匹配的模式",
+        "required_items": [
+          "2.15.2",
+          "2.16.3"
+        ],
+        "related_items": [
+          "2.15.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      }
+    ],
+    "最短路优化": [
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.johnson_potentials",
+        "name": "高级最短路：Johnson Potentials",
+        "en_name": "Advanced Shortest Path: Johnson Potentials",
+        "suggested_pattern_id": "shortest_path_potentials",
+        "pattern_category": "最短路优化",
+        "reason": "Johnson势函数是最短路优化的重要技巧",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.yen_k_shortest",
+        "name": "高级最短路：Yen K Shortest",
+        "en_name": "Advanced Shortest Path: Yen K Shortest",
+        "suggested_pattern_id": "k_shortest_paths",
+        "pattern_category": "最短路优化",
+        "reason": "K短路的经典算法模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.eppstein_k_shortest",
+        "name": "高级最短路：Eppstein K Shortest",
+        "en_name": "Advanced Shortest Path: Eppstein K Shortest",
+        "suggested_pattern_id": "k_shortest_advanced",
+        "pattern_category": "最短路优化",
+        "reason": "Eppstein K短路的优化模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      },
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.replacement_paths",
+        "name": "高级最短路：Replacement Paths",
+        "en_name": "Advanced Shortest Path: Replacement Paths",
+        "suggested_pattern_id": "shortest_path_robustness",
+        "pattern_category": "最短路优化",
+        "reason": "最短路的鲁棒性分析模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      },
+      {
+        "candidate_id": "cand.graph.shortest_path_advanced.resource_constrained",
+        "name": "高级最短路：Resource Constrained",
+        "en_name": "Advanced Shortest Path: Resource Constrained",
+        "suggested_pattern_id": "constrained_shortest_path",
+        "pattern_category": "最短路优化",
+        "reason": "约束最短路的优化模式",
+        "required_items": [
+          "2.10.1",
+          "2.10.2"
+        ],
+        "related_items": [
+          "2.10.3"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      }
+    ],
+    "匹配算法": [
+      {
+        "candidate_id": "cand.graph.matching_cover.stable_marriage",
+        "name": "匹配与覆盖：Stable Marriage",
+        "en_name": "Matching and Cover: Stable Marriage",
+        "suggested_pattern_id": "stable_matching_pattern",
+        "pattern_category": "匹配算法",
+        "reason": "稳定婚姻问题的经典模式",
+        "required_items": [
+          "2.15.2",
+          "2.15.3"
+        ],
+        "related_items": [
+          "2.16.3"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      }
+    ],
+    "高级匹配": [
+      {
+        "candidate_id": "cand.graph.matching_cover.matroid_matching",
+        "name": "匹配与覆盖：Matroid Matching",
+        "en_name": "Matching and Cover: Matroid Matching",
+        "suggested_pattern_id": "matroid_matching_pattern",
+        "pattern_category": "高级匹配",
+        "reason": "拟阵匹配的高级模式",
+        "required_items": [
+          "2.15.2",
+          "2.21.15"
+        ],
+        "related_items": [
+          "2.21.14"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      },
+      {
+        "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+        "name": "匹配与覆盖：Tutte Matrix",
+        "en_name": "Matching and Cover: Tutte Matrix",
+        "suggested_pattern_id": "matching_complexity_pattern",
+        "pattern_category": "高级匹配",
+        "reason": "Tutte矩阵匹配的复杂模式",
+        "required_items": [
+          "2.15.2",
+          "2.21.14"
+        ],
+        "related_items": [
+          "2.21.13"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "expert",
+        "handoff_to": "3号线程",
+        "priority": "P0"
+      }
+    ],
+    "图论算法": [
+      {
+        "candidate_id": "cand.graph.scc_dag.dag_reachability",
+        "name": "强连通分量 DAG：Dag Reachability",
+        "en_name": "SCC Condensation DAG: Dag Reachability",
+        "suggested_pattern_id": "dag_reachability",
+        "pattern_category": "图论算法",
+        "reason": "DAG可达性问题是经典问题模式",
+        "required_items": [
+          "2.7.1",
+          "2.11.1"
+        ],
+        "related_items": [
+          "2.11.2"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      },
+      {
+        "candidate_id": "cand.graph.scc_dag.dominating_components",
+        "name": "强连通分量 DAG：Dominating Components",
+        "en_name": "SCC Condensation DAG: Dominating Components",
+        "suggested_pattern_id": "scc_applications",
+        "pattern_category": "图论算法",
+        "reason": "强连通分量的应用模式",
+        "required_items": [
+          "2.7.1",
+          "2.11.1"
+        ],
+        "related_items": [
+          "2.11.2"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      },
+      {
+        "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+        "name": "强连通分量 DAG：Minimum Edges To Strong",
+        "en_name": "SCC Condensation DAG: Minimum Edges To Strong",
+        "suggested_pattern_id": "dag_to_strongly_connected",
+        "pattern_category": "图论算法",
+        "reason": "DAG转强连通图的经典问题",
+        "required_items": [
+          "2.7.1",
+          "2.11.1"
+        ],
+        "related_items": [
+          "2.11.2"
+        ],
+        "tracks": [
+          "icpc",
+          "noi"
+        ],
+        "difficulty": "intermediate",
+        "handoff_to": "3号线程",
+        "priority": "P2"
+      }
+    ],
+    "动态算法": [],
+    "离线算法": [
+      {
+        "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+        "name": "动态图连通性：Divide And Conquer On Time",
+        "en_name": "Dynamic Connectivity: Divide And Conquer On Time",
+        "suggested_pattern_id": "offline_divide_conquer",
+        "pattern_category": "离线算法",
+        "reason": "时间分治的离线算法模式",
+        "required_items": [
+          "2.13.1",
+          "2.13.2"
+        ],
+        "related_items": [
+          "3.2.1"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      }
+    ],
+    "数据结构应用": [
+      {
+        "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+        "name": "动态图连通性：Edge Interval Model",
+        "en_name": "Dynamic Connectivity: Edge Interval Model",
+        "suggested_pattern_id": "interval_data_structure",
+        "pattern_category": "数据结构应用",
+        "reason": "区间数据结构的应用模式",
+        "required_items": [
+          "2.13.1",
+          "2.13.2"
+        ],
+        "related_items": [
+          "3.2.1"
+        ],
+        "tracks": [
+          "icpc"
+        ],
+        "difficulty": "advanced",
+        "handoff_to": "3号线程",
+        "priority": "P1"
+      }
+    ]
+  },
+  "clean_handoff": [
+    {
+      "candidate_id": "cand.graph.hall_theorem.applications",
+      "name": "Hall 定理及应用",
+      "en_name": "Hall's Marriage Theorem and Applications",
+      "suggested_pattern_id": "pattern_matching_hall",
+      "pattern_category": "图论建模",
+      "reason": "Hall 定理是二分图匹配的经典建模模式",
+      "required_items": [
+        "2.15.2",
+        "2.15.3"
+      ],
+      "related_items": [
+        "2.16.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling.raw",
+      "name": "差分约束系统建模",
+      "en_name": "Difference Constraints System Modeling",
+      "suggested_pattern_id": "graph_modeling_diff_constraints",
+      "pattern_category": "图论建模",
+      "reason": "差分约束是图论建模的重要模式",
+      "required_items": [
+        "2.10.1",
+        "4.5.2"
+      ],
+      "related_items": [
+        "2.10.2"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.max_weight_closure.problem",
+      "name": "最大权闭合子图",
+      "en_name": "Maximum Weight Closure Problem",
+      "suggested_pattern_id": "network_flow_closure",
+      "pattern_category": "网络流建模",
+      "reason": "最大权闭合子图是网络流建模的经典模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.21.67"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.johnson_potentials",
+      "name": "高级最短路：Johnson Potentials",
+      "en_name": "Advanced Shortest Path: Johnson Potentials",
+      "suggested_pattern_id": "shortest_path_potentials",
+      "pattern_category": "最短路优化",
+      "reason": "Johnson势函数是最短路优化的重要技巧",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.2_sat_modeling",
+      "name": "图论建模：2 Sat Modeling",
+      "en_name": "Graph Modeling: 2 Sat Modeling",
+      "suggested_pattern_id": "graph_modeling_2sat_detailed",
+      "pattern_category": "图论建模",
+      "reason": "2-SAT建模的详细模式分析",
+      "required_items": [
+        "2.7.1",
+        "4.5.2"
+      ],
+      "related_items": [
+        "2.15.1"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.yen_k_shortest",
+      "name": "高级最短路：Yen K Shortest",
+      "en_name": "Advanced Shortest Path: Yen K Shortest",
+      "suggested_pattern_id": "k_shortest_paths",
+      "pattern_category": "最短路优化",
+      "reason": "K短路的经典算法模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dag_reachability",
+      "name": "强连通分量 DAG：Dag Reachability",
+      "en_name": "SCC Condensation DAG: Dag Reachability",
+      "suggested_pattern_id": "dag_reachability",
+      "pattern_category": "图论算法",
+      "reason": "DAG可达性问题是经典问题模式",
+      "required_items": [
+        "2.7.1",
+        "2.11.1"
+      ],
+      "related_items": [
+        "2.11.2"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.eppstein_k_shortest",
+      "name": "高级最短路：Eppstein K Shortest",
+      "en_name": "Advanced Shortest Path: Eppstein K Shortest",
+      "suggested_pattern_id": "k_shortest_advanced",
+      "pattern_category": "最短路优化",
+      "reason": "Eppstein K短路的优化模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.divide_and_conquer_on_time",
+      "name": "动态图连通性：Divide And Conquer On Time",
+      "en_name": "Dynamic Connectivity: Divide And Conquer On Time",
+      "suggested_pattern_id": "offline_divide_conquer",
+      "pattern_category": "离线算法",
+      "reason": "时间分治的离线算法模式",
+      "required_items": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "related_items": [
+        "3.2.1"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.dominating_components",
+      "name": "强连通分量 DAG：Dominating Components",
+      "en_name": "SCC Condensation DAG: Dominating Components",
+      "suggested_pattern_id": "scc_applications",
+      "pattern_category": "图论算法",
+      "reason": "强连通分量的应用模式",
+      "required_items": [
+        "2.7.1",
+        "2.11.1"
+      ],
+      "related_items": [
+        "2.11.2"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.replacement_paths",
+      "name": "高级最短路：Replacement Paths",
+      "en_name": "Advanced Shortest Path: Replacement Paths",
+      "suggested_pattern_id": "shortest_path_robustness",
+      "pattern_category": "最短路优化",
+      "reason": "最短路的鲁棒性分析模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.edge_interval_model",
+      "name": "动态图连通性：Edge Interval Model",
+      "en_name": "Dynamic Connectivity: Edge Interval Model",
+      "suggested_pattern_id": "interval_data_structure",
+      "pattern_category": "数据结构应用",
+      "reason": "区间数据结构的应用模式",
+      "required_items": [
+        "2.13.1",
+        "2.13.2"
+      ],
+      "related_items": [
+        "3.2.1"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.scc_dag.minimum_edges_to_strong",
+      "name": "强连通分量 DAG：Minimum Edges To Strong",
+      "en_name": "SCC Condensation DAG: Minimum Edges To Strong",
+      "suggested_pattern_id": "dag_to_strongly_connected",
+      "pattern_category": "图论算法",
+      "reason": "DAG转强连通图的经典问题",
+      "required_items": [
+        "2.7.1",
+        "2.11.1"
+      ],
+      "related_items": [
+        "2.11.2"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.shortest_path_advanced.resource_constrained",
+      "name": "高级最短路：Resource Constrained",
+      "en_name": "Advanced Shortest Path: Resource Constrained",
+      "suggested_pattern_id": "constrained_shortest_path",
+      "pattern_category": "最短路优化",
+      "reason": "约束最短路的优化模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.hall_theorem",
+      "name": "匹配与覆盖：Hall Theorem",
+      "en_name": "Matching and Cover: Hall Theorem",
+      "suggested_pattern_id": "matching_hall_theorem",
+      "pattern_category": "图论建模",
+      "reason": "Hall定理在匹配中的应用模式",
+      "required_items": [
+        "2.15.2",
+        "2.15.3"
+      ],
+      "related_items": [
+        "2.16.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.layered_graph",
+      "name": "图论建模：Layered Graph",
+      "en_name": "Graph Modeling: Layered Graph",
+      "suggested_pattern_id": "layered_graph_modeling",
+      "pattern_category": "图论建模",
+      "reason": "分层图建模的技巧模式",
+      "required_items": [
+        "2.10.1",
+        "4.5.2"
+      ],
+      "related_items": [
+        "2.10.2"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "en_name": "Matching and Cover: Dilworth Theorem",
+      "suggested_pattern_id": "partial_order_matching",
+      "pattern_category": "图论建模",
+      "reason": "偏序集匹配的经典模式",
+      "required_items": [
+        "2.15.2",
+        "2.15.3"
+      ],
+      "related_items": [
+        "2.16.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.state_graph",
+      "name": "图论建模：State Graph",
+      "en_name": "Graph Modeling: State Graph",
+      "suggested_pattern_id": "state_machine_modeling",
+      "pattern_category": "图论建模",
+      "reason": "状态图建模的技巧模式",
+      "required_items": [
+        "2.7.1",
+        "4.5.2"
+      ],
+      "related_items": [
+        "2.10.1"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "en_name": "Matching and Cover: Minimum Path Cover",
+      "suggested_pattern_id": "path_cover_modeling",
+      "pattern_category": "图论建模",
+      "reason": "最小路径覆盖的经典建模模式",
+      "required_items": [
+        "2.11.1",
+        "2.15.2"
+      ],
+      "related_items": [
+        "2.15.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.shortest_path_potentials",
+      "name": "图论建模：Shortest Path Potentials",
+      "en_name": "Graph Modeling: Shortest Path Potentials",
+      "suggested_pattern_id": "potential_method_modeling",
+      "pattern_category": "图论建模",
+      "reason": "势函数在图论建模中的应用",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.k_shortest_paths",
+      "name": "图论建模：K Shortest Paths",
+      "en_name": "Graph Modeling: K Shortest Paths",
+      "suggested_pattern_id": "k_shortest_modeling",
+      "pattern_category": "图论建模",
+      "reason": "K短路问题的建模模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.10.3"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.matroid_matching",
+      "name": "匹配与覆盖：Matroid Matching",
+      "en_name": "Matching and Cover: Matroid Matching",
+      "suggested_pattern_id": "matroid_matching_pattern",
+      "pattern_category": "高级匹配",
+      "reason": "拟阵匹配的高级模式",
+      "required_items": [
+        "2.15.2",
+        "2.21.15"
+      ],
+      "related_items": [
+        "2.21.14"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.project_selection",
+      "name": "上下界网络流：Project Selection",
+      "en_name": "Flow with Lower Bounds: Project Selection",
+      "suggested_pattern_id": "network_flow_project_selection",
+      "pattern_category": "网络流建模",
+      "reason": "项目选择的网络流建模模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.21.67"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "en_name": "Matching and Cover: Stable Marriage",
+      "suggested_pattern_id": "stable_matching_pattern",
+      "pattern_category": "匹配算法",
+      "reason": "稳定婚姻问题的经典模式",
+      "required_items": [
+        "2.15.2",
+        "2.15.3"
+      ],
+      "related_items": [
+        "2.16.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.minimum_mean_cycle",
+      "name": "图论建模：Minimum Mean Cycle",
+      "en_name": "Graph Modeling: Minimum Mean Cycle",
+      "suggested_pattern_id": "cycle_optimization_modeling",
+      "pattern_category": "图论建模",
+      "reason": "最小平均环的建模模式",
+      "required_items": [
+        "2.10.1",
+        "2.10.2"
+      ],
+      "related_items": [
+        "2.21.12"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+      "name": "上下界网络流：Minimum Flow",
+      "en_name": "Flow with Lower Bounds: Minimum Flow",
+      "suggested_pattern_id": "min_flow_modeling",
+      "pattern_category": "网络流建模",
+      "reason": "最小流的建模模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.16.5"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.tutte_matrix",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "en_name": "Matching and Cover: Tutte Matrix",
+      "suggested_pattern_id": "matching_complexity_pattern",
+      "pattern_category": "高级匹配",
+      "reason": "Tutte矩阵匹配的复杂模式",
+      "required_items": [
+        "2.15.2",
+        "2.21.14"
+      ],
+      "related_items": [
+        "2.21.13"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "en_name": "Flow with Lower Bounds: Edge Lower Bound Transform",
+      "suggested_pattern_id": "flow_bounds_transformation",
+      "pattern_category": "网络流建模",
+      "reason": "流量边界变换的模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.16.5"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.maximum_flow",
+      "name": "上下界网络流：Maximum Flow",
+      "en_name": "Flow with Lower Bounds: Maximum Flow",
+      "suggested_pattern_id": "max_flow_with_bounds",
+      "pattern_category": "网络流建模",
+      "reason": "带边界最大流的模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.16.5"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.min_cost_circulation",
+      "name": "上下界网络流：Min Cost Circulation",
+      "en_name": "Flow with Lower Bounds: Min Cost Circulation",
+      "suggested_pattern_id": "circulation_optimization",
+      "pattern_category": "网络流建模",
+      "reason": "最小费用循环流的模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.6"
+      ],
+      "related_items": [
+        "2.16.4"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.node_demand",
+      "name": "上下界网络流：Node Demand",
+      "en_name": "Flow with Lower Bounds: Node Demand",
+      "suggested_pattern_id": "node_demand_modeling",
+      "pattern_category": "网络流建模",
+      "reason": "节点需求流的建模模式",
+      "required_items": [
+        "2.16.3",
+        "2.16.4"
+      ],
+      "related_items": [
+        "2.16.5"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.bounded_bipartite_matching",
+      "name": "上下界网络流：Bounded Bipartite Matching",
+      "en_name": "Flow with Lower Bounds: Bounded Bipartite Matching",
+      "suggested_pattern_id": "bounded_matching_modeling",
+      "pattern_category": "网络流建模",
+      "reason": "带边界二分图匹配的模式",
+      "required_items": [
+        "2.15.2",
+        "2.16.3"
+      ],
+      "related_items": [
+        "2.15.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "advanced",
+      "handoff_to": "3号线程",
+      "priority": "P1"
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "en_name": "Matching and Cover: Konig Theorem",
+      "suggested_pattern_id": "konig_theorem_pattern",
+      "pattern_category": "图论建模",
+      "reason": "König定理的应用模式",
+      "required_items": [
+        "2.15.2",
+        "2.15.3"
+      ],
+      "related_items": [
+        "2.16.3"
+      ],
+      "tracks": [
+        "icpc",
+        "noi"
+      ],
+      "difficulty": "intermediate",
+      "handoff_to": "3号线程",
+      "priority": "P2"
+    },
+    {
+      "candidate_id": "cand.graph.graph_modeling.steiner_tree",
+      "name": "图论建模：Steiner Tree",
+      "en_name": "Graph Modeling: Steiner Tree",
+      "suggested_pattern_id": "steiner_tree_modeling",
+      "pattern_category": "图论建模",
+      "reason": "斯坦纳树问题的建模模式",
+      "required_items": [
+        "2.10.1",
+        "2.13.1"
+      ],
+      "related_items": [
+        "2.21.23"
+      ],
+      "tracks": [
+        "icpc"
+      ],
+      "difficulty": "expert",
+      "handoff_to": "3号线程",
+      "priority": "P0"
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "candidate_id": "cand.graph.two_sat.modeling_techniques",
+      "name": "2-SAT 建模技巧",
+      "en_name": "2-SAT Modeling Techniques",
+      "exclusion_reason": "更像知识点而非问题模式",
+      "original_pattern_category": "图论建模",
+      "original_suggested_pattern_id": "graph_modeling_2sat"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.fully_dynamic_overview",
+      "name": "动态图连通性：Fully Dynamic Overview",
+      "en_name": "Dynamic Connectivity: Fully Dynamic Overview",
+      "exclusion_reason": "更像知识点而非问题模式",
+      "original_pattern_category": "动态算法",
+      "original_suggested_pattern_id": "dynamic_graph_algorithms"
+    }
+  ]
+}

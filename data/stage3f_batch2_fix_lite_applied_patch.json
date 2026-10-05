@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Stage3F Batch2 Fix Lite Applied Patch",
+    "generated_at": "2026-05-25T16:01:19.736893",
+    "batch_id": "stage3f_batch2",
+    "original_batch2_count": 20,
+    "duplicate_prune_removed": 4,
+    "fix_lite_processed": 16,
+    "demoted_to_c": 14,
+    "kept_b": 2,
+    "kept_a": 0,
+    "modified_direct_pre": false,
+    "modified_resolved_pre": false,
+    "modified_rel": false,
+    "added_items": false,
+    "deleted_items": false,
+    "merged_items": false
+  },
+  "applied_patches": [
+    {
+      "item_id": "2.10.29",
+      "name": "Z算法基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.30",
+      "name": "Z算法模式匹配应用",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.32",
+      "name": "KMP自动机基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.33",
+      "name": "AC自动机高级应用",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.10.34",
+      "name": "AC自动机失败树分析",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.1.31",
+      "name": "Pollard Rho分解",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.1.32",
+      "name": "原根基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.1.33",
+      "name": "BSGS离散对数",
+      "old_review_priority": "B",
+      "new_review_priority": "B",
+      "old_need_manual_review": true,
+      "new_need_manual_review": true
+    },
+    {
+      "item_id": "4.1.34",
+      "name": "扩展BSGS",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.12",
+      "name": "LCP RMQ优化",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.13",
+      "name": "SAM父树结构",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "3.8.14",
+      "name": "回文树Eertree构建",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.3.34",
+      "name": "Catalan数",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.9.4",
+      "name": "狄利克雷卷积基础",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "4.9.5",
+      "name": "莫比乌斯反演应用",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    },
+    {
+      "item_id": "2.18.11",
+      "name": "滑动窗口DP",
+      "old_review_priority": "B",
+      "new_review_priority": "C",
+      "old_need_manual_review": true,
+      "new_need_manual_review": false
+    }
+  ]
+}

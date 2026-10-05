@@ -1,0 +1,814 @@
+{
+  "total_candidates": 115,
+  "ready_to_merge": [
+    "cand.graph.dominator_tree.applications",
+    "cand.graph.dynamic_connectivity.offline",
+    "cand.graph.dynamic_connectivity.euler_tour_tree",
+    "cand.graph.directed_mst.zhu_liu",
+    "cand.graph.gomory_hu_tree.basic",
+    "cand.graph.global_min_cut.stoer_wagner",
+    "cand.graph.minimum_mean_cycle.karp",
+    "cand.graph.minimum_mean_cycle.hartmann_orlin",
+    "cand.graph.general_matching.blossom",
+    "cand.graph.matroid.basics",
+    "cand.graph.matroid.intersection",
+    "cand.graph.functional_graph.advanced",
+    "cand.graph.sat2.modeling_variants",
+    "cand.graph.difference_constraints.modeling",
+    "cand.graph.bridge_tree.applications",
+    "cand.graph.block_cut_tree.applications",
+    "cand.ds.wavelet_tree.basic",
+    "cand.ds.wavelet_tree.matrix",
+    "cand.ds.merge_sort_tree.basic",
+    "cand.ds.sqrt_tree.basic",
+    "cand.ds.disjoint_sparse_table.basic",
+    "cand.ds.implicit_treap.basic",
+    "cand.ds.order_statistic_tree.basic",
+    "cand.ds.segment_tree_2d.basic",
+    "cand.ds.dsu_on_tree.basic",
+    "cand.ds.small_to_large.basic",
+    "cand.string.ex_kmp.basic",
+    "cand.string.ac_automaton.applications",
+    "cand.string.ac_failure_tree.basic",
+    "cand.string.lcp_rmq.basic",
+    "cand.string.sam_parent_tree.basic",
+    "cand.string.lyndon_decomposition.basic",
+    "cand.string.duval_algorithm.basic",
+    "cand.string.runs.basic",
+    "cand.string.border_tree.basic",
+    "cand.math.factorization.pollard_rho",
+    "cand.math.discrete_log.bsgs",
+    "cand.math.discrete_log.exbsgs",
+    "cand.math.quadratic_residue.tonelli_shanks",
+    "cand.math.dirichlet_conv.basic",
+    "cand.math.du_jiao_sieve.basic",
+    "cand.math.min_25_sieve.basic",
+    "cand.math.lucas.extended",
+    "cand.math.crt.garner",
+    "cand.geometry.sweep_line.geometry",
+    "cand.geometry.segment_intersection.basic",
+    "cand.geometry.convex_polygon_queries.basic",
+    "cand.geometry.minkowski_sum.basic",
+    "cand.geometry.smallest_enclosing_circle.basic",
+    "cand.geometry.lattice_geometry.basic",
+    "cand.geometry.pick_theorem.basic",
+    "cand.interview.pattern.two_sum",
+    "cand.interview.pattern.fast_slow_pointers",
+    "cand.interview.pattern.linked_list_reversal",
+    "cand.interview.pattern.merge_intervals",
+    "cand.interview.pattern.meeting_rooms",
+    "cand.interview.pattern.top_k_frequent",
+    "cand.interview.pattern.k_way_merge",
+    "cand.interview.pattern.monotonic_stack",
+    "cand.interview.pattern.sliding_window_fixed",
+    "cand.interview.pattern.sliding_window_variable",
+    "cand.interview.pattern.island_problems",
+    "cand.interview.pattern.word_ladder",
+    "cand.interview.pattern.course_schedule",
+    "cand.modeling.state_as_graph.basic",
+    "cand.modeling.operation_as_edge.basic",
+    "cand.modeling.constraint_as_graph.basic",
+    "cand.modeling.minmax_to_binary.basic",
+    "cand.modeling.range_to_sweep.basic",
+    "cand.modeling.tree_path_to_lca.basic",
+    "cand.modeling.multiple_to_offline.basic",
+    "cand.modeling.dynamic_to_divide.basic",
+    "cand.modeling.choice_to_dp.basic",
+    "cand.modeling.matching_to_flow.basic",
+    "cand.modeling.feasibility_to_sat.basic",
+    "cand.modeling.range_to_algorithm.basic",
+    "cand.modeling.counterexample.basic",
+    "cand.modeling.boundary.basic",
+    "cand.modeling.interactive.basic",
+    "cand.math.polynomial.berlekamp_massey",
+    "cand.ds.tree.centroid_decomposition_applications",
+    "cand.string.hash.2d",
+    "cand.graph.min_cost_flow.applications",
+    "cand.dp.advanced.bitmask_optimization"
+  ],
+  "requires_review": [
+    "cand.graph.general_matching.weighted",
+    "cand.ds.segment_tree_beats.range_chmin",
+    "cand.ds.segment_tree_beats.range_chmax",
+    "cand.ds.segment_tree_beats.range_add",
+    "cand.ds.li_chao_tree.minimum",
+    "cand.ds.li_chao_tree.maximum",
+    "cand.ds.li_chao_tree.segment",
+    "cand.ds.rollback_dsu.basic",
+    "cand.ds.persistent_dsu.basic",
+    "cand.ds.dynamic_segment_tree.basic",
+    "cand.ds.fenwick_tree_2d.basic",
+    "cand.string.z_algorithm.basic",
+    "cand.string.kmp_automaton.basic",
+    "cand.string.suffix_array.sais",
+    "cand.string.generalized_sam.basic",
+    "cand.string.eertree.basic",
+    "cand.string.suffix_tree.ukkonen",
+    "cand.math.primality_test.miller_rabin",
+    "cand.math.primitive_root.basic",
+    "cand.math.lucas.basic",
+    "cand.math.crt.basic",
+    "cand.math.crt.extended",
+    "cand.math.fwt.basic",
+    "cand.geometry.rotating_calipers.basic",
+    "cand.geometry.half_plane_intersection.basic",
+    "cand.geometry.point_in_polygon.basic",
+    "cand.interview.pattern.prefix_sum_hashmap",
+    "cand.interview.pattern.binary_search_answer",
+    "cand.math.polynomial.lagrange_interpolation",
+    "cand.geometry.convex_hull.dynamic",
+    "cand.string.hash.collision"
+  ],
+  "merge_suggestions": [
+    {
+      "candidate_id": "cand.graph.dominator_tree.applications",
+      "name": "支配树应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.offline",
+      "name": "动态连通性 (离线)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.dynamic_connectivity.euler_tour_tree",
+      "name": "欧拉游走树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.directed_mst.zhu_liu",
+      "name": "有向最小生成树 (朱刘算法)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.gomory_hu_tree.basic",
+      "name": "Gomory-Hu 树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.global_min_cut.stoer_wagner",
+      "name": "全局最小割 (Stoer-Wagner)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.karp",
+      "name": "最小平均权环 (Karp)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.minimum_mean_cycle.hartmann_orlin",
+      "name": "最小平均权环 (Hartmann-Orlin)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.blossom",
+      "name": "一般图最大匹配 (Blossom)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.general_matching.weighted",
+      "name": "一般图最大权匹配",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 2.16.29"
+    },
+    {
+      "candidate_id": "cand.graph.matroid.basics",
+      "name": "拟阵基础",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.matroid.intersection",
+      "name": "拟阵交",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.functional_graph.advanced",
+      "name": "函数图进阶",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.sat2.modeling_variants",
+      "name": "2-SAT 建模变形",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.difference_constraints.modeling",
+      "name": "差分约束建模变形",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.bridge_tree.applications",
+      "name": "桥树应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.graph.block_cut_tree.applications",
+      "name": "点双连通分量树应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmin",
+      "name": "Segment Tree Beats (Range Chmin)",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.ds.segtree_advanced.beats_chmin"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_chmax",
+      "name": "Segment Tree Beats (Range Chmax)",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.ds.segtree_advanced.beats_chmax"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_beats.range_add",
+      "name": "Segment Tree Beats (Range Add)",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.ds.segtree_advanced.beats_range_add"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.minimum",
+      "name": "李超线段树 (最小值)",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 3.7.27"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.maximum",
+      "name": "李超线段树 (最大值)",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 3.7.27"
+    },
+    {
+      "candidate_id": "cand.ds.li_chao_tree.segment",
+      "name": "李超线段树 (线段)",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 3.7.27"
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.basic",
+      "name": "小波树基础",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.wavelet_tree.matrix",
+      "name": "小波矩阵",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.merge_sort_tree.basic",
+      "name": "归并排序树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.sqrt_tree.basic",
+      "name": "平方根树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.disjoint_sparse_table.basic",
+      "name": "不交稀疏表",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.rollback_dsu.basic",
+      "name": "可撤销并查集",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 3.4.6"
+    },
+    {
+      "candidate_id": "cand.ds.persistent_dsu.basic",
+      "name": "可持久化并查集",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 3.4.11"
+    },
+    {
+      "candidate_id": "cand.ds.dynamic_segment_tree.basic",
+      "name": "动态开点线段树",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 3.7.4"
+    },
+    {
+      "candidate_id": "cand.ds.implicit_treap.basic",
+      "name": "无旋Treap (Implicit Key)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.order_statistic_tree.basic",
+      "name": "顺序统计树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.fenwick_tree_2d.basic",
+      "name": "二维树状数组",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.ds.tree_advanced.binary_indexed_2d"
+    },
+    {
+      "candidate_id": "cand.ds.segment_tree_2d.basic",
+      "name": "二维线段树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.dsu_on_tree.basic",
+      "name": "树上启发式合并",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.small_to_large.basic",
+      "name": "小启发式合并",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.z_algorithm.basic",
+      "name": "Z 算法",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.string.matching.z_algorithm"
+    },
+    {
+      "candidate_id": "cand.string.ex_kmp.basic",
+      "name": "扩展KMP",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.kmp_automaton.basic",
+      "name": "KMP 自动机",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 2.10.2"
+    },
+    {
+      "candidate_id": "cand.string.ac_automaton.applications",
+      "name": "AC 自动机应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.ac_failure_tree.basic",
+      "name": "AC 自动机失败树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.suffix_array.sais",
+      "name": "后缀数组 (SA-IS)",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 2.10.7"
+    },
+    {
+      "candidate_id": "cand.string.lcp_rmq.basic",
+      "name": "LCP + RMQ",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.generalized_sam.basic",
+      "name": "广义后缀自动机",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 2.10.15"
+    },
+    {
+      "candidate_id": "cand.string.sam_parent_tree.basic",
+      "name": "SAM 父树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.eertree.basic",
+      "name": "回文树",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 3.8.5"
+    },
+    {
+      "candidate_id": "cand.string.suffix_tree.ukkonen",
+      "name": "后缀树 (Ukkonen)",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 3.8.7"
+    },
+    {
+      "candidate_id": "cand.string.lyndon_decomposition.basic",
+      "name": "Lyndon 分解",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.duval_algorithm.basic",
+      "name": "Duval 算法",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.runs.basic",
+      "name": "Runs (重复子串)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.border_tree.basic",
+      "name": "Border 树",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.primality_test.miller_rabin",
+      "name": "Miller-Rabin 素性测试",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.math.number_theory.miller_rabin"
+    },
+    {
+      "candidate_id": "cand.math.factorization.pollard_rho",
+      "name": "Pollard Rho 分解",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.primitive_root.basic",
+      "name": "原根",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.math.number_theory.primitive_root"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.bsgs",
+      "name": "离散对数 (BSGS)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.discrete_log.exbsgs",
+      "name": "扩展BSGS",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.quadratic_residue.tonelli_shanks",
+      "name": "二次剩余 (Tonelli-Shanks)",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.dirichlet_conv.basic",
+      "name": "狄利克雷卷积",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.du_jiao_sieve.basic",
+      "name": "杜教筛",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.min_25_sieve.basic",
+      "name": "Min_25 筛",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.lucas.basic",
+      "name": "Lucas 定理",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 4.3.15"
+    },
+    {
+      "candidate_id": "cand.math.lucas.extended",
+      "name": "扩展Lucas",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.crt.basic",
+      "name": "中国剩余定理",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 4.2.9"
+    },
+    {
+      "candidate_id": "cand.math.crt.extended",
+      "name": "扩展中国剩余定理",
+      "suggestion": "manual_review",
+      "reason": "Appears to be parent topic of existing item 4.2.17"
+    },
+    {
+      "candidate_id": "cand.math.crt.garner",
+      "name": "Garner 算法",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.fwt.basic",
+      "name": "快速沃尔什变换",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.math.polynomial.fwht"
+    },
+    {
+      "candidate_id": "cand.geometry.rotating_calipers.basic",
+      "name": "旋转卡壳",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.geo.basic.rotating_calipers"
+    },
+    {
+      "candidate_id": "cand.geometry.half_plane_intersection.basic",
+      "name": "半平面交",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 4.7.28"
+    },
+    {
+      "candidate_id": "cand.geometry.sweep_line.geometry",
+      "name": "扫描线几何",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.segment_intersection.basic",
+      "name": "线段交点",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.point_in_polygon.basic",
+      "name": "点在多边形内",
+      "suggestion": "reject",
+      "reason": "Duplicate with existing candidate cand.geo.computational.point_in_polygon"
+    },
+    {
+      "candidate_id": "cand.geometry.convex_polygon_queries.basic",
+      "name": "凸多边形查询",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.minkowski_sum.basic",
+      "name": "闵可夫斯基和",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.smallest_enclosing_circle.basic",
+      "name": "最小包围圆",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.lattice_geometry.basic",
+      "name": "格点几何",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.pick_theorem.basic",
+      "name": "Pick 定理",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.two_sum",
+      "name": "两数之和模式",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.prefix_sum_hashmap",
+      "name": "前缀和 + HashMap",
+      "suggestion": "add_as_subtopic",
+      "reason": "Appears to be a subtopic of existing item 2.4.1"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.fast_slow_pointers",
+      "name": "快慢指针",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.linked_list_reversal",
+      "name": "链表反转",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.merge_intervals",
+      "name": "合并区间",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.meeting_rooms",
+      "name": "会议室问题",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.top_k_frequent",
+      "name": "前K个高频元素",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.k_way_merge",
+      "name": "K路归并",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.monotonic_stack",
+      "name": "单调栈下一个更大",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_fixed",
+      "name": "滑动窗口固定大小",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.sliding_window_variable",
+      "name": "滑动窗口可变大小",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.binary_search_answer",
+      "name": "二分答案",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 2.3.6"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.island_problems",
+      "name": "岛屿问题",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.word_ladder",
+      "name": "单词阶梯",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.interview.pattern.course_schedule",
+      "name": "课程表",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.state_as_graph.basic",
+      "name": "状态看成点",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.operation_as_edge.basic",
+      "name": "操作看成边",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.constraint_as_graph.basic",
+      "name": "约束看成图",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.minmax_to_binary.basic",
+      "name": "最小最大转二分答案",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_sweep.basic",
+      "name": "区间贡献转扫描线",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.tree_path_to_lca.basic",
+      "name": "树上路径转LCA",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.multiple_to_offline.basic",
+      "name": "多次询问转离线",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.dynamic_to_divide.basic",
+      "name": "动态问题转时间分治",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.choice_to_dp.basic",
+      "name": "选择问题转DP状态",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.matching_to_flow.basic",
+      "name": "匹配问题转流",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.feasibility_to_sat.basic",
+      "name": "可行性转2-SAT",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.range_to_algorithm.basic",
+      "name": "数据范围反推算法",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.counterexample.basic",
+      "name": "反例构造",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.boundary.basic",
+      "name": "特判与边界构造",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.modeling.interactive.basic",
+      "name": "交互题策略",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.lagrange_interpolation",
+      "name": "拉格朗日插值",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 2.17.2"
+    },
+    {
+      "candidate_id": "cand.math.polynomial.berlekamp_massey",
+      "name": "Berlekamp-Massey",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.ds.tree.centroid_decomposition_applications",
+      "name": "点分治应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.geometry.convex_hull.dynamic",
+      "name": "动态凸包",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 4.7.24"
+    },
+    {
+      "candidate_id": "cand.string.hash.2d",
+      "name": "二维哈希",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.string.hash.collision",
+      "name": "哈希冲突处理",
+      "suggestion": "merge_with_existing",
+      "reason": "Exact name match with existing item 3.11.3"
+    },
+    {
+      "candidate_id": "cand.graph.min_cost_flow.applications",
+      "name": "最小费用流应用",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    },
+    {
+      "candidate_id": "cand.dp.advanced.bitmask_optimization",
+      "name": "状态压缩DP优化",
+      "suggestion": "add_new",
+      "reason": "No significant duplicates found"
+    }
+  ]
+}

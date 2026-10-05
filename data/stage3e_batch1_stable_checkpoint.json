@@ -1,0 +1,141 @@
+{
+  "stage": "stage3e_aggressive_batch1",
+  "status": "passed",
+  "timestamp": "2026-05-22",
+  "description": "Stage3E-Aggressive Batch1 完成检查点 - 稳定基线",
+
+  "baseline_metrics": {
+    "item_count": 1512,
+    "section_count": 65,
+    "validation_passed": true,
+    "resolved_pre_mismatches": 0,
+    "dangling_refs": 0,
+    "direct_pre_cycle": false,
+    "self_in_resolved_pre": 0,
+    "direct_pre_section_refs": 0,
+    "resolved_pre_section_refs": 0
+  },
+
+  "batch1_summary": {
+    "added_items_count": 30,
+    "added_items_range": "2.21.70 to 2.21.99",
+    "series_breakdown": {
+      "maximum_closure": {
+        "count": 6,
+        "range": "2.21.70 to 2.21.75",
+        "theme": "最大权闭合子图"
+      },
+      "directed_mst": {
+        "count": 6,
+        "range": "2.21.76 to 2.21.81", 
+        "theme": "有向生成树"
+      },
+      "dominator_tree": {
+        "count": 6,
+        "range": "2.21.82 to 2.21.87",
+        "theme": "支配树"
+      },
+      "dynamic_mst": {
+        "count": 6,
+        "range": "2.21.88 to 2.21.93",
+        "theme": "动态最小生成树"
+      },
+      "global_min_cut": {
+        "count": 6,
+        "range": "2.21.94 to 2.21.99",
+        "theme": "全局最小割"
+      }
+    }
+  },
+
+  "resolved_pre_fix_summary": {
+    "issue": "direct_pre 已更新但 resolved_pre 未同步",
+    "affected_nodes": 10,
+    "affected_ranges": {
+      "dynamic_mst": "2.21.88 to 2.21.93 (6 nodes)",
+      "global_min_cut": "2.21.96 to 2.21.98 (3 nodes)",
+      "directed_mst": "2.21.81 (1 node)"
+    },
+    "solution": "精确复制官方 compute_resolved 逻辑",
+    "success_rate": "100%",
+    "final_mismatches": 0
+  },
+
+  "technical_achievements": {
+    "official_logic_analysis": {
+      "status": "completed",
+      "functions_identified": [
+        "compute_resolved - line 1336",
+        "validate_resolved_closure - line 1954",
+        "unique - line 127"
+      ],
+      "algorithm_understood": "DFS + memoization with first occurrence order"
+    },
+    "failed_attempts_identified": 3,
+    "root_cause_identified": "BFS vs DFS, section dependencies, sorting order",
+    "final_solution": "exact copy of official functions"
+  },
+
+  "files_generated_during_batch1": [
+    "data/stage3e_aggressive_batch1_added_items_summary.json",
+    "data/stage3e_aggressive_batch1_candidate_to_item_id_mapping.json",
+    "data/stage3e_aggressive_batch1_dependency_fix_candidates.json",
+    "data/stage3e_aggressive_batch1_resolved_pre_mismatch_diagnosis.json",
+    "data/stage3e_aggressive_batch1_resolved_pre_fix_applied_patch.json",
+    "data/stage3e_aggressive_batch1_resolved_pre_fix_validation_result.json",
+    "docs/stage3e_aggressive_batch1_resolved_pre_mismatch_diagnosis_report.md",
+    "docs/stage3e_aggressive_batch1_resolved_pre_fix_report.md",
+    "data/stage3e_batch1_resolved_pre_fix_v3_validation_result.json",
+    "docs/stage3e_batch1_resolved_pre_fix_v3_report.md",
+    "docs/stage3e_batch1_resolved_pre_validator_logic_report.md",
+    "data/stage3e_batch1_resolved_pre_validator_logic_summary.json",
+    "data/stage3e_batch1_resolved_pre_fix_v4_step2_applied_patch.json",
+    "data/stage3e_batch1_resolved_pre_fix_v4_step2_validation_result.json",
+    "docs/stage3e_batch1_resolved_pre_fix_v4_step2_report.md"
+  ],
+
+  "temp_scripts_inventory": "see stage3e_batch1_temp_scripts_inventory.json",
+
+  "backups_created": [
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch1_resolved_pre_fix.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch1_resolved_pre_fix_v3.json",
+    "backups/merged_knowledge_graph_item_dependencies_refined_before_stage3e_batch1_resolved_pre_fix_v4_step2.json"
+  ],
+
+  "next_recommended_step": "stage3e_aggressive_batch2_reviewed_merge_plan",
+
+  "quality_assurance": {
+    "validation_completed": true,
+    "all_checks_passed": true,
+    "graph_integrity_verified": true,
+    "dependency_consistency_verified": true,
+    "ready_for_next_batch": true
+  },
+
+  "lessons_learned": {
+    "official_logic_importance": "Critical - exact replication guarantees success",
+    "algorithm_precision": "DFS vs BFS, order matters",
+    "section_dependency_handling": "Must filter out section dependencies",
+    "sorting_behavior": "First occurrence order, not alphabetical",
+    "diagnostic_value": "v4-Step1 analysis was key to solution"
+  },
+
+  "constraints_respected": {
+    "did_not_modify_main_graph": true,
+    "did_not_modify_dependency_validation_result": true,
+    "did_not_modify_item_dependency_refinement_report": true,
+    "did_not_modify_refine_item_dependencies": true,
+    "did_not_add_items": true,
+    "did_not_delete_items": true,
+    "did_not_modify_direct_pre": true,
+    "did_not_modify_resolved_pre": true,
+    "did_not_continue_batch2": true,
+    "read_only_checkpoint": true
+  },
+
+  "final_validation": {
+    "command": "python refine_item_dependencies.py --validate-only --input merged_knowledge_graph_item_dependencies_refined.json --report item_dependency_refinement_report.md --low-conf low_confidence_dependency_review.json --validation dependency_validation_result.json --strict",
+    "expected_result": "passed = true, resolved_pre_mismatches = []",
+    "status": "ready_to_run"
+  }
+}

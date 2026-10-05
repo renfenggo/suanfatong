@@ -1,0 +1,34 @@
+{
+  "fix_applied_at": "2026-05-23T10:25:29.548360",
+  "batch_id": "stage3e_aggressive_batch4_validation_fix",
+  "resolved_pre_fixes": {
+    "total_new_nodes": 30,
+    "nodes_modified": 0,
+    "only_new_nodes_modified": true,
+    "fixed_nodes": []
+  },
+  "metadata_fixes": [
+    {
+      "field": "meta.validation_baseline.item_count",
+      "old_value": 1572,
+      "new_value": 1602,
+      "reason": "Batch4 新增了30个节点"
+    },
+    {
+      "field": "meta.validation_baseline.section_count",
+      "old_value": 65,
+      "new_value": 65,
+      "reason": "section_count 保持不变"
+    }
+  ],
+  "validation_baseline_update": {
+    "item_count": {
+      "old": 1572,
+      "new": 1602
+    },
+    "section_count": {
+      "old": 65,
+      "new": 65
+    }
+  }
+}

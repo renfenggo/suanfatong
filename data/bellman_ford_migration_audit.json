@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T13:38:48.267704+00:00",
+    "audit_type": "bellman_ford_migration_readonly",
+    "main_graph_modified": false,
+    "any_file_modified": false
+  },
+  "summary": {
+    "migration_successful": true,
+    "old_id_residual": {
+      "direct_pre_refs": 0,
+      "rel_refs": 0,
+      "resolved_pre_refs": 250
+    },
+    "content_orphan": false,
+    "io_v4_4_consistent": true,
+    "section_page_risk": "low — ID gap at 1.5.16 (cosmetic only)",
+    "recommend_new_checkpoint": true,
+    "modified_any_file": false,
+    "continue_batch2": false
+  },
+  "checks": {
+    "item_count_2640": true,
+    "section_count_65": true,
+    "no_1_5_16": true,
+    "has_2_13_30": true,
+    "name_is_bellman_ford": true,
+    "parent_is_2_13": true,
+    "section_is_2_13": true,
+    "no_direct_pre_to_1_5_16": true,
+    "no_rel_to_1_5_16": true,
+    "resolved_pre_1_5_16_count": 250,
+    "no_duplicate_ids": true,
+    "io_item_count_2640": true,
+    "io_no_1_5_16": true,
+    "io_has_2_13_30": true,
+    "io_2_13_30_fields_complete": true,
+    "io_no_section_ref": true,
+    "io_no_dangling_ref": true,
+    "section_1_5_count_22": true,
+    "section_1_5_no_bellman": true,
+    "section_2_13_has_bellman": true,
+    "section_1_5_has_gap": true,
+    "content_items_has_2_13_30": true,
+    "content_items_no_1_5_16": true,
+    "content_index_has_batch2_part6": true,
+    "checkpoint_still_has_1_5_16": true,
+    "all_backups_exist": true
+  },
+  "risks": [
+    {
+      "level": "low",
+      "field": "resolved_pre",
+      "count": 250,
+      "description": "250 个节点的 resolved_pre 仍包含 1.5.16（传递闭包缓存），需重新运行依赖展开脚本清理"
+    },
+    {
+      "level": "info",
+      "field": "checkpoint",
+      "description": "stage4_batch2_part_006.checkpoint.json 仍记录 1.5.16（历史审计文件，非活跃引用）"
+    },
+    {
+      "level": "low",
+      "field": "section_1_5_gap",
+      "description": "Section 1.5 存在 ID 跳号（1.5.15→1.5.17），前端排序可能导致空占位"
+    }
+  ],
+  "bellman_ford_current": {
+    "item_id": "2.13.30",
+    "name": "Bellman-Ford 算法",
+    "section": "2.13",
+    "parent": "2.13",
+    "direct_pre": [
+      "2.9.2",
+      "2.13.2"
+    ],
+    "rel": [
+      "2.13.2",
+      "2.13.4",
+      "2.13.6"
+    ],
+    "level": "L3"
+  },
+  "artifacts": {
+    "backups": 5,
+    "backup_paths": [
+      "backups/merged_knowledge_graph_item_dependencies_refined_before_bellman_migrate_20260526_204014.json",
+      "backups/io_v4_4_before_bellman_migrate_20260526_204014.json",
+      "backups/section_1_5_units_before_bellman_migrate_20260526_204014.json",
+      "backups/section_2_13_units_before_bellman_migrate_20260526_204014.json",
+      "backups/stage4_batch2_part_006_before_bellman_migrate_20260526_204014.json"
+    ]
+  }
+}

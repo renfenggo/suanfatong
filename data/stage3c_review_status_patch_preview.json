@@ -1,0 +1,503 @@
+{
+  "main_graph_modified": false,
+  "patch_type": "stage3c_review_status_and_dependency_preview",
+  "target_item_count": 36,
+  "review_status_updates": [
+    {
+      "id": "2.21.40",
+      "source_candidate_id": "cand.graph.virtual_tree.stack_construction",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.41",
+      "source_candidate_id": "cand.graph.block_cut_tree.biconnected_component",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.42",
+      "source_candidate_id": "cand.graph.cactus_graph.shortest_path",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "2.21.6",
+          "2.13.1"
+        ]
+      }
+    },
+    {
+      "id": "2.21.43",
+      "source_candidate_id": "cand.graph.dynamic_connectivity.segment_tree_over_time",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.44",
+      "source_candidate_id": "cand.graph.dynamic_mst.offline_updates",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.45",
+      "source_candidate_id": "cand.graph.global_min_cut.gomory_hu_tree",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.46",
+      "source_candidate_id": "cand.graph.closure_model.profit_dependency",
+      "review_result": "move_to_problem_patterns",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Keep the knowledge item, but sync this modeling-shaped concept to problem_patterns."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.47",
+      "source_candidate_id": "cand.graph.special_graph.maximum_cardinality_search",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.48",
+      "source_candidate_id": "cand.graph.directed_mst.contracted_cycle",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "2.21.31"
+        ]
+      }
+    },
+    {
+      "id": "2.21.49",
+      "source_candidate_id": "cand.graph.scc_dag.source_sink_count",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.50",
+      "source_candidate_id": "cand.graph.matroid_graph.matroid_intersection",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "2.21.15"
+        ]
+      }
+    },
+    {
+      "id": "2.21.51",
+      "source_candidate_id": "cand.graph.planar_graph.euler_formula",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.52",
+      "source_candidate_id": "cand.graph.dominator_tree.immediate_dominator",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "2.21.4"
+        ]
+      }
+    },
+    {
+      "id": "2.21.53",
+      "source_candidate_id": "cand.graph.virtual_tree.tree_dp",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "2.21.40",
+          "2.8.1"
+        ]
+      }
+    },
+    {
+      "id": "2.21.54",
+      "source_candidate_id": "cand.graph.block_cut_tree.path_query",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.55",
+      "source_candidate_id": "cand.graph.cactus_graph.tree_conversion",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.56",
+      "source_candidate_id": "cand.graph.dynamic_connectivity.rollback_dsu",
+      "review_result": "keep_manual_review",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "2.21.57",
+      "source_candidate_id": "cand.graph.dynamic_mst.link_cut_tree_approach",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.37",
+      "source_candidate_id": "cand.ds.rmq_sparse.fischer_heun",
+      "review_result": "keep_manual_review",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.38",
+      "source_candidate_id": "cand.ds.multidimensional.range_tree",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.39",
+      "source_candidate_id": "cand.ds.bitset_linear_basis.range_xor_basis",
+      "review_result": "keep_manual_review",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.40",
+      "source_candidate_id": "cand.ds.offline_framework.mo_algorithm_with_updates",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.41",
+      "source_candidate_id": "cand.ds.sequence_structure.implicit_splay_reverse",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.42",
+      "source_candidate_id": "cand.ds.succinct_probabilistic.skip_list",
+      "review_result": "keep_manual_review",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.43",
+      "source_candidate_id": "cand.ds.persistent_structure.persistent_segment_tree_kth",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.44",
+      "source_candidate_id": "cand.ds.tree_decomposition_ds.dsu_on_tree_color",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.45",
+      "source_candidate_id": "cand.ds.merge_sort_tree.range_successor",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.46",
+      "source_candidate_id": "cand.ds.dynamic_tree.dynamic_tree_diameter",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.47",
+      "source_candidate_id": "cand.ds.rmq_sparse.blocked_rmq",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.48",
+      "source_candidate_id": "cand.ds.multidimensional.offline_2d_point_counting",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "3.13.6",
+          "2.3.1"
+        ]
+      }
+    },
+    {
+      "id": "3.13.49",
+      "source_candidate_id": "cand.ds.bitset_linear_basis.linear_basis_merge",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.50",
+      "source_candidate_id": "cand.ds.offline_framework.rollback_block_decomposition",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "3.13.36"
+        ]
+      }
+    },
+    {
+      "id": "3.13.51",
+      "source_candidate_id": "cand.ds.sequence_structure.implicit_treap_lazy_tags",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.52",
+      "source_candidate_id": "cand.ds.persistent_structure.persistent_union_find",
+      "review_result": "needs_dependency_fix",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "A",
+        "review_reason": "Dependency is valid but not yet semantically specific enough."
+      },
+      "additional_non_review_suggestions": {
+        "notes": [],
+        "direct_pre_add": [
+          "3.4.1",
+          "3.4.11"
+        ]
+      }
+    },
+    {
+      "id": "3.13.53",
+      "source_candidate_id": "cand.ds.tree_decomposition_ds.small_large_subtree",
+      "review_result": "approve",
+      "proposed_review_status": {
+        "need_manual_review": false,
+        "review_priority": "C",
+        "review_reason": "Dependencies, section placement, and metadata are clear enough to downgrade."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    },
+    {
+      "id": "3.13.54",
+      "source_candidate_id": "cand.ds.merge_sort_tree.point_update",
+      "review_result": "keep_manual_review",
+      "proposed_review_status": {
+        "need_manual_review": true,
+        "review_priority": "B",
+        "review_reason": "Advanced topic is structurally valid but should keep a human review gate."
+      },
+      "additional_non_review_suggestions": {
+        "notes": []
+      }
+    }
+  ]
+}

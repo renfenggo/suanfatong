@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "generated_at": "2026-05-27T04:47:35Z",
+    "validate_only": true,
+    "main_graph_modified": true,
+    "fix_lite_applied": true,
+    "only_review_fields_changed": true,
+    "direct_pre_unchanged": true,
+    "resolved_pre_unchanged": true,
+    "rel_unchanged": true,
+    "old_2640_unchanged": true,
+    "io_v4_4_modified": false,
+    "content_packages_modified": false,
+    "frontend_code_modified": false,
+    "batch3_continued": false
+  },
+  "pre_checks": {
+    "item_count_3240": true,
+    "section_count_65": true,
+    "readiness_ok": true,
+    "patch_count_600": true,
+    "all_patch_ids_exist": true,
+    "all_patch_ids_are_batch2": true,
+    "no_old_2640_in_patches": true,
+    "all_currently_pending_review": true
+  },
+  "applied_summary": {
+    "total": 600,
+    "priority_B": 369,
+    "priority_C": 231
+  },
+  "validation": {
+    "item_count_3240": true,
+    "section_count_65": true,
+    "dangling_refs": [],
+    "dangling_count": 0,
+    "direct_pre_cycle": null,
+    "resolved_pre_mismatches": [],
+    "rp_mismatch_count": 0,
+    "duplicate_ids": false,
+    "patch_review_fields_correct": true,
+    "old_2640_review_unchanged": true,
+    "product_metadata_validation_passed": true,
+    "report_matches_json": true,
+    "passed": true
+  },
+  "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch2_full600_fix_lite_20260527_124735.json",
+  "recommendations": {
+    "generate_stable_checkpoint": true,
+    "continue_batch3": false
+  }
+}

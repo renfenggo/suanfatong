@@ -1,0 +1,234 @@
+{
+  "sectionId": "4.8",
+  "sectionName": "明确保留为国内扩展、但不做 IOI 主线",
+  "units": [
+    {
+      "itemId": "4.8.1",
+      "title": "线性代数基础",
+      "learningGoal": "理解矩阵、行列式、线性方程组的基本概念和运算",
+      "explanation": "线性代数是研究向量空间、线性变换的数学分支，在竞赛中用于求解线性方程组、计算行列式等。\n\n一、矩阵（Matrix）\n\n定义：\n矩阵 A = (a_{ij}) 是 m × n 的数表。\n\n基本运算：\n1. 矩阵加法：C = A + B，c_{ij} = a_{ij} + b_{ij}\n2. 矩阵乘法：C = A × B，c_{ij} = Σ_k a_{ik}b_{kj}\n3. 矩阵转置：A^T，(A^T)_{ij} = A_{ji}\n4. 矩阵逆：A^(-1)，满足 AA^(-1) = I\n\n特殊矩阵：\n- 单位矩阵 I：对角线为 1，其余为 0\n- 零矩阵：所有元素为 0\n- 对角矩阵：非对角线元素为 0\n- 对称矩阵：A = A^T\n\n二、行列式（Determinant）\n\n定义：\n对于 n × n 矩阵 A，行列式 det(A) 或 |A| 是一个数。\n\n性质：\n1. det(AB) = det(A)det(B)\n2. det(A^T) = det(A)\n3. det(I) = 1\n4. 交换两行，行列式变号\n\n计算：\n- 2×2：|a b; c d| = ad - bc\n- 3×3：沙路法或展开定理\n- n×n：展开定理或高斯消元\n\n三、线性方程组\n\n形式：Ax = b\n\n解法：\n1. 高斯消元：化为上三角形式\n2. 克莱姆法则：x_i = det(A_i)/det(A)\n3. 矩阵求逆：x = A^(-1)b\n\n解的情况：\n- 唯一解：det(A) ≠ 0\n- 无穷多解：det(A) = 0 且相容\n- 无解：det(A) = 0 且不相容\n\n竞赛应用：\n- 解线性方程组（高斯消元）\n- 计算行列式\n- 矩阵快速幂（用于线性递推）\n- 特征值和特征向量（概率 DP）\n\n竞赛提示：\n1. 高斯消元是最常用的算法\n2. 矩阵快速幂用于 Fibonacci 等递推\n3. 浮点数矩阵注意精度问题\n4. 模运算矩阵注意逆元",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"线性代数基础\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解线性代数基础的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现线性代数基础算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现线性代数基础的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "线性代数基础的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "线性代数基础有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.8.2",
+      "title": "高斯消元",
+      "learningGoal": "掌握高斯消元求解线性方程组的算法实现",
+      "explanation": "高斯消元（Gaussian Elimination）：用于求解线性方程组 Ax = b 的经典算法。\n\n一、高斯消元算法\n\n目标：将增广矩阵 [A|b] 化为上三角形式，然后回代求解。\n\n步骤：\n1. 消元（Forward Elimination）：\n   对于 i = 1 到 n-1：\n   - 在第 i 列找到绝对值最大的元素（部分选主元）\n   - 将该行交换到第 i 行\n   - 对于 j = i+1 到 n，用第 i 行消去第 j 行的第 i 列元素\n\n2. 回代（Back Substitution）：\n   对于 i = n 到 1（倒序）：\n   - x_i = (b_i - Σ_{j=i+1}^n a_{ij}x_j) / a_{ii}\n\n二、特殊情况处理\n\n1. 无解：出现 0x = k（k ≠ 0）\n2. 无穷多解：出现 0x = 0\n3. 唯一解：所有对角元素非零\n\n三、模运算下的高斯消元\n\n除法改为乘逆元：\n对于模运算，a / b = a × b^(-1) mod p\n\n时间复杂度：O(n^3)\n空间复杂度：O(n^2)\n\n竞赛应用：\n- 解线性方程组（实数或模运算）\n- 计算行列式\n- 求矩阵的秩\n- 判断向量组的线性相关性\n\n竞赛提示：\n1. 浮点数注意精度，可以用 eps 比较是否为零\n2. 模运算需要计算乘法逆元\n3. 部分选主元可以减少数值误差\n4. 无解或无穷多解需要特殊判断",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"高斯消元\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解高斯消元的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现高斯消元算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现高斯消元的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "高斯消元的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "高斯消元有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.8.3",
+      "title": "FFT / NTT 数学基础",
+      "learningGoal": "理解多项式乘法的 DFT、FFT、NTT 算法原理",
+      "explanation": "FFT（快速傅里叶变换）和 NTT（快速数论变换）用于高效计算多项式乘法。\n\n一、多项式乘法的朴素方法\n\n多项式 A(x) = Σ a_i x^i，B(x) = Σ b_i x^i\nC(x) = A(x)B(x) = Σ c_k x^k，其中 c_k = Σ_{i+j=k} a_i b_j\n\n朴素方法：O(n^2)\n\n二、离散傅里叶变换（DFT）\n\n单位根：\n复数 ω_n = e^(2πi/n)，满足 ω_n^n = 1\n\n性质：\n1. ω_n^(k) = ω_n^(k mod n)\n2. ω_n^(n/2) = -1\n3. (ω_n^k)^2 = ω_(n/2)^k\n\nDFT 的意义：\n- 多项式乘法在系数表示下是 O(n^2)\n- 在点值表示下是 O(n)（逐点相乘）\n- DFT 可以在 O(n log n) 时间内将系数表示转换为点值表示\n\n三、快速傅里叶变换（FFT）\n\n分治思想：\n- 将多项式按奇偶下标拆分为两个 n/2 次多项式\n- 递归计算两个子问题的 DFT\n- 合并结果\n\n时间复杂度：O(n log n)\n空间复杂度：O(n)\n\n四、快速数论变换（NTT）\n\nFFT 的问题：\n- 使用浮点数运算，有精度误差\n\nNTT 的改进：\n- 使用数论中的原根 g\n- 在模 p 下运算，避免精度问题\n- 要求 p = k·2^n + 1（常用 998244353 = 119×2^23 + 1）\n\n时间复杂度：O(n log n)\n精度：完全精确（整数运算）\n\n五、应用场景\n\n1. 多项式乘法：卷积运算\n2. 字符串匹配：FFT 加速\n3. 快速幂：多项式快速幂\n4. 数字信号处理：频域分析\n\n竞赛提示：\n1. NTT 要求 n 是 2 的幂\n2. 注意逆变换的除法要乘逆元\n3. 卷积长度至少是 len(A) + len(B) - 1\n4. 常用模数 998244353 或 1004535809",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"FFT / NTT 数学基础\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解FFT / NTT 数学基础的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现FFT / NTT 数学基础算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现FFT / NTT 数学基础的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "FFT / NTT 数学基础的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "FFT / NTT 数学基础有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.8.4",
+      "title": "SG 函数 / 一般组合博弈论",
+      "learningGoal": "理解 Sprague-Grundy 定理和 SG 函数的应用",
+      "explanation": "SG 函数（Sprague-Grundy function）用于分析组合博弈问题，是博弈论的重要工具。\n\n一、组合博弈的基本概念\n\n公平游戏（Impartial Game）：\n- 两个玩家轮流行动\n- 可行移动只依赖于当前局面\n- 无法行动的玩家判负\n\n必胜态和必败态：\n- 必胜态（N-position）：存在至少一种移动到达必败态\n- 必败态（P-position）：所有移动都到达必胜态\n\n二、Nim 游戏和 Nim 和\n\nNim 游戏：\n有 n 堆石子，每堆石子数分别为 a_1, a_2, ..., a_n，每次从一堆中取任意数量的石子。\n\nNim 和：\nS = a_1 ⊕ a_2 ⊕ ... ⊕ a_n\n\nNim 定理：\n- S ≠ 0 时，先手必胜\n- S = 0 时，后手必胜\n\n三、Sprague-Grundy 定理\n\nSG 函数定义：\n对于状态 x，sg(x) = mex{sg(y) : y 是 x 的后继状态}\n其中 mex（Minimum Excluded）是最小的非负整数不在集合中。\n\nSprague-Grundy 定理：\n任意公平游戏等价于一个 Nim 游戏，SG 值就是石子堆的大小。\n\n四、应用方法\n\n1. 单个游戏：计算终态和初始态的 SG 值\n2. 多个游戏：所有子游戏 SG 值的 Nim 和\n3. 判断胜负：Nim 和 ≠ 0 先手必胜\n\n时间复杂度：O(状态数)\n空间复杂度：O(状态数)\n\n竞赛提示：\n1. SG 函数用于分析和田游戏等公平游戏\n2. 需要先定义后继状态\n3. mex 函数可以用布尔数组或 bitset 实现\n4. 复杂游戏可能需要记忆化搜索",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"SG 函数 / 一般组合博弈论\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解SG 函数 / 一般组合博弈论的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现SG 函数 / 一般组合博弈论算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现SG 函数 / 一般组合博弈论的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "SG 函数 / 一般组合博弈论的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "SG 函数 / 一般组合博弈论有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.8.5",
+      "title": "统计学",
+      "learningGoal": "理解期望、方差、协方差等统计学基本概念",
+      "explanation": "统计学在竞赛中用于分析随机事件的概率和期望值。\n\n一、基本概念\n\n随机变量 X：\n取值随机会而变化的量。\n\n概率 P(X = x)：\n事件 X = x 发生的概率。\n\n分布列：\n列出所有可能的取值和对应的概率。\n\n二、期望（Expectation）\n\n定义：E[X] = Σ x × P(X = x)\n\n性质：\n1. 期望是加权平均值\n2. E[aX + b] = aE[X] + b\n3. E[X + Y] = E[X] + E[Y]\n4. E[XY] = E[X]E[Y]（X、Y 独立时）\n\n三、方差（Variance）\n\n定义：Var[X] = E[(X - E[X])^2]\n\n简化公式：Var[X] = E[X^2] - (E[X])^2\n\n性质：\n1. 方差衡量随机变量的离散程度\n2. Var[aX + b] = a^2 Var[X]\n3. Var[X + Y] = Var[X] + Var[Y]（X、Y 独立时）\n\n四、协方差（Covariance）\n\n定义：Cov[X, Y] = E[(X - E[X])(Y - E[Y])]\n\n简化公式：Cov[X, Y] = E[XY] - E[X]E[Y]\n\n性质：\n1. Cov[X, X] = Var[X]\n2. Cov[X, Y] = Cov[Y, X]\n3. Cov[X + Y, Z] = Cov[X, Z] + Cov[Y, Z]\n\n五、应用\n\n1. 概率 DP：计算期望步数\n2. 期望线性性：即使变量相关也成立\n3. 方差分析：判断结果的稳定性\n\n竞赛提示：\n1. 期望线性性是最常用的工具\n2. 条件期望：E[X | Y] 表示在 Y 发生的条件下 X 的期望\n3. 几何分布和伯努利分布是常见模型\n4. 期望可以通过拆分为基本事件计算",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"统计学\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解统计学的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现统计学算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现统计学的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "统计学的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "统计学有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    },
+    {
+      "itemId": "4.8.6",
+      "title": "微积分",
+      "learningGoal": "理解导数、积分的基本概念和应用",
+      "explanation": "微积分在竞赛中主要用于优化问题和概率计算。\n\n一、导数（Derivative）\n\n定义：\nf'(x) = lim_{h→0} (f(x+h) - f(x)) / h\n\n几何意义：\n函数在 x 点的瞬时变化率，即曲线的切线斜率。\n\n求导法则：\n1. (cf)' = cf'\n2. (f + g)' = f' + g'\n3. (fg)' = f'g + fg'\n4. (f/g)' = (f'g - fg') / g^2\n5. (f(g(x)))' = f'(g(x))g'（链式法则）\n\n常见函数导数：\n- (x^n)' = n x^(n-1)\n- (e^x)' = e^x\n- (ln x)' = 1/x\n- (sin x)' = cos x\n- (cos x)' = -sin x\n\n二、积分（Integral）\n\n定积分：\n∫_a^b f(x) dx\n\n几何意义：\n函数曲线与 x 轴在 [a, b] 区间围成的面积。\n\n牛顿-莱布尼茨公式：\n∫_a^b f(x) dx = F(b) - F(a)，其中 F'(x) = f(x)\n\n积分法则：\n1. ∫ c f(x) dx = c ∫ f(x) dx\n2. ∫ (f(x) + g(x)) dx = ∫ f(x) dx + ∫ g(x) dx\n3. 分部积分：∫ u dv = uv - ∫ v du\n4. 换元积分：∫ f(g(x))g'(x) dx = ∫ f(u) du\n\n三、应用\n\n1. 优化问题：求极值（f'(x) = 0）\n2. 概率计算：计算概率密度函数下的面积\n3. 数值积分：梯形公式、辛普森公式\n\n竞赛提示：\n1. 导数为 0 的点是极值点（极大或极小）\n2. 几何概率常用积分计算\n3. 数值积分可用于估算复杂函数的值\n4. 梯形公式：∫_a^b f(x) dx ≈ (b-a)(f(a)+f(b))/2\n5. 辛普森公式更精确：∫_a^b f(x) dx ≈ (b-a)(f(a)+4f((a+b)/2)+f(b))/6",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"微积分\" << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "理解微积分的基本原理",
+        "掌握实现步骤",
+        "注意边界条件",
+        "分析时间复杂度"
+      ],
+      "commonMistakes": [
+        {
+          "title": "边界条件处理不当",
+          "description": "在特殊情况下（如空输入、单元素）可能出错。",
+          "fix": "仔细检查边界条件，确保所有情况都能正确处理。"
+        }
+      ],
+      "practice": {
+        "prompt": "练习实现微积分算法。",
+        "hint": "参考讲解中的步骤，逐步实现。",
+        "expectedIdea": "正确实现微积分的基本逻辑"
+      },
+      "quiz": [
+        {
+          "question": "微积分的主要应用场景是什么？",
+          "options": [
+            "排序问题",
+            "搜索问题",
+            "优化问题",
+            "根据具体知识点确定"
+          ],
+          "answerIndex": 3,
+          "explanation": "微积分有其特定的应用场景和适用条件，需要根据具体问题分析。"
+        }
+      ]
+    }
+  ]
+}

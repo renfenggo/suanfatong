@@ -1,0 +1,218 @@
+[
+  {
+    "candidate_id": "cand.graph.virtual_tree.stack_construction",
+    "item_id": "2.21.40",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.biconnected_component",
+    "item_id": "2.21.41",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.shortest_path",
+    "item_id": "2.21.42",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.segment_tree_over_time",
+    "item_id": "2.21.43",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.offline_updates",
+    "item_id": "2.21.44",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.global_min_cut.gomory_hu_tree",
+    "item_id": "2.21.45",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.closure_model.profit_dependency",
+    "item_id": "2.21.46",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.special_graph.maximum_cardinality_search",
+    "item_id": "2.21.47",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.directed_mst.contracted_cycle",
+    "item_id": "2.21.48",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.scc_dag.source_sink_count",
+    "item_id": "2.21.49",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.matroid_graph.matroid_intersection",
+    "item_id": "2.21.50",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.planar_graph.euler_formula",
+    "item_id": "2.21.51",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dominator_tree.immediate_dominator",
+    "item_id": "2.21.52",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.virtual_tree.tree_dp",
+    "item_id": "2.21.53",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.block_cut_tree.path_query",
+    "item_id": "2.21.54",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.cactus_graph.tree_conversion",
+    "item_id": "2.21.55",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_connectivity.rollback_dsu",
+    "item_id": "2.21.56",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.graph.dynamic_mst.link_cut_tree_approach",
+    "item_id": "2.21.57",
+    "section_id": "2.21",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.fischer_heun",
+    "item_id": "3.13.37",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.range_tree",
+    "item_id": "3.13.38",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.range_xor_basis",
+    "item_id": "3.13.39",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.mo_algorithm_with_updates",
+    "item_id": "3.13.40",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.implicit_splay_reverse",
+    "item_id": "3.13.41",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.succinct_probabilistic.skip_list",
+    "item_id": "3.13.42",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_segment_tree_kth",
+    "item_id": "3.13.43",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.dsu_on_tree_color",
+    "item_id": "3.13.44",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.range_successor",
+    "item_id": "3.13.45",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.dynamic_tree.dynamic_tree_diameter",
+    "item_id": "3.13.46",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.rmq_sparse.blocked_rmq",
+    "item_id": "3.13.47",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.multidimensional.offline_2d_point_counting",
+    "item_id": "3.13.48",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.bitset_linear_basis.linear_basis_merge",
+    "item_id": "3.13.49",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.offline_framework.rollback_block_decomposition",
+    "item_id": "3.13.50",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.sequence_structure.implicit_treap_lazy_tags",
+    "item_id": "3.13.51",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.persistent_structure.persistent_union_find",
+    "item_id": "3.13.52",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.tree_decomposition_ds.small_large_subtree",
+    "item_id": "3.13.53",
+    "section_id": "3.13",
+    "handling": "add_new"
+  },
+  {
+    "candidate_id": "cand.ds.merge_sort_tree.point_update",
+    "item_id": "3.13.54",
+    "section_id": "3.13",
+    "handling": "add_new"
+  }
+]

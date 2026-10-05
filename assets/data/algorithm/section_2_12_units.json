@@ -1,0 +1,168 @@
+{
+  "sectionId": "2.12",
+  "sectionName": "数值与矩阵专题",
+  "units": [
+    {
+      "itemId": "2.12.1",
+      "title": "快速幂",
+      "learningGoal": "掌握快速幂算法的原理和实现，理解 O(log n) 计算大幂次的方法",
+      "explanation": "快速幂：将幂次分解为二进制，通过平方和乘法高效计算 a^b mod MOD。\n\n核心思想：\n将 b 写成二进制：b = 2^k1 + 2^k2 + ...\na^b = a^(2^k1) * a^(2^k2) * ...\n\n算法流程：\n1. 初始化 ans = 1, base = a\n2. 遍历 b 的每一位：\n   - 如果当前位为 1，ans = ans * base\n   - base = base * base（每次平方）\n3. 取模防止溢出\n\n递归写法：\npow(a, b) = pow(a*a, b/2) if b even\n           = a * pow(a*a, b/2-1) if b odd\n           = 1 if b == 0\n\n时间复杂度：O(log b)\n空间复杂度：O(1)（迭代）或 O(log b)（递归）\n\n应用：\n- 大数取幂\n- 快速计算斐波那契数列（矩阵快速幂）\n- 密码学中的模幂运算",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MOD = 1e9 + 7;\n\nlong long pow(long long a, long long b) {\n    long long ans = 1;\n    while (b > 0) {\n        if (b & 1) ans = ans * a % MOD;\n        a = a * a % MOD;\n        b >>= 1;\n    }\n    return ans;\n}\n\nint main() {\n    long long a, b;\n    cin >> a >> b;\n    cout << pow(a, b) << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "b 的二进制位决定是否乘入 ans",
+        "每次 base 平方，b 右移",
+        "取模防止溢出",
+        "时间 O(log b)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "忘记取模",
+          "description": "乘法直接相乘可能导致 long long 溢出。",
+          "fix": "每次乘法后 % MOD，或在乘法时用 (a * b) % MOD。"
+        },
+        {
+          "title": "ans 初始值错误",
+          "description": "ans 应该初始化为 1，不是 0 或 a。",
+          "fix": "long long ans = 1;，因为 1 是乘法的单位元。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算 2^1000 mod (10^9+7)。",
+        "hint": "快速幂，b=1000。",
+        "expectedIdea": "O(log 1000) 计算"
+      },
+      "quiz": [
+        {
+          "question": "快速幂的时间复杂度是？",
+          "options": [
+            "O(n)",
+            "O(n^2)",
+            "O(log n)",
+            "O(1)"
+          ],
+          "answerIndex": 2,
+          "explanation": "每次处理一位，共 log b 位，所以是 O(log b)。"
+        },
+        {
+          "question": "快速幂中 base 每次怎么变化？",
+          "options": [
+            "base += a",
+            "base *= 2",
+            "base *= base",
+            "base 不变"
+          ],
+          "answerIndex": 2,
+          "explanation": "base 每次平方，对应二进制位权重的倍增。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.12.2",
+      "title": "矩阵快速幂",
+      "learningGoal": "掌握矩阵乘法和矩阵快速幂的实现，理解线性递推的加速方法",
+      "explanation": "矩阵快速幂：用快速幂思想计算矩阵的幂，常用于加速线性递推。\n\n矩阵乘法：\nC = A × B，其中 C[i][j] = sum{A[i][k] * B[k][j] for k}\n时间复杂度：O(n^3)（n 是矩阵维度）\n\n矩阵快速幂：\n与普通快速幂类似，只是把乘法换成矩阵乘法。\n\n应用：\n1. 斐波那契数列：F(n+1) = [[1,1],[1,0]]^n × [F(1), F(0)]\n2. 一般线性递推：a[n] = c1*a[n-1] + c2*a[n-2] + ... + ck*a[n-k]\n3. 状态转移：用矩阵表示状态转移，快速计算多次转移后的状态\n\n斐波那契的矩阵形式：\n[ F(n)   ]   = [1 1]^(n-1) [F(1)]\n[ F(n-1) ]     [1 0]       [F(0)]\n\n时间复杂度：O(k^3 * log n)，k 是矩阵维度\n空间复杂度：O(k^2)",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MOD = 1e9 + 7;\nstruct Matrix {\n    long long m[2][2];\n    Matrix() { m[0][0] = m[0][1] = m[1][0] = m[1][1] = 0; }\n};\n\nMatrix operator*(const Matrix& a, const Matrix& b) {\n    Matrix c;\n    for (int i = 0; i < 2; i++)\n        for (int j = 0; j < 2; j++)\n            for (int k = 0; k < 2; k++)\n                c.m[i][j] = (c.m[i][j] + a.m[i][k] * b.m[k][j]) % MOD;\n    return c;\n}\n\nMatrix pow(Matrix a, long long b) {\n    Matrix ans;\n    ans.m[0][0] = ans.m[1][1] = 1;\n    while (b > 0) {\n        if (b & 1) ans = ans * a;\n        a = a * a;\n        b >>= 1;\n    }\n    return ans;\n}\n\nint main() {\n    long long n;\n    cin >> n;\n    Matrix a;\n    a.m[0][0] = a.m[0][1] = a.m[1][0] = 1;\n    Matrix res = pow(a, n);\n    cout << res.m[0][0] << endl;\n    return 0;\n}",
+      "codeNotes": [
+        "矩阵乘法三重循环 O(n^3)",
+        "矩阵快速幂类似普通快速幂",
+        "单位矩阵初始化 ans",
+        "斐波那契：ans.m[0][0] 是 F(n)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "矩阵乘法顺序错误",
+          "description": "C[i][j] = sum(A[i][k] * B[k][j])，不是 A[k][i] * B[j][k]。",
+          "fix": "矩阵乘法中，A 的列对应 B 的行，注意下标顺序。"
+        },
+        {
+          "title": "取模遗漏",
+          "description": "矩阵乘法中每次相加后取模，否则容易溢出。",
+          "fix": "c.m[i][j] = (c.m[i][j] + a.m[i][k] * b.m[k][j]) % MOD;"
+        }
+      ],
+      "practice": {
+        "prompt": "用矩阵快速幂求斐波那契数列第 n 项。",
+        "hint": "转移矩阵 [1,1;1,0] 的 n 次幂。",
+        "expectedIdea": "O(log n) 计算 F(n)"
+      },
+      "quiz": [
+        {
+          "question": "矩阵快速幂的时间复杂度是？",
+          "options": [
+            "O(n^3)",
+            "O(n^3 * log m)",
+            "O(n^2 * log m)",
+            "O(log m)"
+          ],
+          "answerIndex": 1,
+          "explanation": "n×n 矩阵乘法 O(n^3)，快速幂 O(log m)，共 O(n^3 * log m)。"
+        },
+        {
+          "question": "斐波那契的转移矩阵是？",
+          "options": [
+            "[0,1;1,1]",
+            "[1,1;1,0]",
+            "[1,0;0,1]",
+            "[0,0;0,0]"
+          ],
+          "answerIndex": 1,
+          "explanation": "[F(n),F(n-1)] = [1,1;1,0] × [F(n-1),F(n-2)]。"
+        }
+      ]
+    },
+    {
+      "itemId": "2.12.3",
+      "title": "矩阵乘法",
+      "learningGoal": "理解矩阵乘法的定义和性质，掌握 O(n^3) 的实现和常见优化",
+      "explanation": "矩阵乘法：C = A × B，其中 C[i][j] = sum{A[i][k] * B[k][j] for k}\n\n定义：\nA 是 m×n 矩阵，B 是 n×p 矩阵\n结果是 m×p 矩阵 C\n每个元素 C[i][j] = A 的第 i 行与 B 的第 j 列的点积\n\n重要性质：\n1. 不满足交换律：A × B ≠ B × A（一般情况）\n2. 满足结合律：(A × B) × C = A × (B × C)\n3. 满足分配律：A × (B + C) = A × B + A × C\n4. 单位矩阵：I × A = A × I = A\n\n时间复杂度：O(m * n * p)，最坏情况 O(n^3)\n空间复杂度：O(m * p)（结果矩阵）\n\n应用：\n- 线性变换\n- 线性方程组求解\n- 图论（邻接矩阵求路径数）\n- 递推加速（矩阵快速幂）\n- 深度学习（矩阵运算）",
+      "exampleCode": "#include <iostream>\nusing namespace std;\n\nconst int MOD = 1e9 + 7;\nint a[105][105], b[105][105], c[105][105];\n\nint main() {\n    int n, m, p;\n    cin >> n >> m >> p;\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++) cin >> a[i][j];\n    for (int i = 0; i < m; i++)\n        for (int j = 0; j < p; j++) cin >> b[i][j];\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < p; j++)\n            for (int k = 0; k < m; k++)\n                c[i][j] = (c[i][j] + a[i][k] * b[k][j]) % MOD;\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < p; j++) cout << c[i][j] << \" \";\n        cout << endl;\n    }\n    return 0;\n}",
+      "codeNotes": [
+        "A(n×m) × B(m×p) = C(n×p)",
+        "三重循环计算每个元素",
+        "C[i][j] = sum(A[i][k] * B[k][j])",
+        "时间 O(nmp)"
+      ],
+      "commonMistakes": [
+        {
+          "title": "矩阵维度不匹配",
+          "description": "A 的列数必须等于 B 的行数才能相乘。",
+          "fix": "检查 m == B 的行数，A(n×m) × B(m×p) = C(n×p)。"
+        },
+        {
+          "title": "循环顺序错误",
+          "description": "正确的顺序是 i, j, k，先算 C[i][j] 的和。",
+          "fix": "for i for j for k，不是其他顺序。"
+        }
+      ],
+      "practice": {
+        "prompt": "计算两个 2×2 矩阵的乘积。",
+        "hint": "三重循环，注意维度匹配。",
+        "expectedIdea": "C[i][j] = sum(A[i][k]*B[k][j])"
+      },
+      "quiz": [
+        {
+          "question": "矩阵乘法 A(n×m) × B(m×p) 的结果矩阵维度是？",
+          "options": [
+            "m × n",
+            "n × p",
+            "m × p",
+            "p × n"
+          ],
+          "answerIndex": 1,
+          "explanation": "结果矩阵的行数是 A 的行数 n，列数是 B 的列数 p。"
+        },
+        {
+          "question": "矩阵乘法满足交换律吗？",
+          "options": [
+            "满足",
+            "不满足",
+            "有时满足",
+            "不确定"
+          ],
+          "answerIndex": 1,
+          "explanation": "矩阵乘法不满足交换律，A × B ≠ B × A（一般情况）。"
+        }
+      ]
+    }
+  ]
+}

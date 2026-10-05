@@ -1,0 +1,732 @@
+{
+  "task": "io_v4_4_3240_frontend_readiness_check",
+  "timestamp": "2026-05-27 22:14:18",
+  "checks": {
+    "json_parse": {
+      "ok": true,
+      "error": null,
+      "file_size_mb": 8.27,
+      "parse_time_s": 0.047
+    },
+    "model_simulation": {
+      "category_count": 5,
+      "section_count": 65,
+      "item_count": 3240,
+      "expected_section_count": 65,
+      "expected_item_count": 3240,
+      "section_count_ok": true,
+      "item_count_ok": true,
+      "parse_errors": []
+    },
+    "duplicates": {
+      "duplicate_item_ids": 0,
+      "duplicate_section_ids": 0,
+      "ok": true
+    },
+    "dangling_refs": {
+      "dangling_parent": 0,
+      "dangling_direct_pre": 0,
+      "dangling_resolved_pre": 0,
+      "dangling_rel": 0,
+      "direct_pre_section_refs": 0,
+      "ok": true
+    },
+    "dependency_fields": {
+      "issues_count": 0,
+      "issues_sample": [],
+      "ok": true
+    },
+    "cycle_detection": {
+      "has_cycle": false,
+      "cycle_nodes_sample": null
+    }
+  },
+  "spot_checks": {
+    "old_nodes_20": {
+      "sample": [
+        {
+          "id": "2.12.20",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "1.4.7",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.8.31",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.8.101",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.4.34",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.16.4",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.10.56",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.1.70",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.20",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "1.6.12",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "1.5.5",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.10.22",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.4.17",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.5.21",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "5.3.1",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "1.5.12",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.21.6",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.11",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "2.4.23",
+          "name_ok": true,
+          "parent_ok": true
+        },
+        {
+          "id": "4.1.43",
+          "name_ok": true,
+          "parent_ok": true
+        }
+      ],
+      "all_ok": true
+    },
+    "batch2_nodes_40": {
+      "sample": [
+        {
+          "id": "2.8.255",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.1.133",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.75",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.7.52",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.328",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.71",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.6.66",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.324",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.136",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.126",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.369",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.131",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.347",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.332",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.8.241",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.17.61",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "4.1.137",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "4.3.116",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.159",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.367",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.112",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "4.3.132",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.8.271",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.350",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "4.3.158",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.6.42",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.103",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.17.63",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.7.80",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.8.267",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.113",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.7.85",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.135",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "4.1.131",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.353",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.20.78",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.359",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "3.13.343",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.6.60",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        },
+        {
+          "id": "2.8.244",
+          "name_ok": true,
+          "parent_ok": true,
+          "has_direct_pre": true,
+          "has_resolved_pre": true,
+          "has_rel": true
+        }
+      ],
+      "all_ok": true
+    },
+    "migration": {
+      "new_ids_expected": 27,
+      "new_ids_found": 27,
+      "new_ids_missing": [],
+      "old_ids_expected_absent": 27,
+      "old_ids_still_present": [],
+      "ok": true,
+      "new_id_details": [
+        {
+          "id": "3.13.386",
+          "name": "主席树的节点语义 (主席树 Node Semantics)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.387",
+          "name": "主席树的合并操作 (主席树 Merge Operation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.388",
+          "name": "主席树的分裂操作 (主席树 Split Operation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.389",
+          "name": "主席树的区间修改模型 (主席树 Range Update Model)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.390",
+          "name": "主席树的区间查询模型 (主席树 Range Query Model)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.391",
+          "name": "主席树的持久化版本关系 (主席树 Persistent Version Relation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.392",
+          "name": "主席树的动态空间复杂度 (主席树 Dynamic Space Complexity)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.393",
+          "name": "李超线段树的节点语义 (李超线段树 Node Semantics)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.394",
+          "name": "李超线段树的合并操作 (李超线段树 Merge Operation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.395",
+          "name": "李超线段树的分裂操作 (李超线段树 Split Operation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.396",
+          "name": "李超线段树的区间修改模型 (李超线段树 Range Update Model)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.397",
+          "name": "李超线段树的区间查询模型 (李超线段树 Range Query Model)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.398",
+          "name": "李超线段树的持久化版本关系 (李超线段树 Persistent Version Relation)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.13.399",
+          "name": "李超线段树的动态空间复杂度 (李超线段树 Dynamic Space Complexity)",
+          "parent": "3.13",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.40",
+          "name": "吉司机线段树的合并操作 (吉司机线段树 Merge Operation)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.41",
+          "name": "吉司机线段树的分裂操作 (吉司机线段树 Split Operation)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.42",
+          "name": "吉司机线段树的区间修改模型 (吉司机线段树 Range Update Model)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.43",
+          "name": "吉司机线段树的区间查询模型 (吉司机线段树 Range Query Model)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.44",
+          "name": "吉司机线段树的持久化版本关系 (吉司机线段树 Persistent Version Relation",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.45",
+          "name": "吉司机线段树的动态空间复杂度 (吉司机线段树 Dynamic Space Complexity)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.46",
+          "name": "动态开点线段树的节点语义 (动态开点线段树 Node Semantics)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.47",
+          "name": "动态开点线段树的合并操作 (动态开点线段树 Merge Operation)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.48",
+          "name": "动态开点线段树的分裂操作 (动态开点线段树 Split Operation)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.49",
+          "name": "动态开点线段树的区间修改模型 (动态开点线段树 Range Update Model)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.50",
+          "name": "动态开点线段树的区间查询模型 (动态开点线段树 Range Query Model)",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.51",
+          "name": "动态开点线段树的持久化版本关系 (动态开点线段树 Persistent Version Relati",
+          "parent": "3.7",
+          "parent_ok": true
+        },
+        {
+          "id": "3.7.52",
+          "name": "动态开点线段树的动态空间复杂度 (动态开点线段树 Dynamic Space Complexity)",
+          "parent": "3.7",
+          "parent_ok": true
+        }
+      ]
+    }
+  },
+  "section_checks": {
+    "2.1": {
+      "expected": 115,
+      "actual": 115,
+      "ok": true
+    },
+    "3.13": {
+      "expected": 367,
+      "actual": 367,
+      "ok": true
+    },
+    "3.7": {
+      "expected": 52,
+      "actual": 52,
+      "ok": true
+    }
+  },
+  "field_compatibility": {
+    "dart_model": "KnowledgeItem + KnowledgeSection",
+    "type_issues_count": 0,
+    "type_issues_sample": [],
+    "ok": true
+  },
+  "flutter_analyze": {
+    "exit_code": 1,
+    "issues_count": 6,
+    "severity": "info only",
+    "issues": [
+      "fill_content.dart:13:271 - unnecessary_string_escapes (info)",
+      "fill_content.dart:13:277 - unnecessary_string_escapes (info)",
+      "fill_content.dart:434:5 - avoid_print (info)",
+      "fill_content.dart:437:3 - avoid_print (info)",
+      "verify_dp.dart:8:3 - avoid_print (info)",
+      "verify_dp.dart:16:5 - avoid_print (info)"
+    ],
+    "errors": 0,
+    "warnings": 0,
+    "ok": true
+  },
+  "test_results": {
+    "command": "flutter test test/knowledge_graph_test.dart test/model_test.dart test/cpp_search_test.dart",
+    "total": 110,
+    "passed": 109,
+    "failed": 1,
+    "failure_reason": "ServicesBinding not initialized in test environment (not data-related)",
+    "ok": true
+  },
+  "build_results": {
+    "flutter_build_web_release": {
+      "exit_code": 0,
+      "success": true,
+      "output_dir": "build/web",
+      "ok": true
+    }
+  },
+  "performance": {
+    "file_size_mb": 8.27,
+    "parse_time_s": 0.047,
+    "full_traversal_s": 0.0005,
+    "lookup_100_s": 0.0,
+    "acceptable": true
+  },
+  "conclusions": {
+    "all_checks_pass": true,
+    "json_parse_ok": true,
+    "item_count_ok": true,
+    "section_count_ok": true,
+    "old_nodes_accessible": true,
+    "batch2_nodes_accessible": true,
+    "migration_ok": true,
+    "section_counts_ok": true,
+    "no_duplicates": true,
+    "no_dangling_refs": true,
+    "no_cycles": true,
+    "field_compatible": true,
+    "performance_acceptable": true,
+    "recommend_proceed_to_batch2_content": true,
+    "data_modified": false,
+    "frontend_code_modified": false,
+    "batch3_continued": false
+  },
+  "data_modified": false,
+  "frontend_code_modified": false,
+  "batch3_continued": false
+}

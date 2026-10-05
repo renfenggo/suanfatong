@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Problem Pattern",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "pattern_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "en_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "recognition_signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "related_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "common_transforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "typical_complexities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "beginner",
+          "csp_j",
+          "csp_s",
+          "noi",
+          "ioi",
+          "icpc",
+          "university_cp",
+          "interview",
+          "advanced_math",
+          "advanced_graph",
+          "advanced_string",
+          "advanced_data_structure",
+          "advanced_dp",
+          "engineering_debug"
+        ]
+      }
+    },
+    "audience": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "primary_beginner",
+          "middle_school_oi",
+          "high_school_oi",
+          "university_icpc",
+          "software_engineer_interview",
+          "advanced_competitive_programmer"
+        ]
+      }
+    },
+    "difficulty": {
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ]
+    },
+    "visibility": {
+      "enum": [
+        "core",
+        "advanced",
+        "expert",
+        "optional"
+      ]
+    },
+    "example_problem_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "i18n_key": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pattern_id",
+    "name",
+    "en_name",
+    "category",
+    "required_items",
+    "difficulty",
+    "visibility",
+    "i18n_key"
+  ]
+}

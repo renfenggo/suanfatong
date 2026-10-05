@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Learning Path",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "path_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "en_name": {
+      "type": "string"
+    },
+    "target_audience": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "primary_beginner",
+          "middle_school_oi",
+          "high_school_oi",
+          "university_icpc",
+          "software_engineer_interview",
+          "advanced_competitive_programmer"
+        ]
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "beginner",
+          "csp_j",
+          "csp_s",
+          "noi",
+          "ioi",
+          "icpc",
+          "university_cp",
+          "interview",
+          "advanced_math",
+          "advanced_graph",
+          "advanced_string",
+          "advanced_data_structure",
+          "advanced_dp",
+          "engineering_debug"
+        ]
+      }
+    },
+    "entry_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "path_id",
+    "name",
+    "en_name",
+    "target_audience",
+    "tracks",
+    "stages"
+  ]
+}

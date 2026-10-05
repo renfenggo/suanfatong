@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "generated_at": "2026-05-26T15:26:44Z",
+    "validate_only": true,
+    "main_graph_modified": true,
+    "only_relocated_nodes": true,
+    "old_2640_nodes_unchanged": true,
+    "fix_lite_applied": false,
+    "batch3_continued": false,
+    "io_v4_4_modified": false,
+    "content_packages_modified": false,
+    "frontend_code_modified": false
+  },
+  "pre_migration_checks": {
+    "baseline_item_count_3240": true,
+    "section_count_65": true,
+    "sec_2_1_142": true,
+    "sec_3_13_353": true,
+    "sec_3_7_39": true,
+    "readiness": "ready_for_1号线程_section_relocation_stage5_hard_batch2_full600",
+    "no_id_conflicts": true,
+    "no_dangling_risk": true,
+    "no_cycle_risk": true,
+    "ref_updates_0": true,
+    "all_27_old_ids_found": true
+  },
+  "migration_result": {
+    "item_count": 3240,
+    "section_count": 65,
+    "relocated_count": 27,
+    "section_2_1": {
+      "before": 142,
+      "after": 115
+    },
+    "section_3_13": {
+      "before": 353,
+      "after": 367
+    },
+    "section_3_7": {
+      "before": 39,
+      "after": 52
+    }
+  },
+  "validation": {
+    "item_count_3240": true,
+    "section_count_65": true,
+    "dangling_refs": [],
+    "dangling_count": 0,
+    "direct_pre_cycle": null,
+    "resolved_pre_mismatches": [],
+    "rp_mismatch_count": 0,
+    "duplicate_ids": false,
+    "cross_refs_to_old": {
+      "direct_pre": 0,
+      "resolved_pre": 0,
+      "rel": 0
+    },
+    "old_ids_still_present": [],
+    "new_ids_missing": [],
+    "product_metadata_validation_passed": true,
+    "report_matches_json": true,
+    "passed": true
+  },
+  "backup": "backups/merged_knowledge_graph_item_dependencies_refined_before_stage5_hard_batch2_full600_section_relocation_20260526_232644.json",
+  "recommendations": {
+    "two_号_review": true,
+    "fix_lite": false,
+    "continue_batch3": false
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Stage3E Batch6 Pre-Merge Duplicate Guard 检查清单",
+    "generated_at": "2026-05-25",
+    "generated_by": "1号线程 / GLM5",
+    "stage": "pre-merge_guard",
+    "main_graph_modified": false,
+    "merge_blocked": true,
+    "waiting_for_thread2_v2": true,
+    "trigger_incident": "Batch6 full_30 前置检查中发现 8 个候选已在 Batch3/Batch4 合并过，但 2号 v1 dynamic_precheck 未检出"
+  },
+  "current_baseline": {
+    "item_count": 1617,
+    "section_count": 65,
+    "validate_only_passed": true,
+    "batch5_fix_lite_completed": true,
+    "batch6_merge_not_started": true,
+    "graph_unmodified": true
+  },
+  "guard_levels": {
+    "L1_candidate_id_exact_match": {
+      "description": "candidate_id 与 Batch1~Batch5 mapping 文件的精确匹配检查",
+      "severity": "critical",
+      "check_files": [
+        "data/stage3e_aggressive_batch1_candidate_to_item_id_mapping.json",
+        "data/stage3e_aggressive_batch2_candidate_to_item_id_mapping.json",
+        "data/stage3e_aggressive_batch3_candidate_to_item_id_mapping.json",
+        "data/stage3e_aggressive_batch4_candidate_to_item_id_mapping.json",
+        "data/stage3e_batch5_smaller15_candidate_to_item_id_mapping.json"
+      ],
+      "validation_rule": "必须同时确认 item_id 存在于主图谱中（而非仅 mapping 文件中有记录）",
+      "status": "❌ 发现 6 个重复（Batch4）"
+    },
+    "L2_name_near_duplicate": {
+      "description": "候选 name / en_name 与当前图谱 item 的名称模糊匹配检查",
+      "severity": "critical",
+      "match_rules": [
+        "exact_name_match: 中文名完全一致",
+        "exact_en_name_match: 英文名完全一致",
+        "clean_name_match: 去除标点/空格后一致",
+        "en_core_match: 英文名核心词（冒号后部分）一致"
+      ],
+      "status": "❌ 发现 2 个重复（Batch3，candidate_id 不同但名称相同）"
+    },
+    "L3_aliases_cross_check": {
+      "description": "候选 aliases / global_aliases 与现有节点对应字段交叉比对",
+      "severity": "medium",
+      "status": "⏳ 待执行",
+      "note": "当前候选未设置 aliases 字段，此检查在本批次效果有限"
+    },
+    "L4_direct_pre_duplicate_risk": {
+      "description": "候选 direct_pre 指向的目标节点与候选同名时的风险检查",
+      "severity": "medium",
+      "status": "⏳ 待执行"
+    },
+    "L5_section_consistency": {
+      "description": "候选 target_section 与已存在同名节点的实际 section 一致性检查",
+      "severity": "high",
+      "findings": [
+        {
+          "candidate_id": "cand.graph.matching_cover.stable_marriage",
+          "candidate_target_section": "2.15",
+          "actual_section": "2.21",
+          "actual_item_id": "2.21.143"
+        },
+        {
+          "candidate_id": "cand.graph.matching_cover.konig_theorem",
+          "candidate_target_section": "2.15",
+          "actual_section": "2.21",
+          "actual_item_id": "2.21.140"
+        }
+      ],
+      "status": "❌ 发现 2 个 section 不一致"
+    }
+  },
+  "duplicate_candidates_found": [
+    {
+      "candidate_id": "cand.graph.matching_cover.dilworth_theorem",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "existing_item_id": "2.21.138",
+      "existing_name": "匹配与覆盖：Dilworth Theorem",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match"]
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.konig_theorem",
+      "name": "匹配与覆盖：Konig Theorem",
+      "existing_item_id": "2.21.140",
+      "existing_name": "匹配与覆盖：Konig Theorem",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match", "L5_section_consistency"]
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.minimum_path_cover",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "existing_item_id": "2.21.142",
+      "existing_name": "匹配与覆盖：Minimum Path Cover",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match"]
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.stable_marriage",
+      "name": "匹配与覆盖：Stable Marriage",
+      "existing_item_id": "2.21.143",
+      "existing_name": "匹配与覆盖：Stable Marriage",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match", "L5_section_consistency"]
+    },
+    {
+      "candidate_id": "cand.graph.matching_cover.weighted_general_matching",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "existing_item_id": "2.21.145",
+      "existing_name": "匹配与覆盖：Weighted General Matching",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match"]
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.minimum_flow",
+      "name": "上下界网络流：Minimum Flow",
+      "existing_item_id": "2.21.129",
+      "existing_name": "上下界网络流：Minimum Flow",
+      "source_batch": "batch4",
+      "detected_by": ["L1_candidate_id_exact_match"]
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.demands",
+      "name": "上下界网络流：Demands",
+      "existing_item_id": "2.21.125",
+      "existing_name": "上下界网络流：Demands",
+      "source_batch": "batch3",
+      "detected_by": ["L2_name_near_duplicate"]
+    },
+    {
+      "candidate_id": "cand.graph.flow_bounds.edge_lower_bound_transform",
+      "name": "上下界网络流：Edge Lower Bound Transform",
+      "existing_item_id": "2.21.126",
+      "existing_name": "上下界网络流：Edge Lower Bound Transform",
+      "source_batch": "batch3",
+      "detected_by": ["L2_name_near_duplicate"]
+    }
+  ],
+  "guard_result": {
+    "guard_passed": false,
+    "total_candidates_checked": 30,
+    "duplicates_found": 8,
+    "unique_candidates": 22,
+    "merge_blocked": true,
+    "block_reason": "Level 1 发现 6 个重复 + Level 2 发现 2 个重复，合计 8 个候选已在 Batch3/Batch4 合并过",
+    "auto_fallback_prevented": true,
+    "auto_exclude_prevented": true
+  },
+  "required_actions": [
+    "⛔ 不要合并剩余的 22 个候选",
+    "⛔ 不要执行 fallback_20",
+    "⛔ 不要修改主图谱",
+    "📋 通知 2号线程：v1 dynamic_precheck 的 already_merged_candidates 存在漏检",
+    "📋 等待 2号重新生成 v2 dynamic_precheck",
+    "📋 确认 v2 中 already_merged_candidates 包含全部 8 个重复",
+    "📋 如果 v2 仍漏检，重复本守卫检查流程"
+  ],
+  "decision": {
+    "execute_merge_now": false,
+    "modify_graph_now": false,
+    "wait_for_thread2_v2": true,
+    "expected_v2_file": "data/thread2_stage3e_batch6_full30_dynamic_precheck_v2.json",
+    "expected_v2_fix": "already_merged_candidates 必须包含 8 个重复候选"
+  }
+}

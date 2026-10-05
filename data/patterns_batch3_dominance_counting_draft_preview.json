@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Patterns Batch3 Dominance Counting Draft Preview",
+    "generated_by": "GLM5",
+    "generated_at": "2026-05-25T15:00:00.000Z",
+    "task": "batch3_dominance_counting_draft_preview",
+    "version": "1.0",
+    "description": "为 Dominance Counting 准备的 problem pattern draft preview（基于 Stage3F Batch1 Sync Triage P1 候选）",
+    "input_files": [
+      "data/stage3f_batch1_problem_patterns_sync_triage.json",
+      "docs/stage3f_batch1_problem_patterns_sync_triage_report.md",
+      "data/stage3f_batch1_problem_pattern_sync_candidates.json",
+      "data/stage3f_batch1_added_items_review.json",
+      "data/patterns_v0_1_ready.json",
+      "data/patterns_batch2.json",
+      "merged_knowledge_graph_item_dependencies_refined.json"
+    ],
+    "formal_patterns_generated": false,
+    "main_graph_modified": false,
+    "patterns_v0_1_ready_modified": false,
+    "patterns_batch2_modified": false
+  },
+  "draft": {
+    "pattern_id": "pat.dominance_counting",
+    "title": "多维支配关系计数",
+    "en_name": "Multidimensional Dominance Counting",
+    "category": "计数模式",
+    "difficulty": "advanced",
+    "tracks": ["icpc", "university_cp", "advanced_data_structure"],
+    "audience": ["university_icpc", "advanced_competitive_programmer"],
+    "visibility": "advanced",
+    "description": "多维支配关系计数（Dominance Counting）是一种用于统计多维偏序关系的计数模式。给定若干多维向量，点 A 支配点 B 当 A 在所有维度上均不小于（或小于等于）B。该模式将多维偏序计数问题转化为离线维护问题，通常配合 CDQ 分治或树状数组求解。",
+    "recognition_signals": [
+      "问题涉及统计满足多维偏序关系的点对数量",
+      "存在多个维度上的比较条件（如时间+坐标、x+y+z 等）",
+      "需要统计每个点前方/后方有多少点的所有维度都小于/大于它",
+      "计数目标与维度顺序无关，只关心全序/偏序关系"
+    ],
+    "common_transforms": [
+      "先按某一维度排序降维，将多维偏序转化为按序维护的子问题",
+      "使用 CDQ 分治将多维问题递归拆分为低维子问题",
+      "在分治合并阶段使用树状数组（BIT）统计跨分治区间的支配关系",
+      "若仅需二维，可直接按一维排序后使用 BIT 维护另一维的前缀计数"
+    ],
+    "typical_complexities": [
+      "二维：O(n log n) — 排序 + BIT 维护",
+      "三维：O(n log^2 n) — CDQ 分治 + BIT",
+      "四维及以上：O(n log^k n) — 嵌套 CDQ 或 BIT 套 BIT",
+      "空间复杂度：O(n) 基本存储，BIT O(n) 辅助"
+    ],
+    "required_items": ["3.7.1", "3.7.2"],
+    "related_items": ["3.13.181", "3.13.179", "3.13.180"],
+    "pitfalls": [
+      "区分严格支配（<）与非严格支配（≤）——排序时需注意相等元素的处理顺序",
+      "多维降维时排序维度的选择影响常数和实现复杂度",
+      "CDQ 分治嵌套层数过多时 log 因子增长，四维以上需评估是否换用 BIT 套 BIT",
+      "值域过大时需离散化，BIT 空间与值域相关"
+    ],
+    "boundary_note": "## 边界说明\n\n### 与 ready patterns 的边界\n\n**pat.offline_query_pattern（离线查询模式）**：Dominance Counting 可视为离线查询的一种特殊形式，但离线查询模式关注的是「查询操作」的通用离线处理技术（如莫队、扫描线），而 Dominance Counting 关注的是「多维偏序计数」这一特定问题类型。Dominance Counting 的识别信号更具体（多维支配关系），转化路径更固定（排序降维 + CDQ/BIT），适合作为独立模式。\n\n**pat.coordinate_sweep_compression（离散化扫描）**：离散化扫描是通用预处理技术，Dominance Counting 可能用到离散化作为子步骤，但后者的核心是多维偏序建模而非坐标压缩。\n\n**pat.fenwick_prefix_maintenance（树状数组前缀维护）**：BIT 是 Dominance Counting 实现中的常用工具（用于合并阶段的计数），但 BIT 前缀维护本身不涉及多维偏序的建模和降维。\n\n### 与知识图谱相近节点的边界\n\n**3.13.181 CDQ Divide Conquer（CDQ 分治）**：CDQ 分治是实现 Dominance Counting 的主流算法框架。CDQ 分治的定位是「算法框架」，而 Dominance Counting 的定位是「问题识别与建模模式」。用户应先使用 Dominance Counting 识别问题类型，再参考 CDQ 分治选择合适的实现算法。两者是 problem_pattern 与 algorithm_implementation 的关系。\n\n**3.13.179 Merge Sort Tree: 2d Dominance（归并排序树二维支配）**：归并排序树的 2d Dominance 是解决二维支配查询的一种具体数据结构方案。Dominance Counting 是更高层的问题建模模式，不拘泥于特定实现。\n\n**3.13.180 Bitset Rectangle Query（Bitset 矩形查询）**：Bitset 矩形查询是另一种实现多维查询的优化技巧，与 Dominance Counting 是不同层面的抽象。",
+    "source_knowledge_items": ["3.13.182"],
+    "example_problem_refs": [
+      "二维偏序计数（逆序对推广）",
+      "三维偏序计数（CDQ 分治经典问题）",
+      "多维最长链/最长上升子序列推广"
+    ],
+    "status": "draft_preview",
+    "needs_boundary_review": true
+  }
+}

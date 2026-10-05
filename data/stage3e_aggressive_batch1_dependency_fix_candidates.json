@@ -1,0 +1,191 @@
+{
+  "description": "Stage3E-Aggressive Batch1 Dependency Fix Candidates",
+  "generated_at": "2026-05-22",
+  "batch_id": "batch_1",
+  "total_items_in_batch": 30,
+  "needs_dependency_fix_count": 8,
+  "fix_candidates": [
+    {
+      "item_id": "2.21.81",
+      "item_name": "有向生成树：Weighted Directed Mst",
+      "current_direct_pre": [
+        "4.5.2",
+        "2.13.10"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.77",
+        "2.21.78"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Weighted Directed Mst 应该依赖 Maximum/Minimum Arborescence，以明确概念层级。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": [
+        "建议人工确认与 Maximum/Minimum Arborescence 的关系，避免概念重叠。"
+      ]
+    },
+    {
+      "item_id": "2.21.88",
+      "item_name": "动态最小生成树：Batch Recomputation",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Batch Recomputation 是动态最小生成树的批量重计算策略，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.89",
+      "item_name": "动态最小生成树：Certificate Graph",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Certificate Graph 是动态最小生成树的核心数据结构，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.90",
+      "item_name": "动态最小生成树：Divide Conquer Approach",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Divide Conquer Approach 是动态最小生成树的分治算法策略，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.91",
+      "item_name": "动态最小生成树：Edge Deletion",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Edge Deletion 是动态最小生成树的边删除操作，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.92",
+      "item_name": "动态最小生成树：Edge Insertion",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Edge Insertion 是动态最小生成树的边插入操作，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.93",
+      "item_name": "动态最小生成树：Sensitivity Analysis",
+      "current_direct_pre": [
+        "2.13.10",
+        "3.4.1"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.44"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Sensitivity Analysis 是动态最小生成树的灵敏度分析工具，应依赖 2.21.44（Dynamic MST: Offline Updates）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.96",
+      "item_name": "全局最小割：Random Contraction",
+      "current_direct_pre": [
+        "2.21.67",
+        "2.16.12"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.45"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Random Contraction（Karger 算法）是全局最小割的经典随机算法，应依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.97",
+      "item_name": "全局最小割：Recursive Contraction",
+      "current_direct_pre": [
+        "2.21.67",
+        "2.16.12"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.45"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Recursive Contraction 是全局最小割算法的递归优化，应依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    },
+    {
+      "item_id": "2.21.98",
+      "item_name": "全局最小割：Sparsification",
+      "current_direct_pre": [
+        "2.21.67",
+        "2.16.12"
+      ],
+      "suggested_direct_pre_add": [
+        "2.21.45"
+      ],
+      "suggested_direct_pre_remove": [],
+      "reason": "Sparsification 是全局最小割的稀疏化优化技巧，应依赖 2.21.45（Global Min-Cut: Gomory Hu Tree）。",
+      "severity": "high",
+      "fix_type": "add_dependency",
+      "notes": []
+    }
+  ],
+  "summary": {
+    "by_series": {
+      "directed_mst": 1,
+      "dynamic_mst": 6,
+      "global_min_cut": 3,
+      "maximum_closure": 0,
+      "dominator_tree": 0
+    },
+    "by_severity": {
+      "high": 9,
+      "medium": 0,
+      "low": 0
+    },
+    "by_fix_type": {
+      "add_dependency": 9,
+      "remove_dependency": 0,
+      "replace_dependency": 0
+    }
+  }
+}

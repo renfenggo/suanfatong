@@ -1,0 +1,736 @@
+{
+  "fix_applied_at": "2026-05-23T10:31:03.819256",
+  "batch_id": "stage3e_aggressive_batch4_learning_path_policy_fix",
+  "required_fields": [
+    "show_in_icpc_path",
+    "show_in_noi_path",
+    "show_in_interview_path",
+    "show_in_beginner_path",
+    "unlock_mode"
+  ],
+  "fixed_items": [
+    {
+      "item_id": "2.21.129",
+      "name": "上下界网络流：Minimum Flow",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.130",
+      "name": "上下界网络流：Node Demand",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.131",
+      "name": "上下界网络流：Project Selection",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.132",
+      "name": "图论建模：K Shortest Paths",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.133",
+      "name": "图论建模：Layered Graph",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.134",
+      "name": "图论建模：Minimum Mean Cycle",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.135",
+      "name": "图论建模：Shortest Path Potentials",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.136",
+      "name": "图论建模：State Graph",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.137",
+      "name": "图论建模：Steiner Tree",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.138",
+      "name": "匹配与覆盖：Dilworth Theorem",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.139",
+      "name": "匹配与覆盖：Hall Theorem",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.140",
+      "name": "匹配与覆盖：Konig Theorem",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.141",
+      "name": "匹配与覆盖：Matroid Matching",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.142",
+      "name": "匹配与覆盖：Minimum Path Cover",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.143",
+      "name": "匹配与覆盖：Stable Marriage",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.144",
+      "name": "匹配与覆盖：Tutte Matrix",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.145",
+      "name": "匹配与覆盖：Weighted General Matching",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "2.21.146",
+      "name": "高级最短路：Time Expanded Graph",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.131",
+      "name": "高级平衡树：Fhq Split Merge",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.132",
+      "name": "高级平衡树：Implicit Treap",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.133",
+      "name": "高级平衡树：Join Based Tree",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.134",
+      "name": "高级平衡树：Lazy Reversible Sequence",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.135",
+      "name": "高级平衡树：Order Statistic Tree",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.136",
+      "name": "高级平衡树：Persistent Treap",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.137",
+      "name": "高级平衡树：Piece Table",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.138",
+      "name": "高级平衡树：Rope",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.139",
+      "name": "高级平衡树：Scapegoat Tree",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.140",
+      "name": "高级平衡树：Splay Sequence",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.141",
+      "name": "高级并查集：Dsu On Tree",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    },
+    {
+      "item_id": "3.13.142",
+      "name": "高级并查集：可持久化版",
+      "old_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false
+      },
+      "new_lpp": {
+        "unlock_mode": "expert_branch",
+        "path_order": 999,
+        "optional": false,
+        "show_in_icpc_path": true,
+        "show_in_noi_path": true,
+        "show_in_beginner_path": false,
+        "show_in_interview_path": false
+      },
+      "missing_fields": [
+        "show_in_icpc_path",
+        "show_in_noi_path",
+        "show_in_beginner_path",
+        "show_in_interview_path"
+      ]
+    }
+  ],
+  "total_fixed": 30,
+  "only_new_nodes_fixed": true,
+  "old_nodes_affected": false
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/unified_learning_provider.dart';
 import '../state/progress_provider.dart';
@@ -188,11 +189,7 @@ class _CppLearningUnitPageState extends ConsumerState<CppLearningUnitPage> {
           color: const Color(0xFFE0F2F1),
           child: InkWell(
             onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/cpp_animation',
-                arguments: first.animationId,
-              );
+              context.push('/cpp_animation', extra: first.animationId);
             },
             borderRadius: BorderRadius.circular(16),
             child: Padding(
@@ -767,16 +764,7 @@ class _CppLearningUnitPageState extends ConsumerState<CppLearningUnitPage> {
       color: const Color(0xFFE0F2F1),
       child: InkWell(
         onTap: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (_) => CppLearningUnitPage(itemId: nextItem.id),
-              settings: RouteSettings(
-                name: '/cpp_learning_unit',
-                arguments: nextItem.id,
-              ),
-            ),
-          );
+          context.pushReplacement('/cpp_learning_unit', extra: nextItem.id);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(

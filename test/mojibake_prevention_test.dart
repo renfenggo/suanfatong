@@ -20,10 +20,7 @@ void main() {
       '澶辫触',
     ];
 
-    final directories = [
-      'lib/app',
-      'lib/pages',
-    ];
+    final directories = ['lib/app', 'lib/pages'];
 
     List<File> collectDartFiles() {
       final files = <File>[];
@@ -31,9 +28,10 @@ void main() {
         final directory = Directory(dir);
         if (directory.existsSync()) {
           files.addAll(
-            directory.listSync(recursive: true).whereType<File>().where(
-                  (f) => f.path.endsWith('.dart'),
-                ),
+            directory
+                .listSync(recursive: true)
+                .whereType<File>()
+                .where((f) => f.path.endsWith('.dart')),
           );
         }
       }
@@ -50,9 +48,10 @@ void main() {
           if (content.contains(fragment)) {
             final idx = content.indexOf(fragment);
             final start = idx > 30 ? idx - 30 : 0;
-            final end = idx + fragment.length + 30 < content.length
-                ? idx + fragment.length + 30
-                : content.length;
+            final end =
+                idx + fragment.length + 30 < content.length
+                    ? idx + fragment.length + 30
+                    : content.length;
             final context = content.substring(start, end);
             violations.add(
               '${file.path}: found mojibake "$fragment" near "...$context..."',
@@ -61,11 +60,7 @@ void main() {
         }
       }
 
-      expect(
-        violations,
-        isEmpty,
-        reason: violations.take(20).join('\n'),
-      );
+      expect(violations, isEmpty, reason: violations.take(20).join('\n'));
     });
 
     test('pubspec.yaml has no mojibake and correct description', () {
@@ -103,8 +98,9 @@ void main() {
     });
 
     test('key UI Chinese strings exist in home_page.dart', () {
-      final content =
-          File('lib/pages/home_page.dart').readAsStringSync(encoding: utf8);
+      final content = File(
+        'lib/pages/home_page.dart',
+      ).readAsStringSync(encoding: utf8);
       expect(content, contains('算法通'));
       expect(content, contains('学习入口'));
       expect(content, contains('知识地图'));
@@ -115,15 +111,17 @@ void main() {
       expect(content, contains('继续学习'));
     });
 
-    test('key UI Chinese strings exist in router.dart', () {
-      final content =
-          File('lib/app/router.dart').readAsStringSync(encoding: utf8);
+    test('key UI Chinese strings exist in app_router.dart', () {
+      final content = File(
+        'lib/app/app_router.dart',
+      ).readAsStringSync(encoding: utf8);
       expect(content, contains('页面未找到'));
     });
 
     test('key UI Chinese strings exist in cpp_learning_unit_page.dart', () {
-      final content = File('lib/pages/cpp_learning_unit_page.dart')
-          .readAsStringSync(encoding: utf8);
+      final content = File(
+        'lib/pages/cpp_learning_unit_page.dart',
+      ).readAsStringSync(encoding: utf8);
       expect(content, contains('学习目标'));
       expect(content, contains('讲解'));
       expect(content, contains('示例代码'));
@@ -133,8 +131,9 @@ void main() {
     });
 
     test('widget_test.dart asserts correct Chinese title', () {
-      final content =
-          File('test/widget_test.dart').readAsStringSync(encoding: utf8);
+      final content = File(
+        'test/widget_test.dart',
+      ).readAsStringSync(encoding: utf8);
       expect(content, contains('算法通'));
       for (final fragment in mojibakeFragments) {
         expect(content, isNot(contains(fragment)));

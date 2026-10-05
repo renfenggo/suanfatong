@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/learning_structure_provider.dart';
 import '../models/knowledge_section.dart';
@@ -115,11 +116,7 @@ class KnowledgeSectionPage extends ConsumerWidget {
                     CrossSectionPrerequisitePanel(
                       prerequisites: learningPath.crossSectionPrerequisites,
                       onItemTap: (itemId) {
-                        Navigator.pushNamed(
-                          context,
-                          '/knowledge/item',
-                          arguments: itemId,
-                        );
+                        context.push('/knowledge/item', extra: itemId);
                       },
                     ),
                     const SizedBox(height: 12),
@@ -132,11 +129,7 @@ class KnowledgeSectionPage extends ConsumerWidget {
                       return item?.name;
                     },
                     onItemTap: (itemId) {
-                      Navigator.pushNamed(
-                        context,
-                        '/knowledge/item',
-                        arguments: itemId,
-                      );
+                      context.push('/knowledge/item', extra: itemId);
                     },
                   ),
                   const SizedBox(height: 12),
@@ -166,11 +159,7 @@ class KnowledgeSectionPage extends ConsumerWidget {
                 itemLayers: itemLayers,
                 collapsePolicy: collapsePolicy,
                 onItemTap: (item) {
-                  Navigator.pushNamed(
-                    context,
-                    '/knowledge/item',
-                    arguments: item.id,
-                  );
+                  context.push('/knowledge/item', extra: item.id);
                 },
               );
             },
@@ -315,7 +304,7 @@ class _ItemCard extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/knowledge/item', arguments: item.id);
+          context.push('/knowledge/item', extra: item.id);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(

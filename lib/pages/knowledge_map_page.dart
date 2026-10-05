@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../models/knowledge_graph.dart';
 import '../models/knowledge_category.dart';
@@ -198,11 +199,7 @@ class _SectionCard extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/knowledge/section',
-            arguments: section.id,
-          );
+          context.push('/knowledge/section', extra: section.id);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(

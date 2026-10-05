@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/cpp_learning_provider.dart';
 import '../utils/cpp_search.dart';
@@ -199,17 +200,9 @@ class _SearchResultCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           if (result.isCppItem) {
-            Navigator.pushNamed(
-              context,
-              '/cpp_learning_unit',
-              arguments: result.itemId,
-            );
+            context.push('/cpp_learning_unit', extra: result.itemId);
           } else {
-            Navigator.pushNamed(
-              context,
-              '/knowledge/item',
-              arguments: result.itemId,
-            );
+            context.push('/knowledge/item', extra: result.itemId);
           }
         },
         borderRadius: BorderRadius.circular(12),

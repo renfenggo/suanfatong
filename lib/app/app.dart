@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../pages/settings_page.dart';
-import 'router.dart';
+import 'app_router.dart';
 import 'theme.dart';
 
 class BfsApp extends ConsumerWidget {
@@ -12,7 +12,7 @@ class BfsApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
     final locale = ref.watch(localeProvider);
-    return MaterialApp(
+    return MaterialApp.router(
       title: '算法通',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -24,8 +24,7 @@ class BfsApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      initialRoute: '/',
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/progress_provider.dart';
 import '../state/cpp_animation_provider.dart';
@@ -216,11 +217,7 @@ class _CppBasicPathPageState extends ConsumerState<CppBasicPathPage> {
                             ? null
                             : () {
                               if (nextItem != null) {
-                                Navigator.pushNamed(
-                                  context,
-                                  '/cpp_learning_unit',
-                                  arguments: nextItem.id,
-                                );
+                                context.push('/cpp_learning_unit', extra: nextItem.id);
                               }
                             },
                     icon: Icon(allDone ? Icons.emoji_events : Icons.play_arrow),
@@ -241,7 +238,7 @@ class _CppBasicPathPageState extends ConsumerState<CppBasicPathPage> {
                 const SizedBox(height: 8),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/cpp_search');
+                    context.push('/cpp_search');
                   },
                   borderRadius: BorderRadius.circular(8),
                   child: Container(
@@ -414,11 +411,7 @@ class _SectionCard extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/knowledge/section',
-            arguments: section.id,
-          );
+          context.push('/knowledge/section', extra: section.id);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -498,11 +491,7 @@ class _SectionCard extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        '/cpp_section_quiz',
-                        arguments: section.id,
-                      );
+                      context.push('/cpp_section_quiz', extra: section.id);
                     },
                     icon: const Icon(Icons.quiz_outlined),
                     tooltip: '章节小测',

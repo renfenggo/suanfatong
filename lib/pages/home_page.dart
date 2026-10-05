@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/progress_provider.dart';
 
@@ -30,7 +31,7 @@ class HomePage extends ConsumerWidget {
                   subtitle: '浏览所有算法与编程知识点',
                   icon: Icons.account_tree,
                   color: const Color(0xFF3498DB),
-                  onTap: () => Navigator.pushNamed(context, '/knowledge'),
+                  onTap: () => context.push('/knowledge'),
                 ),
                 const SizedBox(height: 10),
                 _HomeCard(
@@ -38,7 +39,7 @@ class HomePage extends ConsumerWidget {
                   subtitle: '快速找到你想学的内容',
                   icon: Icons.search,
                   color: const Color(0xFF8E44AD),
-                  onTap: () => Navigator.pushNamed(context, '/cpp_search'),
+                  onTap: () => context.push('/cpp_search'),
                 ),
                 const SizedBox(height: 10),
                 _HomeCard(
@@ -46,7 +47,7 @@ class HomePage extends ConsumerWidget {
                   subtitle: '查看你的学习记录',
                   icon: Icons.bar_chart,
                   color: const Color(0xFF1ABC9C),
-                  onTap: () => Navigator.pushNamed(context, '/progress'),
+                  onTap: () => context.push('/progress'),
                 ),
                 const SizedBox(height: 10),
                 _HomeCard(
@@ -54,7 +55,7 @@ class HomePage extends ConsumerWidget {
                   subtitle: '字体大小、主题等',
                   icon: Icons.settings,
                   color: const Color(0xFF95A5A6),
-                  onTap: () => Navigator.pushNamed(context, '/settings'),
+                  onTap: () => context.push('/settings'),
                 ),
               ],
             );
@@ -139,10 +140,9 @@ class HomePage extends ConsumerWidget {
       icon: Icons.play_circle_filled,
       color: const Color(0xFF27AE60),
       onTap:
-          () => Navigator.pushNamed(
-            context,
+          () => context.push(
             isLearnableUnit ? '/cpp_learning_unit' : '/knowledge/item',
-            arguments: lastItemId,
+            extra: lastItemId,
           ),
     );
   }
@@ -154,11 +154,7 @@ class HomePage extends ConsumerWidget {
       icon: Icons.play_circle_filled,
       color: const Color(0xFF27AE60),
       onTap:
-          () => Navigator.pushNamed(
-            context,
-            '/cpp_learning_unit',
-            arguments: '1.1.1',
-          ),
+          () => context.push('/cpp_learning_unit', extra: '1.1.1'),
     );
   }
 }

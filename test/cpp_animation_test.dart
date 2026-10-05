@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bfs_learn/models/cpp_animation.dart';
 import 'package:bfs_learn/models/knowledge_graph.dart';
-import 'package:bfs_learn/app/router.dart';
+import 'package:bfs_learn/app/app_router.dart';
 
 void main() {
   group('CppAnimation models fromJson defaults', () {

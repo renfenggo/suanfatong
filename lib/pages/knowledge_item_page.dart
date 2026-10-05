@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../state/knowledge_graph_provider.dart';
 import '../state/progress_provider.dart';
 import '../state/cpp_animation_provider.dart';
@@ -246,11 +247,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
             AnimationEntrySection(
               animations: animations,
               onViewAnimation: (animationId) {
-                Navigator.pushNamed(
-                  context,
-                  '/cpp_animation',
-                  arguments: animationId,
-                );
+                context.push('/cpp_animation', extra: animationId);
               },
             ),
             const SizedBox(height: 12),
@@ -327,11 +324,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
       color: const Color(0xFFE0F2F1),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/cpp_learning_unit',
-            arguments: item.id,
-          );
+          context.push('/cpp_learning_unit', extra: item.id);
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -515,7 +508,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
     return Card(
       color: action.color.withValues(alpha: 0.06),
       child: InkWell(
-        onTap: () => Navigator.pushNamed(context, action.route),
+        onTap: () => context.push(action.route),
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -645,11 +638,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
                   onPressed:
                       exists
                           ? () {
-                            Navigator.pushNamed(
-                              context,
-                              '/knowledge/item',
-                              arguments: id,
-                            );
+                            context.push('/knowledge/item', extra: id);
                           }
                           : null,
                 );

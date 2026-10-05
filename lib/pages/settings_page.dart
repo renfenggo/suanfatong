@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../state/progress_provider.dart';
+import '../utils/settings_codec.dart';
 
 final fontSizeProvider = StateProvider<double>((ref) => 16.0);
 final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
@@ -85,16 +86,11 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
-    final savedLang = prefs.getString('app_locale');
     final info = await PackageInfo.fromPlatform();
     setState(() {
-      _fontSize = prefs.getDouble('font_size') ?? 16.0;
-      _themeMode = ThemeMode.values[prefs.getInt('theme_mode') ?? 0];
-      if (savedLang != null) {
-        final parts = savedLang.split('_');
-        _selectedLocale =
-            parts.length > 1 ? Locale(parts[0], parts[1]) : Locale(parts[0]);
-      }
+      _fontSize = SettingsCodec.loadFontSize(prefs);
+      _themeMode = SettingsCodec.loadThemeMode(prefs);
+      _selectedLocale = SettingsCodec.loadLocale(prefs);
       _version = '${info.version} (${info.buildNumber})';
       _loading = false;
     });

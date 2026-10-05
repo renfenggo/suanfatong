@@ -1,1 +1,8 @@
 ﻿/IO知识点_修正版_依赖标记版_v4.2.json
+
+# Build & tool cache (M0)
+/build/
+/.dart_tool/
+__pycache__/
+/linux/flutter/ephemeral/
+/macos/Flutter/ephemeral/

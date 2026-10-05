@@ -6,3 +6,5 @@
 __pycache__/
 /linux/flutter/ephemeral/
 /macos/Flutter/ephemeral/
+.flutter-plugins
+.flutter-plugins-dependencies

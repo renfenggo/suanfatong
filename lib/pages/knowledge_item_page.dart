@@ -17,6 +17,8 @@ import '../widgets/knowledge/learning_card_section.dart';
 import '../widgets/knowledge/practice_entry_section.dart';
 import '../widgets/knowledge/cpp14_template_entry_section.dart';
 import '../widgets/knowledge/animation_entry_section.dart';
+import '../widgets/knowledge/knowledge_content_section.dart';
+import '../state/knowledge_content_provider.dart';
 
 class KnowledgeItemPage extends ConsumerStatefulWidget {
   final String itemId;
@@ -138,6 +140,8 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
         children: [
           _buildHeader(item, section),
           const SizedBox(height: 16),
+          // 知识讲解区域（knowledge_content 内容包，按需加载，缺失降级隐藏）
+          _buildKnowledgeContentSection(item),
           // 学习卡片区域（异步）
           FutureBuilder<LearningCard?>(
             future: _loadLearningCard(item.id),
@@ -235,6 +239,26 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
     );
   }
 
+  /// 知识讲解区域：从 knowledge_content 内容包按需加载当前知识点的
+  /// 结构化讲解（3240 节点全覆盖）。加载失败或未收录时隐藏（降级）。
+  Widget _buildKnowledgeContentSection(KnowledgeItem item) {
+    final contentAsync = ref.watch(knowledgeContentItemProvider(item.id));
+    return contentAsync.when(
+      data: (content) {
+        if (content == null) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            KnowledgeContentSection(item: content),
+            const SizedBox(height: 12),
+          ],
+        );
+      },
+      loading: () => const SizedBox.shrink(),
+      error: (_, __) => const SizedBox.shrink(),
+    );
+  }
+
   /// 动画入口区域（统一入口，复用现有 provider 和路由）
   Widget _buildAnimationEntrySection(BuildContext context, KnowledgeItem item) {
     final animationsAsync = ref.watch(cppAnimationsForItemProvider(item.id));
@@ -324,7 +348,11 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
       color: const Color(0xFFE0F2F1),
       child: InkWell(
         onTap: () {
-          context.push('/cpp_learning_unit', extra: item.id);
+          Navigator.pushNamed(
+            context,
+            '/cpp_learning_unit',
+            arguments: item.id,
+          );
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -508,7 +536,7 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
     return Card(
       color: action.color.withValues(alpha: 0.06),
       child: InkWell(
-        onTap: () => context.push(action.route),
+        onTap: () => Navigator.pushNamed(context, action.route),
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -638,7 +666,11 @@ class _KnowledgeItemPageState extends ConsumerState<KnowledgeItemPage> {
                   onPressed:
                       exists
                           ? () {
-                            context.push('/knowledge/item', extra: id);
+                            Navigator.pushNamed(
+                              context,
+                              '/knowledge/item',
+                              arguments: id,
+                            );
                           }
                           : null,
                 );

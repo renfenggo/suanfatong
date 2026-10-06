@@ -33,6 +33,9 @@ flutter:
     - assets/data/mistakes/
     - assets/data/bfs_steps.json
     - assets/data/knowledge/
+    - assets/data/knowledge_content/content_index.json
+    - assets/data/knowledge_content/item_part_index.json
+    - assets/data/knowledge_content/items/
     - assets/data/cpp/
     - assets/data/cpp/animations/
     - assets/data/algorithm/

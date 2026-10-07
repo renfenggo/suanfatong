@@ -17,6 +17,7 @@ import '../pages/progress_page.dart';
 import '../pages/quiz_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/teacher_mode_page.dart';
+import '../pages/workbench_page.dart';
 import 'desktop_shell.dart';
 
 /// 统一路由路径常量（与迁移前 Navigator 1.0 路径保持兼容）
@@ -156,17 +157,12 @@ GoRouter buildAppRouter({String initialLocation = AppRouter.home}) {
               ),
             ],
           ),
-          // 4 编程工作台（占位，M3 接入 CodeRunner）
+          // 4 编程工作台（M3-8：经 DesktopBridge 行协议接入 CodeRunner）
           StatefulShellBranch(
             routes: [
               GoRoute(
                 path: AppRouter.workbench,
-                builder:
-                    (context, state) => const ShellPlaceholderPage(
-                      title: '编程工作台',
-                      description: 'C++ 代码编写与本地安全运行（M3 接入）',
-                      icon: Icons.terminal,
-                    ),
+                builder: (context, state) => const WorkbenchPage(),
               ),
             ],
           ),

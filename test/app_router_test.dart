@@ -11,6 +11,7 @@ import 'package:bfs_learn/pages/home_page.dart';
 import 'package:bfs_learn/pages/knowledge_item_page.dart';
 import 'package:bfs_learn/pages/progress_page.dart';
 import 'package:bfs_learn/pages/teacher_mode_page.dart';
+import 'package:bfs_learn/pages/workbench_page.dart';
 
 void main() {
   setUp(() {
@@ -114,12 +115,13 @@ void main() {
     expect(find.text('返回首页'), findsOneWidget);
   });
 
-  testWidgets('占位导航区（编程工作台 / AI 助手 / 课堂）渲染', (tester) async {
+  testWidgets('编程工作台为实页，AI 助手 / 课堂仍为占位', (tester) async {
     final router = buildAppRouter(initialLocation: AppRouter.workbench);
     await tester.pumpWidget(host(router));
     await tester.pump(const Duration(milliseconds: 100));
-    expect(find.byType(ShellPlaceholderPage), findsOneWidget);
-    expect(find.text('编程工作台'), findsWidgets);
+    // M3-8：workbench 已接入 WorkbenchPage（经 DesktopBridge 行协议）
+    expect(find.byType(WorkbenchPage), findsOneWidget);
+    expect(find.byType(ShellPlaceholderPage), findsNothing);
 
     router.go(AppRouter.aiAssistant);
     await tester.pump(const Duration(milliseconds: 100));

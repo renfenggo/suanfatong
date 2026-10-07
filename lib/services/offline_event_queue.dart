@@ -14,11 +14,23 @@ abstract class OfflineEventStore {
 
   /// 覆盖保存全部待上报事件（每次入队/清理后调用）。
   Future<void> saveJsonEntries(List<String> entries);
+
+  /// 读取持久化的单调序号水位（R07：未持久化时返回 0）。
+  ///
+  /// 默认实现为空操作，供不关心水位的实现复用。
+  Future<int> loadSeqWatermark() async => 0;
+
+  /// 保存单调序号水位（R07）。
+  ///
+  /// 水位独立于队列行存储：全部事件确认后队列清空不影响水位，重启后
+  /// 新事件继续从已用最大序号递增，不产生重复的 mutation_id/event_id。
+  Future<void> saveSeqWatermark(int seq) async {}
 }
 
 /// 内存实现（测试与未接持久化阶段的默认选择）。
 class InMemoryOfflineEventStore implements OfflineEventStore {
   final List<String> _entries = <String>[];
+  int _seqWatermark = 0;
 
   @override
   Future<List<String>> loadJsonEntries() async => List<String>.from(_entries);
@@ -29,6 +41,14 @@ class InMemoryOfflineEventStore implements OfflineEventStore {
       ..clear()
       ..addAll(entries);
   }
+
+  @override
+  Future<int> loadSeqWatermark() async => _seqWatermark;
+
+  @override
+  Future<void> saveSeqWatermark(int seq) async {
+    _seqWatermark = seq;
+  }
 }
 
 /// 文件实现：单 JSON 文件（字符串数组），ADR-006 V1 队列持久化。
@@ -36,28 +56,52 @@ class InMemoryOfflineEventStore implements OfflineEventStore {
 /// 位置默认取应用支持目录（path_provider），构造可注入目录解析函数以便测试。
 /// 损坏降级：文件不存在/不可解析/非数组 → 空队列（事件 append-only，跳过
 /// 坏行由 [OfflineEventQueue.load] 承担），任何文件 IO 异常不外抛。
+///
+/// R07（审查 2026-10-07）：
+/// - 写入原子替换（先写 `<file>.tmp` 再 rename），中途失败不破坏旧文件；
+/// - 写失败不再静默：记录在 [lastWriteError]（成功后清除），调用方可观测；
+/// - 序号水位存独立文件（[defaultSeqFileName]），不随队列清空而删除。
 class FileOfflineEventStore implements OfflineEventStore {
   FileOfflineEventStore({
     Future<Directory> Function()? directoryProvider,
     this.fileName = defaultFileName,
-  }) : _directoryProvider =
-           directoryProvider ?? getApplicationSupportDirectory;
+    this.seqFileName = defaultSeqFileName,
+  }) : _directoryProvider = directoryProvider ?? getApplicationSupportDirectory;
 
   /// 队列文件名（应用支持目录下）。
   static const String defaultFileName = 'offline_event_queue.json';
 
+  /// 序号水位文件名（R07：独立于队列文件，清空队列不删除）。
+  static const String defaultSeqFileName = 'offline_event_seq.json';
+
   final Future<Directory> Function() _directoryProvider;
   final String fileName;
+  final String seqFileName;
 
-  Future<File> _resolveFile() async {
+  /// 最近一次写失败的原因（R07 失败可观测）；null 表示全部写入成功。
+  ///
+  /// 读取不产生错误（损坏按降级空数据处理）；仅 save* 系列会写入此字段。
+  Object? lastWriteError;
+
+  int _savedSeq = -1;
+
+  Future<File> _resolveFile(String name) async {
     final directory = await _directoryProvider();
-    return File('${directory.path}${Platform.pathSeparator}$fileName');
+    return File('${directory.path}${Platform.pathSeparator}$name');
+  }
+
+  /// 原子替换写入：先写临时文件再 rename 覆盖目标。
+  Future<void> _writeAtomically(File file, String contents) async {
+    final tmp = File('${file.path}.tmp');
+    await file.parent.create(recursive: true);
+    await tmp.writeAsString(contents, flush: true);
+    await tmp.rename(file.path);
   }
 
   @override
   Future<List<String>> loadJsonEntries() async {
     try {
-      final file = await _resolveFile();
+      final file = await _resolveFile(fileName);
       if (!await file.exists()) {
         return const <String>[];
       }
@@ -75,11 +119,41 @@ class FileOfflineEventStore implements OfflineEventStore {
   @override
   Future<void> saveJsonEntries(List<String> entries) async {
     try {
-      final file = await _resolveFile();
-      await file.parent.create(recursive: true);
-      await file.writeAsString(jsonEncode(entries), flush: true);
+      await _writeAtomically(await _resolveFile(fileName), jsonEncode(entries));
+      lastWriteError = null;
+    } on Exception catch (error) {
+      // 写失败不外抛：内存队列仍有效，下次入队整体覆盖重写；
+      // R07：记录失败原因供调用方观测，不再静默当作持久化成功。
+      lastWriteError = error;
+    }
+  }
+
+  @override
+  Future<int> loadSeqWatermark() async {
+    try {
+      final file = await _resolveFile(seqFileName);
+      if (!await file.exists()) {
+        return 0;
+      }
+      final decoded = jsonDecode(await file.readAsString());
+      return decoded is int && decoded > 0 ? decoded : 0;
     } on Exception {
-      // 写失败不外抛：内存队列仍有效，下次入队整体覆盖重写。
+      // 损坏/不可读 → 0；由待上报事件回填兜底（见 OfflineEventQueue.load）。
+      return 0;
+    }
+  }
+
+  @override
+  Future<void> saveSeqWatermark(int seq) async {
+    if (seq == _savedSeq) {
+      return; // 未变化不重写（completeBatch 清理后的重复保存）。
+    }
+    try {
+      await _writeAtomically(await _resolveFile(seqFileName), '$seq');
+      _savedSeq = seq;
+      lastWriteError = null;
+    } on Exception catch (error) {
+      lastWriteError = error;
     }
   }
 }
@@ -87,8 +161,10 @@ class FileOfflineEventStore implements OfflineEventStore {
 /// 离线学习事件队列（ADR-006：本地 append-only 事件、mutation_id 幂等、
 /// 网络恢复后按序批量上报，单批 ≤ [maxBatchSize] 对齐契约）。
 ///
-/// mutation_id 生成采用 ADR-006 方案 `{device_id}:{local_seq}`，seq 水位随
-/// 队列恢复而回填，重启后不产生重复幂等键；上报重试间事件对象不变。
+/// mutation_id 生成采用 ADR-006 方案 `{device_id}:{local_seq}`；R07（审查
+/// 2026-10-07）：seq 水位独立持久化（[OfflineEventStore.saveSeqWatermark]），
+/// 全部事件确认、队列清空并重启后水位不回退，新事件必产新幂等键；水位
+/// 文件缺失/损坏时由待上报事件回填兜底；上报重试间事件对象与 ID 不变。
 class OfflineEventQueue {
   OfflineEventQueue({required OfflineEventStore store, required this.deviceId})
     : _store = store;
@@ -116,10 +192,13 @@ class OfflineEventQueue {
     _pending
       ..clear()
       ..addAll(
-        entries.map((String line) => _tryDecodeEvent(line)).whereType<LearningEvent>(),
+        entries
+            .map((String line) => _tryDecodeEvent(line))
+            .whereType<LearningEvent>(),
       );
-    // 回填 seq 水位：扫描本机已入队 mutation_id（{deviceId}:{seq}）取最大值，
-    // 保证重启后新生成的幂等键不与历史冲突。
+    // 回填 seq 水位（兜底路径）：扫描本机已入队 mutation_id（{deviceId}:{seq}）
+    // 取最大值。R07：独立水位文件优先（清空队列后重启仍不回退），事件回填
+    // 仅在水位文件缺失/损坏时提供兜底保护。
     final prefix = '$deviceId:';
     for (final event in _pending) {
       if (event.mutationId.startsWith(prefix)) {
@@ -128,6 +207,10 @@ class OfflineEventQueue {
           _seq = seq;
         }
       }
+    }
+    final storedWatermark = await _store.loadSeqWatermark();
+    if (storedWatermark > _seq) {
+      _seq = storedWatermark;
     }
   }
 
@@ -191,7 +274,9 @@ class OfflineEventQueue {
     if (confirmed.isEmpty) {
       return;
     }
-    _pending.removeWhere((LearningEvent event) => confirmed.contains(event.eventId));
+    _pending.removeWhere(
+      (LearningEvent event) => confirmed.contains(event.eventId),
+    );
     await _persist();
   }
 
@@ -199,8 +284,12 @@ class OfflineEventQueue {
 
   Future<void> _persist() async {
     await _store.saveJsonEntries(
-      _pending.map((LearningEvent event) => jsonEncode(event.toJson())).toList(),
+      _pending
+          .map((LearningEvent event) => jsonEncode(event.toJson()))
+          .toList(),
     );
+    // R07：水位独立持久化，不随队列清空而丢失（幂等键永不复用）。
+    await _store.saveSeqWatermark(_seq);
   }
 
   /// 持久化行 → 事件（损坏行跳过：事件 append-only，跳过不破坏后续）。

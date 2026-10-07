@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
@@ -113,9 +114,9 @@ void main() {
       expect(first, hasLength(200));
       expect(first.first.itemId, 'item-0');
 
-      // 模拟第一批上报全部 accepted → 取下一批
+      // 模拟第一批上报全部 accepted（回带 event_id）→ 取下一批
       await queue.completeBatch(
-        EventUploadResult(accepted: first.map((e) => e.mutationId).toList()),
+        EventUploadResult(accepted: first.map((e) => e.eventId).toList()),
       );
       final second = await queue.nextBatch();
 
@@ -151,38 +152,49 @@ void main() {
   });
 
   group('OfflineEventQueue.completeBatch', () {
-    test('accepted 与 duplicated 均移除，未提及的保留', () async {
+    test('accepted 与 duplicated 回带 event_id，均按 event_id 移除，未提及的保留', () async {
       final queue = OfflineEventQueue(store: _FakeStore(), deviceId: 'dev-1');
       final first = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'a');
       final second = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'b');
       final third = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'c');
 
       await queue.completeBatch(EventUploadResult(
-        accepted: <String>[first!.mutationId],
-        duplicated: <String>[second!.mutationId],
+        accepted: <String>[first!.eventId],
+        duplicated: <String>[second!.eventId],
       ));
 
       expect(queue.pendingCount, 1);
       final batch = await queue.nextBatch();
       expect(batch.single.itemId, 'c');
-      expect(batch.single.mutationId, third!.mutationId);
+      expect(batch.single.eventId, third!.eventId);
     });
 
-    test('清理后同步持久化（存储内容与内存一致）', () async {
+    test('语义防护：回带字符串恰好等于某事件 mutation_id 时不再移除（契约回带 event_id）', () async {
+      final queue = OfflineEventQueue(store: _FakeStore(), deviceId: 'dev-1');
+      final event = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'a');
+
+      await queue.completeBatch(
+        EventUploadResult(accepted: <String>[event!.mutationId]),
+      );
+
+      expect(queue.pendingCount, 1, reason: '按 event_id 匹配，mutation_id 字符串不应命中');
+    });
+
+    test('清理后同步持久化（存储内容与内存一致，按 event_id 清理）', () async {
       final store = _FakeStore();
       final queue = OfflineEventQueue(store: store, deviceId: 'dev-1');
       final kept = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'keep');
       final removed = await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'drop');
 
       await queue.completeBatch(
-        EventUploadResult(accepted: <String>[removed!.mutationId]),
+        EventUploadResult(accepted: <String>[removed!.eventId]),
       );
 
       final saved = await store.loadJsonEntries();
       expect(saved, hasLength(1));
       expect(
-        (jsonDecode(saved.single) as Map<String, dynamic>)['mutation_id'],
-        kept!.mutationId,
+        (jsonDecode(saved.single) as Map<String, dynamic>)['event_id'],
+        kept!.eventId,
       );
     });
 
@@ -259,6 +271,126 @@ void main() {
 
       expect(queue.pendingCount, 1);
       expect((await queue.nextBatch()).single.itemId, 'ok');
+    });
+  });
+
+  group('FileOfflineEventStore', () {
+    late Directory tempDir;
+
+    setUp(() async {
+      tempDir = await Directory.systemTemp.createTemp('offline_queue_test');
+    });
+
+    tearDown(() async {
+      if (await tempDir.exists()) {
+        await tempDir.delete(recursive: true);
+      }
+    });
+
+    FileOfflineEventStore newStore() => FileOfflineEventStore(
+      directoryProvider: () async => tempDir,
+    );
+
+    test('文件不存在 → 空列表（首次运行）', () async {
+      expect(await newStore().loadJsonEntries(), isEmpty);
+    });
+
+    test('save→load 往返一致且保序，文件内容为字符串数组', () async {
+      final store = newStore();
+      final entries = <String>[
+        jsonEncode(const LearningEvent(
+          eventId: 'e-1',
+          mutationId: 'dev-1:1',
+          kind: LearningEventKind.knowledgeComplete,
+          itemId: 'kn-1',
+        ).toJson()),
+        jsonEncode(const LearningEvent(
+          eventId: 'e-2',
+          mutationId: 'dev-1:3',
+          kind: LearningEventKind.quizSubmit,
+          itemId: 'q-1',
+        ).toJson()),
+      ];
+
+      await store.saveJsonEntries(entries);
+
+      expect(await store.loadJsonEntries(), entries);
+      final onDisk = jsonDecode(
+        await File(
+          '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+        ).readAsString(),
+      );
+      expect(onDisk, isA<List<dynamic>>());
+      expect((onDisk as List<dynamic>).whereType<String>().toList(), entries);
+    });
+
+    test('save 空列表覆盖旧内容（清理后不残留历史行）', () async {
+      final store = newStore();
+      await store.saveJsonEntries(<String>['{"event_id":"e-1"}']);
+      await store.saveJsonEntries(const <String>[]);
+
+      expect(await store.loadJsonEntries(), isEmpty);
+    });
+
+    test('文件损坏（非 JSON）→ 降级空列表不抛', () async {
+      await File(
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+      ).writeAsString('{"events": [截断');
+
+      expect(await newStore().loadJsonEntries(), isEmpty);
+    });
+
+    test('文件为 JSON 对象（非数组）→ 空列表', () async {
+      await File(
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+      ).writeAsString('{"schema_version":"1.0"}');
+
+      expect(await newStore().loadJsonEntries(), isEmpty);
+    });
+
+    test('数组内非字符串项被过滤，字符串行保留（行级坏行由队列跳过）', () async {
+      await File(
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+      ).writeAsString('["{\\"event_id\\":\\"e-1\\"}", 42, null, "not-a-json{{{"]');
+
+      expect(await newStore().loadJsonEntries(), <String>[
+        '{"event_id":"e-1"}',
+        'not-a-json{{{',
+      ]);
+    });
+
+    test('目录不可写（路径被文件占用）→ save 不抛异常', () async {
+      final blocker = File('${tempDir.path}${Platform.pathSeparator}blocker');
+      await blocker.writeAsString('occupied');
+      final store = FileOfflineEventStore(
+        directoryProvider: () async => Directory(blocker.path),
+      );
+
+      await store.saveJsonEntries(<String>['{"event_id":"e-1"}']);
+      await store.saveJsonEntries(const <String>[]);
+
+      expect(await store.loadJsonEntries(), isEmpty);
+    });
+
+    test('与 OfflineEventQueue 集成：enqueue 落盘 → 新实例恢复队列与 seq 水位', () async {
+      final queue = OfflineEventQueue(store: newStore(), deviceId: 'dev-1');
+      await queue.enqueue(kind: LearningEventKind.knowledgeComplete, itemId: 'kn-1');
+      await queue.enqueue(kind: LearningEventKind.quizSubmit, itemId: 'q-1');
+
+      final restored = OfflineEventQueue(store: newStore(), deviceId: 'dev-1');
+      final restoredBatch = await restored.nextBatch();
+
+      expect(restoredBatch, hasLength(2));
+      expect(restoredBatch.map((e) => e.itemId).toList(), <String>['kn-1', 'q-1']);
+
+      // 重启后新生成的 mutation_id 不与历史冲突
+      // （水位回填只扫 {device_id}:{seq} 形态的 mutation_id：历史用了 :1/:3，
+      // eventId 的 -e2/-e4 不参与回填，故续写为 :4）
+      final fresh = await restored.enqueue(
+        kind: LearningEventKind.animationWatch,
+        itemId: 'anim-1',
+      );
+      expect(fresh!.mutationId, 'dev-1:4');
     });
   });
 }

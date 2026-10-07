@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
+
+import 'package:path_provider/path_provider.dart';
 
 import 'platform_api_models.dart';
 
@@ -25,6 +28,59 @@ class InMemoryOfflineEventStore implements OfflineEventStore {
     _entries
       ..clear()
       ..addAll(entries);
+  }
+}
+
+/// 文件实现：单 JSON 文件（字符串数组），ADR-006 V1 队列持久化。
+///
+/// 位置默认取应用支持目录（path_provider），构造可注入目录解析函数以便测试。
+/// 损坏降级：文件不存在/不可解析/非数组 → 空队列（事件 append-only，跳过
+/// 坏行由 [OfflineEventQueue.load] 承担），任何文件 IO 异常不外抛。
+class FileOfflineEventStore implements OfflineEventStore {
+  FileOfflineEventStore({
+    Future<Directory> Function()? directoryProvider,
+    this.fileName = defaultFileName,
+  }) : _directoryProvider =
+           directoryProvider ?? getApplicationSupportDirectory;
+
+  /// 队列文件名（应用支持目录下）。
+  static const String defaultFileName = 'offline_event_queue.json';
+
+  final Future<Directory> Function() _directoryProvider;
+  final String fileName;
+
+  Future<File> _resolveFile() async {
+    final directory = await _directoryProvider();
+    return File('${directory.path}${Platform.pathSeparator}$fileName');
+  }
+
+  @override
+  Future<List<String>> loadJsonEntries() async {
+    try {
+      final file = await _resolveFile();
+      if (!await file.exists()) {
+        return const <String>[];
+      }
+      final decoded = jsonDecode(await file.readAsString());
+      if (decoded is List<dynamic>) {
+        return decoded.whereType<String>().toList();
+      }
+      return const <String>[];
+    } on Exception {
+      // 损坏文件降级为空队列，不 crash（ADR-006：事件层可独立回滚）。
+      return const <String>[];
+    }
+  }
+
+  @override
+  Future<void> saveJsonEntries(List<String> entries) async {
+    try {
+      final file = await _resolveFile();
+      await file.parent.create(recursive: true);
+      await file.writeAsString(jsonEncode(entries), flush: true);
+    } on Exception {
+      // 写失败不外抛：内存队列仍有效，下次入队整体覆盖重写。
+    }
   }
 }
 
@@ -123,18 +179,19 @@ class OfflineEventQueue {
     return List<LearningEvent>.unmodifiable(_pending.take(count));
   }
 
-  /// 上报成功后清理：accepted 与 duplicated 中的 mutation_id 均视为已确认并
-  /// 移除；响应中未提及的事件保留待下次重试。
+  /// 上报成功后清理：响应 accepted/duplicated 回带 event_id（契约 M4-5
+  /// 实装语义），两个集合中的事件均视为已确认并移除；响应中未提及的事件
+  /// 保留待下次重试。
   Future<void> completeBatch(EventUploadResult result) async {
     await load();
     if (_pending.isEmpty) {
       return;
     }
-    final confirmed = result.confirmedMutationIds;
+    final confirmed = result.confirmedEventIds;
     if (confirmed.isEmpty) {
       return;
     }
-    _pending.removeWhere((LearningEvent event) => confirmed.contains(event.mutationId));
+    _pending.removeWhere((LearningEvent event) => confirmed.contains(event.eventId));
     await _persist();
   }
 

@@ -295,26 +295,26 @@ void main() {
   group('EventUploadResult', () {
     test('解析 accepted/duplicated，非字符串项过滤', () {
       final result = EventUploadResult.fromJson(const <String, dynamic>{
-        'accepted': <dynamic>['dev-1:1', 'dev-1:2', 3],
-        'duplicated': <dynamic>['dev-1:3', null],
+        'accepted': <dynamic>['dev-1-e1', 'dev-1-e2', 3],
+        'duplicated': <dynamic>['dev-1-e3', null],
       });
-      expect(result.accepted, <String>['dev-1:1', 'dev-1:2']);
-      expect(result.duplicated, <String>['dev-1:3']);
+      expect(result.accepted, <String>['dev-1-e1', 'dev-1-e2']);
+      expect(result.duplicated, <String>['dev-1-e3']);
     });
 
     test('字段缺失容错为空列表', () {
       final result = EventUploadResult.fromJson(const <String, dynamic>{});
       expect(result.accepted, isEmpty);
       expect(result.duplicated, isEmpty);
-      expect(result.confirmedMutationIds, isEmpty);
+      expect(result.confirmedEventIds, isEmpty);
     });
 
-    test('confirmedMutationIds 为 accepted 与 duplicated 并集', () {
+    test('confirmedEventIds 为 accepted 与 duplicated 的 event_id 并集', () {
       const result = EventUploadResult(
-        accepted: <String>['m-1', 'm-2'],
-        duplicated: <String>['m-2', 'm-3'],
+        accepted: <String>['e-1', 'e-2'],
+        duplicated: <String>['e-2', 'e-3'],
       );
-      expect(result.confirmedMutationIds, <String>{'m-1', 'm-2', 'm-3'});
+      expect(result.confirmedEventIds, <String>{'e-1', 'e-2', 'e-3'});
     });
   });
 }

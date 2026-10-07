@@ -143,7 +143,8 @@ class PlatformApiClient {
     return AuthToken.fromJson(_decodeObjectOrThrow(response.statusCode, response.body));
   }
 
-  /// 批量上报学习事件（1-200 条，服务端按 mutation_id 幂等去重）。
+  /// 批量上报学习事件（1-200 条，服务端按 mutation_id 幂等去重；
+  /// 响应 accepted/duplicated 回带 event_id）。
   Future<EventUploadResult> uploadLearningEvents(List<LearningEvent> events) async {
     final response = await _send(
       method: 'POST',

@@ -232,8 +232,9 @@ class ErrorEnvelope {
 
 /// 批量上报结果（POST /v1/learning/events 200 响应）。
 ///
-/// accepted/duplicated 为事件确认集合（按 mutation_id 幂等去重：
-/// duplicated 表示服务端此前已接收，同样视为已确认）。
+/// accepted/duplicated 回带的是 **event_id**（M4-5 实装语义，2026-10-07
+/// 契约澄清）：accepted=上报成功的 event_id；duplicated=服务端按
+/// mutation_id 幂等去重命中的 event_id（此前已接收，同样视为已确认）。
 class EventUploadResult {
   const EventUploadResult({
     this.accepted = const <String>[],
@@ -261,8 +262,8 @@ class EventUploadResult {
     'duplicated': duplicated,
   };
 
-  /// accepted 与 duplicated 的并集（均为服务端已确认）。
-  Set<String> get confirmedMutationIds => <String>{...accepted, ...duplicated};
+  /// accepted 与 duplicated 的 event_id 并集（均为服务端已确认）。
+  Set<String> get confirmedEventIds => <String>{...accepted, ...duplicated};
 }
 
 Map<String, dynamic> _asObject(Object? value) {

@@ -12,6 +12,7 @@ import '../pages/knowledge_item_page.dart';
 import '../pages/knowledge_map_page.dart';
 import '../pages/knowledge_section_page.dart';
 import '../pages/lesson_page.dart';
+import '../pages/login_page.dart';
 import '../pages/mistake_page.dart';
 import '../pages/progress_page.dart';
 import '../pages/quiz_page.dart';
@@ -31,6 +32,7 @@ class AppRouter {
   static const String teacherModeAlias = '/teacher_mode';
   static const String progress = '/progress';
   static const String settings = '/settings';
+  static const String login = '/login';
   static const String knowledge = '/knowledge';
   static const String knowledgeSection = '/knowledge/section';
   static const String knowledgeItem = '/knowledge/item';
@@ -217,6 +219,11 @@ GoRouter buildAppRouter({String initialLocation = AppRouter.home}) {
             ],
           ),
         ],
+      ),
+      // 顶层：登录页（不带桌面 Shell 导航的独立页）
+      GoRoute(
+        path: AppRouter.login,
+        builder: (context, state) => const LoginPage(),
       ),
       // 旧别名：/teacher_mode -> /teacher
       GoRoute(

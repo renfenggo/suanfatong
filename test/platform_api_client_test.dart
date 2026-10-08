@@ -236,6 +236,53 @@ void main() {
     });
   });
 
+  group('PlatformApiClient.fetchFeatureFlags', () {
+    test('成功：GET /v1/feature-flags + Bearer，解析 flags 布尔映射', () async {
+      final fake = _FakeTransport((request) async => _jsonResponse(
+        200,
+        '{"flags":{"cloud_sync":true,"ai":false,"telemetry":true}}',
+      ));
+      final client = PlatformApiClient(transport: fake)..accessToken = 'at-1';
+
+      final flags = await client.fetchFeatureFlags();
+
+      final request = fake.requests.single;
+      expect(request.method, 'GET');
+      expect(request.url, 'http://localhost:8000/v1/feature-flags');
+      expect(request.headers['Authorization'], 'Bearer at-1');
+      expect(flags, <String, bool>{'cloud_sync': true, 'ai': false, 'telemetry': true});
+    });
+
+    test('非布尔值容错为 false；缺失 flags 对象 → 空映射', () async {
+      final fake = _FakeTransport(
+        (request) async => _jsonResponse(200, '{"flags":{"cloud_sync":"yes","ai":1}}'),
+      );
+      final client = PlatformApiClient(transport: fake)..accessToken = 'at-1';
+      expect(await client.fetchFeatureFlags(), <String, bool>{'cloud_sync': false, 'ai': false});
+
+      final fakeNoFlags = _FakeTransport((request) async => _jsonResponse(200, '{"other":1}'));
+      final clientNoFlags = PlatformApiClient(transport: fakeNoFlags)..accessToken = 'at-1';
+      expect(await clientNoFlags.fetchFeatureFlags(), isEmpty);
+    });
+
+    test('401 → PlatformServerException（信封透传）', () async {
+      final fake = _FakeTransport(
+        (request) async => _jsonResponse(
+          401,
+          '{"code":"UNAUTHORIZED","message":"令牌无效","retryable":false}',
+        ),
+      );
+      final client = PlatformApiClient(transport: fake)..accessToken = 'stale';
+
+      await expectLater(
+        client.fetchFeatureFlags(),
+        throwsA(
+          isA<PlatformServerException>().having((e) => e.statusCode, 'statusCode', 401),
+        ),
+      );
+    });
+  });
+
   group('PlatformApiClient 异常映射', () {
     test('网络异常（SocketException）→ PlatformNetworkException', () async {
       final fake = _FakeTransport((request) async {

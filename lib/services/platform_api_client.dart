@@ -92,7 +92,8 @@ class IoPlatformHttpTransport implements PlatformHttpTransport {
 
 /// 平台 HTTP API 客户端（contracts/platform_api/openapi.yaml 对齐）。
 ///
-/// 三端点：POST /v1/auth/login、POST /v1/learning/events、GET /v1/learning/state。
+/// 四端点：POST /v1/auth/login、POST /v1/learning/events、
+/// GET /v1/learning/state、GET /v1/feature-flags。
 /// Bearer 令牌经 [accessToken] 注入；超时语义 login/state 10s、events 15s。
 /// 错误统一映射：网络层异常 → [PlatformNetworkException]；
 /// 非 2xx 或响应体不可解析 → [PlatformServerException]（携带 ErrorEnvelope）。
@@ -171,6 +172,25 @@ class PlatformApiClient {
     return LearningState.fromJson(
       _decodeObjectOrThrow(response.statusCode, response.body),
     );
+  }
+
+  /// 拉取功能开关（GET /v1/feature-flags，需认证）。
+  ///
+  /// 响应形如 `{"flags": {"cloud_sync": true, ...}}`；返回键到布尔值的映射，
+  /// 非布尔值容错为 false，缺失 flags 对象时返回空映射。
+  Future<Map<String, bool>> fetchFeatureFlags() async {
+    final response = await _send(
+      method: 'GET',
+      path: '/v1/feature-flags',
+      timeout: _stateTimeout,
+      authenticated: true,
+    );
+    final decoded = _decodeObjectOrThrow(response.statusCode, response.body);
+    final flags = decoded['flags'];
+    if (flags is Map<String, dynamic>) {
+      return flags.map((String key, Object? value) => MapEntry(key, value == true));
+    }
+    return const <String, bool>{};
   }
 
   Future<PlatformHttpResponse> _send({

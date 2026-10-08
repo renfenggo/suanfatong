@@ -123,6 +123,9 @@ class CloudSyncService {
   AuthToken? get cachedToken => _cachedToken;
 
   /// 执行一轮同步（幂等：可由定时器/网络恢复事件反复触发）。
+  ///
+  /// flag 两段式判定：登录前初查（无 token 的开关源放行到登录步）、
+  /// 登录成功后复查（持 token 权威判定，OFF → skippedFlagOff 不发 events）。
   Future<CloudSyncResult> syncOnce() async {
     if (!await _flagSource.isCloudSyncEnabled()) {
       return const CloudSyncResult(outcome: CloudSyncOutcome.skippedFlagOff);
@@ -140,6 +143,13 @@ class CloudSyncService {
       );
     } on PlatformServerException catch (error) {
       return _handleServerError(error, confirmedCount: 0);
+    }
+
+    // 登录后复查 flag：无 token 阶段放行的开关源（ApiSyncFlagSource）此时
+    // 持 token 给出权威判定（cloud_sync 关闭 → 不发任何 events，队列保留）。
+    // 静态源重复判定同一值，无副作用。
+    if (!await _flagSource.isCloudSyncEnabled()) {
+      return const CloudSyncResult(outcome: CloudSyncOutcome.skippedFlagOff);
     }
 
     var confirmedCount = 0;

@@ -403,6 +403,66 @@ void main() {
       expect(queue.pendingCount, 1);
     });
   });
+
+  group('CloudSyncService 登录后 flag 复查（两段式）', () {
+    test('无 token 初查放行 → 登录 → 复查 OFF → skippedFlagOff，不发 events', () async {
+      final fake = _FakeTransport((request) async {
+        if (request.url.endsWith('/v1/auth/login')) return _loginOk();
+        throw StateError('unexpected ${request.url}');
+      });
+      final client = _client(fake);
+      final queue = _newQueue();
+      await _enqueue(queue, 2);
+      final service = CloudSyncService(
+        client: client,
+        queue: queue,
+        credentialProvider: () async => _creds(),
+        // 两段式语义：无 token（登录前）放行 true；有 token（登录后复查）OFF。
+        flagSource: _TokenAwareFlagSource(
+          client: client,
+          unauthenticated: true,
+          authenticated: false,
+        ),
+      );
+
+      final result = await service.syncOnce();
+
+      expect(result.outcome, CloudSyncOutcome.skippedFlagOff);
+      expect(fake.requests.single.url, 'http://sync.test/v1/auth/login');
+      expect(
+        fake.requests.where((r) => r.url.endsWith('/v1/learning/events')),
+        isEmpty,
+        reason: '复查 OFF 后不得发任何上报请求',
+      );
+      expect(queue.pendingCount, 2, reason: '队列保留');
+    });
+
+    test('两段均放行 → 正常上报（回归：复查不影响成功路径）', () async {
+      final fake = _FakeTransport((request) async {
+        if (request.url.endsWith('/v1/auth/login')) return _loginOk();
+        return _acceptAll(request.body!);
+      });
+      final client = _client(fake);
+      final queue = _newQueue();
+      await _enqueue(queue, 1);
+      final service = CloudSyncService(
+        client: client,
+        queue: queue,
+        credentialProvider: () async => _creds(),
+        flagSource: _TokenAwareFlagSource(
+          client: client,
+          unauthenticated: true,
+          authenticated: true,
+        ),
+      );
+
+      final result = await service.syncOnce();
+
+      expect(result.outcome, CloudSyncOutcome.synced);
+      expect(result.confirmedCount, 1);
+      expect(queue.pendingCount, 0);
+    });
+  });
 }
 
 PlatformApiClient _client(_FakeTransport fake) =>
@@ -481,6 +541,25 @@ class _FakeFlagSource implements SyncFlagSource {
 
   @override
   Future<bool> isCloudSyncEnabled() async => enabled;
+}
+
+/// 按 token 有无区分判定的 Fake（模拟 ApiSyncFlagSource 两段式语义）。
+class _TokenAwareFlagSource implements SyncFlagSource {
+  _TokenAwareFlagSource({
+    required this.client,
+    required this.unauthenticated,
+    required this.authenticated,
+  });
+
+  final PlatformApiClient client;
+  final bool unauthenticated;
+  final bool authenticated;
+
+  @override
+  Future<bool> isCloudSyncEnabled() async {
+    final token = client.accessToken;
+    return token == null || token.isEmpty ? unauthenticated : authenticated;
+  }
 }
 
 /// 队列行持久化恒失败的存储（P1 落盘失败透传验收；水位写入正常）。

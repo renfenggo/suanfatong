@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../app/app_router.dart';
+import '../services/cloud_sync_service.dart';
+import '../state/cloud_sync_provider.dart';
 import '../state/progress_provider.dart';
 import '../utils/settings_codec.dart';
 
@@ -77,11 +81,15 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   Locale? _selectedLocale;
   bool _loading = true;
   String _version = '';
+  bool _syncing = false;
+  String? _lastSyncSummary;
+  int _pendingCount = 0;
 
   @override
   void initState() {
     super.initState();
     _loadSettings();
+    _refreshPendingCount();
   }
 
   Future<void> _loadSettings() async {
@@ -126,6 +134,60 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     } else {
       await prefs.remove('app_locale');
     }
+  }
+
+  Future<void> _refreshPendingCount() async {
+    final queue = ref.read(offlineEventQueueProvider);
+    await queue.load();
+    if (mounted) {
+      setState(() => _pendingCount = queue.pendingCount);
+    }
+  }
+
+  Future<void> _syncNow() async {
+    if (_syncing) return;
+    setState(() {
+      _syncing = true;
+      _lastSyncSummary = null;
+    });
+    final result = await ref.read(cloudSyncServiceProvider).syncOnce();
+    if (!mounted) return;
+    setState(() {
+      _syncing = false;
+      _lastSyncSummary = _describeSyncResult(result);
+    });
+    await _refreshPendingCount();
+  }
+
+  String _describeSyncResult(CloudSyncResult result) {
+    switch (result.outcome) {
+      case CloudSyncOutcome.synced:
+        final persist = result.persistError;
+        if (persist != null && persist.isNotEmpty) {
+          return '已同步 ${result.confirmedCount} 条（警告：本地落盘失败，重启后可能重复上报，服务端幂等去重）';
+        }
+        return '已同步 ${result.confirmedCount} 条';
+      case CloudSyncOutcome.skippedFlagOff:
+        return '云端同步未开启（cloud_sync 开关关闭）';
+      case CloudSyncOutcome.skippedNoCredentials:
+        return '未登录，请先登录';
+      case CloudSyncOutcome.loggedOut:
+        return '登录已过期，下次同步将自动重新登录';
+      case CloudSyncOutcome.retryLater:
+        return '网络暂不可用，已保留待上报记录，稍后重试';
+      case CloudSyncOutcome.failed:
+        return '同步失败：${result.error ?? '未知错误'}';
+    }
+  }
+
+  Future<void> _logout() async {
+    await ref.read(authControllerProvider.notifier).logout();
+    if (!mounted) return;
+    await _refreshPendingCount();
+    if (!mounted) return;
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('已退出登录（本地学习数据保留）')));
   }
 
   Future<void> _clearProgress() async {
@@ -193,6 +255,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             _buildSectionHeader('数据管理'),
             const SizedBox(height: 8),
             _buildClearCard(),
+            const SizedBox(height: 24),
+            _buildSectionHeader('云同步'),
+            const SizedBox(height: 8),
+            _buildCloudSyncCard(),
             const SizedBox(height: 24),
             _buildSectionHeader('关于'),
             const SizedBox(height: 8),
@@ -400,6 +466,91 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         subtitle: const Text('删除所有答题记录和学习数据'),
         trailing: const Icon(Icons.chevron_right),
         onTap: _clearProgress,
+      ),
+    );
+  }
+
+  Widget _buildCloudSyncCard() {
+    final session = ref.watch(authControllerProvider);
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.cloud_sync, color: Color(0xFF4A90D9)),
+                const SizedBox(width: 8),
+                const Text(
+                  '云同步',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+                const Spacer(),
+                session.loggedIn
+                    ? TextButton.icon(
+                      key: const Key('sync_logout'),
+                      onPressed: _logout,
+                      icon: const Icon(Icons.logout, size: 18),
+                      label: const Text('退出登录'),
+                    )
+                    : FilledButton.tonalIcon(
+                      key: const Key('sync_go_login'),
+                      onPressed: () => context.go(AppRouter.login),
+                      icon: const Icon(Icons.login, size: 18),
+                      label: const Text('去登录'),
+                    ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              session.loggedIn
+                  ? '已登录：${session.displayName}（重启后自动恢复）'
+                  : '未登录——登录后学习记录自动同步',
+              style: const TextStyle(fontSize: 13, color: Color(0xFF888888)),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '待上报：$_pendingCount 条',
+                        style: const TextStyle(fontSize: 13),
+                      ),
+                      if (_lastSyncSummary != null) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          _lastSyncSummary!,
+                          key: const Key('sync_last_result'),
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: Color(0xFF888888),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                FilledButton.icon(
+                  key: const Key('sync_now'),
+                  onPressed: _syncing ? null : _syncNow,
+                  icon:
+                      _syncing
+                          ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                          : const Icon(Icons.sync),
+                  label: Text(_syncing ? '同步中…' : '立即同步'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

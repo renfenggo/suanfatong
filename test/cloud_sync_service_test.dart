@@ -151,6 +151,26 @@ void main() {
       expect(_eventIdsOf(eventsRequests[1].body!), hasLength(1));
     });
 
+    test('completeBatch 落盘失败：outcome 仍 synced（上报本身成功），persistError 如实透传（P1）', () async {
+      final fake = _FakeTransport((request) async {
+        if (request.url.endsWith('/v1/auth/login')) return _loginOk();
+        return _acceptAll(request.body!);
+      });
+      final store = _FailingEntriesStore();
+      final queue = OfflineEventQueue(store: store, deviceId: 'dev-1');
+      await queue.enqueue(kind: LearningEventKind.knowledgeComplete, itemId: 'kn-1');
+      final service = _service(fake: fake, queue: queue);
+
+      final result = await service.syncOnce();
+
+      expect(result.outcome, CloudSyncOutcome.synced, reason: '服务端已确认，上报成功');
+      expect(result.confirmedCount, 1);
+      expect(result.persistError, isNotNull, reason: '本地落盘失败向上层返回');
+      expect(result.persistError!.queueError, isNotNull);
+      expect(result.persistError!.seqError, isNull, reason: '水位写入独立成功');
+      expect(queue.pendingCount, 0, reason: '内存已清理');
+    });
+
     test('队列已空：仍确保登录但不发 events 请求', () async {
       final fake = _FakeTransport((request) async => _loginOk());
       final service = _service(fake: fake, queue: _newQueue());
@@ -461,6 +481,28 @@ class _FakeFlagSource implements SyncFlagSource {
 
   @override
   Future<bool> isCloudSyncEnabled() async => enabled;
+}
+
+/// 队列行持久化恒失败的存储（P1 落盘失败透传验收；水位写入正常）。
+class _FailingEntriesStore implements OfflineEventStore {
+  final List<String> _entries = <String>[];
+  int _seqWatermark = 0;
+
+  @override
+  Future<List<String>> loadJsonEntries() async => List<String>.from(_entries);
+
+  @override
+  Future<void> saveJsonEntries(List<String> entries) async {
+    throw Exception('injected: disk full');
+  }
+
+  @override
+  Future<int> loadSeqWatermark() async => _seqWatermark;
+
+  @override
+  Future<void> saveSeqWatermark(int seq) async {
+    _seqWatermark = seq;
+  }
 }
 
 /// Fake 传输层：记录请求，按注入的 handler 返回/抛出。

@@ -62,7 +62,12 @@ enum CloudSyncOutcome {
 
 /// 一轮同步结果。
 class CloudSyncResult {
-  const CloudSyncResult({required this.outcome, this.confirmedCount = 0, this.error});
+  const CloudSyncResult({
+    required this.outcome,
+    this.confirmedCount = 0,
+    this.error,
+    this.persistError,
+  });
 
   final CloudSyncOutcome outcome;
 
@@ -71,6 +76,13 @@ class CloudSyncResult {
 
   /// 触发停止的异常（retryLater/loggedOut/failed 时携带）。
   final Object? error;
+
+  /// 本轮 completeBatch 落盘失败（P1：队列行/水位分别记录）。
+  ///
+  /// 服务端已确认、内存已清理，但本地持久化失败——重启后该批事件会
+  /// 按旧存储状态恢复并重复上报（服务端 mutation_id 幂等兜底）。
+  /// outcome 仍为 synced（上报本身成功），上层据此观测/告警磁盘问题。
+  final OfflinePersistErrors? persistError;
 }
 
 /// 云同步编排器。
@@ -131,18 +143,23 @@ class CloudSyncService {
     }
 
     var confirmedCount = 0;
+    OfflinePersistErrors? persistError;
     while (true) {
       final batch = await _queue.nextBatch();
       if (batch.isEmpty) {
         return CloudSyncResult(
           outcome: CloudSyncOutcome.synced,
           confirmedCount: confirmedCount,
+          persistError: persistError,
         );
       }
       final pendingBefore = _queue.pendingCount;
       try {
         final result = await _client.uploadLearningEvents(batch);
-        await _queue.completeBatch(result);
+        final persistErrors = await _queue.completeBatch(result);
+        if (persistErrors.isNotEmpty) {
+          persistError = persistErrors;
+        }
       } on PlatformNetworkException catch (error) {
         return CloudSyncResult(
           outcome: CloudSyncOutcome.retryLater,

@@ -1,7 +1,7 @@
 name: bfs_learn
 description: 算法通离线学习 App
 publish_to: 'none'
-version: 260520.1.0+260520a
+version: 7.0.1+261008
 
 environment:
   sdk: ^3.7.0

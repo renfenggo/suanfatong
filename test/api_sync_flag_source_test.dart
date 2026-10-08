@@ -46,7 +46,7 @@ void main() {
     expect(await ApiSyncFlagSource(client: client).isCloudSyncEnabled(), isFalse);
   });
 
-  test('401（token 失效）→ 保守 false，且不清客户端 token', () async {
+  test('N04：401（token 失效）→ 异常上抛（由 syncOnce 分类 loggedOut），且不清客户端 token', () async {
     final fake = _FakeTransport(
       (request) async => _jsonResponse(
         401,
@@ -56,22 +56,38 @@ void main() {
     final client = PlatformApiClient(transport: fake)..accessToken = 'stale';
     final source = ApiSyncFlagSource(client: client);
 
-    expect(await source.isCloudSyncEnabled(), isFalse);
+    // N04：开关源不吞 401——伪装成 false 会让 syncOnce 永远
+    // skippedFlagOff，到不了会话失效/重登路径。
+    await expectLater(
+      source.isCloudSyncEnabled(),
+      throwsA(
+        isA<PlatformServerException>()
+            .having((e) => e.statusCode, 'statusCode', 401),
+      ),
+    );
     expect(client.accessToken, 'stale', reason: 'token 生命周期归 CloudSyncService 管');
   });
 
-  test('网络失败 / 5xx → 保守 false', () async {
+  test('N04：网络失败 / 5xx → 异常上抛（由 syncOnce 分类 retryLater/failed）', () async {
     final down = _FakeTransport((request) async {
       throw const SocketException('network down');
     });
     final clientDown = PlatformApiClient(transport: down)..accessToken = 'at-1';
-    expect(await ApiSyncFlagSource(client: clientDown).isCloudSyncEnabled(), isFalse);
+    await expectLater(
+      ApiSyncFlagSource(client: clientDown).isCloudSyncEnabled(),
+      throwsA(isA<PlatformNetworkException>()),
+      reason: '网络失败不再伪装成开关关闭',
+    );
 
     final broken = _FakeTransport(
       (request) async => _jsonResponse(500, '{"code":"INTERNAL_ERROR","retryable":true}'),
     );
     final clientBroken = PlatformApiClient(transport: broken)..accessToken = 'at-1';
-    expect(await ApiSyncFlagSource(client: clientBroken).isCloudSyncEnabled(), isFalse);
+    await expectLater(
+      ApiSyncFlagSource(client: clientBroken).isCloudSyncEnabled(),
+      throwsA(isA<PlatformServerException>()),
+      reason: '服务端错误如实上抛',
+    );
   });
 }
 

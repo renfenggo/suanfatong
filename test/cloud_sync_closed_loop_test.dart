@@ -34,8 +34,15 @@ void main() {
         platformApiClientProvider.overrideWithValue(
           PlatformApiClient(transport: transport, baseUrl: 'http://loop.test'),
         ),
+        // N03：贴近生产装配——按命名空间换仓。共享内存存储模拟 zhang 的
+        // 队列文件（重启延续），其余命名空间给独立空存储。
         offlineEventQueueProvider.overrideWithValue(
-          OfflineEventQueue(store: store, deviceId: 'dev-1'),
+          OfflineEventQueue(
+            store: InMemoryOfflineEventStore(),
+            deviceId: 'dev-1',
+            storeFactory: (ns) =>
+                ns == 'zhang' ? store : InMemoryOfflineEventStore(),
+          ),
         ),
       ],
     );
@@ -67,15 +74,29 @@ void main() {
     await queue1.load();
     expect(queue1.pendingCount, 2, reason: '学习事件已入队');
 
-    // 3. 重启：新容器（内存态全部丢弃；prefs 与队列存储延续——生产为文件）
+    // 3. 重启：新容器（内存会话丢弃；prefs 与队列存储延续——生产为文件）
     final restarted = newContainer();
+    // N02：密码不再落盘，重启后回到未登录（仅预填用户名，需重新登录）。
+    final restoredSession = restarted.read(authControllerProvider);
+    expect(restoredSession.loggedIn, isFalse, reason: 'N02：无持久化凭证，重启后需重新登录');
+    expect(restoredSession.username, 'zhang', reason: '用户名预填展示');
+    expect(prefs.getString(kLegacyAuthPasswordKey), isNull, reason: 'N02：明文密码不落盘');
+
+    // 4. 重启后未登录直接同步：skippedNoCredentials（N04：先确保会话再查
+    // flag——flag 端点此时不应被查询）
+    final blocked = await restarted.read(cloudSyncServiceProvider).syncOnce();
+    expect(blocked.outcome, CloudSyncOutcome.skippedNoCredentials);
     expect(
-      restarted.read(authControllerProvider).loggedIn,
-      isTrue,
-      reason: '重启后从本地凭证恢复登录态',
+      transport.requests.where((r) => r.url.endsWith('/v1/feature-flags')),
+      isEmpty,
+      reason: 'N04：无会话时先短路，不查认证后的 flag 端点',
     );
 
-    // 4. 同步：自动重新登录 → flag 复查放行 → 队列全部上报确认
+    // 5. 重新登录 → 同步：队列全部上报确认
+    final relogin = await restarted
+        .read(authControllerProvider.notifier)
+        .login(username: 'zhang', password: 'pw');
+    expect(relogin.success, isTrue, reason: '重新登录成功');
     final result = await restarted.read(cloudSyncServiceProvider).syncOnce();
 
     expect(result.outcome, CloudSyncOutcome.synced);
@@ -102,13 +123,13 @@ void main() {
     expect(quiz['item_id'], 'cpp-sec-1');
     expect((quiz['payload'] as Map<String, dynamic>)['score'], 90);
 
-    // 登录请求恰好两次：重启前手动一次 + 重启后同步自动一次
+    // 登录请求恰好两次：重启前手动一次 + 重启后手动重登一次
     expect(
       transport.requests.where((r) => r.url.endsWith('/v1/auth/login')).length,
       2,
     );
 
-    // 5. 重启后本地进度保留（学习主线不断）
+    // 6. 重启后本地进度保留（学习主线不断；zhang 命名空间）
     final progress = await restarted.read(progressProvider.future);
     expect(progress.completedCppItems, contains('cpp-01'));
   });
@@ -141,7 +162,7 @@ void main() {
     expect(retry.confirmedCount, 1);
   });
 
-  test('登出：凭证清除，后续同步 skippedNoCredentials，队列保留', () async {
+  test('登出：凭证清除，后续同步 skippedNoCredentials，事件隔离保留', () async {
     final app = newContainer();
     await app
         .read(authControllerProvider.notifier)
@@ -154,7 +175,10 @@ void main() {
     expect(prefs.getString(kAuthUsernameKey), isNull);
     final queue = app.read(offlineEventQueueProvider);
     await queue.load();
-    expect(queue.pendingCount, 1, reason: '登出不清学习事件');
+    // N03：登出切回未登录命名空间——zhang 的待上报事件不随 unowned 消费；
+    // 本测试装配无 storeFactory（内存隔离语义），数据保留在存储中不丢。
+    expect(queue.pendingCount, 0, reason: '登出后不消费任何账号的待上报事件');
+    expect(await store.loadJsonEntries(), hasLength(1), reason: '学习事件隔离保留，不丢');
 
     final result = await app.read(cloudSyncServiceProvider).syncOnce();
     expect(result.outcome, CloudSyncOutcome.skippedNoCredentials);

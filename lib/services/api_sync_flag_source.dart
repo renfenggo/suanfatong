@@ -1,16 +1,15 @@
-/// 基于 platform /v1/feature-flags 的云同步开关源（两段式）。
+/// 基于 platform /v1/feature-flags 的云同步开关源。
 ///
-/// 平台 flags 端点需要认证，而 CloudSyncService 的同步流程是"先查 flag
-/// 后登录"，两者存在次序矛盾。两段式化解：
+/// N04（2026-10-08 第二轮复核）修正：
+/// - CloudSyncService.syncOnce 已改为**先确保会话（[_ensureLoggedIn]，
+///   含过期重登/无效判定）、后查 flag**，本源的查询一定发生在有效会话上；
+/// - 异常**不吞**：401 / 网络失败 / 服务端错误原样上抛，由
+///   CloudSyncService 统一分类（401 → loggedOut 清 token，网络 →
+///   retryLater，其余按 retryable 分类）。此前"一切异常 → false"会把
+///   失效 token 的 401 伪装成"业务开关关闭"，syncOnce 永远
+///   skippedFlagOff 无法自愈。
 ///
-/// - 无 token（未登录）：返回 true 放行，让流程走到登录步；未登录且无
-///   存储凭证时自然落入 skippedNoCredentials（无需先登录才能查 flag）；
-/// - 有 token：GET /v1/feature-flags 权威判定 cloud_sync；CloudSyncService
-///   在登录成功后复查一次，OFF → skippedFlagOff，不发任何 events。
-///
-/// 异常保守策略：401（token 失效）/ 网络失败 / 其他服务端错误 → false
-/// （跳过本轮、队列保留，下轮由 CloudSyncService 自行换发 token）。
-/// 本源不修改客户端任何状态（token 清理由 CloudSyncService 统一负责）。
+/// 无 token（未登录）：返回 true 放行到登录步。
 library;
 
 import 'cloud_sync_service.dart';
@@ -27,11 +26,7 @@ class ApiSyncFlagSource implements SyncFlagSource {
     if (token == null || token.isEmpty) {
       return true; // 未登录：放行到登录步（见库注释）。
     }
-    try {
-      final flags = await _client.fetchFeatureFlags();
-      return flags['cloud_sync'] ?? false;
-    } on Exception {
-      return false; // 保守：无法判定视为关闭，本轮跳过、队列保留。
-    }
+    final flags = await _client.fetchFeatureFlags();
+    return flags['cloud_sync'] ?? false;
   }
 }

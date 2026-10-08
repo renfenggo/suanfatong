@@ -12,8 +12,15 @@ import 'platform_api_client.dart';
 import 'platform_api_models.dart';
 
 /// 云同步开关来源抽象（M4-F3 接 platform /v1/feature-flags）。
+///
+/// N04（2026-10-08 第二轮复核）：实现**不吞异常**——开关查询的网络失败、
+/// 401 等错误原样上抛，由 [CloudSyncService.syncOnce] 统一分类
+/// （retryLater / loggedOut / failed），不得把基础设施错误伪装成
+/// "业务开关关闭"（skippedFlagOff）。
 abstract class SyncFlagSource {
   /// cloud_sync 功能开关是否开启。
+  ///
+  /// 无会话（未登录）时可返回 true 放行到登录步。
   Future<bool> isCloudSyncEnabled();
 }
 
@@ -43,7 +50,8 @@ enum CloudSyncOutcome {
   /// 队列清空：全部待上报事件已被服务端确认（accepted 或 duplicated）。
   synced,
 
-  /// flag 关闭：未登录、未发任何网络请求、队列不动。
+  /// flag 关闭：不发上报请求、队列不动（N04：会话确保在 flag 查询之前，
+  /// 登录请求可能已发出）。
   skippedFlagOff,
 
   /// 无可用凭证：未登录、队列不动。
@@ -122,15 +130,28 @@ class CloudSyncService {
   /// 当前缓存的令牌（未登录或已失效为 null；测试/诊断用）。
   AuthToken? get cachedToken => _cachedToken;
 
+  /// N02（2026-10-08 第二轮复核）：登录页成功登录后注入会话令牌。
+  ///
+  /// 客户端不再持久化原始密码，重启后无存储凭证可自动重登——会话由
+  /// 登录动作直接注入（token 缓存 + 有效期 + 客户端令牌）；过期后由
+  /// [_ensureLoggedIn] 判定无效并落入 skippedNoCredentials（引导重新
+  /// 登录），不再静默用保存的密码重登。
+  void adoptSession(AuthToken token) {
+    _cachedToken = token;
+    _tokenExpiresAt = _clock().add(Duration(seconds: token.expiresInS));
+    _client.accessToken = token.accessToken;
+  }
+
   /// 执行一轮同步（幂等：可由定时器/网络恢复事件反复触发）。
   ///
-  /// flag 两段式判定：登录前初查（无 token 的开关源放行到登录步）、
-  /// 登录成功后复查（持 token 权威判定，OFF → skippedFlagOff 不发 events）。
+  /// N04（2026-10-08 第二轮复核）顺序修正：**先确保会话、后查认证后的
+  /// flag**。此前"先查 flag 后登录"令失效 token 的 flags 401 被开关源
+  /// 吞成 false，syncOnce 永远 skippedFlagOff，到不了有效期检查与重登；
+  /// 现在过期 token 在 [_ensureLoggedIn] 中被替换/判无效，flag 查询
+  /// 一定发生在有效会话上，且查询异常按错误类别如实分类（网络 →
+  /// retryLater，401 → loggedOut，其余服务端错误 → retryLater/failed），
+  /// 不再伪装成业务开关关闭。
   Future<CloudSyncResult> syncOnce() async {
-    if (!await _flagSource.isCloudSyncEnabled()) {
-      return const CloudSyncResult(outcome: CloudSyncOutcome.skippedFlagOff);
-    }
-
     try {
       final loggedIn = await _ensureLoggedIn();
       if (!loggedIn) {
@@ -145,11 +166,19 @@ class CloudSyncService {
       return _handleServerError(error, confirmedCount: 0);
     }
 
-    // 登录后复查 flag：无 token 阶段放行的开关源（ApiSyncFlagSource）此时
-    // 持 token 给出权威判定（cloud_sync 关闭 → 不发任何 events，队列保留）。
-    // 静态源重复判定同一值，无副作用。
-    if (!await _flagSource.isCloudSyncEnabled()) {
-      return const CloudSyncResult(outcome: CloudSyncOutcome.skippedFlagOff);
+    // 登录后的权威 flag 判定（ApiSyncFlagSource 持有效 token 查询；
+    // 异常不吞，见 SyncFlagSource 契约。静态源重复判定同一值，无副作用）。
+    try {
+      if (!await _flagSource.isCloudSyncEnabled()) {
+        return const CloudSyncResult(outcome: CloudSyncOutcome.skippedFlagOff);
+      }
+    } on PlatformNetworkException catch (error) {
+      return CloudSyncResult(
+        outcome: CloudSyncOutcome.retryLater,
+        error: error,
+      );
+    } on PlatformServerException catch (error) {
+      return _handleServerError(error, confirmedCount: 0);
     }
 
     var confirmedCount = 0;

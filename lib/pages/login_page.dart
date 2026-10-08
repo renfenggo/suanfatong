@@ -9,8 +9,8 @@ import '../state/cloud_sync_provider.dart';
 
 /// 平台账号登录页（P1 最小用户闭环入口）。
 ///
-/// 登录成功后持久化凭证（重启自动恢复）并触发一次同步（冲刷离线队列
-/// 中的学习事件），随后返回设置页。
+/// 登录成功后建立内存会话并触发一次同步（冲刷该账号离线队列中的学习
+/// 事件），随后返回设置页。N02：密码不落盘，重启后需重新登录。
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 

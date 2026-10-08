@@ -16,7 +16,10 @@ Future<void> main() async {
   final settings = bootstrapSettings(prefs);
 
   // P1 最小用户闭环：初始化稳定设备号，云同步队列落盘（文件持久化，
-  // 跨重启保留待上报事件与幂等键水位）
+  // 跨重启保留待上报事件与幂等键水位）。
+  // N03 账号隔离：队列带命名空间工厂——启动为 unowned（未登录），
+  // 登录/登出经 switchOwner 换用对应账号的文件（offline_event_queue_{ns}）；
+  // 历史无后缀文件（升级前全局队列）不再被读写，未归属数据隔离保留。
   final deviceId = await ensureDeviceId(prefs);
 
   runApp(
@@ -28,8 +31,10 @@ Future<void> main() async {
         sharedPreferencesProvider.overrideWithValue(prefs),
         offlineEventQueueProvider.overrideWith(
           (ref) => OfflineEventQueue(
-            store: FileOfflineEventStore(),
+            store: FileOfflineEventStore(namespace: null),
             deviceId: deviceId,
+            storeFactory:
+                (namespace) => FileOfflineEventStore(namespace: namespace),
           ),
         ),
       ],

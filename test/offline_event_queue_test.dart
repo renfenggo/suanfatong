@@ -9,7 +9,7 @@ import 'package:bfs_learn/services/platform_api_models.dart';
 /// 离线事件队列测试（内存/手写 Fake 存储，不发真实网络请求）。
 void main() {
   group('OfflineEventQueue.enqueue', () {
-    test('生成 mutation_id={device_id}:{seq} 与 event_id，occurred_at 为 ISO 时间并持久化', () async {
+    test('生成 mutation_id={device_id}:{ns}:{seq} 与 event_id，occurred_at 为 ISO 时间并持久化', () async {
       final store = _FakeStore();
       final queue = OfflineEventQueue(store: store, deviceId: 'dev-1');
 
@@ -19,8 +19,9 @@ void main() {
       )).event;
 
       expect(event, isNotNull);
-      expect(event!.mutationId, 'dev-1:1');
-      expect(event.eventId, 'dev-1-e2');
+      // N03：默认（未登录）命名空间 unowned，幂等键含命名空间段。
+      expect(event!.mutationId, 'dev-1:unowned:1');
+      expect(event.eventId, 'dev-1-unowned-e2');
       expect(event.kind, LearningEventKind.knowledgeComplete);
       expect(event.itemId, 'kn-1');
       expect(event.occurredAt, endsWith('Z'), reason: 'UTC ISO 8601');
@@ -32,7 +33,7 @@ void main() {
       expect(saved, hasLength(1));
       expect(
         jsonDecode(saved.single) as Map<String, dynamic>,
-        containsPair('mutation_id', 'dev-1:1'),
+        containsPair('mutation_id', 'dev-1:unowned:1'),
       );
       expect(
         jsonDecode(saved.single) as Map<String, dynamic>,
@@ -74,7 +75,7 @@ void main() {
       }
 
       expect(ids.toSet().length, 3);
-      expect(ids, <String>['dev-1:1', 'dev-1:3', 'dev-1:5']);
+      expect(ids, <String>['dev-1:unowned:1', 'dev-1:unowned:3', 'dev-1:unowned:5']);
     });
 
     test('显式 occurred_at 与 payload 原样保留', () async {
@@ -253,7 +254,7 @@ void main() {
 
       final fresh = (await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'new')).event;
 
-      expect(fresh!.mutationId, 'dev-1:42');
+      expect(fresh!.mutationId, 'dev-1:unowned:42');
     });
 
     test('损坏的持久化行被跳过，不破坏其余事件', () async {
@@ -316,9 +317,10 @@ void main() {
       await store.saveJsonEntries(entries);
 
       expect(await store.loadJsonEntries(), entries);
+      // N03：未指定命名空间的文件存储默认写 unowned 命名空间的文件。
       final onDisk = jsonDecode(
         await File(
-          '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+          '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.queueFileNameFor(kUnownedNamespace)}',
         ).readAsString(),
       );
       expect(onDisk, isA<List<dynamic>>());
@@ -335,7 +337,7 @@ void main() {
 
     test('文件损坏（非 JSON）→ 降级空列表不抛', () async {
       await File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.queueFileNameFor(kUnownedNamespace)}',
       ).writeAsString('{"events": [截断');
 
       expect(await newStore().loadJsonEntries(), isEmpty);
@@ -343,7 +345,7 @@ void main() {
 
     test('文件为 JSON 对象（非数组）→ 空列表', () async {
       await File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.queueFileNameFor(kUnownedNamespace)}',
       ).writeAsString('{"schema_version":"1.0"}');
 
       expect(await newStore().loadJsonEntries(), isEmpty);
@@ -351,7 +353,7 @@ void main() {
 
     test('数组内非字符串项被过滤，字符串行保留（行级坏行由队列跳过）', () async {
       await File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.queueFileNameFor(kUnownedNamespace)}',
       ).writeAsString('["{\\"event_id\\":\\"e-1\\"}", 42, null, "not-a-json{{{"]');
 
       expect(await newStore().loadJsonEntries(), <String>[
@@ -394,12 +396,13 @@ void main() {
 
       // 重启后新生成的 mutation_id 不与历史冲突
       // （R07 独立水位：水位含 eventId 消耗的 seq（历史 :1/:3 与 -e2/-e4），
-      // 恢复为 4，续写为 :5；幂等键允许跳号，唯一性不受影响）
+      // 恢复为 4，续写为 :5；幂等键允许跳号，唯一性不受影响。N03：键含
+      // 命名空间段 unowned）
       final fresh = (await restored.enqueue(
         kind: LearningEventKind.animationWatch,
         itemId: 'anim-1',
       )).event;
-      expect(fresh!.mutationId, 'dev-1:5');
+      expect(fresh!.mutationId, 'dev-1:unowned:5');
     });
 
     group('R07 序号水位持久化（清空队列重启不复用 ID）', () {
@@ -424,7 +427,7 @@ void main() {
       )).event;
 
       expect(fresh!.mutationId, isNot(event.mutationId));
-      expect(fresh.mutationId, 'audit-device:3');
+      expect(fresh.mutationId, 'audit-device:unowned:3');
       expect(fresh.eventId, isNot(event.eventId));
     });
 
@@ -435,7 +438,7 @@ void main() {
       await queue.completeBatch(EventUploadResult(accepted: <String>[event!.eventId]));
 
       final seqFile = File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultSeqFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.seqFileNameFor(kUnownedNamespace)}',
       );
       expect(await seqFile.exists(), isTrue, reason: '水位独立文件不随清队列删除');
       expect(await newStore().loadSeqWatermark(), 2);
@@ -443,7 +446,7 @@ void main() {
 
     test('水位文件损坏/非正整数 → 降级 0，由待上报事件回填兜底', () async {
       final seqFile = File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultSeqFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.seqFileNameFor(kUnownedNamespace)}',
       );
       await seqFile.writeAsString('corrupted{{{');
       expect(await newStore().loadSeqWatermark(), 0);
@@ -463,7 +466,7 @@ void main() {
       ]);
       final queue = OfflineEventQueue(store: store, deviceId: 'dev-1');
       final fresh = (await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'new')).event;
-      expect(fresh!.mutationId, 'dev-1:10');
+      expect(fresh!.mutationId, 'dev-1:unowned:10');
     });
 
     test('save→load 水位往返一致；未变化不重写', () async {
@@ -474,7 +477,7 @@ void main() {
       expect(await newStore().loadSeqWatermark(), 42);
 
       final seqFile = File(
-        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.defaultSeqFileName}',
+        '${tempDir.path}${Platform.pathSeparator}${FileOfflineEventStore.seqFileNameFor(kUnownedNamespace)}',
       );
       final modifiedBefore = await seqFile.lastModified();
       await store.saveSeqWatermark(42);
@@ -661,12 +664,110 @@ void main() {
       expect(queue.pendingCount, 0, reason: '队列清空');
 
       // 重启：水位（含 eventId 消耗的 seq，最大 :5 → 水位 6）不回退，
-      // 新事件续增为 :7，不与历史 :1/:3/:5 复用
+      // 新事件续增为 :7，不与历史 :1/:3/:5 复用（N03：键含 unowned 段）
       final restarted = OfflineEventQueue(store: store, deviceId: 'dev-1');
       final fresh = await restarted.enqueue(kind: LearningEventKind.importEvent, itemId: 'new');
-      expect(fresh.event!.mutationId, 'dev-1:7');
+      expect(fresh.event!.mutationId, 'dev-1:unowned:7');
       final historyIds = results.map((r) => r.event!.mutationId).toSet();
       expect(historyIds.contains(fresh.event!.mutationId), isFalse);
+    });
+  });
+
+  group('N03 账号隔离（switchOwner 与命名空间）', () {
+    late Directory tempDir;
+
+    setUp(() async {
+      tempDir = await Directory.systemTemp.createTemp('offline_queue_ns_test');
+    });
+
+    tearDown(() async {
+      if (await tempDir.exists()) {
+        await tempDir.delete(recursive: true);
+      }
+    });
+
+    OfflineEventQueue newQueue(String deviceId) => OfflineEventQueue(
+      store: FileOfflineEventStore(
+        directoryProvider: () async => tempDir,
+        namespace: kUnownedNamespace,
+      ),
+      deviceId: deviceId,
+      storeFactory: (ns) => FileOfflineEventStore(
+        directoryProvider: () async => tempDir,
+        namespace: ns,
+      ),
+    );
+
+    test('A 入队 → 切 B：B 看不到 A 的待上报事件；A 的数据留在 A 的文件', () async {
+      final queue = newQueue('dev-1');
+      final aEvent = (await queue.enqueue(
+        kind: LearningEventKind.knowledgeComplete,
+        itemId: 'a-item',
+      )).event;
+      expect(aEvent!.mutationId, 'dev-1:unowned:1');
+
+      await queue.switchOwner('alice');
+      final aliceEvent = (await queue.enqueue(
+        kind: LearningEventKind.quizSubmit,
+        itemId: 'alice-item',
+      )).event;
+      expect(aliceEvent!.mutationId, 'dev-1:alice:1', reason: '命名空间段切换，幂等键不与 unowned 撞');
+
+      await queue.switchOwner('bob');
+      expect(queue.currentNamespace, 'bob');
+      expect(queue.pendingCount, 0, reason: 'B 登录后消费的是 B 命名空间的空队列');
+      expect(await queue.nextBatch(), isEmpty, reason: 'A 的待上报事件不会混入 B 的上传批次');
+
+      // A 的事件仍在 A 的文件中（隔离保留，不自动归给 B）。
+      final aliceStore = FileOfflineEventStore(
+        directoryProvider: () async => tempDir,
+        namespace: 'alice',
+      );
+      final aliceEntries = await aliceStore.loadJsonEntries();
+      expect(aliceEntries, hasLength(1));
+      expect(aliceEntries.single, contains('alice-item'));
+    });
+
+    test('A → B → A 切回：A 的待上报事件恢复可见（不丢）', () async {
+      final queue = newQueue('dev-1');
+      await queue.switchOwner('alice');
+      await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'a-1');
+      await queue.switchOwner('bob');
+      await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'b-1');
+
+      await queue.switchOwner('alice');
+      expect(queue.pendingCount, 1, reason: '切回 A 恢复 A 的队列');
+      expect((await queue.nextBatch()).single.itemId, 'a-1');
+    });
+
+    test('文件名带命名空间后缀；历史无后缀文件不再被读写', () async {
+      // 升级前的全局队列文件（无后缀）：写入后新装配（unowned）不读它。
+      await File(
+        '${tempDir.path}${Platform.pathSeparator}offline_event_queue.json',
+      ).writeAsString('[{"event_id":"legacy"}]');
+
+      final store = FileOfflineEventStore(
+        directoryProvider: () async => tempDir,
+        namespace: kUnownedNamespace,
+      );
+      expect(await store.loadJsonEntries(), isEmpty, reason: '历史未归属数据隔离保留，不自动归入 unowned');
+
+      // 写入落在带后缀的文件，不污染历史文件。
+      await store.saveJsonEntries(<String>['{"event_id":"fresh"}']);
+      final legacy = await File(
+        '${tempDir.path}${Platform.pathSeparator}offline_event_queue.json',
+      ).readAsString();
+      expect(legacy, '[{"event_id":"legacy"}]', reason: '历史文件保持原样');
+    });
+
+    test('无工厂（内存装配）switchOwner：清内存待上报列表，旧账号事件不混入新批次', () async {
+      final queue = OfflineEventQueue(store: _FakeStore(), deviceId: 'dev-1');
+      await queue.enqueue(kind: LearningEventKind.importEvent, itemId: 'a-1');
+
+      await queue.switchOwner('bob');
+
+      expect(queue.pendingCount, 0);
+      expect(await queue.nextBatch(), isEmpty);
     });
   });
 }

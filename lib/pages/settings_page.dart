@@ -172,7 +172,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
       case CloudSyncOutcome.skippedNoCredentials:
         return '未登录，请先登录';
       case CloudSyncOutcome.loggedOut:
-        return '登录已过期，下次同步将自动重新登录';
+        return '登录已过期，请重新登录';
       case CloudSyncOutcome.retryLater:
         return '网络暂不可用，已保留待上报记录，稍后重试';
       case CloudSyncOutcome.failed:
@@ -213,8 +213,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
           ),
     );
     if (confirmed == true) {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.remove('bfs_learn_progress');
+      // N03：进度键带账号命名空间，只清当前账号的进度。
+      await ref.read(progressServiceProvider).clear();
       ref.invalidate(progressProvider);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -463,7 +463,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
           '清除学习进度',
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
-        subtitle: const Text('删除所有答题记录和学习数据'),
+        subtitle: const Text('删除当前账号的答题记录和学习数据'),
         trailing: const Icon(Icons.chevron_right),
         onTap: _clearProgress,
       ),
@@ -505,7 +505,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             const SizedBox(height: 4),
             Text(
               session.loggedIn
-                  ? '已登录：${session.displayName}（重启后自动恢复）'
+                  ? '已登录：${session.displayName}'
+                  : session.username.isNotEmpty
+                  ? '上次登录：${session.displayName}——登录已过期，请重新登录'
                   : '未登录——登录后学习记录自动同步',
               style: const TextStyle(fontSize: 13, color: Color(0xFF888888)),
             ),

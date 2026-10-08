@@ -95,6 +95,21 @@ class InMemoryOfflineEventStore implements OfflineEventStore {
   }
 }
 
+/// 未登录（无 owner）事件使用的命名空间（N03：隔离保留，不自动上传）。
+const String kUnownedNamespace = 'unowned';
+
+/// 命名空间安全化：仅保留文件系统/偏好键安全字符，其余替换为 '_'。
+///
+/// 统一小写：仅大小写差异的用户名归并到同一命名空间，避免 Windows
+/// 文件系统大小写不敏感导致两个账号互访对方文件。
+String sanitizeNamespace(String namespace) {
+  final cleaned = namespace.toLowerCase().replaceAll(
+    RegExp(r'[^a-z0-9_\-@.]'),
+    '_',
+  );
+  return cleaned.isEmpty ? kUnownedNamespace : cleaned;
+}
+
 /// 文件实现：单 JSON 文件（字符串数组），ADR-006 V1 队列持久化。
 ///
 /// 位置默认取应用支持目录（path_provider），构造可注入目录解析函数以便测试。
@@ -103,25 +118,42 @@ class InMemoryOfflineEventStore implements OfflineEventStore {
 ///
 /// R07（审查 2026-10-07）：
 /// - 写入原子替换（先写 `<file>.tmp` 再 rename），中途失败不破坏旧文件；
-/// - 序号水位存独立文件（[defaultSeqFileName]），不随队列清空而删除。
+/// - 序号水位存独立文件，不随队列清空而删除。
 ///
 /// P1 可靠性（2026-10-08）：
 /// - save 系列写失败分别记录于 [lastQueueWriteError] / [lastSeqWriteError]
 ///   （成功后清除，供诊断观测），并原样外抛——由 [OfflineEventQueue] 捕获
 ///   装进 [OfflinePersistErrors] 向上层返回失败结果。
+///
+/// N03（2026-10-08 第二轮复核）：文件名带账号命名空间后缀
+/// （`offline_event_queue_{ns}.json`），按登录账号隔离待上报事件与水位；
+/// 历史无后缀文件（升级前的全局队列）不再被读写——未归属数据隔离
+/// 保留在磁盘，不自动归给下一个登录用户。
 class FileOfflineEventStore implements OfflineEventStore {
   FileOfflineEventStore({
     Future<Directory> Function()? directoryProvider,
-    this.fileName = defaultFileName,
-    this.seqFileName = defaultSeqFileName,
-  }) : _directoryProvider =
-           directoryProvider ?? getApplicationSupportDirectory;
+    String? fileName,
+    String? seqFileName,
+    String? namespace,
+  }) : fileName =
+         fileName ??
+         queueFileNameFor(namespace ?? kUnownedNamespace),
+       seqFileName = seqFileName ?? seqFileNameFor(namespace ?? kUnownedNamespace),
+       _directoryProvider = directoryProvider ?? getApplicationSupportDirectory;
 
-  /// 队列文件名（应用支持目录下）。
+  /// 队列文件名（应用支持目录下，带命名空间后缀）。
   static const String defaultFileName = 'offline_event_queue.json';
 
   /// 序号水位文件名（R07：独立于队列文件，清空队列不删除）。
   static const String defaultSeqFileName = 'offline_event_seq.json';
+
+  /// 命名空间 → 队列文件名。
+  static String queueFileNameFor(String namespace) =>
+      'offline_event_queue_${sanitizeNamespace(namespace)}.json';
+
+  /// 命名空间 → 水位文件名。
+  static String seqFileNameFor(String namespace) =>
+      'offline_event_seq_${sanitizeNamespace(namespace)}.json';
 
   final Future<Directory> Function() _directoryProvider;
   final String fileName;
@@ -226,15 +258,41 @@ class FileOfflineEventStore implements OfflineEventStore {
 /// - 持久化写失败通过 [OfflinePersistErrors] / [OfflineEnqueueResult]
 ///   如实向上层返回（队列行与水位分别记录），事件不丢（内存仍有效，
 ///   下次操作整体覆盖重写）。
+///
+/// N03（2026-10-08 第二轮复核）账号隔离：
+/// - 队列绑定账号命名空间 [currentNamespace]（登录用户名归一化；未登录
+///   = [kUnownedNamespace]）。切换账号经 [switchOwner] 换用对应命名空间
+///   的存储并重新加载——A 退出、B 登录后消费的是 B 命名空间的文件，
+///   A 的待上报事件留在 A 的文件中，不会上传到 B 的服务端账号；
+/// - mutation_id/event_id 含命名空间段（`{deviceId}:{ns}:{seq}` /
+///   `{deviceId}-{ns}-e{seq}`）：各命名空间水位独立，跨账号也不产生
+///   重复幂等键（服务端 mutation_id 为全局唯一约束）；
+/// - 未登录期间的学习事件入 unowned 命名空间，登录后不自动代上传
+///   （隔离保留，避免归给下一个登录用户）。
 class OfflineEventQueue {
-  OfflineEventQueue({required OfflineEventStore store, required this.deviceId})
-    : _store = store;
+  OfflineEventQueue({
+    required OfflineEventStore store,
+    required this.deviceId,
+    String? namespace,
+    OfflineEventStore Function(String namespace)? storeFactory,
+  }) : _store = store,
+       _namespace = sanitizeNamespace(namespace ?? kUnownedNamespace),
+       _storeFactory = storeFactory;
 
   /// 契约单批上限（POST /v1/learning/events maxItems 200）。
   static const int maxBatchSize = 200;
 
-  final OfflineEventStore _store;
+  OfflineEventStore _store;
+  String _namespace;
+
+  /// 命名空间 → 新存储的工厂（[switchOwner] 换仓用）；null 时仅切换
+  /// 内存标签并清空内存待上报列表（测试内存装配的隔离语义）。
+  final OfflineEventStore Function(String namespace)? _storeFactory;
+
   final String deviceId;
+
+  /// 当前账号命名空间（事件上传前的 owner 校验基准）。
+  String get currentNamespace => _namespace;
 
   final List<LearningEvent> _pending = <LearningEvent>[];
   int _seq = 0;
@@ -258,13 +316,20 @@ class OfflineEventQueue {
       ..addAll(
         entries.map((String line) => _tryDecodeEvent(line)).whereType<LearningEvent>(),
       );
-    // 回填 seq 水位（兜底路径）：扫描本机已入队 mutation_id（{deviceId}:{seq}）
-    // 取最大值。R07：独立水位文件优先（清空队列后重启仍不回退），事件回填
-    // 仅在水位文件缺失/损坏时提供兜底保护。
+    // 回填 seq 水位（兜底路径）：扫描本机已入队 mutation_id 取最大序号。
+    // R07：独立水位文件优先（清空队列后重启仍不回退），事件回填仅在
+    // 水位文件缺失/损坏时提供兜底保护。
+    // N03：mutation_id 含命名空间段（`{deviceId}:{ns}:{seq}`），取尾段
+    // 数字；兼容旧格式 `{deviceId}:{seq}`。
     final prefix = '$deviceId:';
     for (final event in _pending) {
       if (event.mutationId.startsWith(prefix)) {
-        final seq = int.tryParse(event.mutationId.substring(prefix.length));
+        var seqPart = event.mutationId.substring(prefix.length);
+        final lastColon = seqPart.lastIndexOf(':');
+        if (lastColon >= 0) {
+          seqPart = seqPart.substring(lastColon + 1);
+        }
+        final seq = int.tryParse(seqPart);
         if (seq != null && seq > _seq) {
           _seq = seq;
         }
@@ -278,6 +343,34 @@ class OfflineEventQueue {
 
   /// 从持久化恢复队列（懒加载；与并发操作共享同一初始化 Future）。
   Future<void> load() => _ensureLoaded();
+
+  /// N03：切换账号命名空间（登录/登出时由 AuthController 调用）。
+  ///
+  /// - 命名空间归一化后与当前一致 → no-op；
+  /// - 提供了 [storeFactory]（生产文件装配）：构造新命名空间的存储并
+  ///   重新加载该命名空间的待上报事件与水位（A 的事件留在 A 的文件）；
+  /// - 未提供工厂（测试内存装配）：清空内存待上报列表（旧账号事件
+  ///   不再可见，不会混入新账号上传批次），水位保留防幂等键回退。
+  Future<void> switchOwner(String? namespace) {
+    final target = sanitizeNamespace(namespace ?? kUnownedNamespace);
+    return _serialized(() async {
+      await _ensureLoaded();
+      if (target == _namespace) {
+        return;
+      }
+      _namespace = target;
+      final factory = _storeFactory;
+      if (factory != null) {
+        _store = factory(target);
+        _init = null;
+        _pending.clear();
+        _seq = 0;
+        await _ensureLoaded();
+      } else {
+        _pending.clear();
+      }
+    });
+  }
 
   /// 入队一个学习事件并立即持久化。
   ///
@@ -296,7 +389,7 @@ class OfflineEventQueue {
   }) {
     return _serialized(() async {
       await _ensureLoaded();
-      final effectiveMutationId = mutationId ?? '$deviceId:${_advanceSeq()}';
+      final effectiveMutationId = mutationId ?? '$deviceId:$_namespace:${_advanceSeq()}';
       for (final event in _pending) {
         if (event.mutationId == effectiveMutationId) {
           return OfflineEnqueueResult(
@@ -306,7 +399,7 @@ class OfflineEventQueue {
         }
       }
       final event = LearningEvent(
-        eventId: '$deviceId-e${_advanceSeq()}',
+        eventId: '$deviceId-$_namespace-e${_advanceSeq()}',
         mutationId: effectiveMutationId,
         kind: kind,
         itemId: itemId,

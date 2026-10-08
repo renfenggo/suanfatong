@@ -4,7 +4,14 @@ import '../services/learning_event_recorder.dart';
 import '../services/progress_service.dart';
 import 'cloud_sync_provider.dart';
 
-final progressServiceProvider = Provider((ref) => ProgressService());
+/// 当前进度命名空间（N03 账号隔离）：登录账号变化时由 AuthController
+/// 更新，progressServiceProvider 及依赖它的三个 Notifier 随之重建并从
+/// 新命名空间重新加载（null = 未登录 unowned）。
+final progressNamespaceProvider = StateProvider<String?>((ref) => null);
+
+final progressServiceProvider = Provider((ref) {
+  return ProgressService(namespace: ref.watch(progressNamespaceProvider));
+});
 
 final progressProvider = FutureProvider<Progress>((ref) {
   return ref.watch(progressServiceProvider).loadProgress();

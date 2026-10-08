@@ -11,8 +11,11 @@ import 'package:bfs_learn/services/platform_api_models.dart';
 /// 云同步编排器测试（Fake 传输层 + 内存队列，不发真实网络请求）。
 void main() {
   group('CloudSyncService flag 门控', () {
-    test('默认 DisabledSyncFlagSource 全关：不发任何请求、不取凭证、队列不动', () async {
-      final fake = _FakeTransport(_unexpectedTransport);
+    test('默认 DisabledSyncFlagSource 全关：不上报、队列不动（N04：会话先于 flag）', () async {
+      final fake = _FakeTransport((request) async {
+        if (request.url.endsWith('/v1/auth/login')) return _loginOk();
+        throw StateError('unexpected ${request.url}');
+      });
       final queue = _newQueue();
       await _enqueue(queue, 1);
       var credentialCalls = 0;
@@ -27,14 +30,22 @@ void main() {
 
       final result = await service.syncOnce();
 
+      // N04：先确保会话再查 flag——登录在 flag 判定之前，不再以"零请求"
+      // 作为关闭语义，关闭只保证不上报、队列不动。
       expect(result.outcome, CloudSyncOutcome.skippedFlagOff);
-      expect(fake.requests, isEmpty);
-      expect(credentialCalls, 0);
+      expect(credentialCalls, 1, reason: 'N04：凭证获取先于 flag 查询');
+      expect(
+        fake.requests.where((r) => r.url.endsWith('/v1/learning/events')),
+        isEmpty,
+      );
       expect(queue.pendingCount, 1);
     });
 
     test('flag 显式关闭 → 同样 skippedFlagOff', () async {
-      final fake = _FakeTransport(_unexpectedTransport);
+      final fake = _FakeTransport((request) async {
+        if (request.url.endsWith('/v1/auth/login')) return _loginOk();
+        throw StateError('unexpected ${request.url}');
+      });
       final queue = _newQueue();
       await _enqueue(queue, 2);
       final service = _service(
@@ -47,6 +58,56 @@ void main() {
 
       expect(result.outcome, CloudSyncOutcome.skippedFlagOff);
       expect(queue.pendingCount, 2);
+    });
+
+    test('N04：flag 查询网络失败 → retryLater（不伪装成开关关闭）', () async {
+      final queue = _newQueue();
+      await _enqueue(queue, 1);
+      final service = CloudSyncService(
+        client: _client(_FakeTransport((request) async => _loginOk())),
+        queue: queue,
+        credentialProvider: () async => _creds(),
+        flagSource: _ThrowingFlagSource(
+          // 模拟 ApiSyncFlagSource 契约：传输层网络错误包装为
+          // PlatformNetworkException 上抛（不吞）。
+          const PlatformNetworkException('flags endpoint unreachable'),
+        ),
+      );
+
+      final result = await service.syncOnce();
+
+      expect(result.outcome, CloudSyncOutcome.retryLater);
+      expect(result.error, isA<PlatformNetworkException>());
+      expect(queue.pendingCount, 1);
+    });
+
+    test('N04：flag 查询 401 → loggedOut 并通知会话过期（过期 token 自愈入口）', () async {
+      var expiredNotifications = 0;
+      final queue = _newQueue();
+      await _enqueue(queue, 1);
+      final service = CloudSyncService(
+        client: _client(_FakeTransport((request) async => _loginOk())),
+        queue: queue,
+        credentialProvider: () async => _creds(),
+        flagSource: _ThrowingFlagSource(
+          PlatformServerException(
+            statusCode: 401,
+            envelope: ErrorEnvelope(
+              code: 'UNAUTHORIZED',
+              message: '令牌过期',
+              retryable: false,
+            ),
+          ),
+        ),
+        onSessionExpired: () => expiredNotifications++,
+      );
+
+      final result = await service.syncOnce();
+
+      expect(result.outcome, CloudSyncOutcome.loggedOut);
+      expect(expiredNotifications, 1);
+      expect(service.cachedToken, isNull);
+      expect(queue.pendingCount, 1);
     });
   });
 
@@ -541,6 +602,16 @@ class _FakeFlagSource implements SyncFlagSource {
 
   @override
   Future<bool> isCloudSyncEnabled() async => enabled;
+}
+
+/// 抛异常的 Fake flag 源（N04：实现不吞异常，由 syncOnce 统一分类）。
+class _ThrowingFlagSource implements SyncFlagSource {
+  _ThrowingFlagSource(this.error);
+
+  final Object error;
+
+  @override
+  Future<bool> isCloudSyncEnabled() async => throw error;
 }
 
 /// 按 token 有无区分判定的 Fake（模拟 ApiSyncFlagSource 两段式语义）。

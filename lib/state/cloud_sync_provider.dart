@@ -20,6 +20,7 @@ import '../services/learning_event_recorder.dart';
 import '../services/offline_event_queue.dart';
 import '../services/platform_api_client.dart';
 import 'auth_provider.dart';
+import 'progress_provider.dart' show progressNamespaceProvider;
 
 /// SharedPreferences 实例（main 启动注入；测试用 overrideWithValue）。
 final sharedPreferencesProvider = Provider<SharedPreferences>(
@@ -31,7 +32,8 @@ final platformApiClientProvider = Provider<PlatformApiClient>((ref) {
   return PlatformApiClient(baseUrl: resolvePlatformBaseUrl());
 });
 
-/// 离线事件队列（默认内存实现面向测试；生产覆写为文件持久化）。
+/// 离线事件队列（默认内存实现面向测试；生产覆写为文件持久化 + 命名空间
+/// 工厂——N03 账号隔离：switchOwner 时换用对应账号的文件存储）。
 final offlineEventQueueProvider = Provider<OfflineEventQueue>((ref) {
   return OfflineEventQueue(
     store: InMemoryOfflineEventStore(),
@@ -44,6 +46,17 @@ final learningEventRecorderProvider = Provider<LearningEventRecorder>((ref) {
   return LearningEventRecorder(queue: ref.watch(offlineEventQueueProvider));
 });
 
+/// 云同步编排器（N02：无持久化凭证——重启后需经登录页重新建立会话，
+/// 会话令牌由 AuthController 登录成功后 adoptSession 注入）。
+final cloudSyncServiceProvider = Provider<CloudSyncService>((ref) {
+  return CloudSyncService(
+    client: ref.watch(platformApiClientProvider),
+    queue: ref.watch(offlineEventQueueProvider),
+    credentialProvider: () async => null,
+    flagSource: ApiSyncFlagSource(client: ref.watch(platformApiClientProvider)),
+  );
+});
+
 /// 登录会话控制器。
 final authControllerProvider = StateNotifierProvider<AuthController, AuthSession>((
   ref,
@@ -52,30 +65,11 @@ final authControllerProvider = StateNotifierProvider<AuthController, AuthSession
     client: ref.watch(platformApiClientProvider),
     prefs: ref.watch(sharedPreferencesProvider),
     deviceId: ref.watch(offlineEventQueueProvider).deviceId,
-    onSessionCleared: () => ref.invalidate(cloudSyncServiceProvider),
-  );
-});
-
-/// 云同步编排器（凭证从 SharedPreferences 读取，重启后自动恢复登录）。
-final cloudSyncServiceProvider = Provider<CloudSyncService>((ref) {
-  final prefs = ref.watch(sharedPreferencesProvider);
-  final deviceId = ref.watch(offlineEventQueueProvider).deviceId;
-  return CloudSyncService(
-    client: ref.watch(platformApiClientProvider),
     queue: ref.watch(offlineEventQueueProvider),
-    credentialProvider: () async {
-      final username = prefs.getString(kAuthUsernameKey);
-      final password = prefs.getString(kAuthPasswordKey);
-      if (username == null || username.isEmpty || password == null || password.isEmpty) {
-        return null;
-      }
-      return CloudSyncCredentials(
-        username: username,
-        password: password,
-        deviceId: deviceId,
-      );
-    },
-    flagSource: ApiSyncFlagSource(client: ref.watch(platformApiClientProvider)),
+    syncService: ref.watch(cloudSyncServiceProvider),
+    onOwnerChanged: (namespace) =>
+        ref.read(progressNamespaceProvider.notifier).state = namespace,
+    onSessionCleared: () => ref.invalidate(cloudSyncServiceProvider),
   );
 });
 

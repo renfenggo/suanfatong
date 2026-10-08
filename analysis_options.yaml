@@ -11,8 +11,9 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
-    - fill_content.dart
-    - verify_dp.dart
+    # N06（2026-10-08 第二轮复核）：两个归档脚本已从根目录移入
+    # tools/archive/，排除规则同步更新，使 `flutter analyze` 退出码为 0。
+    - tools/archive/**
 
 linter:
   # The lint rules applied to this project can be customized in the

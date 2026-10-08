@@ -176,7 +176,7 @@ GoRouter buildAppRouter({String initialLocation = AppRouter.home}) {
                 builder:
                     (context, state) => const ShellPlaceholderPage(
                       title: 'AI 助手',
-                      description: 'AI 答疑与讲解（M5 接入）',
+                      description: 'AI 答疑与讲解（开发中，暂未开放）',
                       icon: Icons.smart_toy,
                     ),
               ),
@@ -190,7 +190,7 @@ GoRouter buildAppRouter({String initialLocation = AppRouter.home}) {
                 builder:
                     (context, state) => const ShellPlaceholderPage(
                       title: '课堂',
-                      description: '接入 Winknow 课堂管控（M2 接入）',
+                      description: 'Winknow 课堂管控（开发中，暂未开放）',
                       icon: Icons.cast_for_education,
                     ),
               ),

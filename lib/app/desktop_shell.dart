@@ -146,7 +146,7 @@ class ShellPlaceholderPage extends StatelessWidget {
             Text(description, style: TextStyle(color: scheme.outline)),
             const SizedBox(height: 8),
             Text(
-              '该模块将在后续里程碑开放',
+              '该模块正在开发中，暂未开放',
               style: TextStyle(color: scheme.outline, fontSize: 13),
             ),
           ],

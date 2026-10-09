@@ -15,12 +15,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../services/api_sync_flag_source.dart';
+import '../services/cloud_sync_scheduler.dart';
 import '../services/cloud_sync_service.dart';
 import '../services/learning_event_recorder.dart';
+import '../services/learning_state_synchronizer.dart';
 import '../services/offline_event_queue.dart';
 import '../services/platform_api_client.dart';
 import 'auth_provider.dart';
-import 'progress_provider.dart' show progressNamespaceProvider;
+import 'progress_provider.dart'
+    show cppProgressProvider, progressNamespaceProvider, progressServiceProvider;
 
 /// SharedPreferences 实例（main 启动注入；测试用 overrideWithValue）。
 final sharedPreferencesProvider = Provider<SharedPreferences>(
@@ -55,6 +58,47 @@ final cloudSyncServiceProvider = Provider<CloudSyncService>((ref) {
     credentialProvider: () async => null,
     flagSource: ApiSyncFlagSource(client: ref.watch(platformApiClientProvider)),
   );
+});
+
+/// R06-1：服务端状态拉取合成器（换设备进度恢复）。
+///
+/// 依赖 progressServiceProvider（跟随当前账号命名空间重建）——账号切换
+/// 后合成写入新账号的进度键，不会串账号。
+final learningStateSynchronizerProvider =
+    Provider<LearningStateSynchronizer>((ref) {
+      return LearningStateSynchronizer(
+        client: ref.watch(platformApiClientProvider),
+        progressService: ref.watch(progressServiceProvider),
+      );
+    });
+
+/// 完整同步轮（R06-1/R06-2 统一入口）：上报离线队列 → 成功后拉取服务端
+/// 状态合成本地进度 → 刷新完成项 Notifier。
+///
+/// 手动同步（设置页）/登录成功/自动调度共用同一打包，保证任何入口触发
+/// 的同步都含状态合成。合成是次要动作：上报已成功（outcome=synced）时
+/// 合成失败（网络抖动等）不降级本轮结果，下个调度周期重试；刷新总是
+/// 执行（合成落盘后 Notifier 需重建重载）。
+Future<CloudSyncResult> runSyncRound(Ref ref) async {
+  final result = await ref.read(cloudSyncServiceProvider).syncOnce();
+  if (result.outcome == CloudSyncOutcome.synced) {
+    try {
+      await ref.read(learningStateSynchronizerProvider).pullAndMerge();
+    } catch (_) {
+      // 见上：合成失败不吞上报成功的事实，也不伪装进结果。
+    }
+    ref.invalidate(cppProgressProvider);
+  }
+  return result;
+}
+
+/// R06-2：自动同步调度器（默认 5 分钟周期轮询，兼网络恢复重试语义）。
+///
+/// App 启动即 start（见 BfsApp）；未登录轮次 skippedNoCredentials 无副作用。
+final cloudSyncSchedulerProvider = Provider<CloudSyncScheduler>((ref) {
+  final scheduler = CloudSyncScheduler(syncRound: () => runSyncRound(ref));
+  ref.onDispose(scheduler.stop);
+  return scheduler;
 });
 
 /// 登录会话控制器。

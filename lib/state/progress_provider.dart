@@ -37,6 +37,9 @@ class CppProgressNotifier extends StateNotifier<Set<String>> {
 
   Future<void> _load() async {
     _cached = await _service.loadProgress();
+    // invalidate（同步轮合成后刷新）会 dispose 旧 Notifier——构造期
+    // 异步加载恢复时若已被替换，丢弃赋值防 after-dispose 崩溃。
+    if (!mounted) return;
     state = _cached!.completedCppItems;
   }
 

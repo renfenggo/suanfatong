@@ -150,11 +150,14 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
       _syncing = true;
       _lastSyncSummary = null;
     });
-    final result = await ref.read(cloudSyncServiceProvider).syncOnce();
+    // R06-1：经调度器走完整同步轮（上报 + 服务端状态合成），与登录/
+    // 自动调度同一入口；一轮进行中返回 null（提示稍候，不排队重入）。
+    final result = await ref.read(cloudSyncSchedulerProvider).triggerNow();
     if (!mounted) return;
     setState(() {
       _syncing = false;
-      _lastSyncSummary = _describeSyncResult(result);
+      _lastSyncSummary =
+          result == null ? '同步正在进行中，请稍候' : _describeSyncResult(result);
     });
     await _refreshPendingCount();
   }

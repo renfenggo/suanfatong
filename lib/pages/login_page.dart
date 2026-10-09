@@ -51,8 +51,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       });
       return;
     }
-    // 登录成功即尝试冲刷离线队列（结果由设置页“立即同步”观测）。
-    unawaited(ref.read(cloudSyncServiceProvider).syncOnce());
+    // 登录成功即触发一轮完整同步（上报队列 + 服务端状态合成/换设备
+    // 进度恢复；调度器防重入，结果由设置页"立即同步"观测）。
+    unawaited(ref.read(cloudSyncSchedulerProvider).triggerNow());
     if (!mounted) return;
     setState(() => _submitting = false);
     ScaffoldMessenger.of(

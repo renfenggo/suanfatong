@@ -17,7 +17,7 @@ on:
 jobs:
   flutter:
     name: Flutter（analyze / test）
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
       - name: Checkout
@@ -39,8 +39,25 @@ jobs:
       - name: 运行测试
         run: flutter test
 
+      - name: 准备 Windows 插件符号链接与构建诊断
+        shell: pwsh
+        run: |
+          New-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock' -Force | Out-Null
+          Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock' -Name AllowDevelopmentWithoutDevLicense -Type DWord -Value 1
+          flutter doctor -v
+
       - name: 构建 Windows Release 客户端
-        run: flutter build windows --release
+        shell: pwsh
+        run: |
+          flutter build windows --release 2>&1 | ForEach-Object { "$_" } | Tee-Object -FilePath windows-build.log
+          $code = $LASTEXITCODE
+          if ($code -ne 0) {
+            Get-Content windows-build.log -Tail 25 | ForEach-Object {
+              $line = $_.Replace('%', '%25').Replace("`r", '%0D').Replace("`n", '%0A')
+              Write-Host "::error::$line"
+            }
+          }
+          exit $code
 
       - name: 校验 Release 核心文件
         shell: pwsh

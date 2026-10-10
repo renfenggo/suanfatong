@@ -1,6 +1,5 @@
 # suanfatong 仓库 CI（修复计划 7/7 四仓 CI 补齐）：flutter analyze + flutter test。
-# Windows 桌面打包不在 CI 范围——BLK-001（开发者模式）属本地打包环境；
-# 客户端安装经 winknow 安装包 student 组件通道（Build-Release.ps1 -FlutterBuildRoot）。
+# CI 同时验证 Windows Release 构建并保留安装包注入用的完整客户端目录。
 #
 # CI 首跑修正（2026-10-08）：
 # 1. flutter-version 钉 3.29.3——本地基线即 3.29.3，pubspec.lock 已入库；
@@ -11,7 +10,7 @@ name: Suanfatong CI
 
 on:
   push:
-    branches: [main, develop, "feature/**"]
+    branches: [main, develop, "feature/**", "codex/**"]
   pull_request:
   workflow_dispatch:
 
@@ -39,3 +38,24 @@ jobs:
 
       - name: 运行测试
         run: flutter test
+
+      - name: 构建 Windows Release 客户端
+        run: flutter build windows --release
+
+      - name: 校验 Release 核心文件
+        shell: pwsh
+        run: |
+          $root = 'build/windows/x64/runner/Release'
+          foreach ($file in @('bfs_learn.exe', 'flutter_windows.dll', 'url_launcher_windows_plugin.dll', 'data/icudtl.dat', 'data/app.so', 'data/flutter_assets/AssetManifest.bin')) {
+            if (-not (Test-Path (Join-Path $root $file) -PathType Leaf)) {
+              throw "Release 文件缺失: $file"
+            }
+          }
+
+      - name: 保存 Windows Release 产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: suanfatong-windows-release-${{ github.sha }}
+          path: build/windows/x64/runner/Release/
+          if-no-files-found: error
+          retention-days: 14
